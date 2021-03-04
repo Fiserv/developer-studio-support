@@ -1,0 +1,769 @@
+swagger: '2.0'
+info:
+  description: API Descriptions
+  version: '1.0'
+  title: ClientLine Enterprise Direct
+host: 'localhost:5005'
+basePath: /
+tags:
+  - name: Authorization Transactions
+    description: Returns authorization transactions and their included fields.
+  - name: Authorizations Summary
+    description: Analyze authorizations through various pivot and filter options
+  - name: Chargebacks Summary
+    description: Analyze chargebacks through various pivot and filter options
+  - name: Chargebacks Transactions
+    description: Return chargeback transactions and their included fields.
+  - name: Fraud Detect Summary
+    description: Analyze fraud transaction/registration through various pivot and filter options
+  - name: Fraud Detect Transactions
+    description: Returns merchant fraud detect transactions/registrations and their included fields.
+paths:
+  /v1/authorizations/details/byDate:
+    post:
+      tags:
+        - Authorization Transactions
+      summary: Provides a list of transactions and their attributes. Limits results to 10MM.
+      operationId: getTopUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input AuthorizationSearchRequest object, returns a list of txns with included field values'
+          required: true
+          schema:
+            $ref: '#/definitions/AuthorizationSearchRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Map«string,object»'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/authorizations/details/metaData:
+    get:
+      tags:
+        - Authorization Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset. For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaDataUsingGET
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/authorizations/summary/byDateRange:
+    post:
+      tags:
+        - Authorizations Summary
+      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReportUsingPOST
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input AuthorizationSummaryRequest object, returns a list of measured aggregations by pivots'
+          required: true
+          schema:
+            $ref: '#/definitions/AuthorizationSummaryRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SummaryResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/authorizations/summary/metaData:
+    get:
+      tags:
+        - Authorizations Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaDataUsingGET_1
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SummaryMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/chargebacks/details/byDate:
+    post:
+      tags:
+        - Chargebacks Transactions
+      summary: Provides a list of chargeback transactions. Limits to 10MM
+      operationId: getTopUsingPOST_1
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input ChargebackSearchRequest object, returns a list of txns with included field values'
+          required: true
+          schema:
+            $ref: '#/definitions/ChargebackSearchRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Map«string,object»'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/chargebacks/details/metaData:
+    get:
+      tags:
+        - Chargebacks Transactions
+      summary: Provides the meta data for this analysis
+      operationId: getMetaDataUsingGET_2
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/chargebacks/summary/byDateRange:
+    post:
+      tags:
+        - Chargebacks Summary
+      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReportUsingPOST_1
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input ChargebackSummaryRequest object, returns a list of measured aggregations by pivots'
+          required: true
+          schema:
+            $ref: '#/definitions/ChargebackSummaryRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SummaryResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/chargebacks/summary/metaData:
+    get:
+      tags:
+        - Chargebacks Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaDataUsingGET_3
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SummaryMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/fraud/details/byDate:
+    post:
+      tags:
+        - Fraud Detect Transactions
+      summary: Provides a list of fraud transactions. Limits to 100
+      operationId: getTopUsingPOST_2
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input FraudDetectSearchRequest object, returns a list of txns with included field values'
+          required: true
+          schema:
+            $ref: '#/definitions/FraudDetectSearchRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Map«string,object»'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/fraud/details/metaData:
+    get:
+      tags:
+        - Fraud Detect Transactions
+      summary: Provides the meta data for this analysis
+      operationId: getMetaDataUsingGET_4
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/fraud/summary/byDateRange:
+    post:
+      tags:
+        - Fraud Detect Summary
+      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReportUsingPOST_2
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input FraudDetectSummaryRequest object, returns a list of measured aggregations by pivots'
+          required: true
+          schema:
+            $ref: '#/definitions/FraudDetectSummaryRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SummaryResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/fraud/summary/metaData:
+    get:
+      tags:
+        - Fraud Detect Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaDataUsingGET_5
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SummaryMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+definitions:
+  AuthorizationSearchRequest:
+    type: object
+    required:
+      - date
+      - fields
+      - filters
+    properties:
+      date:
+        type: string
+        example: 20210217
+        description: YYYYMMDD string denoting the date for the query.
+      fields:
+        type: array
+        example:
+          - a_approvalCode
+          - a_type
+          - a_transactionDateTime
+          - a_accountNumber
+          - a_cardExpiryDate
+          - a_amount
+          - a_currency
+          - a_network
+          - a_paymentMethod
+          - a_declineReason
+          - a_authCode
+        description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+        items:
+          type: string
+      filters:
+        type: array
+        example:
+          - field: o_timeZone
+            values:
+              - '2'
+          - field: a_currency
+            values:
+              - '1'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+    title: AuthorizationSearchRequest
+    description: Request object for authorization search results.
+  AuthorizationSummaryRequest:
+    type: object
+    required:
+      - filters
+      - from
+      - pivot1
+      - to
+    properties:
+      filters:
+        type: array
+        example:
+          - field: o_timeZone
+            values:
+              - '2'
+          - field: a_currency
+            values:
+              - '1'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+      from:
+        type: string
+        example: 20210217
+        description: YYYYMMDD string denoting the date for the query.
+      pivot1:
+        type: string
+        example: a_network
+        description: 'The field value used as a pivot point, represents the [ group by PIVOT1 ] clause in a sql query.'
+      pivot2:
+        type: string
+        example: a_mobileWallet
+        description: 'The field value used as a second pivot point, represents the second position of a [ group by 1, PIVOT2 ] clause in a sql query.'
+      pivot3:
+        type: string
+        example: a_type
+        description: 'The field value used as a third pivot point, represents the third position of a [ group by 1, 2, PIVOT3 ] clause in a sql query.'
+      to:
+        type: string
+        example: 20210218
+        description: YYYYMMDD string denoting the date for the query.
+    title: AuthorizationSummaryRequest
+    description: Request object for authorization summary report creation.
+  ChargebackSearchRequest:
+    type: object
+    required:
+      - date
+      - fields
+      - filters
+    properties:
+      date:
+        type: string
+        example: 20210217
+        description: YYYYMMDD string denoting the date for the query.
+      fields:
+        type: array
+        example:
+          - cb_backendMID
+          - cb_authNetwork
+          - cb_receivedDate
+          - cb_statusDate
+          - cb_transactionDate
+          - cb_status
+          - cb_category
+          - cb_workType
+          - cb_winLoss
+          - cb_Reason
+          - cb_reasonCode
+          - cb_currency
+          - cb_chargebackAmount
+          - cb_dueDate
+          - cb_transactionType
+          - cb_dispositionDate
+          - cb_Disposition
+          - cb_ECIndicator
+          - cb_transactionAmount
+          - cb_accountNumber
+          - cb_first6
+          - cb_last4
+          - cb_invoiceNumber
+          - cb_terminalId
+          - cb_disputeID
+          - cb_referenceNumber
+          - cb_authCode
+          - cb_trackingNumber
+          - cb_svcCd
+          - cb_merchantCategory
+          - cb_orderNumber
+          - cb_responseReceived
+          - cb_respondedDate
+          - cb_externalMid
+          - cb_paymentMethod
+          - cb_sendMode
+          - cb_recurring
+          - cb_mobileWallet
+          - cb_tokenResponseInd
+          - cb_adjDate
+          - cb_captureMethod
+        description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+        items:
+          type: string
+      filters:
+        type: array
+        example:
+          - field: o_chargebackDateType
+            values:
+              - '1'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+    title: ChargebackSearchRequest
+    description: Request object for chargeback search results.
+  ChargebackSummaryRequest:
+    type: object
+    required:
+      - filters
+      - from
+      - pivot1
+      - to
+    properties:
+      filters:
+        type: array
+        example:
+          - field: o_chargebackDateType
+            values:
+              - '1'
+          - field: cb_currency
+            values:
+              - '1'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+      from:
+        type: string
+        example: 20210201
+        description: YYYYMMDD string denoting the date for the query.
+      pivot1:
+        type: string
+        example: bi_cardBrand
+        description: 'The field value used as a pivot point, represents the [ group by PIVOT1 ] clause in a sql query.'
+      pivot2:
+        type: string
+        description: 'The field value used as a second pivot point, represents the second position of a [ group by 1, PIVOT2 ] clause in a sql query.'
+      pivot3:
+        type: string
+        description: 'The field value used as a third pivot point, represents the third position of a [ group by 1, 2, PIVOT3 ] clause in a sql query.'
+      to:
+        type: string
+        example: 20210227
+        description: YYYYMMDD string denoting the date for the query.
+    title: ChargebackSummaryRequest
+    description: Request object for chargeback summary report creation.
+  FieldMetaData:
+    type: object
+    properties:
+      description:
+        type: string
+        example: Identifies if the authorization was approved or declined.
+        description: The description of the field.
+      id:
+        type: string
+        example: a_approvalCode
+        description: The id of the field.
+      mapping:
+        type: object
+        example:
+          '0': UTC
+        description: 'Possible values of the field used to query the dataset, represents the [ where [ FIELD in(''VALUES1'', ''VALUES2'') ] ]. clause of a sql query'
+        additionalProperties:
+          type: string
+      name:
+        type: string
+        example: Approval Status
+        description: The name of the field.
+      type:
+        type: string
+        example: Text
+        description: 'The field type of the entry. Choice, Text, Decimal, Etc'
+    title: FieldMetaData
+    description: Field selection used for querying a dataset by id.
+  FilterMetaData:
+    type: object
+    properties:
+      field:
+        type: string
+        example: o_timeZone
+        description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query.'
+      mapping:
+        type: object
+        example:
+          '0': UTC
+        description: 'Possible values of the field used to query the dataset, represents the [ where [ FIELD in(''VALUES1'', ''VALUES2'') ] ]. clause of a sql query'
+        additionalProperties:
+          type: string
+      type:
+        type: string
+        example: Choice
+        description: 'The filter type of the field. Choice, Text, Decimal, Etc'
+    title: FilterMetaData
+    description: Filter criteria used for querying a dataset.
+  FilterRequestData:
+    type: object
+    properties:
+      field:
+        type: string
+        example: o_timeZone
+        description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query.'
+      values:
+        type: array
+        example:
+          - '2'
+        description: 'Values associated with the field used to query the dataset, represents the [ where [ FIELD in(''VALUES1'', ''VALUES2'') ] ] clause of a sql query. The field [ SearchRequest.filters[].field -> FilterMetaData.reportFilters.field ] and values [ SearchRequest.filters[].values[] -> FilterMetaData.reportFilters.mapping[].key ]'
+        items:
+          type: string
+    title: FilterRequestData
+    description: Filter criteria used for querying a dataset.
+  FraudDetectSearchRequest:
+    type: object
+    required:
+      - date
+      - fields
+      - filters
+    properties:
+      date:
+        type: string
+        example: 20210217
+        description: YYYYMMDD string denoting the date for the query.
+      fields:
+        type: array
+        example:
+          - f_type
+          - f_paymentAmount
+          - f_entryMethod
+          - f_score
+          - f_responseDecision
+          - f_responseDuration
+          - f_binID
+          - f_currency
+          - f_pinPresent
+          - f_scheme
+          - f_merchLocID
+          - f_accountType
+          - f_declineReasonOne
+          - f_declineReasonTwo
+          - f_loadDate
+          - f_fraudID
+          - f_scoreResult
+        description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+        items:
+          type: string
+      filters:
+        type: array
+        example:
+          - field: scoremin
+            values:
+              - '0'
+          - field: scoremax
+            values:
+              - '100'
+          - field: f_fraudID
+            values:
+              - 'MCD_MOBILEORDERING_US,MCD_WALLET_GER'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+    title: FraudDetectSearchRequest
+    description: Request object for fraud detect transaction/registration search results.
+  FraudDetectSummaryRequest:
+    type: object
+    required:
+      - filters
+      - from
+      - pivot1
+      - to
+    properties:
+      filters:
+        type: array
+        example:
+          - field: f_type
+            values:
+              - '2'
+              - '3'
+          - field: scoremin
+            values:
+              - '0'
+          - field: scoremax
+            values:
+              - '100'
+          - field: f_currency
+            values:
+              - '1'
+          - field: o_timeZone
+            values:
+              - '2'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+      from:
+        type: string
+        example: 20210207
+        description: YYYYMMDD string denoting the date for the query.
+      pivot1:
+        type: string
+        example: f_accountType
+        description: 'The field value used as a pivot point, represents the [ group by PIVOT1 ] clause in a sql query.'
+      pivot2:
+        type: string
+        description: 'The field value used as a second pivot point, represents the second position of a [ group by 1, PIVOT2 ] clause in a sql query.'
+      pivot3:
+        type: string
+        description: 'The field value used as a third pivot point, represents the third position of a [ group by 1, 2, PIVOT3 ] clause in a sql query.'
+      to:
+        type: string
+        example: 20210218
+        description: YYYYMMDD string denoting the date for the query.
+    title: FraudDetectSummaryRequest
+    description: Request object for fraud detect transaction/registration summary report creation.
+  SearchMetaData:
+    type: object
+    properties:
+      fields:
+        type: array
+        example:
+          - id: a_approvalCode
+            name: Approval Status
+            description: Identifies if the authorization was approved or declined.
+          - id: a_type
+            name: Type
+            description: 'Transaction type code e.g. sale, refund etc.'
+        description: 'Fields by id, name and description that are available to query the search report.'
+        items:
+          $ref: '#/definitions/FieldMetaData'
+      filters:
+        type: array
+        description: Filter criteria used for querying a dataset.
+        items:
+          $ref: '#/definitions/FilterMetaData'
+    title: SearchMetaData
+    description: MetaData associated with retrieving transactions through query.
+  SummaryMetaData:
+    type: object
+    properties:
+      filters:
+        type: array
+        description: Filter criteria used for querying a dataset.
+        items:
+          $ref: '#/definitions/FilterMetaData'
+      pivotFields:
+        type: object
+        example:
+          a_paymentMethod: Payment Method
+        description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+        additionalProperties:
+          type: string
+    title: SummaryMetaData
+    description: MetaData associated with building summary reports.
+  SummaryResponse:
+    type: object
+    properties:
+      amountTotal:
+        type: number
+        format: double
+        example: 11909212
+        description: The total transaction dollar amount of all matching rows grouped by pivot.
+      approvedCount:
+        type: integer
+        format: int64
+        example: 721
+        description: The count of approved transactions for matching rows grouped by pivot.
+      response1:
+        type: string
+        example: 1
+        description: 'The enum ordinal value of the first queried pivot point, represents the grouped PIVOT1 response of a sql query.'
+      response2:
+        type: string
+        example: 0
+        description: 'The enum ordinal value of the second queried pivot point, represents the grouped PIVOT2 response of a sql query.'
+      response3:
+        type: string
+        example: 11
+        description: 'The enum ordinal value of the third queried pivot point, represents the grouped PIVOT3 response of a sql query.'
+      totalCount:
+        type: integer
+        format: int64
+        example: 757
+        description: The total count of all matching rows grouped by pivot.
+    title: SummaryResponse
+    description: Summary response object which maps the data points returned from the grouped by query request.
