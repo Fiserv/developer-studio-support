@@ -1,8 +1,8 @@
 # Getting Started
 
-## Welcome to Developer Portal!
+## Welcome to ClientLineX!
 
-To onboard properly into the Fiserv Developer Portal as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.
+To onboard properly into the Fiserv ClientLineX as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.
 
 # Using Markdown in Documentation
 
