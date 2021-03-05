@@ -1,8 +1,8 @@
 # Getting Started
 
-## Welcome to Developer Portal!
+## Welcome to ClientLineX!
 
-To onboard properly into the Fiserv Developer Portal as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.
+To onboard properly into the Fiserv ClientLineX as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.
 
 # Using Markdown in Documentation
 
@@ -236,6 +236,3 @@ Asterisks
 ___
 
 Underscores
-
-### <a name="credits"/> Credits
-Most of this information was pulled from [Adam Pritchard's Mardkown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Thank you Adam for putting together this cheatsheet!
