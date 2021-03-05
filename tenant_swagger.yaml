@@ -6,20 +6,36 @@ info:
 host: 'localhost:5005'
 basePath: /
 tags:
+  - name: Authorization Summary
+    description: Analyze authorizations through various pivot and filter options
   - name: Authorization Transactions
     description: Returns authorization transactions and their included fields.
-  - name: Authorizations Summary
-    description: Analyze authorizations through various pivot and filter options
-  - name: Chargebacks Summary
+  - name: Chargeback Summary
     description: Analyze chargebacks through various pivot and filter options
-  - name: Chargebacks Transactions
+  - name: Chargeback Transactions
     description: Return chargeback transactions and their included fields.
+  - name: Disbursement Summary
+    description: Analyze disbursement transaction through various pivot and filter options
+  - name: Disbursement Transactions
+    description: Search disbursement transaction details
   - name: Fraud Detect Summary
     description: Analyze fraud transaction/registration through various pivot and filter options
   - name: Fraud Detect Transactions
     description: Returns merchant fraud detect transactions/registrations and their included fields.
+  - name: Funding Summary
+    description: Analyze funding transactions through various pivot and filter options
+  - name: Funding Transactions
+    description: Search funding details
+  - name: Retrieval Summary
+    description: Analyze retrievals through various pivot and filter options
+  - name: Retrieval Transactions
+    description: Search retrieval transaction details
+  - name: Settlement Summary
+    description: Analyze settlements through various pivot and filter options
+  - name: Settlement Transactions
+    description: Returns settlement transactions and their included fields.
 paths:
-  /v1/authorizations/details/byDate:
+  /v1/authorization/details/byDate:
     post:
       tags:
         - Authorization Transactions
@@ -52,7 +68,7 @@ paths:
         '404':
           description: Not Found
       deprecated: false
-  /v1/authorizations/details/metaData:
+  /v1/authorization/details/metaData:
     get:
       tags:
         - Authorization Transactions
@@ -72,10 +88,10 @@ paths:
         '404':
           description: Not Found
       deprecated: false
-  /v1/authorizations/summary/byDateRange:
+  /v1/authorization/summary/byDateRange:
     post:
       tags:
-        - Authorizations Summary
+        - Authorization Summary
       summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReportUsingPOST
       consumes:
@@ -105,10 +121,10 @@ paths:
         '404':
           description: Not Found
       deprecated: false
-  /v1/authorizations/summary/metaData:
+  /v1/authorization/summary/metaData:
     get:
       tags:
-        - Authorizations Summary
+        - Authorization Summary
       summary: Provides the meta data for the byDateRange analysis
       operationId: getMetaDataUsingGET_1
       produces:
@@ -125,10 +141,10 @@ paths:
         '404':
           description: Not Found
       deprecated: false
-  /v1/chargebacks/details/byDate:
+  /v1/chargeback/details/byDate:
     post:
       tags:
-        - Chargebacks Transactions
+        - Chargeback Transactions
       summary: Provides a list of chargeback transactions. Limits to 10MM
       operationId: getTopUsingPOST_1
       consumes:
@@ -158,11 +174,11 @@ paths:
         '404':
           description: Not Found
       deprecated: false
-  /v1/chargebacks/details/metaData:
+  /v1/chargeback/details/metaData:
     get:
       tags:
-        - Chargebacks Transactions
-      summary: Provides the meta data for this analysis
+        - Chargeback Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset. For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
       operationId: getMetaDataUsingGET_2
       produces:
         - application/json
@@ -178,10 +194,10 @@ paths:
         '404':
           description: Not Found
       deprecated: false
-  /v1/chargebacks/summary/byDateRange:
+  /v1/chargeback/summary/byDateRange:
     post:
       tags:
-        - Chargebacks Summary
+        - Chargeback Summary
       summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReportUsingPOST_1
       consumes:
@@ -211,12 +227,118 @@ paths:
         '404':
           description: Not Found
       deprecated: false
-  /v1/chargebacks/summary/metaData:
+  /v1/chargeback/summary/metaData:
     get:
       tags:
-        - Chargebacks Summary
+        - Chargeback Summary
       summary: Provides the meta data for the byDateRange analysis
       operationId: getMetaDataUsingGET_3
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SummaryMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/disbursement/search/byDate:
+    post:
+      tags:
+        - Disbursement Transactions
+      summary: Provides a list of transactions and their attributes. Limits results to 10MM.
+      operationId: getTopUsingPOST_2
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input DisbursementSearchRequest object, returns a list of txns with included field values'
+          required: true
+          schema:
+            $ref: '#/definitions/DisbursementSearchRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Map«string,object»'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/disbursement/search/metaData:
+    get:
+      tags:
+        - Disbursement Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset. For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaDataUsingGET_4
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/disbursement/summary/byDateRange:
+    post:
+      tags:
+        - Disbursement Summary
+      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReportUsingPOST_2
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input DisbursementSummaryRequest object, returns a list of measured aggregations by pivots'
+          required: true
+          schema:
+            $ref: '#/definitions/DisbursementSummaryRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SummaryResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/disbursement/summary/metaData:
+    get:
+      tags:
+        - Disbursement Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaDataUsingGET_5
       produces:
         - application/json
       responses:
@@ -236,7 +358,7 @@ paths:
       tags:
         - Fraud Detect Transactions
       summary: Provides a list of fraud transactions. Limits to 100
-      operationId: getTopUsingPOST_2
+      operationId: getTopUsingPOST_3
       consumes:
         - application/json
       produces:
@@ -268,8 +390,8 @@ paths:
     get:
       tags:
         - Fraud Detect Transactions
-      summary: Provides the meta data for this analysis
-      operationId: getMetaDataUsingGET_4
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset. For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaDataUsingGET_6
       produces:
         - application/json
       responses:
@@ -289,7 +411,7 @@ paths:
       tags:
         - Fraud Detect Summary
       summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
-      operationId: getCumulativeReportUsingPOST_2
+      operationId: getCumulativeReportUsingPOST_3
       consumes:
         - application/json
       produces:
@@ -322,7 +444,325 @@ paths:
       tags:
         - Fraud Detect Summary
       summary: Provides the meta data for the byDateRange analysis
-      operationId: getMetaDataUsingGET_5
+      operationId: getMetaDataUsingGET_7
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SummaryMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/funding/search/byDate:
+    post:
+      tags:
+        - Funding Transactions
+      summary: Provides a list of transactions and their attributes. Limits results to 10MM.
+      operationId: getTopUsingPOST_4
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input FundingSearchRequest object, returns a list of txns with included field values'
+          required: true
+          schema:
+            $ref: '#/definitions/FundingSearchRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Map«string,object»'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/funding/search/metaData:
+    get:
+      tags:
+        - Funding Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset. For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaDataUsingGET_8
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/funding/summary/byDateRange:
+    post:
+      tags:
+        - Funding Summary
+      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReportUsingPOST_4
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input FundingSummaryRequest object, returns a list of measured aggregations by pivots'
+          required: true
+          schema:
+            $ref: '#/definitions/FundingSummaryRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/FundingSummaryResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/funding/summary/metaData:
+    get:
+      tags:
+        - Funding Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaDataUsingGET_9
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SummaryMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/retrieval/search/byDate:
+    post:
+      tags:
+        - Retrieval Transactions
+      summary: Provides a list of transactions and their attributes. Limits results to 10MM.
+      operationId: getTopUsingPOST_5
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input RetrievalSearchRequest object, returns a list of txns with included field values'
+          required: true
+          schema:
+            $ref: '#/definitions/RetrievalSearchRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Map«string,object»'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/retrieval/search/metaData:
+    get:
+      tags:
+        - Retrieval Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset. For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaDataUsingGET_10
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/retrieval/summary/byDateRange:
+    post:
+      tags:
+        - Retrieval Summary
+      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReportUsingPOST_5
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input RetrievalSummaryRequest object, returns a list of measured aggregations by pivots'
+          required: true
+          schema:
+            $ref: '#/definitions/RetrievalSummaryRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SummaryResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/retrieval/summary/metaData:
+    get:
+      tags:
+        - Retrieval Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaDataUsingGET_11
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SummaryMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/settlement/details/byDate:
+    post:
+      tags:
+        - Settlement Transactions
+      summary: Provides a list of settlement transactions and their attributes. Limits results to 10MM.
+      operationId: getTopUsingPOST_6
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input SettlementSearchRequest object, returns a list of txns with included field values'
+          required: true
+          schema:
+            $ref: '#/definitions/SettlementSearchRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Map«string,object»'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/settlement/details/metaData:
+    get:
+      tags:
+        - Settlement Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset. For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaDataUsingGET_12
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/SearchMetaData'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/settlement/summary/byDateRange:
+    post:
+      tags:
+        - Settlement Summary
+      summary: Executes the report based on the specified criteria
+      operationId: getCumulativeReportUsingPOST_6
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: request
+          description: 'Input SettlementSummaryRequest object, returns a list of measured aggregations by pivots'
+          required: true
+          schema:
+            $ref: '#/definitions/SettlementSummaryRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/SettlementSummaryResponse'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      deprecated: false
+  /v1/settlement/summary/metaData:
+    get:
+      tags:
+        - Settlement Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaDataUsingGET_13
       produces:
         - application/json
       responses:
@@ -519,18 +959,134 @@ definitions:
         type: string
         example: bi_cardBrand
         description: 'The field value used as a pivot point, represents the [ group by PIVOT1 ] clause in a sql query.'
-      pivot2:
-        type: string
-        description: 'The field value used as a second pivot point, represents the second position of a [ group by 1, PIVOT2 ] clause in a sql query.'
-      pivot3:
-        type: string
-        description: 'The field value used as a third pivot point, represents the third position of a [ group by 1, 2, PIVOT3 ] clause in a sql query.'
       to:
         type: string
         example: 20210227
         description: YYYYMMDD string denoting the date for the query.
     title: ChargebackSummaryRequest
     description: Request object for chargeback summary report creation.
+  DisbursementSearchRequest:
+    type: object
+    required:
+      - date
+      - fields
+      - filters
+    properties:
+      date:
+        type: string
+        example: 20210303
+        description: YYYYMMDD string denoting the date for the query.
+      fields:
+        type: array
+        example:
+          - ds_merchantStatus
+          - ds_merchantId
+          - ds_merchantName
+          - ds_mid
+          - ds_origId
+          - ds_fundingAccount
+          - ds_transactionId
+          - ds_referenceId
+          - ds_controlNumber
+          - ds_transactionAmount
+          - ds_currency
+          - ds_transactionDate
+          - ds_settlementDate
+          - ds_settlementStatus
+          - ds_applyDate
+          - ds_transactionStatus
+          - ds_expiryDate
+          - ds_paymentRecipientId
+          - ds_paymentId
+          - ds_accountLastFour
+          - ds_paymentType
+          - ds_paymentAmount
+          - ds_paymentDate
+          - ds_paymentTime
+          - ds_paymentStatus
+          - ds_paymentChannel
+          - ds_feeAmount
+          - ds_paymentVendorId
+          - ds_returnCode
+          - ds_transactionClaimNumber
+          - ds_transactionPaymentNumber
+          - ds_recipientId
+          - ds_recipientStatus
+          - ds_recipientGuest
+          - ds_recipientCompany
+          - ds_recipientClient
+          - ds_recipientReason
+          - ds_recipientType
+          - ds_recipientFName
+          - ds_recipientLName
+          - ds_email
+          - ds_createDate
+          - ds_recipientIdentifier
+          - ds_recipientIdentifierValue
+          - ds_recipientTin
+          - ds_recipientComments
+          - ds_recipientPhone
+          - ds_recipientExtension
+          - ds_streetOne
+          - ds_streetTwo
+          - ds_city
+          - ds_state
+          - ds_postalCode
+          - ds_country
+        description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+        items:
+          type: string
+      filters:
+        type: array
+        example:
+          - field: o_disbursementDateType
+            values:
+              - '1'
+          - field: o_timeZone
+            values:
+              - '2'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+    title: DisbursementSearchRequest
+    description: Request object for disbursement search results.
+  DisbursementSummaryRequest:
+    type: object
+    required:
+      - filters
+      - from
+      - pivot1
+      - to
+    properties:
+      filters:
+        type: array
+        example:
+          - field: o_disbursementDateType
+            values:
+              - '1'
+          - field: o_timeZone
+            values:
+              - '2'
+          - field: ds_currency
+            values:
+              - '1'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+      from:
+        type: string
+        example: 20210201
+        description: YYYYMMDD string denoting the date for the query.
+      pivot1:
+        type: string
+        example: ds_paymentStatus
+        description: 'The field value used as a pivot point, represents the [ group by PIVOT1 ] clause in a sql query.'
+      to:
+        type: string
+        example: 20210228
+        description: YYYYMMDD string denoting the date for the query.
+    title: DisbursementSummaryRequest
+    description: Request object for disbursement summary report creation.
   FieldMetaData:
     type: object
     properties:
@@ -678,24 +1234,241 @@ definitions:
           $ref: '#/definitions/FilterRequestData'
       from:
         type: string
-        example: 20210207
+        example: 20210201
         description: YYYYMMDD string denoting the date for the query.
       pivot1:
         type: string
         example: f_accountType
         description: 'The field value used as a pivot point, represents the [ group by PIVOT1 ] clause in a sql query.'
-      pivot2:
-        type: string
-        description: 'The field value used as a second pivot point, represents the second position of a [ group by 1, PIVOT2 ] clause in a sql query.'
-      pivot3:
-        type: string
-        description: 'The field value used as a third pivot point, represents the third position of a [ group by 1, 2, PIVOT3 ] clause in a sql query.'
       to:
         type: string
-        example: 20210218
+        example: 20210302
         description: YYYYMMDD string denoting the date for the query.
     title: FraudDetectSummaryRequest
     description: Request object for fraud detect transaction/registration summary report creation.
+  FundingSearchRequest:
+    type: object
+    required:
+      - date
+      - fields
+      - filters
+    properties:
+      date:
+        type: string
+        example: 20210303
+        description: YYYYMMDD string denoting the date for the query.
+      fields:
+        type: array
+        example:
+          - fd_siteID
+          - fd_batchDate
+          - fd_fundedDate
+          - fd_batchNo
+          - fd_majorCategory
+          - fd_minorCategory
+          - fd_productCode
+          - fd_creditAmount
+          - fd_debitAmount
+          - fd_currency
+          - fd_dda
+          - fd_processor
+          - fd_accountNetAmount
+          - fd_interchangeCD
+          - fd_accountCurrency
+          - fd_referenceNo
+        description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+        items:
+          type: string
+      filters:
+        type: array
+        example:
+          - field: o_accessLevel
+            values:
+              - '1'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+    title: FundingSearchRequest
+    description: Request object for funding search results.
+  FundingSummaryRequest:
+    type: object
+    required:
+      - filters
+      - from
+      - pivot1
+      - to
+    properties:
+      filters:
+        type: array
+        example:
+          - field: fd_currency
+            values:
+              - '1'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+      from:
+        type: string
+        example: 20210221
+        description: YYYYMMDD string denoting the date for the query.
+      pivot1:
+        type: string
+        example: fd_processor
+        description: 'The field value used as a pivot point, represents the [ group by PIVOT1 ] clause in a sql query.'
+      to:
+        type: string
+        example: 20210227
+        description: YYYYMMDD string denoting the date for the query.
+    title: FundingSummaryRequest
+    description: Request object for funding summary report creation.
+  FundingSummaryResponse:
+    type: object
+    properties:
+      processedAdjustments:
+        type: number
+        format: double
+        example: 42
+        description: The amount of adjustments.
+      processedAmountPaid:
+        type: number
+        format: double
+        example: 428
+        description: The paid amount.
+      processedChargebacksReversals:
+        type: number
+        format: double
+        example: 2145
+        description: The amount of chargeback reversals.
+      processedDeposit:
+        type: number
+        format: double
+        example: 954
+        description: The deposit amount.
+      processedFees:
+        type: number
+        format: double
+        example: 426
+        description: The amount of service fees.
+      processedICCharges:
+        type: number
+        format: double
+        example: 22
+        description: The amount of icc charges.
+      processedNetSales:
+        type: number
+        format: double
+        example: 526342
+        description: The net sales.
+      processedPaidByOthers:
+        type: number
+        format: double
+        example: 7123
+        description: The amount paid by others.
+      processedServiceCharges:
+        type: number
+        format: double
+        example: 254
+        description: The amount of service charges.
+      response1:
+        type: string
+        example: 1
+        description: 'The enum ordinal value of the first queried pivot point, represents the grouped PIVOT1 response of a sql query.'
+      response2:
+        type: string
+        example: 0
+        description: 'The enum ordinal value of the second queried pivot point, represents the grouped PIVOT2 response of a sql query.'
+      response3:
+        type: string
+        example: 11
+        description: 'The enum ordinal value of the third queried pivot point, represents the grouped PIVOT3 response of a sql query.'
+    title: FundingSummaryResponse
+    description: Summary response object which maps the data points returned from the grouped by query request.
+  RetrievalSearchRequest:
+    type: object
+    required:
+      - date
+      - fields
+      - filters
+    properties:
+      date:
+        type: string
+        example: 20210225
+        description: YYYYMMDD string denoting the date for the query.
+      fields:
+        type: array
+        example:
+          - r_backendMID
+          - r_authNetwork
+          - r_receivedDate
+          - r_statusDate
+          - r_transactionDate
+          - r_status
+          - r_Reason
+          - r_currency
+          - r_dueDate
+          - r_ECIndicator
+          - r_processedTransactionAmount
+          - r_accountNumber
+          - r_first6
+          - r_last4
+          - r_invoiceNumber
+          - r_terminalId
+          - r_disputeID
+          - r_authCode
+          - r_trackingNumber
+          - r_svcCd
+          - r_merchantCategory
+          - r_orderNumber
+          - r_externalMid
+          - r_referenceNumber
+        description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+        items:
+          type: string
+      filters:
+        type: array
+        example:
+          - field: o_retrievalDateType
+            values:
+              - '1'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+    title: RetrievalSearchRequest
+    description: Request object for retrieval search results.
+  RetrievalSummaryRequest:
+    type: object
+    required:
+      - filters
+      - from
+      - pivot1
+      - to
+    properties:
+      filters:
+        type: array
+        example:
+          - field: o_retrievalDateType
+            values:
+              - '1'
+          - field: r_currency
+            values:
+              - '1'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+      from:
+        type: string
+        example: 20210201
+        description: YYYYMMDD string denoting the date for the query.
+      pivot1:
+        type: string
+        example: bi_issuer
+        description: 'The field value used as a pivot point, represents the [ group by PIVOT1 ] clause in a sql query.'
+      to:
+        type: string
+        example: 20210228
+        description: YYYYMMDD string denoting the date for the query.
+    title: RetrievalSummaryRequest
+    description: Request object for retrieval summary report creation.
   SearchMetaData:
     type: object
     properties:
@@ -718,6 +1491,151 @@ definitions:
           $ref: '#/definitions/FilterMetaData'
     title: SearchMetaData
     description: MetaData associated with retrieving transactions through query.
+  SettlementSearchRequest:
+    type: object
+    required:
+      - date
+      - fields
+      - filters
+    properties:
+      date:
+        type: string
+        example: 20210301
+        description: YYYYMMDD string denoting the date for the query.
+      fields:
+        type: array
+        example:
+          - st_siteID
+          - st_externalMID
+          - st_dbaName
+          - st_batchDate
+          - st_terminalID
+          - st_batchNo
+          - st_invoiceNo
+          - st_transactionDate
+          - st_network
+          - st_accountNumber
+          - st_processedTransactionAmount
+          - st_submittedTransactionAmount
+          - st_currency
+          - st_transactionStatus
+          - st_orderNumber
+          - st_ECIIndicator
+          - st_batchSequenceID
+          - st_type
+          - st_paymentMethod
+          - st_authCode
+          - st_planCode
+          - st_rejectReason
+          - st_integrityClass
+          - st_processor
+          - st_mobileIndicator
+          - st_foreignCurrAmount
+          - st_foreignCurrRate
+          - st_serviceCode
+          - st_authorizationType
+          - st_trckrid
+          - st_vehicleNumber
+          - st_odometerReading
+          - st_driverID
+          - st_transactionMode
+          - st_subMerchantID
+          - st_subMerchantName
+          - st_convinienceFee
+          - st_tokenType
+          - st_acquirerRefNo
+          - st_surChargeAmount
+          - st_surChargeInd
+          - st_productCode
+        description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+        items:
+          type: string
+      filters:
+        type: array
+        example:
+          - field: o_settleDateType
+            values:
+              - '1'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+    title: SettlementSearchRequest
+    description: Request object for settlement search results.
+  SettlementSummaryRequest:
+    type: object
+    required:
+      - filters
+      - from
+      - pivot1
+      - to
+    properties:
+      filters:
+        type: array
+        example:
+          - field: o_settleDateType
+            values:
+              - '1'
+          - field: o_timeZone
+            values:
+              - '2'
+        description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+        items:
+          $ref: '#/definitions/FilterRequestData'
+      from:
+        type: string
+        example: 20210221
+        description: YYYYMMDD string denoting the date for the query.
+      pivot1:
+        type: string
+        example: bi_cardBrand
+        description: 'The field value used as a pivot point, represents the [ group by PIVOT1 ] clause in a sql query.'
+      pivot2:
+        type: string
+        example: st_currency
+        description: 'The field value used as a second pivot point, represents the second position of a [ group by 1, PIVOT2 ] clause in a sql query.'
+      to:
+        type: string
+        example: 20210227
+        description: YYYYMMDD string denoting the date for the query.
+    title: SettlementSummaryRequest
+    description: Request object for authorization summary report creation.
+  SettlementSummaryResponse:
+    type: object
+    properties:
+      amountTotal:
+        type: number
+        format: double
+        example: 11909212
+        description: The total transaction dollar amount of all matching rows grouped by pivot.
+      refundCount:
+        type: integer
+        format: int64
+        example: 4020
+        description: The total number of refund transactions.
+      rejectCount:
+        type: integer
+        format: int64
+        example: 0
+        description: The total number of rejected settlement transactions.
+      response1:
+        type: string
+        example: 1
+        description: 'The enum ordinal value of the first queried pivot point, represents the grouped PIVOT1 response of a sql query.'
+      response2:
+        type: string
+        example: 0
+        description: 'The enum ordinal value of the second queried pivot point, represents the grouped PIVOT2 response of a sql query.'
+      response3:
+        type: string
+        example: 11
+        description: 'The enum ordinal value of the third queried pivot point, represents the grouped PIVOT3 response of a sql query.'
+      salesCount:
+        type: integer
+        format: int64
+        example: 4499044
+        description: The total number of transactions.
+    title: SettlementSummaryResponse
+    description: Summary response object which maps settlement data points returned from the grouped by query request.
   SummaryMetaData:
     type: object
     properties:
