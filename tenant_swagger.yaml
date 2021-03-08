@@ -58,9 +58,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Map«string,object»'
+                type: object
+                additionalProperties: true
         201:
           description: Created
           content: {}
@@ -183,9 +182,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Map«string,object»'
+                type: object
+                additionalProperties: true
         201:
           description: Created
           content: {}
@@ -309,9 +307,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Map«string,object»'
+                type: object
+                additionalProperties: true
         201:
           description: Created
           content: {}
@@ -434,9 +431,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Map«string,object»'
+                type: object
+                additionalProperties: true
         201:
           description: Created
           content: {}
@@ -560,9 +556,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Map«string,object»'
+                type: object
+                additionalProperties: true
         201:
           description: Created
           content: {}
@@ -686,9 +681,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Map«string,object»'
+                type: object
+                additionalProperties: true
         201:
           description: Created
           content: {}
@@ -812,9 +806,8 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Map«string,object»'
+                type: object
+                additionalProperties: true
         201:
           description: Created
           content: {}
