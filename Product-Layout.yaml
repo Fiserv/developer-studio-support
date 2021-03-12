@@ -16,13 +16,13 @@ productPage:
         - contextualNavigationCards: #cnav card
           - contextualNavigationCard:
             - title: Getting Started
-            - description: Get Started with Developer Portal.
+            - description: Get Started with Client Line X.
             - link: 
               - type: markdown
               - uri: /docs/getting-started.md
           - contextualNavigationCard:
             - title: Tutorials
-            - description: Learn how to integrate with Developer Portal.
+            - description: Learn how to integrate with Client Line X.
             - link: 
               - type: markdown
               - uri: /docs/tutorials.md
