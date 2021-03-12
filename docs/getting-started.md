@@ -236,6 +236,3 @@ Asterisks
 ___
 
 Underscores
-
-### <a name="credits"/> Credits
-Most of this information was pulled from [Adam Pritchard's Mardkown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). Thank you Adam for putting together this cheatsheet!
