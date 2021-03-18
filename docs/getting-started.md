@@ -1,6 +1,6 @@
 # Getting Started
 
-## Welcome to Reporting
+## Welcome to Reporting ![CLX](../assets/images/clx_image.png "CLX")
 
 Reporting through CLX APIs provides the developer community the ability to retrieve transaction, chargeback, funding and settlement information in a simple and intuitive manner. You will find that access to itemized or summary data can be initiated programmatically for statistical analysis purposes. 
 
