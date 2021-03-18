@@ -1,238 +1,41 @@
 # Getting Started
 
-## Welcome to ClientLineX!
+## Welcome to Reporting
 
-To onboard properly into the Fiserv ClientLineX as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.
+Reporting through CLX APIs provides the developer community the ability to retrieve transaction, chargeback, funding and settlement information in a simple and intuitive manner. You will find that access to itemized or summary data can be initiated programmatically for statistical analysis purposes. 
 
-# Using Markdown in Documentation
+# Domain Models
 
-### What is Markdown?
->Markdown is a text-to-HTML conversion tool for web writers.
+## What are Domain Models?
+Domain models represent the type of data that you may be interested in.  IE authorization transactions, chargebacks, etc. Reporting supports the following domain models. 
 
->Markdown allows you to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML).
+### Authorizations 
+>Authorizations refers to the transactions as soon as they are received by the receiving end point. An authorization can either be Approved or Declined. There are many details associated with the transaction that will determine where the authorization is ultimately routed to. The transaction details are captured in this report.
 
-For example, this entire page was created using Markdown!
+### Chargebacks
+>The Disputes Overview provides an overview of Outstanding, Reversed, and Closed Chargebacks. Merchants can quickly see the total number of Open, Fulfilled, and Expired Retrievals, as well as the total number of Chargebacks that are Open, Closed, and Reversed.
 
-Below is a quick reference of all the Markdown syntax that is supported by Stoplight.
+### Disbursements
+>TBD
 
-### Table of Contents  
-* [Headers](#headers)
-* [Emphasis](#emphasis)  
-* [Lists](#lists)  
-* [Links](#lnks)  
-* [Images](#imgs)  
-* [Code and Syntax Highlighting](#code)  
-* [Tables](#tables)  
-* [Blockquotes](#blockquotes)   
-* [Horizontal Rule](#hr)
-* [Credits](#credits)
+### Fraud Detect
+>TBD
 
-## <a name="headers"/>  Headers
+### Funding
+>TBD
 
-```no-highlight
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
-```
+### Retrievals
+>While there are many reasons an issuing bank may send a retrieval request, the notification process can be very simple. The Retrievals selection will help you facilitate the process of retrieving and fulfilling sales draft requests. In some instances, unanswered retrieval requests can result in a chargeback being initiated by the issuing bank.
 
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+### Settlements
+>The Search option allows you to perform searches on specific card numbers over time. This report option provides a list of transactions associated with a specific cardholder account number for up to 13 months.
 
-## <a name="emphasis"/> Emphasis
+# Meta Data
 
-```no-highlight
-Emphasis, aka italics, with *asterisks* or _underscores_.
+### What is Meta Data?
+Meta data are the fields and pivots that comprise a report.  What fields a user would like to be shown in an itemized report or what pivots a user would like to use in a summary report. By calling the `metaData` API for a particular report type, the developer will get access to all the available fields and pivots to build their own customizable report. 
 
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
+# API Structure
 
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-```
-
-Emphasis, aka italics, with *asterisks* or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-
-## <a name="lists"/> Lists
-
->In this example, leading and trailing spaces are shown with with dots: ⋅⋅⋅
-
-```no-highlight
-1. First ordered list item
-2. Another item
-   ..- Unordered sub-list
-3. Actual numbers don't matter, just that it's a number
-   ..1. Ordered sub-list
-4. And another item
-
-...You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
-```
-
-1. First ordered list item
-2. Another item
-     - Unordered sub-list
-3. Actual numbers don't matter, just that it's a number
-     1. Ordered sub-list
-4. And another item
-
-   You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
-
-## <a name="lnks"/> Links
-
-There are two ways to create links.
-
-```no-highlight
-[I'm an inline-style link](https://www.google.com)
-
-[I'm a reference-style link][https://www.google.com "Google's Homepage"]
-
-[I'm a relative link to the ./03a-stoplight-flavored-markdown.md file][./03a-stoplight-flavored-markdown.md]
-```
-
-[I'm an inline-style link](https://www.google.com)
-
-[I'm a reference-style link][https://www.google.com "Google's Homepage"]
-
-[I'm a relative link to the ./03a-stoplight-flavored-markdown.md file][./03a-stoplight-flavored-markdown.md]
-
-
-## <a name="imgs"/> Images
-
-```no-highlight
-Here's our logo (hover to see the title text):
-
-![Stoplight Logo](https://pbs.twimg.com/profile_images/641056907474538498/qIbg0pZP_bigger.png "Stoplight Logo")
-```
-
-Here's our logo (hover to see the title text):
-
-![Stoplight Logo](https://pbs.twimg.com/profile_images/641056907474538498/qIbg0pZP_bigger.png "Stoplight Logo")
-
-## <a name="code"/> Code and Syntax Highlighting
-
-Inline `code` has `back-ticks around` it.
-
->In the examples below, remove the three back-ticks <code>```</code> at the start and end of the javascript code fence before using.
-
-<pre lang="no-highlight"><code>```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
- </code></pre>
-
-```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
->Use language tags to change the syntax highlighting:
-
-<pre lang="no-highlight"><code>```json
-{
-  "JSON": "Syntax Highlighting"
-}
-```
-</code></pre>
-
-```json
-{
-  "JSON": "Syntax Highlighting"
-}
-```
-
-## <a name="tables"/> Tables
-
-Tables aren't part of the core Markdown spec, but they are part of GFM and *Markdown Here* supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.
-
-```no-highlight
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-```
-
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-
-## <a name="blockquotes"/> Blockquotes
-
-```no-highlight
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-
-Quote break.
-
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
-```
-
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-
-Quote break.
-
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
-
-## <a name="hr"/> Horizontal Rule
-
-```
-Three or more...
-
----
-
-Hyphens
-
-***
-
-Asterisks
-
-___
-
-Underscores
-```
-
-Three or more...
-
----
-
-Hyphens
-
-***
-
-Asterisks
-
-___
-
-Underscores
+## Data Retrieval
+>Data can be accessed in two ways. Each domain model supports both itemized transaction download as well as summarized data. In order to utilize the API for the data that you are interested, the developer will need to retrieve the meta data associated with that domain model. 
