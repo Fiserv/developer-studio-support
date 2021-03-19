@@ -524,6 +524,7 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: ''
   /v1/chargeback/details/byDate:
     post:
       tags:
