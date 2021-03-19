@@ -3,8 +3,11 @@ info:
   title: Reporting
   description: API Descriptions
   version: '1.0'
+  contact:
+    name: CLX Development
+    email: clx@clx.com
 servers:
-  - url: '//localhost:5005/'
+  - url: '//localhost:5005'
 tags:
   - name: Authorization Summary
     description: Analyze authorizations through various pivot and filter options
