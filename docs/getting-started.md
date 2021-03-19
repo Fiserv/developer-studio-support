@@ -1,6 +1,6 @@
 # Getting Started
 
-## Welcome to Reporting ![CLX](../assets/images/clx_image.png "CLX")
+## Welcome to Reporting
 
 Reporting through CLX APIs provides the developer community the ability to retrieve transaction, chargeback, funding and settlement information in a simple and intuitive manner. You will find that access to itemized or summary data can be initiated programmatically for statistical analysis purposes. 
 
@@ -16,10 +16,21 @@ Domain models represent the type of data that you may be interested in.  IE auth
 >The Disputes Overview provides an overview of Outstanding, Reversed, and Closed Chargebacks. Merchants can quickly see the total number of Open, Fulfilled, and Expired Retrievals, as well as the total number of Chargebacks that are Open, Closed, and Reversed.
 
 ### Disbursements
->TBD
+>Fiserv’s Digital Disbursement product allows a business to create a payment to a consumer (B2C) or another business (B2B) electronically.  Likewise, the product allows the recipient to select the method to be used to disburse the payment.
+>
+>The basic steps used to complete a Digital Disbursement are as follows:
+> - Merchant Identifies the Recipient(s)
+> - Merchant Initiates the Payment(s)
+> - Merchant Approves the Payment(s) via Workflow Management 
+> - Merchant Notifies the Recipient(s)
+> - Recipient accepts the Payment (Acceptance Process)
+> - Recipient selects a Disbursement Method
+> - Fiserv disburses Funds to the recipient  via the chosen method.
 
 ### Fraud Detect
->TBD
+>Fraudsters are continually becoming more sophisticated and discovering new ways to steal sensitive customer data. As businesses and financial institutions strive to find fraud mitigation strategies, First Data provides an integrated and powerful solution that can address total loss prevention needs for payment and non-payment fraud.
+>
+>Fraud Detect is an ecommerce solution that enables merchants to reduce chargebacks while driving profits and providing a frictionless customer experience.  Based on machine learning that uses complex rules and algorithms, it provides real time, risk-based scoring decisions.  Fraud Detect’s machine learning solution utilizes decisions made by artificial intelligence and human analysis to improve accuracy and effectiveness.  
 
 ### Funding
 >TBD

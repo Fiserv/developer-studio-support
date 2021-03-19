@@ -106,6 +106,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AuthorizationSearchResponse'
+              examples:
+                example-1:
+                  value:
+                    response:
+                      - a_accountNumber: 447612XXXXXX1284
+                        a_approvalCode: 1
+                        a_paymentMethod: 5
+                        a_declineReason: 1
+                        a_amount: 27.2
+                        a_transactionDateTime: '02/17/2021 12:11:23 AM'
+                        a_currency: 1
+                        a_authCode: 81294
+                        a_type: 2
+                        a_cardExpiryDate: '1123'
+                        a_network: 2
+                      - a_accountNumber: 406012XXXXXX1280
+                        a_approvalCode: 1
+                        a_paymentMethod: 4
+                        a_declineReason: 1
+                        a_amount: 37.89
+                        a_transactionDateTime: '02/17/2021 12:11:33 AM'
+                        a_currency: 1
+                        a_authCode: 04123C
+                        a_type: 2
+                        a_cardExpiryDate: '524'
+                        a_network: 2
         '201':
           description: Created
           content: {}
@@ -323,9 +349,20 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
+              examples:
+                example-1:
+                  value:
+                    - amountTotal: 11909212
+                      approvedCount: 721
+                      response1: American Express
+                      response2: Non Mobile Wallet
+                      response3: Verification
+                      totalCount: 757
         '201':
           description: Created
           content: {}
+        '400':
+          description: Bad Request
         '401':
           description: Unauthorized
           content: {}
@@ -487,6 +524,7 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: ''
   /v1/chargeback/details/byDate:
     post:
       tags:
@@ -557,6 +595,80 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ChargebackSearchResponse'
+              examples:
+                example-1:
+                  value:
+                    response:
+                      - cb_Reason: 6
+                        cb_recurring: 0
+                        cb_tokenResponseInd: 1
+                        cb_transactionType: 3
+                        cb_transactionAmount: 24.45
+                        cb_externalMid: '3721234880'
+                        cb_first6: '411234'
+                        cb_ECIndicator: 6
+                        cb_workType: 1
+                        cb_dueDate: 03/07/2021
+                        cb_last4: '5643'
+                        cb_responseReceived: 'N'
+                        cb_currency: 1
+                        cb_backendMID: '372123480'
+                        cb_chargebackAmount: 24.45
+                        cb_paymentMethod: 10
+                        cb_adjDate: 02/23/2021
+                        cb_accountNumber: 414712XXXXXX1243
+                        cb_receivedDate: 02/19/2021
+                        cb_transactionDate: 02/14/2021
+                        cb_authCode: 06127D
+                        cb_sendMode: 1
+                        cb_merchantCategory: 5814
+                        cb_reasonCode: '1261'
+                        cb_referenceNumber: '2494312345678465601'
+                        cb_category: 1
+                        cb_statusDate: 03/08/2021
+                        cb_authNetwork: 2
+                        cb_winLoss: 2
+                        cb_mobileWallet: 0
+                        cb_status: 2
+                        cb_invoiceNumber: DWXXXX4ZWCS
+                        cb_disputeID: '8112345678001'
+                        cb_dispositionDate: 02/20/2021
+                        cb_Disposition: 71
+                      - cb_Reason: 1
+                        cb_recurring: 0
+                        cb_tokenResponseInd: 1
+                        cb_transactionType: 3
+                        cb_transactionAmount: 10
+                        cb_externalMid: '371234567884'
+                        cb_first6: '441234'
+                        cb_ECIndicator: 6
+                        cb_workType: 1
+                        cb_dueDate: 03/07/2021
+                        cb_last4: '4124'
+                        cb_responseReceived: 'N'
+                        cb_currency: 1
+                        cb_backendMID: '3721234567884'
+                        cb_chargebackAmount: 10
+                        cb_paymentMethod: 10
+                        cb_adjDate: 02/23/2021
+                        cb_accountNumber: 440012XXXXXX1234
+                        cb_receivedDate: 02/18/2021
+                        cb_transactionDate: 01/27/2021
+                        cb_authCode: 03102D
+                        cb_sendMode: 1
+                        cb_merchantCategory: 5814
+                        cb_reasonCode: '1040'
+                        cb_referenceNumber: '24431123456786649'
+                        cb_category: 1
+                        cb_statusDate: 03/08/2021
+                        cb_authNetwork: 2
+                        cb_winLoss: 2
+                        cb_mobileWallet: 0
+                        cb_status: 2
+                        cb_invoiceNumber: DW9XXXXK5MZ
+                        cb_disputeID: '810412343501'
+                        cb_dispositionDate: 02/20/2021
+                        cb_Disposition: 71
         '201':
           description: Created
           content: {}
@@ -749,6 +861,19 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ChargebackSummaryRequest'
+            examples:
+              example-1:
+                value:
+                  filters:
+                    - field: o_chargebackDateType
+                      values:
+                        - '1'
+                    - field: cb_currency
+                      values:
+                        - '1'
+                  from: '20210201'
+                  pivot1: bi_cardBrand
+                  to: '20210227'
         required: true
       responses:
         '200':
@@ -759,6 +884,15 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
+              examples:
+                example-1:
+                  value:
+                    - amountTotal: 11909212
+                      approvedCount: 721
+                      response1: American Express
+                      response2: Non Mobile Wallet
+                      response3: Verification
+                      totalCount: 757
         '201':
           description: Created
           content: {}
@@ -971,6 +1105,110 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DisbursementSearchResponse'
+              examples:
+                example-1:
+                  value:
+                    response:
+                      - ds_recipientFName: FNAME
+                        ds_accountLastFour: '0013'
+                        ds_city: JOHNS CREEK
+                        ds_merchantStatus: 1
+                        ds_createDate: 11/23/2020
+                        ds_expiryDate: 03/06/2021
+                        ds_recipientReason: 0
+                        ds_recipientIdentifier: SPECIAL_CODE
+                        ds_transactionPaymentNumber: '12345679168'
+                        ds_recipientGuest: 1
+                        ds_recipientTin: 10/21/1981
+                        ds_recipientStatus: 2
+                        ds_paymentId: 0eccd898-bb2a-4ec6-ab7f-724161560beb
+                        ds_recipientComments: New Business Recipients
+                        ds_paymentType: 2
+                        ds_email: ABCD.EFHIJ@XYZ.COM
+                        ds_applyDate: 03/03/2021
+                        ds_recipientLName: LNAME
+                        ds_recipientExtension: '2145'
+                        ds_postalCode: '30097'
+                        ds_paymentDate: 03/04/2021
+                        ds_transactionStatus: 7
+                        ds_recipientIdentifierValue: '4383'
+                        ds_mid: 526XXXXXXX83
+                        ds_feeAmount: 0
+                        ds_transactionAmount: 112.94
+                        ds_recipientPhone: 555-555-2754
+                        ds_paymentAmount: 112.94
+                        ds_merchantId: AF6262DXXXXXXXXD6F1
+                        ds_controlNumber: '454567'
+                        ds_fundingAccount: '12345678'
+                        ds_currency: 1
+                        ds_paymentStatus: 10
+                        ds_paymentChannel: 3
+                        ds_paymentVendorId: MERCHANTCUSTOMERID-12347212
+                        ds_merchantName: Merchant Name
+                        ds_transactionDate: 03/03/2021
+                        ds_origId: '12345678'
+                        ds_paymentTime: '2021-03-04 14:27:35'
+                        ds_recipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                        ds_paymentRecipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                        ds_transactionClaimNumber: '801'
+                        ds_referenceId: merchantTransactionId-430027
+                        ds_settlementStatus: 0
+                        ds_state: 11
+                        ds_returnCode: '712'
+                        ds_country: USA
+                        ds_transactionId: TID-79b3e1f9-5b15-4ce1-93e4-e92c9dd64b34
+                        ds_recipientType: 1
+                        ds_streetOne: MAIN STREET
+                      - ds_recipientFName: FNAME
+                        ds_accountLastFour: '0013'
+                        ds_city: JOHNS CREEK
+                        ds_merchantStatus: 1
+                        ds_createDate: 11/23/2020
+                        ds_expiryDate: 03/06/2021
+                        ds_recipientReason: 0
+                        ds_recipientIdentifier: SPECIAL_CODE
+                        ds_transactionPaymentNumber: '12345679168'
+                        ds_recipientGuest: 1
+                        ds_recipientTin: 10/21/1981
+                        ds_recipientStatus: 2
+                        ds_paymentId: 0eccd898-bb2a-4ec6-ab7f-xxxxxx0beb
+                        ds_recipientComments: New Business Recipients
+                        ds_paymentType: 2
+                        ds_email: XYZ.EFHIJ@XYZ.COM
+                        ds_applyDate: 03/03/2021
+                        ds_recipientLName: LNAME
+                        ds_recipientExtension: '2145'
+                        ds_postalCode: '30097'
+                        ds_paymentDate: 03/04/2021
+                        ds_transactionStatus: 7
+                        ds_recipientIdentifierValue: '4383'
+                        ds_mid: 526XXXXXXX83
+                        ds_feeAmount: 0
+                        ds_transactionAmount: 112.94
+                        ds_recipientPhone: 555-555-4444
+                        ds_paymentAmount: 115.94
+                        ds_merchantId: AF6262DXXXXXXXXD6F1
+                        ds_controlNumber: '454567'
+                        ds_fundingAccount: '12345678'
+                        ds_currency: 1
+                        ds_paymentStatus: 10
+                        ds_paymentChannel: 3
+                        ds_paymentVendorId: MERCHANTCUSTOMERID-12347212
+                        ds_merchantName: Merchant Name
+                        ds_transactionDate: 03/03/2021
+                        ds_origId: '12345678'
+                        ds_paymentTime: '2021-03-04 14:27:35'
+                        ds_recipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                        ds_paymentRecipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                        ds_transactionClaimNumber: '801'
+                        ds_referenceId: merchantTransactionId-430027
+                        ds_settlementStatus: 0
+                        ds_state: 11
+                        ds_returnCode: '712'
+                        ds_country: USA
+                        ds_transactionId: TID-79b3e1f9-5b15-4ce1-93e4-e92c9dd64b34
+                        ds_recipientType: 1
+                        ds_streetOne: 2 MAIN STREET
         '201':
           description: Created
           content: {}
@@ -998,6 +1236,79 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DisbursementSearchMetaData'
+              examples:
+                example-1:
+                  value:
+                    fields:
+                      - id: ds_merchantStatus
+                        name: Merchant Status
+                        type: Map
+                        description: The current status of the merchant.
+                        mapping:
+                          '0': Unknown
+                          '1': Active
+                          '2': Inactive
+                      - id: ds_merchantId
+                        name: Merchant ID
+                        type: String
+                        description: System generated unique merchant id.
+                      - id: ds_merchantName
+                        name: Merchant Name
+                        type: String
+                        description: The name of the merchant.
+                      - id: ds_mid
+                        name: MID
+                        type: String
+                        description: North merchant back end id.
+                      - id: ds_origId
+                        name: Originator ID
+                        type: String
+                        description: Originator id of the merchant.
+                      - id: ds_fundingAccount
+                        name: Funding Account
+                        type: String
+                        description: Disbursement funding account.
+                      - id: ds_transactionId
+                        name: Txn ID
+                        type: String
+                        description: System generated unique transaction id.
+                      - id: ds_referenceId
+                        name: Txn Reference ID
+                        type: String
+                        description: Reference id of the transaction.
+                      - id: ds_controlNumber
+                        name: Txn Control Number
+                        type: String
+                        description: Control number of the transaction.
+                    filters:
+                      - field: o_disbursementDateType
+                        type: Choice
+                        mapping:
+                          '0': Payment Date
+                          '1': Apply Date
+                          '2': Expiry Date
+                      - field: ds_mid
+                        type: Text
+                      - field: ds_transactionId
+                        type: Text
+                      - field: ds_transactionClaimNumber
+                        type: Text
+                      - field: ds_transactionPaymentNumber
+                        type: Text
+                      - field: ds_paymentRecipientId
+                        type: Text
+                      - field: ds_referenceId
+                        type: Text
+                      - field: ds_controlNumber
+                        type: Text
+                      - field: ds_paymentVendorId
+                        type: Text
+                      - field: ds_merchantStatus
+                        type: Choice
+                        mapping:
+                          '0': Unknown
+                          '1': Active
+                          '2': Inactive
         '401':
           description: Unauthorized
           content: {}
@@ -1020,6 +1331,22 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DisbursementSummaryRequest'
+            examples:
+              example-1:
+                value:
+                  filters:
+                    - field: o_disbursementDateType
+                      values:
+                        - '1'
+                    - field: o_timeZone
+                      values:
+                        - '2'
+                    - field: ds_currency
+                      values:
+                        - '1'
+                  from: '20210201'
+                  pivot1: ds_paymentStatus
+                  to: '20210228'
         required: true
       responses:
         '200':
@@ -1030,6 +1357,15 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
+              examples:
+                example-1:
+                  value:
+                    - amountTotal: 11909212
+                      approvedCount: 721
+                      response1: American Express
+                      response2: Non Mobile Wallet
+                      response3: Verification
+                      totalCount: 757
         '201':
           description: Created
           content: {}
@@ -1057,6 +1393,39 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DisbursementSummaryMetaData'
+              examples:
+                example-1:
+                  value:
+                    filters:
+                      - field: o_disbursementDateType
+                        type: Choice
+                        mapping:
+                          '0': Payment Date
+                          '1': Apply Date
+                          '2': Expiry Date
+                      - field: ds_mid
+                        type: Text
+                      - field: ds_merchantStatus
+                        type: Choice
+                        mapping:
+                          '0': Unknown
+                          '1': Active
+                          '2': Inactive
+                    pivotFields:
+                      ds_currency: Txn Currency
+                      ds_settlementStatus: Settlement Status
+                      o_txnWeek: Txn Week
+                      ds_paymentStatus: Payment Status
+                      ds_paymentType: Payment Type
+                      ds_paymentChannel: Payment Channel
+                      ds_merchantStatus: Merchant Status
+                      o_txnDay: Txn Day
+                      ds_merchantName: Merchant Name
+                      o_txnMonth: Txn Month
+                      ds_transactionStatus: Txn Status
+                      o_txnYear: Txn Year
+                      ds_mid: MID
+                      o_txnQuarter: Txn Quarter
         '401':
           description: Unauthorized
           content: {}
@@ -1079,6 +1448,38 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FraudDetectSearchRequest'
+            examples:
+              example-1:
+                value:
+                  date: '20210217'
+                  fields:
+                    - f_type
+                    - f_paymentAmount
+                    - f_entryMethod
+                    - f_score
+                    - f_responseDecision
+                    - f_responseDuration
+                    - f_binID
+                    - f_currency
+                    - f_pinPresent
+                    - f_scheme
+                    - f_merchLocID
+                    - f_accountType
+                    - f_declineReasonOne
+                    - f_declineReasonTwo
+                    - f_loadDate
+                    - f_fraudID
+                    - f_scoreResult
+                  filters:
+                    - field: scoremin
+                      values:
+                        - '0'
+                    - field: scoremax
+                      values:
+                        - '100'
+                    - field: f_fraudID
+                      values:
+                        - 'MCD_MOBILEORDERING_US,MCD_WALLET_GER'
         required: true
       responses:
         '200':
@@ -1114,6 +1515,91 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FraudDetectSearchMetaData'
+              examples:
+                example-1:
+                  value:
+                    fields:
+                      - id: f_paymentAmount
+                        name: Payment Amount
+                        type: Double
+                        description: The amount of payment transaction.
+                      - id: f_entryMethod
+                        name: Entry Method
+                        type: Map
+                        description: Entry method of the transaction.
+                        mapping:
+                          '0': Unknown
+                          '1': Manual
+                          '2': Magnetic Stripe
+                          '3': Optical Card Reader
+                          '4': EMV
+                          '5': Contactless Chip
+                          '6': Mobile & ECommerce
+                          '7': Fallback to Mag Stripe
+                          '8': Bar Code
+                          '9': Not Specified
+                          '10': Credential on File
+                          '11': Contactless Magnetic Stripe
+                      - id: f_score
+                        name: Response Score
+                        type: Integer
+                        description: The score of the transaction.
+                      - id: f_responseDecision
+                        name: Response Decision
+                        type: Map
+                        description: Response decision from scoring engine.
+                        mapping:
+                          '0': Unknown
+                          '1': Approved
+                          '2': Declined
+                      - id: f_responseDuration
+                        name: Response Duration
+                        type: Integer
+                        description: The amount of time in ms to score the transaction.
+                      - id: f_binID
+                        name: Bin ID
+                        type: String
+                        description: The bin id of the card used in the transaction.
+                    filters:
+                      - field: scoremin
+                        type: DecimalMin
+                      - field: scoremax
+                        type: DecimalMax
+                      - field: f_type
+                        type: Choice
+                        mapping:
+                          '0': Unknown
+                          '1': Totals
+                          '2': Purchase
+                          '3': Pre Auth Request
+                          '4': Pre Auth Complete
+                          '5': Reversal
+                          '6': Return
+                          '7': Cancellation
+                          '8': Mail Auth
+                          '9': Activate
+                          '10': Reload
+                          '11': Verification
+                          '12': TeleCheck
+                          '13': Start Fueling
+                          '14': Unknown
+                          '15': Fee
+                          '16': Withdrawal
+                          '17': Deposit
+                          '18': Transfer
+                          '19': Balance Inquiry
+                          '20': Score Fraud
+                          '21': Generate Token
+                          '22': Adjustment
+                          '23': Report Lost/Stolen
+                          '24': Close Account
+                          '25': Freeze Account
+                          '26': Unfreeze Account
+                          '27': Transaction History
+                          '28': Timeout Reversal
+                          '29': Setup Auto-reload
+                          '30': Return Reversal
+                          '31': Cash Back
         '401':
           description: Unauthorized
           content: {}
@@ -1136,6 +1622,29 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FraudDetectSummaryRequest'
+            examples:
+              example-1:
+                value:
+                  filters:
+                    - field: f_type
+                      values:
+                        - '2'
+                        - '3'
+                    - field: scoremin
+                      values:
+                        - '0'
+                    - field: scoremax
+                      values:
+                        - '100'
+                    - field: f_currency
+                      values:
+                        - '1'
+                    - field: o_timeZone
+                      values:
+                        - '2'
+                  from: '20210201'
+                  pivot1: f_accountType
+                  to: '20210302'
         required: true
       responses:
         '200':
@@ -1146,6 +1655,15 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
+              examples:
+                example-1:
+                  value:
+                    - amountTotal: 11909212
+                      approvedCount: 721
+                      response1: American Express
+                      response2: Non Mobile Wallet
+                      response3: Verification
+                      totalCount: 757
         '201':
           description: Created
           content: {}
@@ -1173,6 +1691,88 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FraudDetectSummaryMetaData'
+              examples:
+                example-1:
+                  value:
+                    filters:
+                      - field: scoremin
+                        type: DecimalMin
+                      - field: scoremax
+                        type: DecimalMax
+                      - field: f_type
+                        type: Choice
+                        mapping:
+                          '0': Unknown
+                          '1': Totals
+                          '2': Purchase
+                          '3': Pre Auth Request
+                          '4': Pre Auth Complete
+                          '5': Reversal
+                          '6': Return
+                          '7': Cancellation
+                          '8': Mail Auth
+                          '9': Activate
+                          '10': Reload
+                          '11': Verification
+                          '12': TeleCheck
+                          '13': Start Fueling
+                          '14': Unknown
+                          '15': Fee
+                          '16': Withdrawal
+                          '17': Deposit
+                          '18': Transfer
+                          '19': Balance Inquiry
+                          '20': Score Fraud
+                          '21': Generate Token
+                          '22': Adjustment
+                          '23': Report Lost/Stolen
+                          '24': Close Account
+                          '25': Freeze Account
+                          '26': Unfreeze Account
+                          '27': Transaction History
+                          '28': Timeout Reversal
+                          '29': Setup Auto-reload
+                          '30': Return Reversal
+                          '31': Cash Back
+                      - field: f_entryMethod
+                        type: Choice
+                        mapping:
+                          '0': Unknown
+                          '1': Manual
+                          '2': Magnetic Stripe
+                          '3': Optical Card Reader
+                          '4': EMV
+                          '5': Contactless Chip
+                          '6': Mobile & ECommerce
+                          '7': Fallback to Mag Stripe
+                          '8': Bar Code
+                          '9': Not Specified
+                          '10': Credential on File
+                          '11': Contactless Magnetic Stripe
+                      - field: f_responseDecision
+                        type: Choice
+                        mapping:
+                          '0': Unknown
+                          '1': Approved
+                          '2': Declined
+                      - field: f_responseDuration
+                        type: Decimal
+                    pivotFields:
+                      f_declineReasonOne: Primary Decline Reason
+                      f_pinPresent: Pin Present
+                      o_txnWeek: Txn Week
+                      f_scoreResult: Score Result
+                      f_responseDecision: Response Decision
+                      f_type: Txn Type
+                      f_declineReasonTwo: Secondary Decline Reason
+                      f_accountType: Account Type
+                      o_txnDay: Txn Day
+                      o_txnMonth: Txn Month
+                      f_entryMethod: Entry Method
+                      f_scheme: Scheme
+                      o_txnYear: Txn Year
+                      f_currency: Currency
+                      o_txnQuarter: Txn Quarter
         '401':
           description: Unauthorized
           content: {}
@@ -1195,6 +1795,31 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FundingSearchRequest'
+            examples:
+              example-1:
+                value:
+                  date: '20210303'
+                  fields:
+                    - fd_siteID
+                    - fd_batchDate
+                    - fd_fundedDate
+                    - fd_batchNo
+                    - fd_majorCategory
+                    - fd_minorCategory
+                    - fd_productCode
+                    - fd_creditAmount
+                    - fd_debitAmount
+                    - fd_currency
+                    - fd_dda
+                    - fd_processor
+                    - fd_accountNetAmount
+                    - fd_interchangeCD
+                    - fd_accountCurrency
+                    - fd_referenceNo
+                  filters:
+                    - field: o_accessLevel
+                      values:
+                        - '1'
         required: true
       responses:
         '200':
@@ -1203,6 +1828,42 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FundingSearchResponse'
+              examples:
+                example-1:
+                  value:
+                    response:
+                      - fd_authCurrency: 1
+                        fd_interchangeCD: '000'
+                        fd_siteID: 345123456884
+                        fd_minorCategory: 747
+                        fd_creditAmount: 0
+                        fd_referenceNo: 87800
+                        fd_debitAmount: -47.97
+                        fd_processor: 1
+                        fd_majorCategory: 1
+                        fd_accountCurrency: 0
+                        fd_batchNo: 80100380671
+                        fd_productCode: 5
+                        fd_accountNetAmount: 0
+                        fd_batchDate: 03/08/2021
+                        fd_dda: XXXXXX9377
+                        fd_fundedDate: 03/08/2021
+                      - fd_authCurrency: 1
+                        fd_interchangeCD: '000'
+                        fd_siteID: 341234560884
+                        fd_minorCategory: 247
+                        fd_creditAmount: 47.97
+                        fd_referenceNo: 87800
+                        fd_debitAmount: 0
+                        fd_processor: 1
+                        fd_majorCategory: 1
+                        fd_accountCurrency: 0
+                        fd_batchNo: 80100380671
+                        fd_productCode: 5
+                        fd_accountNetAmount: 0
+                        fd_batchDate: 03/08/2021
+                        fd_dda: XXXXXX9377
+                        fd_fundedDate: 03/08/2021
         '201':
           description: Created
           content: {}
@@ -1230,6 +1891,88 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FundingSearchMetaData'
+              examples:
+                example-1:
+                  value:
+                    fields:
+                      - id: fd_siteID
+                        name: Site ID (BE)
+                        type: Long
+                        description: An unique identifier assigned to the merchant. Also known as a MID.
+                      - id: fd_batchDate
+                        name: Batch Date
+                        type: String
+                        description: ''
+                      - id: fd_fundedDate
+                        name: Funded Date
+                        type: String
+                        description: Date when the funding to/from the merchant aassociatedwith this transaction
+                      - id: fd_batchNo
+                        name: Batch No.
+                        type: String
+                        description: Batch number (Batch that pulled this settlement transaction to initiate thee funding) for the transaction.
+                      - id: fd_majorCategory
+                        name: Major Category
+                        type: Map
+                        description: Identifies the major category for the merchant.
+                        mapping:
+                          '0': Unknown
+                          '1': Deposits
+                          '2': Deposits adjustments
+                          '3': Chargeback Reversals
+                          '4': Non Adjustment
+                          '5': Payment
+                          '6': Fee
+                          '7': Interchange Charges
+                          '8': Financial Adjustments
+                          '9': Government Charges
+                          '10': DCC Commission
+                          '11': Service Charges
+                          '12': Chargebacks
+                          '13': Discounts Service Charges
+                          '14': Interchange Assessment
+                          '15': Adjustment
+                          '16': Deposits adjustments
+                    filters:
+                      - field: fd_processor
+                        type: Choice
+                        mapping:
+                          '0': Buypass
+                          '1': North
+                          '2': Compass
+                          '3': Unknown
+                          '4': Omaha
+                          '5': South
+                          '6': Memphis
+                          '7': BAMS (Prop)
+                          '8': TeleCheck
+                          '9': ValueLink
+                          '10': Omni Pay
+                          '11': UK
+                      - field: fd_dda
+                        type: Text
+                      - field: fd_ddaLast4
+                        type: Text
+                      - field: fd_majorCategory
+                        type: Choice
+                        mapping:
+                          '0': Unknown
+                          '1': Deposits
+                          '2': Deposits adjustments
+                          '3': Chargeback Reversals
+                          '4': Non Adjustment
+                          '5': Payment
+                          '6': Fee
+                          '7': Interchange Charges
+                          '8': Financial Adjustments
+                          '9': Government Charges
+                          '10': DCC Commission
+                          '11': Service Charges
+                          '12': Chargebacks
+                          '13': Discounts Service Charges
+                          '14': Interchange Assessment
+                          '15': Adjustment
+                          '16': Deposits adjustments
         '401':
           description: Unauthorized
           content: {}
@@ -1252,6 +1995,16 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FundingSummaryRequest'
+            examples:
+              example-1:
+                value:
+                  filters:
+                    - field: fd_currency
+                      values:
+                        - '1'
+                  from: '20210221'
+                  pivot1: fd_processor
+                  to: '20210227'
         required: true
       responses:
         '200':
@@ -1262,6 +2015,21 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/FundingSummaryResponse'
+              examples:
+                example-1:
+                  value:
+                    - processedAdjustments: 42
+                      processedAmountPaid: 428
+                      processedChargebacksReversals: 2145
+                      processedDeposit: 954
+                      processedFees: 426
+                      processedICCharges: 22
+                      processedNetSales: 526342
+                      processedPaidByOthers: 7123
+                      processedServiceCharges: 254
+                      response1: '1'
+                      response2: '0'
+                      response3: '11'
         '201':
           description: Created
           content: {}
@@ -1289,6 +2057,62 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FundingSummaryMetaData'
+              examples:
+                example-1:
+                  value:
+                    filters:
+                      - field: fd_processor
+                        type: Choice
+                        mapping:
+                          '0': Buypass
+                          '1': North
+                          '2': Compass
+                          '3': Unknown
+                          '4': Omaha
+                          '5': South
+                          '6': Memphis
+                          '7': BAMS (Prop)
+                          '8': TeleCheck
+                          '9': ValueLink
+                          '10': Omni Pay
+                          '11': UK
+                      - field: fd_majorCategory
+                        type: Choice
+                        mapping:
+                          '0': Unknown
+                          '1': Deposits
+                          '2': Deposits adjustments
+                          '3': Chargeback Reversals
+                          '4': Non Adjustment
+                          '5': Payment
+                          '6': Fee
+                          '7': Interchange Charges
+                          '8': Financial Adjustments
+                          '9': Government Charges
+                          '10': DCC Commission
+                          '11': Service Charges
+                          '12': Chargebacks
+                          '13': Discounts Service Charges
+                          '14': Interchange Assessment
+                          '15': Adjustment
+                          '16': Deposits adjustments
+                    pivotFields:
+                      o_txnWeek: Txn Week
+                      fd_siteID: Site ID (BE)
+                      fd_minorCategory: Minor Category
+                      s_altid: Site Alternate ID
+                      s_Name: Site Name
+                      fd_processor: Processor
+                      fd_majorCategory: Major Category
+                      o_txnDay: Txn Day
+                      o_txnMonth: Txn Month
+                      s_city: Site City
+                      o_overall: All
+                      fd_currency: Processed Currency
+                      s_zip: Site Zip Code
+                      s_st_abbr_nm: Site State
+                      o_txnYear: Txn Year
+                      o_txnQuarter: Txn Quarter
         '401':
           description: Unauthorized
           content: {}
@@ -1311,6 +2135,39 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/RetrievalSearchRequest'
+            examples:
+              example-1:
+                value:
+                  date: '20210225'
+                  fields:
+                    - r_backendMID
+                    - r_authNetwork
+                    - r_receivedDate
+                    - r_statusDate
+                    - r_transactionDate
+                    - r_status
+                    - r_Reason
+                    - r_currency
+                    - r_dueDate
+                    - r_ECIndicator
+                    - r_processedTransactionAmount
+                    - r_accountNumber
+                    - r_first6
+                    - r_last4
+                    - r_invoiceNumber
+                    - r_terminalId
+                    - r_disputeID
+                    - r_authCode
+                    - r_trackingNumber
+                    - r_svcCd
+                    - r_merchantCategory
+                    - r_orderNumber
+                    - r_externalMid
+                    - r_referenceNumber
+                  filters:
+                    - field: o_retrievalDateType
+                      values:
+                        - '1'
         required: true
       responses:
         '200':
@@ -1319,6 +2176,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RetrievalSearchResponse'
+              examples:
+                example-1:
+                  value:
+                    response:
+                      - r_referenceNumber: '66512345678078862'
+                        r_ECIndicator: 0
+                        r_receivedDate: 02/16/2021
+                        r_backendMID: '371234567880'
+                        r_authNetwork: 4
+                        r_merchantCategory: 0
+                        r_Reason: 31
+                        r_first6: '601112'
+                        r_last4: '1207'
+                        r_disputeID: '139454219'
+                        r_accountNumber: 601112XXXXXX1207
+                        r_processedTransactionAmount: 32.51
+                        r_statusDate: 03/08/2021
+                        r_invoiceNumber: 2LMTZ
+                        r_transactionDate: 02/09/2021
+                        r_svcCd: '201'
+                        r_currency: 1
+                        r_dueDate: 03/08/2021
+                        r_status: 2
+                      - r_referenceNumber: '66509123456787316'
+                        r_ECIndicator: 0
+                        r_receivedDate: 02/16/2021
+                        r_backendMID: '37212345678883'
+                        r_authNetwork: 4
+                        r_merchantCategory: 0
+                        r_Reason: 31
+                        r_first6: '601100'
+                        r_last4: '6495'
+                        r_disputeID: '131234110'
+                        r_accountNumber: 601112XXXXXX1295
+                        r_processedTransactionAmount: 15.99
+                        r_statusDate: 03/08/2021
+                        r_invoiceNumber: DWPXXXXK7YD
+                        r_transactionDate: 02/13/2021
+                        r_currency: 1
+                        r_dueDate: 03/08/2021
+                        r_status: 2
         '201':
           description: Created
           content: {}
@@ -1346,6 +2244,152 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RetrievalSearchMetaData'
+              examples:
+                example-1:
+                  value:
+                    fields:
+                      - id: r_backendMID
+                        name: Site (BE)
+                        type: String
+                        description: 'Site (BE) - merchant number associated with each the business location. '
+                      - id: r_authNetwork
+                        name: Auth Network
+                        type: Map
+                        description: Authorization network of the credit card utilized for the transaction.
+                        mapping:
+                          '0': Unknown
+                          '1': American Express
+                          '2': Visa
+                          '3': Mastercard
+                          '4': Discover
+                          '5': Pulse
+                          '6': Accel
+                          '7': Interlink
+                          '8': Jeanie
+                          '9': Maestro
+                          '10': NYCE
+                          '11': CU Alliance
+                          '12': Shazam
+                          '13': EBT
+                          '14': AFFN
+                          '15': Telecheck
+                          '16': Diners Club
+                          '17': PayPal
+                          '18': ValueLink
+                          '19': Private Label
+                          '20': Debit/Other
+                          '21': Voyager
+                          '22': ATH
+                          '23': JCB
+                          '24': Star
+                          '25': Star SE
+                          '26': Star W
+                          '27': Star Access
+                          '28': Fleet
+                          '29': Stored Value Systems (SVS)
+                          '30': Wright Express (WEX)
+                          '31': Incomm
+                          '32': Canadian Debit (Interac)
+                          '33': Not Applicable
+                          '34': Moneris
+                          '35': Vaulted Card
+                          '36': Pin-Authenticated Visa Debit (PAVD)
+                          '37': Mastercard MoneySend
+                          '38': Union Pay
+                          '39': Fraud FlexDetect
+                          '40': Certegy
+                          '41': MCI
+                      - id: r_receivedDate
+                        name: Received Date
+                        type: String
+                        description: Date when the Chargeback was initiated.
+                      - id: r_statusDate
+                        name: Status Date
+                        type: String
+                        description: Date for an expected response to the client.
+                      - id: r_transactionDate
+                        name: Txn Date
+                        type: String
+                        description: Original date on a transaction that is being disputed and associated with a specific Chargeback.
+                      - id: r_status
+                        name: Retrieval Status
+                        type: Map
+                        description: Status of Retrieval.
+                        mapping:
+                          '0': Open
+                          '1': Fulfilled
+                          '2': Expired
+                    filters:
+                      - field: o_retrievalDateType
+                        type: Choice
+                        mapping:
+                          '0': Authorization Date
+                          '1': Status Date
+                          '2': Due Date
+                          '3': Retrieval Date
+                      - field: r_accountNumber
+                        type: Text
+                      - field: r_first6
+                        type: Text
+                      - field: r_last4
+                        type: Text
+                      - field: r_invoiceNumber
+                        type: Text
+                      - field: r_disputeID
+                        type: Text
+                      - field: r_referenceNumber
+                        type: Text
+                      - field: amountmin
+                        type: DecimalMin
+                      - field: amountmax
+                        type: DecimalMax
+                      - field: r_orderNumber
+                        type: Text
+                      - field: r_authNetwork
+                        type: Choice
+                        mapping:
+                          '0': Unknown
+                          '1': American Express
+                          '2': Visa
+                          '3': Mastercard
+                          '4': Discover
+                          '5': Pulse
+                          '6': Accel
+                          '7': Interlink
+                          '8': Jeanie
+                          '9': Maestro
+                          '10': NYCE
+                          '11': CU Alliance
+                          '12': Shazam
+                          '13': EBT
+                          '14': AFFN
+                          '15': Telecheck
+                          '16': Diners Club
+                          '17': PayPal
+                          '18': ValueLink
+                          '19': Private Label
+                          '20': Debit/Other
+                          '21': Voyager
+                          '22': ATH
+                          '23': JCB
+                          '24': Star
+                          '25': Star SE
+                          '26': Star W
+                          '27': Star Access
+                          '28': Fleet
+                          '29': Stored Value Systems (SVS)
+                          '30': Wright Express (WEX)
+                          '31': Incomm
+                          '32': Canadian Debit (Interac)
+                          '33': Not Applicable
+                          '34': Moneris
+                          '35': Vaulted Card
+                          '36': Pin-Authenticated Visa Debit (PAVD)
+                          '37': Mastercard MoneySend
+                          '38': Union Pay
+                          '39': Fraud FlexDetect
+                          '40': Certegy
+                          '41': MCI
         '401':
           description: Unauthorized
           content: {}
@@ -1368,6 +2412,19 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/RetrievalSummaryRequest'
+            examples:
+              example-1:
+                value:
+                  filters:
+                    - field: o_retrievalDateType
+                      values:
+                        - '1'
+                    - field: r_currency
+                      values:
+                        - '1'
+                  from: '20210201'
+                  pivot1: bi_issuer
+                  to: '20210228'
         required: true
       responses:
         '200':
@@ -1378,6 +2435,15 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
+              examples:
+                example-1:
+                  value:
+                    - amountTotal: 11909212
+                      approvedCount: 721
+                      response1: American Express
+                      response2: Non Mobile Wallet
+                      response3: Verification
+                      totalCount: 757
         '201':
           description: Created
           content: {}
@@ -1405,6 +2471,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/RetrievalSummaryMetaData'
+              examples:
+                example-1:
+                  value:
+                    filters:
+                      - field: o_retrievalDateType
+                        type: Choice
+                        mapping:
+                          '0': Authorization Date
+                          '1': Status Date
+                          '2': Due Date
+                          '3': Retrieval Date
+                    pivotFields:
+                      bi_issuer: Card Issuer
+                      bi_cardBrand: Card Brand
+                      bi_country: Card Issuing Country
+                      bi_regulated: Card Issuer Regulated
+                      bi_EBTState: Card EBT State
+                      o_txnMonth: Txn Month
+                      s_city: Site City
+                      o_overall: All
+                      s_zip: Site Zip Code
+                      r_status: Retrieval Status
+                      bi_details: Card Issue Detail
+                      o_txnWeek: Txn Week
+                      s_altid: Site Alternate ID
+                      s_Name: Site Name
+                      bi_cardSubType: Card Sub Type
+                      o_txnDay: Txn Day
+                      r_Reason: Retrieval Description
+                      bi_type: Card Issue Type
+                      bi_reloadable: Card Reloadable
+                      s_st_abbr_nm: Site State
+                      bi_cardClass: Card Class
+                      o_txnYear: Txn Year
+                      r_siteID: Site (BE)
+                      bi_binMap: Card Issuer Bin
+                      o_txnQuarter: Txn Quarter
         '401':
           description: Unauthorized
           content: {}
@@ -1427,6 +2530,57 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SettlementSearchRequest'
+            examples:
+              example-1:
+                value:
+                  date: '20210301'
+                  fields:
+                    - st_siteID
+                    - st_externalMID
+                    - st_dbaName
+                    - st_batchDate
+                    - st_terminalID
+                    - st_batchNo
+                    - st_invoiceNo
+                    - st_transactionDate
+                    - st_network
+                    - st_accountNumber
+                    - st_processedTransactionAmount
+                    - st_submittedTransactionAmount
+                    - st_currency
+                    - st_transactionStatus
+                    - st_orderNumber
+                    - st_ECIIndicator
+                    - st_batchSequenceID
+                    - st_type
+                    - st_paymentMethod
+                    - st_authCode
+                    - st_planCode
+                    - st_rejectReason
+                    - st_integrityClass
+                    - st_processor
+                    - st_mobileIndicator
+                    - st_foreignCurrAmount
+                    - st_foreignCurrRate
+                    - st_serviceCode
+                    - st_authorizationType
+                    - st_trckrid
+                    - st_vehicleNumber
+                    - st_odometerReading
+                    - st_driverID
+                    - st_transactionMode
+                    - st_subMerchantID
+                    - st_subMerchantName
+                    - st_convinienceFee
+                    - st_tokenType
+                    - st_acquirerRefNo
+                    - st_surChargeAmount
+                    - st_surChargeInd
+                    - st_productCode
+                  filters:
+                    - field: o_settleDateType
+                      values:
+                        - '1'
         required: true
       responses:
         '200':
@@ -1435,6 +2589,43 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SettlementSearchResponse'
+              examples:
+                example-1:
+                  value:
+                    response:
+                      - st_accountNumber: 512912XXXXXX1283
+                        st_terminalID: '00000'
+                        st_dbaName: 'MERCHANT #122184 Q12'
+                        st_type: 2
+                        st_transactionStatus: 1
+                        st_foreignCurrRate: 0
+                        st_serviceCode: '201'
+                        st_foreignCurrAmount: 0
+                        st_planCode: MC12
+                        st_surChargeAmount: 0
+                        st_paymentMethod: 4
+                        st_processor: 1
+                        st_currency: 1
+                        st_ECIIndicator: 0
+                        st_rejectReason: '00'
+                        st_odometerReading: '000000000'
+                        st_acquirerRefNo: '5270123456781660759'
+                        st_convinienceFee: 0
+                        st_authorizationType: '00'
+                        st_network: 3
+                        st_productCode: 1
+                        st_transactionMode: 2
+                        st_integrityClass: B1
+                        st_authCode: 93342
+                        st_externalMID: '2312345678014'
+                        st_transactionDate: 03/07/2021
+                        st_batchSequenceID: 3170368
+                        st_siteID: 37212347881
+                        st_invoiceNo: 121YK
+                        st_batchNo: 8012341285
+                        st_transactionAmount: 2.85
+                        st_subMerchantName: 'MERCHANT #122184 Q12'
+                        st_batchDate: 03/08/2021
         '201':
           description: Created
           content: {}
@@ -1462,6 +2653,119 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SettlementSearchMetaData'
+              examples:
+                example-1:
+                  value:
+                    fields:
+                      - id: st_siteID
+                        name: Site ID (BE)
+                        type: Long
+                        description: An unique identifier assigned to the merchant. Also known as a MID.
+                      - id: st_externalMID
+                        name: External ID
+                        type: String
+                        description: ''
+                      - id: st_dbaName
+                        name: DBA Name
+                        type: String
+                        description: ''
+                      - id: st_batchDate
+                        name: Batch Date
+                        type: String
+                        description: ''
+                      - id: st_terminalID
+                        name: Terminal ID
+                        type: String
+                        description: Identifies terminal identifier for the transaction.
+                      - id: st_batchNo
+                        name: Batch No.
+                        type: String
+                        description: Batch number (Batch that pulled this settlement transaction to initiate thee funding) for the transaction.
+                      - id: st_invoiceNo
+                        name: Invoice No.
+                        type: String
+                        description: Invoice number for the transaction.
+                      - id: st_transactionDate
+                        name: Txn Date
+                        type: String
+                        description: Date of the authorization transaction.
+                      - id: st_accountNumber
+                        name: 'Account #'
+                        type: String
+                        description: Card number used for authorization transaction.
+                      - id: st_processedTransactionAmount
+                        name: Processed Sales Amount
+                        type: Double
+                        description: Settlement amount associated with the transaction
+                    filters:
+                      - field: o_settleDateType
+                        type: Choice
+                        mapping:
+                          '0': Authorization Date
+                          '1': Settlement Date
+                      - field: st_siteID
+                        type: Choice
+                        mapping: {}
+                      - field: st_invoiceNo
+                        type: Text
+                      - field: st_accountNumber
+                        type: Text
+                      - field: st_first6
+                        type: Text
+                      - field: st_last4
+                        type: Text
+                      - field: processedAmountMin
+                        type: DecimalMin
+                      - field: processedAmountMax
+                        type: DecimalMax
+                      - field: foreignCurrAmountMin
+                        type: DecimalMin
+                      - field: foreignCurrAmountMax
+                        type: DecimalMax
+                      - field: st_type
+                        type: Choice
+                        mapping:
+                          '0': Unknown
+                          '1': Totals
+                          '2': Purchase
+                          '3': Pre Auth Request
+                          '4': Pre Auth Complete
+                          '5': Reversal
+                          '6': Return
+                          '7': Cancellation
+                          '8': Mail Auth
+                          '9': Activate
+                          '10': Reload
+                          '11': Verification
+                          '12': TeleCheck
+                          '13': Start Fueling
+                          '14': Unknown
+                          '15': Fee
+                          '16': Withdrawal
+                          '17': Deposit
+                          '18': Transfer
+                          '19': Balance Inquiry
+                          '20': Score Fraud
+                          '21': Generate Token
+                          '22': Adjustment
+                          '23': Report Lost/Stolen
+                          '24': Close Account
+                          '25': Freeze Account
+                          '26': Unfreeze Account
+                          '27': Transaction History
+                          '28': Timeout Reversal
+                          '29': Setup Auto-reload
+                          '30': Return Reversal
+                          '31': Cash Back
+                      - field: st_transactionStatus
+                        type: Choice
+                        mapping:
+                          '0': Unknown
+                          '1': Processed
+                          '2': Rejected
+                          '3': Declined
+                          '4': Dropped
+                          '5': Cancelled
         '401':
           description: Unauthorized
           content: {}
@@ -1484,6 +2788,23 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SettlementSummaryRequest'
+            examples:
+              example-1:
+                value:
+                  filters:
+                    - field: o_settleDateType
+                      values:
+                        - '1'
+                    - field: o_timeZone
+                      values:
+                        - '2'
+                    - field: o_settleAmountType
+                      values:
+                        - '1'
+                  from: '20210221'
+                  pivot1: bi_cardBrand
+                  pivot2: st_currency
+                  to: '20210227'
         required: true
       responses:
         '200':
@@ -1494,6 +2815,16 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SettlementSummaryResponse'
+              examples:
+                example-1:
+                  value:
+                    - amountTotal: 83526868.58000049
+                      refundCount: 8040
+                      rejectCount: 0
+                      response1: USD
+                      response2: Visa
+                      response3: USD
+                      salesCount: 8998088
         '201':
           description: Created
           content: {}
@@ -1521,6 +2852,69 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SettlementSummaryMetaData'
+              examples:
+                example-1:
+                  value:
+                    filters:
+                      - field: o_settleAmountType
+                        type: Choice
+                        mapping:
+                          '0': Processed
+                          '1': Submitted
+                      - field: o_measuresDisplay
+                        type: Choice
+                        mapping:
+                          '0': Amounts
+                          '1': Counts
+                          '2': Amounts & Counts
+                      - field: o_settleDateType
+                        type: Choice
+                        mapping:
+                          '0': Authorization Date
+                          '1': Settlement Date
+                      - field: o_timeZone
+                        type: Choice
+                        mapping:
+                          '0': UTC
+                          '1': Greenwich
+                          '2': America/New_York
+                          '3': America/Chicago
+                          '4': America/Denver
+                          '5': America/Los_Angeles
+                          '6': America/Halifax
+                          '7': Pacific/Honolulu
+                    pivotFields:
+                      bi_issuer: Card Issuer
+                      bi_cardBrand: Card Brand
+                      st_type: Type
+                      bi_country: Card Issuing Country
+                      bi_regulated: Card Issuer Regulated
+                      st_merchantCategory: Merchant Category
+                      bi_EBTState: Card EBT State
+                      o_txnMonth: Txn Month
+                      s_city: Site City
+                      o_overall: All
+                      s_zip: Site Zip Code
+                      st_planCode: Plan Code
+                      st_paymentMethod: Payment Method
+                      st_processor: Processor
+                      st_ECIIndicator: EC Indicator
+                      bi_details: Card Issue Detail
+                      st_network: Network
+                      o_txnWeek: Txn Week
+                      s_altid: Site Alternate ID
+                      s_Name: Site Name
+                      bi_cardSubType: Card Sub Type
+                      o_txnDay: Txn Day
+                      st_siteID: Site ID (BE)
+                      bi_type: Card Issue Type
+                      st_batchNo: Batch No.
+                      bi_reloadable: Card Reloadable
+                      s_st_abbr_nm: Site State
+                      bi_cardClass: Card Class
+                      o_txnYear: Txn Year
+                      bi_binMap: Card Issuer Bin
+                      o_txnQuarter: Txn Quarter
         '401':
           description: Unauthorized
           content: {}
