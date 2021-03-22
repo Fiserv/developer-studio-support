@@ -1,5 +1,4 @@
 # Getting Started 
-![CLX](https://raw.githubusercontent.com/Fiserv/ClientLineX/develop/assets/images/clx_image.png)
 
 ## Welcome to Reporting
 
