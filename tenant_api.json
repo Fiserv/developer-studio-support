@@ -1,8 +1,8 @@
 {
-  "title": "ClientLine X",
+  "title": "Reporting",
   "name": "CLX",
   "brand": "Carat",
-  "brandLogoURL": "https://raw.githubusercontent.com/fiserv-digital-tech/dev-portal/main/assets/images/Fiserv_Logo.jpg",
+  "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/ClientLineX/main/assets/images/Fiserv_Logo.jpg",
   "solution": "Payments",
   "brandDescription": "Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments).",
   "categories": [
@@ -20,7 +20,7 @@
   ],
   "product": {
     "featured": true,
-    "logoURL": "https://raw.githubusercontent.com/fiserv-digital-tech/dev-portal/main/assets/images/Fiserv_Logo.jpg",
+    "logoURL": "https://raw.githubusercontent.com/Fiserv/ClientLineX/main/assets/images/Fiserv_Logo.jpg",
     "description": "Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.",
     "apiSpecification": "/v1/apis",
     "layout": "/v1/layouts",
