@@ -21,7 +21,7 @@
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/ClientLineX/stage/assets/images/Fiserv_Logo.jpg",
-    "description": "Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.",
+    "description": "TEST Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.",
     "apiSpecification": "/v1/apis",
     "layout": "/v1/layouts",
     "documentation": "/v1/docs",
