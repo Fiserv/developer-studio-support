@@ -1,24 +1,16 @@
-- sections:
+sections:
   - title: Getting Started
-    link: docs/getting-started/overview.md
     open: true
-    sections:
-    - title: Setup a tenant
-      link: docs/getting-started/setup-tenant.md
-      open: true
-      articles:
-      - title: Setup tenant
-        link: docs/getting-started/setup-tenant.md
-      - title: Deploy tenant
-        link: docs/getting-started/deploy-tenant.md
-      - title: Register tenant
-        link: docs/getting-started/register-tenant.md
-    - title: Create a tenant
-      link: docs/getting-started/create-tenant.md
-      articles:
-      - title: Code tenant
-        link: docs/getting-started/code-tenant.md
-      - title: Deploy tenant
-        link: docs/getting-started/deploy-tenant.md
-      - title: Register tenant
-        link: docs/getting-started/register-tenant.md
+    articles:
+      - title: Welcome to Reporting
+        link: /docs/getting-started.md
+  - title: Documentation
+    open: true
+    articles:
+      - title: Documentation
+        link: /docs/documentation.md
+  - title: Tutorials
+    open: true
+    articles:
+      - title: Tutorials
+        link: /docs/tutorials.md
