@@ -1,4 +1,4 @@
-sections:
+- sections:
   - title: Getting Started
     link: /docs/getting-started/overview.md
     open: true
