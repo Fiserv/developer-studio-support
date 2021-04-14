@@ -5,15 +5,3 @@
     articles:
       - title: Welcome to Reporting
         link: /docs/getting-started.md
-  - title: Documentation
-    link: /docs/getting-started/overview.md
-    open: true
-    articles:
-      - title: Documentation
-        link: /docs/getting-started.md
-  - title: Tutorials
-    open: true
-    link: /docs/getting-started.md
-    articles:
-      - title: Tutorials
-        link: /docs/getting-started.md
