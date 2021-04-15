@@ -2,7 +2,7 @@ header:
   productName: Reporting
   productionDescription: Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit their own unique needs. By leveraging itemized data or summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.
   image: 
-    link: "/assets/images/reporting.jpg"
+    link: "/assets/images/clx_image.jpg"
     altText: Reporting
 steps:  
   learnSteps:
@@ -49,29 +49,38 @@ steps:
       description:
       link:
 benefits:
-  - title:
-    description:
-  - title:
-    description:
-  - title:
-    description:
+  - title: API Integration
+    description: Leverage easy to use tools to pull in data for real time insight into customer behavior. Get up and running quickly an easily with or sample processes. 
+  - title: Real Time Data
+    description: Create your own tracking applications with relevant real time data for your business. Utilize actual metrics to create on site dashboards with your own design and brand for an improved customer experience.
+  - title: Checklist
+    description: Leverage our checklist to assure you have what you need for a complete integration into Reporting APIs.
 featuredFeatures:
-  - title:
+  - title: Sample Integrations
     description:
-    tags: ["Enterprise", "Airline"]
+    tags: ["Enterprise"]
     bullets:
-      bullet1: asdfadsfasdfasdfasdfsadfasdfasdfadsfadsfasd
-      bullet2: asdfasdfadsfasdfadsfsadfadsfasdfadsfadsfadsfasdfasdfasdfasdf
+      bullet1: Browse working examples of our integrations. 
+      bullet2: Leverage easy to use tools to pull in data for real time insight into customer behavior.
+      bullet3: Get up and running quickly an easily with or sample processes. 
     links:
-      link1: "/docs/getting-started/getting-started.md"
-  - title:
-    description:
-    tags: ["Enterprise", "Airline"]
+      link1: "/docs/APIs/sample-api.md"
+  - title: API Reference
+    description: 
+    tags: ["Enterprise"]
     bullets:
-      bullet1: asdf
-      bullet2: asdf
+      bullet1: Learn more about our API objects, methods, requests and responses. 
     links:
-      link1: "/docs/getting-started/getting-started.md"
+      link1: "/docs/APIs/api-model.md"
+  - title: Security
+    description: 
+    tags: ["Enterprise"]
+    bullets:
+      bullet1: Create, manage and utilize developer api tokens in order to protect customer data.
+      bullet2: Uniquely identify and track developer access.
+      bullet3: Grant accessibilty to only those groups who it is required. 
+    links:
+      link1: "/docs/Security/security.md"
 featuredAPIs: ["payments", "orders", "cancel"]
 useCases:
   - title:
