@@ -11,7 +11,7 @@
 
 ##### Example Request
 ><strong>Curl</strong>
->```code
+>```javascript
 >curl -X GET "https://cat.api.firstdata.com/reporting/v1/chargeback/details/metaData" -H "accept: application/json"
 >```
 
