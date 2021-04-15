@@ -36,7 +36,7 @@ Your assigned API keys perform an [HTTP Basic Auth](https://en.wikipedia.org/wik
 
 ### Authenticated Request
 ```javascript
-curl -X GET "https://cat.api.firstdata.com/reporting/fraud/search/getMetaData" -H "accept: application/json" -H "apikey: YOURAPIKEY"
+curl -X GET "https://cat.api.firstdata.com/reporting/v1/fraud/search/getMetaData" -H "accept: application/json" -H "apikey: YOURAPIKEY"
 ```
 
 For more information on creating and using API keys for your organization, please click [here](https://www.google.com). 
