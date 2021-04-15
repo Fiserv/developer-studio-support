@@ -1,4 +1,4 @@
-><strong>Chargeback MetaData</strong>
+## Chargeback MetaData
 ```java
     /**
      * Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.

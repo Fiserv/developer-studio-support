@@ -1,4 +1,4 @@
-><strong>Chargeback Transaction Details</strong>
+## Chargeback Transaction Details
 ```java
     /**
      * Provides a list of chargeback transactions.
