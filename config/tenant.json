@@ -22,6 +22,7 @@
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/ClientLineX/develop/assets/images/Fiserv_Logo.jpg",
     "description": "TEST Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit ther unique needs. By leveraging itemized data or summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.",
+    "longDescription":"Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit their own unique needs. By leveraging itemized data or summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.",
     "apiSpecification": "/v1/apis",
     "layout": "/v1/layouts",
     "documentation": "/v1/docs",
