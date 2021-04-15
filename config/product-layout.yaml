@@ -57,7 +57,7 @@ benefits:
     description: Leverage our checklist to assure you have what you need for a complete integration into Reporting APIs.
 featuredFeatures:
   - title: Sample Integrations
-    description:
+    description: Integrate with our easy to use API tool set for clear reporting purposes. Utilize the sample request/responses to gain a better understanding our of API ecosystem. 
     tags: ["Enterprise"]
     bullets:
       bullet1: Browse working examples of our integrations. 
@@ -66,14 +66,14 @@ featuredFeatures:
     links:
       link1: "/docs/APIs/sample-api.md"
   - title: API Reference
-    description: 
+    description: With clearly defined object data types and an industry standard json paradiam, our restful APIs speed the delivery cycle of your application development. 
     tags: ["Enterprise"]
     bullets:
       bullet1: Learn more about our API objects, methods, requests and responses. 
     links:
       link1: "/docs/APIs/api-model.md"
   - title: Security
-    description: 
+    description: Security is at the heart of what we do as a company. Leverage our secure integrations to open up key metrics for your customer base.
     tags: ["Enterprise"]
     bullets:
       bullet1: Create, manage and utilize developer api tokens in order to protect customer data.
