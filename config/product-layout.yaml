@@ -40,15 +40,13 @@ featuredFeatures:
       bullet1: Browse working examples of our integrations. 
       bullet2: Leverage easy to use tools to pull in data for real time insight into customer behavior.
       bullet3: Get up and running quickly an easily with or sample processes. 
-    links:
-      link1: "/docs/APIs/sample-api.md"
+    links: ["/docs/APIs/sample-api.md"]
   - title: API Reference
     description: With clearly defined object data types and an industry standard json paradiam, our restful APIs speed the delivery cycle of your application development. 
     tags: ["Enterprise"]
     bullets:
       bullet1: Learn more about our API objects, methods, requests and responses. 
-    links:
-      link1: "/docs/APIs/api-model.md"
+    links: ["docs//APIs/api-model.md"]
   - title: Security
     description: Security is at the heart of what we do as a company. Leverage our secure integrations to open up key metrics for your customer base.
     tags: ["Enterprise"]
@@ -56,8 +54,7 @@ featuredFeatures:
       bullet1: Create, manage and utilize developer api tokens in order to protect customer data.
       bullet2: Uniquely identify and track developer access.
       bullet3: Grant accessibilty to only those groups who it is required. 
-    links:
-      link1: "/docs/Security/security.md"
+    links: ["/docs/Security/security.md"]
 featuredAPIs:
   - name: Authorization Transactions
     description: Provides a list of transactions and their attributes.
