@@ -1,122 +1,241 @@
-productPage:
-    - hero:
-          - image: /assests/image/hero.png #???
-          - descrption: Hero description
-    - journey Cards:
-          - journeyCard:
-                - title: Learn # => learn
-                - description: 'Use our AI-powered portal to quickly discover the right integration for your next app project.
-
-        Experiment with our API’s in our intelligent API Explorer.
-
-        Browse sample code and follow our guided tutorials to learn best practices for integration.'
-                - link:
-                      - type: markdown
-                      - uri: /docs/learn.md
-                - contextualNavigationCards: #cnav card
-                      - contextualNavigationCard:
-                            - title: Getting Started
-                            - description: Get Started with Reporting.
-                            - link:
-                                  - type: markdown
-                                  - uri: /docs/getting-started.md
-                      - contextualNavigationCard:
-                            - title: Tutorials
-                            - description: Learn how to integrate with Reporting.
-                            - link:
-                                  - type: markdown
-                                  - uri: /docs/tutorials.md
-                      - contextualNavigationCard:
-                            - title: Video
-                            - description: Watch how to create more unified commerce
-                            - link:
-                                  - type: externalLink # [externalLink | internalLink | markdown]
-                                  - uri: https://www.youtube.com/watch?v=X8jKx8pPjrU
-          - journeyCard:
-                - title: Build
-                - description: 'Build on top of our sample code to get your app coded in minutes.
-
-        Our lightweight SDK’s and plug-in’s might be the fastest path to completing your app.'
-                - link:
-                      - type: markdown
-                      - uri: /docs/build.md
-                - contextualNavigationCards:
-                      - contextualNavigationCard:
-                            - title: API Reference
-                            - description: Explore all our APIs
-                            - link:
-                                  - type: internalLink
-                                  - uri: /docs/apis
-                      - contextualNavigationCard:
-                            - title: SDKs
-                            - description: Use SDKs to accelarate your development
-                            - cardType: reference | page
-                            - link:
-                                  - type: markdown
-                                  - uri: /docs/sdks.md # => http://dev.fiserv.com/docs/api
-                      - contextualNavigationCard:
-                            - title: Sample Code
-                            - description: Free just like Costco samples & no limit
-                            - cardType: reference | page
-                            - link:
-                                  - type: markdown
-                                  - uri: /docs/samples.md # => http://dev.fiserv.com/docs/api
-          - journeyCard:
-                - title: Test
-                - description: 'Flex your app end-to-end in our full-featured Sandbox.
-
-        Incorporate Sandbox testing into your CI pipeline.
-
-        Use our intelligent Test Tracker to discover parts of your app that need more attention.
-
-        *Requires registration'
-                - link:
-                      - type: markdown
-                      - uri: /docs/test.md
-                - contextualNavigationCards: #cnav card
-                      - contextualNavigationCard:
-                            - title: Sandbox
-                            - description: Use our sandbox to test your app end-to-end
-                            - link:
-                                  - type: internalLink
-                                  - uri: /sandbox
-                      - contextualNavigationCard:
-                            - title: Score Card
-                            - description: See how your app is doing
-                            - link:
-                                  - type: internalLink
-                                  - uri: /scorecard
-                      - contextualNavigationCard:
-                            - title: Unit Testing
-                            - description: Test with confidence
-                            - link:
-                                  - type: internalLink # [externalLink | internalLink | markdown]
-                                  - uri: /testing
-          - journeyCard:
-                - title: Deploy
-                - description: 'When your app is ready for prime time, submit it for automated certification.
-        Your certified app is now ready to be deployed to Production.
-        Congratulations!!
-        *Requires registration'
-                - link:
-                      - type: markdown
-                      - uri: /docs/deploy.md
-                - contextualNavigationCards:
-                      - contextualNavigationCard:
-                            - title: Certify
-                            - description: Get your stamp of approval from us
-                            - link:
-                                  - type: markdown
-                                  - uri: /docs/certify.md
-                      - contextualNavigationCard:
-                            - title: Deploy
-                            - description: Ready, set, Deploy!
-                            - link:
-                                  - type: internalLink
-                                  - uri: /docs/api # => http://dev.fiserv.com/docs/api
-                      - contextualNavigationCard:
-                            - title: Operate
-                            - description: Setup montioring and alerting
-                            - link:
-                                  - type: internalLink
-                                  - uri: /docs/api # => http://dev.fiserv.com/docs/api
+header:
+  productName: Reporting
+  productionDescription: Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit their own unique needs. By leveraging itemized data or summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.
+  image: 
+    link: "/assets/images/clx_image.png"
+    altText: Reporting
+steps:  
+  learnSteps:
+    - title: Learn
+      description: >
+        Follow our doumentation and easy to use examples to build your own mobile or web integrated online applications. 
+      link:
+  buildSteps:
+    - title: Build
+      description: >
+        Get your application up and running with our proprietary integration tools and developer keys. 
+      link:
+  validateSteps:
+    - title: API Explorer
+      description: >
+        Interact with our live api interface for real time responses to the developed application. 
+      link:
+  deploySteps:
+    - title: Deploy
+      description: >
+        Deploy your applications in our testing environment for quality assurance testing.  Once ready promote your application to our production environment. 
+      link:
+benefits:
+  - title: API Integration
+    description: Leverage easy to use tools to pull in data for real time insight into customer behavior. Get up and running quickly an easily with or sample processes. 
+  - title: Real Time Data
+    description: Create your own tracking applications with relevant real time data for your business. Utilize actual metrics to create on site dashboards with your own design and brand for an improved customer experience.
+  - title: Checklist
+    description: Leverage our checklist to assure you have what you need for a complete integration into Reporting APIs.
+featuredFeatures:
+  - title: Sample Integrations
+    description: Integrate with our easy to use API tool set for clear reporting purposes. Utilize the sample request/responses to gain a better understanding our of API ecosystem. 
+    tags: ["Enterprise"]
+    bullets:
+      bullet1: Browse working examples of our integrations. 
+      bullet2: Leverage easy to use tools to pull in data for real time insight into customer behavior.
+      bullet3: Get up and running quickly an easily with or sample processes. 
+    links:
+      link1: "/docs/APIs/sample-api.md"
+  - title: API Reference
+    description: With clearly defined object data types and an industry standard json paradiam, our restful APIs speed the delivery cycle of your application development. 
+    tags: ["Enterprise"]
+    bullets:
+      bullet1: Learn more about our API objects, methods, requests and responses. 
+    links:
+      link1: "/docs/APIs/api-model.md"
+  - title: Security
+    description: Security is at the heart of what we do as a company. Leverage our secure integrations to open up key metrics for your customer base.
+    tags: ["Enterprise"]
+    bullets:
+      bullet1: Create, manage and utilize developer api tokens in order to protect customer data.
+      bullet2: Uniquely identify and track developer access.
+      bullet3: Grant accessibilty to only those groups who it is required. 
+    links:
+      link1: "/docs/Security/security.md"
+featuredAPIs:
+  - name: Authorization Transactions
+    description: Provides a list of transactions and their attributes.
+    type: POST
+    route: /v1/authorization/details/byDate
+    codeSample: '[json
+      {
+        "date": 20210217,
+        "fields": [
+            "a_approvalCode",
+            "a_type",
+            "a_transactionDateTime",
+            "a_accountNumber",
+            "a_cardExpiryDate",
+            "a_amount",
+            "a_currency",
+            "a_network",
+            "a_paymentMethod",
+            "a_declineReason",
+            "a_authCode",
+            "a_siteID",
+            "a_merchantCategory",
+            "a_customerName",
+            "a_giftCardNumber",
+            "a_partnerOrderID",
+            "a_source",
+            "a_sendMode",
+            "a_mobileWallet",
+            "a_ECIIndicator",
+            "a_terminalID",
+            "a_CAVVResponse",
+            "a_AVSResponse",
+            "a_CVVResult",
+            "a_banknetRef",
+            "a_subType",
+            "a_tokenId",
+            "a_tokenResponseInd",
+            "a_ordNo",
+            "a_nativeRejectCode",
+            "a_externalMid",
+            "a_rtAction",
+            "a_rtStatus",
+            "a_merchandiseCode",
+            "a_pumpRegisterNumber",
+            "a_quantity",
+            "a_lcldt",
+            "a_transactionTime",
+            "a_GUID"
+        ],
+        "filters": [
+            {
+                "field": "o_timeZone",
+                "values": [
+                    "2"
+                ]
+            },
+            {
+                "field": "a_currency",
+                "values": [
+                    "1"
+                ]
+            }
+        ]
+    }'
+    language: Curl
+    link: link to API Explorer
+  - name: Authorization Summary
+    description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+    type: POST
+    route: /v1/authorization/summary/byDateRange
+    codeSample: '[json
+      {
+        "filters": [
+            {
+                "field": "o_timeZone",
+                "values": [
+                    "2"
+                ]
+            },
+            {
+                "field": "a_currency",
+                "values": [
+                    "1"
+                ]
+            }
+        ],
+        "from": 20210217,
+        "groupBy1": "a_network",
+        "groupBy2": "a_mobileWallet",
+        "groupBy3": "a_type",
+        "to": 20210218
+    }'
+    language: Curl
+    link: link to API Explorer
+  - name: Chargeback Transactions
+    description: Provides a list of transactions and their attributes.
+    type: POST
+    route: /v1/chargeback/details/byDate
+    codeSample: '[json
+      {
+        "date": 20210217,
+        "fields": [
+            "cb_backendMID",
+            "cb_authNetwork",
+            "cb_receivedDate",
+            "cb_statusDate",
+            "cb_transactionDate",
+            "cb_status",
+            "cb_category",
+            "cb_workType",
+            "cb_winLoss",
+            "cb_Reason",
+            "cb_reasonCode",
+            "cb_currency",
+            "cb_chargebackAmount",
+            "cb_dueDate",
+            "cb_transactionType",
+            "cb_dispositionDate",
+            "cb_Disposition",
+            "cb_ECIndicator",
+            "cb_transactionAmount",
+            "cb_accountNumber",
+            "cb_first6",
+            "cb_last4",
+            "cb_invoiceNumber",
+            "cb_terminalId",
+            "cb_disputeID",
+            "cb_referenceNumber",
+            "cb_authCode",
+            "cb_trackingNumber",
+            "cb_svcCd",
+            "cb_merchantCategory",
+            "cb_orderNumber",
+            "cb_responseReceived",
+            "cb_respondedDate",
+            "cb_externalMid",
+            "cb_paymentMethod",
+            "cb_sendMode",
+            "cb_recurring",
+            "cb_mobileWallet",
+            "cb_tokenResponseInd",
+            "cb_adjDate",
+            "cb_captureMethod"
+        ],
+        "filters": [
+            {
+                "field": "o_chargebackDateType",
+                "values": [
+                    "1"
+                ]
+            }
+        ]
+    }'
+    language: Curl
+    link: link to API Explorer
+  - name: Chargeback Summary
+    description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+    type: POST
+    route: /v1/chargeback/summary/byDateRange
+    codeSample: '[json
+      {
+        "filters": [
+            {
+                "field": "o_chargebackDateType",
+                "values": [
+                    "1"
+                ]
+            },
+            {
+                "field": "cb_currency",
+                "values": [
+                    "1"
+                ]
+            }
+        ],
+        "from": 20210201,
+        "groupBy1": "bi_cardBrand",
+        "to": 20210227
+    }'
+    language: Curl
+    link: link to API Explorer

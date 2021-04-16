@@ -7,7 +7,7 @@ info:
     name: CLX Development
     email: clx@clx.com
 servers:
-  - url: '//localhost:5005'
+  - url: 'https://cat.api.firstdata.com/reporting'
 tags:
   - name: Authorization Summary
     description: Analyze authorizations through various pivot and filter options
@@ -5702,3 +5702,4 @@ components:
           format: int64
           example: 757
       description: Summary response object which maps the data points returned from the grouped by query request.
+  securitySchemes: {}
