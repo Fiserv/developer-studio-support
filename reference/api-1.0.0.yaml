@@ -44,64 +44,6 @@ paths:
         - Authorization Transactions
       summary: Provides a list of transactions and their attributes. Limits results to 10MM.
       operationId: getTopUsingPOST
-      requestBody:
-        description: 'Input AuthorizationSearchRequest object, returns a list of txns with included field values'
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AuthorizationSearchRequest'
-            examples:
-              Authorization Search:
-                value:
-                  date: '20210217'
-                  fields:
-                    - a_approvalCode
-                    - a_type
-                    - a_transactionDateTime
-                    - a_accountNumber
-                    - a_cardExpiryDate
-                    - a_amount
-                    - a_currency
-                    - a_network
-                    - a_paymentMethod
-                    - a_declineReason
-                    - a_authCode
-                    - a_siteID
-                    - a_merchantCategory
-                    - a_customerName
-                    - a_giftCardNumber
-                    - a_partnerOrderID
-                    - a_source
-                    - a_sendMode
-                    - a_mobileWallet
-                    - a_ECIIndicator
-                    - a_terminalID
-                    - a_CAVVResponse
-                    - a_AVSResponse
-                    - a_CVVResult
-                    - a_banknetRef
-                    - a_subType
-                    - a_tokenId
-                    - a_tokenResponseInd
-                    - a_ordNo
-                    - a_nativeRejectCode
-                    - a_externalMid
-                    - a_rtAction
-                    - a_rtStatus
-                    - a_merchandiseCode
-                    - a_pumpRegisterNumber
-                    - a_quantity
-                    - a_lcldt
-                    - a_transactionTime
-                    - a_GUID
-                  filters:
-                    - field: o_timeZone
-                      values:
-                        - '2'
-                    - field: a_currency
-                      values:
-                        - '1'
-        required: true
       responses:
         '200':
           description: OK
@@ -110,7 +52,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/AuthorizationSearchResponse'
               examples:
-                Authorization Search Response:
+                example-1:
                   value:
                     response:
                       - a_accountNumber: 447612XXXXXX1284
@@ -135,6 +77,7 @@ paths:
                         a_type: 2
                         a_cardExpiryDate: '524'
                         a_network: 2
+          headers: {}
         '201':
           description: Created
           content: {}
@@ -149,6 +92,7 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      parameters: []
   /v1/authorization/details/metaData:
     get:
       tags:
@@ -2968,6 +2912,14 @@ paths:
       deprecated: false
     parameters: []
 components:
+  parameters:
+    ApiKeyHeader:
+      name: Api-Key
+      schema:
+        type: string
+      in: header
+      required: true
+      description: API Key provided to the merchant associating the requests with the appropriate app in the Developer Portal.
   schemas:
     AuthorizationSearchMetaData:
       title: AuthorizationSearchMetaData
