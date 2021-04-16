@@ -51,7 +51,7 @@ paths:
             schema:
               $ref: '#/components/schemas/AuthorizationSearchRequest'
             examples:
-              example-1:
+              Authorization Search:
                 value:
                   date: '20210217'
                   fields:
@@ -110,7 +110,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/AuthorizationSearchResponse'
               examples:
-                example-1:
+                Authorization Search Response:
                   value:
                     response:
                       - a_accountNumber: 447612XXXXXX1284
@@ -163,7 +163,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/AuthorizationSearchMetaData'
               examples:
-                example-1:
+                Search MetaData:
                   value:
                     fields:
                       - id: a_approvalCode
@@ -328,7 +328,7 @@ paths:
             schema:
               $ref: '#/components/schemas/AuthorizationSummaryRequest'
             examples:
-              example-1:
+              Authorization Summary:
                 value:
                   filters:
                     - field: o_timeZone
@@ -353,7 +353,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
               examples:
-                example-1:
+                Summary Response:
                   value:
                     - amountTotal: 11909212
                       approvedCount: 721
@@ -391,7 +391,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/AuthorizationSummaryMetaData'
               examples:
-                example-1:
+                Summary MetaData:
                   value:
                     filters:
                       - field: a_source
@@ -541,7 +541,7 @@ paths:
             schema:
               $ref: '#/components/schemas/ChargebackSearchRequest'
             examples:
-              example-1:
+              Chargeback Search:
                 value:
                   date: '20210217'
                   fields:
@@ -599,7 +599,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ChargebackSearchResponse'
               examples:
-                example-1:
+                Chargeback Search Response:
                   value:
                     response:
                       - cb_Reason: 6
@@ -700,7 +700,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ChargebackSearchMetaData'
               examples:
-                example-1:
+                Search MetaData:
                   value:
                     fields:
                       - id: cb_backendMID
@@ -865,7 +865,7 @@ paths:
             schema:
               $ref: '#/components/schemas/ChargebackSummaryRequest'
             examples:
-              example-1:
+              Chargeback Summary:
                 value:
                   filters:
                     - field: o_chargebackDateType
@@ -888,7 +888,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
               examples:
-                example-1:
+                Summary Response:
                   value:
                     - amountTotal: 11909212
                       approvedCount: 721
@@ -924,7 +924,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ChargebackSummaryMetaData'
               examples:
-                example-1:
+                Summary MetaData:
                   value:
                     filters:
                       - field: s_st_abbr_nm
@@ -1035,7 +1035,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DisbursementSearchRequest'
             examples:
-              example-1:
+              Chargeback Search:
                 value:
                   date: '20210303'
                   fields:
@@ -1109,7 +1109,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DisbursementSearchResponse'
               examples:
-                example-1:
+                Search Response:
                   value:
                     response:
                       - ds_recipientFName: FNAME
@@ -1240,7 +1240,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DisbursementSearchMetaData'
               examples:
-                example-1:
+                Disbursement MetaData:
                   value:
                     fields:
                       - id: ds_merchantStatus
@@ -1335,7 +1335,7 @@ paths:
             schema:
               $ref: '#/components/schemas/DisbursementSummaryRequest'
             examples:
-              example-1:
+              Disbursement Summary:
                 value:
                   filters:
                     - field: o_disbursementDateType
@@ -1361,7 +1361,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
               examples:
-                example-1:
+                Summary Response:
                   value:
                     - amountTotal: 11909212
                       approvedCount: 721
@@ -1397,7 +1397,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/DisbursementSummaryMetaData'
               examples:
-                example-1:
+                Summary MetaData:
                   value:
                     filters:
                       - field: o_disbursementDateType
@@ -1452,7 +1452,7 @@ paths:
             schema:
               $ref: '#/components/schemas/FraudDetectSearchRequest'
             examples:
-              example-1:
+              Fraud Detect Search:
                 value:
                   date: '20210217'
                   fields:
@@ -1491,6 +1491,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FraudDetectSearchResponse'
+              examples:
+                Fraud Detect Response:
+                  value:
+                    response:
+                      - f_merchLocID: '1290000007100'
+                        f_score: 25
+                        f_declineReasonOne: 0
+                        f_fraudID: MERCHANT_NAME
+                        f_responseDuration: 451
+                        f_pinPresent: 6
+                        f_binID: '320046'
+                        f_paymentAmount: 2.49
+                        f_scoreResult: 1
+                        f_responseDecision: 1
+                        f_type: 3
+                        f_declineReasonTwo: 64
+                        f_accountType: 2
+                        f_loadDate: 02/17/2021
+                        f_entryMethod: 6
+                        f_scheme: 2
+                        f_currency: 49
+                      - f_merchLocID: '1290000007100'
+                        f_score: 0
+                        f_declineReasonOne: 0
+                        f_fraudID: MERCHANT_NAME
+                        f_responseDuration: 210
+                        f_pinPresent: 6
+                        f_binID: '320046'
+                        f_paymentAmount: 2.49
+                        f_scoreResult: 1
+                        f_responseDecision: 1
+                        f_type: 10
+                        f_declineReasonTwo: 0
+                        f_accountType: 2
+                        f_loadDate: 02/17/2021
+                        f_entryMethod: 6
+                        f_scheme: 2
+                        f_currency: 49
         '201':
           description: Created
           content: {}
@@ -1519,7 +1557,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/FraudDetectSearchMetaData'
               examples:
-                example-1:
+                Fraud Detect Search:
                   value:
                     fields:
                       - id: f_paymentAmount
@@ -1626,7 +1664,7 @@ paths:
             schema:
               $ref: '#/components/schemas/FraudDetectSummaryRequest'
             examples:
-              example-1:
+              Fraud Detect Summary:
                 value:
                   filters:
                     - field: f_type
@@ -1659,7 +1697,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
               examples:
-                example-1:
+                Summary Response:
                   value:
                     - amountTotal: 11909212
                       approvedCount: 721
@@ -1695,7 +1733,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/FraudDetectSummaryMetaData'
               examples:
-                example-1:
+                Summary MetaData:
                   value:
                     filters:
                       - field: scoremin
@@ -1799,7 +1837,7 @@ paths:
             schema:
               $ref: '#/components/schemas/FundingSearchRequest'
             examples:
-              example-1:
+              Funding Search:
                 value:
                   date: '20210303'
                   fields:
@@ -1832,7 +1870,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/FundingSearchResponse'
               examples:
-                example-1:
+                Funding Search Response:
                   value:
                     response:
                       - fd_authCurrency: 1
@@ -1895,7 +1933,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/FundingSearchMetaData'
               examples:
-                example-1:
+                Funding MetaData:
                   value:
                     fields:
                       - id: fd_siteID
@@ -1999,7 +2037,7 @@ paths:
             schema:
               $ref: '#/components/schemas/FundingSummaryRequest'
             examples:
-              example-1:
+              Funding Summary:
                 value:
                   filters:
                     - field: fd_currency
@@ -2019,7 +2057,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/FundingSummaryResponse'
               examples:
-                example-1:
+                Summary Response:
                   value:
                     - processedAdjustments: 42
                       processedAmountPaid: 428
@@ -2061,7 +2099,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/FundingSummaryMetaData'
               examples:
-                example-1:
+                Funding MetaData:
                   value:
                     filters:
                       - field: fd_processor
@@ -2139,7 +2177,7 @@ paths:
             schema:
               $ref: '#/components/schemas/RetrievalSearchRequest'
             examples:
-              example-1:
+              Retrieval Search:
                 value:
                   date: '20210225'
                   fields:
@@ -2180,7 +2218,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/RetrievalSearchResponse'
               examples:
-                example-1:
+                Retrieval Response:
                   value:
                     response:
                       - r_referenceNumber: '66512345678078862'
@@ -2248,7 +2286,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/RetrievalSearchMetaData'
               examples:
-                example-1:
+                Retrieval MetaData:
                   value:
                     fields:
                       - id: r_backendMID
@@ -2416,7 +2454,7 @@ paths:
             schema:
               $ref: '#/components/schemas/RetrievalSummaryRequest'
             examples:
-              example-1:
+              Retrieval Summary:
                 value:
                   filters:
                     - field: o_retrievalDateType
@@ -2439,7 +2477,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
               examples:
-                example-1:
+                Summary Response:
                   value:
                     - amountTotal: 11909212
                       approvedCount: 721
@@ -2475,7 +2513,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/RetrievalSummaryMetaData'
               examples:
-                example-1:
+                Summary MetaData:
                   value:
                     filters:
                       - field: o_retrievalDateType
@@ -2534,7 +2572,7 @@ paths:
             schema:
               $ref: '#/components/schemas/SettlementSearchRequest'
             examples:
-              example-1:
+              Settlement Search:
                 value:
                   date: '20210301'
                   fields:
@@ -2593,7 +2631,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/SettlementSearchResponse'
               examples:
-                example-1:
+                Settlement Response:
                   value:
                     response:
                       - st_accountNumber: 512912XXXXXX1283
@@ -2657,7 +2695,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/SettlementSearchMetaData'
               examples:
-                example-1:
+                Settlement MetaData:
                   value:
                     fields:
                       - id: st_siteID
@@ -2792,7 +2830,7 @@ paths:
             schema:
               $ref: '#/components/schemas/SettlementSummaryRequest'
             examples:
-              example-1:
+              Settlement Summary:
                 value:
                   filters:
                     - field: o_settleDateType
@@ -2819,7 +2857,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/SettlementSummaryResponse'
               examples:
-                example-1:
+                Summary Response:
                   value:
                     - amountTotal: 83526868.58000049
                       refundCount: 8040
@@ -2856,7 +2894,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/SettlementSummaryMetaData'
               examples:
-                example-1:
+                Summary MetaData:
                   value:
                     filters:
                       - field: o_settleAmountType
@@ -2928,6 +2966,7 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+    parameters: []
 components:
   schemas:
     AuthorizationSearchMetaData:
@@ -5702,4 +5741,12 @@ components:
           format: int64
           example: 757
       description: Summary response object which maps the data points returned from the grouped by query request.
+      x-examples:
+        Summary Response:
+          amountTotal: 11909212
+          approvedCount: 721
+          response1: American Express
+          response2: Non Mobile Wallet
+          response3: Verification
+          totalCount: 757
   securitySchemes: {}
