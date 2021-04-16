@@ -5,15 +5,23 @@
     articles:
       - title: Welcome to Reporting
         link: /docs/getting-started.md
-  - title: Documentation
-    link: /docs/getting-started/overview.md
-    open: true
-    articles:
-      - title: Documentation
-        link: /docs/getting-started.md
-  - title: Tutorials
-    open: true
-    link: /docs/getting-started.md
-    articles:
-      - title: Tutorials
-        link: /docs/getting-started.md
+- sections:
+  - title: Security
+    open: false
+    sections:
+    - title: API Keys
+      link: docs/Security/security.md
+- sections:
+  - title: Resources
+    open: false
+    sections:
+    - title: API Documentation
+      link: docs/APIs/api-model.md
+    - title: Examples
+      sections:
+      - title: Sample API
+        link: docs/APIs/sample-api.md
+      - title: GET metaData
+        link: docs/Examples/metadata-example.md
+      - title: POST byDate
+        link: docs/Examples/byDate-example.md
