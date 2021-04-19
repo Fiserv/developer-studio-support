@@ -14,3 +14,25 @@ curl -X GET "https://cat.api.firstdata.com/reporting/fraud/search/getMetaData" -
 ```
 
 For more information on creating and using API keys for your organization, please click [here](https://www.google.com). 
+
+---
+
+## Access Reporting APIs
+
+Get up and running with access to our development portal to use our Reporting APis.
+
+### 1. Get Access to our Developer Platform
+
+Request and create a developer account in the Developer Portal.
+
+> After registration the developer will have an instant access to Reporting APIs.
+
+### 2. Generate an API key
+
+Go to the Reporting page and create a Sandbox app to obtain your client APIKey and APISecret.
+
+> These are required in the Authentication Header.
+
+### 3. Constructing the API call
+
+Construct an [API request](?path=docs/APIs/api-model.md) to use the Reporting APIs.
