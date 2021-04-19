@@ -1,6 +1,6 @@
 header:
   productName: Reporting
-  productionDescription: Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit their own unique needs. By leveraging itemized data or summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.
+  productionDescription: Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit their own unique needs. By leveraging itemized data and summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.
   image: 
     link: "/assets/images/clx_image.png"
     altText: Reporting
@@ -8,7 +8,7 @@ steps:
   learnSteps:
     - title: Learn
       description: >
-        Follow our doumentation and easy to use examples to build your own mobile or web integrated online applications. 
+        Follow our documentation and easy to use examples to build your own mobile or web integrated online applications. 
       link:
   buildSteps:
     - title: Build
@@ -27,19 +27,19 @@ steps:
       link:
 benefits:
   - title: API Integration
-    description: Leverage easy to use tools to pull in data for real time insight into customer behavior. Get up and running quickly an easily with or sample processes. 
+    description: Leverage easy to use tools to pull in data for real time insight into customer behavior. Get up and running quickly and easily with our sample processes. 
   - title: Real Time Data
-    description: Create your own tracking applications with relevant real time data for your business. Utilize actual metrics to create on site dashboards with your own design and brand for an improved customer experience.
+    description: Create your own tracking applications utilizing relevant real time data for your business. Obtain actual metrics to create your own site design dashboards and brands for a catered customer experience.
   - title: Checklist
-    description: Leverage our checklist to assure you have what you need for a complete integration into Reporting APIs.
+    description: Leverage our checklist to assure you have what you need for a complete integration into reporting APIs.
 featuredFeatures:
-  - title: Sample Integrations
-    description: Integrate with our easy to use API tool set for clear reporting purposes. Utilize the sample request/responses to gain a better understanding our of API ecosystem. 
+  - title: Generate Reports
+    description: Integrate your proprietary systems with our easy to use API tool set to generate real time customizable reports. Utilize the included examples to gain a better understanding of the reporting API ecosystem. 
     tags: ["Enterprise"]
     bullets:
-      bullet1: Browse working examples of our integrations. 
-      bullet2: Leverage easy to use tools to pull in data for real time insight into customer behavior.
-      bullet3: Get up and running quickly an easily with or sample processes. 
+      bullet1: Browse working sample of our integrations. 
+      bullet2: Leverage our easy to use tools for real time insight into customer behavior.
+      bullet3: Get up and running quickly an easily with our step by step instructions. 
     links: ["/docs/APIs/sample-api.md"]
   - title: API Reference
     description: With clearly defined object data types and an industry standard json paradiam, our restful APIs speed the delivery cycle of your application development. 
@@ -48,7 +48,7 @@ featuredFeatures:
       bullet1: Learn more about our API objects, methods, requests and responses. 
     links: ["docs/APIs/api-model.md"]
   - title: Security
-    description: Security is at the heart of what we do as a company. Leverage our secure integrations to open up key metrics for your customer base.
+    description: Security is at the heart of what we do as a company. Explore our secure integrations to open up key metrics for your customer base.
     tags: ["Enterprise"]
     bullets:
       bullet1: Create, manage and utilize developer api tokens in order to protect customer data.
