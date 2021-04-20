@@ -27,7 +27,7 @@ Domain models represent the type of data that you may be interested in.  IE auth
 >Fraud Detect is an ecommerce solution that enables merchants to reduce chargebacks while driving profits and providing a frictionless customer experience.  Based on machine learning that uses complex rules and algorithms, it provides real time, risk-based scoring decisions.  Fraud Detect’s machine learning solution utilizes decisions made by artificial intelligence and human analysis to improve accuracy and effectiveness.  
 
 ### Funding
->TBD
+>Funding activity denotes what was transferred into the merchant account, broken down by deposit and various fees. Funding reports are used in the reconciliation process to the merchant bank account. Any adjustments will be shown as deductions made from the merchant's total sales (chargebacks, fees, interchange charges, etc. 
 
 ### Retrievals
 >While there are many reasons an issuing bank may send a retrieval request, the notification process can be very simple. The Retrievals selection will help you facilitate the process of retrieving and fulfilling sales draft requests. In some instances, unanswered retrieval requests can result in a chargeback being initiated by the issuing bank.
