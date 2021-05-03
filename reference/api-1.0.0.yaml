@@ -43,6 +43,7 @@ paths:
       tags:
         - Authorization Transactions
       summary: Provides a list of transactions and their attributes. Limits results to 10MM.
+      description: Provides a list of transactions and their attributes.
       operationId: getTopUsingPOST
       requestBody:
         description: 'Input AuthorizationSearchRequest object, returns a list of txns with included field values'
@@ -135,6 +136,7 @@ paths:
                         a_type: 2
                         a_cardExpiryDate: '524'
                         a_network: 2
+          headers: {}
         '201':
           description: Created
           content: {}
@@ -149,11 +151,14 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/authorization/details/metaData:
     get:
       tags:
         - Authorization Transactions
       summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      description: Provides the meta data for the byDate api.
       operationId: getMetaDataUsingGET
       responses:
         '200':
@@ -315,11 +320,13 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/authorization/summary/byDateRange:
     post:
       tags:
         - Authorization Summary
-      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReportUsingPOST
       requestBody:
         description: 'Input AuthorizationSummaryRequest object, returns a list of measured aggregations by pivots'
@@ -377,6 +384,9 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
+      description: Returns an aggregated view of the entity.
   /v1/authorization/summary/metaData:
     get:
       tags:
@@ -527,7 +537,9 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
-      description: ''
+      description: Provides the meta data for the byDateRange analysis.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/chargeback/details/byDate:
     post:
       tags:
@@ -686,6 +698,9 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Provides a list of chargeback transactions.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/chargeback/details/metaData:
     get:
       tags:
@@ -852,11 +867,14 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDate api.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/chargeback/summary/byDateRange:
     post:
       tags:
         - Chargeback Summary
-      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReportUsingPOST_1
       requestBody:
         description: 'Input ChargebackSummaryRequest object, returns a list of measured aggregations by pivots'
@@ -910,6 +928,9 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Returns an aggregated view of the entity.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/chargeback/summary/metaData:
     get:
       tags:
@@ -1022,6 +1043,9 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDateRange analysis.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/disbursement/search/byDate:
     post:
       tags:
@@ -1226,6 +1250,9 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Provides a list of transactions and their attributes.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/disbursement/search/metaData:
     get:
       tags:
@@ -1322,11 +1349,14 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDate api.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/disbursement/summary/byDateRange:
     post:
       tags:
         - Disbursement Summary
-      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReportUsingPOST_2
       requestBody:
         description: 'Input DisbursementSummaryRequest object, returns a list of measured aggregations by pivots'
@@ -1383,6 +1413,9 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Returns an aggregated view of the entity.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/disbursement/summary/metaData:
     get:
       tags:
@@ -1439,6 +1472,9 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDateRange analysis.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/fraud/details/byDate:
     post:
       tags:
@@ -1491,6 +1527,44 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FraudDetectSearchResponse'
+              examples:
+                example-1:
+                  value:
+                    response:
+                      - f_merchLocID: '1290000007100'
+                        f_score: 25
+                        f_declineReasonOne: 0
+                        f_fraudID: MERCHANT_NAME
+                        f_responseDuration: 451
+                        f_pinPresent: 6
+                        f_binID: '320046'
+                        f_paymentAmount: 2.49
+                        f_scoreResult: 1
+                        f_responseDecision: 1
+                        f_type: 3
+                        f_declineReasonTwo: 64
+                        f_accountType: 2
+                        f_loadDate: 02/17/2021
+                        f_entryMethod: 6
+                        f_scheme: 2
+                        f_currency: 49
+                      - f_merchLocID: '1290000007100'
+                        f_score: 0
+                        f_declineReasonOne: 0
+                        f_fraudID: MERCHANT_NAME
+                        f_responseDuration: 210
+                        f_pinPresent: 6
+                        f_binID: '320046'
+                        f_paymentAmount: 2.49
+                        f_scoreResult: 1
+                        f_responseDecision: 1
+                        f_type: 10
+                        f_declineReasonTwo: 0
+                        f_accountType: 2
+                        f_loadDate: 02/17/2021
+                        f_entryMethod: 6
+                        f_scheme: 2
+                        f_currency: 49
         '201':
           description: Created
           content: {}
@@ -1505,6 +1579,9 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Provides a list of fraud transactions.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/fraud/details/metaData:
     get:
       tags:
@@ -1613,11 +1690,14 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDate api.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/fraud/summary/byDateRange:
     post:
       tags:
         - Fraud Detect Summary
-      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReportUsingPOST_3
       requestBody:
         description: 'Input FraudDetectSummaryRequest object, returns a list of measured aggregations by pivots'
@@ -1681,6 +1761,9 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Returns an aggregated view of the entity.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/fraud/summary/metaData:
     get:
       tags:
@@ -1786,6 +1869,9 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDateRange analysis.
+      parameters:
+        - $ref: '#/components/parameters/ApiKeyHeader'
   /v1/funding/search/byDate:
     post:
       tags:
@@ -1799,7 +1885,7 @@ paths:
             schema:
               $ref: '#/components/schemas/FundingSearchRequest'
             examples:
-              example-1:
+              Funding Search:
                 value:
                   date: '20210303'
                   fields:
@@ -1832,7 +1918,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/FundingSearchResponse'
               examples:
-                example-1:
+                Funding Search Response:
                   value:
                     response:
                       - fd_authCurrency: 1
@@ -1881,6 +1967,7 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Provides a list of transactions and their attributes.
   /v1/funding/search/metaData:
     get:
       tags:
@@ -1895,7 +1982,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/FundingSearchMetaData'
               examples:
-                example-1:
+                Funding MetaData:
                   value:
                     fields:
                       - id: fd_siteID
@@ -1986,11 +2073,12 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDate api.
   /v1/funding/summary/byDateRange:
     post:
       tags:
         - Funding Summary
-      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReportUsingPOST_4
       requestBody:
         description: 'Input FundingSummaryRequest object, returns a list of measured aggregations by pivots'
@@ -1999,7 +2087,7 @@ paths:
             schema:
               $ref: '#/components/schemas/FundingSummaryRequest'
             examples:
-              example-1:
+              Funding Summary:
                 value:
                   filters:
                     - field: fd_currency
@@ -2019,7 +2107,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/FundingSummaryResponse'
               examples:
-                example-1:
+                Summary Response:
                   value:
                     - processedAdjustments: 42
                       processedAmountPaid: 428
@@ -2047,6 +2135,7 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Returns an aggregated view of the entity utilizing.
   /v1/funding/summary/metaData:
     get:
       tags:
@@ -2061,7 +2150,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/FundingSummaryMetaData'
               examples:
-                example-1:
+                Funding MetaData:
                   value:
                     filters:
                       - field: fd_processor
@@ -2126,6 +2215,7 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDateRange analysis.
   /v1/retrieval/search/byDate:
     post:
       tags:
@@ -2139,7 +2229,7 @@ paths:
             schema:
               $ref: '#/components/schemas/RetrievalSearchRequest'
             examples:
-              example-1:
+              Retrieval Search:
                 value:
                   date: '20210225'
                   fields:
@@ -2180,7 +2270,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/RetrievalSearchResponse'
               examples:
-                example-1:
+                Retrieval Response:
                   value:
                     response:
                       - r_referenceNumber: '66512345678078862'
@@ -2234,6 +2324,7 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Provides a list of transactions and their attributes.
   /v1/retrieval/search/metaData:
     get:
       tags:
@@ -2248,7 +2339,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/RetrievalSearchMetaData'
               examples:
-                example-1:
+                Retrieval MetaData:
                   value:
                     fields:
                       - id: r_backendMID
@@ -2403,11 +2494,12 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDate api.
   /v1/retrieval/summary/byDateRange:
     post:
       tags:
         - Retrieval Summary
-      summary: Returns a aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReportUsingPOST_5
       requestBody:
         description: 'Input RetrievalSummaryRequest object, returns a list of measured aggregations by pivots'
@@ -2416,7 +2508,7 @@ paths:
             schema:
               $ref: '#/components/schemas/RetrievalSummaryRequest'
             examples:
-              example-1:
+              Retrieval Summary:
                 value:
                   filters:
                     - field: o_retrievalDateType
@@ -2439,7 +2531,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
               examples:
-                example-1:
+                Summary Response:
                   value:
                     - amountTotal: 11909212
                       approvedCount: 721
@@ -2461,6 +2553,7 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Returns an aggregated view of the entity.
   /v1/retrieval/summary/metaData:
     get:
       tags:
@@ -2475,7 +2568,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/RetrievalSummaryMetaData'
               examples:
-                example-1:
+                Summary MetaData:
                   value:
                     filters:
                       - field: o_retrievalDateType
@@ -2521,6 +2614,7 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDateRange analysis.
   /v1/settlement/details/byDate:
     post:
       tags:
@@ -2534,7 +2628,7 @@ paths:
             schema:
               $ref: '#/components/schemas/SettlementSearchRequest'
             examples:
-              example-1:
+              Settlement Search:
                 value:
                   date: '20210301'
                   fields:
@@ -2593,7 +2687,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/SettlementSearchResponse'
               examples:
-                example-1:
+                Settlement Response:
                   value:
                     response:
                       - st_accountNumber: 512912XXXXXX1283
@@ -2643,6 +2737,7 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Provides a list of settlement transactions and their attributes.
   /v1/settlement/details/metaData:
     get:
       tags:
@@ -2657,7 +2752,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/SettlementSearchMetaData'
               examples:
-                example-1:
+                Settlement MetaData:
                   value:
                     fields:
                       - id: st_siteID
@@ -2779,6 +2874,7 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDate api.
   /v1/settlement/summary/byDateRange:
     post:
       tags:
@@ -2792,7 +2888,7 @@ paths:
             schema:
               $ref: '#/components/schemas/SettlementSummaryRequest'
             examples:
-              example-1:
+              Settlement Summary:
                 value:
                   filters:
                     - field: o_settleDateType
@@ -2819,7 +2915,7 @@ paths:
                 items:
                   $ref: '#/components/schemas/SettlementSummaryResponse'
               examples:
-                example-1:
+                Summary Response:
                   value:
                     - amountTotal: 83526868.58000049
                       refundCount: 8040
@@ -2842,6 +2938,7 @@ paths:
           content: {}
       deprecated: false
       x-codegen-request-body-name: request
+      description: Executes the report based on the specified criteria.
   /v1/settlement/summary/metaData:
     get:
       tags:
@@ -2856,7 +2953,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/SettlementSummaryMetaData'
               examples:
-                example-1:
+                Summary MetaData:
                   value:
                     filters:
                       - field: o_settleAmountType
@@ -2928,7 +3025,17 @@ paths:
           description: Not Found
           content: {}
       deprecated: false
+      description: Provides the meta data for the byDateRange analysis.
+    parameters: []
 components:
+  parameters:
+    ApiKeyHeader:
+      name: apiKey
+      schema:
+        type: string
+      in: header
+      required: true
+      description: API Key provided to the merchant associating the requests with the appropriate app in the Developer Portal.
   schemas:
     AuthorizationSearchMetaData:
       title: AuthorizationSearchMetaData
@@ -5702,4 +5809,12 @@ components:
           format: int64
           example: 757
       description: Summary response object which maps the data points returned from the grouped by query request.
+      x-examples:
+        Summary Response:
+          amountTotal: 11909212
+          approvedCount: 721
+          response1: American Express
+          response2: Non Mobile Wallet
+          response3: Verification
+          totalCount: 757
   securitySchemes: {}
