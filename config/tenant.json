@@ -1,6 +1,6 @@
 {
   "title": "Reporting",
-  "name": "CLX",
+  "name": "Reporting",
   "brand": "Carat",
   "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/ClientLineX/develop/assets/images/Fiserv_Logo.jpg",
   "solution": "Payments",
@@ -16,22 +16,29 @@
         }
       ]
     }
-
+  ],
+  "apiVersions": [
+    {
+      "version": "1.0.0",
+      "versionType": "major",
+      "releaseNotesPath": "/release-notes/release-notes-1.0.0.md"
+    }
   ],
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/ClientLineX/develop/assets/images/fiserv_logo_orange_rgb-01.svg",
-    "description":"Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit their own unique needs. By leveraging itemized data or summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.",
-    "longDescription":"Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit their own unique needs. By leveraging itemized data or summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.",
+    "description": "Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit their own unique needs. By leveraging itemized data and summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.",
+    "longDescription": "Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit their own unique needs. By leveraging itemized data and summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.",
     "apiSpecification": "/v1/apis",
     "layout": "/v1/layouts",
     "documentation": "/v1/docs",
     "documenttree": "/v1/docs",
     "documenttreeV2": "/v2/docs",
-    "feature":[
+    "sandbox": "/v1/sandboxrun",
+    "feature": [
       {
         "name": "sandBox",
-        "value": false
+        "value": true
       },
       {
         "name": "plugins",
@@ -40,7 +47,11 @@
       {
         "name": "industryOptionsAPIExplorer",
         "value": false
+      },
+      {
+        "name": "editParameterAPIExplorer",
+        "value": true
       }
-   ]
+    ]
   }
 }

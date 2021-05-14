@@ -1,4 +1,4 @@
-# Sample Integrations
+# Sample APIs
 
 ### Authorizations
 ```java

@@ -1,7 +1,7 @@
 - sections:
   - title: Getting Started
     link: /docs/getting-started.md
-    open: true
+    open: false
     articles:
       - title: Welcome to Reporting
         link: /docs/getting-started.md
@@ -16,7 +16,11 @@
     open: false
     sections:
     - title: API Documentation
-      link: docs/APIs/api-model.md
+      sections:
+      - title: API Models
+        link: docs/APIs/api-model.md
+      - title: API MetaData
+        link: docs/APIs/api-metadata.md
     - title: Examples
       sections:
       - title: Sample API
