@@ -59,7 +59,7 @@ featuredAPIs:
   - name: Authorization Transactions
     description: Provides a list of transactions and their attributes.
     type: POST
-    route: /v1/authorization/details/byDate
+    path: /v1/authorization/details/byDate
     codeSample: '[json
       {
         "date": 20210217,
@@ -124,7 +124,7 @@ featuredAPIs:
   - name: Authorization Summary
     description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
     type: POST
-    route: /v1/authorization/summary/byDateRange
+    path: /v1/authorization/summary/byDateRange
     codeSample: '[json
       {
         "filters": [
@@ -152,7 +152,7 @@ featuredAPIs:
   - name: Chargeback Transactions
     description: Provides a list of transactions and their attributes.
     type: POST
-    route: /v1/chargeback/details/byDate
+    path: /v1/chargeback/details/byDate
     codeSample: '[json
       {
         "date": 20210217,
@@ -213,7 +213,7 @@ featuredAPIs:
   - name: Chargeback Summary
     description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
     type: POST
-    route: /v1/chargeback/summary/byDateRange
+    path: /v1/chargeback/summary/byDateRange
     codeSample: '[json
       {
         "filters": [
