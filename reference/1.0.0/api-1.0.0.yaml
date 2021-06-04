@@ -1,0 +1,4416 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: 'http://localhost:5005'
+    description: Generated server url
+tags:
+  - name: Funding Summary
+    description: Analyze funding transactions through various pivot and filter options
+  - name: Disbursement Summary
+    description: Analyze disbursement transaction through various pivot and filter options
+  - name: Settlement Summary
+    description: Analyze settlements through various pivot and filter options
+  - name: Hierarchies
+    description: User hierarchy operations
+  - name: Settlement Transactions
+    description: Returns settlement transactions and their included fields.
+  - name: Chargeback Summary
+    description: Analyze chargebacks through various pivot and filter options
+  - name: Authorization Summary
+    description: Analyze authorizations through various pivot and filter options
+  - name: Fraud Detect Transactions
+    description: Returns merchant fraud detect transactions/registrations and their included fields.
+  - name: Disbursement Transactions
+    description: Search disbursement transaction details
+  - name: Fraud Detect Summary
+    description: Analyze fraud transaction/registration through various pivot and filter options
+  - name: Authorization Transactions
+    description: Returns authorization transactions and their included fields.
+  - name: Chargeback Transactions
+    description: Return chargeback transactions and their included fields.
+  - name: Funding Transactions
+    description: Search funding details
+  - name: Retrieval Transactions
+    description: Search retrieval transaction details
+  - name: Retrieval Summary
+    description: Analyze retrievals through various pivot and filter options
+paths:
+  /v1/settlement/summary/byDateRange:
+    post:
+      tags:
+        - Settlement Summary
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReport
+      requestBody:
+        description: 'Input SettlementSummaryRequest object, returns a list of measured aggregations by pivots'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SettlementSummaryRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SettlementSummaryResponse'
+  /v1/settlement/details/byDate:
+    post:
+      tags:
+        - Settlement Transactions
+      summary: Provides a list of settlement transactions and their attributes. Limits results to 10MM.
+      operationId: getTop
+      requestBody:
+        description: 'Input SettlementSearchRequest object, returns a list of txns with included field values'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SettlementSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SettlementSearchResponse'
+  /v1/retrieval/summary/byDateRange:
+    post:
+      tags:
+        - Retrieval Summary
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReport_1
+      requestBody:
+        description: 'Input RetrievalSummaryRequest object, returns a list of measured aggregations by pivots'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RetrievalSummaryRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SummaryResponse'
+  /v1/retrieval/search/byDate:
+    post:
+      tags:
+        - Retrieval Transactions
+      summary: Provides a list of transactions and their attributes. Limits results to 10MM.
+      operationId: getTop_1
+      requestBody:
+        description: 'Input RetrievalSearchRequest object, returns a list of txns with included field values'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RetrievalSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetrievalSearchResponse'
+  /v1/hierarchies/search:
+    post:
+      tags:
+        - Hierarchies
+      description: 'Search merchants by mid/name in user hierarchy   '
+      operationId: search
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+        required: true
+      responses:
+        default:
+          description: default response
+          content:
+            application/json:
+              schema:
+                type: string
+  /v1/funding/summary/byDateRange:
+    post:
+      tags:
+        - Funding Summary
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReport_2
+      requestBody:
+        description: 'Input FundingSummaryRequest object, returns a list of measured aggregations by pivots'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FundingSummaryRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FundingSummaryResponse'
+  /v1/funding/search/byDate:
+    post:
+      tags:
+        - Funding Transactions
+      summary: Provides a list of transactions and their attributes. Limits results to 10MM.
+      operationId: getTop_2
+      requestBody:
+        description: 'Input FundingSearchRequest object, returns a list of txns with included field values'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FundingSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FundingSearchResponse'
+  /v1/fraud/summary/byDateRange:
+    post:
+      tags:
+        - Fraud Detect Summary
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReport_3
+      requestBody:
+        description: 'Input FraudDetectSummaryRequest object, returns a list of measured aggregations by pivots'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FraudDetectSummaryRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SummaryResponse'
+  /v1/fraud/details/byDate:
+    post:
+      tags:
+        - Fraud Detect Transactions
+      summary: Provides a list of fraud transactions. Limits to 10MM
+      operationId: getTop_3
+      requestBody:
+        description: 'Input FraudDetectSearchRequest object, returns a list of txns with included field values'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FraudDetectSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FraudDetectSearchResponse'
+  /v1/disbursement/summary/byDateRange:
+    post:
+      tags:
+        - Disbursement Summary
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReport_4
+      requestBody:
+        description: 'Input DisbursementSummaryRequest object, returns a list of measured aggregations by pivots'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisbursementSummaryRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SummaryResponse'
+  /v1/disbursement/search/byDate:
+    post:
+      tags:
+        - Disbursement Transactions
+      description: Provides a list of transactions and their attributes. Limits results to 10MM.
+      operationId: getTop_4
+      requestBody:
+        description: 'Input DisbursementSearchRequest object, returns a list of txns with included field values'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisbursementSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisbursementSearchResponse'
+  /v1/commercehub/updateStores:
+    post:
+      tags:
+        - Mid
+      description: Update Stores based on CommerceHub details
+      operationId: marketPlace
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommerceHub'
+        required: true
+      responses:
+        default:
+          description: default response
+          content:
+            application/json:
+              schema:
+                type: string
+  /v1/chargeback/summary/byDateRange:
+    post:
+      tags:
+        - Chargeback Summary
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReport_5
+      requestBody:
+        description: 'Input ChargebackSummaryRequest object, returns a list of measured aggregations by pivots'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChargebackSummaryRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SummaryResponse'
+  /v1/chargeback/details/byDate:
+    post:
+      tags:
+        - Chargeback Transactions
+      summary: Provides a list of chargeback transactions. Limits to 10MM
+      operationId: getTop_5
+      requestBody:
+        description: 'Input ChargebackSearchRequest object, returns a list of txns with included field values'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChargebackSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChargebackSearchResponse'
+  /v1/authorization/summary/byDateRange:
+    post:
+      tags:
+        - Authorization Summary
+      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      operationId: getCumulativeReport_6
+      requestBody:
+        description: 'Input AuthorizationSummaryRequest object, returns a list of measured aggregations by pivots'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthorizationSummaryRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SummaryResponse'
+  /v1/authorization/details/byDate:
+    post:
+      tags:
+        - Authorization Transactions
+      summary: Provides a list of transactions and their attributes. Limits results to 10MM.
+      operationId: getTop_6
+      requestBody:
+        description: 'Input AuthorizationSearchRequest object, returns a list of txns with included field values'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthorizationSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthorizationSearchResponse'
+  /v1/settlement/summary/metaData:
+    get:
+      tags:
+        - Settlement Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaData
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SettlementSummaryMetaData'
+  /v1/settlement/details/metaData:
+    get:
+      tags:
+        - Settlement Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaData_1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SettlementSearchMetaData'
+  /v1/retrieval/summary/metaData:
+    get:
+      tags:
+        - Retrieval Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaData_2
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetrievalSummaryMetaData'
+  /v1/retrieval/search/metaData:
+    get:
+      tags:
+        - Retrieval Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaData_3
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetrievalSearchMetaData'
+  /v1/funding/summary/metaData:
+    get:
+      tags:
+        - Funding Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaData_4
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FundingSummaryMetaData'
+  /v1/funding/search/metaData:
+    get:
+      tags:
+        - Funding Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaData_5
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FundingSearchMetaData'
+  /v1/fraud/summary/metaData:
+    get:
+      tags:
+        - Fraud Detect Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaData_6
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FraudDetectSummaryMetaData'
+  /v1/fraud/details/metaData:
+    get:
+      tags:
+        - Fraud Detect Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaData_7
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FraudDetectSearchMetaData'
+  /v1/disbursement/summary/metaData:
+    get:
+      tags:
+        - Disbursement Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaData_8
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisbursementSummaryMetaData'
+  /v1/disbursement/search/metaData:
+    get:
+      tags:
+        - Disbursement Transactions
+      description: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaData_9
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisbursementSearchMetaData'
+  /v1/chargeback/summary/metaData:
+    get:
+      tags:
+        - Chargeback Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaData_10
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChargebackSummaryMetaData'
+  /v1/chargeback/details/metaData:
+    get:
+      tags:
+        - Chargeback Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaData_11
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChargebackSearchMetaData'
+  /v1/authorization/summary/metaData:
+    get:
+      tags:
+        - Authorization Summary
+      summary: Provides the meta data for the byDateRange analysis
+      operationId: getMetaData_12
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthorizationSummaryMetaData'
+  /v1/authorization/details/metaData:
+    get:
+      tags:
+        - Authorization Transactions
+      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      operationId: getMetaData_13
+      responses:
+        default:
+          description: default response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthorizationSearchMetaData'
+components:
+  schemas:
+    FilterRequestData:
+      type: object
+      properties:
+        field:
+          type: string
+          description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query.'
+          example: o_timeZone
+        values:
+          type: array
+          description: 'Values associated with the field used to query the dataset, represents the [ where [ FIELD in(''VALUES1'', ''VALUES2'') ] ] clause of a sql query.  The field [ SearchRequest.filters[].field -> FilterMetaData.reportFilters.field ] and values [ SearchRequest.filters[].values[] -> FilterMetaData.reportFilters.mapping[].key ]'
+          example:
+            - '2'
+          items:
+            type: string
+            description: 'Values associated with the field used to query the dataset, represents the [ where [ FIELD in(''VALUES1'', ''VALUES2'') ] ] clause of a sql query.  The field [ SearchRequest.filters[].field -> FilterMetaData.reportFilters.field ] and values [ SearchRequest.filters[].values[] -> FilterMetaData.reportFilters.mapping[].key ]'
+            example: '["2"]'
+      description: Filter criteria used for querying a dataset.
+      example:
+        - field: o_timeZone
+          values:
+            - '2'
+        - field: a_currency
+          values:
+            - '1'
+    SettlementSummaryRequest:
+      required:
+        - filters
+        - from
+        - groupBy1
+        - to
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_settleDateType
+              values:
+                - '1'
+            - field: o_timeZone
+              values:
+                - '2'
+            - field: o_settleAmountType
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        groupBy1:
+          type: string
+          description: 'The field value used as a pivot point, represents the [ group by groupBy1 ] clause in a sql query.'
+          example: bi_cardBrand
+        groupBy2:
+          type: string
+          description: 'The field value used as a second pivot point, represents the second position of a [ group by 1, groupBy2 ] clause in a sql query.'
+          example: st_currency
+        from:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210221'
+        to:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210227'
+      description: Request object for authorization summary report creation.
+    SettlementSummaryResponse:
+      type: object
+      properties:
+        response1:
+          type: string
+          description: 'The enum ordinal value of the first queried pivot point, represents the grouped PIVOT1 response of a sql query.'
+          example: USD
+        response2:
+          type: string
+          description: 'The enum ordinal value of the second queried pivot point, represents the grouped PIVOT2 response of a sql query.'
+          example: Visa
+        response3:
+          type: string
+          description: 'The enum ordinal value of the third queried pivot point, represents the grouped PIVOT3 response of a sql query.'
+          example: USD
+        salesCount:
+          type: integer
+          description: The total number of transactions.
+          format: int64
+          example: 8998088
+        refundCount:
+          type: integer
+          description: The total number of refund transactions.
+          format: int64
+          example: 8040
+        rejectCount:
+          type: integer
+          description: The total number of rejected settlement transactions.
+          format: int64
+          example: 0
+        amountTotal:
+          type: number
+          description: The total transaction dollar amount of all matching rows grouped by pivot.
+          format: double
+          example: 83526868.58000049
+      description: Summary response object which maps settlement data points returned from the grouped by query request.
+    SettlementSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_settleDateType
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - st_siteID
+            - st_externalMID
+            - st_dbaName
+            - st_batchDate
+            - st_terminalID
+            - st_batchNo
+            - st_invoiceNo
+            - st_transactionDate
+            - st_network
+            - st_accountNumber
+            - st_processedTransactionAmount
+            - st_submittedTransactionAmount
+            - st_currency
+            - st_transactionStatus
+            - st_orderNumber
+            - st_ECIIndicator
+            - st_batchSequenceID
+            - st_type
+            - st_paymentMethod
+            - st_authCode
+            - st_planCode
+            - st_rejectReason
+            - st_integrityClass
+            - st_processor
+            - st_mobileIndicator
+            - st_foreignCurrAmount
+            - st_foreignCurrRate
+            - st_serviceCode
+            - st_authorizationType
+            - st_trckrid
+            - st_vehicleNumber
+            - st_odometerReading
+            - st_driverID
+            - st_transactionMode
+            - st_subMerchantID
+            - st_subMerchantName
+            - st_convinienceFee
+            - st_tokenType
+            - st_acquirerRefNo
+            - st_surChargeAmount
+            - st_surChargeInd
+            - st_productCode
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["st_siteID","st_externalMID","st_dbaName","st_batchDate","st_terminalID","st_batchNo","st_invoiceNo","st_transactionDate","st_network","st_accountNumber","st_processedTransactionAmount","st_submittedTransactionAmount","st_currency","st_transactionStatus","st_orderNumber","st_ECIIndicator","st_batchSequenceID","st_type","st_paymentMethod","st_authCode","st_planCode","st_rejectReason","st_integrityClass","st_processor","st_mobileIndicator","st_foreignCurrAmount","st_foreignCurrRate","st_serviceCode","st_authorizationType","st_trckrid","st_vehicleNumber","st_odometerReading","st_driverID","st_transactionMode","st_subMerchantID","st_subMerchantName","st_convinienceFee","st_tokenType","st_acquirerRefNo","st_surChargeAmount","st_surChargeInd","st_productCode"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210301'
+      description: Request object for settlement search results.
+    SettlementSearchResponse:
+      required:
+        - response
+      type: object
+      properties:
+        response:
+          type: array
+          description: Response object as a List of Map of String Object for settlement search.
+          example:
+            - st_accountNumber: 512912XXXXXX1283
+              st_terminalID: '00000'
+              st_dbaName: 'MERCHANT #122184 Q12'
+              st_type: 2
+              st_transactionStatus: 1
+              st_foreignCurrRate: 0
+              st_serviceCode: '201'
+              st_foreignCurrAmount: 0
+              st_planCode: MC12
+              st_surChargeAmount: 0
+              st_paymentMethod: 4
+              st_processor: 1
+              st_currency: 1
+              st_ECIIndicator: 0
+              st_rejectReason: '00'
+              st_odometerReading: '000000000'
+              st_acquirerRefNo: '5270123456781660759'
+              st_convinienceFee: 0
+              st_authorizationType: '00'
+              st_network: 3
+              st_productCode: 1
+              st_transactionMode: 2
+              st_integrityClass: B1
+              st_authCode: 093342
+              st_externalMID: '2312345678014'
+              st_transactionDate: 03/07/2021
+              st_batchSequenceID: 0003170368
+              st_siteID: 37212347881
+              st_invoiceNo: 121YK
+              st_batchNo: 08012341285
+              st_transactionAmount: 2.85
+              st_subMerchantName: 'MERCHANT #122184 Q12'
+              st_batchDate: 03/08/2021
+          items:
+            type: object
+            additionalProperties:
+              type: object
+              description: Response object as a List of Map of String Object for settlement search.
+              example:
+                - st_accountNumber: 512912XXXXXX1283
+                  st_terminalID: '00000'
+                  st_dbaName: 'MERCHANT #122184 Q12'
+                  st_type: 2
+                  st_transactionStatus: 1
+                  st_foreignCurrRate: 0
+                  st_serviceCode: '201'
+                  st_foreignCurrAmount: 0
+                  st_planCode: MC12
+                  st_surChargeAmount: 0
+                  st_paymentMethod: 4
+                  st_processor: 1
+                  st_currency: 1
+                  st_ECIIndicator: 0
+                  st_rejectReason: '00'
+                  st_odometerReading: '000000000'
+                  st_acquirerRefNo: '5270123456781660759'
+                  st_convinienceFee: 0
+                  st_authorizationType: '00'
+                  st_network: 3
+                  st_productCode: 1
+                  st_transactionMode: 2
+                  st_integrityClass: B1
+                  st_authCode: 093342
+                  st_externalMID: '2312345678014'
+                  st_transactionDate: 03/07/2021
+                  st_batchSequenceID: 0003170368
+                  st_siteID: 37212347881
+                  st_invoiceNo: 121YK
+                  st_batchNo: 08012341285
+                  st_transactionAmount: 2.85
+                  st_subMerchantName: 'MERCHANT #122184 Q12'
+                  st_batchDate: 03/08/2021
+            description: Response object as a List of Map of String Object for settlement search.
+            example:
+              - st_accountNumber: 512912XXXXXX1283
+                st_terminalID: '00000'
+                st_dbaName: 'MERCHANT #122184 Q12'
+                st_type: 2
+                st_transactionStatus: 1
+                st_foreignCurrRate: 0
+                st_serviceCode: '201'
+                st_foreignCurrAmount: 0
+                st_planCode: MC12
+                st_surChargeAmount: 0
+                st_paymentMethod: 4
+                st_processor: 1
+                st_currency: 1
+                st_ECIIndicator: 0
+                st_rejectReason: '00'
+                st_odometerReading: '000000000'
+                st_acquirerRefNo: '5270123456781660759'
+                st_convinienceFee: 0
+                st_authorizationType: '00'
+                st_network: 3
+                st_productCode: 1
+                st_transactionMode: 2
+                st_integrityClass: B1
+                st_authCode: 093342
+                st_externalMID: '2312345678014'
+                st_transactionDate: 03/07/2021
+                st_batchSequenceID: 0003170368
+                st_siteID: 37212347881
+                st_invoiceNo: 121YK
+                st_batchNo: 08012341285
+                st_transactionAmount: 2.85
+                st_subMerchantName: 'MERCHANT #122184 Q12'
+                st_batchDate: 03/08/2021
+      description: Response object for funding search results.
+    RetrievalSummaryRequest:
+      required:
+        - filters
+        - from
+        - groupBy1
+        - to
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_retrievalDateType
+              values:
+                - '1'
+            - field: r_currency
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        groupBy1:
+          type: string
+          description: 'The field value used as a pivot point, represents the [ group by groupBy1 ] clause in a sql query.'
+          example: bi_issuer
+        from:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210201'
+        to:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210228'
+      description: Request object for retrieval summary report creation.
+    SummaryResponse:
+      type: object
+      properties:
+        response1:
+          type: string
+          description: 'The value of the first queried pivot point, represents the grouped PIVOT1 response of a sql query.'
+          example: American Express
+        response2:
+          type: string
+          description: 'The value of the second queried pivot point, represents the grouped PIVOT2 response of a sql query.'
+          example: Non Mobile Wallet
+        response3:
+          type: string
+          description: 'The value of the third queried pivot point, represents the grouped PIVOT3 response of a sql query.'
+          example: Verification
+        totalCount:
+          type: integer
+          description: The total count of all matching rows grouped by pivot.
+          format: int64
+          example: 757
+        amountTotal:
+          type: number
+          description: The total transaction dollar amount of all matching rows grouped by pivot.
+          format: double
+          example: 11909212
+        approvedCount:
+          type: integer
+          description: The count of approved transactions for matching rows grouped by pivot.
+          format: int64
+          example: 721
+      description: Summary response object which maps the data points returned from the grouped by query request.
+    RetrievalSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_retrievalDateType
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - r_backendMID
+            - r_authNetwork
+            - r_receivedDate
+            - r_statusDate
+            - r_transactionDate
+            - r_status
+            - r_Reason
+            - r_currency
+            - r_dueDate
+            - r_ECIndicator
+            - r_processedTransactionAmount
+            - r_accountNumber
+            - r_first6
+            - r_last4
+            - r_invoiceNumber
+            - r_terminalId
+            - r_disputeID
+            - r_authCode
+            - r_trackingNumber
+            - r_svcCd
+            - r_merchantCategory
+            - r_orderNumber
+            - r_externalMid
+            - r_referenceNumber
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["r_backendMID","r_authNetwork","r_receivedDate","r_statusDate","r_transactionDate","r_status","r_Reason","r_currency","r_dueDate","r_ECIndicator","r_processedTransactionAmount","r_accountNumber","r_first6","r_last4","r_invoiceNumber","r_terminalId","r_disputeID","r_authCode","r_trackingNumber","r_svcCd","r_merchantCategory","r_orderNumber","r_externalMid","r_referenceNumber"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210225'
+      description: Request object for retrieval search results.
+    RetrievalSearchResponse:
+      required:
+        - response
+      type: object
+      properties:
+        response:
+          type: array
+          description: Response object as a List of Map of String Object for retrieval search.
+          example:
+            - r_referenceNumber: '66512345678078862'
+              r_ECIndicator: 0
+              r_receivedDate: 02/16/2021
+              r_backendMID: '371234567880'
+              r_authNetwork: 4
+              r_merchantCategory: 0
+              r_Reason: 31
+              r_first6: '601112'
+              r_last4: '1207'
+              r_disputeID: '139454219'
+              r_accountNumber: 601112XXXXXX1207
+              r_processedTransactionAmount: 32.51
+              r_statusDate: 03/08/2021
+              r_invoiceNumber: 2LMTZ
+              r_transactionDate: 02/09/2021
+              r_svcCd: '201'
+              r_currency: 1
+              r_dueDate: 03/08/2021
+              r_status: 2
+            - r_referenceNumber: '66509123456787316'
+              r_ECIndicator: 0
+              r_receivedDate: 02/16/2021
+              r_backendMID: '37212345678883'
+              r_authNetwork: 4
+              r_merchantCategory: 0
+              r_Reason: 31
+              r_first6: '601100'
+              r_last4: '6495'
+              r_disputeID: '131234110'
+              r_accountNumber: 601112XXXXXX1295
+              r_processedTransactionAmount: 15.99
+              r_statusDate: 03/08/2021
+              r_invoiceNumber: DWPXXXXK7YD
+              r_transactionDate: 02/13/2021
+              r_currency: 1
+              r_dueDate: 03/08/2021
+              r_status: 2
+          items:
+            type: object
+            additionalProperties:
+              type: object
+              description: Response object as a List of Map of String Object for retrieval search.
+              example:
+                - r_referenceNumber: '66512345678078862'
+                  r_ECIndicator: 0
+                  r_receivedDate: 02/16/2021
+                  r_backendMID: '371234567880'
+                  r_authNetwork: 4
+                  r_merchantCategory: 0
+                  r_Reason: 31
+                  r_first6: '601112'
+                  r_last4: '1207'
+                  r_disputeID: '139454219'
+                  r_accountNumber: 601112XXXXXX1207
+                  r_processedTransactionAmount: 32.51
+                  r_statusDate: 03/08/2021
+                  r_invoiceNumber: 2LMTZ
+                  r_transactionDate: 02/09/2021
+                  r_svcCd: '201'
+                  r_currency: 1
+                  r_dueDate: 03/08/2021
+                  r_status: 2
+                - r_referenceNumber: '66509123456787316'
+                  r_ECIndicator: 0
+                  r_receivedDate: 02/16/2021
+                  r_backendMID: '37212345678883'
+                  r_authNetwork: 4
+                  r_merchantCategory: 0
+                  r_Reason: 31
+                  r_first6: '601100'
+                  r_last4: '6495'
+                  r_disputeID: '131234110'
+                  r_accountNumber: 601112XXXXXX1295
+                  r_processedTransactionAmount: 15.99
+                  r_statusDate: 03/08/2021
+                  r_invoiceNumber: DWPXXXXK7YD
+                  r_transactionDate: 02/13/2021
+                  r_currency: 1
+                  r_dueDate: 03/08/2021
+                  r_status: 2
+            description: Response object as a List of Map of String Object for retrieval search.
+            example:
+              - r_referenceNumber: '66512345678078862'
+                r_ECIndicator: 0
+                r_receivedDate: 02/16/2021
+                r_backendMID: '371234567880'
+                r_authNetwork: 4
+                r_merchantCategory: 0
+                r_Reason: 31
+                r_first6: '601112'
+                r_last4: '1207'
+                r_disputeID: '139454219'
+                r_accountNumber: 601112XXXXXX1207
+                r_processedTransactionAmount: 32.51
+                r_statusDate: 03/08/2021
+                r_invoiceNumber: 2LMTZ
+                r_transactionDate: 02/09/2021
+                r_svcCd: '201'
+                r_currency: 1
+                r_dueDate: 03/08/2021
+                r_status: 2
+              - r_referenceNumber: '66509123456787316'
+                r_ECIndicator: 0
+                r_receivedDate: 02/16/2021
+                r_backendMID: '37212345678883'
+                r_authNetwork: 4
+                r_merchantCategory: 0
+                r_Reason: 31
+                r_first6: '601100'
+                r_last4: '6495'
+                r_disputeID: '131234110'
+                r_accountNumber: 601112XXXXXX1295
+                r_processedTransactionAmount: 15.99
+                r_statusDate: 03/08/2021
+                r_invoiceNumber: DWPXXXXK7YD
+                r_transactionDate: 02/13/2021
+                r_currency: 1
+                r_dueDate: 03/08/2021
+                r_status: 2
+      description: Response object for retrieval search results.
+    SearchRequest:
+      type: object
+      properties:
+        prcsTypeCD:
+          type: string
+        text:
+          type: string
+        minCntPerLevel:
+          type: integer
+          format: int32
+        maxCntPerLevel:
+          type: integer
+          format: int32
+        accsList:
+          type: array
+          items:
+            type: string
+            enum:
+              - Unknown
+              - SuperUser
+              - RelationshipManager
+              - Marker
+              - SubMarker
+              - Business
+              - Bank
+              - CustomBank
+              - Agent
+              - CustomAgent
+              - AssociationGroup
+              - Association
+              - CustomCorporate
+              - Lead
+              - CustomChain
+              - CustomDestination
+              - Corporate
+              - Merchant
+              - Location
+        clientID:
+          type: string
+        cardPresent:
+          type: boolean
+        countOnly:
+          type: boolean
+    FundingSummaryRequest:
+      required:
+        - filters
+        - from
+        - groupBy1
+        - to
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: fd_currency
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        groupBy1:
+          type: string
+          description: 'The field value used as a pivot point, represents the [ group by groupBy1 ] clause in a sql query.'
+          example: fd_processor
+        groupBy2:
+          type: string
+          description: 'The field value used as a second pivot point, represents the second position of a [ group by 1, groupBy2 ] clause in a sql query.'
+          readOnly: true
+        groupBy3:
+          type: string
+          description: 'The field value used as a third pivot point, represents the third position of a [ group by 1, 2, groupBy3 ] clause in a sql query.'
+          readOnly: true
+        from:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210221'
+        to:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210227'
+      description: Request object for funding summary report creation.
+    FundingSummaryResponse:
+      type: object
+      properties:
+        response1:
+          type: string
+          description: 'The enum ordinal value of the first queried pivot point, represents the grouped PIVOT1 response of a sql query.'
+          example: '1'
+        response2:
+          type: string
+          description: 'The enum ordinal value of the second queried pivot point, represents the grouped PIVOT2 response of a sql query.'
+          example: '0'
+        response3:
+          type: string
+          description: 'The enum ordinal value of the third queried pivot point, represents the grouped PIVOT3 response of a sql query.'
+          example: '11'
+        processedNetSales:
+          type: number
+          description: The net sales.
+          format: double
+          example: 526342
+        processedPaidByOthers:
+          type: number
+          description: The amount paid by others.
+          format: double
+          example: 7123
+        processedAdjustments:
+          type: number
+          description: The amount of adjustments.
+          format: double
+          example: 42
+        processedICCharges:
+          type: number
+          description: The amount of icc charges.
+          format: double
+          example: 22
+        processedServiceCharges:
+          type: number
+          description: The amount of service charges.
+          format: double
+          example: 254
+        processedFees:
+          type: number
+          description: The amount of service fees.
+          format: double
+          example: 426
+        processedChargebacksReversals:
+          type: number
+          description: The amount of chargeback reversals.
+          format: double
+          example: 2145
+        processedDeposit:
+          type: number
+          description: The deposit amount.
+          format: double
+          example: 954
+        processedAmountPaid:
+          type: number
+          description: The paid amount.
+          format: double
+          example: 428
+      description: Summary response object which maps the data points returned from the grouped by query request.
+    FundingSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_accessLevel
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - fd_siteID
+            - fd_batchDate
+            - fd_fundedDate
+            - fd_batchNo
+            - fd_majorCategory
+            - fd_minorCategory
+            - fd_productCode
+            - fd_creditAmount
+            - fd_debitAmount
+            - fd_currency
+            - fd_dda
+            - fd_processor
+            - fd_accountNetAmount
+            - fd_interchangeCD
+            - fd_accountCurrency
+            - fd_referenceNo
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["fd_siteID","fd_batchDate","fd_fundedDate","fd_batchNo","fd_majorCategory","fd_minorCategory","fd_productCode","fd_creditAmount","fd_debitAmount","fd_currency","fd_dda","fd_processor","fd_accountNetAmount","fd_interchangeCD","fd_accountCurrency","fd_referenceNo"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210303'
+      description: Request object for funding search results.
+    FundingSearchResponse:
+      required:
+        - response
+      type: object
+      properties:
+        response:
+          type: array
+          description: Response object as a List of Map of String Object for funding search.
+          example:
+            - fd_authCurrency: 1
+              fd_interchangeCD: '000'
+              fd_siteID: 345123456884
+              fd_minorCategory: 747
+              fd_creditAmount: 0
+              fd_referenceNo: 087800
+              fd_debitAmount: -47.97
+              fd_processor: 1
+              fd_majorCategory: 1
+              fd_accountCurrency: 0
+              fd_batchNo: 080100380671
+              fd_productCode: 5
+              fd_accountNetAmount: 0
+              fd_batchDate: 03/08/2021
+              fd_dda: XXXXXX9377
+              fd_fundedDate: 03/08/2021
+            - fd_authCurrency: 1
+              fd_interchangeCD: '000'
+              fd_siteID: 341234560884
+              fd_minorCategory: 247
+              fd_creditAmount: 47.97
+              fd_referenceNo: 087800
+              fd_debitAmount: 0
+              fd_processor: 1
+              fd_majorCategory: 1
+              fd_accountCurrency: 0
+              fd_batchNo: 080100380671
+              fd_productCode: 5
+              fd_accountNetAmount: 0
+              fd_batchDate: 03/08/2021
+              fd_dda: XXXXXX9377
+              fd_fundedDate: 03/08/2021
+          items:
+            type: object
+            additionalProperties:
+              type: object
+              description: Response object as a List of Map of String Object for funding search.
+              example:
+                - fd_authCurrency: 1
+                  fd_interchangeCD: '000'
+                  fd_siteID: 345123456884
+                  fd_minorCategory: 747
+                  fd_creditAmount: 0
+                  fd_referenceNo: 087800
+                  fd_debitAmount: -47.97
+                  fd_processor: 1
+                  fd_majorCategory: 1
+                  fd_accountCurrency: 0
+                  fd_batchNo: 080100380671
+                  fd_productCode: 5
+                  fd_accountNetAmount: 0
+                  fd_batchDate: 03/08/2021
+                  fd_dda: XXXXXX9377
+                  fd_fundedDate: 03/08/2021
+                - fd_authCurrency: 1
+                  fd_interchangeCD: '000'
+                  fd_siteID: 341234560884
+                  fd_minorCategory: 247
+                  fd_creditAmount: 47.97
+                  fd_referenceNo: 087800
+                  fd_debitAmount: 0
+                  fd_processor: 1
+                  fd_majorCategory: 1
+                  fd_accountCurrency: 0
+                  fd_batchNo: 080100380671
+                  fd_productCode: 5
+                  fd_accountNetAmount: 0
+                  fd_batchDate: 03/08/2021
+                  fd_dda: XXXXXX9377
+                  fd_fundedDate: 03/08/2021
+            description: Response object as a List of Map of String Object for funding search.
+            example:
+              - fd_authCurrency: 1
+                fd_interchangeCD: '000'
+                fd_siteID: 345123456884
+                fd_minorCategory: 747
+                fd_creditAmount: 0
+                fd_referenceNo: 087800
+                fd_debitAmount: -47.97
+                fd_processor: 1
+                fd_majorCategory: 1
+                fd_accountCurrency: 0
+                fd_batchNo: 080100380671
+                fd_productCode: 5
+                fd_accountNetAmount: 0
+                fd_batchDate: 03/08/2021
+                fd_dda: XXXXXX9377
+                fd_fundedDate: 03/08/2021
+              - fd_authCurrency: 1
+                fd_interchangeCD: '000'
+                fd_siteID: 341234560884
+                fd_minorCategory: 247
+                fd_creditAmount: 47.97
+                fd_referenceNo: 087800
+                fd_debitAmount: 0
+                fd_processor: 1
+                fd_majorCategory: 1
+                fd_accountCurrency: 0
+                fd_batchNo: 080100380671
+                fd_productCode: 5
+                fd_accountNetAmount: 0
+                fd_batchDate: 03/08/2021
+                fd_dda: XXXXXX9377
+                fd_fundedDate: 03/08/2021
+      description: Response object for funding search results.
+    FraudDetectSummaryRequest:
+      required:
+        - filters
+        - from
+        - groupBy1
+        - to
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: f_type
+              values:
+                - '2'
+                - '3'
+            - field: scoremin
+              values:
+                - '0'
+            - field: scoremax
+              values:
+                - '100'
+            - field: f_currency
+              values:
+                - '1'
+            - field: o_timeZone
+              values:
+                - '2'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        groupBy1:
+          type: string
+          description: 'The field value used as a pivot point, represents the [ group by groupBy1 ] clause in a sql query.'
+          example: f_accountType
+        from:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210201'
+        to:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210302'
+      description: Request object for fraud detect transaction/registration summary report creation.
+    FraudDetectSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: scoremin
+              values:
+                - '0'
+            - field: scoremax
+              values:
+                - '100'
+            - field: f_fraudID
+              values:
+                - 'MCD_MOBILEORDERING_US,MCD_WALLET_GER'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - f_type
+            - f_paymentAmount
+            - f_entryMethod
+            - f_score
+            - f_responseDecision
+            - f_responseDuration
+            - f_binID
+            - f_currency
+            - f_pinPresent
+            - f_scheme
+            - f_merchLocID
+            - f_accountType
+            - f_declineReasonOne
+            - f_declineReasonTwo
+            - f_loadDate
+            - f_fraudID
+            - f_scoreResult
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["f_type","f_paymentAmount","f_entryMethod","f_score","f_responseDecision","f_responseDuration","f_binID","f_currency","f_pinPresent","f_scheme","f_merchLocID","f_accountType","f_declineReasonOne","f_declineReasonTwo","f_loadDate","f_fraudID","f_scoreResult"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210217'
+      description: Request object for fraud detect transaction/registration search results.
+    FraudDetectSearchResponse:
+      required:
+        - response
+      type: object
+      properties:
+        response:
+          type: array
+          description: Response object as a List of Map of String Object for fraud detect search.
+          example:
+            - f_merchLocID: '1290000007100'
+              f_score: 25
+              f_declineReasonOne: 0
+              f_fraudID: MERCHANT_NAME
+              f_responseDuration: 451
+              f_pinPresent: 6
+              f_binID: '320046'
+              f_paymentAmount: 2.49
+              f_scoreResult: 1
+              f_responseDecision: 1
+              f_type: 3
+              f_declineReasonTwo: 64
+              f_accountType: 2
+              f_loadDate: 02/17/2021
+              f_entryMethod: 6
+              f_scheme: 2
+              f_currency: 49
+            - f_merchLocID: '1290000007100'
+              f_score: 0
+              f_declineReasonOne: 0
+              f_fraudID: MERCHANT_NAME
+              f_responseDuration: 210
+              f_pinPresent: 6
+              f_binID: '320046'
+              f_paymentAmount: 2.49
+              f_scoreResult: 1
+              f_responseDecision: 1
+              f_type: 10
+              f_declineReasonTwo: 0
+              f_accountType: 2
+              f_loadDate: 02/17/2021
+              f_entryMethod: 6
+              f_scheme: 2
+              f_currency: 49
+          items:
+            type: object
+            additionalProperties:
+              type: object
+              description: Response object as a List of Map of String Object for fraud detect search.
+              example:
+                - f_merchLocID: '1290000007100'
+                  f_score: 25
+                  f_declineReasonOne: 0
+                  f_fraudID: MERCHANT_NAME
+                  f_responseDuration: 451
+                  f_pinPresent: 6
+                  f_binID: '320046'
+                  f_paymentAmount: 2.49
+                  f_scoreResult: 1
+                  f_responseDecision: 1
+                  f_type: 3
+                  f_declineReasonTwo: 64
+                  f_accountType: 2
+                  f_loadDate: 02/17/2021
+                  f_entryMethod: 6
+                  f_scheme: 2
+                  f_currency: 49
+                - f_merchLocID: '1290000007100'
+                  f_score: 0
+                  f_declineReasonOne: 0
+                  f_fraudID: MERCHANT_NAME
+                  f_responseDuration: 210
+                  f_pinPresent: 6
+                  f_binID: '320046'
+                  f_paymentAmount: 2.49
+                  f_scoreResult: 1
+                  f_responseDecision: 1
+                  f_type: 10
+                  f_declineReasonTwo: 0
+                  f_accountType: 2
+                  f_loadDate: 02/17/2021
+                  f_entryMethod: 6
+                  f_scheme: 2
+                  f_currency: 49
+            description: Response object as a List of Map of String Object for fraud detect search.
+            example:
+              - f_merchLocID: '1290000007100'
+                f_score: 25
+                f_declineReasonOne: 0
+                f_fraudID: MERCHANT_NAME
+                f_responseDuration: 451
+                f_pinPresent: 6
+                f_binID: '320046'
+                f_paymentAmount: 2.49
+                f_scoreResult: 1
+                f_responseDecision: 1
+                f_type: 3
+                f_declineReasonTwo: 64
+                f_accountType: 2
+                f_loadDate: 02/17/2021
+                f_entryMethod: 6
+                f_scheme: 2
+                f_currency: 49
+              - f_merchLocID: '1290000007100'
+                f_score: 0
+                f_declineReasonOne: 0
+                f_fraudID: MERCHANT_NAME
+                f_responseDuration: 210
+                f_pinPresent: 6
+                f_binID: '320046'
+                f_paymentAmount: 2.49
+                f_scoreResult: 1
+                f_responseDecision: 1
+                f_type: 10
+                f_declineReasonTwo: 0
+                f_accountType: 2
+                f_loadDate: 02/17/2021
+                f_entryMethod: 6
+                f_scheme: 2
+                f_currency: 49
+      description: Response object for fraud detect search results.
+    DisbursementSummaryRequest:
+      required:
+        - filters
+        - from
+        - groupBy1
+        - to
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_disbursementDateType
+              values:
+                - '1'
+            - field: o_timeZone
+              values:
+                - '2'
+            - field: ds_currency
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        groupBy1:
+          type: string
+          description: 'The field value used as a pivot point, represents the [ group by groupBy1 ] clause in a sql query.'
+          example: ds_paymentStatus
+        from:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210201'
+        to:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210228'
+      description: Request object for disbursement summary report creation.
+    DisbursementSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_disbursementDateType
+              values:
+                - '1'
+            - field: o_timeZone
+              values:
+                - '2'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - ds_merchantStatus
+            - ds_merchantId
+            - ds_merchantName
+            - ds_mid
+            - ds_origId
+            - ds_fundingAccount
+            - ds_transactionId
+            - ds_referenceId
+            - ds_controlNumber
+            - ds_transactionAmount
+            - ds_currency
+            - ds_transactionDate
+            - ds_settlementDate
+            - ds_settlementStatus
+            - ds_applyDate
+            - ds_transactionStatus
+            - ds_expiryDate
+            - ds_paymentRecipientId
+            - ds_paymentId
+            - ds_accountLastFour
+            - ds_paymentType
+            - ds_paymentAmount
+            - ds_paymentDate
+            - ds_paymentTime
+            - ds_paymentStatus
+            - ds_paymentChannel
+            - ds_feeAmount
+            - ds_paymentVendorId
+            - ds_returnCode
+            - ds_transactionClaimNumber
+            - ds_transactionPaymentNumber
+            - ds_recipientId
+            - ds_recipientStatus
+            - ds_recipientGuest
+            - ds_recipientCompany
+            - ds_recipientClient
+            - ds_recipientReason
+            - ds_recipientType
+            - ds_recipientFName
+            - ds_recipientLName
+            - ds_email
+            - ds_createDate
+            - ds_recipientIdentifier
+            - ds_recipientIdentifierValue
+            - ds_recipientTin
+            - ds_recipientComments
+            - ds_recipientPhone
+            - ds_recipientExtension
+            - ds_streetOne
+            - ds_streetTwo
+            - ds_city
+            - ds_state
+            - ds_postalCode
+            - ds_country
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["ds_merchantStatus","ds_merchantId","ds_merchantName","ds_mid","ds_origId","ds_fundingAccount","ds_transactionId","ds_referenceId","ds_controlNumber","ds_transactionAmount","ds_currency","ds_transactionDate","ds_settlementDate","ds_settlementStatus","ds_applyDate","ds_transactionStatus","ds_expiryDate","ds_paymentRecipientId","ds_paymentId","ds_accountLastFour","ds_paymentType","ds_paymentAmount","ds_paymentDate","ds_paymentTime","ds_paymentStatus","ds_paymentChannel","ds_feeAmount","ds_paymentVendorId","ds_returnCode","ds_transactionClaimNumber","ds_transactionPaymentNumber","ds_recipientId","ds_recipientStatus","ds_recipientGuest","ds_recipientCompany","ds_recipientClient","ds_recipientReason","ds_recipientType","ds_recipientFName","ds_recipientLName","ds_email","ds_createDate","ds_recipientIdentifier","ds_recipientIdentifierValue","ds_recipientTin","ds_recipientComments","ds_recipientPhone","ds_recipientExtension","ds_streetOne","ds_streetTwo","ds_city","ds_state","ds_postalCode","ds_country"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210303'
+      description: Request object for disbursement search results.
+    DisbursementSearchResponse:
+      required:
+        - response
+      type: object
+      properties:
+        response:
+          type: array
+          description: Response object as a List of Map of String Object for disbursement search.
+          example:
+            - ds_recipientFName: FNAME
+              ds_settlementDate: null
+              ds_accountLastFour: '0013'
+              ds_city: JOHNS CREEK
+              ds_merchantStatus: 1
+              ds_createDate: 11/23/2020
+              ds_expiryDate: 03/06/2021
+              ds_recipientReason: 0
+              ds_recipientIdentifier: SPECIAL_CODE
+              ds_transactionPaymentNumber: '12345679168'
+              ds_recipientGuest: 1
+              ds_recipientCompany: null
+              ds_recipientTin: 10/21/1981
+              ds_recipientStatus: 2
+              ds_paymentId: 0eccd898-bb2a-4ec6-ab7f-724161560beb
+              ds_recipientComments: New Business Recipients
+              ds_paymentType: 2
+              ds_email: ABCD.EFHIJ@XYZ.COM
+              ds_applyDate: 03/03/2021
+              ds_recipientLName: LNAME
+              ds_recipientExtension: '2145'
+              ds_postalCode: '30097'
+              ds_paymentDate: 03/04/2021
+              ds_transactionStatus: 7
+              ds_recipientIdentifierValue: '4383'
+              ds_mid: 526XXXXXXX83
+              ds_feeAmount: 0
+              ds_transactionAmount: 112.94
+              ds_recipientPhone: 555-555-2754
+              ds_paymentAmount: 112.94
+              ds_merchantId: AF6262DXXXXXXXXD6F1
+              ds_controlNumber: '454567'
+              ds_fundingAccount: '12345678'
+              ds_currency: 1
+              ds_paymentStatus: 10
+              ds_paymentChannel: 3
+              ds_paymentVendorId: MERCHANTCUSTOMERID-12347212
+              ds_merchantName: Merchant Name
+              ds_transactionDate: 03/03/2021
+              ds_streetTwo: null
+              ds_origId: '12345678'
+              ds_paymentTime: '2021-03-04 14:27:35'
+              ds_recipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+              ds_paymentRecipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+              ds_transactionClaimNumber: '801'
+              ds_referenceId: merchantTransactionId-430027
+              ds_settlementStatus: 0
+              ds_state: 11
+              ds_returnCode: '712'
+              ds_country: USA
+              ds_recipientClient: null
+              ds_transactionId: TID-79b3e1f9-5b15-4ce1-93e4-e92c9dd64b34
+              ds_recipientType: 1
+              ds_streetOne: MAIN STREET
+            - ds_recipientFName: FNAME
+              ds_settlementDate: null
+              ds_accountLastFour: '0013'
+              ds_city: JOHNS CREEK
+              ds_merchantStatus: 1
+              ds_createDate: 11/23/2020
+              ds_expiryDate: 03/06/2021
+              ds_recipientReason: 0
+              ds_recipientIdentifier: SPECIAL_CODE
+              ds_transactionPaymentNumber: '12345679168'
+              ds_recipientGuest: 1
+              ds_recipientCompany: null
+              ds_recipientTin: 10/21/1981
+              ds_recipientStatus: 2
+              ds_paymentId: 0eccd898-bb2a-4ec6-ab7f-xxxxxx0beb
+              ds_recipientComments: New Business Recipients
+              ds_paymentType: 2
+              ds_email: XYZ.EFHIJ@XYZ.COM
+              ds_applyDate: 03/03/2021
+              ds_recipientLName: LNAME
+              ds_recipientExtension: '2145'
+              ds_postalCode: '30097'
+              ds_paymentDate: 03/04/2021
+              ds_transactionStatus: 7
+              ds_recipientIdentifierValue: '4383'
+              ds_mid: 526XXXXXXX83
+              ds_feeAmount: 0
+              ds_transactionAmount: 112.94
+              ds_recipientPhone: 555-555-4444
+              ds_paymentAmount: 115.94
+              ds_merchantId: AF6262DXXXXXXXXD6F1
+              ds_controlNumber: '454567'
+              ds_fundingAccount: '12345678'
+              ds_currency: 1
+              ds_paymentStatus: 10
+              ds_paymentChannel: 3
+              ds_paymentVendorId: MERCHANTCUSTOMERID-12347212
+              ds_merchantName: Merchant Name
+              ds_transactionDate: 03/03/2021
+              ds_streetTwo: null
+              ds_origId: '12345678'
+              ds_paymentTime: '2021-03-04 14:27:35'
+              ds_recipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+              ds_paymentRecipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+              ds_transactionClaimNumber: '801'
+              ds_referenceId: merchantTransactionId-430027
+              ds_settlementStatus: 0
+              ds_state: 11
+              ds_returnCode: '712'
+              ds_country: USA
+              ds_recipientClient: null
+              ds_transactionId: TID-79b3e1f9-5b15-4ce1-93e4-e92c9dd64b34
+              ds_recipientType: 1
+              ds_streetOne: 2 MAIN STREET
+          items:
+            type: object
+            additionalProperties:
+              type: object
+              description: Response object as a List of Map of String Object for disbursement search.
+              example:
+                - ds_recipientFName: FNAME
+                  ds_settlementDate: null
+                  ds_accountLastFour: '0013'
+                  ds_city: JOHNS CREEK
+                  ds_merchantStatus: 1
+                  ds_createDate: 11/23/2020
+                  ds_expiryDate: 03/06/2021
+                  ds_recipientReason: 0
+                  ds_recipientIdentifier: SPECIAL_CODE
+                  ds_transactionPaymentNumber: '12345679168'
+                  ds_recipientGuest: 1
+                  ds_recipientCompany: null
+                  ds_recipientTin: 10/21/1981
+                  ds_recipientStatus: 2
+                  ds_paymentId: 0eccd898-bb2a-4ec6-ab7f-724161560beb
+                  ds_recipientComments: New Business Recipients
+                  ds_paymentType: 2
+                  ds_email: ABCD.EFHIJ@XYZ.COM
+                  ds_applyDate: 03/03/2021
+                  ds_recipientLName: LNAME
+                  ds_recipientExtension: '2145'
+                  ds_postalCode: '30097'
+                  ds_paymentDate: 03/04/2021
+                  ds_transactionStatus: 7
+                  ds_recipientIdentifierValue: '4383'
+                  ds_mid: 526XXXXXXX83
+                  ds_feeAmount: 0
+                  ds_transactionAmount: 112.94
+                  ds_recipientPhone: 555-555-2754
+                  ds_paymentAmount: 112.94
+                  ds_merchantId: AF6262DXXXXXXXXD6F1
+                  ds_controlNumber: '454567'
+                  ds_fundingAccount: '12345678'
+                  ds_currency: 1
+                  ds_paymentStatus: 10
+                  ds_paymentChannel: 3
+                  ds_paymentVendorId: MERCHANTCUSTOMERID-12347212
+                  ds_merchantName: Merchant Name
+                  ds_transactionDate: 03/03/2021
+                  ds_streetTwo: null
+                  ds_origId: '12345678'
+                  ds_paymentTime: '2021-03-04 14:27:35'
+                  ds_recipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                  ds_paymentRecipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                  ds_transactionClaimNumber: '801'
+                  ds_referenceId: merchantTransactionId-430027
+                  ds_settlementStatus: 0
+                  ds_state: 11
+                  ds_returnCode: '712'
+                  ds_country: USA
+                  ds_recipientClient: null
+                  ds_transactionId: TID-79b3e1f9-5b15-4ce1-93e4-e92c9dd64b34
+                  ds_recipientType: 1
+                  ds_streetOne: MAIN STREET
+                - ds_recipientFName: FNAME
+                  ds_settlementDate: null
+                  ds_accountLastFour: '0013'
+                  ds_city: JOHNS CREEK
+                  ds_merchantStatus: 1
+                  ds_createDate: 11/23/2020
+                  ds_expiryDate: 03/06/2021
+                  ds_recipientReason: 0
+                  ds_recipientIdentifier: SPECIAL_CODE
+                  ds_transactionPaymentNumber: '12345679168'
+                  ds_recipientGuest: 1
+                  ds_recipientCompany: null
+                  ds_recipientTin: 10/21/1981
+                  ds_recipientStatus: 2
+                  ds_paymentId: 0eccd898-bb2a-4ec6-ab7f-xxxxxx0beb
+                  ds_recipientComments: New Business Recipients
+                  ds_paymentType: 2
+                  ds_email: XYZ.EFHIJ@XYZ.COM
+                  ds_applyDate: 03/03/2021
+                  ds_recipientLName: LNAME
+                  ds_recipientExtension: '2145'
+                  ds_postalCode: '30097'
+                  ds_paymentDate: 03/04/2021
+                  ds_transactionStatus: 7
+                  ds_recipientIdentifierValue: '4383'
+                  ds_mid: 526XXXXXXX83
+                  ds_feeAmount: 0
+                  ds_transactionAmount: 112.94
+                  ds_recipientPhone: 555-555-4444
+                  ds_paymentAmount: 115.94
+                  ds_merchantId: AF6262DXXXXXXXXD6F1
+                  ds_controlNumber: '454567'
+                  ds_fundingAccount: '12345678'
+                  ds_currency: 1
+                  ds_paymentStatus: 10
+                  ds_paymentChannel: 3
+                  ds_paymentVendorId: MERCHANTCUSTOMERID-12347212
+                  ds_merchantName: Merchant Name
+                  ds_transactionDate: 03/03/2021
+                  ds_streetTwo: null
+                  ds_origId: '12345678'
+                  ds_paymentTime: '2021-03-04 14:27:35'
+                  ds_recipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                  ds_paymentRecipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                  ds_transactionClaimNumber: '801'
+                  ds_referenceId: merchantTransactionId-430027
+                  ds_settlementStatus: 0
+                  ds_state: 11
+                  ds_returnCode: '712'
+                  ds_country: USA
+                  ds_recipientClient: null
+                  ds_transactionId: TID-79b3e1f9-5b15-4ce1-93e4-e92c9dd64b34
+                  ds_recipientType: 1
+                  ds_streetOne: 2 MAIN STREET
+            description: Response object as a List of Map of String Object for disbursement search.
+            example:
+              - ds_recipientFName: FNAME
+                ds_settlementDate: null
+                ds_accountLastFour: '0013'
+                ds_city: JOHNS CREEK
+                ds_merchantStatus: 1
+                ds_createDate: 11/23/2020
+                ds_expiryDate: 03/06/2021
+                ds_recipientReason: 0
+                ds_recipientIdentifier: SPECIAL_CODE
+                ds_transactionPaymentNumber: '12345679168'
+                ds_recipientGuest: 1
+                ds_recipientCompany: null
+                ds_recipientTin: 10/21/1981
+                ds_recipientStatus: 2
+                ds_paymentId: 0eccd898-bb2a-4ec6-ab7f-724161560beb
+                ds_recipientComments: New Business Recipients
+                ds_paymentType: 2
+                ds_email: ABCD.EFHIJ@XYZ.COM
+                ds_applyDate: 03/03/2021
+                ds_recipientLName: LNAME
+                ds_recipientExtension: '2145'
+                ds_postalCode: '30097'
+                ds_paymentDate: 03/04/2021
+                ds_transactionStatus: 7
+                ds_recipientIdentifierValue: '4383'
+                ds_mid: 526XXXXXXX83
+                ds_feeAmount: 0
+                ds_transactionAmount: 112.94
+                ds_recipientPhone: 555-555-2754
+                ds_paymentAmount: 112.94
+                ds_merchantId: AF6262DXXXXXXXXD6F1
+                ds_controlNumber: '454567'
+                ds_fundingAccount: '12345678'
+                ds_currency: 1
+                ds_paymentStatus: 10
+                ds_paymentChannel: 3
+                ds_paymentVendorId: MERCHANTCUSTOMERID-12347212
+                ds_merchantName: Merchant Name
+                ds_transactionDate: 03/03/2021
+                ds_streetTwo: null
+                ds_origId: '12345678'
+                ds_paymentTime: '2021-03-04 14:27:35'
+                ds_recipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                ds_paymentRecipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                ds_transactionClaimNumber: '801'
+                ds_referenceId: merchantTransactionId-430027
+                ds_settlementStatus: 0
+                ds_state: 11
+                ds_returnCode: '712'
+                ds_country: USA
+                ds_recipientClient: null
+                ds_transactionId: TID-79b3e1f9-5b15-4ce1-93e4-e92c9dd64b34
+                ds_recipientType: 1
+                ds_streetOne: MAIN STREET
+              - ds_recipientFName: FNAME
+                ds_settlementDate: null
+                ds_accountLastFour: '0013'
+                ds_city: JOHNS CREEK
+                ds_merchantStatus: 1
+                ds_createDate: 11/23/2020
+                ds_expiryDate: 03/06/2021
+                ds_recipientReason: 0
+                ds_recipientIdentifier: SPECIAL_CODE
+                ds_transactionPaymentNumber: '12345679168'
+                ds_recipientGuest: 1
+                ds_recipientCompany: null
+                ds_recipientTin: 10/21/1981
+                ds_recipientStatus: 2
+                ds_paymentId: 0eccd898-bb2a-4ec6-ab7f-xxxxxx0beb
+                ds_recipientComments: New Business Recipients
+                ds_paymentType: 2
+                ds_email: XYZ.EFHIJ@XYZ.COM
+                ds_applyDate: 03/03/2021
+                ds_recipientLName: LNAME
+                ds_recipientExtension: '2145'
+                ds_postalCode: '30097'
+                ds_paymentDate: 03/04/2021
+                ds_transactionStatus: 7
+                ds_recipientIdentifierValue: '4383'
+                ds_mid: 526XXXXXXX83
+                ds_feeAmount: 0
+                ds_transactionAmount: 112.94
+                ds_recipientPhone: 555-555-4444
+                ds_paymentAmount: 115.94
+                ds_merchantId: AF6262DXXXXXXXXD6F1
+                ds_controlNumber: '454567'
+                ds_fundingAccount: '12345678'
+                ds_currency: 1
+                ds_paymentStatus: 10
+                ds_paymentChannel: 3
+                ds_paymentVendorId: MERCHANTCUSTOMERID-12347212
+                ds_merchantName: Merchant Name
+                ds_transactionDate: 03/03/2021
+                ds_streetTwo: null
+                ds_origId: '12345678'
+                ds_paymentTime: '2021-03-04 14:27:35'
+                ds_recipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                ds_paymentRecipientId: 8a7f77ae75f546fc0175f5c61dcd009f
+                ds_transactionClaimNumber: '801'
+                ds_referenceId: merchantTransactionId-430027
+                ds_settlementStatus: 0
+                ds_state: 11
+                ds_returnCode: '712'
+                ds_country: USA
+                ds_recipientClient: null
+                ds_transactionId: TID-79b3e1f9-5b15-4ce1-93e4-e92c9dd64b34
+                ds_recipientType: 1
+                ds_streetOne: 2 MAIN STREET
+      description: Response object for disbursement search results.
+    Acquirers:
+      type: object
+      properties:
+        code:
+          type: string
+          enum:
+            - FISERV
+            - CHASE
+        platform:
+          type: string
+          enum:
+            - NORTH
+        mid:
+          type: string
+        frontEnds:
+          type: array
+          items:
+            $ref: '#/components/schemas/FrontEnds'
+    Attributes:
+      type: object
+      properties:
+        attribute:
+          type: string
+        value:
+          type: string
+    CommerceHub:
+      type: object
+      properties:
+        merchant:
+          $ref: '#/components/schemas/Merchant'
+        commerceHubClient:
+          $ref: '#/components/schemas/CommerceHubClient'
+        merchantAddress:
+          $ref: '#/components/schemas/MerchantAddress'
+        merchantContact:
+          $ref: '#/components/schemas/MerchantContact'
+        commerceHubTerminal:
+          type: array
+          items:
+            $ref: '#/components/schemas/CommerceHubTerminal'
+        offerings:
+          type: array
+          items:
+            $ref: '#/components/schemas/Offerings'
+    CommerceHubClient:
+      type: object
+      properties:
+        commerceHubClientId:
+          type: string
+        name:
+          type: string
+    CommerceHubTerminal:
+      type: object
+      properties:
+        commerceHubTid:
+          type: integer
+          format: int64
+        gateways:
+          type: array
+          items:
+            $ref: '#/components/schemas/Gateways'
+    FrontEnds:
+      type: object
+      properties:
+        code:
+          type: string
+        mid:
+          type: string
+        tid:
+          type: string
+        active:
+          type: boolean
+    Gateways:
+      type: object
+      properties:
+        code:
+          type: string
+          enum:
+            - IPG
+        id:
+          type: string
+        acquirers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Acquirers'
+    Merchant:
+      required:
+        - commerceHubMid
+      type: object
+      properties:
+        commerceHubParentMid:
+          type: integer
+          format: int64
+        notificationId:
+          type: string
+        requestedBy:
+          type: string
+        active:
+          type: boolean
+        dbaName:
+          type: string
+        mcc:
+          type: string
+        currency:
+          type: string
+        commerceHubMid:
+          type: integer
+          format: int64
+    MerchantAddress:
+      type: object
+      properties:
+        street:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        zip:
+          type: string
+        country:
+          type: string
+    MerchantContact:
+      type: object
+      properties:
+        contactName:
+          type: string
+        phone:
+          type: string
+        fax:
+          type: string
+        url:
+          type: string
+        email:
+          type: string
+    Offerings:
+      type: object
+      properties:
+        acquirercode:
+          type: string
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/Services'
+    Services:
+      type: object
+      properties:
+        service:
+          type: string
+          enum:
+            - MasterCard
+            - Visa
+            - Discover
+            - Diners
+            - Debit
+            - Amex
+            - AmexOB
+            - JCB
+            - ApplePay
+            - GooglePay
+            - SignatureDebit
+            - Tokenization
+            - CaptureType
+            - DebitRouting
+            - AuthOptimization
+        type:
+          type: string
+          enum:
+            - Entitlement
+            - Feature
+            - VAS
+        source:
+          type: array
+          items:
+            type: string
+            enum:
+              - ALL
+              - HPP
+              - API
+              - VPOS
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attributes'
+    ChargebackSummaryRequest:
+      required:
+        - filters
+        - from
+        - groupBy1
+        - to
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_chargebackDateType
+              values:
+                - '1'
+            - field: cb_currency
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        groupBy1:
+          type: string
+          description: 'The field value used as a pivot point, represents the [ group by groupBy1 ] clause in a sql query.'
+          example: bi_cardBrand
+        from:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210201'
+        to:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210227'
+      description: Request object for chargeback summary report creation.
+    ChargebackSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_chargebackDateType
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - cb_backendMID
+            - cb_authNetwork
+            - cb_receivedDate
+            - cb_statusDate
+            - cb_transactionDate
+            - cb_status
+            - cb_category
+            - cb_workType
+            - cb_winLoss
+            - cb_Reason
+            - cb_reasonCode
+            - cb_currency
+            - cb_chargebackAmount
+            - cb_dueDate
+            - cb_transactionType
+            - cb_dispositionDate
+            - cb_Disposition
+            - cb_ECIndicator
+            - cb_transactionAmount
+            - cb_accountNumber
+            - cb_first6
+            - cb_last4
+            - cb_invoiceNumber
+            - cb_terminalId
+            - cb_disputeID
+            - cb_referenceNumber
+            - cb_authCode
+            - cb_trackingNumber
+            - cb_svcCd
+            - cb_merchantCategory
+            - cb_orderNumber
+            - cb_responseReceived
+            - cb_respondedDate
+            - cb_externalMid
+            - cb_paymentMethod
+            - cb_sendMode
+            - cb_recurring
+            - cb_mobileWallet
+            - cb_tokenResponseInd
+            - cb_adjDate
+            - cb_captureMethod
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["cb_backendMID","cb_authNetwork","cb_receivedDate","cb_statusDate","cb_transactionDate","cb_status","cb_category","cb_workType","cb_winLoss","cb_Reason","cb_reasonCode","cb_currency","cb_chargebackAmount","cb_dueDate","cb_transactionType","cb_dispositionDate","cb_Disposition","cb_ECIndicator","cb_transactionAmount","cb_accountNumber","cb_first6","cb_last4","cb_invoiceNumber","cb_terminalId","cb_disputeID","cb_referenceNumber","cb_authCode","cb_trackingNumber","cb_svcCd","cb_merchantCategory","cb_orderNumber","cb_responseReceived","cb_respondedDate","cb_externalMid","cb_paymentMethod","cb_sendMode","cb_recurring","cb_mobileWallet","cb_tokenResponseInd","cb_adjDate","cb_captureMethod"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210217'
+      description: Request object for chargeback search results.
+    ChargebackSearchResponse:
+      required:
+        - response
+      type: object
+      properties:
+        response:
+          type: array
+          description: Response object as a List of Map of String Object for chargeback search.
+          example:
+            - cb_Reason: 6
+              cb_recurring: 0
+              cb_tokenResponseInd: 1
+              cb_transactionType: 3
+              cb_transactionAmount: 24.45
+              cb_externalMid: '3721234880'
+              cb_first6: '411234'
+              cb_ECIndicator: 6
+              cb_workType: 1
+              cb_dueDate: 03/07/2021
+              cb_last4: '5643'
+              cb_responseReceived: 'N'
+              cb_currency: 1
+              cb_backendMID: '372123480'
+              cb_chargebackAmount: 24.45
+              cb_paymentMethod: 10
+              cb_adjDate: 02/23/2021
+              cb_accountNumber: 414712XXXXXX1243
+              cb_receivedDate: 02/19/2021
+              cb_transactionDate: 02/14/2021
+              cb_authCode: 06127D
+              cb_sendMode: 1
+              cb_merchantCategory: 5814
+              cb_reasonCode: '1261'
+              cb_referenceNumber: '2494312345678465601'
+              cb_category: 1
+              cb_statusDate: 03/08/2021
+              cb_authNetwork: 2
+              cb_winLoss: 2
+              cb_mobileWallet: 0
+              cb_status: 2
+              cb_invoiceNumber: DWXXXX4ZWCS
+              cb_disputeID: '8112345678001'
+              cb_dispositionDate: 02/20/2021
+              cb_Disposition: 71
+            - cb_Reason: 1
+              cb_recurring: 0
+              cb_tokenResponseInd: 1
+              cb_transactionType: 3
+              cb_transactionAmount: 10
+              cb_externalMid: '371234567884'
+              cb_first6: '441234'
+              cb_ECIndicator: 6
+              cb_workType: 1
+              cb_dueDate: 03/07/2021
+              cb_last4: '4124'
+              cb_responseReceived: 'N'
+              cb_currency: 1
+              cb_backendMID: '3721234567884'
+              cb_chargebackAmount: 10
+              cb_paymentMethod: 10
+              cb_adjDate: 02/23/2021
+              cb_accountNumber: 440012XXXXXX1234
+              cb_receivedDate: 02/18/2021
+              cb_transactionDate: 01/27/2021
+              cb_authCode: 03102D
+              cb_sendMode: 1
+              cb_merchantCategory: 5814
+              cb_reasonCode: '1040'
+              cb_referenceNumber: '24431123456786649'
+              cb_category: 1
+              cb_statusDate: 03/08/2021
+              cb_authNetwork: 2
+              cb_winLoss: 2
+              cb_mobileWallet: 0
+              cb_status: 2
+              cb_invoiceNumber: DW9XXXXK5MZ
+              cb_disputeID: '810412343501'
+              cb_dispositionDate: 02/20/2021
+              cb_Disposition: 71
+          items:
+            type: object
+            additionalProperties:
+              type: object
+              description: Response object as a List of Map of String Object for chargeback search.
+              example:
+                - cb_Reason: 6
+                  cb_recurring: 0
+                  cb_tokenResponseInd: 1
+                  cb_transactionType: 3
+                  cb_transactionAmount: 24.45
+                  cb_externalMid: '3721234880'
+                  cb_first6: '411234'
+                  cb_ECIndicator: 6
+                  cb_workType: 1
+                  cb_dueDate: 03/07/2021
+                  cb_last4: '5643'
+                  cb_responseReceived: 'N'
+                  cb_currency: 1
+                  cb_backendMID: '372123480'
+                  cb_chargebackAmount: 24.45
+                  cb_paymentMethod: 10
+                  cb_adjDate: 02/23/2021
+                  cb_accountNumber: 414712XXXXXX1243
+                  cb_receivedDate: 02/19/2021
+                  cb_transactionDate: 02/14/2021
+                  cb_authCode: 06127D
+                  cb_sendMode: 1
+                  cb_merchantCategory: 5814
+                  cb_reasonCode: '1261'
+                  cb_referenceNumber: '2494312345678465601'
+                  cb_category: 1
+                  cb_statusDate: 03/08/2021
+                  cb_authNetwork: 2
+                  cb_winLoss: 2
+                  cb_mobileWallet: 0
+                  cb_status: 2
+                  cb_invoiceNumber: DWXXXX4ZWCS
+                  cb_disputeID: '8112345678001'
+                  cb_dispositionDate: 02/20/2021
+                  cb_Disposition: 71
+                - cb_Reason: 1
+                  cb_recurring: 0
+                  cb_tokenResponseInd: 1
+                  cb_transactionType: 3
+                  cb_transactionAmount: 10
+                  cb_externalMid: '371234567884'
+                  cb_first6: '441234'
+                  cb_ECIndicator: 6
+                  cb_workType: 1
+                  cb_dueDate: 03/07/2021
+                  cb_last4: '4124'
+                  cb_responseReceived: 'N'
+                  cb_currency: 1
+                  cb_backendMID: '3721234567884'
+                  cb_chargebackAmount: 10
+                  cb_paymentMethod: 10
+                  cb_adjDate: 02/23/2021
+                  cb_accountNumber: 440012XXXXXX1234
+                  cb_receivedDate: 02/18/2021
+                  cb_transactionDate: 01/27/2021
+                  cb_authCode: 03102D
+                  cb_sendMode: 1
+                  cb_merchantCategory: 5814
+                  cb_reasonCode: '1040'
+                  cb_referenceNumber: '24431123456786649'
+                  cb_category: 1
+                  cb_statusDate: 03/08/2021
+                  cb_authNetwork: 2
+                  cb_winLoss: 2
+                  cb_mobileWallet: 0
+                  cb_status: 2
+                  cb_invoiceNumber: DW9XXXXK5MZ
+                  cb_disputeID: '810412343501'
+                  cb_dispositionDate: 02/20/2021
+                  cb_Disposition: 71
+            description: Response object as a List of Map of String Object for chargeback search.
+            example:
+              - cb_Reason: 6
+                cb_recurring: 0
+                cb_tokenResponseInd: 1
+                cb_transactionType: 3
+                cb_transactionAmount: 24.45
+                cb_externalMid: '3721234880'
+                cb_first6: '411234'
+                cb_ECIndicator: 6
+                cb_workType: 1
+                cb_dueDate: 03/07/2021
+                cb_last4: '5643'
+                cb_responseReceived: 'N'
+                cb_currency: 1
+                cb_backendMID: '372123480'
+                cb_chargebackAmount: 24.45
+                cb_paymentMethod: 10
+                cb_adjDate: 02/23/2021
+                cb_accountNumber: 414712XXXXXX1243
+                cb_receivedDate: 02/19/2021
+                cb_transactionDate: 02/14/2021
+                cb_authCode: 06127D
+                cb_sendMode: 1
+                cb_merchantCategory: 5814
+                cb_reasonCode: '1261'
+                cb_referenceNumber: '2494312345678465601'
+                cb_category: 1
+                cb_statusDate: 03/08/2021
+                cb_authNetwork: 2
+                cb_winLoss: 2
+                cb_mobileWallet: 0
+                cb_status: 2
+                cb_invoiceNumber: DWXXXX4ZWCS
+                cb_disputeID: '8112345678001'
+                cb_dispositionDate: 02/20/2021
+                cb_Disposition: 71
+              - cb_Reason: 1
+                cb_recurring: 0
+                cb_tokenResponseInd: 1
+                cb_transactionType: 3
+                cb_transactionAmount: 10
+                cb_externalMid: '371234567884'
+                cb_first6: '441234'
+                cb_ECIndicator: 6
+                cb_workType: 1
+                cb_dueDate: 03/07/2021
+                cb_last4: '4124'
+                cb_responseReceived: 'N'
+                cb_currency: 1
+                cb_backendMID: '3721234567884'
+                cb_chargebackAmount: 10
+                cb_paymentMethod: 10
+                cb_adjDate: 02/23/2021
+                cb_accountNumber: 440012XXXXXX1234
+                cb_receivedDate: 02/18/2021
+                cb_transactionDate: 01/27/2021
+                cb_authCode: 03102D
+                cb_sendMode: 1
+                cb_merchantCategory: 5814
+                cb_reasonCode: '1040'
+                cb_referenceNumber: '24431123456786649'
+                cb_category: 1
+                cb_statusDate: 03/08/2021
+                cb_authNetwork: 2
+                cb_winLoss: 2
+                cb_mobileWallet: 0
+                cb_status: 2
+                cb_invoiceNumber: DW9XXXXK5MZ
+                cb_disputeID: '810412343501'
+                cb_dispositionDate: 02/20/2021
+                cb_Disposition: 71
+      description: Response object for chargeback search results.
+    AuthorizationSummaryRequest:
+      required:
+        - filters
+        - from
+        - groupBy1
+        - to
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_timeZone
+              values:
+                - '2'
+            - field: a_currency
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        groupBy1:
+          type: string
+          description: 'The field value used as a pivot point, represents the [ group by groupBy1 ] clause in a sql query.'
+          example: a_network
+        groupBy2:
+          type: string
+          description: 'The field value used as a second pivot point, represents the second position of a [ group by 1, groupBy2 ] clause in a sql query.'
+          example: a_mobileWallet
+        groupBy3:
+          type: string
+          description: 'The field value used as a third pivot point, represents the third position of a [ group by 1, 2, groupBy3 ] clause in a sql query.'
+          example: a_type
+        from:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210217'
+        to:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210218'
+      description: Request object for authorization summary report creation.
+    AuthorizationSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_timeZone
+              values:
+                - '2'
+            - field: a_currency
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - a_approvalCode
+            - a_type
+            - a_transactionDateTime
+            - a_accountNumber
+            - a_cardExpiryDate
+            - a_amount
+            - a_currency
+            - a_network
+            - a_paymentMethod
+            - a_declineReason
+            - a_authCode
+            - a_siteID
+            - a_merchantCategory
+            - a_customerName
+            - a_giftCardNumber
+            - a_partnerOrderID
+            - a_source
+            - a_sendMode
+            - a_mobileWallet
+            - a_ECIIndicator
+            - a_terminalID
+            - a_CAVVResponse
+            - a_AVSResponse
+            - a_CVVResult
+            - a_banknetRef
+            - a_subType
+            - a_tokenId
+            - a_tokenResponseInd
+            - a_ordNo
+            - a_nativeRejectCode
+            - a_externalMid
+            - a_rtAction
+            - a_rtStatus
+            - a_merchandiseCode
+            - a_pumpRegisterNumber
+            - a_quantity
+            - a_lcldt
+            - a_transactionTime
+            - a_GUID
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["a_approvalCode","a_type","a_transactionDateTime","a_accountNumber","a_cardExpiryDate","a_amount","a_currency","a_network","a_paymentMethod","a_declineReason","a_authCode","a_siteID","a_merchantCategory","a_customerName","a_giftCardNumber","a_partnerOrderID","a_source","a_sendMode","a_mobileWallet","a_ECIIndicator","a_terminalID","a_CAVVResponse","a_AVSResponse","a_CVVResult","a_banknetRef","a_subType","a_tokenId","a_tokenResponseInd","a_ordNo","a_nativeRejectCode","a_externalMid","a_rtAction","a_rtStatus","a_merchandiseCode","a_pumpRegisterNumber","a_quantity","a_lcldt","a_transactionTime","a_GUID"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210217'
+      description: Request object for authorization search results.
+    AuthorizationSearchResponse:
+      required:
+        - response
+      type: object
+      properties:
+        response:
+          type: array
+          description: Response object as a List of Map of String Object for authorization search.
+          example:
+            - a_accountNumber: 447612XXXXXX1284
+              a_approvalCode: 1
+              a_paymentMethod: 5
+              a_declineReason: 1
+              a_amount: 27.2
+              a_transactionDateTime: '02/17/2021 12:11:23 AM'
+              a_currency: 1
+              a_authCode: 081294
+              a_type: 2
+              a_cardExpiryDate: '1123'
+              a_network: 2
+            - a_accountNumber: 406012XXXXXX1280
+              a_approvalCode: 1
+              a_paymentMethod: 4
+              a_declineReason: 1
+              a_amount: 37.89
+              a_transactionDateTime: '02/17/2021 12:11:33 AM'
+              a_currency: 1
+              a_authCode: 04123C
+              a_type: 2
+              a_cardExpiryDate: '524'
+              a_network: 2
+          items:
+            type: object
+            additionalProperties:
+              type: object
+              description: Response object as a List of Map of String Object for authorization search.
+              example:
+                - a_accountNumber: 447612XXXXXX1284
+                  a_approvalCode: 1
+                  a_paymentMethod: 5
+                  a_declineReason: 1
+                  a_amount: 27.2
+                  a_transactionDateTime: '02/17/2021 12:11:23 AM'
+                  a_currency: 1
+                  a_authCode: 081294
+                  a_type: 2
+                  a_cardExpiryDate: '1123'
+                  a_network: 2
+                - a_accountNumber: 406012XXXXXX1280
+                  a_approvalCode: 1
+                  a_paymentMethod: 4
+                  a_declineReason: 1
+                  a_amount: 37.89
+                  a_transactionDateTime: '02/17/2021 12:11:33 AM'
+                  a_currency: 1
+                  a_authCode: 04123C
+                  a_type: 2
+                  a_cardExpiryDate: '524'
+                  a_network: 2
+            description: Response object as a List of Map of String Object for authorization search.
+            example:
+              - a_accountNumber: 447612XXXXXX1284
+                a_approvalCode: 1
+                a_paymentMethod: 5
+                a_declineReason: 1
+                a_amount: 27.2
+                a_transactionDateTime: '02/17/2021 12:11:23 AM'
+                a_currency: 1
+                a_authCode: 081294
+                a_type: 2
+                a_cardExpiryDate: '1123'
+                a_network: 2
+              - a_accountNumber: 406012XXXXXX1280
+                a_approvalCode: 1
+                a_paymentMethod: 4
+                a_declineReason: 1
+                a_amount: 37.89
+                a_transactionDateTime: '02/17/2021 12:11:33 AM'
+                a_currency: 1
+                a_authCode: 04123C
+                a_type: 2
+                a_cardExpiryDate: '524'
+                a_network: 2
+      description: Response object for authorization search results.
+    FilterMetaData:
+      type: object
+      properties:
+        field:
+          type: string
+          description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query.'
+          example: o_timeZone
+        type:
+          type: string
+          description: 'The filter type of the field. Choice, Text, Decimal, Etc'
+          example: Choice
+        mapping:
+          type: object
+          additionalProperties:
+            type: string
+            description: 'Possible values of the field used to query the dataset, represents the [ where [ FIELD in(''VALUES1'', ''VALUES2'') ] ]. clause of a sql query'
+            example: '{"0":"UTC","1":"Greenwich","2":"America/New_York","3":"America/Chicago","4":"America/Denver","5":"America/Los_Angeles","6":"America/Halifax","7":"Pacific/Honolulu"}'
+          description: 'Possible values of the field used to query the dataset, represents the [ where [ FIELD in(''VALUES1'', ''VALUES2'') ] ]. clause of a sql query'
+          example:
+            '0': UTC
+            '1': Greenwich
+            '2': America/New_York
+            '3': America/Chicago
+            '4': America/Denver
+            '5': America/Los_Angeles
+            '6': America/Halifax
+            '7': Pacific/Honolulu
+      description: Filter criteria used for querying a dataset.
+      example:
+        - field: a_source
+          type: Choice
+          mapping:
+            '0': Regular
+            '1': uCom
+        - field: a_accountNumber
+          type: Text
+        - field: a_first6
+          type: Text
+        - field: a_last4
+          type: Text
+        - field: a_customerName
+          type: Text
+        - field: a_giftCardNumber
+          type: Text
+        - field: a_partnerOrderID
+          type: Text
+        - field: a_terminalID
+          type: Text
+        - field: a_authCode
+          type: Text
+        - field: a_source
+          type: Choice
+          mapping:
+            '0': Regular
+            '1': uCom
+        - field: a_approvalCode
+          type: Choice
+          mapping:
+            '0': Unknown
+            '1': Approved
+            '2': Declined
+        - field: a_network
+          type: Choice
+          mapping:
+            '0': Unknown
+            '1': American Express
+            '2': Visa
+            '3': Mastercard
+            '4': Discover
+            '5': Pulse
+            '6': Accel
+            '7': Interlink
+            '8': Jeanie
+            '9': Maestro
+            '10': NYCE
+            '11': CU Alliance
+            '12': Shazam
+            '13': EBT
+            '14': AFFN
+            '15': Telecheck
+            '16': Diners Club
+            '17': PayPal
+            '18': ValueLink
+            '19': Private Label
+            '20': Debit/Other
+            '21': Voyager
+            '22': ATH
+            '23': JCB
+            '24': Star
+            '25': Star SE
+            '26': Star W
+            '27': Star Access
+            '28': Fleet
+            '29': Stored Value Systems (SVS)
+            '30': Wright Express (WEX)
+            '31': Incomm
+            '32': Canadian Debit (Interac)
+            '33': Not Applicable
+            '34': Moneris
+            '35': Vaulted Card
+            '36': Pin-Authenticated Visa Debit (PAVD)
+            '37': Mastercard MoneySend
+            '38': Union Pay
+            '39': Fraud FlexDetect
+            '40': Certegy
+            '41': MCI
+    SettlementSummaryMetaData:
+      type: object
+      properties:
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: o_settleAmountType
+              type: Choice
+              mapping:
+                '0': Processed
+                '1': Submitted
+            - field: o_measuresDisplay
+              type: Choice
+              mapping:
+                '0': Amounts
+                '1': Counts
+                '2': Amounts & Counts
+            - field: o_settleDateType
+              type: Choice
+              mapping:
+                '0': Authorization Date
+                '1': Settlement Date
+            - field: o_timeZone
+              type: Choice
+              mapping:
+                '0': UTC
+                '1': Greenwich
+                '2': America/New_York
+                '3': America/Chicago
+                '4': America/Denver
+                '5': America/Los_Angeles
+                '6': America/Halifax
+                '7': Pacific/Honolulu
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+        pivotFields:
+          type: object
+          additionalProperties:
+            type: string
+            description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+            example: '{"bi_issuer":"Card Issuer","bi_cardBrand":"Card Brand","st_type":"Type","bi_country":"Card Issuing Country","bi_regulated":"Card Issuer Regulated","st_merchantCategory":"Merchant Category","bi_EBTState":"Card EBT State","o_txnMonth":"Txn Month","s_city":"Site City","o_overall":"All","s_zip":"Site Zip Code","st_planCode":"Plan Code","st_paymentMethod":"Payment Method","st_processor":"Processor","st_ECIIndicator":"EC Indicator","bi_details":"Card Issue Detail","st_network":"Network","o_txnWeek":"Txn Week","s_altid":"Site Alternate ID","s_Name":"Site Name","bi_cardSubType":"Card Sub Type","o_txnDay":"Txn Day","st_siteID":"Site ID (BE)","bi_type":"Card Issue Type","st_batchNo":"Batch No.","bi_reloadable":"Card Reloadable","s_st_abbr_nm":"Site State","bi_cardClass":"Card Class","o_txnYear":"Txn Year","bi_binMap":"Card Issuer Bin","o_txnQuarter":"Txn Quarter"}'
+          description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+          example:
+            bi_issuer: Card Issuer
+            bi_cardBrand: Card Brand
+            st_type: Type
+            bi_country: Card Issuing Country
+            bi_regulated: Card Issuer Regulated
+            st_merchantCategory: Merchant Category
+            bi_EBTState: Card EBT State
+            o_txnMonth: Txn Month
+            s_city: Site City
+            o_overall: All
+            s_zip: Site Zip Code
+            st_planCode: Plan Code
+            st_paymentMethod: Payment Method
+            st_processor: Processor
+            st_ECIIndicator: EC Indicator
+            bi_details: Card Issue Detail
+            st_network: Network
+            o_txnWeek: Txn Week
+            s_altid: Site Alternate ID
+            s_Name: Site Name
+            bi_cardSubType: Card Sub Type
+            o_txnDay: Txn Day
+            st_siteID: Site ID (BE)
+            bi_type: Card Issue Type
+            st_batchNo: Batch No.
+            bi_reloadable: Card Reloadable
+            s_st_abbr_nm: Site State
+            bi_cardClass: Card Class
+            o_txnYear: Txn Year
+            bi_binMap: Card Issuer Bin
+            o_txnQuarter: Txn Quarter
+      description: MetaData associated with building summary reports.
+    FieldMetaData:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The id of the field.
+          example: a_approvalCode
+        name:
+          type: string
+          description: The name of the field.
+          example: Approval Status
+        type:
+          type: string
+          description: 'The field type of the entry. Choice, Text, Decimal, Etc'
+          example: Text
+        description:
+          type: string
+          description: The description of the field.
+          example: Identifies if the authorization was approved or declined.
+        mapping:
+          type: object
+          additionalProperties:
+            type: string
+            description: 'Possible values of the field used to query the dataset, represents the [ where [ FIELD in(''VALUES1'', ''VALUES2'') ] ]. clause of a sql query'
+            example: '{"0":"UTC"}'
+          description: 'Possible values of the field used to query the dataset, represents the [ where [ FIELD in(''VALUES1'', ''VALUES2'') ] ]. clause of a sql query'
+          example:
+            '0': UTC
+      description: Field selection used for querying a dataset by id.
+      example:
+        - id: a_approvalCode
+          name: Approval Status
+          type: Map
+          description: Identifies if the authorization was approved or declined.
+          mapping:
+            '0': Unknown
+            '1': Approved
+            '2': Declined
+        - id: a_type
+          name: Type
+          type: Map
+          description: 'Transaction type code e.g. sale, refund etc.'
+          mapping:
+            '0': Unknown
+            '1': Totals
+            '2': Purchase
+            '3': Pre Auth Request
+            '4': Pre Auth Complete
+            '5': Reversal
+            '6': Return
+            '7': Cancellation
+            '8': Mail Auth
+            '9': Activate
+            '10': Reload
+            '11': Verification
+            '12': TeleCheck
+            '13': Start Fueling
+            '14': Unknown
+            '15': Fee
+            '16': Withdrawal
+            '17': Deposit
+            '18': Transfer
+            '19': Balance Inquiry
+            '20': Score Fraud
+            '21': Generate Token
+            '22': Adjustment
+            '23': Report Lost/Stolen
+            '24': Close Account
+            '25': Freeze Account
+            '26': Unfreeze Account
+            '27': Transaction History
+            '28': Timeout Reversal
+            '29': Setup Auto-reload
+            '30': Return Reversal
+            '31': Cash Back
+        - id: a_transactionDateTime
+          name: Txn Date & Time
+          type: Time
+          description: Date & Time of the authorization transaction.
+        - id: a_accountNumber
+          name: 'Account #'
+          type: String
+          description: Card number used for authorization transaction.
+        - id: a_cardExpiryDate
+          name: Card Expiry Date
+          type: String
+          description: Indicates expiration date on card.
+        - id: a_amount
+          name: Amount
+          type: Double
+          description: Amount requested for the authorization transaction.
+    SettlementSearchMetaData:
+      type: object
+      properties:
+        fields:
+          type: array
+          description: 'Fields by id, name and description that are available to query the search report.'
+          example:
+            - id: st_siteID
+              name: Site ID (BE)
+              type: Long
+              description: An unique identifier assigned to the merchant. Also known as a MID.
+            - id: st_externalMID
+              name: External ID
+              type: String
+              description: ''
+            - id: st_dbaName
+              name: DBA Name
+              type: String
+              description: ''
+            - id: st_batchDate
+              name: Batch Date
+              type: String
+              description: ''
+            - id: st_terminalID
+              name: Terminal ID
+              type: String
+              description: Identifies terminal identifier for the transaction.
+            - id: st_batchNo
+              name: Batch No.
+              type: String
+              description: Batch number (Batch that pulled this settlement transaction to initiate thee funding) for the transaction.
+            - id: st_invoiceNo
+              name: Invoice No.
+              type: String
+              description: Invoice number for the transaction.
+            - id: st_transactionDate
+              name: Txn Date
+              type: String
+              description: Date of the authorization transaction.
+            - id: st_accountNumber
+              name: 'Account #'
+              type: String
+              description: Card number used for authorization transaction.
+            - id: st_processedTransactionAmount
+              name: Processed Sales Amount
+              type: Double
+              description: Settlement amount associated with the transaction
+          items:
+            $ref: '#/components/schemas/FieldMetaData'
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: o_settleDateType
+              type: Choice
+              mapping:
+                '0': Authorization Date
+                '1': Settlement Date
+            - field: st_siteID
+              type: Choice
+              mapping: {}
+            - field: st_invoiceNo
+              type: Text
+            - field: st_accountNumber
+              type: Text
+            - field: st_first6
+              type: Text
+            - field: st_last4
+              type: Text
+            - field: processedAmountMin
+              type: DecimalMin
+            - field: processedAmountMax
+              type: DecimalMax
+            - field: foreignCurrAmountMin
+              type: DecimalMin
+            - field: foreignCurrAmountMax
+              type: DecimalMax
+            - field: st_type
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Totals
+                '2': Purchase
+                '3': Pre Auth Request
+                '4': Pre Auth Complete
+                '5': Reversal
+                '6': Return
+                '7': Cancellation
+                '8': Mail Auth
+                '9': Activate
+                '10': Reload
+                '11': Verification
+                '12': TeleCheck
+                '13': Start Fueling
+                '14': Unknown
+                '15': Fee
+                '16': Withdrawal
+                '17': Deposit
+                '18': Transfer
+                '19': Balance Inquiry
+                '20': Score Fraud
+                '21': Generate Token
+                '22': Adjustment
+                '23': Report Lost/Stolen
+                '24': Close Account
+                '25': Freeze Account
+                '26': Unfreeze Account
+                '27': Transaction History
+                '28': Timeout Reversal
+                '29': Setup Auto-reload
+                '30': Return Reversal
+                '31': Cash Back
+            - field: st_transactionStatus
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Processed
+                '2': Rejected
+                '3': Declined
+                '4': Dropped
+                '5': Cancelled
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+      description: MetaData associated with retrieving transactions through query.
+    RetrievalSummaryMetaData:
+      type: object
+      properties:
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: o_retrievalDateType
+              type: Choice
+              mapping:
+                '0': Authorization Date
+                '1': Status Date
+                '2': Due Date
+                '3': Retrieval Date
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+        pivotFields:
+          type: object
+          additionalProperties:
+            type: string
+            description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+            example: '{"bi_issuer":"Card Issuer","bi_cardBrand":"Card Brand","bi_country":"Card Issuing Country","bi_regulated":"Card Issuer Regulated","bi_EBTState":"Card EBT State","o_txnMonth":"Txn Month","s_city":"Site City","o_overall":"All","s_zip":"Site Zip Code","r_status":"Retrieval Status","bi_details":"Card Issue Detail","o_txnWeek":"Txn Week","s_altid":"Site Alternate ID","s_Name":"Site Name","bi_cardSubType":"Card Sub Type","o_txnDay":"Txn Day","r_Reason":"Retrieval Description","bi_type":"Card Issue Type","bi_reloadable":"Card Reloadable","s_st_abbr_nm":"Site State","bi_cardClass":"Card Class","o_txnYear":"Txn Year","r_siteID":"Site (BE)","bi_binMap":"Card Issuer Bin","o_txnQuarter":"Txn Quarter"}'
+          description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+          example:
+            bi_issuer: Card Issuer
+            bi_cardBrand: Card Brand
+            bi_country: Card Issuing Country
+            bi_regulated: Card Issuer Regulated
+            bi_EBTState: Card EBT State
+            o_txnMonth: Txn Month
+            s_city: Site City
+            o_overall: All
+            s_zip: Site Zip Code
+            r_status: Retrieval Status
+            bi_details: Card Issue Detail
+            o_txnWeek: Txn Week
+            s_altid: Site Alternate ID
+            s_Name: Site Name
+            bi_cardSubType: Card Sub Type
+            o_txnDay: Txn Day
+            r_Reason: Retrieval Description
+            bi_type: Card Issue Type
+            bi_reloadable: Card Reloadable
+            s_st_abbr_nm: Site State
+            bi_cardClass: Card Class
+            o_txnYear: Txn Year
+            r_siteID: Site (BE)
+            bi_binMap: Card Issuer Bin
+            o_txnQuarter: Txn Quarter
+      description: MetaData associated with building summary reports.
+    RetrievalSearchMetaData:
+      type: object
+      properties:
+        fields:
+          type: array
+          description: 'Fields by id, name and description that are available to query the search report.'
+          example:
+            - id: r_backendMID
+              name: Site (BE)
+              type: String
+              description: 'Site (BE) - merchant number associated with each the business location. '
+            - id: r_authNetwork
+              name: Auth Network
+              type: Map
+              description: Authorization network of the credit card utilized for the transaction.
+              mapping:
+                '0': Unknown
+                '1': American Express
+                '2': Visa
+                '3': Mastercard
+                '4': Discover
+                '5': Pulse
+                '6': Accel
+                '7': Interlink
+                '8': Jeanie
+                '9': Maestro
+                '10': NYCE
+                '11': CU Alliance
+                '12': Shazam
+                '13': EBT
+                '14': AFFN
+                '15': Telecheck
+                '16': Diners Club
+                '17': PayPal
+                '18': ValueLink
+                '19': Private Label
+                '20': Debit/Other
+                '21': Voyager
+                '22': ATH
+                '23': JCB
+                '24': Star
+                '25': Star SE
+                '26': Star W
+                '27': Star Access
+                '28': Fleet
+                '29': Stored Value Systems (SVS)
+                '30': Wright Express (WEX)
+                '31': Incomm
+                '32': Canadian Debit (Interac)
+                '33': Not Applicable
+                '34': Moneris
+                '35': Vaulted Card
+                '36': Pin-Authenticated Visa Debit (PAVD)
+                '37': Mastercard MoneySend
+                '38': Union Pay
+                '39': Fraud FlexDetect
+                '40': Certegy
+                '41': MCI
+            - id: r_receivedDate
+              name: Received Date
+              type: String
+              description: Date when the Chargeback was initiated.
+            - id: r_statusDate
+              name: Status Date
+              type: String
+              description: Date for an expected response to the client.
+            - id: r_transactionDate
+              name: Txn Date
+              type: String
+              description: Original date on a transaction that is being disputed and associated with a specific Chargeback.
+            - id: r_status
+              name: Retrieval Status
+              type: Map
+              description: Status of Retrieval.
+              mapping:
+                '0': Open
+                '1': Fulfilled
+                '2': Expired
+          items:
+            $ref: '#/components/schemas/FieldMetaData'
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: o_retrievalDateType
+              type: Choice
+              mapping:
+                '0': Authorization Date
+                '1': Status Date
+                '2': Due Date
+                '3': Retrieval Date
+            - field: r_accountNumber
+              type: Text
+            - field: r_first6
+              type: Text
+            - field: r_last4
+              type: Text
+            - field: r_invoiceNumber
+              type: Text
+            - field: r_disputeID
+              type: Text
+            - field: r_referenceNumber
+              type: Text
+            - field: amountmin
+              type: DecimalMin
+            - field: amountmax
+              type: DecimalMax
+            - field: r_orderNumber
+              type: Text
+            - field: r_authNetwork
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': American Express
+                '2': Visa
+                '3': Mastercard
+                '4': Discover
+                '5': Pulse
+                '6': Accel
+                '7': Interlink
+                '8': Jeanie
+                '9': Maestro
+                '10': NYCE
+                '11': CU Alliance
+                '12': Shazam
+                '13': EBT
+                '14': AFFN
+                '15': Telecheck
+                '16': Diners Club
+                '17': PayPal
+                '18': ValueLink
+                '19': Private Label
+                '20': Debit/Other
+                '21': Voyager
+                '22': ATH
+                '23': JCB
+                '24': Star
+                '25': Star SE
+                '26': Star W
+                '27': Star Access
+                '28': Fleet
+                '29': Stored Value Systems (SVS)
+                '30': Wright Express (WEX)
+                '31': Incomm
+                '32': Canadian Debit (Interac)
+                '33': Not Applicable
+                '34': Moneris
+                '35': Vaulted Card
+                '36': Pin-Authenticated Visa Debit (PAVD)
+                '37': Mastercard MoneySend
+                '38': Union Pay
+                '39': Fraud FlexDetect
+                '40': Certegy
+                '41': MCI
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+      description: MetaData associated with retrieving transactions through query.
+    FundingSummaryMetaData:
+      type: object
+      properties:
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: fd_processor
+              type: Choice
+              mapping:
+                '0': Buypass
+                '1': North
+                '2': Compass
+                '3': Unknown
+                '4': Omaha
+                '5': South
+                '6': Memphis
+                '7': BAMS (Prop)
+                '8': TeleCheck
+                '9': ValueLink
+                '10': Omni Pay
+                '11': UK
+            - field: fd_majorCategory
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Deposits
+                '2': Deposits adjustments
+                '3': Chargeback Reversals
+                '4': Non Adjustment
+                '5': Payment
+                '6': Fee
+                '7': Interchange Charges
+                '8': Financial Adjustments
+                '9': Government Charges
+                '10': DCC Commission
+                '11': Service Charges
+                '12': Chargebacks
+                '13': Discounts Service Charges
+                '14': Interchange Assessment
+                '15': Adjustment
+                '16': Deposits adjustments
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+        pivotFields:
+          type: object
+          additionalProperties:
+            type: string
+            description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+            example: '{"o_txnWeek":"Txn Week","fd_siteID":"Site ID (BE)","fd_minorCategory":"Minor Category","s_altid":"Site Alternate ID","s_Name":"Site Name","fd_processor":"Processor","fd_majorCategory":"Major Category","o_txnDay":"Txn Day","o_txnMonth":"Txn Month","s_city":"Site City","o_overall":"All","fd_currency":"Processed Currency","s_zip":"Site Zip Code","s_st_abbr_nm":"Site State","o_txnYear":"Txn Year","o_txnQuarter":"Txn Quarter"}'
+          description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+          example:
+            o_txnWeek: Txn Week
+            fd_siteID: Site ID (BE)
+            fd_minorCategory: Minor Category
+            s_altid: Site Alternate ID
+            s_Name: Site Name
+            fd_processor: Processor
+            fd_majorCategory: Major Category
+            o_txnDay: Txn Day
+            o_txnMonth: Txn Month
+            s_city: Site City
+            o_overall: All
+            fd_currency: Processed Currency
+            s_zip: Site Zip Code
+            s_st_abbr_nm: Site State
+            o_txnYear: Txn Year
+            o_txnQuarter: Txn Quarter
+      description: MetaData associated with building summary reports.
+    FundingSearchMetaData:
+      type: object
+      properties:
+        fields:
+          type: array
+          description: 'Fields by id, name and description that are available to query the search report.'
+          example:
+            - id: fd_siteID
+              name: Site ID (BE)
+              type: Long
+              description: An unique identifier assigned to the merchant. Also known as a MID.
+            - id: fd_batchDate
+              name: Batch Date
+              type: String
+              description: ''
+            - id: fd_fundedDate
+              name: Funded Date
+              type: String
+              description: Date when the funding to/from the merchant aassociatedwith this transaction
+            - id: fd_batchNo
+              name: Batch No.
+              type: String
+              description: Batch number (Batch that pulled this settlement transaction to initiate thee funding) for the transaction.
+            - id: fd_majorCategory
+              name: Major Category
+              type: Map
+              description: Identifies the major category for the merchant.
+              mapping:
+                '0': Unknown
+                '1': Deposits
+                '2': Deposits adjustments
+                '3': Chargeback Reversals
+                '4': Non Adjustment
+                '5': Payment
+                '6': Fee
+                '7': Interchange Charges
+                '8': Financial Adjustments
+                '9': Government Charges
+                '10': DCC Commission
+                '11': Service Charges
+                '12': Chargebacks
+                '13': Discounts Service Charges
+                '14': Interchange Assessment
+                '15': Adjustment
+                '16': Deposits adjustments
+          items:
+            $ref: '#/components/schemas/FieldMetaData'
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: fd_processor
+              type: Choice
+              mapping:
+                '0': Buypass
+                '1': North
+                '2': Compass
+                '3': Unknown
+                '4': Omaha
+                '5': South
+                '6': Memphis
+                '7': BAMS (Prop)
+                '8': TeleCheck
+                '9': ValueLink
+                '10': Omni Pay
+                '11': UK
+            - field: fd_dda
+              type: Text
+            - field: fd_ddaLast4
+              type: Text
+            - field: fd_majorCategory
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Deposits
+                '2': Deposits adjustments
+                '3': Chargeback Reversals
+                '4': Non Adjustment
+                '5': Payment
+                '6': Fee
+                '7': Interchange Charges
+                '8': Financial Adjustments
+                '9': Government Charges
+                '10': DCC Commission
+                '11': Service Charges
+                '12': Chargebacks
+                '13': Discounts Service Charges
+                '14': Interchange Assessment
+                '15': Adjustment
+                '16': Deposits adjustments
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+      description: MetaData associated with retrieving transactions through query.
+    FraudDetectSummaryMetaData:
+      type: object
+      properties:
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: scoremin
+              type: DecimalMin
+            - field: scoremax
+              type: DecimalMax
+            - field: f_type
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Totals
+                '2': Purchase
+                '3': Pre Auth Request
+                '4': Pre Auth Complete
+                '5': Reversal
+                '6': Return
+                '7': Cancellation
+                '8': Mail Auth
+                '9': Activate
+                '10': Reload
+                '11': Verification
+                '12': TeleCheck
+                '13': Start Fueling
+                '14': Unknown
+                '15': Fee
+                '16': Withdrawal
+                '17': Deposit
+                '18': Transfer
+                '19': Balance Inquiry
+                '20': Score Fraud
+                '21': Generate Token
+                '22': Adjustment
+                '23': Report Lost/Stolen
+                '24': Close Account
+                '25': Freeze Account
+                '26': Unfreeze Account
+                '27': Transaction History
+                '28': Timeout Reversal
+                '29': Setup Auto-reload
+                '30': Return Reversal
+                '31': Cash Back
+            - field: f_entryMethod
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Manual
+                '2': Magnetic Stripe
+                '3': Optical Card Reader
+                '4': EMV
+                '5': Contactless Chip
+                '6': Mobile & ECommerce
+                '7': Fallback to Mag Stripe
+                '8': Bar Code
+                '9': Not Specified
+                '10': Credential on File
+                '11': Contactless Magnetic Stripe
+            - field: f_responseDecision
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Approved
+                '2': Declined
+            - field: f_responseDuration
+              type: Decimal
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+        pivotFields:
+          type: object
+          additionalProperties:
+            type: string
+            description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+            example: '{"f_declineReasonOne":"Primary Decline Reason","f_pinPresent":"Pin Present","o_txnWeek":"Txn Week","f_scoreResult":"Score Result","f_responseDecision":"Response Decision","f_type":"Txn Type","f_declineReasonTwo":"Secondary Decline Reason","f_accountType":"Account Type","o_txnDay":"Txn Day","o_txnMonth":"Txn Month","f_entryMethod":"Entry Method","f_scheme":"Scheme","o_txnYear":"Txn Year","f_currency":"Currency","o_txnQuarter":"Txn Quarter"}'
+          description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+          example:
+            f_declineReasonOne: Primary Decline Reason
+            f_pinPresent: Pin Present
+            o_txnWeek: Txn Week
+            f_scoreResult: Score Result
+            f_responseDecision: Response Decision
+            f_type: Txn Type
+            f_declineReasonTwo: Secondary Decline Reason
+            f_accountType: Account Type
+            o_txnDay: Txn Day
+            o_txnMonth: Txn Month
+            f_entryMethod: Entry Method
+            f_scheme: Scheme
+            o_txnYear: Txn Year
+            f_currency: Currency
+            o_txnQuarter: Txn Quarter
+      description: MetaData associated with building summary reports.
+    FraudDetectSearchMetaData:
+      type: object
+      properties:
+        fields:
+          type: array
+          description: 'Fields by id, name and description that are available to query the search report.'
+          example:
+            - id: f_paymentAmount
+              name: Payment Amount
+              type: Double
+              description: The amount of payment transaction.
+            - id: f_entryMethod
+              name: Entry Method
+              type: Map
+              description: Entry method of the transaction.
+              mapping:
+                '0': Unknown
+                '1': Manual
+                '2': Magnetic Stripe
+                '3': Optical Card Reader
+                '4': EMV
+                '5': Contactless Chip
+                '6': Mobile & ECommerce
+                '7': Fallback to Mag Stripe
+                '8': Bar Code
+                '9': Not Specified
+                '10': Credential on File
+                '11': Contactless Magnetic Stripe
+            - id: f_score
+              name: Response Score
+              type: Integer
+              description: The score of the transaction.
+            - id: f_responseDecision
+              name: Response Decision
+              type: Map
+              description: Response decision from scoring engine.
+              mapping:
+                '0': Unknown
+                '1': Approved
+                '2': Declined
+            - id: f_responseDuration
+              name: Response Duration
+              type: Integer
+              description: The amount of time in ms to score the transaction.
+            - id: f_binID
+              name: Bin ID
+              type: String
+              description: The bin id of the card used in the transaction.
+          items:
+            $ref: '#/components/schemas/FieldMetaData'
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: scoremin
+              type: DecimalMin
+            - field: scoremax
+              type: DecimalMax
+            - field: f_type
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Totals
+                '2': Purchase
+                '3': Pre Auth Request
+                '4': Pre Auth Complete
+                '5': Reversal
+                '6': Return
+                '7': Cancellation
+                '8': Mail Auth
+                '9': Activate
+                '10': Reload
+                '11': Verification
+                '12': TeleCheck
+                '13': Start Fueling
+                '14': Unknown
+                '15': Fee
+                '16': Withdrawal
+                '17': Deposit
+                '18': Transfer
+                '19': Balance Inquiry
+                '20': Score Fraud
+                '21': Generate Token
+                '22': Adjustment
+                '23': Report Lost/Stolen
+                '24': Close Account
+                '25': Freeze Account
+                '26': Unfreeze Account
+                '27': Transaction History
+                '28': Timeout Reversal
+                '29': Setup Auto-reload
+                '30': Return Reversal
+                '31': Cash Back
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+      description: MetaData associated with retrieving transactions through query.
+    DisbursementSummaryMetaData:
+      type: object
+      properties:
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: o_disbursementDateType
+              type: Choice
+              mapping:
+                '0': Payment Date
+                '1': Apply Date
+                '2': Expiry Date
+            - field: ds_mid
+              type: Text
+            - field: ds_merchantStatus
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Active
+                '2': Inactive
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+        pivotFields:
+          type: object
+          additionalProperties:
+            type: string
+            description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+            example: '{"ds_currency":"Txn Currency","ds_settlementStatus":"Settlement Status","o_txnWeek":"Txn Week","ds_paymentStatus":"Payment Status","ds_paymentType":"Payment Type","ds_paymentChannel":"Payment Channel","ds_merchantStatus":"Merchant Status","o_txnDay":"Txn Day","ds_merchantName":"Merchant Name","o_txnMonth":"Txn Month","ds_transactionStatus":"Txn Status","o_txnYear":"Txn Year","ds_mid":"MID","o_txnQuarter":"Txn Quarter"}'
+          description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+          example:
+            ds_currency: Txn Currency
+            ds_settlementStatus: Settlement Status
+            o_txnWeek: Txn Week
+            ds_paymentStatus: Payment Status
+            ds_paymentType: Payment Type
+            ds_paymentChannel: Payment Channel
+            ds_merchantStatus: Merchant Status
+            o_txnDay: Txn Day
+            ds_merchantName: Merchant Name
+            o_txnMonth: Txn Month
+            ds_transactionStatus: Txn Status
+            o_txnYear: Txn Year
+            ds_mid: MID
+            o_txnQuarter: Txn Quarter
+      description: MetaData associated with building summary reports.
+    DisbursementSearchMetaData:
+      type: object
+      properties:
+        fields:
+          type: array
+          description: 'Fields by id, name and description that are available to query the search report.'
+          example:
+            - id: ds_merchantStatus
+              name: Merchant Status
+              type: Map
+              description: The current status of the merchant.
+              mapping:
+                '0': Unknown
+                '1': Active
+                '2': Inactive
+            - id: ds_merchantId
+              name: Merchant ID
+              type: String
+              description: System generated unique merchant id.
+            - id: ds_merchantName
+              name: Merchant Name
+              type: String
+              description: The name of the merchant.
+            - id: ds_mid
+              name: MID
+              type: String
+              description: North merchant back end id.
+            - id: ds_origId
+              name: Originator ID
+              type: String
+              description: Originator id of the merchant.
+            - id: ds_fundingAccount
+              name: Funding Account
+              type: String
+              description: Disbursement funding account.
+            - id: ds_transactionId
+              name: Txn ID
+              type: String
+              description: System generated unique transaction id.
+            - id: ds_referenceId
+              name: Txn Reference ID
+              type: String
+              description: Reference id of the transaction.
+            - id: ds_controlNumber
+              name: Txn Control Number
+              type: String
+              description: Control number of the transaction.
+          items:
+            $ref: '#/components/schemas/FieldMetaData'
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: o_disbursementDateType
+              type: Choice
+              mapping:
+                '0': Payment Date
+                '1': Apply Date
+                '2': Expiry Date
+            - field: ds_mid
+              type: Text
+            - field: ds_transactionId
+              type: Text
+            - field: ds_transactionClaimNumber
+              type: Text
+            - field: ds_transactionPaymentNumber
+              type: Text
+            - field: ds_paymentRecipientId
+              type: Text
+            - field: ds_referenceId
+              type: Text
+            - field: ds_controlNumber
+              type: Text
+            - field: ds_paymentVendorId
+              type: Text
+            - field: ds_merchantStatus
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Active
+                '2': Inactive
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+      description: MetaData associated with retrieving transactions through query.
+    ChargebackSummaryMetaData:
+      type: object
+      properties:
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: s_st_abbr_nm
+              type: Text
+            - field: s_altid
+              type: Text
+            - field: s_city
+              type: Text
+            - field: s_zip
+              type: Text
+            - field: o_accessLevel
+              type: Choice
+              mapping:
+                '0': Not Applicable
+                '1': Super User
+                '2': Relationship Manager
+                '3': Company
+                '4': Sub Marker
+                '5': Business
+                '6': Bank
+                '7': Custom Bank
+                '8': Agent
+                '9': Custom Agent
+                '10': Association Group
+                '11': Association
+                '12': Custom Corporate
+                '13': Lead Corporate
+                '14': Custom Chain
+                '15': Corporate 6 Digit
+                '16': Corporate
+                '17': Merchant
+                '18': Location
+            - field: o_accessLevelID
+              type: Text
+            - field: cb_transactionType
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Credit
+                '2': Cash Advance
+                '3': Sale
+                '4': UniqueTxn
+                '5': ATM Chargeback
+                '6': Sale Reversal
+                '7': Credit Reversal
+                '8': Cash Advance Reversal
+                '9': Auth Request
+                '10': Void
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+        pivotFields:
+          type: object
+          additionalProperties:
+            type: string
+            description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+            example: '{"cb_Reason":"Dispute Reason","cb_recurring":"Recurring Type","cb_tokenResponseInd":"Token Response","cb_transactionType":"Transaction Type","bi_issuer":"Card Issuer","bi_cardBrand":"Card Brand","cb_ECIndicator":"EC Indicator","bi_country":"Card Issuing Country","cb_workType":"Chargeback Work Type","bi_regulated":"Card Issuer Regulated","cb_currency":"Processed Currency","bi_EBTState":"Card EBT State","o_txnMonth":"Txn Month","s_city":"Site City","o_overall":"All","cb_paymentMethod":"Payment Method","s_zip":"Site Zip Code","cb_siteID":"Site (BE)","bi_details":"Card Issue Detail","cb_sendMode":"Send Mode","o_txnWeek":"Txn Week","cb_category":"Chargeback Category","s_altid":"Site Alternate ID","s_Name":"Site Name","bi_cardSubType":"Card Sub Type","cb_authNetwork":"Auth Network","o_txnDay":"Txn Day","cb_winLoss":"Chargeback Win/Loss","bi_type":"Card Issue Type","cb_mobileWallet":"Mobile Wallet","bi_reloadable":"Card Reloadable","cb_status":"Chargeback Status","s_st_abbr_nm":"Site State","bi_cardClass":"Card Class","o_txnYear":"Txn Year","cb_Disposition":"Chargeback Disposition","bi_binMap":"Card Issuer Bin","o_txnQuarter":"Txn Quarter"}'
+          description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+          example:
+            cb_Reason: Dispute Reason
+            cb_recurring: Recurring Type
+            cb_tokenResponseInd: Token Response
+            cb_transactionType: Transaction Type
+            bi_issuer: Card Issuer
+            bi_cardBrand: Card Brand
+            cb_ECIndicator: EC Indicator
+            bi_country: Card Issuing Country
+            cb_workType: Chargeback Work Type
+            bi_regulated: Card Issuer Regulated
+            cb_currency: Processed Currency
+            bi_EBTState: Card EBT State
+            o_txnMonth: Txn Month
+            s_city: Site City
+            o_overall: All
+            cb_paymentMethod: Payment Method
+            s_zip: Site Zip Code
+            cb_siteID: Site (BE)
+            bi_details: Card Issue Detail
+            cb_sendMode: Send Mode
+            o_txnWeek: Txn Week
+            cb_category: Chargeback Category
+            s_altid: Site Alternate ID
+            s_Name: Site Name
+            bi_cardSubType: Card Sub Type
+            cb_authNetwork: Auth Network
+            o_txnDay: Txn Day
+            cb_winLoss: Chargeback Win/Loss
+            bi_type: Card Issue Type
+            cb_mobileWallet: Mobile Wallet
+            bi_reloadable: Card Reloadable
+            cb_status: Chargeback Status
+            s_st_abbr_nm: Site State
+            bi_cardClass: Card Class
+            o_txnYear: Txn Year
+            cb_Disposition: Chargeback Disposition
+            bi_binMap: Card Issuer Bin
+            o_txnQuarter: Txn Quarter
+      description: MetaData associated with building summary reports.
+    ChargebackSearchMetaData:
+      type: object
+      properties:
+        fields:
+          type: array
+          description: 'Fields by id, name and description that are available to query the search report.'
+          example:
+            - id: cb_backendMID
+              name: Site (BE)
+              type: String
+              description: 'Site (BE) - merchant number associated with each the business location. '
+            - id: cb_authNetwork
+              name: Auth Network
+              type: Map
+              description: Authorization network of the credit card utilized for the transaction.
+              mapping:
+                '0': Unknown
+                '1': American Express
+                '2': Visa
+                '3': Mastercard
+                '4': Discover
+                '5': Pulse
+                '6': Accel
+                '7': Interlink
+                '8': Jeanie
+                '9': Maestro
+                '10': NYCE
+                '11': CU Alliance
+                '12': Shazam
+                '13': EBT
+                '14': AFFN
+                '15': Telecheck
+                '16': Diners Club
+                '17': PayPal
+                '18': ValueLink
+                '19': Private Label
+                '20': Debit/Other
+                '21': Voyager
+                '22': ATH
+                '23': JCB
+                '24': Star
+                '25': Star SE
+                '26': Star W
+                '27': Star Access
+                '28': Fleet
+                '29': Stored Value Systems (SVS)
+                '30': Wright Express (WEX)
+                '31': Incomm
+                '32': Canadian Debit (Interac)
+                '33': Not Applicable
+                '34': Moneris
+                '35': Vaulted Card
+                '36': Pin-Authenticated Visa Debit (PAVD)
+                '37': Mastercard MoneySend
+                '38': Union Pay
+                '39': Fraud FlexDetect
+                '40': Certegy
+                '41': MCI
+            - id: cb_receivedDate
+              name: Received Date
+              type: String
+              description: Date when the Chargeback was initiated.
+            - id: cb_statusDate
+              name: Status Date
+              type: String
+              description: Date for an expected response to the client.
+          items:
+            $ref: '#/components/schemas/FieldMetaData'
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: o_chargebackDateType
+              type: Choice
+              mapping:
+                '0': Authorization Date
+                '1': Chargeback Date
+                '2': Status Date
+                '3': Adjustment Date
+                '4': Due Date
+            - field: s_st_abbr_nm
+              type: Text
+            - field: s_altid
+              type: Text
+            - field: s_city
+              type: Text
+            - field: s_zip
+              type: Text
+            - field: cb_accountNumber
+              type: Text
+            - field: cb_first6
+              type: Text
+            - field: cb_last4
+              type: Text
+            - field: cb_invoiceNumber
+              type: Text
+            - field: cb_disputeID
+              type: Text
+            - field: cb_referenceNumber
+              type: Text
+            - field: amountmin
+              type: DecimalMin
+            - field: amountmax
+              type: DecimalMax
+            - field: cb_orderNumber
+              type: Text
+            - field: cb_authNetwork
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': American Express
+                '2': Visa
+                '3': Mastercard
+                '4': Discover
+                '5': Pulse
+                '6': Accel
+                '7': Interlink
+                '8': Jeanie
+                '9': Maestro
+                '10': NYCE
+                '11': CU Alliance
+                '12': Shazam
+                '13': EBT
+                '14': AFFN
+                '15': Telecheck
+                '16': Diners Club
+                '17': PayPal
+                '18': ValueLink
+                '19': Private Label
+                '20': Debit/Other
+                '21': Voyager
+                '22': ATH
+                '23': JCB
+                '24': Star
+                '25': Star SE
+                '26': Star W
+                '27': Star Access
+                '28': Fleet
+                '29': Stored Value Systems (SVS)
+                '30': Wright Express (WEX)
+                '31': Incomm
+                '32': Canadian Debit (Interac)
+                '33': Not Applicable
+                '34': Moneris
+                '35': Vaulted Card
+                '36': Pin-Authenticated Visa Debit (PAVD)
+                '37': Mastercard MoneySend
+                '38': Union Pay
+                '39': Fraud FlexDetect
+                '40': Certegy
+                '41': MCI
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+      description: MetaData associated with retrieving transactions through query.
+    AuthorizationSummaryMetaData:
+      type: object
+      properties:
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: a_source
+              type: Choice
+              mapping:
+                '0': Regular
+                '1': uCom
+            - field: a_accountNumber
+              type: Text
+            - field: a_first6
+              type: Text
+            - field: a_last4
+              type: Text
+            - field: a_customerName
+              type: Text
+            - field: a_giftCardNumber
+              type: Text
+            - field: a_partnerOrderID
+              type: Text
+            - field: a_terminalID
+              type: Text
+            - field: a_authCode
+              type: Text
+            - field: a_source
+              type: Choice
+              mapping:
+                '0': Regular
+                '1': uCom
+            - field: a_approvalCode
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Approved
+                '2': Declined
+            - field: a_network
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': American Express
+                '2': Visa
+                '3': Mastercard
+                '4': Discover
+                '5': Pulse
+                '6': Accel
+                '7': Interlink
+                '8': Jeanie
+                '9': Maestro
+                '10': NYCE
+                '11': CU Alliance
+                '12': Shazam
+                '13': EBT
+                '14': AFFN
+                '15': Telecheck
+                '16': Diners Club
+                '17': PayPal
+                '18': ValueLink
+                '19': Private Label
+                '20': Debit/Other
+                '21': Voyager
+                '22': ATH
+                '23': JCB
+                '24': Star
+                '25': Star SE
+                '26': Star W
+                '27': Star Access
+                '28': Fleet
+                '29': Stored Value Systems (SVS)
+                '30': Wright Express (WEX)
+                '31': Incomm
+                '32': Canadian Debit (Interac)
+                '33': Not Applicable
+                '34': Moneris
+                '35': Vaulted Card
+                '36': Pin-Authenticated Visa Debit (PAVD)
+                '37': Mastercard MoneySend
+                '38': Union Pay
+                '39': Fraud FlexDetect
+                '40': Certegy
+                '41': MCI
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+        pivotFields:
+          type: object
+          additionalProperties:
+            type: string
+            description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+            example: '{"bi_issuer":"Card Issuer","bi_cardBrand":"Card Brand","a_paymentMethod":"Payment Method","a_P2PTokenType":"P2PE Token Type","a_declineReason":"Decline Reason","bi_country":"Card Issuing Country","a_tokenResponseInd":"Token Response","a_fuelPurchaseLocation":"Fuel Purchase Location","bi_regulated":"Card Issuer Regulated","bi_EBTState":"Card EBT State","a_network":"Network","a_rtAction":"CAU Action","o_txnMonth":"Txn Month","s_city":"Site City","o_overall":"All","s_zip":"Site Zip Code","a_approvalCode":"Approval Status","a_merchandiseCode":"Merchandise Code","a_ECIIndicator":"EC Indicator","a_recurring":"Recurring Type","a_processor":"Processor","bi_details":"Card Issue Detail","a_P2PTokenAssurance":"P2PE Token Assurance","a_mobileWallet":"Mobile Wallet","a_subType":"SubType","o_txnWeek":"Txn Week","a_merchantCategory":"Merchant Category","s_altid":"Site Alternate ID","a_source":"Source","a_currency":"Auth Currency","s_Name":"Site Name","bi_cardSubType":"Card Sub Type","a_type":"Type","o_txnDay":"Txn Day","bi_type":"Card Issue Type","bi_reloadable":"Card Reloadable","a_rtStatus":"CAU Status","s_st_abbr_nm":"Site State","bi_cardClass":"Card Class","a_sendMode":"Send Mode","o_txnYear":"Txn Year","a_siteID":"Site ID (FE)","bi_binMap":"Card Issuer Bin","a_P2PEncryptionType":"P2PE Encryption Type","o_txnQuarter":"Txn Quarter"}'
+          description: 'Field used to query the dataset, represents the [ where [ FIELD in() ] ] clause of a sql query. Represented as key value pair where the name is entry to request and value is for description purposes.'
+          example:
+            bi_issuer: Card Issuer
+            bi_cardBrand: Card Brand
+            a_paymentMethod: Payment Method
+            a_P2PTokenType: P2PE Token Type
+            a_declineReason: Decline Reason
+            bi_country: Card Issuing Country
+            a_tokenResponseInd: Token Response
+            a_fuelPurchaseLocation: Fuel Purchase Location
+            bi_regulated: Card Issuer Regulated
+            bi_EBTState: Card EBT State
+            a_network: Network
+            a_rtAction: CAU Action
+            o_txnMonth: Txn Month
+            s_city: Site City
+            o_overall: All
+            s_zip: Site Zip Code
+            a_approvalCode: Approval Status
+            a_merchandiseCode: Merchandise Code
+            a_ECIIndicator: EC Indicator
+            a_recurring: Recurring Type
+            a_processor: Processor
+            bi_details: Card Issue Detail
+            a_P2PTokenAssurance: P2PE Token Assurance
+            a_mobileWallet: Mobile Wallet
+            a_subType: SubType
+            o_txnWeek: Txn Week
+            a_merchantCategory: Merchant Category
+            s_altid: Site Alternate ID
+            a_source: Source
+            a_currency: Auth Currency
+            s_Name: Site Name
+            bi_cardSubType: Card Sub Type
+            a_type: Type
+            o_txnDay: Txn Day
+            bi_type: Card Issue Type
+            bi_reloadable: Card Reloadable
+            a_rtStatus: CAU Status
+            s_st_abbr_nm: Site State
+            bi_cardClass: Card Class
+            a_sendMode: Send Mode
+            o_txnYear: Txn Year
+            a_siteID: Site ID (FE)
+            bi_binMap: Card Issuer Bin
+            a_P2PEncryptionType: P2PE Encryption Type
+            o_txnQuarter: Txn Quarter
+      description: MetaData associated with building summary reports.
+    AuthorizationSearchMetaData:
+      type: object
+      properties:
+        fields:
+          type: array
+          description: 'Fields by id, name and description that are available to query the search report.'
+          example:
+            - id: a_approvalCode
+              name: Approval Status
+              type: Map
+              description: Identifies if the authorization was approved or declined.
+              mapping:
+                '0': Unknown
+                '1': Approved
+                '2': Declined
+            - id: a_type
+              name: Type
+              type: Map
+              description: 'Transaction type code e.g. sale, refund etc.'
+              mapping:
+                '0': Unknown
+                '1': Totals
+                '2': Purchase
+                '3': Pre Auth Request
+                '4': Pre Auth Complete
+                '5': Reversal
+                '6': Return
+                '7': Cancellation
+                '8': Mail Auth
+                '9': Activate
+                '10': Reload
+                '11': Verification
+                '12': TeleCheck
+                '13': Start Fueling
+                '14': Unknown
+                '15': Fee
+                '16': Withdrawal
+                '17': Deposit
+                '18': Transfer
+                '19': Balance Inquiry
+                '20': Score Fraud
+                '21': Generate Token
+                '22': Adjustment
+                '23': Report Lost/Stolen
+                '24': Close Account
+                '25': Freeze Account
+                '26': Unfreeze Account
+                '27': Transaction History
+                '28': Timeout Reversal
+                '29': Setup Auto-reload
+                '30': Return Reversal
+                '31': Cash Back
+            - id: a_transactionDateTime
+              name: Txn Date & Time
+              type: Time
+              description: Date & Time of the authorization transaction.
+            - id: a_accountNumber
+              name: 'Account #'
+              type: String
+              description: Card number used for authorization transaction.
+            - id: a_cardExpiryDate
+              name: Card Expiry Date
+              type: String
+              description: Indicates expiration date on card.
+            - id: a_amount
+              name: Amount
+              type: Double
+              description: Amount requested for the authorization transaction.
+          items:
+            $ref: '#/components/schemas/FieldMetaData'
+        filters:
+          type: array
+          description: Filter criteria used for querying a dataset.
+          example:
+            - field: a_source
+              type: Choice
+              mapping:
+                '0': Regular
+                '1': uCom
+            - field: a_accountNumber
+              type: Text
+            - field: a_first6
+              type: Text
+            - field: a_last4
+              type: Text
+            - field: a_customerName
+              type: Text
+            - field: a_giftCardNumber
+              type: Text
+            - field: a_partnerOrderID
+              type: Text
+            - field: a_terminalID
+              type: Text
+            - field: a_authCode
+              type: Text
+            - field: a_source
+              type: Choice
+              mapping:
+                '0': Regular
+                '1': uCom
+            - field: a_approvalCode
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': Approved
+                '2': Declined
+            - field: a_network
+              type: Choice
+              mapping:
+                '0': Unknown
+                '1': American Express
+                '2': Visa
+                '3': Mastercard
+                '4': Discover
+                '5': Pulse
+                '6': Accel
+                '7': Interlink
+                '8': Jeanie
+                '9': Maestro
+                '10': NYCE
+                '11': CU Alliance
+                '12': Shazam
+                '13': EBT
+                '14': AFFN
+                '15': Telecheck
+                '16': Diners Club
+                '17': PayPal
+                '18': ValueLink
+                '19': Private Label
+                '20': Debit/Other
+                '21': Voyager
+                '22': ATH
+                '23': JCB
+                '24': Star
+                '25': Star SE
+                '26': Star W
+                '27': Star Access
+                '28': Fleet
+                '29': Stored Value Systems (SVS)
+                '30': Wright Express (WEX)
+                '31': Incomm
+                '32': Canadian Debit (Interac)
+                '33': Not Applicable
+                '34': Moneris
+                '35': Vaulted Card
+                '36': Pin-Authenticated Visa Debit (PAVD)
+                '37': Mastercard MoneySend
+                '38': Union Pay
+                '39': Fraud FlexDetect
+                '40': Certegy
+                '41': MCI
+          items:
+            $ref: '#/components/schemas/FilterMetaData'
+      description: MetaData associated with retrieving transactions through query.
