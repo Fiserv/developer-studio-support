@@ -41,8 +41,28 @@ paths:
     post:
       tags:
         - Settlement Summary
-      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReport
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input SettlementSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -52,19 +72,75 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/SettlementSummaryResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/settlement/details/byDate:
     post:
       tags:
         - Settlement Transactions
-      summary: Provides a list of settlement transactions and their attributes. Limits results to 10MM.
+      description: Provides a list of settlement transactions and their attributes. Limits results to 10MM.
       operationId: getTop
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input SettlementSearchRequest object, returns a list of txns with included field values'
         content:
@@ -74,17 +150,73 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SettlementSearchResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/retrieval/summary/byDateRange:
     post:
       tags:
         - Retrieval Summary
-      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReport_1
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input RetrievalSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -94,19 +226,75 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/retrieval/search/byDate:
     post:
       tags:
         - Retrieval Transactions
-      summary: Provides a list of transactions and their attributes. Limits results to 10MM.
+      description: Provides a list of transactions and their attributes. Limits results to 10MM.
       operationId: getTop_1
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input RetrievalSearchRequest object, returns a list of txns with included field values'
         content:
@@ -116,17 +304,73 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/RetrievalSearchResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/hierarchies/search:
     post:
       tags:
         - Hierarchies
-      description: 'Search merchants by mid/name in user hierarchy   '
+      description: Search merchants by mid/name in user hierarchy
       operationId: search
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
@@ -134,18 +378,76 @@ paths:
               $ref: '#/components/schemas/SearchRequest'
         required: true
       responses:
-        default:
-          description: default response
+        '200':
+          description: Successful search.
           content:
             application/json:
               schema:
-                type: string
+                type: array
+                items:
+                  $ref: '#/components/schemas/SearchResult'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/funding/summary/byDateRange:
     post:
       tags:
         - Funding Summary
-      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReport_2
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input FundingSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -155,19 +457,75 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/FundingSummaryResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/funding/search/byDate:
     post:
       tags:
         - Funding Transactions
-      summary: Provides a list of transactions and their attributes. Limits results to 10MM.
+      description: Provides a list of transactions and their attributes. Limits results to 10MM.
       operationId: getTop_2
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input FundingSearchRequest object, returns a list of txns with included field values'
         content:
@@ -177,17 +535,73 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/FundingSearchResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/fraud/summary/byDateRange:
     post:
       tags:
         - Fraud Detect Summary
-      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReport_3
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input FraudDetectSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -197,19 +611,75 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/fraud/details/byDate:
     post:
       tags:
         - Fraud Detect Transactions
-      summary: Provides a list of fraud transactions. Limits to 10MM
+      description: Provides a list of fraud transactions. Limits to 10MM
       operationId: getTop_3
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input FraudDetectSearchRequest object, returns a list of txns with included field values'
         content:
@@ -219,17 +689,73 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/FraudDetectSearchResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/disbursement/summary/byDateRange:
     post:
       tags:
         - Disbursement Summary
-      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReport_4
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input DisbursementSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -239,19 +765,75 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/disbursement/search/byDate:
     post:
       tags:
         - Disbursement Transactions
       description: Provides a list of transactions and their attributes. Limits results to 10MM.
       operationId: getTop_4
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input DisbursementSearchRequest object, returns a list of txns with included field values'
         content:
@@ -261,17 +843,73 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/DisbursementSearchResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/commercehub/updateStores:
     post:
       tags:
         - Mid
       description: Update Stores based on CommerceHub details
       operationId: marketPlace
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         content:
           application/json:
@@ -279,18 +917,74 @@ paths:
               $ref: '#/components/schemas/CommerceHub'
         required: true
       responses:
-        default:
-          description: default response
+        '200':
+          description: Created
           content:
             application/json:
               schema:
                 type: string
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/chargeback/summary/byDateRange:
     post:
       tags:
         - Chargeback Summary
-      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions
       operationId: getCumulativeReport_5
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input ChargebackSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -300,19 +994,75 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/chargeback/details/byDate:
     post:
       tags:
         - Chargeback Transactions
-      summary: Provides a list of chargeback transactions. Limits to 10MM
+      description: Provides a list of chargeback transactions. Limits to 10MM
       operationId: getTop_5
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input ChargebackSearchRequest object, returns a list of txns with included field values'
         content:
@@ -322,17 +1072,73 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ChargebackSearchResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/authorization/summary/byDateRange:
     post:
       tags:
         - Authorization Summary
-      summary: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
       operationId: getCumulativeReport_6
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input AuthorizationSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -342,19 +1148,75 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created.
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/SummaryResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/authorization/details/byDate:
     post:
       tags:
         - Authorization Transactions
-      summary: Provides a list of transactions and their attributes. Limits results to 10MM.
+      description: Provides a list of transactions and their attributes. Limits results to 10MM.
       operationId: getTop_6
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       requestBody:
         description: 'Input AuthorizationSearchRequest object, returns a list of txns with included field values'
         content:
@@ -364,193 +1226,1015 @@ paths:
         required: true
       responses:
         '200':
-          description: OK
+          description: Created.
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AuthorizationSearchResponse'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/settlement/summary/metaData:
     get:
       tags:
         - Settlement Summary
-      summary: Provides the meta data for the byDateRange analysis
+      description: Provides the meta data for the byDateRange analysis
       operationId: getMetaData
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SettlementSummaryMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/settlement/details/metaData:
     get:
       tags:
         - Settlement Transactions
-      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      description: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
       operationId: getMetaData_1
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/SettlementSearchMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/retrieval/summary/metaData:
     get:
       tags:
         - Retrieval Summary
-      summary: Provides the meta data for the byDateRange analysis
+      description: Provides the meta data for the byDateRange analysis
       operationId: getMetaData_2
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/RetrievalSummaryMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/retrieval/search/metaData:
     get:
       tags:
         - Retrieval Transactions
-      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      description: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
       operationId: getMetaData_3
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/RetrievalSearchMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/funding/summary/metaData:
     get:
       tags:
         - Funding Summary
-      summary: Provides the meta data for the byDateRange analysis
+      description: Provides the meta data for the byDateRange analysis
       operationId: getMetaData_4
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/FundingSummaryMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/funding/search/metaData:
     get:
       tags:
         - Funding Transactions
-      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      description: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
       operationId: getMetaData_5
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/FundingSearchMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/fraud/summary/metaData:
     get:
       tags:
         - Fraud Detect Summary
-      summary: Provides the meta data for the byDateRange analysis
+      description: Provides the meta data for the byDateRange analysis
       operationId: getMetaData_6
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/FraudDetectSummaryMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/fraud/details/metaData:
     get:
       tags:
         - Fraud Detect Transactions
-      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      description: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
       operationId: getMetaData_7
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/FraudDetectSearchMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/disbursement/summary/metaData:
     get:
       tags:
         - Disbursement Summary
-      summary: Provides the meta data for the byDateRange analysis
+      description: Provides the meta data for the byDateRange analysis
       operationId: getMetaData_8
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/DisbursementSummaryMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/disbursement/search/metaData:
     get:
       tags:
         - Disbursement Transactions
       description: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
       operationId: getMetaData_9
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/DisbursementSearchMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/chargeback/summary/metaData:
     get:
       tags:
         - Chargeback Summary
-      summary: Provides the meta data for the byDateRange analysis
+      description: Provides the meta data for the byDateRange analysis
       operationId: getMetaData_10
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ChargebackSummaryMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/chargeback/details/metaData:
     get:
       tags:
         - Chargeback Transactions
-      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      description: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
       operationId: getMetaData_11
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ChargebackSearchMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/authorization/summary/metaData:
     get:
       tags:
         - Authorization Summary
-      summary: Provides the meta data for the byDateRange analysis
+      description: Provides the meta data for the byDateRange analysis
       operationId: getMetaData_12
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
         '200':
-          description: OK
+          description: Successful search.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AuthorizationSummaryMetaData'
+                type: array
+                items:
+                  $ref: '#/components/schemas/AuthorizationSummaryMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/authorization/details/metaData:
     get:
       tags:
         - Authorization Transactions
-      summary: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
+      description: Provides the meta data for the byDate api. The meta data will be utilized for building custom queries for the dataset.  For instance the field results 'id' attribute will be input into the byDate API to return the aforementioned fields.
       operationId: getMetaData_13
+      parameters:
+        - name: apiKey
+          in: header
+          description: |-
+            API Key provided to the merchant associating the requests with
+                    the appropriate app in the Developer Portal.
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+        - name: Content-Type
+          in: header
+          description: The content type. Valid value (application/json).
+          required: true
+          content:
+            '*/*':
+              schema:
+                type: string
+                default: application/json
       responses:
-        default:
-          description: default response
+        '200':
+          description: Created
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/AuthorizationSearchMetaData'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
 components:
   schemas:
     FilterRequestData:
@@ -617,6 +2301,23 @@ components:
           description: YYYYMMDD string denoting the date for the query.
           example: '20210227'
       description: Request object for authorization summary report creation.
+    SpringDefaultError:
+      type: object
+      properties:
+        timestamp:
+          type: integer
+          format: int64
+        status:
+          type: integer
+          format: int32
+        error:
+          type: string
+        exception:
+          type: string
+        message:
+          type: string
+        path:
+          type: string
     SettlementSummaryResponse:
       type: object
       properties:
@@ -653,77 +2354,6 @@ components:
           format: double
           example: 83526868.58000049
       description: Summary response object which maps settlement data points returned from the grouped by query request.
-    SettlementSearchRequest:
-      required:
-        - date
-        - fields
-        - filters
-      type: object
-      properties:
-        filters:
-          type: array
-          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
-          example:
-            - field: o_settleDateType
-              values:
-                - '1'
-          items:
-            $ref: '#/components/schemas/FilterRequestData'
-        fields:
-          type: array
-          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-          example:
-            - st_siteID
-            - st_externalMID
-            - st_dbaName
-            - st_batchDate
-            - st_terminalID
-            - st_batchNo
-            - st_invoiceNo
-            - st_transactionDate
-            - st_network
-            - st_accountNumber
-            - st_processedTransactionAmount
-            - st_submittedTransactionAmount
-            - st_currency
-            - st_transactionStatus
-            - st_orderNumber
-            - st_ECIIndicator
-            - st_batchSequenceID
-            - st_type
-            - st_paymentMethod
-            - st_authCode
-            - st_planCode
-            - st_rejectReason
-            - st_integrityClass
-            - st_processor
-            - st_mobileIndicator
-            - st_foreignCurrAmount
-            - st_foreignCurrRate
-            - st_serviceCode
-            - st_authorizationType
-            - st_trckrid
-            - st_vehicleNumber
-            - st_odometerReading
-            - st_driverID
-            - st_transactionMode
-            - st_subMerchantID
-            - st_subMerchantName
-            - st_convinienceFee
-            - st_tokenType
-            - st_acquirerRefNo
-            - st_surChargeAmount
-            - st_surChargeInd
-            - st_productCode
-          items:
-            type: string
-            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-            example: '["st_siteID","st_externalMID","st_dbaName","st_batchDate","st_terminalID","st_batchNo","st_invoiceNo","st_transactionDate","st_network","st_accountNumber","st_processedTransactionAmount","st_submittedTransactionAmount","st_currency","st_transactionStatus","st_orderNumber","st_ECIIndicator","st_batchSequenceID","st_type","st_paymentMethod","st_authCode","st_planCode","st_rejectReason","st_integrityClass","st_processor","st_mobileIndicator","st_foreignCurrAmount","st_foreignCurrRate","st_serviceCode","st_authorizationType","st_trckrid","st_vehicleNumber","st_odometerReading","st_driverID","st_transactionMode","st_subMerchantID","st_subMerchantName","st_convinienceFee","st_tokenType","st_acquirerRefNo","st_surChargeAmount","st_surChargeInd","st_productCode"]'
-        date:
-          type: string
-          description: YYYYMMDD string denoting the date for the query.
-          example: '20210301'
-      description: Request object for settlement search results.
     SettlementSearchResponse:
       required:
         - response
@@ -841,6 +2471,77 @@ components:
                 st_subMerchantName: 'MERCHANT #122184 Q12'
                 st_batchDate: 03/08/2021
       description: Response object for funding search results.
+    SettlementSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_settleDateType
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - st_siteID
+            - st_externalMID
+            - st_dbaName
+            - st_batchDate
+            - st_terminalID
+            - st_batchNo
+            - st_invoiceNo
+            - st_transactionDate
+            - st_network
+            - st_accountNumber
+            - st_processedTransactionAmount
+            - st_submittedTransactionAmount
+            - st_currency
+            - st_transactionStatus
+            - st_orderNumber
+            - st_ECIIndicator
+            - st_batchSequenceID
+            - st_type
+            - st_paymentMethod
+            - st_authCode
+            - st_planCode
+            - st_rejectReason
+            - st_integrityClass
+            - st_processor
+            - st_mobileIndicator
+            - st_foreignCurrAmount
+            - st_foreignCurrRate
+            - st_serviceCode
+            - st_authorizationType
+            - st_trckrid
+            - st_vehicleNumber
+            - st_odometerReading
+            - st_driverID
+            - st_transactionMode
+            - st_subMerchantID
+            - st_subMerchantName
+            - st_convinienceFee
+            - st_tokenType
+            - st_acquirerRefNo
+            - st_surChargeAmount
+            - st_surChargeInd
+            - st_productCode
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["st_siteID","st_externalMID","st_dbaName","st_batchDate","st_terminalID","st_batchNo","st_invoiceNo","st_transactionDate","st_network","st_accountNumber","st_processedTransactionAmount","st_submittedTransactionAmount","st_currency","st_transactionStatus","st_orderNumber","st_ECIIndicator","st_batchSequenceID","st_type","st_paymentMethod","st_authCode","st_planCode","st_rejectReason","st_integrityClass","st_processor","st_mobileIndicator","st_foreignCurrAmount","st_foreignCurrRate","st_serviceCode","st_authorizationType","st_trckrid","st_vehicleNumber","st_odometerReading","st_driverID","st_transactionMode","st_subMerchantID","st_subMerchantName","st_convinienceFee","st_tokenType","st_acquirerRefNo","st_surChargeAmount","st_surChargeInd","st_productCode"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210301'
+      description: Request object for settlement search results.
     RetrievalSummaryRequest:
       required:
         - filters
@@ -905,59 +2606,6 @@ components:
           format: int64
           example: 721
       description: Summary response object which maps the data points returned from the grouped by query request.
-    RetrievalSearchRequest:
-      required:
-        - date
-        - fields
-        - filters
-      type: object
-      properties:
-        filters:
-          type: array
-          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
-          example:
-            - field: o_retrievalDateType
-              values:
-                - '1'
-          items:
-            $ref: '#/components/schemas/FilterRequestData'
-        fields:
-          type: array
-          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-          example:
-            - r_backendMID
-            - r_authNetwork
-            - r_receivedDate
-            - r_statusDate
-            - r_transactionDate
-            - r_status
-            - r_Reason
-            - r_currency
-            - r_dueDate
-            - r_ECIndicator
-            - r_processedTransactionAmount
-            - r_accountNumber
-            - r_first6
-            - r_last4
-            - r_invoiceNumber
-            - r_terminalId
-            - r_disputeID
-            - r_authCode
-            - r_trackingNumber
-            - r_svcCd
-            - r_merchantCategory
-            - r_orderNumber
-            - r_externalMid
-            - r_referenceNumber
-          items:
-            type: string
-            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-            example: '["r_backendMID","r_authNetwork","r_receivedDate","r_statusDate","r_transactionDate","r_status","r_Reason","r_currency","r_dueDate","r_ECIndicator","r_processedTransactionAmount","r_accountNumber","r_first6","r_last4","r_invoiceNumber","r_terminalId","r_disputeID","r_authCode","r_trackingNumber","r_svcCd","r_merchantCategory","r_orderNumber","r_externalMid","r_referenceNumber"]'
-        date:
-          type: string
-          description: YYYYMMDD string denoting the date for the query.
-          example: '20210225'
-      description: Request object for retrieval search results.
     RetrievalSearchResponse:
       required:
         - response
@@ -1087,6 +2735,59 @@ components:
                 r_dueDate: 03/08/2021
                 r_status: 2
       description: Response object for retrieval search results.
+    RetrievalSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_retrievalDateType
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - r_backendMID
+            - r_authNetwork
+            - r_receivedDate
+            - r_statusDate
+            - r_transactionDate
+            - r_status
+            - r_Reason
+            - r_currency
+            - r_dueDate
+            - r_ECIndicator
+            - r_processedTransactionAmount
+            - r_accountNumber
+            - r_first6
+            - r_last4
+            - r_invoiceNumber
+            - r_terminalId
+            - r_disputeID
+            - r_authCode
+            - r_trackingNumber
+            - r_svcCd
+            - r_merchantCategory
+            - r_orderNumber
+            - r_externalMid
+            - r_referenceNumber
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["r_backendMID","r_authNetwork","r_receivedDate","r_statusDate","r_transactionDate","r_status","r_Reason","r_currency","r_dueDate","r_ECIndicator","r_processedTransactionAmount","r_accountNumber","r_first6","r_last4","r_invoiceNumber","r_terminalId","r_disputeID","r_authCode","r_trackingNumber","r_svcCd","r_merchantCategory","r_orderNumber","r_externalMid","r_referenceNumber"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210225'
+      description: Request object for retrieval search results.
     SearchRequest:
       type: object
       properties:
@@ -1130,6 +2831,101 @@ components:
           type: boolean
         countOnly:
           type: boolean
+    Node:
+      type: object
+      properties:
+        prcstype:
+          type: string
+        id:
+          type: string
+        dbname:
+          type: string
+        extid:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        pstlcd:
+          type: string
+        pltf:
+          type: string
+          enum:
+            - Buypass
+            - North
+            - Compass
+            - Unknown
+            - Omaha
+            - South
+            - Memphis
+            - Bams
+            - TeleCheck
+            - ValueLink
+            - OmniPay
+            - UK
+            - Chase
+            - Salem
+            - Tampa
+        contact:
+          type: string
+        fax:
+          type: string
+        email:
+          type: string
+        webSite:
+          type: string
+        cpInd:
+          type: boolean
+        isMultiCCY:
+          type: boolean
+        mccd:
+          type: string
+        entList:
+          type: string
+        chubId:
+          type: string
+        corpId:
+          type: string
+        leadId:
+          type: string
+        agntId:
+          type: string
+        bankId:
+          type: string
+        bsnsId:
+          type: string
+    SearchResult:
+      type: object
+      properties:
+        accs:
+          type: string
+          enum:
+            - Unknown
+            - SuperUser
+            - RelationshipManager
+            - Marker
+            - SubMarker
+            - Business
+            - Bank
+            - CustomBank
+            - Agent
+            - CustomAgent
+            - AssociationGroup
+            - Association
+            - CustomCorporate
+            - Lead
+            - CustomChain
+            - CustomDestination
+            - Corporate
+            - Merchant
+            - Location
+        cnt:
+          type: integer
+          format: int32
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Node'
     FundingSummaryRequest:
       required:
         - filters
@@ -1229,51 +3025,6 @@ components:
           format: double
           example: 428
       description: Summary response object which maps the data points returned from the grouped by query request.
-    FundingSearchRequest:
-      required:
-        - date
-        - fields
-        - filters
-      type: object
-      properties:
-        filters:
-          type: array
-          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
-          example:
-            - field: o_accessLevel
-              values:
-                - '1'
-          items:
-            $ref: '#/components/schemas/FilterRequestData'
-        fields:
-          type: array
-          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-          example:
-            - fd_siteID
-            - fd_batchDate
-            - fd_fundedDate
-            - fd_batchNo
-            - fd_majorCategory
-            - fd_minorCategory
-            - fd_productCode
-            - fd_creditAmount
-            - fd_debitAmount
-            - fd_currency
-            - fd_dda
-            - fd_processor
-            - fd_accountNetAmount
-            - fd_interchangeCD
-            - fd_accountCurrency
-            - fd_referenceNo
-          items:
-            type: string
-            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-            example: '["fd_siteID","fd_batchDate","fd_fundedDate","fd_batchNo","fd_majorCategory","fd_minorCategory","fd_productCode","fd_creditAmount","fd_debitAmount","fd_currency","fd_dda","fd_processor","fd_accountNetAmount","fd_interchangeCD","fd_accountCurrency","fd_referenceNo"]'
-        date:
-          type: string
-          description: YYYYMMDD string denoting the date for the query.
-          example: '20210303'
-      description: Request object for funding search results.
     FundingSearchResponse:
       required:
         - response
@@ -1388,6 +3139,51 @@ components:
                 fd_dda: XXXXXX9377
                 fd_fundedDate: 03/08/2021
       description: Response object for funding search results.
+    FundingSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_accessLevel
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - fd_siteID
+            - fd_batchDate
+            - fd_fundedDate
+            - fd_batchNo
+            - fd_majorCategory
+            - fd_minorCategory
+            - fd_productCode
+            - fd_creditAmount
+            - fd_debitAmount
+            - fd_currency
+            - fd_dda
+            - fd_processor
+            - fd_accountNetAmount
+            - fd_interchangeCD
+            - fd_accountCurrency
+            - fd_referenceNo
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["fd_siteID","fd_batchDate","fd_fundedDate","fd_batchNo","fd_majorCategory","fd_minorCategory","fd_productCode","fd_creditAmount","fd_debitAmount","fd_currency","fd_dda","fd_processor","fd_accountNetAmount","fd_interchangeCD","fd_accountCurrency","fd_referenceNo"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210303'
+      description: Request object for funding search results.
     FraudDetectSummaryRequest:
       required:
         - filters
@@ -1431,58 +3227,6 @@ components:
           description: YYYYMMDD string denoting the date for the query.
           example: '20210302'
       description: Request object for fraud detect transaction/registration summary report creation.
-    FraudDetectSearchRequest:
-      required:
-        - date
-        - fields
-        - filters
-      type: object
-      properties:
-        filters:
-          type: array
-          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
-          example:
-            - field: scoremin
-              values:
-                - '0'
-            - field: scoremax
-              values:
-                - '100'
-            - field: f_fraudID
-              values:
-                - 'MCD_MOBILEORDERING_US,MCD_WALLET_GER'
-          items:
-            $ref: '#/components/schemas/FilterRequestData'
-        fields:
-          type: array
-          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-          example:
-            - f_type
-            - f_paymentAmount
-            - f_entryMethod
-            - f_score
-            - f_responseDecision
-            - f_responseDuration
-            - f_binID
-            - f_currency
-            - f_pinPresent
-            - f_scheme
-            - f_merchLocID
-            - f_accountType
-            - f_declineReasonOne
-            - f_declineReasonTwo
-            - f_loadDate
-            - f_fraudID
-            - f_scoreResult
-          items:
-            type: string
-            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-            example: '["f_type","f_paymentAmount","f_entryMethod","f_score","f_responseDecision","f_responseDuration","f_binID","f_currency","f_pinPresent","f_scheme","f_merchLocID","f_accountType","f_declineReasonOne","f_declineReasonTwo","f_loadDate","f_fraudID","f_scoreResult"]'
-        date:
-          type: string
-          description: YYYYMMDD string denoting the date for the query.
-          example: '20210217'
-      description: Request object for fraud detect transaction/registration search results.
     FraudDetectSearchResponse:
       required:
         - response
@@ -1603,6 +3347,58 @@ components:
                 f_scheme: 2
                 f_currency: 49
       description: Response object for fraud detect search results.
+    FraudDetectSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: scoremin
+              values:
+                - '0'
+            - field: scoremax
+              values:
+                - '100'
+            - field: f_fraudID
+              values:
+                - 'MCD_MOBILEORDERING_US,MCD_WALLET_GER'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - f_type
+            - f_paymentAmount
+            - f_entryMethod
+            - f_score
+            - f_responseDecision
+            - f_responseDuration
+            - f_binID
+            - f_currency
+            - f_pinPresent
+            - f_scheme
+            - f_merchLocID
+            - f_accountType
+            - f_declineReasonOne
+            - f_declineReasonTwo
+            - f_loadDate
+            - f_fraudID
+            - f_scoreResult
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["f_type","f_paymentAmount","f_entryMethod","f_score","f_responseDecision","f_responseDuration","f_binID","f_currency","f_pinPresent","f_scheme","f_merchLocID","f_accountType","f_declineReasonOne","f_declineReasonTwo","f_loadDate","f_fraudID","f_scoreResult"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210217'
+      description: Request object for fraud detect transaction/registration search results.
     DisbursementSummaryRequest:
       required:
         - filters
@@ -1639,92 +3435,6 @@ components:
           description: YYYYMMDD string denoting the date for the query.
           example: '20210228'
       description: Request object for disbursement summary report creation.
-    DisbursementSearchRequest:
-      required:
-        - date
-        - fields
-        - filters
-      type: object
-      properties:
-        filters:
-          type: array
-          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
-          example:
-            - field: o_disbursementDateType
-              values:
-                - '1'
-            - field: o_timeZone
-              values:
-                - '2'
-          items:
-            $ref: '#/components/schemas/FilterRequestData'
-        fields:
-          type: array
-          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-          example:
-            - ds_merchantStatus
-            - ds_merchantId
-            - ds_merchantName
-            - ds_mid
-            - ds_origId
-            - ds_fundingAccount
-            - ds_transactionId
-            - ds_referenceId
-            - ds_controlNumber
-            - ds_transactionAmount
-            - ds_currency
-            - ds_transactionDate
-            - ds_settlementDate
-            - ds_settlementStatus
-            - ds_applyDate
-            - ds_transactionStatus
-            - ds_expiryDate
-            - ds_paymentRecipientId
-            - ds_paymentId
-            - ds_accountLastFour
-            - ds_paymentType
-            - ds_paymentAmount
-            - ds_paymentDate
-            - ds_paymentTime
-            - ds_paymentStatus
-            - ds_paymentChannel
-            - ds_feeAmount
-            - ds_paymentVendorId
-            - ds_returnCode
-            - ds_transactionClaimNumber
-            - ds_transactionPaymentNumber
-            - ds_recipientId
-            - ds_recipientStatus
-            - ds_recipientGuest
-            - ds_recipientCompany
-            - ds_recipientClient
-            - ds_recipientReason
-            - ds_recipientType
-            - ds_recipientFName
-            - ds_recipientLName
-            - ds_email
-            - ds_createDate
-            - ds_recipientIdentifier
-            - ds_recipientIdentifierValue
-            - ds_recipientTin
-            - ds_recipientComments
-            - ds_recipientPhone
-            - ds_recipientExtension
-            - ds_streetOne
-            - ds_streetTwo
-            - ds_city
-            - ds_state
-            - ds_postalCode
-            - ds_country
-          items:
-            type: string
-            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-            example: '["ds_merchantStatus","ds_merchantId","ds_merchantName","ds_mid","ds_origId","ds_fundingAccount","ds_transactionId","ds_referenceId","ds_controlNumber","ds_transactionAmount","ds_currency","ds_transactionDate","ds_settlementDate","ds_settlementStatus","ds_applyDate","ds_transactionStatus","ds_expiryDate","ds_paymentRecipientId","ds_paymentId","ds_accountLastFour","ds_paymentType","ds_paymentAmount","ds_paymentDate","ds_paymentTime","ds_paymentStatus","ds_paymentChannel","ds_feeAmount","ds_paymentVendorId","ds_returnCode","ds_transactionClaimNumber","ds_transactionPaymentNumber","ds_recipientId","ds_recipientStatus","ds_recipientGuest","ds_recipientCompany","ds_recipientClient","ds_recipientReason","ds_recipientType","ds_recipientFName","ds_recipientLName","ds_email","ds_createDate","ds_recipientIdentifier","ds_recipientIdentifierValue","ds_recipientTin","ds_recipientComments","ds_recipientPhone","ds_recipientExtension","ds_streetOne","ds_streetTwo","ds_city","ds_state","ds_postalCode","ds_country"]'
-        date:
-          type: string
-          description: YYYYMMDD string denoting the date for the query.
-          example: '20210303'
-      description: Request object for disbursement search results.
     DisbursementSearchResponse:
       required:
         - response
@@ -2067,6 +3777,92 @@ components:
                 ds_recipientType: 1
                 ds_streetOne: 2 MAIN STREET
       description: Response object for disbursement search results.
+    DisbursementSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_disbursementDateType
+              values:
+                - '1'
+            - field: o_timeZone
+              values:
+                - '2'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - ds_merchantStatus
+            - ds_merchantId
+            - ds_merchantName
+            - ds_mid
+            - ds_origId
+            - ds_fundingAccount
+            - ds_transactionId
+            - ds_referenceId
+            - ds_controlNumber
+            - ds_transactionAmount
+            - ds_currency
+            - ds_transactionDate
+            - ds_settlementDate
+            - ds_settlementStatus
+            - ds_applyDate
+            - ds_transactionStatus
+            - ds_expiryDate
+            - ds_paymentRecipientId
+            - ds_paymentId
+            - ds_accountLastFour
+            - ds_paymentType
+            - ds_paymentAmount
+            - ds_paymentDate
+            - ds_paymentTime
+            - ds_paymentStatus
+            - ds_paymentChannel
+            - ds_feeAmount
+            - ds_paymentVendorId
+            - ds_returnCode
+            - ds_transactionClaimNumber
+            - ds_transactionPaymentNumber
+            - ds_recipientId
+            - ds_recipientStatus
+            - ds_recipientGuest
+            - ds_recipientCompany
+            - ds_recipientClient
+            - ds_recipientReason
+            - ds_recipientType
+            - ds_recipientFName
+            - ds_recipientLName
+            - ds_email
+            - ds_createDate
+            - ds_recipientIdentifier
+            - ds_recipientIdentifierValue
+            - ds_recipientTin
+            - ds_recipientComments
+            - ds_recipientPhone
+            - ds_recipientExtension
+            - ds_streetOne
+            - ds_streetTwo
+            - ds_city
+            - ds_state
+            - ds_postalCode
+            - ds_country
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["ds_merchantStatus","ds_merchantId","ds_merchantName","ds_mid","ds_origId","ds_fundingAccount","ds_transactionId","ds_referenceId","ds_controlNumber","ds_transactionAmount","ds_currency","ds_transactionDate","ds_settlementDate","ds_settlementStatus","ds_applyDate","ds_transactionStatus","ds_expiryDate","ds_paymentRecipientId","ds_paymentId","ds_accountLastFour","ds_paymentType","ds_paymentAmount","ds_paymentDate","ds_paymentTime","ds_paymentStatus","ds_paymentChannel","ds_feeAmount","ds_paymentVendorId","ds_returnCode","ds_transactionClaimNumber","ds_transactionPaymentNumber","ds_recipientId","ds_recipientStatus","ds_recipientGuest","ds_recipientCompany","ds_recipientClient","ds_recipientReason","ds_recipientType","ds_recipientFName","ds_recipientLName","ds_email","ds_createDate","ds_recipientIdentifier","ds_recipientIdentifierValue","ds_recipientTin","ds_recipientComments","ds_recipientPhone","ds_recipientExtension","ds_streetOne","ds_streetTwo","ds_city","ds_state","ds_postalCode","ds_country"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210303'
+      description: Request object for disbursement search results.
     Acquirers:
       type: object
       properties:
@@ -2283,76 +4079,6 @@ components:
           description: YYYYMMDD string denoting the date for the query.
           example: '20210227'
       description: Request object for chargeback summary report creation.
-    ChargebackSearchRequest:
-      required:
-        - date
-        - fields
-        - filters
-      type: object
-      properties:
-        filters:
-          type: array
-          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
-          example:
-            - field: o_chargebackDateType
-              values:
-                - '1'
-          items:
-            $ref: '#/components/schemas/FilterRequestData'
-        fields:
-          type: array
-          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-          example:
-            - cb_backendMID
-            - cb_authNetwork
-            - cb_receivedDate
-            - cb_statusDate
-            - cb_transactionDate
-            - cb_status
-            - cb_category
-            - cb_workType
-            - cb_winLoss
-            - cb_Reason
-            - cb_reasonCode
-            - cb_currency
-            - cb_chargebackAmount
-            - cb_dueDate
-            - cb_transactionType
-            - cb_dispositionDate
-            - cb_Disposition
-            - cb_ECIndicator
-            - cb_transactionAmount
-            - cb_accountNumber
-            - cb_first6
-            - cb_last4
-            - cb_invoiceNumber
-            - cb_terminalId
-            - cb_disputeID
-            - cb_referenceNumber
-            - cb_authCode
-            - cb_trackingNumber
-            - cb_svcCd
-            - cb_merchantCategory
-            - cb_orderNumber
-            - cb_responseReceived
-            - cb_respondedDate
-            - cb_externalMid
-            - cb_paymentMethod
-            - cb_sendMode
-            - cb_recurring
-            - cb_mobileWallet
-            - cb_tokenResponseInd
-            - cb_adjDate
-            - cb_captureMethod
-          items:
-            type: string
-            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
-            example: '["cb_backendMID","cb_authNetwork","cb_receivedDate","cb_statusDate","cb_transactionDate","cb_status","cb_category","cb_workType","cb_winLoss","cb_Reason","cb_reasonCode","cb_currency","cb_chargebackAmount","cb_dueDate","cb_transactionType","cb_dispositionDate","cb_Disposition","cb_ECIndicator","cb_transactionAmount","cb_accountNumber","cb_first6","cb_last4","cb_invoiceNumber","cb_terminalId","cb_disputeID","cb_referenceNumber","cb_authCode","cb_trackingNumber","cb_svcCd","cb_merchantCategory","cb_orderNumber","cb_responseReceived","cb_respondedDate","cb_externalMid","cb_paymentMethod","cb_sendMode","cb_recurring","cb_mobileWallet","cb_tokenResponseInd","cb_adjDate","cb_captureMethod"]'
-        date:
-          type: string
-          description: YYYYMMDD string denoting the date for the query.
-          example: '20210217'
-      description: Request object for chargeback search results.
     ChargebackSearchResponse:
       required:
         - response
@@ -2581,6 +4307,76 @@ components:
                 cb_dispositionDate: 02/20/2021
                 cb_Disposition: 71
       description: Response object for chargeback search results.
+    ChargebackSearchRequest:
+      required:
+        - date
+        - fields
+        - filters
+      type: object
+      properties:
+        filters:
+          type: array
+          description: 'Filter results by field and value, represents the [ where [ FIELD in(''FILTER1'', ''FILTER2'') ] ] clause of a sql query.'
+          example:
+            - field: o_chargebackDateType
+              values:
+                - '1'
+          items:
+            $ref: '#/components/schemas/FilterRequestData'
+        fields:
+          type: array
+          description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+          example:
+            - cb_backendMID
+            - cb_authNetwork
+            - cb_receivedDate
+            - cb_statusDate
+            - cb_transactionDate
+            - cb_status
+            - cb_category
+            - cb_workType
+            - cb_winLoss
+            - cb_Reason
+            - cb_reasonCode
+            - cb_currency
+            - cb_chargebackAmount
+            - cb_dueDate
+            - cb_transactionType
+            - cb_dispositionDate
+            - cb_Disposition
+            - cb_ECIndicator
+            - cb_transactionAmount
+            - cb_accountNumber
+            - cb_first6
+            - cb_last4
+            - cb_invoiceNumber
+            - cb_terminalId
+            - cb_disputeID
+            - cb_referenceNumber
+            - cb_authCode
+            - cb_trackingNumber
+            - cb_svcCd
+            - cb_merchantCategory
+            - cb_orderNumber
+            - cb_responseReceived
+            - cb_respondedDate
+            - cb_externalMid
+            - cb_paymentMethod
+            - cb_sendMode
+            - cb_recurring
+            - cb_mobileWallet
+            - cb_tokenResponseInd
+            - cb_adjDate
+            - cb_captureMethod
+          items:
+            type: string
+            description: 'String array denoting the fields required, represents the [ select FIELD from ] clause of a sql query.'
+            example: '["cb_backendMID","cb_authNetwork","cb_receivedDate","cb_statusDate","cb_transactionDate","cb_status","cb_category","cb_workType","cb_winLoss","cb_Reason","cb_reasonCode","cb_currency","cb_chargebackAmount","cb_dueDate","cb_transactionType","cb_dispositionDate","cb_Disposition","cb_ECIndicator","cb_transactionAmount","cb_accountNumber","cb_first6","cb_last4","cb_invoiceNumber","cb_terminalId","cb_disputeID","cb_referenceNumber","cb_authCode","cb_trackingNumber","cb_svcCd","cb_merchantCategory","cb_orderNumber","cb_responseReceived","cb_respondedDate","cb_externalMid","cb_paymentMethod","cb_sendMode","cb_recurring","cb_mobileWallet","cb_tokenResponseInd","cb_adjDate","cb_captureMethod"]'
+        date:
+          type: string
+          description: YYYYMMDD string denoting the date for the query.
+          example: '20210217'
+      description: Request object for chargeback search results.
     AuthorizationSummaryRequest:
       required:
         - filters
