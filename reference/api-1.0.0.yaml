@@ -6,8 +6,6 @@ servers:
   - url: 'http://localhost:5005'
     description: Generated server url
 tags:
-  - name: Funding Summary
-    description: Analyze funding transactions through various pivot and filter options
   - name: Disbursement Summary
     description: Analyze disbursement transaction through various pivot and filter options
   - name: Settlement Summary
@@ -30,6 +28,8 @@ tags:
     description: Returns authorization transactions and their included fields.
   - name: Chargeback Transactions
     description: Return chargeback transactions and their included fields.
+  - name: Funding Summary
+    description: Analyze funding transactions through various pivot and filter options.
   - name: Funding Transactions
     description: Search funding details
   - name: Retrieval Transactions
@@ -50,19 +50,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input SettlementSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -128,19 +124,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input SettlementSearchRequest object, returns a list of txns with included field values'
         content:
@@ -204,19 +196,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input RetrievalSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -282,19 +270,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input RetrievalSearchRequest object, returns a list of txns with included field values'
         content:
@@ -358,19 +342,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         content:
           application/json:
@@ -435,19 +415,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input FundingSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -513,19 +489,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input FundingSearchRequest object, returns a list of txns with included field values'
         content:
@@ -589,19 +561,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input FraudDetectSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -667,19 +635,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input FraudDetectSearchRequest object, returns a list of txns with included field values'
         content:
@@ -743,19 +707,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input DisbursementSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -821,19 +781,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input DisbursementSearchRequest object, returns a list of txns with included field values'
         content:
@@ -897,19 +853,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         content:
           application/json:
@@ -972,19 +924,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input ChargebackSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -1050,19 +998,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input ChargebackSearchRequest object, returns a list of txns with included field values'
         content:
@@ -1126,19 +1070,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input AuthorizationSummaryRequest object, returns a list of measured aggregations by pivots'
         content:
@@ -1204,19 +1144,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       requestBody:
         description: 'Input AuthorizationSearchRequest object, returns a list of txns with included field values'
         content:
@@ -1280,19 +1216,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -1349,19 +1281,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -1418,19 +1346,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -1487,19 +1411,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -1556,19 +1476,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -1625,19 +1541,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -1694,19 +1606,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -1763,19 +1671,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -1832,19 +1736,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -1901,19 +1801,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -1970,19 +1866,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -2039,19 +1931,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
@@ -2108,19 +1996,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Successful search.
@@ -2179,19 +2063,15 @@ paths:
             API Key provided to the merchant associating the requests with
                     the appropriate app in the Developer Portal.
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
+          schema:
+            type: string
         - name: Content-Type
           in: header
           description: The content type. Valid value (application/json).
           required: true
-          content:
-            '*/*':
-              schema:
-                type: string
-                default: application/json
+          schema:
+            type: string
+            default: application/json
       responses:
         '200':
           description: Created
