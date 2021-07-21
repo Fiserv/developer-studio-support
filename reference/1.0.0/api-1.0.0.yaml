@@ -62,7 +62,7 @@ paths:
             default: application/json
         - name: userid
           in: path
-          description: Unique Id of the user
+          description: Internal key that uniquely identifies the user.
           required: true
           schema:
             type: string
@@ -128,7 +128,7 @@ paths:
             default: application/json
         - name: userid
           in: path
-          description: Unique Id of the user
+          description: Internal key that uniquely identifies the user.
           required: true
           schema:
             type: string
@@ -194,7 +194,7 @@ paths:
             default: application/json
         - name: userid
           in: path
-          description: Unique Id of the user
+          description: Internal key that uniquely identifies the user.
           required: true
           schema:
             type: string
@@ -260,7 +260,7 @@ paths:
             default: application/json
         - name: userid
           in: path
-          description: Unique Id of the user
+          description: Internal key that uniquely identifies the user.
           required: true
           schema:
             type: string
@@ -1547,7 +1547,7 @@ paths:
             default: application/json
         - name: userid
           in: path
-          description: Unique Id of the user
+          description: Internal key that uniquely identifies the user.
           required: true
           schema:
             type: string
@@ -2530,19 +2530,14 @@ components:
       properties:
         userId:
           type: string
-          description: Unique User Id
-          example: cl.test123
+          description: Internal key that uniquely identifies the user.
+          example: '1234567'
     Results:
       type: object
       properties:
-        id:
-          type: integer
-          description: Internal id to businesstrack.
-          format: int64
-          example: 5381731
         userName:
           type: string
-          description: Businesstrack Login user name
+          description: Login user name
           example: cl.test123
         firstName:
           type: string
@@ -2558,7 +2553,7 @@ components:
           example: test@gmail.com
         accountStatus:
           type: array
-          description: BusinessTrack user account status
+          description: Account status of the user
           example: Active
           items:
             $ref: '#/components/schemas/UserAccountStatus'
@@ -2570,40 +2565,51 @@ components:
             - Locked
         clientAccess:
           type: array
-          description: 'Clients - Every merchant is associated with unique client id. '
-          example: dnkn
+          description: Access restricted to respective clients
+          example:
+            - fiserv
+            - firstdata
           items:
             type: string
-            description: 'Clients - Every merchant is associated with unique client id. '
-            example: dnkn
+            description: Access restricted to respective clients
+            example: '["fiserv","firstdata"]'
         admin:
           type: boolean
-          description: The user is client administrator if it’s set as true
+          description: For administrator access
           example: true
         logicallyDeletedTimestamp:
           type: string
-          description: User deleted timestamp (in UTC) from businesstrack.
+          description: User deleted timestamp (in UTC).
           format: date-time
           example: '2021-07-06T20:01:36.042Z'
         lastLoginTimestamp:
           type: string
-          description: User last logged in timestamp (in UTC) to business track.
+          description: User last logged in timestamp (in UTC).
           format: date-time
           example: '2021-07-06T20:01:36.042Z'
         createdTimestamp:
           type: string
-          description: User created timestamp (in UTC) in busnesstrack
+          description: User created timestamp (in UTC)
           format: date-time
           example: '2021-06-22T03:59:32.644Z'
         lastModifiedBy:
           type: string
-          description: User who modified the data at last
+          description: User who performed the change
           example: cl.test123
         lastModifiedTimestamp:
           type: string
-          description: Timestamp (in UTC) when data was modified at last.
+          description: Timestamp (in UTC) when last change happened
           format: date-time
           example: '2021-06-22T03:59:33.772Z'
+        id:
+          type: integer
+          format: int64
+          writeOnly: true
+        userId:
+          type: integer
+          description: Internal key that uniquely identifies the user.
+          format: int64
+          example: 1234567
     UserAccountStatus:
       type: object
       properties:
@@ -2611,7 +2617,7 @@ components:
           type: string
         display:
           type: string
-      description: BusinessTrack user account status
+      description: Account status of the user
       example: Active
       enum:
         - Active
@@ -2624,17 +2630,17 @@ components:
       properties:
         identity:
           type: string
-          description: Identity of user like name or firstName or LastName
+          description: Identity like name or firstName or LastName or EmailAddress or userName
           example: John
         status:
           type: array
-          description: Status of the user
+          description: Account status of the user
           example:
             - DELETED
             - NONE
           items:
             type: string
-            description: Status of the user
+            description: Account status of the user
             example: '["DELETED","NONE"]'
             enum:
               - NONE
@@ -2651,83 +2657,131 @@ components:
     SaveUserResult:
       type: object
       properties:
-        id:
-          type: integer
-          description: Unique Id of user
-          format: int64
-          example: 5329408
         userName:
           type: string
           description: Name of the User
           example: cl.test123
+        id:
+          type: integer
+          format: int64
+          writeOnly: true
+        userId:
+          type: integer
+          description: Internal key that uniquely identifies the user.
+          format: int64
+          example: 1234567
     ApplicationDto:
       type: object
       properties:
         id:
           type: integer
+          description: Internal application id
           format: int64
+          example: 1
         name:
           type: string
+          description: Application display name
+          example: Disputes Manager
         accessName:
           type: string
+          description: Identifies which applications the user may access
+          example: FDC_EIDS
         description:
           type: string
+          description: Description for the accessName
+          example: Respond to chargeback/retrieval disputes utilizing a workflow management response tool
         displayName:
           type: string
+          description: Application name for the accessName
+          example: Dispute Management
         provisioningType:
           type: string
+          description: |-
+            Identifies actions that can be taken on an application
+            Add, Update, Delete, NonProvision
+          example: DELETE
         attributeGroups:
           type: array
+          description: List of attributes associated with the application
           items:
             $ref: '#/components/schemas/FeatureDto'
-      description: Provisioning application details
+      description: Application details
     AttributeDto:
       type: object
       properties:
         id:
           type: integer
+          description: Internal attribute id
           format: int64
+          example: 1
         name:
           type: string
+          description: Attribute Name
+          example: DM_Entitlements_DisputeManagerAccess
         displayName:
           type: string
+          description: Attribute display name
+          example: Dispute Manager Access
         description:
           type: string
+          description: Attribute detailed description
+          example: Identifies whether the user can only view disputes or can respond and manage disputes
         attributeType:
           type: string
+          description: 'Type of entry selection for the attribute: freeform, dropdown, multiselect'
+          example: SELECT
         attributeOptions:
           type: array
+          description: Options available for the attributes
           items:
             $ref: '#/components/schemas/AttributeOptionDto'
         attributeValues:
           type: array
+          description: Options associated with the attribute
+          example:
+            - '4'
           items:
             type: string
+            description: Options associated with the attribute
+            example: '["4"]'
         isReferencedValue:
           type: boolean
+          description: Identifies the code / value pair for the application attribute
+          example: true
         isRequired:
           type: boolean
+          description: Identifies if the attribute is required for the application
+          example: true
+      description: List of associated attributes of the group
     AttributeOptionDto:
       type: object
       properties:
         id:
           type: integer
+          description: Internal attribute id
           format: int64
+          example: 1
         value:
           type: string
+          description: Attribute option value
+          example: '1'
         display:
           type: string
+          description: Attribute option display value
+          example: update
+      description: Options available for the attributes
     DataAccessDto:
-      required:
-        - accessType
-        - hierarchy
       type: object
       properties:
         id:
           type: integer
+          description: Internal dataaccess id
           format: int64
+          example: 12345678
         accessType:
           type: string
+          description: Type of hierarchies associated with the user
+          example: LegacyHierarchy
         hierarchy:
           $ref: '#/components/schemas/MerchantHierarchyDto'
       description: 'Merchant hierarchy details ( merchant number, Platform and hierarchy level)'
@@ -2742,8 +2796,8 @@ components:
           type: string
           description: Display name.
           example: Name
-      description: User enrollment details to businesstrack
-      example: Administer
+      description: User enrollment details
+      example: SelfEnrollment
     EmailInfoDto:
       type: object
       properties:
@@ -2759,34 +2813,32 @@ components:
             - business
             - personal
       description: User business and personal email addresses
-    ExternalIdentityDto:
-      type: object
-      properties:
-        id:
-          type: string
-        x500Id:
-          type: string
-        topSecretId:
-          type: string
-        ocsId:
-          type: string
-      description: External userid and system details
     FeatureDto:
       type: object
       properties:
         id:
           type: integer
+          description: Internal feature id
           format: int64
+          example: 1
         name:
           type: string
+          description: Application attribute group name
+          example: DM_Entitlements
         displayName:
           type: string
+          description: Application attribute group display Name
+          example: Entitlements
         description:
           type: string
+          description: Description for the attribute group name
+          example: Identifies the user's entitlments for Dispute Manager
         attributes:
           type: array
+          description: List of associated attributes of the group
           items:
             $ref: '#/components/schemas/AttributeDto'
+      description: List of attributes associated with the application
     MerchantHierarchyDto:
       required:
         - hierarchyLevel
@@ -2796,15 +2848,22 @@ components:
       properties:
         id:
           type: integer
+          description: Internal merchant hierarchy id
           format: int64
+          example: 1234
         hierarchyLevel:
           $ref: '#/components/schemas/DisplayValuePairDto'
         affiliateName:
           type: string
+          description: Merchant’s “Doing Business As” (DBA) name.
+          example: AIRSDRIE VETS4PETS LTD
         sysId:
           type: string
+          description: FD system generated merchant number.
+          example: '878235486882'
         platform:
           $ref: '#/components/schemas/DisplayValuePairDto'
+      description: Hierarchy details for the accessType
     NamedReferenceDto:
       type: object
       properties:
@@ -2815,7 +2874,7 @@ components:
           example: 1
         name:
           type: string
-          description: Channel/Company Name
+          description: Channel Name
           example: First Data Services
       description: User channel
     SaveUserRequest:
@@ -2823,12 +2882,12 @@ components:
       properties:
         id:
           type: integer
-          description: Businesstrack internal user id
+          description: Internal key that uniquely identifies the user.
           format: int64
-          example: 5329408
+          example: 1234567
         userName:
           type: string
-          description: Businesstrack Login user name
+          description: Login user name
           example: cl.test123
         firstName:
           type: string
@@ -2873,26 +2932,24 @@ components:
             - 'Y'
         clientAccess:
           type: array
-          description: Clients - Every merchant is associated with unique client id.
+          description: Client ID's(Every merchant is associated with unique client id)
           example:
-            - dnkn
-            - mcd
+            - fiserv
+            - firstdata
           items:
             type: string
-            description: Clients - Every merchant is associated with unique client id.
-            example: '["dnkn","mcd"]'
+            description: Client ID's(Every merchant is associated with unique client id)
+            example: '["fiserv","firstdata"]'
         channel:
           $ref: '#/components/schemas/NamedReferenceDto'
         federated:
           type: boolean
-          description: 'Federated user flag, user is federating to businesstrack if set true'
+          description: Single Sign on User
           example: true
         mfaEnabled:
           type: boolean
-          description: 'Multi factor authentication, an otp will be sent to user when logging in to businesstrack if set true'
+          description: 'Multi factor authentication, an otp will be sent to user when logging if set true'
           example: true
-        company:
-          $ref: '#/components/schemas/NamedReferenceDto'
         dataAccesses:
           uniqueItems: true
           type: array
@@ -2902,11 +2959,9 @@ components:
         applications:
           uniqueItems: true
           type: array
-          description: Provisioning application details
+          description: Application details
           items:
             $ref: '#/components/schemas/ApplicationDto'
-        externalIdentity:
-          $ref: '#/components/schemas/ExternalIdentityDto'
     UserPhoneDto:
       type: object
       properties:
@@ -2928,27 +2983,35 @@ components:
       properties:
         timezone:
           type: string
-          description: Timezone details
+          description: User timezone
           example: UTC
         currencyCode:
           type: string
-          description: Currency code
+          description: User Currency code
           example: USD
         locale:
           type: string
-          description: Locale
-          example: en_US
+          description: User Locale
+          enum:
+            - en_GB
+            - en_US
+            - de_DE
+            - es_MX
+            - fr_CA
+            - it_IT
+            - nl_NL
+            - pt_BR
         dateFormat:
           type: string
           description: Date format
           example: MM/dd/yyyy
         timeFormat:
           type: string
-          description: Time format details
+          description: Time format
           example: 'hh:mm a'
         numberFormat:
           type: string
-          description: Number format details
+          description: Number format
           example: '###,##0.00'
       description: 'User preferences (locale, language, amount format, date format and time zone) details'
     FilterRequestData:
@@ -10796,32 +10859,27 @@ components:
       properties:
         value:
           type: string
-          description: BusinessTrack user account status value
+          description: Account status of the user value
           example: DISABLED
         display:
           type: string
-          description: BusinessTrack user account status display name
+          description: User account status display name
           example: Disabled
-      description: BusinessTrack user account status
+      description: Account status of the user
     FetchUserResponse:
       type: object
       properties:
         clientAccess:
           type: array
           description: Clients - Every merchant is associated with unique client id.
-          example: xyz123
+          example: '"fiserv","firstdata"'
           items:
             type: string
             description: Clients - Every merchant is associated with unique client id.
-            example: xyz123
-        id:
-          type: integer
-          description: Businesstrack internal user id
-          format: int64
-          example: 5329408
+            example: '"fiserv","firstdata"'
         userName:
           type: string
-          description: Businesstrack Login user name.
+          description: Login user name.
           example: cl.test123
         firstName:
           type: string
@@ -10849,7 +10907,7 @@ components:
           $ref: '#/components/schemas/UserPreferenceDto'
         accountStatus:
           type: array
-          description: 'BusinessTrack user account status [ Active, Deleted, Disabled, Idle Locked, Locked ]'
+          description: 'Account status of the user. [ Active, Deleted, Disabled, Idle Locked, Locked ]'
           items:
             $ref: '#/components/schemas/UserAccountStatusDto'
         zipCode:
@@ -10864,44 +10922,51 @@ components:
           $ref: '#/components/schemas/DisplayValuePairDto'
         lastLoginTimestamp:
           type: string
-          description: User last logged in timestamp (in UTC) to business track.
+          description: User last logged in timestamp (in UTC).
           format: date-time
           example: '2021-07-15T21:09:00Z'
         lastPwdChangedTimestamp:
           type: string
-          description: User last password changed timestamp (in UTC) in business track.
+          description: User last password changed timestamp (in UTC)
           format: date-time
           example: '2021-05-04T17:53:53.412Z'
         logicallyDeletedTimestamp:
           type: string
-          description: User deleted timestamp (in UTC) from businesstrack.
+          description: User deleted timestamp (in UTC).
           format: date-time
           example: '2021-05-04T17:53:53.412Z'
         federated:
           type: boolean
-          description: 'Federated user flag, user is federating to businesstrack if set true'
+          description: 'Federated user flag, user is federating if set true'
           example: true
         mfaEnabled:
           type: boolean
-          description: 'Multi factor authentication, an otp will be sent to user when logging in to businesstrack if set true.'
+          description: 'Multi factor authentication, an otp will be sent to user when logging if set true.'
           example: true
-        externalIdentity:
-          $ref: '#/components/schemas/ExternalIdentityDto'
         enrollmentType:
           $ref: '#/components/schemas/DisplayValuePairDto'
+        id:
+          type: integer
+          format: int64
+          writeOnly: true
+        userId:
+          type: integer
+          description: Internal key that uniquely identifies the user.
+          format: int64
+          example: 1234567
     UserAccountStatusDto:
       type: object
       properties:
         userId:
           type: string
-          description: Unique id of user
-          example: '5329408'
+          description: Internal key that uniquely identifies the user.
+          example: '1234567'
         accountStatus:
           type: array
-          description: BusinessTrack user account status
+          description: Account status of the user
           items:
             $ref: '#/components/schemas/AccountStatus'
-      description: 'BusinessTrack user account status [ Active, Deleted, Disabled, Idle Locked, Locked ]'
+      description: 'Account status of the user. [ Active, Deleted, Disabled, Idle Locked, Locked ]'
     FilterMetaData:
       type: object
       properties:
