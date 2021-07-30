@@ -2377,9 +2377,6 @@ components:
     ResetPasswordResult:
       type: object
       properties:
-        newValue:
-          type: string
-          writeOnly: true
         newPassword:
           type: string
           description: New temporary password
@@ -2454,13 +2451,18 @@ components:
     UserId:
       type: object
       properties:
-        userId:
+        id:
           type: string
           description: Internal key that uniquely identifies the user
           example: '1234567'
     Results:
       type: object
       properties:
+        id:
+          type: integer
+          description: Internal key that uniquely identifies the user
+          format: int64
+          example: 1234567
         userName:
           type: string
           description: User login name
@@ -2480,15 +2482,15 @@ components:
         accountStatus:
           type: array
           description: Account status of the user
-          example: Active
           items:
-            $ref: '#/components/schemas/UserAccountStatus'
-          enum:
-            - Active
-            - Deleted
-            - Disabled
-            - Idle Locked
-            - Locked
+            type: string
+            description: Account status of the user
+            enum:
+              - NONE
+              - LOCKED
+              - IDLE_LOCKED
+              - DISABLED
+              - DELETED
         clientAccess:
           type: array
           description: Access restricted to respective clients
@@ -2520,43 +2522,19 @@ components:
           example: '2021-06-22T03:59:32.644Z'
         lastModifiedBy:
           type: string
-          description: User who performed the change
+          description: User who last modified this account
           example: cl.test123
         lastModifiedTimestamp:
           type: string
           description: Timestamp (in UTC) when last change happened
           format: date-time
           example: '2021-06-22T03:59:33.772Z'
-        id:
-          type: integer
-          format: int64
-          writeOnly: true
-        userId:
-          type: integer
-          description: Internal key that uniquely identifies the user
-          format: int64
-          example: 1234567
-    UserAccountStatus:
-      type: object
-      properties:
-        value:
-          type: string
-        display:
-          type: string
-      description: Account status of the user
-      example: Active
-      enum:
-        - Active
-        - Deleted
-        - Disabled
-        - Idle Locked
-        - Locked
     SearchRequest:
       type: object
       properties:
         identity:
           type: string
-          description: Identity name or firstName or LastName or EmailAddress or userName
+          description: Full name or firstName or LastName or EmailAddress or userName. Supports wild card search
           example: John
         status:
           type: array
@@ -2564,10 +2542,13 @@ components:
           example:
             - DELETED
             - NONE
+            - DISABLED
+            - IDLE_LOCKED
+            - LOCKED
           items:
             type: string
             description: Account status of the user
-            example: '["DELETED","NONE"]'
+            example: '["DELETED","NONE","DISABLED","IDLE_LOCKED","LOCKED"]'
             enum:
               - NONE
               - DELETED
@@ -2583,147 +2564,15 @@ components:
     SaveUserResult:
       type: object
       properties:
-        userName:
-          type: string
-          description: Name of the User
-          example: cl.test123
         id:
-          type: integer
-          format: int64
-          writeOnly: true
-        userId:
           type: integer
           description: Internal key that uniquely identifies the user
           format: int64
           example: 1234567
-    ApplicationDto:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Internal application id
-          format: int64
-          example: 1
-        name:
+        userName:
           type: string
-          description: Application display name
-          example: Disputes Manager
-        accessName:
-          type: string
-          description: Identifies which applications the user may access
-          example: FDC_EIDS
-        description:
-          type: string
-          description: Description for the accessName
-          example: Respond to chargeback/retrieval disputes utilizing a workflow management response tool
-        displayName:
-          type: string
-          description: Application name for the accessName
-          example: Dispute Management
-        provisioningType:
-          type: string
-          description: |-
-            Identifies actions that can be taken on an application
-            Add, Update, Delete, NonProvision
-          example: DELETE
-        attributeGroups:
-          type: array
-          description: List of attributes associated with the application
-          items:
-            $ref: '#/components/schemas/FeatureDto'
-      description: Application details
-    AttributeDto:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Internal attribute id
-          format: int64
-          example: 1
-        name:
-          type: string
-          description: Attribute Name
-          example: DM_Entitlements_DisputeManagerAccess
-        displayName:
-          type: string
-          description: Attribute display name
-          example: Dispute Manager Access
-        description:
-          type: string
-          description: Attribute detailed description
-          example: Identifies whether the user can only view disputes or can respond and manage disputes
-        attributeType:
-          type: string
-          description: 'Type of entry selection for the attribute: freeform, dropdown, multiselect'
-          example: SELECT
-        attributeOptions:
-          type: array
-          description: Options available for the attributes
-          items:
-            $ref: '#/components/schemas/AttributeOptionDto'
-        attributeValues:
-          type: array
-          description: Options associated with the attribute
-          example:
-            - '4'
-          items:
-            type: string
-            description: Options associated with the attribute
-            example: '["4"]'
-        isRequired:
-          type: boolean
-          description: Identifies if the attribute is required for the application
-          example: true
-        isReferencedValue:
-          type: boolean
-          description: Identifies the code / value pair for the application attribute
-          example: true
-      description: List of associated attributes of the group
-    AttributeOptionDto:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Internal attribute id
-          format: int64
-          example: 1
-        value:
-          type: string
-          description: Attribute option value
-          example: '1'
-        display:
-          type: string
-          description: Attribute option display value
-          example: update
-      description: Options available for the attributes
-    DataAccessDto:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Internal dataaccess id
-          format: int64
-          example: 12345678
-        accessType:
-          type: string
-          description: Type of hierarchies associated with the user
-          example: LegacyHierarchy
-        hierarchy:
-          $ref: '#/components/schemas/MerchantHierarchyDto'
-      description: 'Merchant hierarchy details ( merchant number, Platform and hierarchy level)'
-    DisplayValuePairDto:
-      type: object
-      properties:
-        value:
-          type: string
-          description: Value
-          example: R
-        display:
-          type: string
-          description: Display name
-          example: Name
-      description: User enrollment details
-      example: SelfEnrollment
+          description: Name of the User
+          example: cl.test123
     EmailInfoDto:
       type: object
       properties:
@@ -2739,57 +2588,6 @@ components:
             - business
             - personal
       description: User business and personal email addresses
-    FeatureDto:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Internal feature id
-          format: int64
-          example: 1
-        name:
-          type: string
-          description: Application attribute group name
-          example: DM_Entitlements
-        displayName:
-          type: string
-          description: Application attribute group display Name
-          example: Entitlements
-        description:
-          type: string
-          description: Description for the attribute group name
-          example: Identifies the user's entitlments for Dispute Manager
-        attributes:
-          type: array
-          description: List of associated attributes of the group
-          items:
-            $ref: '#/components/schemas/AttributeDto'
-      description: List of attributes associated with the application
-    MerchantHierarchyDto:
-      required:
-        - hierarchyLevel
-        - platform
-        - sysId
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Internal merchant hierarchy id
-          format: int64
-          example: 1234
-        hierarchyLevel:
-          $ref: '#/components/schemas/DisplayValuePairDto'
-        affiliateName:
-          type: string
-          description: Merchant’s “Doing Business As” (DBA) name
-          example: AIRSDRIE VETS4PETS LTD
-        sysId:
-          type: string
-          description: FD system generated merchant number
-          example: '878235486882'
-        platform:
-          $ref: '#/components/schemas/DisplayValuePairDto'
-      description: Hierarchy details for the accessType
     NamedReferenceDto:
       type: object
       properties:
@@ -2803,6 +2601,59 @@ components:
           description: Channel Name
           example: First Data Services
       description: User channel
+    SaveUserApplication:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Internal application id
+          format: int64
+          example: 1
+        name:
+          type: string
+          description: Application display name
+          example: Disputes Manager
+        accessName:
+          type: string
+          description: Identifies which applications the user may access
+          example: FDC_EIDS
+        attributeGroups:
+          type: array
+          description: List of attributes associated with the application
+          items:
+            $ref: '#/components/schemas/SaveUserFeatureDto'
+      description: Application details
+    SaveUserAttributeDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Internal attribute id
+          format: int64
+          example: 1
+        name:
+          type: string
+          description: Attribute Name
+          example: DM_Entitlements_DisputeManagerAccess
+        attributeValues:
+          type: array
+          description: Options associated with the attribute
+          example:
+            - '4'
+          items:
+            type: string
+            description: Options associated with the attribute
+            example: '["4"]'
+      description: List of associated attributes of the group
+    SaveUserFeatureDto:
+      type: object
+      properties:
+        attributes:
+          type: array
+          description: List of associated attributes of the group
+          items:
+            $ref: '#/components/schemas/SaveUserAttributeDto'
+      description: List of attributes associated with the application
     SaveUserRequest:
       type: object
       properties:
@@ -2826,7 +2677,6 @@ components:
         email:
           type: array
           description: User business and personal email addresses
-          example: test@gmail.com
           items:
             $ref: '#/components/schemas/EmailInfoDto'
         phoneNumber:
@@ -2840,22 +2690,16 @@ components:
           example: '30022'
         preferences:
           $ref: '#/components/schemas/UserPreferenceDto'
-        ddaTruncation:
-          type: string
-          description: DDA number truncation method either masked or full number
-          example: 'Y'
-          enum:
-            - R
-            - 'Y'
-        cardTruncation:
-          type: string
-          description: 'Card number truncation method either masked, unmasked, full or truncated'
-          example: 'Y'
-          enum:
-            - T
-            - R
-            - 'N'
-            - 'Y'
+        federated:
+          type: boolean
+          description: Single Sign on User
+          example: true
+        mfaEnabled:
+          type: boolean
+          description: 'Multi factor authentication, an otp will be sent to user when logging if set true'
+          example: true
+        channel:
+          $ref: '#/components/schemas/NamedReferenceDto'
         clientAccess:
           type: array
           description: Client ID's(Every merchant is associated with unique client id)
@@ -2866,28 +2710,12 @@ components:
             type: string
             description: Client ID's(Every merchant is associated with unique client id)
             example: '["fiserv","firstdata"]'
-        channel:
-          $ref: '#/components/schemas/NamedReferenceDto'
-        federated:
-          type: boolean
-          description: Single Sign on User
-          example: true
-        mfaEnabled:
-          type: boolean
-          description: 'Multi factor authentication, an otp will be sent to user when logging if set true'
-          example: true
-        dataAccesses:
-          uniqueItems: true
-          type: array
-          description: 'Merchant hierarchy details ( merchant number, Platform and hierarchy level)'
-          items:
-            $ref: '#/components/schemas/DataAccessDto'
         applications:
           uniqueItems: true
           type: array
           description: Application details
           items:
-            $ref: '#/components/schemas/ApplicationDto'
+            $ref: '#/components/schemas/SaveUserApplication'
     UserPhoneDto:
       type: object
       properties:
@@ -10786,24 +10614,142 @@ components:
       properties:
         value:
           type: string
-          description: Account status of the user value
-          example: DISABLED
+          description: Account status value
+          example: NONE
         display:
           type: string
-          description: User account status display name
-          example: Disabled
-      description: Account status of the user
+          description: Account status display name
+          example: Active
+      description: 'Account status of the user. [ Active, Deleted, Disabled, Idle Locked, Locked ]'
+    ApplicationDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Internal application id
+          format: int64
+          example: 1
+        name:
+          type: string
+          description: Application display name
+          example: Disputes Manager
+        accessName:
+          type: string
+          description: Identifies which applications the user may access
+          example: FDC_EIDS
+        description:
+          type: string
+          description: Description for the accessName
+          example: Respond to chargeback/retrieval disputes utilizing a workflow management response tool
+        displayName:
+          type: string
+          description: Application name for the accessName
+          example: Dispute Management
+        provisioningType:
+          type: string
+          description: |-
+            Identifies actions that can be taken on an application
+            Add, Update, Delete, NonProvision
+          example: DELETE
+        attributeGroups:
+          type: array
+          description: List of attributes associated with the application
+          items:
+            $ref: '#/components/schemas/FeatureDto'
+      description: Application details
+    AttributeDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Internal attribute id
+          format: int64
+          example: 1
+        name:
+          type: string
+          description: Attribute Name
+          example: DM_Entitlements_DisputeManagerAccess
+        displayName:
+          type: string
+          description: Attribute display name
+          example: Dispute Manager Access
+        description:
+          type: string
+          description: Attribute detailed description
+          example: Identifies whether the user can only view disputes or can respond and manage disputes
+        attributeType:
+          type: string
+          description: 'Type of entry selection for the attribute: freeform, dropdown, multiselect'
+          example: SELECT
+        attributeOptions:
+          type: array
+          description: Options available for the attributes
+          items:
+            $ref: '#/components/schemas/AttributeOptionDto'
+        attributeValues:
+          type: array
+          description: Options associated with the attribute
+          example:
+            - '4'
+          items:
+            type: string
+            description: Options associated with the attribute
+            example: '["4"]'
+        isRequired:
+          type: boolean
+          description: Identifies if the attribute is required for the application
+          example: true
+        isReferencedValue:
+          type: boolean
+          description: Identifies the code / value pair for the application attribute
+          example: true
+      description: List of associated attributes of the group
+    AttributeOptionDto:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Internal attribute id
+          format: int64
+          example: 1
+        value:
+          type: string
+          description: Attribute option value
+          example: '1'
+        display:
+          type: string
+          description: Attribute option display value
+          example: update
+      description: Options available for the attributes
+    DisplayValuePairDto:
+      type: object
+      properties:
+        value:
+          type: string
+          description: Enrollment value
+          example: Administer
+        display:
+          type: string
+          description: Enrollment display name
+          example: Administrator
+      description: User enrollment details
+    FeatureDto:
+      type: object
+      properties:
+        attributes:
+          type: array
+          description: List of associated attributes of the group
+          items:
+            $ref: '#/components/schemas/AttributeDto'
+      description: List of attributes associated with the application
     FetchUserResponse:
       type: object
       properties:
-        clientAccess:
-          type: array
-          description: Clients - Every merchant is associated with unique client id
-          example: '"fiserv","firstdata"'
-          items:
-            type: string
-            description: Clients - Every merchant is associated with unique client id
-            example: '"fiserv","firstdata"'
+        id:
+          type: integer
+          description: Internal key that uniquely identifies the user
+          format: int64
+          example: 1234567
         userName:
           type: string
           description: User login name
@@ -10830,23 +10776,19 @@ components:
           description: 'User business, personal and home phone numbers'
           items:
             $ref: '#/components/schemas/UserPhoneDto'
-        preferences:
-          $ref: '#/components/schemas/UserPreferenceDto'
         accountStatus:
           type: array
           description: 'Account status of the user. [ Active, Deleted, Disabled, Idle Locked, Locked ]'
           items:
-            $ref: '#/components/schemas/UserAccountStatusDto'
+            $ref: '#/components/schemas/AccountStatus'
         zipCode:
           type: string
           description: User zip code
           example: '30022'
         channel:
           $ref: '#/components/schemas/NamedReferenceDto'
-        ddaTruncation:
-          $ref: '#/components/schemas/DisplayValuePairDto'
-        cardTruncation:
-          $ref: '#/components/schemas/DisplayValuePairDto'
+        preferences:
+          $ref: '#/components/schemas/UserPreferenceDto'
         lastLoginTimestamp:
           type: string
           description: User last logged in timestamp (in UTC)
@@ -10872,28 +10814,35 @@ components:
           example: true
         enrollmentType:
           $ref: '#/components/schemas/DisplayValuePairDto'
-        id:
-          type: integer
-          format: int64
-          writeOnly: true
-        userId:
-          type: integer
-          description: Internal key that uniquely identifies the user
-          format: int64
-          example: 1234567
-    UserAccountStatusDto:
-      type: object
-      properties:
-        userId:
+        createdTimestamp:
           type: string
-          description: Internal key that uniquely identifies the user
-          example: '1234567'
-        accountStatus:
+          description: User created timestamp (in UTC)
+          format: date-time
+          example: '2021-06-22T03:59:32.644Z'
+        lastModifiedBy:
+          type: string
+          description: User who last modified this account
+          example: cl.test123
+        lastModifiedTimestamp:
+          type: string
+          description: Timestamp (in UTC) when last change happened
+          format: date-time
+          example: '2021-06-22T03:59:33.772Z'
+        clientAccess:
           type: array
-          description: Account status of the user
+          description: Clients - Every merchant is associated with unique client id
+          example:
+            - fiserv
+            - firstdata
           items:
-            $ref: '#/components/schemas/AccountStatus'
-      description: 'Account status of the user. [ Active, Deleted, Disabled, Idle Locked, Locked ]'
+            type: string
+            description: Clients - Every merchant is associated with unique client id
+            example: '["fiserv","firstdata"]'
+        applications:
+          type: array
+          description: Application details
+          items:
+            $ref: '#/components/schemas/ApplicationDto'
     FilterMetaData:
       type: object
       properties:
