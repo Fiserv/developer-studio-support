@@ -2391,13 +2391,6 @@ paths:
           schema:
             type: string
             default: application/json
-        - name: userid
-          in: path
-          description: Internal key that uniquely identifies the user
-          required: true
-          schema:
-            type: string
-            example: 1234567
       responses:
         '200':
           description: Success
