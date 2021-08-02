@@ -2372,6 +2372,63 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ValidationErrorResponse'
+  /v1/authenticatedUserInfo:
+    get:
+      tags:
+        - UserManagement
+      description: 'Fetches authenticated user information which includes preferences, applications and restricted access'
+      operationId: getAuthUserApplications
+      parameters:
+        - name: apiKey
+          in: header
+          description: API Key provided to the merchant associating the requests with the appropriate app in the Developer Portal
+          required: true
+          schema:
+            type: string
+        - name: Content-Type
+          in: header
+          description: application/json
+          schema:
+            type: string
+            default: application/json
+        - name: userid
+          in: path
+          description: Internal key that uniquely identifies the user
+          required: true
+          schema:
+            type: string
+            example: 1234567
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FetchUserResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationErrorResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedErrorResponse'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundErrorResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServerErrorResponse'
 components:
   schemas:
     ResetPasswordResult:
@@ -2451,14 +2508,27 @@ components:
     UserId:
       type: object
       properties:
-        id:
-          type: string
+        userId:
+          type: integer
           description: Internal key that uniquely identifies the user
-          example: '1234567'
+          format: int64
+          example: 1234567
+    AccountStatus:
+      type: object
+      properties:
+        value:
+          type: string
+          description: Account status value
+          example: NONE
+        display:
+          type: string
+          description: Account status display name
+          example: Active
+      description: 'Account status of the user. [ Active, Deleted, Disabled, Idle Locked, Locked ]'
     Results:
       type: object
       properties:
-        id:
+        userId:
           type: integer
           description: Internal key that uniquely identifies the user
           format: int64
@@ -2483,20 +2553,9 @@ components:
           type: array
           description: Account status of the user
           items:
-            type: string
-            description: Account status of the user
-            enum:
-              - NONE
-              - LOCKED
-              - IDLE_LOCKED
-              - DISABLED
-              - DELETED
+            $ref: '#/components/schemas/AccountStatus'
         clientAccess:
           type: array
-          description: Access restricted to respective clients
-          example:
-            - fiserv
-            - firstdata
           items:
             type: string
             description: Access restricted to respective clients
@@ -2538,13 +2597,6 @@ components:
           example: John
         status:
           type: array
-          description: Account status of the user
-          example:
-            - DELETED
-            - NONE
-            - DISABLED
-            - IDLE_LOCKED
-            - LOCKED
           items:
             type: string
             description: Account status of the user
@@ -2555,16 +2607,10 @@ components:
               - DISABLED
               - IDLE_LOCKED
               - LOCKED
-          enum:
-            - NONE
-            - DELETED
-            - DISABLED
-            - IDLE_LOCKED
-            - LOCKED
     SaveUserResult:
       type: object
       properties:
-        id:
+        userId:
           type: integer
           description: Internal key that uniquely identifies the user
           format: int64
@@ -2611,7 +2657,7 @@ components:
           example: 1
         name:
           type: string
-          description: Application display name
+          description: Application name
           example: Disputes Manager
         accessName:
           type: string
@@ -2637,9 +2683,6 @@ components:
           example: DM_Entitlements_DisputeManagerAccess
         attributeValues:
           type: array
-          description: Options associated with the attribute
-          example:
-            - '4'
           items:
             type: string
             description: Options associated with the attribute
@@ -2657,7 +2700,7 @@ components:
     SaveUserRequest:
       type: object
       properties:
-        id:
+        userId:
           type: integer
           description: Internal key that uniquely identifies the user
           format: int64
@@ -2702,10 +2745,6 @@ components:
           $ref: '#/components/schemas/NamedReferenceDto'
         clientAccess:
           type: array
-          description: Client ID's(Every merchant is associated with unique client id)
-          example:
-            - fiserv
-            - firstdata
           items:
             type: string
             description: Client ID's(Every merchant is associated with unique client id)
@@ -2766,7 +2805,7 @@ components:
           example: 'hh:mm a'
         numberFormat:
           type: string
-          description: Number format
+          description: Amount format
           example: '###,##0.00'
       description: 'User preferences (locale, language, amount format, date format and time zone) details'
     FilterRequestData:
@@ -10609,18 +10648,6 @@ components:
             - SetupAutoReload
             - ReturnReversal
             - Cashback
-    AccountStatus:
-      type: object
-      properties:
-        value:
-          type: string
-          description: Account status value
-          example: NONE
-        display:
-          type: string
-          description: Account status display name
-          example: Active
-      description: 'Account status of the user. [ Active, Deleted, Disabled, Idle Locked, Locked ]'
     ApplicationDto:
       type: object
       properties:
@@ -10631,7 +10658,7 @@ components:
           example: 1
         name:
           type: string
-          description: Application display name
+          description: Application name
           example: Disputes Manager
         accessName:
           type: string
@@ -10688,9 +10715,6 @@ components:
             $ref: '#/components/schemas/AttributeOptionDto'
         attributeValues:
           type: array
-          description: Options associated with the attribute
-          example:
-            - '4'
           items:
             type: string
             description: Options associated with the attribute
@@ -10745,7 +10769,7 @@ components:
     FetchUserResponse:
       type: object
       properties:
-        id:
+        userId:
           type: integer
           description: Internal key that uniquely identifies the user
           format: int64
@@ -10830,10 +10854,6 @@ components:
           example: '2021-06-22T03:59:33.772Z'
         clientAccess:
           type: array
-          description: Clients - Every merchant is associated with unique client id
-          example:
-            - fiserv
-            - firstdata
           items:
             type: string
             description: Clients - Every merchant is associated with unique client id
