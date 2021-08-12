@@ -107,7 +107,7 @@ paths:
     post:
       tags:
         - UserManagement
-      description: Updates the user account from disabled status to enabled status
+      description: Enables the user account from disabled status
       operationId: enableAccountstatus
       parameters:
         - name: apiKey
@@ -235,7 +235,7 @@ paths:
     post:
       tags:
         - UserManagement
-      description: Soft deletes the user account and revokes all access to the system. Soft deleted accounts will stay in the system for 18 months for audit purposes and are permanently purged after 18 months
+      description: Soft deletes the user account and revokes all access to the system. Soft deleted accounts will stay in the system for 18 months for audit purposes and are permanently purged after 18 months. Soft deleted accounts cannot be re-activated
       operationId: usersDelete
       parameters:
         - name: apiKey
@@ -2532,11 +2532,11 @@ components:
           example: cl.test123
         firstName:
           type: string
-          description: First name of user
+          description: User First Name
           example: john
         lastName:
           type: string
-          description: Last name of user
+          description: User Last Name
           example: Smith
         emailAddress:
           type: string
@@ -2544,18 +2544,18 @@ components:
           example: test@gmail.com
         accountStatus:
           type: array
-          description: Account status of the user
+          description: 'User Account status(NONE, DELETED, DISABLED, IDLE_LOCKED, LOCKED)'
           items:
             $ref: '#/components/schemas/AccountStatus'
         clientAccess:
           type: array
           items:
             type: string
-            description: Access restricted to respective clients
+            description: Restricted client access for respective user
             example: '["fiserv","firstdata"]'
         admin:
           type: boolean
-          description: For administrator access
+          description: Administrative access to manage users within restricted client access
           example: true
         logicallyDeletedTimestamp:
           type: string
@@ -2704,11 +2704,11 @@ components:
           example: cl.test123
         firstName:
           type: string
-          description: First name of user
+          description: User First Name
           example: John
         lastName:
           type: string
-          description: Last name of user
+          description: User Last Name
           example: Smith
         email:
           type: array
@@ -10773,11 +10773,11 @@ components:
           example: cl.test123
         firstName:
           type: string
-          description: first name of user
+          description: User First Name
           example: John
         lastName:
           type: string
-          description: Last name of user
+          description: User Last Name
           example: Smith
         displayName:
           type: string
