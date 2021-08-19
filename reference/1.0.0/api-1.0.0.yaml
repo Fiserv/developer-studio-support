@@ -308,7 +308,7 @@ paths:
       tags:
         - UserManagement
       x-group-name: UserManagement
-      x-proxy-name: Seraches User 
+      x-proxy-name: Searches User 
       description: 'Performs user search and supports filter(optional) by name/email address/username and account status (Active, Locked, Idle Locked, Disabled and Deleted)'
       operationId: userSearch
       parameters:
@@ -1529,7 +1529,7 @@ paths:
       tags:
         - UserManagement
       x-group-name: UserManagement
-      x-proxy-name: /v1/users/{userid}
+      x-proxy-name: Fetches user information
       description: 'Fetches respective user information which includes preferences, applications and restricted access'
       operationId: getUser
       parameters:
@@ -2451,7 +2451,7 @@ paths:
       tags:
         - UserManagement
       x-group-name: UserManagement
-      x-proxy-name: /v1/authenticatedUserInfo
+      x-proxy-name: Fetches authenticated user information
       description: 'Fetches authenticated user information which includes preferences, applications and restricted access'
       operationId: getAuthUserApplications
       parameters:
