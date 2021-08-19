@@ -44,7 +44,7 @@ paths:
       tags:
         - UserManagement
       x-group-name: UserManagement
-      x-proxy-name: /v1/users/{userid}/resetPassword
+      x-proxy-name: Reset Password
       description: Generates a new temporary password and unlocks the user account if idle locked
       operationId: usersResetPassword
       parameters:
@@ -110,7 +110,7 @@ paths:
       tags:
         - UserManagement
       x-group-name: UserManagement
-      x-proxy-name: /v1/users/{userid}/enable
+      x-proxy-name: Enable user account
       description: Enables the user account from disabled status
       operationId: enableAccountstatus
       parameters:
@@ -176,7 +176,7 @@ paths:
       tags:
         - UserManagement
       x-group-name: UserManagement
-      x-proxy-name: /v1/users/{userid}/disable
+      x-proxy-name: Diable user account
       description: Disables the user account and revokes all access to the system
       operationId: disableAccountstatus
       parameters:
@@ -242,7 +242,7 @@ paths:
       tags:
         - UserManagement
       x-group-name: UserManagement
-      x-proxy-name: /v1/users/{userid}/delete
+      x-proxy-name: Deletes user account
       description: Soft deletes the user account and revokes all access to the system. Soft deleted accounts will stay in the system for 18 months for audit purposes and are permanently purged after 18 months. Soft deleted accounts cannot be re-activated
       operationId: usersDelete
       parameters:
@@ -308,7 +308,7 @@ paths:
       tags:
         - UserManagement
       x-group-name: UserManagement
-      x-proxy-name: /v1/users/search
+      x-proxy-name: Seraches User 
       description: 'Performs user search and supports filter(optional) by name/email address/username and account status (Active, Locked, Idle Locked, Disabled and Deleted)'
       operationId: userSearch
       parameters:
@@ -368,7 +368,7 @@ paths:
       tags:
         - UserManagement
       x-group-name: UserManagement
-      x-proxy-name: /v1/users/saveUser
+      x-proxy-name: Creates new user
       description: Creates a new user or updates an existing user
       operationId: saveUser
       parameters:
