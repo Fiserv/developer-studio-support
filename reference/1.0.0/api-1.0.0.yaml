@@ -1075,6 +1075,8 @@ paths:
     post:
       tags:
         - Authorizations
+      x-proxy-name: Summary
+      x-group-name: Authorizations
       summary: Summary
       description: 'Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions'
       operationId: getSummary
@@ -1136,8 +1138,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SpringDefaultError'
-      x-proxy-name: Summary
-      x-group-name: Authorizations
   /v1/authorization/search:
     post:
       tags:
