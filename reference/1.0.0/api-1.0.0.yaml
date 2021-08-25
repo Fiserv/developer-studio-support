@@ -3,7 +3,7 @@ info:
   title: OpenAPI definition
   version: v0
 servers:
-  - url: 'http://localhost:5005'
+  - url: http://localhost:5005
     description: Generated server url
 tags:
   - name: Funding
@@ -12,18 +12,20 @@ tags:
     description: Chargebacks details and summaries
   - name: Settlement
     description: Settlement details and summaries
+  - name: Retrievals
+    description: Search retrieval transaction details
   - name: Disbursements
     description: Disbursements details and summaries
   - name: Prepaid
     description: Prepaid Transaction & Account details and summaries.
+  - name: Reference
+    description: Reference Information & details
   - name: User Management
     description: Analyze Users Management
   - name: Authorizations
     description: Authorizations details and summaries
-  - name: Retrieval Transactions
-    description: Search retrieval transaction details
 paths:
-  '/v1/users/{userid}/resetPassword':
+  /v1/users/{userid}/resetPassword:
     post:
       tags:
         - User Management
@@ -90,7 +92,7 @@ paths:
                 $ref: '#/components/schemas/ServerErrorResponse'
       x-proxy-name: Reset Password
       x-group-name: User Management
-  '/v1/users/{userid}/enable':
+  /v1/users/{userid}/enable:
     post:
       tags:
         - User Management
@@ -157,7 +159,7 @@ paths:
                 $ref: '#/components/schemas/ServerErrorResponse'
       x-proxy-name: Enable User
       x-group-name: User Management
-  '/v1/users/{userid}/disable':
+  /v1/users/{userid}/disable:
     post:
       tags:
         - User Management
@@ -224,7 +226,7 @@ paths:
                 $ref: '#/components/schemas/ServerErrorResponse'
       x-proxy-name: Disable User
       x-group-name: User Management
-  '/v1/users/{userid}/delete':
+  /v1/users/{userid}/delete:
     post:
       tags:
         - User Management
@@ -296,7 +298,7 @@ paths:
       tags:
         - User Management
       summary: Search Users
-      description: 'Performs user search and supports filter(optional) by name/email address/username and account status (Active, Locked, Idle Locked, Disabled and Deleted)'
+      description: Performs user search and supports filter(optional) by name/email address/username and account status (Active, Locked, Idle Locked, Disabled and Deleted)
       operationId: userSearch
       parameters:
         - name: apiKey
@@ -416,7 +418,7 @@ paths:
       tags:
         - Settlement
       summary: Summary
-      description: 'Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions'
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions
       operationId: getCumulativeReport
       parameters:
         - name: apiKey
@@ -546,9 +548,9 @@ paths:
   /v1/retrieval/summary:
     post:
       tags:
-        - Retrieval Transactions
+        - Retrievals
       summary: Summary
-      description: 'Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions'
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions
       operationId: getCumulativeReport_1
       parameters:
         - name: apiKey
@@ -613,7 +615,7 @@ paths:
   /v1/retrieval/search:
     post:
       tags:
-        - Retrieval Transactions
+        - Retrievals
       summary: Search
       description: Provides a list of transactions and their attributes
       operationId: getTop
@@ -674,14 +676,142 @@ paths:
               schema:
                 $ref: '#/components/schemas/SpringDefaultError'
       x-proxy-name: Search
-      x-group-name: Retrieval Transactions
+      x-group-name: Retrievals
+  /v1/reference/sites/search:
+    post:
+      tags:
+        - Reference
+      summary: Sites Search
+      description: Search sites configured across the various platforms and acquirers.
+      operationId: search_1
+      parameters:
+        - name: apiKey
+          in: header
+          description: API Key provided to the merchant associating the requests with the appropriate app in the Developer Portal
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SitesSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SitesObj'
+        '400':
+          description: The request cannot be validated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+      x-proxy-name: Sites Search
+      x-group-name: Reference
+  /v1/prepaid/unclaimedProperty/search:
+    post:
+      tags:
+        - Prepaid
+      summary: Unclaimed Property Search
+      description: Provides a list of Prepaid Accounts and their attributes with a non zero balance.
+      operationId: searchUnclaimedProperty
+      parameters:
+        - name: apiKey
+          in: header
+          description: API Key provided to the merchant associating the requests with the appropriate app in the Developer Portal.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrepaidAccountSearchRequest'
+        required: true
+      responses:
+        '200':
+          description: Created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PrepaidAccountObj'
+        '400':
+          description: The request cannot be validated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '401':
+          description: The request was unauthorized.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '404':
+          description: The request resource does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '500':
+          description: An unexpected internal server error occurred.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '503':
+          description: The service was unavailable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
+        '504':
+          description: The request timed out while waiting for a response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SpringDefaultError'
   /v1/prepaid/transactions/search:
     post:
       tags:
         - Prepaid
       summary: Transactions Search
       description: Provides a list of Prepaid transactions and their attributes
-      operationId: search_1
+      operationId: search_2
       parameters:
         - name: apiKey
           in: header
@@ -747,7 +877,7 @@ paths:
       tags:
         - Funding
       summary: Summary
-      description: 'Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions'
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions
       operationId: getCumulativeReport_2
       parameters:
         - name: apiKey
@@ -815,7 +945,7 @@ paths:
         - Funding
       summary: Search
       description: Provides a list of transactions and their attributes
-      operationId: search_2
+      operationId: search_3
       parameters:
         - name: apiKey
           in: header
@@ -880,7 +1010,7 @@ paths:
         - Disbursements
       summary: Search
       description: Provides a list of transactions and their attributes
-      operationId: search_3
+      operationId: search_4
       parameters:
         - name: apiKey
           in: header
@@ -944,7 +1074,7 @@ paths:
       tags:
         - Chargebacks
       summary: Summary
-      description: 'Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions'
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions
       operationId: getCumulativeReport_3
       parameters:
         - name: apiKey
@@ -1012,7 +1142,7 @@ paths:
         - Chargebacks
       summary: Search
       description: Provides a list of transactions and their attributes
-      operationId: search_4
+      operationId: search_5
       parameters:
         - name: apiKey
           in: header
@@ -1076,7 +1206,7 @@ paths:
       tags:
         - Authorizations
       summary: Summary
-      description: 'Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions'
+      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions
       operationId: getSummary
       parameters:
         - name: apiKey
@@ -1144,7 +1274,7 @@ paths:
         - Authorizations
       summary: Search
       description: Provides a list of transactions and their attributes
-      operationId: search_5
+      operationId: search_6
       parameters:
         - name: apiKey
           in: header
@@ -1203,12 +1333,12 @@ paths:
                 $ref: '#/components/schemas/SpringDefaultError'
       x-proxy-name: Search
       x-group-name: Authorizations
-  '/v1/users/{userid}':
+  /v1/users/{userid}:
     get:
       tags:
         - User Management
       summary: User Info
-      description: 'Fetches respective user information which includes preferences, applications and restricted access'
+      description: Fetches respective user information which includes preferences, applications and restricted access
       operationId: getUser
       parameters:
         - name: apiKey
@@ -1268,7 +1398,7 @@ paths:
       tags:
         - User Management
       summary: Authenticated User Info
-      description: 'Fetches authenticated user information which includes preferences, applications and restricted access'
+      description: Fetches authenticated user information which includes preferences, applications and restricted access
       operationId: getAuthUserApplications
       parameters:
         - name: apiKey
@@ -1411,7 +1541,7 @@ components:
           type: string
           description: Account status display name
           example: Active
-      description: 'User Account status(NONE, DELETED, DISABLED, IDLE_LOCKED, LOCKED)'
+      description: User Account status(NONE, DELETED, DISABLED, IDLE_LOCKED, LOCKED)
     Results:
       type: object
       properties:
@@ -1438,7 +1568,7 @@ components:
           example: test@gmail.com
         accountStatus:
           type: array
-          description: 'User Account status(NONE, DELETED, DISABLED, IDLE_LOCKED, LOCKED)'
+          description: User Account status(NONE, DELETED, DISABLED, IDLE_LOCKED, LOCKED)
           items:
             $ref: '#/components/schemas/AccountStatus'
         clientAccess:
@@ -1605,11 +1735,11 @@ components:
           $ref: '#/components/schemas/UserPreferenceDto'
         federated:
           type: boolean
-          description: 'If true, user can only federate into BusinessTrack from respective client system for authentication. Direct login access via BusinessTrack portal will be revoked'
+          description: If true, user can only federate into BusinessTrack from respective client system for authentication. Direct login access via BusinessTrack portal will be revoked
           example: true
         mfaEnabled:
           type: boolean
-          description: 'If true, user account is enabled with multi factor authentication. Supports email MFA with OTP(One time passcode) sent to email address associated with user account'
+          description: If true, user account is enabled with multi factor authentication. Supports email MFA with OTP(One time passcode) sent to email address associated with user account
           example: true
         channel:
           $ref: '#/components/schemas/NamedReferenceDto'
@@ -1661,7 +1791,7 @@ components:
             - it_IT
             - nl_NL
             - pt_BR
-      description: 'User preferences (locale, language, amount format, date format and time zone) details'
+      description: User preferences (locale, language, amount format, date format and time zone) details
     SettlementSummaryResponse:
       type: object
       properties:
@@ -1801,6 +1931,12 @@ components:
             - FundedDate
             - RecordDate
           default: SettleDate
+        siteIDs:
+          type: array
+          description: Transactions associated with one of the Site IDs specified
+          items:
+            type: string
+            description: Transactions associated with one of the Site IDs specified
       description: Request object for settlement summary report creation
     SettlementObj:
       type: object
@@ -2382,7 +2518,7 @@ components:
           type: string
         mcPrdtId:
           type: string
-          description: 'A value returned by Mastercard, to designate the type of card product used to process the transaction.'
+          description: A value returned by Mastercard, to designate the type of card product used to process the transaction.
         merchantCategory:
           type: integer
           description: Identifies the standard merchant category code assigned to the transaction.
@@ -2394,11 +2530,11 @@ components:
           type: string
         mobileWallet:
           type: integer
-          description: 'Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.).'
+          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.).
           format: int32
         mobileWalletKey:
           type: string
-          description: 'Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Key)'
+          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Key)
         netSalesCount:
           type: integer
           description: Net Sales Count.
@@ -2694,7 +2830,7 @@ components:
           description: Transaction Service Code
         settleSpendQualifiedIndicator:
           type: string
-          description: 'The BASE II Clearing Interchange Formats, TC 01 to TC 48.)'
+          description: The BASE II Clearing Interchange Formats, TC 01 to TC 48.)
         siteID:
           type: string
           description: An unique identifier assigned to the merchant. Also known as a MID.
@@ -2794,7 +2930,7 @@ components:
           description: Uniquely identifies a transaction.
         type:
           type: string
-          description: 'Transaction type code e.g. sale, refund etc.'
+          description: Transaction type code e.g. sale, refund etc.
           enum:
             - Unknown
             - Totals
@@ -2830,7 +2966,7 @@ components:
             - Cashback
         typeKey:
           type: string
-          description: 'Transaction type code e.g. sale, refund etc. (Key)'
+          description: Transaction type code e.g. sale, refund etc. (Key)
         userData:
           type: string
           description: Discretionary data sent on transaction by the merchant
@@ -2839,7 +2975,7 @@ components:
           description: Vehicle Number
         visaPrdtId:
           type: string
-          description: 'A value returned by Visa, to designate the type of card product used to process the transaction.'
+          description: A value returned by Visa, to designate the type of card product used to process the transaction.
         visaTranId:
           type: string
           description: Visa (association)  generated ID.
@@ -2865,6 +3001,19 @@ components:
           description: The maximum number of records that will be returned
           format: int32
           default: 10
+        authCode:
+          type: string
+          description: Auth Code, Full match
+        first6:
+          maxLength: 6
+          minLength: 6
+          type: string
+          description: 'First 6 of the card #, Full match'
+        last4:
+          maxLength: 4
+          minLength: 4
+          type: string
+          description: 'Last 4 of the card #, Full match'
         dateType:
           type: string
           description: Search/Analysis date type. default value is settle date
@@ -3010,6 +3159,12 @@ components:
               - VehicleNumber
               - VisaPrdtId
               - VisaTranId
+        siteIDs:
+          type: array
+          description: Transactions associated with one of the Site IDs specified
+          items:
+            type: string
+            description: Transactions associated with one of the Site IDs specified
       description: Request object for Settlement search
     RetrievalSummaryResponse:
       type: object
@@ -3072,6 +3227,12 @@ components:
             - TxnMonth
             - TxnQuarter
             - TxnYear
+        siteIDs:
+          type: array
+          description: Retrievals associated with one of the Site IDs specified
+          items:
+            type: string
+            description: Retrievals associated with one of the Site IDs specified
       description: Request object for chargeback summary report creation
     RetrievalObj:
       type: object
@@ -3533,10 +3694,10 @@ components:
           description: Case Number associated with a specific Retrieval.
         dueDate:
           type: string
-          description: 'A Retrieval Due Date is the deadline that you must respond by, in order to satisfy a Retrieval.'
+          description: A Retrieval Due Date is the deadline that you must respond by, in order to satisfy a Retrieval.
         ecIndicator:
           type: string
-          description: 'Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions.'
+          description: Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions.
           enum:
             - Unknown
             - SingleMail
@@ -3553,7 +3714,7 @@ components:
             - IVR
         ecIndicatorKey:
           type: string
-          description: 'Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions. (Key)'
+          description: Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions. (Key)
         externalMid:
           type: string
           description: External Mid.
@@ -3651,6 +3812,19 @@ components:
           description: The maximum number of records that will be returned
           format: int32
           default: 10
+        authCode:
+          type: string
+          description: Auth Code, Full match
+        first6:
+          maxLength: 6
+          minLength: 6
+          type: string
+          description: 'First 6 of the card #, Full match'
+        last4:
+          maxLength: 4
+          minLength: 4
+          type: string
+          description: 'Last 4 of the card #, Full match'
         dateType:
           type: string
           description: Search/Analysis date type. default value is retrieval date
@@ -3703,7 +3877,432 @@ components:
               - TerminalId
               - TrackingNumber
               - TransactionDate
+        siteIDs:
+          type: array
+          description: Retrievals associated with one of the Site IDs specified
+          items:
+            type: string
+            description: Retrievals associated with one of the Site IDs specified
       description: Request object for Retrievals search
+    SitesObj:
+      type: object
+      properties:
+        Name:
+          type: string
+          description: The name assigned to the processing merchant.
+        address:
+          type: string
+          description: The address on file associated with the merchant.
+        addressLine1:
+          type: string
+          description: Identifies the first line of the address of the merchant.
+        addressLine2:
+          type: string
+          description: Identifies the second line of the address of the merchant.
+        agentID:
+          type: string
+          description: Agent Hierarchy Level ID for the Location
+        altid:
+          type: string
+          description: The Alternate ID assigned to the site. This can represent the store number or a merchant specific identifier for the site.
+        cardPresentIn:
+          type: string
+          description: Card Present In
+        city:
+          type: string
+          description: The city on file associated with the merchant.
+        commrHubId:
+          type: string
+          description: Commerce Hub
+        contact:
+          type: string
+          description: This is the name of a Merchant's Contact Person.
+        contactName:
+          type: string
+          description: This is the Contact Name at Merchant address location.
+        contactPhone:
+          type: string
+          description: Telephone number.
+        corpID:
+          type: string
+          description: Corporation ID for the Location
+        effectiveFrom:
+          type: string
+          description: Site active from
+        effectiveTo:
+          type: string
+          description: Site active To
+        email:
+          type: string
+          description: E_MAIL
+        fax:
+          type: string
+          description: Fax number.
+        id:
+          type: integer
+          description: An unique identifier assigned to the merchant. Also known as the MID
+          format: int64
+        leadID:
+          type: string
+          description: Lead Corporation ID for the Location
+        merchantCategoryCode:
+          type: string
+          description: The 4-character Merchant Category Code, as defined by Visa, but used across the industry.
+        phone:
+          type: string
+          description: The phone number on file associated with the merchant.
+        platform:
+          type: string
+          description: Identifies the processor for the merchant.
+          enum:
+            - Buypass
+            - North
+            - Compass
+            - Unknown
+            - Omaha
+            - South
+            - Memphis
+            - Bams
+            - TeleCheck
+            - ValueLink
+            - OmniPay
+            - UK
+            - Chase
+            - Salem
+            - Tampa
+        platformKey:
+          type: string
+          description: Identifies the processor for the merchant. (Key)
+        st_abbr_nm:
+          type: string
+          description: The state on file associated with the merchant.
+        storeNo:
+          type: string
+          description: Identifies another identifier of the merchant's store.
+        website:
+          type: string
+          description: Web Site
+        zip:
+          type: string
+          description: The zip on file associated with the merchant.
+    SitesSearchRequest:
+      required:
+        - fromDate
+        - limit
+        - toDate
+      type: object
+      properties:
+        fromDate:
+          type: string
+          description: yyyymmdd string denoting the start date for the query
+          example: '20210217'
+        toDate:
+          type: string
+          description: yyyymmdd string denoting the end date for the query
+          example: '20210218'
+        limit:
+          maximum: 1000000
+          minimum: 1
+          type: integer
+          description: The maximum number of records that will be returned
+          format: int32
+          default: 10
+        platform:
+          type: string
+          description: Sites associated with the platform
+          enum:
+            - Buypass
+            - North
+            - Compass
+            - Unknown
+            - Omaha
+            - South
+            - Memphis
+            - Bams
+            - TeleCheck
+            - ValueLink
+            - OmniPay
+            - UK
+            - Chase
+            - Salem
+            - Tampa
+        siteID:
+          type: string
+          description: Platform specific Site ID
+        agentID:
+          type: string
+          description: Agent hierarchy ID
+        corporateID:
+          type: string
+          description: Corporate hierarchy ID
+        leadID:
+          type: string
+          description: Lead hierarchy ID
+        fields:
+          type: array
+          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          items:
+            type: string
+            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            enum:
+              - Name
+              - Address
+              - AddressLine1
+              - AddressLine2
+              - AgentID
+              - Altid
+              - CardPresentIn
+              - City
+              - CommrHubId
+              - Contact
+              - ContactName
+              - ContactPhone
+              - CorpID
+              - EffectiveFrom
+              - EffectiveTo
+              - Email
+              - Fax
+              - Id
+              - LeadID
+              - MerchantCategoryCode
+              - Phone
+              - Platform
+              - PlatformKey
+              - St_abbr_nm
+              - StoreNo
+              - Website
+              - Zip
+      description: Request object for Settlement search
+    PrepaidAccountSearchRequest:
+      required:
+        - asOfDate
+        - limit
+      type: object
+      properties:
+        asOfDate:
+          type: string
+          description: yyyymmdd string denoting the as-of date for the query
+          example: '20210217'
+        limit:
+          maximum: 1000000
+          minimum: 1
+          type: integer
+          description: The maximum number of records that will be returned
+          format: int32
+          default: 10
+        fields:
+          type: array
+          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          items:
+            type: string
+            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            enum:
+              - AccountNo
+              - ActivationBaseAmount
+              - ActivationDate
+              - ActivationDate2
+              - ActivationLocation
+              - ActivationLocationDescription
+              - ActivationMerchantDescription
+              - AdjustmentBaseAmount
+              - AlternateCardNo
+              - BalanceMax
+              - BalanceMin
+              - BaseCurrencyCode
+              - BaseCurrencyCodeKey
+              - CardNo
+              - CardStatus
+              - CashbackBaseAmount
+              - ConsortiumID
+              - ConsortiumIDKey
+              - ConsortiumName
+              - CurrencyCode
+              - CurrencyCodeKey
+              - DaysSinceLastTxn
+              - FirstRedemptionDate
+              - FirstReloadDate
+              - LastAdjustmentDate
+              - LastCardActivityDate
+              - LastFinancialTxnDate
+              - LastNegativeTxnDate
+              - LastNonFinancialTxnDate
+              - LastPositiveTxnDate
+              - LastRedemptionDate
+              - LastReloadDate
+              - LastServiceFeeDate
+              - MerchantFundedBaseAmount
+              - MerchantFundedLocalAmount
+              - MerchantOutstandingBalance
+              - OutstandingBalance
+              - PromotionID
+              - PromotionIDKey
+              - PromotionName
+              - RedemptionBaseAmount
+              - RedemptionElapsedDays
+              - ReloadBaseAmount
+              - ReversalBaseAmount
+              - ServiceFeeBaseAmount
+              - State
+      description: Request object for Prepaid Accounts search.
+    PrepaidAccountObj:
+      type: object
+      properties:
+        accountNo:
+          type: string
+          description: 16 digit Gift Card embossed Account Number
+        activationBaseAmount:
+          type: number
+          description: Activation Base Amount associated with the transaction
+          format: double
+        activationDate:
+          type: string
+          description: Activation date associated with the card.
+        activationDate2:
+          type: string
+          description: Activation date associated with the card.
+        activationLocation:
+          type: string
+          description: Alternate Merchant Number associated with the transaction.
+        activationLocationDescription:
+          type: string
+          description: Name of Location in which card was activated.
+        activationMerchantDescription:
+          type: string
+          description: Activation Merchant Name associated with the transaction.
+        adjustmentBaseAmount:
+          type: number
+          description: Adjustment Base Amount associated with the transaction.
+          format: double
+        alternateCardNo:
+          type: integer
+          description: Alternate Account Number associated with the prepaid card.
+          format: int64
+        balanceMax:
+          type: number
+          description: Outstanding Balance associated with the transaction activity
+          format: double
+        balanceMin:
+          type: number
+          description: Outstanding Balance associated with the transaction activity
+          format: double
+        baseCurrencyCode:
+          type: integer
+          description: Currency code where the activation occurred for non-denominated cards. Denominated cards are set by the card promotions currency
+          format: int32
+        baseCurrencyCodeKey:
+          type: string
+          description: Currency code where the activation occurred for non-denominated cards. Denominated cards are set by the card promotions currency (Key)
+        cardNo:
+          type: string
+          description: Card Number associated with the prepaid card.
+        cardStatus:
+          type: string
+          description: Account Status at time of processing the Transaction.
+        cashbackBaseAmount:
+          type: number
+          description: Cashback Base Amount associated with the transaction.
+          format: double
+        consortiumID:
+          type: integer
+          description: A unique ID number assigned to the highest level of the gift card program
+          format: int64
+        consortiumIDKey:
+          type: string
+          description: A unique ID number assigned to the highest level of the gift card program (Key)
+        consortiumName:
+          type: string
+          description: Consortium Name associated with the prepaid card & promotion.
+        currencyCode:
+          type: integer
+          description: Currency code where the transaction occurred
+          format: int32
+        currencyCodeKey:
+          type: string
+          description: Currency code where the transaction occurred (Key)
+        daysSinceLastTxn:
+          type: string
+          description: Number of days since the last financial activity with the card.
+        firstRedemptionDate:
+          type: string
+          description: First Redemption Activity associated with the card.
+        firstReloadDate:
+          type: string
+          description: First Reload Activity associated with the card.
+        lastAdjustmentDate:
+          type: string
+          description: Last Adjustment Activity associated with the card.
+        lastCardActivityDate:
+          type: string
+          description: Last Activity associated with the card.
+        lastFinancialTxnDate:
+          type: string
+          description: Last Financial activity associated with the card.
+        lastNegativeTxnDate:
+          type: string
+          description: Last Negative Activity associated with the card.
+        lastNonFinancialTxnDate:
+          type: string
+          description: Last Non-Financial activity associated with the card.
+        lastPositiveTxnDate:
+          type: string
+          description: Last Positive Activity associated with the card.
+        lastRedemptionDate:
+          type: string
+          description: Last Redemption Activity associated with the card.
+        lastReloadDate:
+          type: string
+          description: Last Reload Activity associated with the card.
+        lastServiceFeeDate:
+          type: string
+          description: Last Service Fee Activity associated with the card.
+        merchantFundedBaseAmount:
+          type: number
+          description: Merchant Funded Base Amount associated with the transaction
+          format: double
+        merchantFundedLocalAmount:
+          type: number
+          description: Merchant Funded Local Amount associated with the transaction
+          format: double
+        merchantOutstandingBalance:
+          type: number
+          description: Merchant Funded Outstanding Balance associated with the transaction activity
+          format: double
+        outstandingBalance:
+          type: number
+          description: Outstanding Balance associated with the transaction activity
+          format: double
+        promotionID:
+          type: integer
+          description: '8 digit Promotion ID # assigned when card promotion is setup'
+          format: int64
+        promotionIDKey:
+          type: string
+          description: '8 digit Promotion ID # assigned when card promotion is setup (Key)'
+        promotionName:
+          type: string
+          description: Promotion Name associated with the prepaid card & promotion.
+        redemptionBaseAmount:
+          type: number
+          description: Redemption Base Amount associated with the transaction.
+          format: double
+        redemptionElapsedDays:
+          type: string
+          description: Number of days between activation and last financial activity with the card.
+        reloadBaseAmount:
+          type: number
+          description: Reload Base Amount associated with the transaction.
+          format: double
+        reversalBaseAmount:
+          type: number
+          description: Reversal Base Amount associated with the transaction.
+          format: double
+        serviceFeeBaseAmount:
+          type: number
+          description: Service Fee Base Amount associated with the transaction.
+          format: double
+        state:
+          type: string
+          description: State
     PrepaidTransactionObj:
       type: object
       properties:
@@ -3744,9 +4343,6 @@ components:
         activationQuarter:
           type: string
           description: Activation Fiscal or Regular quarter associated with the account based on merchant's fiscal calendar
-        activationState:
-          type: string
-          description: Location State where the transaction happened
         activationTime:
           type: string
           description: 'Timestamp when the GC was originally purchased (Format: 24HH:MM:SS) (EST)'
@@ -3765,9 +4361,6 @@ components:
         activityQuarter:
           type: string
           description: Fiscal or Regular quarter associated with the transaction based on merchant's fiscal calendar
-        activityState:
-          type: string
-          description: Location State where the transaction happened
         activityWeek:
           type: string
           description: Fiscal or Regular week of the year associated with the transaction based on merchant's fiscal calendar
@@ -3840,18 +4433,10 @@ components:
           format: double
         checkSum:
           type: string
-          description: 'Offset for the merchant, only available if the merchant requested this functionality.'
+          description: Offset for the merchant, only available if the merchant requested this functionality.
         clerk:
           type: string
           description: Merchant-generated to identify individual clerks
-        cntBalaceInq:
-          type: integer
-          description: Balance Enquiries Count in one card
-          format: int64
-        cntExcessiveTxns:
-          type: integer
-          description: Excessive Transactions Count in one card
-          format: int64
         consortiumDesc:
           type: string
           description: Consortium description assigned by the client for the gift card program
@@ -3910,9 +4495,8 @@ components:
           type: string
           description: External Response Code of the activity-See Code Supplement (Key)
         financial:
-          type: integer
+          type: string
           description: Identify Financial or non-financial Transactions
-          format: int32
         financialKey:
           type: string
           description: Identify Financial or non-financial Transactions (Key)
@@ -3922,7 +4506,7 @@ components:
           format: double
         fundingId:
           type: string
-          description: 'Funding Id provided by Perka, Associated with sale like transactions.'
+          description: Funding Id provided by Perka, Associated with sale like transactions.
         gyftId:
           type: string
           description: Gyft ID
@@ -3933,9 +4517,6 @@ components:
         linkedLoyaltyAcct:
           type: string
           description: Embossed card number of the Valuelink gift card (if provided by Perka).
-        loadDate:
-          type: string
-          description: Load date derived from business date which partition key for Jethro Tables
         localLockAmt:
           type: number
           description: Amount in Local Currency locked on the account due to a balance lock transaction received
@@ -3996,7 +4577,7 @@ components:
           description: MID associated with the funding of the Merchant Fund in the transaction
         offset:
           type: string
-          description: 'Offset for the merchant, only available if the merchant requested this functionality.'
+          description: Offset for the merchant, only available if the merchant requested this functionality.
         origExtRequestCodeDesc:
           type: integer
           description: Numeric request code Description assigned to the activity performed-See Code Supplement
@@ -4086,9 +4667,6 @@ components:
         requestGroupCodeKey:
           type: string
           description: Request group associated with the transaction. (Key)
-        requestTxnTypeDesc:
-          type: string
-          description: Transactions Types associated with the transaction.
         responseCode:
           type: integer
           description: Response code Description associated with the transaction.
@@ -4142,7 +4720,7 @@ components:
           format: int64
         termTxnNo:
           type: string
-          description: 'Merchant generated transaction number, which if supplied in the request is returned in the response- Unique per terminal/device.'
+          description: Merchant generated transaction number, which if supplied in the request is returned in the response- Unique per terminal/device.
         terminalNo:
           type: string
           description: Original merchant location terminal number
@@ -4170,10 +4748,6 @@ components:
         transactionDayGMT:
           type: string
           description: Local Time of the transaction.
-        transactionHr24GMT:
-          type: integer
-          description: Local Time of the transaction.
-          format: int32
         transactionLocDesc:
           type: string
           description: '11 digit Store/Location ID # where GC transaction activity occurred (a.k.a.- Alternate MID)'
@@ -4194,10 +4768,10 @@ components:
           description: Transaction group information
         txnId:
           type: string
-          description: 'Valuelink-generated, internal unique transaction ID'
+          description: Valuelink-generated, internal unique transaction ID
         upliftAmount:
           type: number
-          description: 'For a split tender transaction, the difference between the gift card amount used and the total transaction amount'
+          description: For a split tender transaction, the difference between the gift card amount used and the total transaction amount
           format: double
         user1:
           type: string
@@ -4245,27 +4819,22 @@ components:
               - AccountOriginKey
               - AccountStatus
               - AccountStatusKey
-              - ActivationAltMerchantCode
               - ActivationAltMerchantNo
               - ActivationDate
               - ActivationLocDesc
               - ActivationMIDDesc
-              - ActivationMerchantCode
               - ActivationMerchantNo
               - ActivationMonth
               - ActivationQuarter
-              - ActivationState
               - ActivationTime
               - ActivationWeek
               - ActivationYear
               - ActivityDay
               - ActivityMonth
               - ActivityQuarter
-              - ActivityState
               - ActivityWeek
               - ActivityYear
               - AltAccountNo
-              - AltMerchantCode
               - AltMerchantNo
               - Amount
               - AuthCode
@@ -4285,9 +4854,6 @@ components:
               - CashBackAmount
               - CheckSum
               - Clerk
-              - CntBalaceInq
-              - CntExcessiveTxns
-              - ConsortiumCode
               - ConsortiumDesc
               - ConsortiumID
               - ConsortiumIDKey
@@ -4311,7 +4877,6 @@ components:
               - GyftId
               - LinkedDiscountAmt
               - LinkedLoyaltyAcct
-              - LoadDate
               - LocalLockAmt
               - LockId
               - LoyaltyReqAcct
@@ -4322,7 +4887,6 @@ components:
               - MasterLoyaltyAcct
               - MasterLoyaltyConsort
               - MemoField
-              - MerchantCode
               - MerchantFundBal
               - MerchantNo
               - Messaging
@@ -4341,7 +4905,6 @@ components:
               - PrimaryPromoCode
               - ProcessedDate
               - ProcessedTime
-              - PromotionCode
               - PromotionDesc
               - PromotionID
               - PromotionIDKey
@@ -4359,9 +4922,6 @@ components:
               - RequestCodeKey
               - RequestGroupCode
               - RequestGroupCodeKey
-              - RequestTxnTypeDesc
-              - RequestTxnsType
-              - RequestTxnsTypeKey
               - ResponseCode
               - ResponseCodeKey
               - Reversed
@@ -4371,12 +4931,6 @@ components:
               - RewardAmount
               - RouteInfo
               - RoutePhoneInfo
-              - Samount
-              - SbaseAmount
-              - SbaseCurrencyCode
-              - SbaseCurrencyCodeKey
-              - ScurrencyCode
-              - ScurrencyCodeKey
               - SerialNo
               - Sign
               - Source
@@ -4393,7 +4947,6 @@ components:
               - TransactionDateGMT
               - TransactionDateLocal
               - TransactionDayGMT
-              - TransactionHr24GMT
               - TransactionLocDesc
               - TransactionMIDDesc
               - TransactionTimeEst
@@ -4406,7 +4959,7 @@ components:
               - User2
               - UserID
               - WicNo
-      description: Request object for Fraud Detect Transactions search.
+      description: Request object for Prepaid Transactions search.
     FundingSummaryResponse:
       type: object
       properties:
@@ -6639,32 +7192,341 @@ components:
         fundsAccount:
           type: string
           description: Disbursement funding account.
+        fundsAcctLastFour:
+          type: string
+          description: Last four digits of the payment account.
+        fundsActivityID:
+          type: string
+          description: Unique id for this record.
         fundsActualBalance:
           type: number
           description: The actual total balance of the funds account.
           format: double
         fundsAmount:
-          type: string
+          type: number
           description: The amount of the transaction.
+          format: double
+        fundsApplyDate:
+          type: string
+          description: Date to apply the disbursement.
         fundsAvailableBalance:
           type: number
           description: The available balance of the funds account.
           format: double
-        fundsChannelType:
+        fundsComments:
           type: string
-          description: 'The channel type for fund activity report.  IE ACH, DEBIT.'
+          description: Comments associated to the payment transaction.
         fundsCreateDate:
           type: string
           description: The funds date the payment was created.
+        fundsCurrency:
+          type: string
+          description: Currency of the transaction.
+          enum:
+            - Unknown
+            - USD
+            - AFN
+            - DZD
+            - ARS
+            - AMD
+            - AWG
+            - AUD
+            - AZN
+            - BSD
+            - BHD
+            - THB
+            - PAB
+            - BBD
+            - BYR
+            - BZD
+            - BMD
+            - VEF
+            - BOB
+            - BRL
+            - BND
+            - BGN
+            - BIF
+            - CAD
+            - CVE
+            - KYD
+            - XOF
+            - XAF
+            - XPF
+            - CLP
+            - COP
+            - KMF
+            - BAM
+            - NIO
+            - CRC
+            - HRK
+            - CUP
+            - CZK
+            - GMD
+            - DKK
+            - MKD
+            - DJF
+            - STD
+            - DOP
+            - VND
+            - XCD
+            - EGP
+            - SVC
+            - ETB
+            - EUR
+            - FKP
+            - FJD
+            - HUF
+            - CDF
+            - GHS
+            - GIP
+            - HTG
+            - PYG
+            - GNF
+            - GWP
+            - GYD
+            - HKD
+            - UAH
+            - ISK
+            - INR
+            - IRR
+            - IQD
+            - JMD
+            - JOD
+            - KES
+            - PGK
+            - LAK
+            - KWD
+            - MWK
+            - ZMK
+            - AOA
+            - MMK
+            - GEL
+            - LVL
+            - LBP
+            - ALL
+            - HNL
+            - SLL
+            - LRD
+            - LYD
+            - SZL
+            - LTL
+            - LSL
+            - MGA
+            - MYR
+            - MUR
+            - MZN
+            - MXN
+            - MXV
+            - MDL
+            - MAD
+            - BOV
+            - NGN
+            - ERN
+            - NAD
+            - NPR
+            - ANG
+            - ILS
+            - RON
+            - TWD
+            - TRY
+            - NZD
+            - BTN
+            - KPW
+            - NOK
+            - PEN
+            - MRO
+            - TOP
+            - PKR
+            - MOP
+            - UYU
+            - PHP
+            - GBP
+            - BWP
+            - QAR
+            - GTQ
+            - ZAR
+            - OMR
+            - KHR
+            - MVR
+            - IDR
+            - RUB
+            - RWF
+            - SHP
+            - SAR
+            - XDR
+            - RSD
+            - SCR
+            - SGD
+            - SBD
+            - KGS
+            - SOS
+            - TJS
+            - LKR
+            - SDG
+            - SRD
+            - SEK
+            - CHF
+            - SYP
+            - BDT
+            - WST
+            - TZS
+            - KZT
+            - TTD
+            - MNT
+            - TND
+            - AED
+            - UGX
+            - COU
+            - CLF
+            - UYI
+            - USN
+            - USS
+            - UZS
+            - VUV
+            - CHE
+            - CHW
+            - KRW
+            - YER
+            - JPY
+            - CNY
+            - PLN
+            - XBA
+            - XTS
+            - XBB
+            - XBD
+            - XBC
+            - XAU
+            - XPD
+            - XPT
+            - XAG
+            - XXX
+            - XFU
+            - TMT
+            - ZWL
+            - CUC
+            - SSP
+            - XUA
+            - XSU
+            - BYN
+            - VES
+            - ZMW
+        fundsCurrencyKey:
+          type: string
+          description: Currency of the transaction. (Key)
+        fundsExpiryDate:
+          type: string
+          description: Expiry date of the transaction.
+        fundsFeeAmount:
+          type: number
+          description: The fee associated to the payment transaction.
+          format: double
+        fundsMerchantName:
+          type: string
+          description: The name of the merchant.
         fundsMid:
           type: string
           description: The merchant id of the funds transaction.
+        fundsOrigId:
+          type: string
+          description: Originator id of the merchant.
+        fundsPaymentChannel:
+          type: string
+          description: The channel type for fund activity report.  IE ACH, DEBIT.
+          enum:
+            - Unknown
+            - ACH
+            - Prepaid
+            - Debit
+        fundsPaymentChannelKey:
+          type: string
+          description: The channel type for fund activity report.  IE ACH, DEBIT. (Key)
+        fundsPaymentDate:
+          type: string
+          description: The date of the payment.
+        fundsPaymentId:
+          type: string
+          description: Unique key to find the payment for each transaction. In case of multi recpients multiple payments associated with single transaction.
+        fundsPaymentStatus:
+          type: string
+          description: The status of the payment.
+          enum:
+            - Unknown
+            - Failed
+            - Pending
+            - Selected
+            - Accepted
+            - Rejected
+            - Disbursed
+            - Declined
+            - FraudHold
+            - Cancelled
+            - Expired
+            - Chargeback
+            - AuthFailed
+            - RetryExceeded
+            - ACHReversal
+            - ACHReversalFailed
+            - DeliveryNotificationFailed
+            - InhouseReversal
+            - ReversalSuccess
+            - ReversalPending
+            - ReversalFailed
+            - InProcess
+        fundsPaymentStatusKey:
+          type: string
+          description: The status of the payment. (Key)
+        fundsPaymentTime:
+          type: string
+          description: The date time of the payment.
+        fundsReferenceId:
+          type: string
+          description: Reference id of the transaction.
         fundsTSCreateDate:
           type: string
           description: The funds timestamp the payment was created.
+        fundsTxnClaimNumber:
+          type: string
+          description: The claim number for a reference of the transaction. This is passed through by the client on the reference fields.
+        fundsTxnDate:
+          type: string
+          description: Transaction date.
+        fundsTxnDesc:
+          type: string
+          description: Description associated to the payment transaction.
+        fundsTxnId:
+          type: string
+          description: System generated unique transaction id.
+        fundsTxnPaymentNumber:
+          type: string
+          description: The payment number for a reference of the transaction. This is passed by the client on the reference fields.
+        fundsTxnStatus:
+          type: string
+          description: The status of the transaction.
+          enum:
+            - Unknown
+            - InProcess
+            - PendingApproval
+            - PendingDisbursement
+            - Cancelled
+            - Failed
+            - Completed
+            - Expired
+            - Approved
+            - Deferred
+            - Exhausted
+            - Reversed
+        fundsTxnStatusKey:
+          type: string
+          description: The status of the transaction. (Key)
+        fundsTxnTime:
+          type: string
+          description: The date time of the transaction.
         fundsTxnType:
           type: string
-          description: 'The transaction type for fund activity report. IE Initiation, disbursement, adjustment.'
+          description: The transaction type for fund activity report. IE Initiation, disbursement, adjustment.
+        fundsVendorId:
+          type: string
+          description: Vendor id provided by the merchant also known as merchant customer id.
         ledgerBalance:
           type: number
           description: Ledger balance of the merchant.
@@ -6766,6 +7628,12 @@ components:
         postalCode:
           type: string
           description: The zip code where the recipient resides.
+        processingDate:
+          type: string
+          description: Processing date of the transaction.
+        processingTime:
+          type: string
+          description: Processing date and time of the transaction.
         recipientClient:
           type: string
           description: Client company name.
@@ -6840,14 +7708,14 @@ components:
           description: Recipient tin value.
         recipientType:
           type: string
-          description: 'Type of the recipient, consumer or business.'
+          description: Type of the recipient, consumer or business.
           enum:
             - Unknown
             - Consumer
             - Business
         recipientTypeKey:
           type: string
-          description: 'Type of the recipient, consumer or business. (Key)'
+          description: Type of the recipient, consumer or business. (Key)
         referenceId:
           type: string
           description: Reference id of the transaction.
@@ -7049,14 +7917,40 @@ components:
               - FeeAmount
               - FundingAccount
               - FundsAccount
+              - FundsAcctLastFour
+              - FundsActivityID
               - FundsActualBalance
               - FundsAmount
+              - FundsApplyDate
               - FundsAvailableBalance
-              - FundsChannelType
+              - FundsComments
               - FundsCreateDate
+              - FundsCurrency
+              - FundsCurrencyKey
+              - FundsExpiryDate
+              - FundsFeeAmount
+              - FundsMerchantName
               - FundsMid
+              - FundsOrigId
+              - FundsPaymentChannel
+              - FundsPaymentChannelKey
+              - FundsPaymentDate
+              - FundsPaymentId
+              - FundsPaymentStatus
+              - FundsPaymentStatusKey
+              - FundsPaymentTime
+              - FundsReferenceId
               - FundsTSCreateDate
+              - FundsTxnClaimNumber
+              - FundsTxnDate
+              - FundsTxnDesc
+              - FundsTxnId
+              - FundsTxnPaymentNumber
+              - FundsTxnStatus
+              - FundsTxnStatusKey
+              - FundsTxnTime
               - FundsTxnType
+              - FundsVendorId
               - LedgerBalance
               - MerchantId
               - MerchantName
@@ -7077,6 +7971,8 @@ components:
               - PaymentTypeKey
               - PaymentVendorId
               - PostalCode
+              - ProcessingDate
+              - ProcessingTime
               - RecipientClient
               - RecipientComments
               - RecipientCompany
@@ -7188,6 +8084,12 @@ components:
             - TxnMonth
             - TxnQuarter
             - TxnYear
+        siteIDs:
+          type: array
+          description: Chargebacks associated with one of the Site IDs specified
+          items:
+            type: string
+            description: Chargebacks associated with one of the Site IDs specified
       description: Request object for chargeback summary report creation
     ChargeBackObj:
       type: object
@@ -7273,7 +8175,7 @@ components:
           description: Describing final settlement of a Chargeback. (Key)
         ECIndicator:
           type: string
-          description: 'Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions.'
+          description: Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions.
           enum:
             - Unknown
             - SingleMail
@@ -7290,7 +8192,7 @@ components:
             - IVR
         ECIndicatorKey:
           type: string
-          description: 'Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions. (Key)'
+          description: Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions. (Key)
         Reason:
           type: string
           description: Descriptive reason associated with a specific Chargeback.
@@ -7886,7 +8788,7 @@ components:
           description: Case Number associated with a specific Chargeback.
         dueDate:
           type: string
-          description: 'A Chargeback Due Date is the deadline that you must respond by, in order to dispute a chargeback.'
+          description: A Chargeback Due Date is the deadline that you must respond by, in order to dispute a chargeback.
         externalMid:
           type: string
           description: External Mid.
@@ -7911,7 +8813,7 @@ components:
           description: Mobile indicator
         mobileWallet:
           type: string
-          description: 'Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.).'
+          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.).
           enum:
             - Unknown
             - Apple
@@ -7926,7 +8828,7 @@ components:
             - India
         mobileWalletKey:
           type: string
-          description: 'Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Key)'
+          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Key)
         nonFinancial:
           type: integer
           description: Financial Category.
@@ -8222,14 +9124,14 @@ components:
           description: Discretionary data sent on transaction by the merchant
         winLoss:
           type: string
-          description: 'Status of dispute, describing if it has been won, loss or pending.'
+          description: Status of dispute, describing if it has been won, loss or pending.
           enum:
             - Pending
             - Win
             - Loss
         winLossKey:
           type: string
-          description: 'Status of dispute, describing if it has been won, loss or pending. (Key)'
+          description: Status of dispute, describing if it has been won, loss or pending. (Key)
         workType:
           type: string
           description: Various stages of Chargeback resolution.
@@ -8276,6 +9178,19 @@ components:
           description: The maximum number of records that will be returned
           format: int32
           default: 10
+        authCode:
+          type: string
+          description: Auth Code, Full match
+        first6:
+          maxLength: 6
+          minLength: 6
+          type: string
+          description: 'First 6 of the card #, Full match'
+        last4:
+          maxLength: 4
+          minLength: 4
+          type: string
+          description: 'Last 4 of the card #, Full match'
         dateType:
           type: string
           description: Search/Analysis date type. default value is chargeback date
@@ -8372,6 +9287,12 @@ components:
               - WinLossKey
               - WorkType
               - WorkTypeKey
+        siteIDs:
+          type: array
+          description: Chargebacks associated with one of the Site IDs specified
+          items:
+            type: string
+            description: Chargebacks associated with one of the Site IDs specified
       description: Request object for Chargeback search
     AuthSummaryResponse:
       type: object
@@ -8422,18 +9343,135 @@ components:
             - Network
             - PaymentMethod
             - ApprovalCode
+            - Type
+            - MobileWallet
+            - SiteID
             - TxnDay
             - TxnWeek
             - TxnMonth
             - TxnQuarter
             - TxnYear
+        paymentMethods:
+          type: array
+          description: Any transactions matching with any one of the specified Payment Methods
+          items:
+            type: string
+            description: Any transactions matching with any one of the specified Payment Methods
+            enum:
+              - Unknown
+              - Manual
+              - MagneticStripe
+              - OCR
+              - EMV
+              - ContactlessChip
+              - MobileECommerce
+              - Fallback
+              - BarCode
+              - NotSpecified
+              - CredentialOnFile
+              - ContactlessMagneticStripe
+        networks:
+          type: array
+          description: Any transactions matching with any one of the specified Networks
+          items:
+            type: string
+            description: Any transactions matching with any one of the specified Networks
+            enum:
+              - Unknown
+              - Amex
+              - Visa
+              - Master
+              - Discover
+              - Pulse
+              - Accel
+              - Interlink
+              - Jeanie
+              - Maestro
+              - NYCE
+              - CU24
+              - Shazam
+              - EBT
+              - AFFN
+              - Telecheck
+              - Diners
+              - PayPal
+              - ValueLink
+              - Private
+              - Debit
+              - Voyager
+              - ATH
+              - JCB
+              - StarNE
+              - StarSE
+              - StarW
+              - StarAccess
+              - FleetCor
+              - SVS
+              - WEX
+              - Incomm
+              - Interac
+              - NA
+              - Moneris
+              - VaultedCard
+              - PAVD
+              - MCSend
+              - UnionPay
+              - FraudFlex
+              - Certegy
+              - MCI
+              - PaypalVenmo
+        types:
+          type: array
+          description: Any transactions matching with any one of the specified Transaction Types
+          items:
+            type: string
+            description: Any transactions matching with any one of the specified Transaction Types
+            enum:
+              - Unknown
+              - Totals
+              - Purchase
+              - PreAuthRequest
+              - PreAuthComplete
+              - Reversal
+              - Return
+              - Cancellation
+              - MailAuth
+              - Activate
+              - Recharge
+              - Verification
+              - TeleCheck
+              - StartFueling
+              - DoNotUse
+              - Fee
+              - Withdrawal
+              - Deposit
+              - Transfer
+              - Balance
+              - FraudScore
+              - GenToken
+              - Adjustment
+              - ReportAsLost
+              - CloseAccount
+              - FreezeAccount
+              - UnfreezeAccount
+              - History
+              - TimeoutReversal
+              - SetupAutoReload
+              - ReturnReversal
+              - Cashback
+        siteIDs:
+          type: array
+          description: Transactions associated with one of the Site IDs specified
+          items:
+            type: string
+            description: Transactions associated with one of the Site IDs specified
       description: Request object for authorization summary report creation
     AuthorizationObj:
       type: object
       properties:
         AVSResponse:
           type: string
-          description: 'Identifies the result, obtained from the cardholder name, during address verification.'
+          description: Identifies the result, obtained from the cardholder name, during address verification.
           enum:
             - Unknown
             - AddressOnly
@@ -8471,7 +9509,7 @@ components:
             - AddressZipDiscAddress
         AVSResponseKey:
           type: string
-          description: 'Identifies the result, obtained from the cardholder name, during address verification. (Key)'
+          description: Identifies the result, obtained from the cardholder name, during address verification. (Key)
         CAVVResponse:
           type: string
           description: Identifies name verification result response from the authorizer.
@@ -9369,7 +10407,7 @@ components:
           description: Identifies the standard merchant category code assigned to the transaction. (Key)
         mobileWallet:
           type: string
-          description: 'Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.).'
+          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.).
           enum:
             - Unknown
             - Apple
@@ -9384,7 +10422,7 @@ components:
             - India
         mobileWalletKey:
           type: string
-          description: 'Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Key)'
+          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Key)
         mrchTranId:
           type: string
           description: External Reference ID
@@ -9518,7 +10556,7 @@ components:
           description: Describes the recurrence type for the transaction. (Key)
         referenceNumber:
           type: string
-          description: 'Authorizer retrieval reference number, an unique RRN issued by the authorizer for each transaction.'
+          description: Authorizer retrieval reference number, an unique RRN issued by the authorizer for each transaction.
         rtAction:
           type: string
           description: 'Card Account Updater: Identifies the action that was taken on the account.'
@@ -9558,7 +10596,7 @@ components:
           description: Indicates store and forward mode of the transaction. (Key)
         seqno:
           type: string
-          description: 'An unique reference number assigned to a transactions by the merchant, and will be returned as is in the response message if exist.'
+          description: An unique reference number assigned to a transactions by the merchant, and will be returned as is in the response message if exist.
         settleCutOffTime:
           type: integer
           description: Cutoff time setup for settlement of transaction(s) for a Merchant
@@ -9578,7 +10616,7 @@ components:
           description: Identifies the transaction source. (Key)
         subType:
           type: string
-          description: 'Transaction sub type codes e.g. Pin, Signature, etc.'
+          description: Transaction sub type codes e.g. Pin, Signature, etc.
           enum:
             - Unknown
             - PinlessPOS
@@ -9587,7 +10625,7 @@ components:
             - Signature
         subTypeKey:
           type: string
-          description: 'Transaction sub type codes e.g. Pin, Signature, etc. (Key)'
+          description: Transaction sub type codes e.g. Pin, Signature, etc. (Key)
         terminalID:
           type: string
           description: Identifies terminal identifier for the transaction.
@@ -9756,7 +10794,7 @@ components:
           description: Network Transaction ID
         type:
           type: string
-          description: 'Transaction type code e.g. sale, refund etc.'
+          description: Transaction type code e.g. sale, refund etc.
           enum:
             - Unknown
             - Totals
@@ -9792,7 +10830,7 @@ components:
             - Cashback
         typeKey:
           type: string
-          description: 'Transaction type code e.g. sale, refund etc. (Key)'
+          description: Transaction type code e.g. sale, refund etc. (Key)
     AuthSearchRequest:
       required:
         - fromDate
@@ -9835,7 +10873,6 @@ components:
               - DCCINDKey
               - ECIIndicator
               - ECIIndicatorKey
-              - GUID
               - P2PEncryptionType
               - P2PEncryptionTypeKey
               - P2PTokenAssurance
@@ -9918,13 +10955,23 @@ components:
               - TypeKey
         authCode:
           type: string
-          description: 'Auth Code, Full match'
+          description: Auth Code, Full match
+        first6:
+          maxLength: 6
+          minLength: 6
+          type: string
+          description: 'First 6 of the card #, Full match'
+        last4:
+          maxLength: 4
+          minLength: 4
+          type: string
+          description: 'Last 4 of the card #, Full match'
         paymentMethods:
           type: array
-          description: Any transactions matching with any one of specified Payment Methods
+          description: Any transactions matching with any one of the specified Payment Methods
           items:
             type: string
-            description: Any transactions matching with any one of specified Payment Methods
+            description: Any transactions matching with any one of the specified Payment Methods
             enum:
               - Unknown
               - Manual
@@ -9940,10 +10987,10 @@ components:
               - ContactlessMagneticStripe
         networks:
           type: array
-          description: Any transactions matching with any one of specified Networks
+          description: Any transactions matching with any one of the specified Networks
           items:
             type: string
-            description: Any transactions matching with any one of specified Networks
+            description: Any transactions matching with any one of the specified Networks
             enum:
               - Unknown
               - Amex
@@ -9988,6 +11035,51 @@ components:
               - Certegy
               - MCI
               - PaypalVenmo
+        types:
+          type: array
+          description: Any transactions matching with any one of the specified Transaction Types
+          items:
+            type: string
+            description: Any transactions matching with any one of the specified Transaction Types
+            enum:
+              - Unknown
+              - Totals
+              - Purchase
+              - PreAuthRequest
+              - PreAuthComplete
+              - Reversal
+              - Return
+              - Cancellation
+              - MailAuth
+              - Activate
+              - Recharge
+              - Verification
+              - TeleCheck
+              - StartFueling
+              - DoNotUse
+              - Fee
+              - Withdrawal
+              - Deposit
+              - Transfer
+              - Balance
+              - FraudScore
+              - GenToken
+              - Adjustment
+              - ReportAsLost
+              - CloseAccount
+              - FreezeAccount
+              - UnfreezeAccount
+              - History
+              - TimeoutReversal
+              - SetupAutoReload
+              - ReturnReversal
+              - Cashback
+        siteIDs:
+          type: array
+          description: Transactions associated with one of the Site IDs specified
+          items:
+            type: string
+            description: Transactions associated with one of the Site IDs specified
       description: Request details for authorization search
     ApplicationDto:
       type: object
@@ -10015,7 +11107,7 @@ components:
           example: Dispute Management
         provisioningType:
           type: string
-          description: 'Determines allowed action(ADD -> add only, UPDATE -> can add/update, DELETE -> can add/update/delete) for respective user application'
+          description: Determines allowed action(ADD -> add only, UPDATE -> can add/update, DELETE -> can add/update/delete) for respective user application
           example: DELETE
         attributeGroups:
           type: array
@@ -10058,13 +11150,13 @@ components:
             type: string
             description: Determines the user attribute value for respective application
             example: '["4"]'
+        isReferencedValue:
+          type: boolean
+          description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
+          example: true
         isRequired:
           type: boolean
           description: Determines if respective attribute is required to provision the application for user
-          example: true
-        isReferencedValue:
-          type: boolean
-          description: 'If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute'
           example: true
       description: '// Respective Application specific attributes(For example: Entitlements)'
     AttributeOptionDto:
@@ -10139,7 +11231,7 @@ components:
             $ref: '#/components/schemas/UserPhoneDto'
         accountStatus:
           type: array
-          description: 'User Account status(NONE, DELETED, DISABLED, IDLE_LOCKED, LOCKED)'
+          description: User Account status(NONE, DELETED, DISABLED, IDLE_LOCKED, LOCKED)
           items:
             $ref: '#/components/schemas/AccountStatus'
         zipCode:
@@ -10167,11 +11259,11 @@ components:
           example: '2021-05-04T17:53:53.412Z'
         federated:
           type: boolean
-          description: 'If true, user can only federate into BusinessTrack from respective client system for authentication. Direct login access via BusinessTrack portal will be revoked'
+          description: If true, user can only federate into BusinessTrack from respective client system for authentication. Direct login access via BusinessTrack portal will be revoked
           example: true
         mfaEnabled:
           type: boolean
-          description: 'If true, user account is enabled with multi factor authentication. Supports email MFA with OTP(One time passcode) sent to email address associated with user account'
+          description: If true, user account is enabled with multi factor authentication. Supports email MFA with OTP(One time passcode) sent to email address associated with user account
           example: true
         enrollmentType:
           $ref: '#/components/schemas/DisplayValuePairDto'
