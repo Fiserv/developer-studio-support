@@ -114,7 +114,7 @@ title: Request
     ]
 }
 ```
-[![Try it out](../../../../DeveloperPortalCode/ClientLineX/assets/images/button.png)](..api/?type=post&path=/v1/authorization/search)
+[![Try it out](../../../../DeveloperPortalCode/ClientLineX/assets/images/button.png)](../api/?type=post&path=/v1/authorization/search)
 
 <!--
 type: tab
@@ -417,7 +417,7 @@ title: Request
     ]
 }
 ```
-[![Try it out](../../../../DeveloperPortalCode/ClientLineX/assets/images/button.png)](..api/?type=post&path=/v1/authorization/search)
+[![Try it out](../../../../DeveloperPortalCode/ClientLineX/assets/images/button.png)](../api/?type=post&path=/v1/authorization/search)
 
 <!--
 type: tab
@@ -593,7 +593,7 @@ title: Request
     ]
 }
 ```
-[![Try it out](../../../../DeveloperPortalCode/ClientLineX/assets/images/button.png)](..api/?type=post&path=/v1/authorization/search)
+[![Try it out](../../../../DeveloperPortalCode/ClientLineX/assets/images/button.png)](../api/?type=post&path=/v1/authorization/search)
 
 <!--
 type: tab
