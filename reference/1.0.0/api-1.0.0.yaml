@@ -418,7 +418,7 @@ paths:
       tags:
         - Settlement
       summary: Summary
-      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions
+      description: Returns an aggregated view of settlement transactions utilizing the specified grouping field across a specified date range. Optional filters are available to get reports for specific criteria.
       operationId: getCumulativeReport
       parameters:
         - name: apiKey
@@ -485,7 +485,7 @@ paths:
       tags:
         - Settlement
       summary: Search
-      description: Provides a list of transactions and their attributes
+      description: Provides a list of settlement transactions and their attributes based on optional filter criteria.
       operationId: search
       parameters:
         - name: apiKey
@@ -550,7 +550,7 @@ paths:
       tags:
         - Retrievals
       summary: Summary
-      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions
+      description: Returns an aggregated view of retrievals utilizing the specified grouping field across a specified date range. Optional filters are available to get reports for specific criteria.
       operationId: getCumulativeReport_1
       parameters:
         - name: apiKey
@@ -611,13 +611,13 @@ paths:
               schema:
                 $ref: '#/components/schemas/SpringDefaultError'
       x-proxy-name: Summary
-      x-group-name: Retrieval Transactions
+      x-group-name: Retrievals
   /v1/retrieval/search:
     post:
       tags:
         - Retrievals
       summary: Search
-      description: Provides a list of transactions and their attributes
+      description: Provides a list of retrievals and their attributes based on optional filter criteria.
       operationId: getTop
       parameters:
         - name: apiKey
@@ -877,7 +877,7 @@ paths:
       tags:
         - Funding
       summary: Summary
-      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions
+      description: Returns an aggregated view of funding transactions utilizing the specified grouping field across a specified date range. Optional filters are available to get reports for specific criteria.
       operationId: getCumulativeReport_2
       parameters:
         - name: apiKey
@@ -944,7 +944,7 @@ paths:
       tags:
         - Funding
       summary: Search
-      description: Provides a list of transactions and their attributes
+      description: Provides a list of funding transactions and their attributes based on optional filter criteria.
       operationId: search_3
       parameters:
         - name: apiKey
@@ -1009,7 +1009,7 @@ paths:
       tags:
         - Disbursements
       summary: Search
-      description: Provides a list of transactions and their attributes
+      description: Provides a list of disbursements payments and their attributes based on optional filter criteria.
       operationId: search_4
       parameters:
         - name: apiKey
@@ -1074,7 +1074,7 @@ paths:
       tags:
         - Chargebacks
       summary: Summary
-      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions
+      description: Returns an aggregated view of chargebacks utilizing the specified grouping field across a specified date range. Optional filters are available to get reports for specific criteria.
       operationId: getCumulativeReport_3
       parameters:
         - name: apiKey
@@ -1141,7 +1141,7 @@ paths:
       tags:
         - Chargebacks
       summary: Search
-      description: Provides a list of transactions and their attributes
+      description: Provides a list of chargebacks and their attributes based on optional filter criteria.
       operationId: search_5
       parameters:
         - name: apiKey
@@ -1206,7 +1206,7 @@ paths:
       tags:
         - Authorizations
       summary: Summary
-      description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance, the view returns total count and amount total by card type for the previous week of transactions
+      description: Returns an aggregated view of authorization transactions (pre-settle) utilizing the specified grouping field across a specified date range. Optional filters are available to get reports for specific criteria.
       operationId: getSummary
       parameters:
         - name: apiKey
@@ -1273,7 +1273,7 @@ paths:
       tags:
         - Authorizations
       summary: Search
-      description: Provides a list of transactions and their attributes
+      description: Provides a list of authorization transactions (pre-settle) and their attributes based on optional filter criteria.
       operationId: search_6
       parameters:
         - name: apiKey
@@ -11150,13 +11150,13 @@ components:
             type: string
             description: Determines the user attribute value for respective application
             example: '["4"]'
-        isReferencedValue:
-          type: boolean
-          description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
-          example: true
         isRequired:
           type: boolean
           description: Determines if respective attribute is required to provision the application for user
+          example: true
+        isReferencedValue:
+          type: boolean
+          description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
           example: true
       description: '// Respective Application specific attributes(For example: Entitlements)'
     AttributeOptionDto:
