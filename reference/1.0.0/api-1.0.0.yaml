@@ -805,6 +805,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SpringDefaultError'
+      x-proxy-name: Unclaimed Property Search
+      x-group-name: Prepaid
   /v1/prepaid/transactions/search:
     post:
       tags:
@@ -4073,77 +4075,6 @@ components:
               - Website
               - Zip
       description: Request object for Settlement search
-    PrepaidAccountSearchRequest:
-      required:
-        - asOfDate
-        - limit
-      type: object
-      properties:
-        asOfDate:
-          type: string
-          description: yyyymmdd string denoting the as-of date for the query
-          example: '20210217'
-        limit:
-          maximum: 1000000
-          minimum: 1
-          type: integer
-          description: The maximum number of records that will be returned
-          format: int32
-          default: 10
-        fields:
-          type: array
-          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-          items:
-            type: string
-            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-            enum:
-              - AccountNo
-              - ActivationBaseAmount
-              - ActivationDate
-              - ActivationDate2
-              - ActivationLocation
-              - ActivationLocationDescription
-              - ActivationMerchantDescription
-              - AdjustmentBaseAmount
-              - AlternateCardNo
-              - BalanceMax
-              - BalanceMin
-              - BaseCurrencyCode
-              - BaseCurrencyCodeKey
-              - CardNo
-              - CardStatus
-              - CashbackBaseAmount
-              - ConsortiumID
-              - ConsortiumIDKey
-              - ConsortiumName
-              - CurrencyCode
-              - CurrencyCodeKey
-              - DaysSinceLastTxn
-              - FirstRedemptionDate
-              - FirstReloadDate
-              - LastAdjustmentDate
-              - LastCardActivityDate
-              - LastFinancialTxnDate
-              - LastNegativeTxnDate
-              - LastNonFinancialTxnDate
-              - LastPositiveTxnDate
-              - LastRedemptionDate
-              - LastReloadDate
-              - LastServiceFeeDate
-              - MerchantFundedBaseAmount
-              - MerchantFundedLocalAmount
-              - MerchantOutstandingBalance
-              - OutstandingBalance
-              - PromotionID
-              - PromotionIDKey
-              - PromotionName
-              - RedemptionBaseAmount
-              - RedemptionElapsedDays
-              - ReloadBaseAmount
-              - ReversalBaseAmount
-              - ServiceFeeBaseAmount
-              - State
-      description: Request object for Prepaid Accounts search.
     PrepaidAccountObj:
       type: object
       properties:
@@ -4303,6 +4234,77 @@ components:
         state:
           type: string
           description: State
+    PrepaidAccountSearchRequest:
+      required:
+        - asOfDate
+        - limit
+      type: object
+      properties:
+        asOfDate:
+          type: string
+          description: yyyymmdd string denoting the as-of date for the query
+          example: '20210217'
+        limit:
+          maximum: 1000000
+          minimum: 1
+          type: integer
+          description: The maximum number of records that will be returned
+          format: int32
+          default: 10
+        fields:
+          type: array
+          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          items:
+            type: string
+            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            enum:
+              - AccountNo
+              - ActivationBaseAmount
+              - ActivationDate
+              - ActivationDate2
+              - ActivationLocation
+              - ActivationLocationDescription
+              - ActivationMerchantDescription
+              - AdjustmentBaseAmount
+              - AlternateCardNo
+              - BalanceMax
+              - BalanceMin
+              - BaseCurrencyCode
+              - BaseCurrencyCodeKey
+              - CardNo
+              - CardStatus
+              - CashbackBaseAmount
+              - ConsortiumID
+              - ConsortiumIDKey
+              - ConsortiumName
+              - CurrencyCode
+              - CurrencyCodeKey
+              - DaysSinceLastTxn
+              - FirstRedemptionDate
+              - FirstReloadDate
+              - LastAdjustmentDate
+              - LastCardActivityDate
+              - LastFinancialTxnDate
+              - LastNegativeTxnDate
+              - LastNonFinancialTxnDate
+              - LastPositiveTxnDate
+              - LastRedemptionDate
+              - LastReloadDate
+              - LastServiceFeeDate
+              - MerchantFundedBaseAmount
+              - MerchantFundedLocalAmount
+              - MerchantOutstandingBalance
+              - OutstandingBalance
+              - PromotionID
+              - PromotionIDKey
+              - PromotionName
+              - RedemptionBaseAmount
+              - RedemptionElapsedDays
+              - ReloadBaseAmount
+              - ReversalBaseAmount
+              - ServiceFeeBaseAmount
+              - State
+      description: Request object for Prepaid Accounts search.
     PrepaidTransactionObj:
       type: object
       properties:
@@ -11150,13 +11152,13 @@ components:
             type: string
             description: Determines the user attribute value for respective application
             example: '["4"]'
-        isRequired:
-          type: boolean
-          description: Determines if respective attribute is required to provision the application for user
-          example: true
         isReferencedValue:
           type: boolean
           description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
+          example: true
+        isRequired:
+          type: boolean
+          description: Determines if respective attribute is required to provision the application for user
           example: true
       description: '// Respective Application specific attributes(For example: Entitlements)'
     AttributeOptionDto:
