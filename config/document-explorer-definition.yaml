@@ -12,20 +12,8 @@
     - title: API Keys
       link: docs/Security/security.md
 - sections:
-  - title: Resources
+  - title: Examples
     open: false
     sections:
-    - title: API Documentation
-      sections:
-      - title: API Models
-        link: docs/APIs/api-model.md
-      - title: API MetaData
-        link: docs/APIs/api-metadata.md
-    - title: Examples
-      sections:
-      - title: Sample API
-        link: docs/APIs/sample-api.md
-      - title: GET metaData
-        link: docs/Examples/metadata-example.md
-      - title: POST byDate
-        link: docs/Examples/byDate-example.md
+    - title: Authorizations
+      link: docs/Examples/authorizations.md
