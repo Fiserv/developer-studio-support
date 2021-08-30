@@ -4,7 +4,7 @@ Look through the following examples on how authorizations can be queried either 
 
 ---
 
-### Example1
+#### List all authorizations for a given Day
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
@@ -16,8 +16,6 @@ Look through the following examples on how authorizations can be queried either 
 type: tab
 title: Request
 -->
-
-##### List all authorizations for a given Day
 
 ```json
 curl -X 'POST' \
@@ -72,7 +70,7 @@ title: Response
 ```
 ---
 
-### Example2
+#### Fetch selected authorization fields for a given day
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
@@ -84,8 +82,6 @@ title: Response
 type: tab
 title: Request
 -->
-
-##### Fetch selected authorization fields for a given day
 
 ```json
 curl -X 'POST' \
@@ -138,7 +134,7 @@ title: Response
 ```
 ---
 
-### Example3
+#### search authorizations for an AuthCode, first6 and last4:
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
@@ -150,8 +146,6 @@ title: Response
 type: tab
 title: Request
 -->
-
-##### search authorizations for an AuthCode, first6 and last4:
 
 ```json
 curl -X 'POST' \
@@ -195,7 +189,7 @@ title: Response
 ```
 ---
 
-### Example4
+#### Fetch all declined transactions for a given day
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
@@ -207,8 +201,6 @@ title: Response
 type: tab
 title: Request
 -->
-
-##### Fetch all declined transactions for a given day
 
 ```json
 curl -X 'POST' \
@@ -262,7 +254,7 @@ title: Response
 ]
 ```
 
-### Example5
+#### Fetch all Authorized transactions for a given store
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
@@ -274,8 +266,6 @@ title: Response
 type: tab
 title: Request
 -->
-
-##### Fetch all Authorized transactions for a given store
 
 ```json
 curl -X 'POST' \
@@ -354,7 +344,7 @@ title: Response
 ]
 ```
 
-### Example6
+#### Fetch the summary of authorizations broken down by the Network for a month
 <!-- theme: success -->
 >**POST** `/v1/authorization/summary`
 
@@ -366,8 +356,6 @@ title: Response
 type: tab
 title: Request
 -->
-
-##### Fetch the summary of authorizations broken down by the Network for a month
 
 ```json
 curl -X 'POST' \
@@ -421,7 +409,7 @@ title: Response
   }
 ]
 ```
-### Example7
+#### Fetch the summary of authorizations broken down by the Payment Method for a single store for a month
 <!-- theme: success -->
 >**POST** `/v1/authorization/summary`
 
@@ -433,8 +421,6 @@ title: Response
 type: tab
 title: Request
 -->
-
-##### Fetch the summary of authorizations broken down by the Payment Method for a single store for a month.
 
 ```json
 curl -X 'POST' \
@@ -509,7 +495,7 @@ title: Response
 ```
 ---
 
-### Example8
+#### Fetch the summary of authorizations broken down by date for a single store
 <!-- theme: success -->
 >**POST** `/v1/authorization/summary`
 
@@ -521,8 +507,6 @@ title: Response
 type: tab
 title: Request
 -->
-
-##### Fetch the summary of authorizations broken down by date for a single store.
 
 ```json
 curl -X 'POST' \
