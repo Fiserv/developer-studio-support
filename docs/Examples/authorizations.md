@@ -4,7 +4,7 @@ Look through the following examples on how authorizations can be queried either 
 
 ---
 
-#### List ll authorizations for any given Day
+#### List all authorizations for a given Day
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
