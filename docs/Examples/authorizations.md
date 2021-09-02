@@ -8,9 +8,7 @@ Look through the following examples on how authorizations can be queried either 
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
----
-
-#### Payload Example
+##### Payload
 
 <!--
 type: tab
@@ -74,9 +72,7 @@ title: Response
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
----
-
-#### Payload Example
+##### Payload
 
 <!--
 type: tab
@@ -138,9 +134,7 @@ title: Response
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
----
-
-#### Payload Example
+##### Payload
 
 <!--
 type: tab
@@ -193,9 +187,7 @@ title: Response
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
----
-
-#### Payload Example
+##### Payload
 
 <!--
 type: tab
@@ -258,9 +250,7 @@ title: Response
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
----
-
-#### Payload Example
+##### Payload
 
 <!--
 type: tab
@@ -348,9 +338,7 @@ title: Response
 <!-- theme: success -->
 >**POST** `/v1/authorization/summary`
 
----
-
-#### Payload Example
+##### Payload
 
 <!--
 type: tab
@@ -413,9 +401,7 @@ title: Response
 <!-- theme: success -->
 >**POST** `/v1/authorization/summary`
 
----
-
-#### Payload Example
+##### Payload
 
 <!--
 type: tab
@@ -499,9 +485,7 @@ title: Response
 <!-- theme: success -->
 >**POST** `/v1/authorization/summary`
 
----
-
-#### Payload Example
+##### Payload
 
 <!--
 type: tab
