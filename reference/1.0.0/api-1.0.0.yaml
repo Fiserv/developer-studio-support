@@ -71,25 +71,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ServerErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
       x-proxy-name: Reset Password
       x-group-name: User Management
   /v1/users/{userid}/enable:
@@ -138,25 +138,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ServerErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
       x-proxy-name: Enable User
       x-group-name: User Management
   /v1/users/{userid}/disable:
@@ -205,25 +205,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ServerErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
       x-proxy-name: Disable User
       x-group-name: User Management
   /v1/users/{userid}/delete:
@@ -272,25 +272,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ServerErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
       x-proxy-name: Delete User
       x-group-name: User Management
   /v1/users/search:
@@ -333,25 +333,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ServerErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
       x-proxy-name: Search Users
       x-group-name: User Management
   /v1/users/saveUser:
@@ -392,25 +392,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ServerErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
       x-proxy-name: Save User
       x-group-name: User Management
   /v1/settlement/summary:
@@ -1439,25 +1439,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ServerErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
       x-proxy-name: User Info
       x-group-name: User Management
   /v1/authenticatedUserInfo:
@@ -1492,25 +1492,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidationErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '401':
           description: Unauthorized
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UnauthorizedErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '404':
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NotFoundErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ServerErrorResponse'
+                $ref: '#/components/schemas/SpringDefaultError'
       x-proxy-name: Authenticated User Info
       x-group-name: User Management
 components:
@@ -1522,71 +1522,17 @@ components:
           type: string
           description: New temporary password
           example: xyz123
-    ErrorDetails:
+    SpringDefaultError:
       type: object
       properties:
+        status:
+          type: integer
+          description: Status code associated with the response
+          format: int32
         message:
           type: string
-          description: Error message that failed validation for the respective path
-          example: UserId is required
-        path:
-          type: string
-          description: Path to the property/object that failed validation
-          example: userId
-      description: Error details
-    ValidationErrorResponse:
-      type: object
-      properties:
-        message:
-          type: string
-          description: Validation error
-          example: Validation error
-        timestamp:
-          type: string
-          description: Current timestamp
-          format: date-time
-          example: '2021-07-15T00:20:52.31Z'
-        errorDetails:
-          type: array
-          description: Error details
-          items:
-            $ref: '#/components/schemas/ErrorDetails'
-    UnauthorizedErrorResponse:
-      type: object
-      properties:
-        message:
-          type: string
-          description: Error message
-          example: Unauthorized access
-        timestamp:
-          type: string
-          description: Current timestamp
-          format: date-time
-          example: '2021-07-15T00:20:52.31Z'
-    NotFoundErrorResponse:
-      type: object
-      properties:
-        message:
-          type: string
-          description: Error message
-          example: Requested resource not found
-        timestamp:
-          type: string
-          description: Current timestamp
-          format: date-time
-          example: '2021-07-15T00:20:52.31Z'
-    ServerErrorResponse:
-      type: object
-      properties:
-        message:
-          type: string
-          description: Error message
-          example: Internal server error
-        timestamp:
-          type: string
-          description: Current timestamp
-          format: date-time
-          example: '2021-07-15T00:20:52.31Z'
+          description: Status message associated with the response
+      description: Default Error/Non-200 response
     UserRequest:
       type: object
     UserId:
@@ -1946,23 +1892,6 @@ components:
           format: double
           example: 0
       description: Summary response object which maps settlement data points returned from the grouped by query request
-    SpringDefaultError:
-      type: object
-      properties:
-        timestamp:
-          type: integer
-          format: int64
-        status:
-          type: integer
-          format: int32
-        error:
-          type: string
-        exception:
-          type: string
-        message:
-          type: string
-        path:
-          type: string
     SettlementFilters:
       type: object
       properties:
@@ -2052,39 +1981,45 @@ components:
         accountNumber:
           type: string
           description: Card number used for authorization transaction.
-          example: ''
+          example: 666666XXXXXX4444
         acquirerFeeAmount:
           type: number
           description: Acquirer Fee amount
           format: double
+          example: 0.99999
         acquirerFeePerTranAmount:
           type: number
           description: Acquirer Fee amount Per Transaction
           format: double
+          example: 0.99999
         acquirerFeePerTranRate:
           type: number
           description: Acquirer Fee rate Per Transaction
           format: double
+          example: 0.99999
         acquirerRefNo:
           type: string
           description: 'Acquirer reference #: An ARN in credit card transactions is the Acquirer Ref. Number, a unique no that tags a credit card txn when it goes from the merchants bank (Acquiring Bank) through the card network to the cardholders bank (The Issuer).'
-          example: ''
+          example: '99999999999999999999999'
         adminFeeAmount:
           type: number
           description: Admin Fee amount
           format: double
+          example: 0.99999
         adminFeePerTranAmount:
           type: number
           description: Admin Fee amount Per Transaction
           format: double
+          example: 0.99999
         adminFeePerTranRate:
           type: number
           description: Admin Fee rate Per Transaction
           format: double
+          example: 0.99999
         authCode:
           type: string
           description: Authorization code from Association(s). Generally 6/7 alphanumeric code that gets printed on the receipt.
-          example: ''
+          example: 99AA99
         authCurrency:
           type: string
           description: Currency code used for the transaction.
@@ -2284,57 +2219,62 @@ components:
         authorizationType:
           type: string
           description: Authorization Transaction Type
-          example: ''
+          example: '9999'
         batchDate:
           type: string
           description: Date group of transactions was settled
-          example: ''
+          example: 12/31/2020
         batchNo:
           type: string
           description: Batch number (Batch that pulled this settlement transaction to initiate thee funding) for the transaction.
-          example: ''
+          example: AA999AA999
         batchSequenceID:
           type: string
-          example: ''
+          example: '9999999999'
         batchUID:
           type: string
           description: Batch Unique Id
-          example: ''
+          example: AAAA9999999999999999999999999999999
         binID:
           type: string
           description: The unique identifier for the bin associated with the card.
-          example: ''
+          example: '666666'
         cardUsage:
           type: string
-          example: ''
+          example: D
         cardholderNumber:
           type: string
           description: Cardholder ID
-          example: ''
+          example: '9'
         cashBackAmount:
           type: number
           description: Cash back amount provided for the transaction.
           format: double
+          example: 999.99
         cbaFeeAmount:
           type: number
           description: Cross Boarder Acquirer Fee amount
           format: double
+          example: 0.99999
         cbaFeePerTranAmount:
           type: number
           description: Cross Boarder Acquirer Fee amount Per Transaction
           format: double
+          example: 0.99999
         cbaFeePerTranRate:
           type: number
           description: Cross Boarder Acquirer Fee rate Per Transaction
           format: double
+          example: 0.99999
         chipConditionCode:
           type: string
           description: Code provides information about magnetic stripe-read transactions of VSDC cards at VSDC ATMs
-          example: ''
+          example: '9'
         convinienceFee:
           type: number
           description: Convinience Fee Amount
           format: double
+          example: 0.99
         currency:
           type: string
           description: Processing Currency code used for the transaction.
@@ -2533,14 +2473,15 @@ components:
           example: '1'
         dbaName:
           type: string
-          example: ''
+          example: STORE NAME
         discountAmount:
           type: number
           format: double
+          example: -0.9999
         driverID:
           type: string
           description: Driver License Number
-          example: ''
+          example: '999999'
         entryModeSource:
           type: string
           description: The last byte from POS_ENTRY_MODE which tells us the PIN capability.
@@ -2556,85 +2497,98 @@ components:
           example: '0'
         externalMID:
           type: string
-          example: ''
+          example: '9999999999'
         first6:
           type: string
           description: First six digits of card number.
-          example: ''
+          example: '666666'
         flatRate:
           type: number
           format: double
+          example: 0.9999
         foreignCurrAmount:
           type: number
           description: Foreign Currency Amount
           format: double
+          example: 999.99
         foreignCurrRate:
           type: number
           description: Foreign Currency Rate
           format: double
+          example: 0.999999999
         fundedDate:
           type: string
           description: Date when the funding to/from the merchant aassociatedwith this transaction
-          example: ''
+          example: 12/31/2020
         iCFeePerTranRate:
           type: number
           description: Interchange Charge  Fee rate Per Transaction
           format: double
+          example: 0.99999
         icFeeAmount:
           type: number
           description: Interchange Charge  Fee amount
           format: double
+          example: 0.99999
         icFeePerTranAmount:
           type: number
           description: Interchange Charge  Fee amount Per Transaction
           format: double
+          example: 0.99999
         ifFeeAmount:
           type: number
           description: Infrastructure Fee amount
           format: double
+          example: 0.99999
         infrastructureFeePerTranAmount:
           type: number
           description: Infrastructure Fee amount Per Transaction
           format: double
+          example: 0.99999
         infrastructureFeePerTranRate:
           type: number
           description: Infrastructure Fee rate Per Transaction
           format: double
+          example: 0.99999
         integrityClass:
           type: string
           description: Transaction Integrity Class
-          example: ''
+          example: X9
         invalidTxnInd:
           type: integer
           description: Transactions with invalid invalid Tran id or invalid validate code. Applicable for Visa and Mastercard transactions
           format: int32
+          example: 9
         invoiceNo:
           type: string
           description: Invoice number for the transaction.
-          example: ''
+          example: '999999999'
         isaFeeAmount:
           type: number
           description: ISA Fee amount
           format: double
+          example: 0.99999
         isaFeePerTranAmount:
           type: number
           description: ISA Fee amount Per Transaction
           format: double
+          example: 0.99999
         isaFeePerTranRate:
           type: number
           description: ISA Fee rate Per Transaction
           format: double
+          example: 0.99999
         last4:
           type: string
           description: Last four digits of card number.
-          example: ''
+          example: '4444'
         markerID:
           type: string
-          example: ''
+          example: '00000057'
         mcPrdtId:
           type: string
           description: A value returned by Mastercard, to designate the type of card product used to process the transaction.
-          example: ''
+          example: XXX
         merchantCategory:
           type: integer
           description: Identifies the standard merchant category code assigned to the transaction.
@@ -2642,10 +2596,10 @@ components:
         merchantCategoryKey:
           type: string
           description: Identifies the standard merchant category code assigned to the transaction. (Key)
-          example: ''
+          example: '9999'
         mobileIndicator:
           type: string
-          example: ''
+          example: M
         mobileWallet:
           type: integer
           description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.).
@@ -2658,6 +2612,7 @@ components:
           type: integer
           description: Net Sales Count.
           format: int32
+          example: 99
         network:
           type: string
           description: Name of the authorizing network associated with the transaction.
@@ -2714,32 +2669,36 @@ components:
           type: number
           description: Network Security Fee amount
           format: double
+          example: 0.99999
         networkSecurityFeePerTranAmount:
           type: number
           description: Network Security Fee amount Per Transaction
           format: double
+          example: 0.99999
         networkSecurityFeePerTranRate:
           type: number
           description: Network Security Fee rate Per Transaction
           format: double
+          example: 0.99999
         newAuthFee:
           type: number
           format: double
+          example: -0.9999
         odometerReading:
           type: string
           description: Odometer Reading
-          example: ''
+          example: '9999'
         orderNumber:
           type: string
           description: Order Number
-          example: ''
+          example: '999999999'
         origPlanCodeDesc:
           type: string
           description: Interchange rate/ Plan Code description.
-          example: ''
+          example: '999 : PLAN CODE DESC'
         originalPlanCode:
           type: string
-          example: ''
+          example: '999'
         paymentMethod:
           type: string
           description: Identifies the method of payment used on the transaction.
@@ -2764,37 +2723,42 @@ components:
         pcTaxAmount:
           type: number
           format: double
+          example: 9.99
         planCode:
           type: string
           description: Interchange rate/ Plan Code.
-          example: ''
+          example: '999'
         planCodeDesc:
           type: string
           description: Interchange rate/ Plan Code description.
-          example: ''
+          example: '999 : PLAN CODE DESC'
         platformID:
           type: string
-          example: ''
+          example: '1'
         postedIndicator:
           type: string
           description: Posted Indicator.
-          example: ''
+          example: X
         processedNetAmount:
           type: number
           description: Processed Net Amount.
           format: double
+          example: 999.99
         processedRefundAmount:
           type: number
           description: Processed Refund Amount.
           format: double
+          example: 999.99
         processedRejectAmount:
           type: number
           description: Processed Reject Amount.
           format: double
+          example: 999.99
         processedTransactionAmount:
           type: number
           description: Settlement amount associated with the transaction
           format: double
+          example: 999.99
         processor:
           type: string
           description: Identifies the settlement platform.
@@ -2930,7 +2894,7 @@ components:
         purchaseIdentifier:
           type: string
           description: The Purchase Identifier information
-          example: ''
+          example: '9999999999'
         reclassCd:
           type: string
           description: Reclass code used to identify the Reclassification record.
@@ -2945,35 +2909,38 @@ components:
         recordDate:
           type: string
           description: Date when data was loaded into system.
-          example: ''
+          example: 12/31/2020
         refundCount:
           type: integer
           description: Refund Count.
           format: int32
+          example: 99
         rejectCount:
           type: integer
           description: Reject Count.
           format: int32
+          example: 99
         rejectReason:
           type: string
           description: Tranaction Reject Reason
-          example: ''
+          example: '999'
         rejectReasonCD:
           type: string
           description: Tranaction Reject Reason
-          example: ''
+          example: '999'
         salesCount:
           type: integer
           description: Sales Count.
           format: int32
+          example: 99
         serviceCode:
           type: string
           description: Transaction Service Code
-          example: ''
+          example: '999'
         settleSpendQualifiedIndicator:
           type: string
           description: The BASE II Clearing Interchange Formats, TC 01 to TC 48.)
-          example: ''
+          example: 'N'
         siteID:
           type: string
           description: An unique identifier assigned to the merchant. Also known as a MID.
@@ -2985,73 +2952,82 @@ components:
         subMerchantID:
           type: string
           description: Sub Merchant ID
-          example: ''
+          example: '9999999999'
         subMerchantName:
           type: string
           description: Sub Merchant Name
-          example: ''
+          example: STORE NAME
         submittedNetAmount:
           type: number
           description: Submitted Net Amount.
           format: double
+          example: 999.99
         submittedRefundAmount:
           type: number
           description: Submitted Refund Amount.
           format: double
+          example: 999.99
         submittedRejectAmount:
           type: number
           description: Submitted Reject Amount.
           format: double
+          example: 999.99
         submittedTransactionAmount:
           type: number
           format: double
+          example: 999.99
         surChargeAmount:
           type: number
           description: Surcharge Amount
           format: double
+          example: 9.99
         surChargeInd:
           type: string
           description: Surcharge Indicator
-          example: ''
+          example: D
         switchFeeAmount:
           type: number
           description: Switch Fee amount
           format: double
+          example: 0.99999
         switchFeePerTranAmount:
           type: number
           description: Switch Fee amount Per Transaction
           format: double
+          example: 0.99999
         switchFeePerTranRate:
           type: number
           description: Switch Fee rate Per Transaction
           format: double
+          example: 0.99999
         terminalID:
           type: string
           description: Identifies terminal identifier for the transaction.
-          example: ''
+          example: '99'
         tipAmount:
           type: number
           format: double
+          example: 9.99
         tokenRequesterId:
           type: string
           description: Token requester ID.
-          example: ''
+          example: '99999999999'
         tokenType:
           type: string
           description: Token Type Code
-          example: ''
+          example: X999
         tranId:
           type: string
           description: Tran Id
-          example: ''
+          example: AAA999AAA999
         tranUID:
           type: string
           description: Transaction Unique Id
-          example: ''
+          example: AAAA9999999999999999999999999999999
         transactionDate:
           type: string
           description: Date of the authorization transaction.
-          example: ''
+          example: 12/31/2020
         transactionMode:
           type: string
           description: Transaction Mode associated with the transaction. Also known as Capture Method.
@@ -3068,7 +3044,7 @@ components:
         transactionSource:
           type: string
           description: How the transaction was sent to us for processing
-          example: ''
+          example: '9'
         transactionStatus:
           type: string
           description: Transaction Processing Status associated with the Settle transaction.
@@ -3087,7 +3063,7 @@ components:
         trckrNbr:
           type: string
           description: Uniquely identifies a transaction.
-          example: ''
+          example: '9999999999'
         type:
           type: string
           description: Transaction type code e.g. sale, refund etc.
@@ -3132,19 +3108,19 @@ components:
         userData:
           type: string
           description: Discretionary data sent on transaction by the merchant
-          example: ''
+          example: AA99BB99CC99
         vehicleNumber:
           type: string
           description: Vehicle Number
-          example: ''
+          example: '9999999999'
         visaPrdtId:
           type: string
           description: A value returned by Visa, to designate the type of card product used to process the transaction.
-          example: ''
+          example: XX
         visaTranId:
           type: string
           description: Visa (association)  generated ID.
-          example: ''
+          example: '999999999999999'
     SettlementSearchRequest:
       required:
         - fromDate
@@ -4167,87 +4143,88 @@ components:
         Name:
           type: string
           description: The name assigned to the processing merchant.
-          example: ''
+          example: STORE NAME
         address:
           type: string
           description: The address on file associated with the merchant.
-          example: ''
+          example: 123 MAIN STREET
         addressLine1:
           type: string
           description: Identifies the first line of the address of the merchant.
-          example: ''
+          example: JXXXXXXXE
         addressLine2:
           type: string
           description: Identifies the second line of the address of the merchant.
-          example: ''
+          example: 123 MAIN STREET
         agentID:
           type: string
           description: Agent Hierarchy Level ID for the Location
-          example: ''
+          example: '123456789123'
         altid:
           type: string
           description: The Alternate ID assigned to the site. This can represent the store number or a merchant specific identifier for the site.
-          example: ''
+          example: '123456789123'
         cardPresentIn:
           type: string
           description: Card Present In
-          example: ''
+          example: 'Y'
         city:
           type: string
           description: The city on file associated with the merchant.
-          example: ''
+          example: ANYTOWN
         commrHubId:
           type: string
           description: Commerce Hub
-          example: ''
+          example: AABC
         contact:
           type: string
           description: This is the name of a Merchant's Contact Person.
-          example: ''
+          example: JXXXXXXXE
         contactName:
           type: string
           description: This is the Contact Name at Merchant address location.
-          example: ''
+          example: JXXXXXXXE
         contactPhone:
           type: string
           description: Telephone number.
-          example: ''
+          example: '9999999999'
         corpID:
           type: string
           description: Corporation ID for the Location
-          example: ''
+          example: '123456789123'
         effectiveFrom:
           type: string
           description: Site active from
-          example: ''
+          example: '20200101'
         effectiveTo:
           type: string
           description: Site active To
-          example: ''
+          example: '20200630'
         email:
           type: string
           description: E_MAIL
-          example: ''
+          example: ABC@XYZ.COM
         fax:
           type: string
           description: Fax number.
-          example: ''
+          example: '30000000000'
         id:
           type: integer
           description: An unique identifier assigned to the merchant. Also known as the MID
           format: int64
+          example: 123456789123
         leadID:
           type: string
           description: Lead Corporation ID for the Location
-          example: ''
+          example: '123456789123'
         merchantCategoryCode:
           type: string
           description: The 4-character Merchant Category Code, as defined by Visa, but used across the industry.
-          example: ''
+          example: '1234'
         phone:
           type: string
           description: The phone number on file associated with the merchant.
-          example: ''
+          example: '9999999999'
         platform:
           type: string
           description: Identifies the processor for the merchant.
@@ -4275,19 +4252,19 @@ components:
         st_abbr_nm:
           type: string
           description: The state on file associated with the merchant.
-          example: ''
+          example: GA
         storeNo:
           type: string
           description: Identifies another identifier of the merchant's store.
-          example: ''
+          example: '100'
         website:
           type: string
           description: Web Site
-          example: ''
+          example: WWW.SAMPLE.COM
         zip:
           type: string
           description: The zip on file associated with the merchant.
-          example: ''
+          example: '99999'
     SitesFilters:
       type: object
       properties:
@@ -4520,7 +4497,7 @@ components:
         bin:
           type: string
           description: A textual representation of numeric description of the bin.
-          example: ''
+          example: '999999999'
         binMap:
           type: integer
           description: A numeric description of the bin.
@@ -5058,7 +5035,7 @@ components:
         id:
           type: string
           description: The unique identifier for the bin.
-          example: ''
+          example: '1000000'
         interac:
           type: string
           description: Identifies the routing eligibility to Interac network.
@@ -5100,7 +5077,7 @@ components:
         issuerKey:
           type: string
           description: Identifies the issuing bank institution. (Key)
-          example: ''
+          example: XXX BANK
         jeanie:
           type: string
           description: Identifies the routing eligibility to Jeanie network.
@@ -6500,45 +6477,68 @@ components:
           type: number
           description: Service Charges Amount.
           format: double
+          example: 9999.99
         accountCurrency:
           type: string
           description: Account Currency.
-          example: ''
+          example: '999'
+        accountCurrentNet:
+          type: number
+          description: The net amount in the account currency
+          format: double
+          example: 9999.99
+        accountID:
+          type: string
+          description: ' Unique Identifier for the Merchant account '
+          example: '9999999999'
         accountNetAmount:
           type: number
           description: Account Net Amount.
           format: double
+          example: 9999.99
+        accountType:
+          type: string
+          description: The Type of the Account i.e. Payment Account Retail (PAR)
+          example: Retail
+        addendumARN:
+          type: string
+          description: ARN created by transferring a transaction or by Misc Batch Input
+          example: '99999999999999999999999'
         adjustmentsAmt:
           type: number
           description: Adjustments Amount.
           format: double
+          example: 9999.99
         airLineTicketNumber:
           type: string
           description: AirLine Ticket Number.
-          example: ''
+          example: '9999999999999'
         amountPaid:
           type: number
           description: Amount Paid.
           format: double
+          example: 9999.99
         bankReferenceNo:
           type: string
           description: Bank Reference number.
-          example: ''
+          example: '99999999999999999'
         batchDate:
           type: string
-          example: ''
+          example: 12/31/2020
         batchNo:
           type: string
           description: Batch number (Batch that pulled this settlement transaction to initiate thee funding) for the transaction.
-          example: ''
+          example: AA999AA999
         chargebackAmt:
           type: number
           description: Charge Back Amount.
           format: double
+          example: 9999.99
         creditAmount:
           type: number
           description: Indicates the credit amount on the transaction.
           format: double
+          example: 9999.99
         currency:
           type: string
           description: Currency code used for the transaction.
@@ -6738,23 +6738,26 @@ components:
         dda:
           type: string
           description: DDA associated with the merchant.
-          example: ''
+          example: 9A@9a#9A$9a[
         ddaLast4:
           type: string
           description: Last four digits of dda number.
-          example: ''
+          example: '4444'
         ddaLength:
           type: integer
           description: DDA lenght.
           format: int32
+          example: 99
         debitAmount:
           type: number
           description: Indicates the debit amount on the transaction.
           format: double
+          example: 9999.99
         depositAmt:
           type: number
           description: Deposit Amount.
           format: double
+          example: 9999.99
         depositTypeCd:
           type: string
           description: DepositType.
@@ -6772,26 +6775,42 @@ components:
           type: string
           description: DepositType. (Key)
           example: '5'
+        feeSeqCode:
+          type: string
+          description: Fee Sequence Code for a transaction.
+          example: '999'
+        feeSeqDesc:
+          type: string
+          description: Fee Sequence Description per Fee Sequence Code
+          example: AA999AA999A999
         feesAmt:
           type: number
           description: Fees Amount.
           format: double
+          example: 9999.99
         fundedDate:
           type: string
           description: Date when the funding to/from the merchant aassociatedwith this transaction
-          example: ''
+          example: 12/31/2020
         icChargesAmt:
           type: number
           description: IC Charges Amount.
           format: double
+          example: 9999.99
         interchangeCD:
           type: string
           description: Interchange CD.
-          example: ''
+          example: A99
         itemCount:
           type: integer
           description: Indicates the item count on the transaction.
           format: int64
+          example: 99
+        localAmount:
+          type: number
+          description: The gross amount posted to the account, in the local currency
+          format: double
+          example: 9999.99
         majorCategory:
           type: string
           description: Identifies the major category for the merchant.
@@ -8153,10 +8172,20 @@ components:
           type: number
           description: Net Sales Amount.
           format: double
+          example: 9999.99
         paidByOthersAmt:
           type: number
           description: Paid By Others Amount.
           format: double
+          example: 9999.99
+        paymentRefNo:
+          type: string
+          description: Unique identifier for the payment.
+          example: '99999999999999999999999'
+        paymentStatus:
+          type: string
+          description: Payment status using funding warehouse functionality
+          example: Pending
         processor:
           type: string
           description: Identifies the funding platform.
@@ -8292,23 +8321,48 @@ components:
         recordDate:
           type: string
           description: This is pipeline_date when the data was loaded.
-          example: ''
+          example: 12/31/2020
         referenceNo:
           type: string
           description: Reference Number.
-          example: ''
+          example: '9999999999'
         referenceNumber:
           type: string
           description: 'Acquirer Reference number.This is only available for the transaction Type: Chargeback.'
-          example: ''
+          example: '99999999999999999999999'
+        relatedSourceTran:
+          type: string
+          description: Details of related transactions within the FA feed
+          example: '99'
+        reversalIndicator:
+          type: string
+          description: Reversal Indicator
+          example: AA999AA999
         siteID:
           type: string
           description: An unique identifier assigned to the merchant. Also known as a MID.
-          example: '12345'
+          example: '12345789123'
         tranAmount:
           type: number
           description: Amount requested for the authorization transaction.
           format: double
+          example: 9999.99
+        tranCategoryCode:
+          type: string
+          description: Transaction Category Code
+          example: '999'
+        tranCategoryDesc:
+          type: string
+          description: Description for the transaction category code
+          example: '99999999999999999999999'
+        tranTypeCode:
+          type: string
+          description: This is the transaction type code associated to the acquirer commission charge
+          example: A99
+        valDate:
+          type: string
+          description: Value Date
+          example: 12/31/2020
     FundingSearchRequest:
       required:
         - fromDate
@@ -8340,7 +8394,11 @@ components:
             enum:
               - ServiceChangesAmt
               - AccountCurrency
+              - AccountCurrentNet
+              - AccountID
               - AccountNetAmount
+              - AccountType
+              - AddendumARN
               - AdjustmentsAmt
               - AirLineTicketNumber
               - AmountPaid
@@ -8358,17 +8416,22 @@ components:
               - DepositAmt
               - DepositTypeCd
               - DepositTypeCdKey
+              - FeeSeqCode
+              - FeeSeqDesc
               - FeesAmt
               - FundedDate
               - IcChargesAmt
               - InterchangeCD
               - ItemCount
+              - LocalAmount
               - MajorCategory
               - MajorCategoryKey
               - MinorCategory
               - MinorCategoryKey
               - NetSalesAmt
               - PaidByOthersAmt
+              - PaymentRefNo
+              - PaymentStatus
               - Processor
               - ProcessorKey
               - ProductCode
@@ -8376,8 +8439,14 @@ components:
               - RecordDate
               - ReferenceNo
               - ReferenceNumber
+              - RelatedSourceTran
+              - ReversalIndicator
               - SiteID
               - TranAmount
+              - TranCategoryCode
+              - TranCategoryDesc
+              - TranTypeCode
+              - ValDate
         filters:
           $ref: '#/components/schemas/FundingFilters'
       description: Request object for Funding search
@@ -8387,11 +8456,11 @@ components:
         accountLastFour:
           type: string
           description: Last four digits of the payment account.
-          example: ''
+          example: '4444'
         applyDate:
           type: string
           description: Date to apply the disbursement.
-          example: ''
+          example: 12/31/2020
         approvalCode:
           type: string
           description: Approval code.
@@ -8404,34 +8473,30 @@ components:
           type: string
           description: Approval code. (Key)
           example: '1'
-        availableBalance:
-          type: number
-          description: Available balance of the merchant.
-          format: double
         bankName:
           type: string
           description: The bank name for the payment transaction.
-          example: ''
+          example: Chase
         city:
           type: string
           description: The city where the recipient resides.
-          example: ''
+          example: ANYTOWN
         comments:
           type: string
           description: Comments associated to the payment transaction.
-          example: ''
+          example: Valid payment
         controlNumber:
           type: string
           description: Control number of the transaction.
-          example: ''
+          example: a0123
         country:
           type: string
           description: The country where the recipient resides.
-          example: ''
+          example: USA
         createDate:
           type: string
           description: Create date.
-          example: ''
+          example: 12/31/2020
         currency:
           type: string
           description: Currency of the transaction.
@@ -8631,99 +8696,111 @@ components:
         dfaAccountNumber:
           type: string
           description: The account number of the merchant.
-          example: ''
+          example: '123456789123'
         dfaBalanceDate:
           type: string
           description: The funds date the totals were calculated.
-          example: ''
+          example: 12/31/2020
         dfaClosingAvailable:
           type: number
           description: The closing available balance of the funds account.
           format: double
+          example: 999.99
         dfaClosingLedger:
           type: number
           description: The closing ledger balance of the funds account.
           format: double
+          example: 999.99
         dfaMid:
           type: string
           description: The merchant id of the funds transaction.
-          example: ''
+          example: '123456789123'
         dfaOpeningAvailable:
           type: number
           description: The opening available balance of the funds account.
           format: double
+          example: 999.99
         dfaOpeningLedger:
           type: number
           description: The opening ledger balance of the funds account.
           format: double
+          example: 999.99
         dfaPendingAmount:
           type: number
           description: The net pending amounts.
           format: double
+          example: 999.99
         dfaPendingTxns:
           type: number
           description: The net pending transactions.
           format: double
+          example: 1
         dfaPreviousPendingAmount:
           type: number
           description: Net pending amount on the prior days balance date.
           format: double
+          example: 999.99
         dfaPreviousPendingTxns:
           type: number
           description: Net pending count on the prior days balance date.
           format: double
+          example: 1
         email:
           type: string
           description: Recipient email address.
-          example: ''
+          example: johnsmith@companyname.com
         expiryDate:
           type: string
           description: Expiry date of the transaction.
-          example: ''
+          example: 12/31/2020
         feeAmount:
           type: number
           description: The fee associated to the payment transaction.
           format: double
+          example: 999.99
         fundingAccount:
           type: string
           description: Disbursement funding account.
-          example: ''
+          example: '123456789123'
         fundsAccount:
           type: string
           description: Disbursement funding account.
-          example: ''
+          example: '12345678909876'
         fundsAcctLastFour:
           type: string
           description: Last four digits of the payment account.
-          example: ''
+          example: '9242'
         fundsActivityID:
           type: string
           description: Unique id for this record.
-          example: ''
+          example: abcd1234-ab12-ab12-ab12-123456abcdef
         fundsActualBalance:
           type: number
           description: The actual total balance of the funds account.
           format: double
+          example: 999.99
         fundsAmount:
           type: number
           description: The amount of the transaction.
           format: double
+          example: 999.99
         fundsApplyDate:
           type: string
           description: Date to apply the disbursement.
-          example: ''
+          example: 12/31/2020
         fundsAvailableBalance:
           type: number
           description: The available balance of the funds account.
           format: double
+          example: 999.99
         fundsComments:
           type: string
           description: Comments associated to the payment transaction.
-          example: ''
+          example: Valid payment
         fundsCreateDate:
           type: string
           description: The funds date the payment was created.
-          example: ''
+          example: 12/31/2020
         fundsCurrency:
           type: string
           description: Currency of the transaction.
@@ -8923,23 +9000,24 @@ components:
         fundsExpiryDate:
           type: string
           description: Expiry date of the transaction.
-          example: ''
+          example: 12/31/2020
         fundsFeeAmount:
           type: number
           description: The fee associated to the payment transaction.
           format: double
+          example: 999.99
         fundsMerchantName:
           type: string
           description: The name of the merchant.
-          example: ''
+          example: Acme Co
         fundsMid:
           type: string
           description: The merchant id of the funds transaction.
-          example: ''
+          example: '123456789123'
         fundsOrigId:
           type: string
           description: Originator id of the merchant.
-          example: ''
+          example: '123456789123'
         fundsPaymentChannel:
           type: string
           description: The channel type for fund activity report.  IE ACH, DEBIT.
@@ -8956,11 +9034,11 @@ components:
         fundsPaymentDate:
           type: string
           description: The date of the payment.
-          example: ''
+          example: 12/31/2020
         fundsPaymentId:
           type: string
           description: Unique key to find the payment for each transaction. In case of multi recpients multiple payments associated with single transaction.
-          example: ''
+          example: abcd1234-ab12-ab12-ab12-123456abcdef
         fundsPaymentStatus:
           type: string
           description: The status of the payment.
@@ -8995,35 +9073,35 @@ components:
         fundsPaymentTime:
           type: string
           description: The date time of the payment.
-          example: ''
+          example: '2020-12-31 00:00:00.000'
         fundsReferenceId:
           type: string
           description: Reference id of the transaction.
-          example: ''
+          example: abcd1234-ab12-ab12-ab12-123456abcdef
         fundsTSCreateDate:
           type: string
           description: The funds timestamp the payment was created.
-          example: ''
+          example: '2020-12-31 00:00:00.000'
         fundsTxnClaimNumber:
           type: string
           description: The claim number for a reference of the transaction. This is passed through by the client on the reference fields.
-          example: ''
+          example: 47-21C7-01B
         fundsTxnDate:
           type: string
           description: Transaction date.
-          example: ''
+          example: 12/31/2020
         fundsTxnDesc:
           type: string
           description: Description associated to the payment transaction.
-          example: ''
+          example: SUCCESS
         fundsTxnId:
           type: string
           description: System generated unique transaction id.
-          example: ''
+          example: TID-abcd1234-ab12-ab12-ab12-123456abcdef
         fundsTxnPaymentNumber:
           type: string
           description: The payment number for a reference of the transaction. This is passed by the client on the reference fields.
-          example: ''
+          example: 115061248A
         fundsTxnStatus:
           type: string
           description: The status of the transaction.
@@ -9048,27 +9126,23 @@ components:
         fundsTxnTime:
           type: string
           description: The date time of the transaction.
-          example: ''
+          example: '2020-12-31 00:00:00.000'
         fundsTxnType:
           type: string
           description: The transaction type for fund activity report. IE Initiation, disbursement, adjustment.
-          example: ''
+          example: DISBURSED
         fundsVendorId:
           type: string
           description: Vendor id provided by the merchant also known as merchant customer id.
-          example: ''
-        ledgerBalance:
-          type: number
-          description: Ledger balance of the merchant.
-          format: double
+          example: NB2XV2NIW5RPXLVHMCSW
         merchantId:
           type: string
           description: System generated unique merchant id.
-          example: ''
+          example: HNAD03765FDD0190E0530AB4HBAN8T1N
         merchantName:
           type: string
           description: The name of the merchant.
-          example: ''
+          example: Acme
         merchantStatus:
           type: string
           description: The current status of the merchant.
@@ -9084,15 +9158,16 @@ components:
         mid:
           type: string
           description: North merchant back end id.
-          example: ''
+          example: '123456789123'
         origId:
           type: string
           description: Originator id of the merchant.
-          example: ''
+          example: '123420024321'
         paymentAmount:
           type: number
           description: The amount of the payment.
           format: double
+          example: 999.99
         paymentChannel:
           type: string
           description: Funding source type.
@@ -9109,15 +9184,15 @@ components:
         paymentDate:
           type: string
           description: The date of the payment.
-          example: ''
+          example: 12/31/2020
         paymentId:
           type: string
           description: Unique key to find the payment for each transaction. In case of multi recpients multiple payments associated with single transaction.
-          example: ''
+          example: abcd1234-ab12-ab12-ab12-123456abcdef
         paymentRecipientId:
           type: string
           description: System generated unique id of the recipient.
-          example: ''
+          example: 4b5323827b577c4f017b93f9bbd71234
         paymentStatus:
           type: string
           description: The status of the payment.
@@ -9152,7 +9227,7 @@ components:
         paymentTime:
           type: string
           description: The date time of the payment.
-          example: ''
+          example: '2020-12-31 00:00:00.000'
         paymentType:
           type: string
           description: Determine the type of payment that is being processed.
@@ -9171,39 +9246,39 @@ components:
         paymentVendorId:
           type: string
           description: Vendor id provided by the merchant also known as merchant customer id. This id is the one that is used for payment.
-          example: ''
+          example: NB2XV2NIW5RPXLVHMCSW
         postalCode:
           type: string
           description: The zip code where the recipient resides.
-          example: ''
+          example: '99999'
         processingDate:
           type: string
           description: Processing date of the transaction.
-          example: ''
+          example: 12/31/2020
         processingTime:
           type: string
           description: Processing date and time of the transaction.
-          example: ''
+          example: '2020-12-31 00:00:00.000'
         recipientClient:
           type: string
           description: Client company name.
-          example: ''
+          example: Client Company
         recipientComments:
           type: string
           description: Recipient comments set on the modify screen.
-          example: ''
+          example: Comments about the recipient
         recipientCompany:
           type: string
           description: Recipient company information.
-          example: ''
+          example: Business Name
         recipientExtension:
           type: string
           description: Recipient phone number extension.
-          example: ''
+          example: '1234'
         recipientFName:
           type: string
           description: Recipient first name.
-          example: ''
+          example: JXXXXXXXE
         recipientGuest:
           type: string
           description: The guest status of the recipient.
@@ -9218,23 +9293,23 @@ components:
         recipientId:
           type: string
           description: System generated unique id of the recipient.
-          example: ''
+          example: 8a7fc3f07b577c61017b893488c2212c
         recipientIdentifier:
           type: string
           description: Recipient identifier.
-          example: ''
+          example: '123456789123'
         recipientIdentifierValue:
           type: string
           description: Recipient indentifier value.
-          example: ''
+          example: PHONE_NUMBER
         recipientLName:
           type: string
           description: Recipient last name.
-          example: ''
+          example: SXXXXXXXH
         recipientPhone:
           type: string
           description: Recipient phone number.
-          example: ''
+          example: '123456789123'
         recipientReason:
           type: string
           description: Recipient reason.
@@ -9272,7 +9347,7 @@ components:
         recipientTin:
           type: string
           description: Recipient tin value.
-          example: ''
+          example: querty
         recipientType:
           type: string
           description: Type of the recipient, consumer or business.
@@ -9288,19 +9363,19 @@ components:
         referenceId:
           type: string
           description: Reference id of the transaction.
-          example: ''
+          example: abcd1234-ab12-ab12-ab12-123456abcdef
         returnCode:
           type: string
           description: Response code associated to the payment transaction.
-          example: ''
+          example: 00#00
         routingNumber:
           type: string
           description: The routing number used for the payment transaction.
-          example: ''
+          example: '123456789'
         settlementDate:
           type: string
           description: Settlement date of the transaction.
-          example: ''
+          example: 12/31/2020
         settlementStatus:
           type: string
           description: The settlement status of the transaction.
@@ -9316,7 +9391,7 @@ components:
         state:
           type: string
           description: The state where the recipient resides.
-          example: New Jersey
+          example: Georgia
           enum:
             - Unknown
             - AL
@@ -9389,39 +9464,40 @@ components:
         stateKey:
           type: string
           description: The state where the recipient resides. (Key)
-          example: '32'
+          example: '11'
         streetOne:
           type: string
           description: The first line of the street address of the recipient.
-          example: ''
+          example: 123 MAIN STREET
         streetTwo:
           type: string
           description: The second line of the street address of the recipient.
-          example: ''
+          example: Apt 101
         transactionAmount:
           type: number
           description: Amount of the entire tranaction set.
           format: double
+          example: 999.99
         transactionClaimNumber:
           type: string
           description: The claim number for a reference of the transaction. This is passed through by the client on the reference fields.
-          example: ''
+          example: 47-21C7-01B
         transactionCreateDate:
           type: string
           description: Date the client created the transaction record.
-          example: ''
+          example: 12/31/2020
         transactionDate:
           type: string
           description: Transaction date.
-          example: ''
+          example: 12/31/2020
         transactionId:
           type: string
           description: System generated unique transaction id.
-          example: ''
+          example: TID-abcd1234-ab12-ab12-ab12-123456abcdef
         transactionPaymentNumber:
           type: string
           description: The payment number for a reference of the transaction. This is passed by the client on the reference fields.
-          example: ''
+          example: 115061248A
         transactionStatus:
           type: string
           description: The status of the transaction.
@@ -9446,11 +9522,11 @@ components:
         txnDesc:
           type: string
           description: Description associated to the payment transaction.
-          example: ''
+          example: SUCCESS
         vendorId:
           type: string
           description: Vendor id provided by the merchant also known as merchant customer id.
-          example: ''
+          example: NB2XV2NIW5RPXLVHMCSW
     DisbursementSearchRequest:
       required:
         - fromDate
@@ -9484,7 +9560,6 @@ components:
               - ApplyDate
               - ApprovalCode
               - ApprovalCodeKey
-              - AvailableBalance
               - BankName
               - City
               - Comments
@@ -9543,7 +9618,6 @@ components:
               - FundsTxnTime
               - FundsTxnType
               - FundsVendorId
-              - LedgerBalance
               - MerchantId
               - MerchantName
               - MerchantStatus
@@ -11445,6 +11519,7 @@ components:
           type: number
           description: Identifies the total transaction amount in the currency of the card rather than in the currency of the place of purchase.
           format: double
+          example: 999.99
         DCCCurrency:
           type: string
           description: Identifies non-local merchant enabled dynamic currency code.
@@ -11648,7 +11723,7 @@ components:
         DCCINDKey:
           type: string
           description: Identifies the acceptance of dynamic currency code transaction processing. (Key)
-          example: ''
+          example: '0'
         ECIIndicator:
           type: string
           description: Indicates the Electronic Commerce Indicator used for the transaction.
@@ -11717,12 +11792,12 @@ components:
         accountNumber:
           type: string
           description: Card number used for authorization transaction.
-          example: 123456XXXXXXXX5555
+          example: 666666XXXXXX4444
         amount:
           type: number
           description: Amount requested for the authorization transaction.
           format: double
-          example: 10
+          example: 999.99
         approvalCode:
           type: string
           description: Identifies if the authorization was approved or declined.
@@ -11871,23 +11946,24 @@ components:
         authCode:
           type: string
           description: Authorization code from Association(s). Generally 6/7 alphanumeric code that gets printed on the receipt.
-          example: 9I8UY6
+          example: 99AA99
         banknetRef:
           type: string
           description: Indicates Mastercard assigned banknet reference number.
-          example: ''
+          example: M99AA99AA
         binID:
           type: string
           description: The unique identifier for the bin associated with the card.
-          example: ''
+          example: '999999'
         cardExpiryDate:
           type: string
           description: Indicates expiration date on card.
-          example: ''
+          example: 12/24
         cshbAmount:
           type: number
           description: Cash back amount provided for the transaction.
           format: double
+          example: 999.99
         currency:
           type: string
           description: Currency code used for the transaction.
@@ -12087,11 +12163,11 @@ components:
         customerName:
           type: string
           description: Name on the Card.
-          example: ''
+          example: JXXXXXXXE
         declineReason:
           type: string
           description: Identifies the decline reason for the transaction.
-          example: ''
+          example: Do Not Honor
           enum:
             - Unknown
             - Approved
@@ -12220,19 +12296,20 @@ components:
         declineReasonKey:
           type: string
           description: Identifies the decline reason for the transaction. (Key)
-          example: '1'
+          example: '3'
         externalMid:
           type: string
           description: External Merchant ID.
-          example: ''
+          example: '9999999999'
         first6:
           type: string
           description: First six digits of card number.
-          example: '123456'
+          example: '666666'
         fraudScore:
           type: integer
           description: Indicates the fraud score on the transaction.
           format: int32
+          example: 0
         fuelPurchaseLocation:
           type: integer
           description: Identifies whether the fuel was purchased At the pump or In-Store
@@ -12240,27 +12317,27 @@ components:
         fuelPurchaseLocationKey:
           type: string
           description: Identifies whether the fuel was purchased At the pump or In-Store (Key)
-          example: ''
+          example: '5541'
         giftCardNumber:
           type: string
           description: Gift Card Number used for authorization transaction.
-          example: ''
+          example: '9999999999999999'
         last4:
           type: string
           description: Last four digits of card number.
-          example: '5555'
+          example: '4444'
         lcldt:
           type: string
           description: Local Date Time of the transaction.
-          example: ''
+          example: 12/31/2020 10:00:00 AM
         linkResponseCode:
           type: string
           description: Old Card number.
-          example: ''
+          example: A99
         merchandiseCode:
           type: string
           description: Describes the type of fuel purchased.
-          example: ''
+          example: Gas Unleaded (001)
           enum:
             - Unknown
             - GasUnleaded88
@@ -12329,7 +12406,7 @@ components:
         merchandiseCodeKey:
           type: string
           description: Describes the type of fuel purchased. (Key)
-          example: '0'
+          example: '1'
         merchantCategory:
           type: integer
           description: Identifies the standard merchant category code assigned to the transaction.
@@ -12337,7 +12414,7 @@ components:
         merchantCategoryKey:
           type: string
           description: Identifies the standard merchant category code assigned to the transaction. (Key)
-          example: ''
+          example: Fast Food Restaurants (5814)
         mobileWallet:
           type: string
           description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.).
@@ -12361,11 +12438,11 @@ components:
         mrchTranId:
           type: string
           description: External Reference ID
-          example: ''
+          example: abcd1234-ab12-ab12-ab12-123456abcdef
         nativeRejectCode:
           type: string
           description: The Reject code as recieved from the Front End Switches.
-          example: AP
+          example: '502'
         network:
           type: string
           description: Name of the authorizing network associated with the transaction.
@@ -12421,19 +12498,19 @@ components:
         networkTokenNumber:
           type: string
           description: Network Token Number
-          example: ''
+          example: A99AA99AA99A
         oldAccountNumber:
           type: string
           description: Old Card number.
-          example: ''
+          example: 666666XXXXXX4444
         ordNo:
           type: string
           description: Order Number sent by merchant.
-          example: ''
+          example: '999999999999'
         partnerOrderID:
           type: string
           description: Order identifier originated from Merchant
-          example: ''
+          example: AAA999AAA999
         paymentMethod:
           type: string
           description: Identifies the method of payment used on the transaction.
@@ -12458,11 +12535,11 @@ components:
         paypalAccountNumber:
           type: string
           description: Paypal Account number used for authorization transaction.
-          example: ''
+          example: M99AA99AA99A
         paypalTransactionID:
           type: string
           description: Paypal Transaction id.
-          example: ''
+          example: AAA999AAA999
         processor:
           type: string
           description: Identifies the originating platform (Switch).
@@ -12490,12 +12567,12 @@ components:
         pumpRegisterNumber:
           type: string
           description: Identifies the pump number.
-          example: ''
+          example: '9'
         quantity:
           type: number
           description: Indicates the quantity of gas in gallons purchased.
           format: double
-          example: 0
+          example: 999.999
         recurring:
           type: string
           description: Describes the recurrence type for the transaction.
@@ -12513,7 +12590,7 @@ components:
         referenceNumber:
           type: string
           description: Authorizer retrieval reference number, an unique RRN issued by the authorizer for each transaction.
-          example: ''
+          example: '9999999999'
         rtAction:
           type: string
           description: 'Card Account Updater: Identifies the action that was taken on the account.'
@@ -12535,7 +12612,7 @@ components:
         rtStatus:
           type: string
           description: 'Card Account Updater: Identifies the status of account update.'
-          example: Optimized and retried
+          example: Optimized and Retried
           enum:
             - Unknown
             - None
@@ -12560,16 +12637,17 @@ components:
         seqno:
           type: string
           description: An unique reference number assigned to a transactions by the merchant, and will be returned as is in the response message if exist.
-          example: ''
+          example: '999999'
         settleCutOffTime:
           type: integer
           description: Cutoff time setup for settlement of transaction(s) for a Merchant
           format: int64
+          example: 7874787487
         siteID:
           type: integer
           description: An unique identifier assigned to the merchant. Also known as a MID.
           format: int64
-          example: 12345
+          example: 123456789123
         subType:
           type: string
           description: Transaction sub type codes e.g. Pin, Signature, etc.
@@ -12587,15 +12665,16 @@ components:
         terminalID:
           type: string
           description: Identifies terminal identifier for the transaction.
-          example: '1'
+          example: '99'
         timeTaken:
           type: integer
           description: Indicates time taken to send a transaction to issuer.
           format: int32
+          example: 999
         tokenId:
           type: string
           description: Token Number.
-          example: ''
+          example: 9A@9a#9A$9a[
         tokenResponseInd:
           type: string
           description: Tokenization response indicator.
@@ -12744,7 +12823,7 @@ components:
         transactionDate:
           type: string
           description: Date of the authorization transaction.
-          example: 04/04/2021
+          example: 12/31/2020
         transactionTime:
           type: integer
           description: Time (EPOCH) of the authorization transaction.
@@ -12753,11 +12832,11 @@ components:
         trckrid:
           type: string
           description: Uniquely identifies a transaction.
-          example: ''
+          example: '999999999999'
         txnID:
           type: string
           description: Network Transaction ID
-          example: ''
+          example: '9999999999'
         type:
           type: string
           description: Transaction type code e.g. sale, refund etc.
