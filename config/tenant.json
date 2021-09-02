@@ -47,7 +47,7 @@
       },
       {
         "name": "industryOptionsAPIExplorer",
-        "value": false
+        "value": true
       },
       {
         "name": "editParameterAPIExplorer",
