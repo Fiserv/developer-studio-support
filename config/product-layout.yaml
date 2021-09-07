@@ -40,7 +40,7 @@ featuredFeatures:
       bullet1: Browse working sample of our integrations. 
       bullet2: Leverage our easy to use tools for real time insight into customer behavior.
       bullet3: Get up and running quickly an easily with our step by step instructions. 
-    links: ["/docs/APIs/sample-api.md"]
+    links: ["/docs/Examples/allapis.md"]
   - title: Build Your Merchant Portal
     description: Utilize the set of easy-to-use APIs to build your own online experience for your merchants, your intranet portal or banking/merchant integrated suites.
     tags: ["Enterprise"]
