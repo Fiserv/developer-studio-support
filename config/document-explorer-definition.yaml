@@ -11,9 +11,3 @@
     sections:
     - title: API Keys
       link: docs/Security/security.md
-- sections:
-  - title: Examples
-    open: false
-    sections:
-    - title: Authorizations
-      link: docs/Examples/authorizations.md

@@ -1,10 +1,9 @@
-# Authorization
+# Authorizations
 
-Look through the following examples on how authorizations can be queried either on a detail level or on a summary  level to suit your integration, reporting, reconciliation & product needs.
+These are pre-settle view of the transactions. Authorizations can be approved or declined. Approved transactions are generally settled a few days later. Look through the following examples on how authorizations can be queried either on a detail level or on a summary level to suit your integration, reporting, reconciliation & product needs.
 
 ---
-
-#### List all authorizations for a given day
+#### List Authorizations for a day
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
@@ -68,7 +67,7 @@ title: Response
 ```
 ---
 
-#### Fetch selected authorization fields for a given day
+#### List Authorizations with specific fields for a day
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
@@ -130,7 +129,7 @@ title: Response
 ```
 ---
 
-#### search authorizations for an AuthCode, first6 and last4:
+#### Search Authorizations for an Auth Code, first 6 and last 4
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
@@ -148,16 +147,26 @@ curl -X 'POST' \
   -H 'apiKey: YOUR KEY' \
   -H 'Content-Type: application/json' \
   -d '{
-  "fromDate": "20210217",
-  "toDate": "20210217",
-  "limit": 1,
-  "fields": [
-    "AccountNumber","Amount","Currency","PaymentMethod","Network","AuthCode","First6","Last4"
-  ],
-"authCode": "654321",
-  "first6": "123456",
-  "last4": "7890"
+    "fromDate": "20210117",
+    "toDate": "20210218",
+    "limit": 20,
+    "fields": [
+        "Amount",
+        "PaymentMethod",
+        "Currency",
+        "AccountNumber",
+        "Network",
+        "AuthCode",
+        "First6",
+        "Last4"
+    ],
+    "filters": {
+        "authCode": "083319",
+        "first6": "123456",
+        "last4": "7890"
+    }
 }'
+
 ```
 
 <!--
@@ -183,7 +192,7 @@ title: Response
 ```
 ---
 
-#### Fetch all declined transactions for a given day
+#### List declined Authorizations for a day
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
@@ -246,7 +255,7 @@ title: Response
 ]
 ```
 
-#### Fetch all Authorized transactions for a given store
+#### List Authorizations for a store for a day
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
 
@@ -275,9 +284,10 @@ curl -X 'POST' \
         "Network",
         "SiteID"
     ],
+    "filters":{
     "siteIDs": [
         325574
-    ]
+    ]}
 }'
 
 ```
@@ -334,7 +344,7 @@ title: Response
 ]
 ```
 
-#### Fetch the summary of authorizations broken down by the Network for a month
+#### Get summary of authorizations broken down by Network for a Month
 <!-- theme: success -->
 >**POST** `/v1/authorization/summary`
 
@@ -397,7 +407,7 @@ title: Response
   }
 ]
 ```
-#### Fetch the summary of authorizations broken down by the Payment Method for a single store for a month
+#### Get summary of authorizations broken down by Payment Method for a store for a Month
 <!-- theme: success -->
 >**POST** `/v1/authorization/summary`
 
@@ -418,9 +428,10 @@ curl -X 'POST' \
   "fromDate": "20210201",
   "toDate": "20210228",
   "summaryBy": "PaymentMethod",
-  "siteIDs": [
-    "325574"
-  ]
+  "filters":{
+    "siteIDs": [
+        325574
+    ]}
 }'
 ```
 
@@ -481,7 +492,7 @@ title: Response
 ```
 ---
 
-#### Fetch the summary of authorizations broken down by date for a single store
+#### Get trend of authorizations for a single store
 <!-- theme: success -->
 >**POST** `/v1/authorization/summary`
 
@@ -502,9 +513,10 @@ curl -X 'POST' \
   "fromDate": "20210201",
   "toDate": "20210205",
   "summaryBy": "TxnDay",
-  "siteIDs": [
-    "325574"
-  ]
+  "filters":{
+    "siteIDs": [
+        325574
+    ]}
 }'
 ```
 
