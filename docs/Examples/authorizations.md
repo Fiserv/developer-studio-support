@@ -147,16 +147,26 @@ curl -X 'POST' \
   -H 'apiKey: YOUR KEY' \
   -H 'Content-Type: application/json' \
   -d '{
-  "fromDate": "20210217",
-  "toDate": "20210217",
-  "limit": 1,
-  "fields": [
-    "AccountNumber","Amount","Currency","PaymentMethod","Network","AuthCode","First6","Last4"
-  ],
-"authCode": "654321",
-  "first6": "123456",
-  "last4": "7890"
+    "fromDate": "20210117",
+    "toDate": "20210218",
+    "limit": 20,
+    "fields": [
+        "Amount",
+        "PaymentMethod",
+        "Currency",
+        "AccountNumber",
+        "Network",
+        "AuthCode",
+        "First6",
+        "Last4"
+    ],
+    "filters": {
+        "authCode": "083319",
+        "first6": "123456",
+        "last4": "7890"
+    }
 }'
+
 ```
 
 <!--
@@ -274,9 +284,10 @@ curl -X 'POST' \
         "Network",
         "SiteID"
     ],
+    "filters":{
     "siteIDs": [
         325574
-    ]
+    ]}
 }'
 
 ```
@@ -417,9 +428,10 @@ curl -X 'POST' \
   "fromDate": "20210201",
   "toDate": "20210228",
   "summaryBy": "PaymentMethod",
-  "siteIDs": [
-    "325574"
-  ]
+  "filters":{
+    "siteIDs": [
+        325574
+    ]}
 }'
 ```
 
@@ -501,9 +513,10 @@ curl -X 'POST' \
   "fromDate": "20210201",
   "toDate": "20210205",
   "summaryBy": "TxnDay",
-  "siteIDs": [
-    "325574"
-  ]
+  "filters":{
+    "siteIDs": [
+        325574
+    ]}
 }'
 ```
 
