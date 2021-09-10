@@ -664,6 +664,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SitesSearchRequest'
+            example: {}
         required: true
       responses:
         '200':
@@ -731,6 +732,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/BinsSearchRequest'
+            example:
+              limit: 10
         required: true
       responses:
         '200':
@@ -1269,6 +1272,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AuthorizationSummaryRequest'
+            example:
+              fromDate: '20210801'
+              toDate: '20210807'
+              summaryBy: Network
         required: true
       responses:
         '200':
@@ -1336,6 +1343,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AuthorizationSearchRequest'
+            example:
+              fromDate: '20210801'
+              toDate: '20210807'
+              limit: 3
         required: true
       responses:
         '200':
@@ -4286,6 +4297,81 @@ components:
         filters:
           $ref: '#/components/schemas/RetrievalFilters'
       description: Request object for Retrievals search
+    SitesFilters:
+      type: object
+      properties:
+        platform:
+          type: string
+          description: Sites associated with the platform
+          enum:
+            - Buypass
+            - North
+            - Compass
+            - Unknown
+            - Omaha
+            - South
+            - Memphis
+            - Bams
+            - TeleCheck
+            - ValueLink
+            - OmniPay
+            - UK
+            - Chase
+            - Salem
+            - Tampa
+        siteID:
+          type: string
+          description: Platform specific Site ID
+        agentID:
+          type: string
+          description: Agent hierarchy ID
+        corporateID:
+          type: string
+          description: Corporate hierarchy ID
+        leadID:
+          type: string
+          description: Lead hierarchy ID
+      description: Various filter options for sites queries
+    SitesSearchRequest:
+      type: object
+      properties:
+        fields:
+          type: array
+          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          items:
+            type: string
+            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            enum:
+              - Name
+              - Address
+              - AddressLine1
+              - AddressLine2
+              - AgentID
+              - Altid
+              - CardPresentIn
+              - City
+              - CommrHubId
+              - Contact
+              - ContactName
+              - ContactPhone
+              - CorpID
+              - EffectiveFrom
+              - EffectiveTo
+              - Email
+              - Fax
+              - Id
+              - LeadID
+              - MerchantCategoryCode
+              - Phone
+              - Platform
+              - PlatformKey
+              - St_abbr_nm
+              - StoreNo
+              - Website
+              - Zip
+        filters:
+          $ref: '#/components/schemas/SitesFilters'
+      description: Request object for Sites search
     SitesObj:
       type: object
       properties:
@@ -4414,56 +4500,19 @@ components:
           type: string
           description: The zip on file associated with the merchant.
           example: '99999'
-    SitesFilters:
+    BinFilters:
       type: object
       properties:
-        platform:
+        binID:
           type: string
-          description: Sites associated with the platform
-          enum:
-            - Buypass
-            - North
-            - Compass
-            - Unknown
-            - Omaha
-            - South
-            - Memphis
-            - Bams
-            - TeleCheck
-            - ValueLink
-            - OmniPay
-            - UK
-            - Chase
-            - Salem
-            - Tampa
-        siteID:
-          type: string
-          description: Platform specific Site ID
-        agentID:
-          type: string
-          description: Agent hierarchy ID
-        corporateID:
-          type: string
-          description: Corporate hierarchy ID
-        leadID:
-          type: string
-          description: Lead hierarchy ID
-      description: Various filter options for sites queries
-    SitesSearchRequest:
+          description: Unique Bin ID
+          example: '123456'
+      description: Various filter options for bin queries
+    BinsSearchRequest:
       required:
-        - fromDate
         - limit
-        - toDate
       type: object
       properties:
-        fromDate:
-          type: string
-          description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
-        toDate:
-          type: string
-          description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
         limit:
           maximum: 1000000
           minimum: 1
@@ -4478,36 +4527,64 @@ components:
             type: string
             description: Specify specific fields to be pulled back instead of the entire set (default behavior)
             enum:
-              - Name
-              - Address
-              - AddressLine1
-              - AddressLine2
-              - AgentID
-              - Altid
-              - CardPresentIn
-              - City
-              - CommrHubId
-              - Contact
-              - ContactName
-              - ContactPhone
-              - CorpID
-              - EffectiveFrom
-              - EffectiveTo
-              - Email
-              - Fax
+              - EBTState
+              - EBTStateKey
+              - Accel
+              - AccelKey
+              - Active
+              - Affn
+              - AffnKey
+              - Ath
+              - AthKey
+              - Bin
+              - BinMap
+              - BinMapKey
+              - CardBrand
+              - CardBrandKey
+              - CardClass
+              - CardClassKey
+              - CardSubType
+              - CardSubTypeKey
+              - Country
+              - CountryKey
+              - Cu24
+              - Cu24Key
+              - Details
+              - DetailsKey
+              - Ebt
+              - EbtKey
+              - Highacct
               - Id
-              - LeadID
-              - MerchantCategoryCode
-              - Phone
-              - Platform
-              - PlatformKey
-              - St_abbr_nm
-              - StoreNo
-              - Website
-              - Zip
+              - Interac
+              - InteracKey
+              - Interlink
+              - InterlinkKey
+              - Issuer
+              - IssuerKey
+              - Jeanie
+              - JeanieKey
+              - Lowacct
+              - Maestro
+              - MaestroKey
+              - Nyce
+              - NyceKey
+              - Pulse
+              - PulseKey
+              - Regulated
+              - RegulatedKey
+              - Reloadable
+              - ReloadableKey
+              - Shazam
+              - ShazamKey
+              - Star
+              - StarKey
+              - Type
+              - TypeKey
+              - Visa
+              - VisaKey
         filters:
-          $ref: '#/components/schemas/SitesFilters'
-      description: Request object for Sites search
+          $ref: '#/components/schemas/BinFilters'
+      description: Request object for Bin search
     BinDetailsObj:
       type: object
       properties:
@@ -5388,101 +5465,6 @@ components:
           type: string
           description: Identifies the routing eligibility to Visa network. (Key)
           example: '0'
-    BinFilters:
-      type: object
-      properties:
-        binID:
-          type: string
-          description: Unique Bin ID
-          example: '123456'
-      description: Various filter options for bin queries
-    BinsSearchRequest:
-      required:
-        - fromDate
-        - limit
-        - toDate
-      type: object
-      properties:
-        fromDate:
-          type: string
-          description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
-        toDate:
-          type: string
-          description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
-        limit:
-          maximum: 1000000
-          minimum: 1
-          type: integer
-          description: The maximum number of records that will be returned
-          format: int32
-          default: 10
-        fields:
-          type: array
-          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-          items:
-            type: string
-            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-            enum:
-              - EBTState
-              - EBTStateKey
-              - Accel
-              - AccelKey
-              - Active
-              - Affn
-              - AffnKey
-              - Ath
-              - AthKey
-              - Bin
-              - BinMap
-              - BinMapKey
-              - CardBrand
-              - CardBrandKey
-              - CardClass
-              - CardClassKey
-              - CardSubType
-              - CardSubTypeKey
-              - Country
-              - CountryKey
-              - Cu24
-              - Cu24Key
-              - Details
-              - DetailsKey
-              - Ebt
-              - EbtKey
-              - Highacct
-              - Id
-              - Interac
-              - InteracKey
-              - Interlink
-              - InterlinkKey
-              - Issuer
-              - IssuerKey
-              - Jeanie
-              - JeanieKey
-              - Lowacct
-              - Maestro
-              - MaestroKey
-              - Nyce
-              - NyceKey
-              - Pulse
-              - PulseKey
-              - Regulated
-              - RegulatedKey
-              - Reloadable
-              - ReloadableKey
-              - Shazam
-              - ShazamKey
-              - Star
-              - StarKey
-              - Type
-              - TypeKey
-              - Visa
-              - VisaKey
-        filters:
-          $ref: '#/components/schemas/BinFilters'
-      description: Request object for Bin search
     PrepaidAccountObj:
       type: object
       properties:
@@ -11397,33 +11379,6 @@ components:
         filters:
           $ref: '#/components/schemas/ChargebackFilters'
       description: Request object for Chargeback search
-    AuthorizationSummaryResponse:
-      type: object
-      properties:
-        currency:
-          type: string
-          description: Currency Information
-          example: USD
-        value:
-          type: string
-          description: The value of the summary by field
-          example: Visa
-        countTotal:
-          type: integer
-          description: The total count of all matching rows grouped by supplied options
-          format: int64
-          example: 757
-        amountTotal:
-          type: number
-          description: The total transaction currency amount of all matching rows grouped by supplied options
-          format: double
-          example: 11909212
-        approvedCount:
-          type: integer
-          description: The total approved count of all matching rows grouped by supplied options
-          format: int64
-          example: 721
-      description: Summary response object which maps the data points returned from the summary request
     AuthorizationFilters:
       type: object
       properties:
@@ -11591,6 +11546,157 @@ components:
         filters:
           $ref: '#/components/schemas/AuthorizationFilters'
       description: Request object for authorization summary report creation
+    AuthorizationSummaryResponse:
+      type: object
+      properties:
+        currency:
+          type: string
+          description: Currency Information
+          example: USD
+        value:
+          type: string
+          description: The value of the summary by field
+          example: Visa
+        countTotal:
+          type: integer
+          description: The total count of all matching rows grouped by supplied options
+          format: int64
+          example: 757
+        amountTotal:
+          type: number
+          description: The total transaction currency amount of all matching rows grouped by supplied options
+          format: double
+          example: 11909212
+        approvedCount:
+          type: integer
+          description: The total approved count of all matching rows grouped by supplied options
+          format: int64
+          example: 721
+      description: Summary response object which maps the data points returned from the summary request
+    AuthorizationSearchRequest:
+      required:
+        - fromDate
+        - limit
+        - toDate
+      type: object
+      properties:
+        fromDate:
+          type: string
+          description: yyyymmdd string denoting the start date for the query
+          example: '20210217'
+        toDate:
+          type: string
+          description: yyyymmdd string denoting the end date for the query
+          example: '20210218'
+        limit:
+          maximum: 1000000
+          minimum: 1
+          type: integer
+          description: The maximum number of records that will be returned
+          format: int32
+          default: 10
+        fields:
+          type: array
+          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          items:
+            type: string
+            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            enum:
+              - AVSResponse
+              - AVSResponseKey
+              - CAVVResponse
+              - CAVVResponseKey
+              - CVVResult
+              - CVVResultKey
+              - DCCAmount
+              - DCCCurrency
+              - DCCCurrencyKey
+              - DCCIND
+              - DCCINDKey
+              - ECIIndicator
+              - ECIIndicatorKey
+              - P2PEncryptionType
+              - P2PEncryptionTypeKey
+              - P2PTokenAssurance
+              - P2PTokenAssuranceKey
+              - P2PTokenType
+              - P2PTokenTypeKey
+              - AccountNumber
+              - Amount
+              - ApprovalCode
+              - ApprovalCodeKey
+              - AssocRespCode
+              - AssocRespCodeKey
+              - AuthCode
+              - BanknetRef
+              - BinID
+              - CardExpiryDate
+              - CshbAmount
+              - Currency
+              - CurrencyKey
+              - CustomerName
+              - DeclineReason
+              - DeclineReasonKey
+              - ExternalMid
+              - First6
+              - FraudScore
+              - FuelPurchaseLocation
+              - FuelPurchaseLocationKey
+              - GiftCardNumber
+              - Last4
+              - Lcldt
+              - LinkResponseCode
+              - MerchandiseCode
+              - MerchandiseCodeKey
+              - MerchantCategory
+              - MerchantCategoryKey
+              - MobileWallet
+              - MobileWalletKey
+              - MrchTranId
+              - NativeRejectCode
+              - Network
+              - NetworkKey
+              - NetworkTokenNumber
+              - OldAccountNumber
+              - OrdNo
+              - PartnerOrderID
+              - PaymentMethod
+              - PaymentMethodKey
+              - PaypalAccountNumber
+              - PaypalTransactionID
+              - Processor
+              - ProcessorKey
+              - PumpRegisterNumber
+              - Quantity
+              - Recurring
+              - RecurringKey
+              - ReferenceNumber
+              - RtAction
+              - RtActionKey
+              - RtStatus
+              - RtStatusKey
+              - SendMode
+              - SendModeKey
+              - Seqno
+              - SettleCutOffTime
+              - SiteID
+              - SubType
+              - SubTypeKey
+              - TerminalID
+              - TimeTaken
+              - TokenId
+              - TokenResponseInd
+              - TokenResponseIndKey
+              - TransactionDate
+              - TransactionDateTime
+              - TransactionTime
+              - Trckrid
+              - TxnID
+              - Type
+              - TypeKey
+        filters:
+          $ref: '#/components/schemas/AuthorizationFilters'
+      description: Request details for authorization search
     AuthorizationObj:
       type: object
       properties:
@@ -13038,130 +13144,6 @@ components:
           type: string
           description: Transaction type code e.g. sale, refund etc. (Key)
           example: '2'
-    AuthorizationSearchRequest:
-      required:
-        - fromDate
-        - limit
-        - toDate
-      type: object
-      properties:
-        fromDate:
-          type: string
-          description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
-        toDate:
-          type: string
-          description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
-        limit:
-          maximum: 1000000
-          minimum: 1
-          type: integer
-          description: The maximum number of records that will be returned
-          format: int32
-          default: 10
-        fields:
-          type: array
-          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-          items:
-            type: string
-            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-            enum:
-              - AVSResponse
-              - AVSResponseKey
-              - CAVVResponse
-              - CAVVResponseKey
-              - CVVResult
-              - CVVResultKey
-              - DCCAmount
-              - DCCCurrency
-              - DCCCurrencyKey
-              - DCCIND
-              - DCCINDKey
-              - ECIIndicator
-              - ECIIndicatorKey
-              - P2PEncryptionType
-              - P2PEncryptionTypeKey
-              - P2PTokenAssurance
-              - P2PTokenAssuranceKey
-              - P2PTokenType
-              - P2PTokenTypeKey
-              - AccountNumber
-              - Amount
-              - ApprovalCode
-              - ApprovalCodeKey
-              - AssocRespCode
-              - AssocRespCodeKey
-              - AuthCode
-              - BanknetRef
-              - BinID
-              - CardExpiryDate
-              - CshbAmount
-              - Currency
-              - CurrencyKey
-              - CustomerName
-              - DeclineReason
-              - DeclineReasonKey
-              - ExternalMid
-              - First6
-              - FraudScore
-              - FuelPurchaseLocation
-              - FuelPurchaseLocationKey
-              - GiftCardNumber
-              - Last4
-              - Lcldt
-              - LinkResponseCode
-              - MerchandiseCode
-              - MerchandiseCodeKey
-              - MerchantCategory
-              - MerchantCategoryKey
-              - MobileWallet
-              - MobileWalletKey
-              - MrchTranId
-              - NativeRejectCode
-              - Network
-              - NetworkKey
-              - NetworkTokenNumber
-              - OldAccountNumber
-              - OrdNo
-              - PartnerOrderID
-              - PaymentMethod
-              - PaymentMethodKey
-              - PaypalAccountNumber
-              - PaypalTransactionID
-              - Processor
-              - ProcessorKey
-              - PumpRegisterNumber
-              - Quantity
-              - Recurring
-              - RecurringKey
-              - ReferenceNumber
-              - RtAction
-              - RtActionKey
-              - RtStatus
-              - RtStatusKey
-              - SendMode
-              - SendModeKey
-              - Seqno
-              - SettleCutOffTime
-              - SiteID
-              - SubType
-              - SubTypeKey
-              - TerminalID
-              - TimeTaken
-              - TokenId
-              - TokenResponseInd
-              - TokenResponseIndKey
-              - TransactionDate
-              - TransactionDateTime
-              - TransactionTime
-              - Trckrid
-              - TxnID
-              - Type
-              - TypeKey
-        filters:
-          $ref: '#/components/schemas/AuthorizationFilters'
-      description: Request details for authorization search
     ApplicationDto:
       type: object
       properties:
