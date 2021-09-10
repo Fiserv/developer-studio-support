@@ -41,20 +41,20 @@ featuredFeatures:
       bullet2: Leverage our easy to use tools for real time insight into customer behavior.
       bullet3: Get up and running quickly an easily with our step by step instructions. 
     relatedDocs:
-      - relatedDoc1: 
+      - relatedDoc: 
         title: relatedDoc1 TITle 
         description: relatedDoc1 DESC
         link: "/docs/Examples/allapis.md"
-      - relatedDoc2: 
+      - relatedDoc: 
         title: relatedDoc2 TITle 
         description: relatedDoc2 DESC
         link: "/docs/Examples/allapis.md"
     relatedApis:
-      - relatedApis1: 
+      - relatedApi: 
         title: relatedDoc1 TITle 
         description: relatedDoc1 DESC
         link: ../api/?type=post&path=/v1/authorization/search
-      - relatedApis2: 
+      - relatedApi: 
         title: relatedDoc2 TITle 
         description: relatedDoc2 DESC
         link: ../api/?type=post&path=/v1/authorization/search
@@ -64,20 +64,20 @@ featuredFeatures:
     bullets:
       bullet1: Learn more about our API objects, methods, requests and responses.
     relatedDocs:
-      - relatedDoc1: 
+      - relatedDoc: 
         title: relatedDoc1 TITle 
         description: relatedDoc1 DESC
         link: "/docs/APIs/api-model.md"
-      - relatedDoc2: 
+      - relatedDoc: 
         title: relatedDoc2 TITle 
         description: relatedDoc2 DESC
         link: "/docs/APIs/api-model.md"
     relatedApis:
-      - relatedApis1: 
+      - relatedApi: 
         title: relatedDoc1 TITle 
         description: relatedDoc1 DESC
         link: ../api/?type=post&path=/v1/authorization/search
-      - relatedApis2: 
+      - relatedApi: 
         title: relatedDoc2 TITle 
         description: relatedDoc2 DESC
         link: ../api/?type=post&path=/v1/authorization/search
@@ -98,11 +98,11 @@ featuredFeatures:
         description: relatedDoc2 DESC
         link: "/docs/Security/security.md"
     relatedApis:
-      - relatedApis1: 
+      - relatedApi: 
         title: relatedDoc1 TITle 
         description: relatedDoc1 DESC
         link: ../api/?type=post&path=/v1/authorization/search
-      - relatedApis2: 
+      - relatedApi: 
         title: relatedDoc2 TITle 
         description: relatedDoc2 DESC
         link: ../api/?type=post&path=/v1/authorization/search
