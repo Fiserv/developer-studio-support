@@ -396,6 +396,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SettlementSummaryRequest'
+            example:
+              fromDate: '20210801'
+              toDate: '20210807'
+              summaryBy: TxnDay
         required: true
       responses:
         '200':
@@ -463,6 +467,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SettlementSearchRequest'
+            example:
+              fromDate: '20210801'
+              toDate: '20210807'
+              limit: 2
         required: true
       responses:
         '200':
@@ -937,6 +945,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FundingSummaryRequest'
+            example:
+              fromDate: '20210801'
+              toDate: '20210807'
+              summaryBy: BatchDate
         required: true
       responses:
         '200':
@@ -1004,6 +1016,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FundingSearchRequest'
+            example:
+              fromDate: '20210801'
+              toDate: '20210807'
+              limit: 10
         required: true
       responses:
         '200':
@@ -1138,6 +1154,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ChargebackSummaryRequest'
+            example:
+              fromDate: '20210801'
+              toDate: '20210807'
+              groupBy: WorkType
+              filters:
+                dateType: StatusDate
         required: true
       responses:
         '200':
@@ -1205,6 +1227,12 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ChargebackSearchRequest'
+            example:
+              fromDate: '20210801'
+              toDate: '20210807'
+              limit: 10
+              filters:
+                dateType: StatusDate
         required: true
       responses:
         '200':
@@ -1515,6 +1543,7 @@ components:
         message:
           type: string
           description: Status message associated with the response
+          example: Some message from the service
       description: Default Error/Non-200 response
     UserRequest:
       type: object
@@ -1788,6 +1817,67 @@ components:
             - nl_NL
             - pt_BR
       description: User preferences (locale, language, amount format, date format and time zone) details
+    SettlementFilters:
+      type: object
+      properties:
+        authCode:
+          type: string
+          description: Auth Code, Full match
+        first6:
+          maxLength: 6
+          minLength: 6
+          type: string
+          description: 'First 6 of the card #, Full match'
+        last4:
+          maxLength: 4
+          minLength: 4
+          type: string
+          description: 'Last 4 of the card #, Full match'
+        dateType:
+          type: string
+          description: Search/Analysis date type. default value is settle date
+          enum:
+            - AuthDate
+            - SettleDate
+            - FundedDate
+            - RecordDate
+          default: SettleDate
+        siteIDs:
+          type: array
+          description: Transactions associated with one of the Site IDs specified
+          items:
+            type: string
+            description: Transactions associated with one of the Site IDs specified
+      description: Various filter options for settlement transaction queries
+    SettlementSummaryRequest:
+      required:
+        - fromDate
+        - toDate
+      type: object
+      properties:
+        fromDate:
+          type: string
+          description: yyyymmdd string denoting the start date for the query
+          example: '20210801'
+        toDate:
+          type: string
+          description: yyyymmdd string denoting the end date for the query
+          example: '20210807'
+        summaryBy:
+          type: string
+          description: Summary grouped by this field
+          example: Network
+          enum:
+            - Network
+            - PaymentMethod
+            - TxnDay
+            - TxnWeek
+            - TxnMonth
+            - TxnQuarter
+            - TxnYear
+        filters:
+          $ref: '#/components/schemas/SettlementFilters'
+      description: Request object for settlement summary report creation
     SettlementSummaryResponse:
       type: object
       properties:
@@ -1875,67 +1965,203 @@ components:
           format: double
           example: 0
       description: Summary response object which maps settlement data points returned from the grouped by query request
-    SettlementFilters:
-      type: object
-      properties:
-        authCode:
-          type: string
-          description: Auth Code, Full match
-        first6:
-          maxLength: 6
-          minLength: 6
-          type: string
-          description: 'First 6 of the card #, Full match'
-        last4:
-          maxLength: 4
-          minLength: 4
-          type: string
-          description: 'Last 4 of the card #, Full match'
-        dateType:
-          type: string
-          description: Search/Analysis date type. default value is settle date
-          enum:
-            - AuthDate
-            - SettleDate
-            - FundedDate
-            - RecordDate
-          default: SettleDate
-        siteIDs:
-          type: array
-          description: Transactions associated with one of the Site IDs specified
-          items:
-            type: string
-            description: Transactions associated with one of the Site IDs specified
-      description: Various filter options for settlement transaction queries
-    SettlementSummaryRequest:
+    SettlementSearchRequest:
       required:
         - fromDate
+        - limit
         - toDate
       type: object
       properties:
         fromDate:
           type: string
           description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
+          example: '20210801'
         toDate:
           type: string
           description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
-        summaryBy:
-          type: string
-          description: Summary grouped by this field
-          example: Network
-          enum:
-            - Network
-            - PaymentMethod
-            - TxnDay
-            - TxnWeek
-            - TxnMonth
-            - TxnQuarter
-            - TxnYear
+          example: '20210807'
+        limit:
+          maximum: 1000000
+          minimum: 1
+          type: integer
+          description: The maximum number of records that will be returned
+          format: int32
+          default: 10
+        fields:
+          type: array
+          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          items:
+            type: string
+            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            enum:
+              - ECIIndicator
+              - ECIIndicatorKey
+              - AccountNumber
+              - AcquirerFeeAmount
+              - AcquirerFeePerTranAmount
+              - AcquirerFeePerTranRate
+              - AcquirerRefNo
+              - AdminFeeAmount
+              - AdminFeePerTranAmount
+              - AdminFeePerTranRate
+              - AfdCompletionCode
+              - AirLineTicketNumber
+              - AuthCode
+              - AuthCurrency
+              - AuthCurrencyKey
+              - AuthSource
+              - AuthorizationAmount
+              - AuthorizationDate
+              - AuthorizationResponseCode
+              - AuthorizationType
+              - AvsFlag
+              - BankReferenceNumber
+              - BatchDate
+              - BatchDescription
+              - BatchNo
+              - BatchSequenceID
+              - BatchSlipNumber
+              - BatchUID
+              - BillBackReason
+              - BinID
+              - CaptureMethod
+              - CardExpirationDate
+              - CardPresenceIndicator
+              - CardScheme
+              - CardSchemeDescription
+              - CardUsage
+              - CardholderIDMethod
+              - CardholderNumber
+              - CashBackAmount
+              - CatLevel
+              - CbaFeeAmount
+              - CbaFeePerTranAmount
+              - CbaFeePerTranRate
+              - ChipConditionCode
+              - ClientNumber
+              - ConvinienceFee
+              - Currency
+              - CurrencyKey
+              - CustomTracking
+              - Cvc2Result
+              - Cvv2Result
+              - DbaName
+              - DebitTerminalDate
+              - DebitTerminalTime
+              - DiscountAmount
+              - DriverID
+              - EntryModeSource
+              - EntryModeSourceKey
+              - ExternalMID
+              - First6
+              - FlatRate
+              - ForeignCurrAmount
+              - ForeignCurrRate
+              - FundedDate
+              - ICFeePerTranRate
+              - IcFeeAmount
+              - IcFeePerTranAmount
+              - IfFeeAmount
+              - InfrastructureFeePerTranAmount
+              - InfrastructureFeePerTranRate
+              - IntegrityClass
+              - InvalidTxnInd
+              - InvoiceNo
+              - IsaFeeAmount
+              - IsaFeePerTranAmount
+              - IsaFeePerTranRate
+              - Last4
+              - MarkerID
+              - MarketSpecificIndicator
+              - McCardholderAuthentication
+              - McPrdtId
+              - McSecurityProtocol
+              - MerchantCategory
+              - MerchantCategoryKey
+              - MerchantReferenceNumber
+              - MobileIndicator
+              - MobileWallet
+              - MobileWalletKey
+              - NetSalesCount
+              - Network
+              - NetworkKey
+              - NetworkSecurityFeeAmount
+              - NetworkSecurityFeePerTranAmount
+              - NetworkSecurityFeePerTranRate
+              - NewAuthFee
+              - OdometerReading
+              - OrderNumber
+              - OrigPlanCodeDesc
+              - OriginalPlanCode
+              - PaymentMethod
+              - PaymentMethodKey
+              - PcTaxAmount
+              - PcTerminalCapability
+              - PlanCode
+              - PlanCodeDesc
+              - PlatformID
+              - PosEntryMode
+              - PostedIndicator
+              - ProcessedNetAmount
+              - ProcessedRefundAmount
+              - ProcessedRejectAmount
+              - ProcessedTransactionAmount
+              - Processor
+              - ProcessorKey
+              - ProductCode
+              - ProductCodeKey
+              - PurchaseIdentifier
+              - ReceiptNumber
+              - ReclassCd
+              - ReclassCdKey
+              - RecordDate
+              - RefundCount
+              - RejectCount
+              - RejectReason
+              - RejectReasonCD
+              - SalesCount
+              - SalesTaxAmount
+              - ServiceCode
+              - SettleSpendQualifiedIndicator
+              - SiteID
+              - SiteIDKey
+              - StoreNumber
+              - SubMerchantID
+              - SubMerchantName
+              - SubmittedNetAmount
+              - SubmittedRefundAmount
+              - SubmittedRejectAmount
+              - SubmittedTransactionAmount
+              - SurChargeAmount
+              - SurChargeInd
+              - SwitchFeeAmount
+              - SwitchFeePerTranAmount
+              - SwitchFeePerTranRate
+              - TerminalID
+              - TipAmount
+              - TokenRequesterId
+              - TokenType
+              - TotalAuthAmount
+              - TranId
+              - TranUID
+              - TransactionDate
+              - TransactionMode
+              - TransactionModeKey
+              - TransactionSource
+              - TransactionStatus
+              - TransactionStatusKey
+              - TransactionTime
+              - TrckrNbr
+              - Type
+              - TypeKey
+              - UserData
+              - VehicleNumber
+              - VisaPrdtId
+              - VisaServiceDevelop
+              - VisaTranId
         filters:
           $ref: '#/components/schemas/SettlementFilters'
-      description: Request object for settlement summary report creation
+      description: Request object for Settlement search
     SettlementObj:
       type: object
       properties:
@@ -3245,203 +3471,6 @@ components:
           type: string
           description: Visa (association)  generated ID.
           example: '999999999999999'
-    SettlementSearchRequest:
-      required:
-        - fromDate
-        - limit
-        - toDate
-      type: object
-      properties:
-        fromDate:
-          type: string
-          description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
-        toDate:
-          type: string
-          description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
-        limit:
-          maximum: 1000000
-          minimum: 1
-          type: integer
-          description: The maximum number of records that will be returned
-          format: int32
-          default: 10
-        fields:
-          type: array
-          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-          items:
-            type: string
-            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-            enum:
-              - ECIIndicator
-              - ECIIndicatorKey
-              - AccountNumber
-              - AcquirerFeeAmount
-              - AcquirerFeePerTranAmount
-              - AcquirerFeePerTranRate
-              - AcquirerRefNo
-              - AdminFeeAmount
-              - AdminFeePerTranAmount
-              - AdminFeePerTranRate
-              - AfdCompletionCode
-              - AirLineTicketNumber
-              - AuthCode
-              - AuthCurrency
-              - AuthCurrencyKey
-              - AuthSource
-              - AuthorizationAmount
-              - AuthorizationDate
-              - AuthorizationResponseCode
-              - AuthorizationType
-              - AvsFlag
-              - BankReferenceNumber
-              - BatchDate
-              - BatchDescription
-              - BatchNo
-              - BatchSequenceID
-              - BatchSlipNumber
-              - BatchUID
-              - BillBackReason
-              - BinID
-              - CaptureMethod
-              - CardExpirationDate
-              - CardPresenceIndicator
-              - CardScheme
-              - CardSchemeDescription
-              - CardUsage
-              - CardholderIDMethod
-              - CardholderNumber
-              - CashBackAmount
-              - CatLevel
-              - CbaFeeAmount
-              - CbaFeePerTranAmount
-              - CbaFeePerTranRate
-              - ChipConditionCode
-              - ClientNumber
-              - ConvinienceFee
-              - Currency
-              - CurrencyKey
-              - CustomTracking
-              - Cvc2Result
-              - Cvv2Result
-              - DbaName
-              - DebitTerminalDate
-              - DebitTerminalTime
-              - DiscountAmount
-              - DriverID
-              - EntryModeSource
-              - EntryModeSourceKey
-              - ExternalMID
-              - First6
-              - FlatRate
-              - ForeignCurrAmount
-              - ForeignCurrRate
-              - FundedDate
-              - ICFeePerTranRate
-              - IcFeeAmount
-              - IcFeePerTranAmount
-              - IfFeeAmount
-              - InfrastructureFeePerTranAmount
-              - InfrastructureFeePerTranRate
-              - IntegrityClass
-              - InvalidTxnInd
-              - InvoiceNo
-              - IsaFeeAmount
-              - IsaFeePerTranAmount
-              - IsaFeePerTranRate
-              - Last4
-              - MarkerID
-              - MarketSpecificIndicator
-              - McCardholderAuthentication
-              - McPrdtId
-              - McSecurityProtocol
-              - MerchantCategory
-              - MerchantCategoryKey
-              - MerchantReferenceNumber
-              - MobileIndicator
-              - MobileWallet
-              - MobileWalletKey
-              - NetSalesCount
-              - Network
-              - NetworkKey
-              - NetworkSecurityFeeAmount
-              - NetworkSecurityFeePerTranAmount
-              - NetworkSecurityFeePerTranRate
-              - NewAuthFee
-              - OdometerReading
-              - OrderNumber
-              - OrigPlanCodeDesc
-              - OriginalPlanCode
-              - PaymentMethod
-              - PaymentMethodKey
-              - PcTaxAmount
-              - PcTerminalCapability
-              - PlanCode
-              - PlanCodeDesc
-              - PlatformID
-              - PosEntryMode
-              - PostedIndicator
-              - ProcessedNetAmount
-              - ProcessedRefundAmount
-              - ProcessedRejectAmount
-              - ProcessedTransactionAmount
-              - Processor
-              - ProcessorKey
-              - ProductCode
-              - ProductCodeKey
-              - PurchaseIdentifier
-              - ReceiptNumber
-              - ReclassCd
-              - ReclassCdKey
-              - RecordDate
-              - RefundCount
-              - RejectCount
-              - RejectReason
-              - RejectReasonCD
-              - SalesCount
-              - SalesTaxAmount
-              - ServiceCode
-              - SettleSpendQualifiedIndicator
-              - SiteID
-              - SiteIDKey
-              - StoreNumber
-              - SubMerchantID
-              - SubMerchantName
-              - SubmittedNetAmount
-              - SubmittedRefundAmount
-              - SubmittedRejectAmount
-              - SubmittedTransactionAmount
-              - SurChargeAmount
-              - SurChargeInd
-              - SwitchFeeAmount
-              - SwitchFeePerTranAmount
-              - SwitchFeePerTranRate
-              - TerminalID
-              - TipAmount
-              - TokenRequesterId
-              - TokenType
-              - TotalAuthAmount
-              - TranId
-              - TranUID
-              - TransactionDate
-              - TransactionMode
-              - TransactionModeKey
-              - TransactionSource
-              - TransactionStatus
-              - TransactionStatusKey
-              - TransactionTime
-              - TrckrNbr
-              - Type
-              - TypeKey
-              - UserData
-              - VehicleNumber
-              - VisaPrdtId
-              - VisaServiceDevelop
-              - VisaTranId
-        filters:
-          $ref: '#/components/schemas/SettlementFilters'
-      description: Request object for Settlement search
     RetrievalSummaryResponse:
       type: object
       properties:
@@ -3505,11 +3534,11 @@ components:
         fromDate:
           type: string
           description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
+          example: '20210801'
         toDate:
           type: string
           description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
+          example: '20210807'
         summaryBy:
           type: string
           description: Summary grouped by this field
@@ -4051,7 +4080,7 @@ components:
           type: string
           description: First six digits of card number.
           example: '123456'
-        'fulfilmentDate ':
+        fulfilmentDate:
           type: string
           description: The date on which the retrieval request was fulfilled. Empty if not yet fulfilled.
           example: 12/31/2021
@@ -4103,7 +4132,7 @@ components:
           description: Payment network (interchange) settlement currency for the original presentment, before deduction of charges.
           format: int32
           example: 124
-        'omniPayClientNumber ':
+        omniPayClientNumber:
           type: string
           description: This is the OmniPay Client Number and is the link to the MP feed.
           example: '20049139'
@@ -4218,11 +4247,11 @@ components:
         fromDate:
           type: string
           description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
+          example: '20210801'
         toDate:
           type: string
           description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
+          example: '20210807'
         limit:
           maximum: 1000000
           minimum: 1
@@ -4303,6 +4332,7 @@ components:
         platform:
           type: string
           description: Sites associated with the platform
+          example: Buypass
           enum:
             - Buypass
             - North
@@ -4322,15 +4352,19 @@ components:
         siteID:
           type: string
           description: Platform specific Site ID
+          example: '1111111'
         agentID:
           type: string
           description: Agent hierarchy ID
+          example: '778899445566'
         corporateID:
           type: string
           description: Corporate hierarchy ID
+          example: '112233445566'
         leadID:
           type: string
           description: Lead hierarchy ID
+          example: '778899112233'
       description: Various filter options for sites queries
     SitesSearchRequest:
       type: object
@@ -4506,7 +4540,7 @@ components:
         binID:
           type: string
           description: Unique Bin ID
-          example: '123456'
+          example: '582023'
       description: Various filter options for bin queries
     BinsSearchRequest:
       required:
@@ -6360,11 +6394,11 @@ components:
         fromDate:
           type: string
           description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
+          example: '20210801'
         toDate:
           type: string
           description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
+          example: '20210807'
         limit:
           maximum: 1000000
           minimum: 1
@@ -6525,6 +6559,36 @@ components:
         filters:
           $ref: '#/components/schemas/PrepaidTransactionFilters'
       description: Request object for Prepaid Transactions search.
+    FundingFilters:
+      type: object
+      description: Various filter options for Funding queries
+    FundingSummaryRequest:
+      required:
+        - fromDate
+        - toDate
+      type: object
+      properties:
+        fromDate:
+          type: string
+          description: yyyymmdd string denoting the start date for the query
+          example: '20210801'
+        toDate:
+          type: string
+          description: yyyymmdd string denoting the end date for the query
+          example: '20210807'
+        summaryBy:
+          type: string
+          description: Summary grouped by this field
+          example: ProductCode
+          enum:
+            - MajorCategory
+            - MinorCategory
+            - ProductCode
+            - DdaLast4
+            - BatchDate
+        filters:
+          $ref: '#/components/schemas/FundingFilters'
+      description: Request object for funding summary report creation
     FundingSummaryResponse:
       type: object
       properties:
@@ -6582,36 +6646,93 @@ components:
           format: double
           example: 428
       description: Summary response object which maps the data points returned from the summary request
-    FundingFilters:
-      type: object
-      description: Various filter options for Funding queries
-    FundingSummaryRequest:
+    FundingSearchRequest:
       required:
         - fromDate
+        - limit
         - toDate
       type: object
       properties:
         fromDate:
           type: string
           description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
+          example: '20210801'
         toDate:
           type: string
           description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
-        summaryBy:
-          type: string
-          description: Summary grouped by this field
-          example: ProductCode
-          enum:
-            - MajorCategory
-            - MinorCategory
-            - ProductCode
-            - DdaLast4
-            - BatchDate
+          example: '20210807'
+        limit:
+          maximum: 1000000
+          minimum: 1
+          type: integer
+          description: The maximum number of records that will be returned
+          format: int32
+          default: 10
+        fields:
+          type: array
+          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          items:
+            type: string
+            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            enum:
+              - ServiceChangesAmt
+              - AccountCurrency
+              - AccountCurrentNet
+              - AccountID
+              - AccountNetAmount
+              - AccountType
+              - AddendumARN
+              - AdjustmentsAmt
+              - AirLineTicketNumber
+              - AmountPaid
+              - BankReferenceNo
+              - BatchDate
+              - BatchNo
+              - ChargebackAmt
+              - CreditAmount
+              - Currency
+              - CurrencyKey
+              - Dda
+              - DdaLast4
+              - DdaLength
+              - DebitAmount
+              - DepositAmt
+              - DepositTypeCd
+              - DepositTypeCdKey
+              - FeeSeqCode
+              - FeeSeqDesc
+              - FeesAmt
+              - FundedDate
+              - IcChargesAmt
+              - InterchangeCD
+              - ItemCount
+              - LocalAmount
+              - MajorCategory
+              - MajorCategoryKey
+              - MinorCategory
+              - MinorCategoryKey
+              - NetSalesAmt
+              - PaidByOthersAmt
+              - PaymentRefNo
+              - PaymentStatus
+              - Processor
+              - ProcessorKey
+              - ProductCode
+              - ProductCodeKey
+              - RecordDate
+              - ReferenceNo
+              - ReferenceNumber
+              - RelatedSourceTran
+              - ReversalIndicator
+              - SiteID
+              - TranAmount
+              - TranCategoryCode
+              - TranCategoryDesc
+              - TranTypeCode
+              - ValDate
         filters:
           $ref: '#/components/schemas/FundingFilters'
-      description: Request object for funding summary report creation
+      description: Request object for Funding search
     FundingObj:
       type: object
       properties:
@@ -8505,93 +8626,6 @@ components:
           type: string
           description: Value Date
           example: 12/31/2020
-    FundingSearchRequest:
-      required:
-        - fromDate
-        - limit
-        - toDate
-      type: object
-      properties:
-        fromDate:
-          type: string
-          description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
-        toDate:
-          type: string
-          description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
-        limit:
-          maximum: 1000000
-          minimum: 1
-          type: integer
-          description: The maximum number of records that will be returned
-          format: int32
-          default: 10
-        fields:
-          type: array
-          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-          items:
-            type: string
-            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-            enum:
-              - ServiceChangesAmt
-              - AccountCurrency
-              - AccountCurrentNet
-              - AccountID
-              - AccountNetAmount
-              - AccountType
-              - AddendumARN
-              - AdjustmentsAmt
-              - AirLineTicketNumber
-              - AmountPaid
-              - BankReferenceNo
-              - BatchDate
-              - BatchNo
-              - ChargebackAmt
-              - CreditAmount
-              - Currency
-              - CurrencyKey
-              - Dda
-              - DdaLast4
-              - DdaLength
-              - DebitAmount
-              - DepositAmt
-              - DepositTypeCd
-              - DepositTypeCdKey
-              - FeeSeqCode
-              - FeeSeqDesc
-              - FeesAmt
-              - FundedDate
-              - IcChargesAmt
-              - InterchangeCD
-              - ItemCount
-              - LocalAmount
-              - MajorCategory
-              - MajorCategoryKey
-              - MinorCategory
-              - MinorCategoryKey
-              - NetSalesAmt
-              - PaidByOthersAmt
-              - PaymentRefNo
-              - PaymentStatus
-              - Processor
-              - ProcessorKey
-              - ProductCode
-              - ProductCodeKey
-              - RecordDate
-              - ReferenceNo
-              - ReferenceNumber
-              - RelatedSourceTran
-              - ReversalIndicator
-              - SiteID
-              - TranAmount
-              - TranCategoryCode
-              - TranCategoryDesc
-              - TranTypeCode
-              - ValDate
-        filters:
-          $ref: '#/components/schemas/FundingFilters'
-      description: Request object for Funding search
     DisbursementsObj:
       type: object
       properties:
@@ -8935,6 +8969,10 @@ components:
           description: The available balance of the funds account.
           format: double
           example: 999.99
+        fundsChannelType:
+          type: string
+          description: The channel type for fund activity report.  IE ACH, DEBIT.
+          example: ACH
         fundsComments:
           type: string
           description: Comments associated to the payment transaction.
@@ -9679,11 +9717,11 @@ components:
         fromDate:
           type: string
           description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
+          example: '20210801'
         toDate:
           type: string
           description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
+          example: '20210807'
         limit:
           maximum: 1000000
           minimum: 1
@@ -9732,6 +9770,7 @@ components:
               - FundsAmount
               - FundsApplyDate
               - FundsAvailableBalance
+              - FundsChannelType
               - FundsComments
               - FundsCreateDate
               - FundsCurrency
@@ -9826,37 +9865,6 @@ components:
     DisbursementsFilters:
       type: object
       description: Various filter options for Disbursements queries
-    ChargebackSummaryResponse:
-      type: object
-      properties:
-        currency:
-          type: string
-          description: Currency Information
-          example: USD
-        value:
-          type: string
-          description: The value of the summary by field
-          example: Visa
-        countTotal:
-          type: integer
-          description: Count of Chargebacks
-          format: int64
-          example: 757
-        chargebackAmountTotal:
-          type: number
-          description: Chargeback Amount that is disputed by Cardholder.
-          format: double
-          example: 11909212
-        adjustmentAmountTotal:
-          type: number
-          description: Adjustment Amount that is being disputed.
-          format: double
-          example: 721
-        adjustmentAmountTotaal:
-          type: number
-          format: double
-          writeOnly: true
-      description: Summary response object which maps the data points returned from the summary request
     ChargebackFilters:
       type: object
       properties:
@@ -9904,11 +9912,11 @@ components:
         fromDate:
           type: string
           description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
+          example: '20210801'
         toDate:
           type: string
           description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
+          example: '20210807'
         summaryBy:
           type: string
           description: Summary grouped by this field
@@ -9927,6 +9935,183 @@ components:
         filters:
           $ref: '#/components/schemas/ChargebackFilters'
       description: Request object for chargeback summary report creation
+    ChargebackSummaryResponse:
+      type: object
+      properties:
+        currency:
+          type: string
+          description: Currency Information
+          example: USD
+        value:
+          type: string
+          description: The value of the summary by field
+          example: Visa
+        countTotal:
+          type: integer
+          description: Count of Chargebacks
+          format: int64
+          example: 757
+        chargebackAmountTotal:
+          type: number
+          description: Chargeback Amount that is disputed by Cardholder.
+          format: double
+          example: 11909212
+        adjustmentAmountTotal:
+          type: number
+          description: Adjustment Amount that is being disputed.
+          format: double
+          example: 721
+        adjustmentAmountTotaal:
+          type: number
+          format: double
+          writeOnly: true
+      description: Summary response object which maps the data points returned from the summary request
+    ChargebackSearchRequest:
+      required:
+        - fromDate
+        - limit
+        - toDate
+      type: object
+      properties:
+        fromDate:
+          type: string
+          description: yyyymmdd string denoting the start date for the query
+          example: '20210801'
+        toDate:
+          type: string
+          description: yyyymmdd string denoting the end date for the query
+          example: '20210807'
+        limit:
+          maximum: 1000000
+          minimum: 1
+          type: integer
+          description: The maximum number of records that will be returned
+          format: int32
+          default: 10
+        fields:
+          type: array
+          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          items:
+            type: string
+            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            enum:
+              - Disposition
+              - DispositionKey
+              - ECIndicator
+              - ECIndicatorKey
+              - Reason
+              - ReasonKey
+              - AccountNumber
+              - AdjDate
+              - AdjustmentAmount
+              - AdjustmentAmountSign
+              - AirlineTicketNumber
+              - AuthCode
+              - AuthNetwork
+              - AuthNetworkKey
+              - AuthRecordSequence
+              - BackendProcessor
+              - BackendProcessorKey
+              - BatchNumber
+              - BinId
+              - CaptureMethod
+              - Category
+              - CategoryKey
+              - Ccn
+              - CentralProcessingDate
+              - ChargebackAmount
+              - ChargebackReferenceId
+              - Currency
+              - CurrencyKey
+              - CustomTracking
+              - DebitNetworkId
+              - DebitedMerchant
+              - DispositionDate
+              - DisputeAltID
+              - DisputeAmount
+              - DisputeID
+              - DocumentIndicator
+              - DueDate
+              - ExternalMid
+              - First6
+              - FirstChargebackDate
+              - InvoiceNumber
+              - ItemSlipNumber
+              - Last4
+              - MemberMessageText
+              - MerchantCategory
+              - MerchantCategoryKey
+              - MerchantFUndingAmount
+              - MerchantFundingCurrency
+              - MerchantSettleAmount
+              - MerchantSettleCurrency
+              - MobileIndicator
+              - MobileWallet
+              - MobileWalletKey
+              - NetworkSettleAmount
+              - NetworkSettleCurrency
+              - NonFinancial
+              - NonFinancialKey
+              - OmnipayClienNumber
+              - OrderNumber
+              - OrigPostDate
+              - OrigSlipNumber
+              - OrigTranCurrency
+              - OriginalChargebackSlipNumber
+              - PaymentMethod
+              - PaymentMethodKey
+              - PaypalTransactionID
+              - PpolProgramData
+              - PreDisputeIndicator
+              - PreDisputeIndicatorKey
+              - PreviousTransferToMerchant
+              - ReasonCode
+              - ReceivedDate
+              - ReceivedFromIssuer
+              - Recurring
+              - RecurringKey
+              - ReferenceNumber
+              - Relevance
+              - RelevanceKey
+              - RequestDate
+              - RespondedDate
+              - ResponseReceived
+              - RetrievalRequestId
+              - ReversedByMerchant
+              - ReversedToIssuer
+              - SecondChargebackDate
+              - SendMode
+              - SendModeKey
+              - SiteID
+              - SoftDescriptor
+              - Status
+              - StatusDate
+              - StatusKey
+              - SubmittedMerchantId
+              - SubmittedTxnAmount
+              - SubmittedTxnCurrencyCode
+              - SvcCd
+              - TerminalId
+              - TokenResponseInd
+              - TokenResponseIndKey
+              - TrackingNumber
+              - TransactionAmount
+              - TransactionDate
+              - TransactionType
+              - TransactionTypeKey
+              - UniqueTransactionId
+              - UserData
+              - UserData2
+              - VmeAdditionalAuthMethod
+              - VmeAdditionalAuthReasonCode
+              - WinLoss
+              - WinLossKey
+              - WorkByDate
+              - WorkType
+              - WorkTypeKey
+        filters:
+          $ref: '#/components/schemas/ChargebackFilters'
+      description: Request object for Chargeback search
     ChargeBackObj:
       type: object
       properties:
@@ -10404,10 +10589,6 @@ components:
           type: string
           description: Internal settlement platform. (Key)
           example: '1'
-        batchDate:
-          type: string
-          description: Date group of transactions was settled
-          example: 12/31/2021
         batchNumber:
           type: string
           description: Number assigned to each group of settled transactions
@@ -10655,9 +10836,6 @@ components:
         customTracking:
           type: string
           example: C5SJPA1B1EJ0-6
-        debitNetworkDescription:
-          type: string
-          example: EBT
         debitNetworkId:
           type: string
           example: '060007'
@@ -10811,10 +10989,6 @@ components:
           type: string
           description: If the item type is a 1st or 2nd Chargeback this field is equal to the field Item_Slip, but for representments and transfer this field will indicate which is the related chargeback
           example: '12789346250'
-        partialFlag:
-          type: string
-          description: Flag to Indicate if the Issuer has identified this chargeback as a partial chargeback.
-          example: 'Y'
         paymentMethod:
           type: string
           description: Identifies the method of payment used on the transaction.
@@ -10974,10 +11148,6 @@ components:
           description: The transaction amount in the currency the transaction was processed in at the POS
           format: double
           example: 999.9999
-        submittedTxnAmountSign:
-          type: string
-          description: '+/- '
-          example: '-'
         submittedTxnCurrencyCode:
           type: string
           description: ISO 4217 3 digit code representing the  Currency the transaction was processed in at the POS
@@ -11229,156 +11399,6 @@ components:
           type: string
           description: Various stages of Chargeback resolution. (Key)
           example: '1'
-    ChargebackSearchRequest:
-      required:
-        - fromDate
-        - limit
-        - toDate
-      type: object
-      properties:
-        fromDate:
-          type: string
-          description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
-        toDate:
-          type: string
-          description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
-        limit:
-          maximum: 1000000
-          minimum: 1
-          type: integer
-          description: The maximum number of records that will be returned
-          format: int32
-          default: 10
-        fields:
-          type: array
-          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-          items:
-            type: string
-            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-            enum:
-              - Disposition
-              - DispositionKey
-              - ECIndicator
-              - ECIndicatorKey
-              - Reason
-              - ReasonKey
-              - AccountNumber
-              - AdjDate
-              - AdjustmentAmount
-              - AdjustmentAmountSign
-              - AirlineTicketNumber
-              - AuthCode
-              - AuthNetwork
-              - AuthNetworkKey
-              - AuthRecordSequence
-              - BackendProcessor
-              - BackendProcessorKey
-              - BatchDate
-              - BatchNumber
-              - BinId
-              - CaptureMethod
-              - Category
-              - CategoryKey
-              - Ccn
-              - CentralProcessingDate
-              - ChargebackAmount
-              - ChargebackReferenceId
-              - Currency
-              - CurrencyKey
-              - CustomTracking
-              - DebitNetworkDescription
-              - DebitNetworkId
-              - DebitedMerchant
-              - DispositionDate
-              - DisputeAltID
-              - DisputeAmount
-              - DisputeID
-              - DocumentIndicator
-              - DueDate
-              - ExternalMid
-              - First6
-              - FirstChargebackDate
-              - InvoiceNumber
-              - ItemSlipNumber
-              - Last4
-              - MemberMessageText
-              - MerchantCategory
-              - MerchantCategoryKey
-              - MerchantFUndingAmount
-              - MerchantFundingCurrency
-              - MerchantSettleAmount
-              - MerchantSettleCurrency
-              - MobileIndicator
-              - MobileWallet
-              - MobileWalletKey
-              - NetworkSettleAmount
-              - NetworkSettleCurrency
-              - NonFinancial
-              - NonFinancialKey
-              - OmnipayClienNumber
-              - OrderNumber
-              - OrigPostDate
-              - OrigSlipNumber
-              - OrigTranCurrency
-              - OriginalChargebackSlipNumber
-              - PartialFlag
-              - PaymentMethod
-              - PaymentMethodKey
-              - PaypalTransactionID
-              - PpolProgramData
-              - PreDisputeIndicator
-              - PreDisputeIndicatorKey
-              - PreviousTransferToMerchant
-              - ReasonCode
-              - ReceivedDate
-              - ReceivedFromIssuer
-              - Recurring
-              - RecurringKey
-              - ReferenceNumber
-              - Relevance
-              - RelevanceKey
-              - RequestDate
-              - RespondedDate
-              - ResponseReceived
-              - RetrievalRequestId
-              - ReversedByMerchant
-              - ReversedToIssuer
-              - SecondChargebackDate
-              - SendMode
-              - SendModeKey
-              - SiteID
-              - SoftDescriptor
-              - Status
-              - StatusDate
-              - StatusKey
-              - SubmittedMerchantId
-              - SubmittedTxnAmount
-              - SubmittedTxnAmountSign
-              - SubmittedTxnCurrencyCode
-              - SvcCd
-              - TerminalId
-              - TokenResponseInd
-              - TokenResponseIndKey
-              - TrackingNumber
-              - TransactionAmount
-              - TransactionDate
-              - TransactionType
-              - TransactionTypeKey
-              - UniqueTransactionId
-              - UserData
-              - UserData2
-              - VmeAdditionalAuthMethod
-              - VmeAdditionalAuthReasonCode
-              - WinLoss
-              - WinLossKey
-              - WorkByDate
-              - WorkType
-              - WorkTypeKey
-        filters:
-          $ref: '#/components/schemas/ChargebackFilters'
-      description: Request object for Chargeback search
     AuthorizationFilters:
       type: object
       properties:
@@ -11522,11 +11542,11 @@ components:
         fromDate:
           type: string
           description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
+          example: '20210801'
         toDate:
           type: string
           description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
+          example: '20210807'
         summaryBy:
           type: string
           description: Summary grouped by this field
@@ -11583,11 +11603,11 @@ components:
         fromDate:
           type: string
           description: yyyymmdd string denoting the start date for the query
-          example: '20210217'
+          example: '20210801'
         toDate:
           type: string
           description: yyyymmdd string denoting the end date for the query
-          example: '20210218'
+          example: '20210807'
         limit:
           maximum: 1000000
           minimum: 1
@@ -11615,6 +11635,7 @@ components:
               - DCCINDKey
               - ECIIndicator
               - ECIIndicatorKey
+              - IssuerScript
               - P2PEncryptionType
               - P2PEncryptionTypeKey
               - P2PTokenAssurance
@@ -11622,34 +11643,65 @@ components:
               - P2PTokenType
               - P2PTokenTypeKey
               - AccountNumber
+              - Aci
+              - AddendumNumber
+              - AdjustmentAmount
+              - AdjustmentIndicator
+              - AlternativeMerchantId
               - Amount
               - ApprovalCode
               - ApprovalCodeKey
               - AssocRespCode
               - AssocRespCodeKey
+              - AuthAmountSign
               - AuthCode
+              - AuthorizationTraceNumber
+              - BankFiid
               - BanknetRef
               - BinID
               - CardExpiryDate
+              - CardLevelResult
+              - CashBackIndicator
+              - CavvDowngradeReason
+              - CrossBorderIndicator
               - CshbAmount
               - Currency
               - CurrencyKey
               - CustomerName
+              - DailyRentalRate
+              - DccCountryCode
+              - DccRate
               - DeclineReason
               - DeclineReasonKey
+              - DriverID
               - ExternalMid
+              - ExtraChargeAmount
               - First6
+              - FolioNumber
               - FraudScore
               - FuelPurchaseLocation
               - FuelPurchaseLocationKey
               - GiftCardNumber
+              - IssuerScriptResults
               - Last4
               - Lcldt
               - LinkResponseCode
+              - LodgNoShowIndicator
+              - LodgingAmount
+              - LodgingArrivalDate
+              - LodgingChargeType
+              - LodgingDailyRoomRate
+              - LodgingDailyRoomTax
+              - LodgingDuration
+              - LodgingOtherSvcCharges
+              - MasterCardBanknetDt
+              - McPromotionCode
               - MerchandiseCode
               - MerchandiseCodeKey
               - MerchantCategory
               - MerchantCategoryKey
+              - MessageTypeIdentifier
+              - MktSpecificDataInd
               - MobileWallet
               - MobileWalletKey
               - MrchTranId
@@ -11657,20 +11709,38 @@ components:
               - Network
               - NetworkKey
               - NetworkTokenNumber
+              - OdometerReading
               - OldAccountNumber
               - OrdNo
+              - OrigAuthResponse
+              - ParID
+              - PartialApprovalFlag
               - PartnerOrderID
               - PaymentMethod
               - PaymentMethodKey
               - PaypalAccountNumber
               - PaypalTransactionID
+              - PosConditionCode
+              - PosTermCap
               - Processor
               - ProcessorKey
+              - ProductAmount
+              - ProductQuantity
+              - ProductUnitPrice
               - PumpRegisterNumber
               - Quantity
+              - RecordNumber
               - Recurring
               - RecurringKey
               - ReferenceNumber
+              - RentalAgreementNumber
+              - RentalClass
+              - RentalDate
+              - RentalReturnCity
+              - RentalReturnDate
+              - RentalReturnLocationID
+              - RentalState
+              - RenterName
               - RtAction
               - RtActionKey
               - RtStatus
@@ -11678,15 +11748,21 @@ components:
               - SendMode
               - SendModeKey
               - Seqno
+              - ServerId
               - SettleCutOffTime
               - SiteID
+              - SourceType
               - SubType
               - SubTypeKey
+              - TermCapCode
               - TerminalID
+              - TerminalSerialNumber
+              - TerminalType
               - TimeTaken
               - TokenId
               - TokenResponseInd
               - TokenResponseIndKey
+              - TppVarID
               - TransactionDate
               - TransactionDateTime
               - TransactionTime
@@ -11694,6 +11770,11 @@ components:
               - TxnID
               - Type
               - TypeKey
+              - UnpredictableNumber
+              - VatReferenceNumber
+              - VelocityIndicator
+              - VisaValidCode
+              - VoucherNumber
         filters:
           $ref: '#/components/schemas/AuthorizationFilters'
       description: Request details for authorization search
@@ -12012,6 +12093,10 @@ components:
           type: string
           description: Indicates the Electronic Commerce Indicator used for the transaction. (Key)
           example: '4'
+        IssuerScript:
+          type: string
+          description: Identifies the issuer script commands the issuer sends to the card in the response
+          example: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
         P2PEncryptionType:
           type: string
           description: 'Point to Point Encryption: Identifies the encryption type.'
@@ -12059,6 +12144,26 @@ components:
           type: string
           description: Card number used for authorization transaction.
           example: 666666XXXXXX4444
+        aci:
+          type: string
+          description: Authorization Characteristics Indicators
+          example: 'Y'
+        addendumNumber:
+          type: string
+          description: Used in conjunction to the item No to uniquely identify a record
+          example: Z9
+        adjustmentAmount:
+          type: string
+          description: Adjustment Amount
+          example: '9999999999'
+        adjustmentIndicator:
+          type: string
+          description: Adjustment Indicator
+          example: A
+        alternativeMerchantId:
+          type: string
+          description: Identifies the alternative Merchant Id
+          example: 012345ABCDEF
         amount:
           type: number
           description: Amount requested for the authorization transaction.
@@ -12209,10 +12314,22 @@ components:
           type: string
           description: Identifies the initial association response code for the transaction. (Key)
           example: '1'
+        authAmountSign:
+          type: string
+          description: 'Identifies the amount sign of  the transaction : +/-'
+          example: +
         authCode:
           type: string
           description: Authorization code from Association(s). Generally 6/7 alphanumeric code that gets printed on the receipt.
           example: 99AA99
+        authorizationTraceNumber:
+          type: string
+          description: Identifies the authorization’s Trace Number
+          example: 98765ABCD
+        bankFiid:
+          type: string
+          description: Identifies the Bank FIID for a financial institution or customer
+          example: 09AZ
         banknetRef:
           type: string
           description: Indicates Mastercard assigned banknet reference number.
@@ -12225,6 +12342,22 @@ components:
           type: string
           description: Indicates expiration date on card.
           example: 12/24
+        cardLevelResult:
+          type: string
+          description: Result obtained from the account type & track data type information supplied by the issuer.
+          example: '003140252999074'
+        cashBackIndicator:
+          type: string
+          description: Indicates whether or not the transaction is a cash back transaction
+          example: C
+        cavvDowngradeReason:
+          type: string
+          description: Identifies the Mastercard CAVV Downgrade Reason
+          example: T
+        crossBorderIndicator:
+          type: string
+          description: Indicates whether the transaction qualifies as a Fee Program transaction
+          example: 'Y'
         cshbAmount:
           type: number
           description: Cash back amount provided for the transaction.
@@ -12430,6 +12563,19 @@ components:
           type: string
           description: Name on the Card.
           example: JXXXXXXXE
+        dailyRentalRate:
+          type: string
+          description: Daily car rental rate
+          example: '9999999999'
+        dccCountryCode:
+          type: string
+          description: Identifies the country in which the acquiring institution resides
+          example: USA
+        dccRate:
+          type: number
+          description: 'Identifies the non-US currency conversion rate used to convert the value of Total Transaction Amt to the value of DCC Amt '
+          format: double
+          example: 999999999.99
         declineReason:
           type: string
           description: Identifies the decline reason for the transaction.
@@ -12563,14 +12709,26 @@ components:
           type: string
           description: Identifies the decline reason for the transaction. (Key)
           example: '3'
+        driverID:
+          type: string
+          description: Driver License Number
+          example: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
         externalMid:
           type: string
           description: External Merchant ID.
           example: '9999999999'
+        extraChargeAmount:
+          type: string
+          description: Additional charges added to customer bill after check-out
+          example: '999999'
         first6:
           type: string
           description: First six digits of card number.
           example: '666666'
+        folioNumber:
+          type: string
+          description: Identifies the portfolio number associated with the transaction
+          example: 012345ABCD
         fraudScore:
           type: integer
           description: Indicates the fraud score on the transaction.
@@ -12588,6 +12746,10 @@ components:
           type: string
           description: Gift Card Number used for authorization transaction.
           example: '9999999999999999'
+        issuerScriptResults:
+          type: string
+          description: Identifies the results of script processing
+          example: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
         last4:
           type: string
           description: Last four digits of card number.
@@ -12600,6 +12762,46 @@ components:
           type: string
           description: Old Card number.
           example: A99
+        lodgNoShowIndicator:
+          type: string
+          description: Lodging/Rental No Show Indicator
+          example: 'Y'
+        lodgingAmount:
+          type: string
+          description: Identifies the room rate for Amex or the total authorized amount for Visa.
+          example: '9.9999999999E8'
+        lodgingArrivalDate:
+          type: string
+          description: Identifies the check-in date in the transaction
+          example: '20201231'
+        lodgingChargeType:
+          type: string
+          description: Identifies the charge type or preferred customer indicator/no show indicator
+          example: Z
+        lodgingDailyRoomRate:
+          type: string
+          description: Lodging Daily Room Rate
+          example: '99999'
+        lodgingDailyRoomTax:
+          type: string
+          description: Lodging Daily Room Tax
+          example: '9999999'
+        lodgingDuration:
+          type: string
+          description: Identifies the number of days of lodging in the transaction
+          example: '9999'
+        lodgingOtherSvcCharges:
+          type: string
+          description: Lodging Other Service Charges
+          example: '999999999'
+        masterCardBanknetDt:
+          type: string
+          description: Identifies the date of the authorisation response received from MasterCard.
+          example: '1230'
+        mcPromotionCode:
+          type: string
+          description: Identifies the MC Promotion Code
+          example: ZXY987
         merchandiseCode:
           type: string
           description: Describes the type of fuel purchased.
@@ -12681,6 +12883,14 @@ components:
           type: string
           description: Identifies the standard merchant category code assigned to the transaction. (Key)
           example: Fast Food Restaurants (5814)
+        messageTypeIdentifier:
+          type: string
+          description: ' Message Type Identifier (MTID) of the response message'
+          example: 99ZZ
+        mktSpecificDataInd:
+          type: string
+          description: Identifies the data’s market type
+          example: Z
         mobileWallet:
           type: string
           description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.).
@@ -12765,6 +12975,10 @@ components:
           type: string
           description: Network Token Number
           example: A99AA99AA99A
+        odometerReading:
+          type: string
+          description: Odometer Reading
+          example: '99999999'
         oldAccountNumber:
           type: string
           description: Old Card number.
@@ -12773,6 +12987,18 @@ components:
           type: string
           description: Order Number sent by merchant.
           example: '999999999999'
+        origAuthResponse:
+          type: string
+          description: Original Authorization Response
+          example: AB98
+        parID:
+          type: string
+          description: Par ID
+          example: 0123456789ABCDEFGHIJKLP
+        partialApprovalFlag:
+          type: string
+          description: Indicates whether Partial Approval processing is supported
+          example: A
         partnerOrderID:
           type: string
           description: Order identifier originated from Merchant
@@ -12806,6 +13032,14 @@ components:
           type: string
           description: Paypal Transaction id.
           example: AAA999AAA999
+        posConditionCode:
+          type: string
+          description: Identifies the POS Condition Code
+          example: 9Z
+        posTermCap:
+          type: string
+          description: Identifies the term-cap sent in the initial or original authorization request
+          example: 0123456789ABCDEFGHIJKLP
         processor:
           type: string
           description: Identifies the originating platform (Switch).
@@ -12830,6 +13064,21 @@ components:
           type: string
           description: Identifies the originating platform (Switch). (Key)
           example: '1'
+        productAmount:
+          type: number
+          description: Identifies the amount of the item described in this record
+          format: double
+          example: 9999999.99
+        productQuantity:
+          type: number
+          description: Identifies the number of units in the transaction.
+          format: double
+          example: 9999999.99
+        productUnitPrice:
+          type: number
+          description: Identifies the unit price of the product described in this record.
+          format: double
+          example: 9999999.99
         pumpRegisterNumber:
           type: string
           description: Identifies the pump number.
@@ -12839,6 +13088,10 @@ components:
           description: Indicates the quantity of gas in gallons purchased.
           format: double
           example: 999.999
+        recordNumber:
+          type: string
+          description: This internal number is the unique identifier on the OmniPay platform for the authorizations
+          example: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
         recurring:
           type: string
           description: Describes the recurrence type for the transaction.
@@ -12857,6 +13110,38 @@ components:
           type: string
           description: Authorizer retrieval reference number, an unique RRN issued by the authorizer for each transaction.
           example: '9999999999'
+        rentalAgreementNumber:
+          type: string
+          description: Invoice number of original Rental Agreement
+          example: 99999ZZZZZ
+        rentalClass:
+          type: string
+          description: Car rental classification
+          example: ZZZZ
+        rentalDate:
+          type: string
+          description: Identifies the Rental Date
+          example: '20201231'
+        rentalReturnCity:
+          type: string
+          description: Renter Return City
+          example: ABCDEFGHIJKLM
+        rentalReturnDate:
+          type: string
+          description: Car Rental Return Date
+          example: '201231'
+        rentalReturnLocationID:
+          type: string
+          description: Address, phone number, etc. Identifying Rental Return Location
+          example: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        rentalState:
+          type: string
+          description: The State, County or Province where the rented car was picked up
+          example: NY
+        renterName:
+          type: string
+          description: Identifies the Renter Name
+          example: ABCDEFGHIJKLMNOPQRSTUVWXYZ
         rtAction:
           type: string
           description: 'Card Account Updater: Identifies the action that was taken on the account.'
@@ -12904,6 +13189,10 @@ components:
           type: string
           description: An unique reference number assigned to a transactions by the merchant, and will be returned as is in the response message if exist.
           example: '999999'
+        serverId:
+          type: string
+          description: Indicates server Id for certain types of transactions like eating joints
+          example: Z99
         settleCutOffTime:
           type: integer
           description: Cutoff time setup for settlement of transaction(s) for a Merchant
@@ -12914,6 +13203,10 @@ components:
           description: An unique identifier assigned to the merchant. Also known as a MID.
           format: int64
           example: 123456789123
+        sourceType:
+          type: string
+          description: Indicates Source Type
+          example: Z
         subType:
           type: string
           description: Transaction sub type codes e.g. Pin, Signature, etc.
@@ -12928,10 +13221,22 @@ components:
           type: string
           description: Transaction sub type codes e.g. Pin, Signature, etc. (Key)
           example: '0'
+        termCapCode:
+          type: string
+          description: Identifies the transaction capabilities of the terminal associated with the transaction
+          example: 099AZZ
         terminalID:
           type: string
           description: Identifies terminal identifier for the transaction.
           example: '99'
+        terminalSerialNumber:
+          type: string
+          description: Identifies the Interface Device (IFD) serial number
+          example: ABCD9876
+        terminalType:
+          type: string
+          description: Identifies the terminal type
+          example: 9AZ
         timeTaken:
           type: integer
           description: Indicates time taken to send a transaction to issuer.
@@ -13086,6 +13391,10 @@ components:
           type: string
           description: Tokenization response indicator. (Key)
           example: '0'
+        tppVarID:
+          type: string
+          description: Identifies the Third Party Processor or Value Added Reseller involved in the transaction
+          example: 987ABC
         transactionDate:
           type: string
           description: Date of the authorization transaction.
@@ -13144,6 +13453,26 @@ components:
           type: string
           description: Transaction type code e.g. sale, refund etc. (Key)
           example: '2'
+        unpredictableNumber:
+          type: string
+          description: Identifies a random number generated by the device to add additional variability to the cryptogram
+          example: ZBGT9876
+        vatReferenceNumber:
+          type: string
+          description: Identification number assigned by the taxing authorities to the Purchasing Company
+          example: 0123456789ABCDE
+        velocityIndicator:
+          type: string
+          description: Indicating whether this record is under Velocity controls
+          example: 'Y'
+        visaValidCode:
+          type: string
+          description: Identifies the Visa Valid Code
+          example: ZZ99
+        voucherNumber:
+          type: string
+          description: Identifies the voucher number in the transaction
+          example: 0123456789ABCDE
     ApplicationDto:
       type: object
       properties:
@@ -13213,13 +13542,13 @@ components:
             type: string
             description: Determines the user attribute value for respective application
             example: '["4"]'
-        isReferencedValue:
-          type: boolean
-          description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
-          example: true
         isRequired:
           type: boolean
           description: Determines if respective attribute is required to provision the application for user
+          example: true
+        isReferencedValue:
+          type: boolean
+          description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
           example: true
       description: '// Respective Application specific attributes(For example: Entitlements)'
     AttributeOptionDto:
