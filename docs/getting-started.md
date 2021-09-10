@@ -12,5 +12,7 @@ The Fiserv Reporting APIs are built on the foundation of REST. The APIs accept s
 
 ## API Structure
 
+![reportingoverview](../../assets/images/reportingoverview.jpeg)
+
 ## Data Retrieval
 >Data can be accessed in two ways. Each domain model supports both itemized transaction download as well as summarized data. In order to utilize the API for the data that you are interested, the developer will need to retrieve the meta data associated with that domain model. 
