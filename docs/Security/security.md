@@ -1,14 +1,51 @@
-# Security
+# Domain Models
 
-## API Keys
+#### What are Domain Models?
+Domain models represent the type of data that you may be interested in.  IE authorization transactions, chargebacks, etc. Reporting supports the following domain models. 
+
+#### Authorizations 
+>Authorizations refers to the transactions as soon as they are received by the receiving end point. An authorization can either be Approved or Declined. There are many details associated with the transaction that will determine where the authorization is ultimately routed to. The transaction details are captured in this report.
+
+#### Chargebacks
+>The Disputes Overview provides an overview of Outstanding, Reversed, and Closed Chargebacks. Merchants can quickly see the total number of Open, Fulfilled, and Expired Retrievals, as well as the total number of Chargebacks that are Open, Closed, and Reversed.
+
+#### Disbursements
+>Fiserv’s Digital Disbursement product allows a business to create a payment to a consumer (B2C) or another business (B2B) electronically.  Likewise, the product allows the recipient to select the method to be used to disburse the payment.
+>
+>The basic steps used to complete a Digital Disbursement are as follows:
+> - Merchant Identifies the Recipient(s)
+> - Merchant Initiates the Payment(s)
+> - Merchant Approves the Payment(s) via Workflow Management 
+> - Merchant Notifies the Recipient(s)
+> - Recipient accepts the Payment (Acceptance Process)
+> - Recipient selects a Disbursement Method
+> - Fiserv disburses Funds to the recipient  via the chosen method.
+
+#### Fraud Detect
+>Fraudsters are continually becoming more sophisticated and discovering new ways to steal sensitive customer data. As businesses and financial institutions strive to find fraud mitigation strategies, First Data provides an integrated and powerful solution that can address total loss prevention needs for payment and non-payment fraud.
+>
+>Fraud Detect is an ecommerce solution that enables merchants to reduce chargebacks while driving profits and providing a frictionless customer experience.  Based on machine learning that uses complex rules and algorithms, it provides real time, risk-based scoring decisions.  Fraud Detect’s machine learning solution utilizes decisions made by artificial intelligence and human analysis to improve accuracy and effectiveness.  
+
+#### Funding
+>Funding activity denotes what was transferred into the merchant account, broken down by deposit and various fees. Funding reports are used in the reconciliation process to the merchant bank account. Any adjustments will be shown as deductions made from the merchant's total sales (chargebacks, fees, interchange charges, etc. 
+
+#### Retrievals
+>While there are many reasons an issuing bank may send a retrieval request, the notification process can be very simple. The Retrievals selection will help you facilitate the process of retrieving and fulfilling sales draft requests. In some instances, unanswered retrieval requests can result in a chargeback being initiated by the issuing bank.
+
+#### Settlements
+>The Search option allows you to perform searches on specific card numbers over time. This report option provides a list of transactions associated with a specific cardholder account number for up to 13 months.
+
+#### Security
+
+#### API Keys
 An API key is a string value passed by a client application to the provisioned API proxies. The key uniquely identifies the client application. The application developer embeds the consumer key in the client application header. The client application must present the consumer key for each request. API Services verifies the consumer key before permitting the applications's request.
 
-## Authentication
+#### Authentication
 Fiserv Reporting API authentication is based on the API keys concept. Each consumer will be assigned their own set of API keys that allow message passing to and from the exposed RESTful interface. Your API keys restrict data to only the owners of that data set. 
 
 Your assigned API keys perform an [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication) by passing the assigned key via the request header. 
 
-### Authenticated Request
+#### Authenticated Request
 ```javascript
 curl -X GET "https://cat.api.firstdata.com/reporting/fraud/search/getMetaData" -H "accept: application/json" -H "apikey: YOURAPIKEY"
 ```
@@ -17,22 +54,22 @@ For more information on creating and using API keys for your organization, pleas
 
 ---
 
-## Access Reporting APIs
+#### Access Reporting APIs
 
 Get up and running with access to our development portal to use our Reporting APis.
 
-### 1. Get Access to our Developer Platform
+#### 1. Get Access to our Developer Platform
 
 Request and create a developer account in the Developer Portal.
 
 > After registration the developer will have an instant access to Reporting APIs.
 
-### 2. Generate an API key
+#### 2. Generate an API key
 
 Go to the Reporting page and create a Sandbox app to obtain your client APIKey and APISecret.
 
 > These are required in the Authentication Header.
 
-### 3. Constructing the API call
+#### 3. Constructing the API call
 
 Construct an [API request](?path=docs/APIs/api-model.md) to use the Reporting APIs.
