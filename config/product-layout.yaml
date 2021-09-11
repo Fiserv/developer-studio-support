@@ -55,7 +55,7 @@ featuredFeatures:
         description: relatedDoc1 DESC
         type: "post"        
         path: "/v1/authorization/search"
-      - relatedApi: 
+      - relatedAPI: 
         title: relatedDoc2 TITle 
         type: "post"        
         path: "/v1/authorization/search"
