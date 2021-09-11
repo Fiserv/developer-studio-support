@@ -49,15 +49,16 @@ featuredFeatures:
         title: relatedDoc2 TITle 
         description: relatedDoc2 DESC
         link: "/docs/Examples/allapis.md"
-    relatedApis:
-      - relatedApi: 
+    relatedAPIs:
+      - relatedAPI: 
         title: relatedDoc1 TITle 
         description: relatedDoc1 DESC
-        link: ../api/?type=post&path=/v1/authorization/search
+        type: "post"        
+        path: "/v1/authorization/search"
       - relatedApi: 
         title: relatedDoc2 TITle 
-        description: relatedDoc2 DESC
-        link: ../api/?type=post&path=/v1/authorization/search
+        type: "post"        
+        path: "/v1/authorization/search"
   - title: Build Your Merchant Portal
     description: Utilize the set of easy-to-use APIs to build your own online experience for your merchants, your intranet portal or banking/merchant integrated suites.
     tags: ["Enterprise"]
@@ -72,15 +73,16 @@ featuredFeatures:
         title: relatedDoc2 TITle 
         description: relatedDoc2 DESC
         link: "/docs/APIs/api-model.md"
-    relatedApis:
-      - relatedApi: 
+    relatedAPIs:
+      - relatedAPI: 
         title: relatedDoc1 TITle 
         description: relatedDoc1 DESC
-        link: ../api/?type=post&path=/v1/authorization/search
-      - relatedApi: 
+        type: "post"        
+        path: "/v1/authorization/search"
+      - relatedAPI: 
         title: relatedDoc2 TITle 
-        description: relatedDoc2 DESC
-        link: ../api/?type=post&path=/v1/authorization/search
+        type: "post"        
+        path: "/v1/authorization/search"
   - title: Data Feeds
     description: Setup native integrations with AWS, Azure or GCP to receive your data as soon as they are available and query feed status. Get near real-time data shares natively within Snowflake.
     tags: ["Enterprise"]
@@ -97,15 +99,16 @@ featuredFeatures:
         title: relatedDoc2 TITle 
         description: relatedDoc2 DESC
         link: "/docs/Security/security.md"
-    relatedApis:
-      - relatedApi: 
+    relatedAPIs:
+      - relatedAPI: 
         title: relatedDoc1 TITle 
         description: relatedDoc1 DESC
-        link: ../api/?type=post&path=/v1/authorization/search
-      - relatedApi: 
+        type: "post"        
+        path: "/v1/authorization/search"
+      - relatedAPI: 
         title: relatedDoc2 TITle 
-        description: relatedDoc2 DESC
-        link: ../api/?type=post&path=/v1/authorization/search
+        type: "post"        
+        path: "/v1/authorization/search"
 featuredAPIs:
   - name: Authorization Transactions
     description: Provides a list of transactions and their attributes.
