@@ -40,13 +40,49 @@ featuredFeatures:
       bullet1: Browse working sample of our integrations. 
       bullet2: Leverage our easy to use tools for real time insight into customer behavior.
       bullet3: Get up and running quickly an easily with our step by step instructions. 
-    links: ["/docs/Examples/allapis.md"]
+    relatedDocs:
+      - relatedDoc: 
+        title: relatedDoc1 TITle 
+        description: relatedDoc1 DESC
+        link: "/docs/Examples/allapis.md"
+      - relatedDoc: 
+        title: relatedDoc2 TITle 
+        description: relatedDoc2 DESC
+        link: "/docs/Examples/allapis.md"
+    relatedAPIs:
+      - relatedAPI: 
+        title: relatedDoc1 TITle 
+        description: relatedDoc1 DESC
+        type: "post"        
+        path: "/v1/authorization/search"
+      - relatedAPI: 
+        title: relatedDoc2 TITle 
+        type: "post"        
+        path: "/v1/authorization/search"
   - title: Build Your Merchant Portal
     description: Utilize the set of easy-to-use APIs to build your own online experience for your merchants, your intranet portal or banking/merchant integrated suites.
     tags: ["Enterprise"]
     bullets:
-      bullet1: Learn more about our API objects, methods, requests and responses. 
-    links: ["docs/APIs/api-model.md"]
+      bullet1: Learn more about our API objects, methods, requests and responses.
+    relatedDocs:
+      - relatedDoc: 
+        title: relatedDoc1 TITle 
+        description: relatedDoc1 DESC
+        link: "/docs/APIs/api-model.md"
+      - relatedDoc: 
+        title: relatedDoc2 TITle 
+        description: relatedDoc2 DESC
+        link: "/docs/APIs/api-model.md"
+    relatedAPIs:
+      - relatedAPI: 
+        title: relatedDoc1 TITle 
+        description: relatedDoc1 DESC
+        type: "post"        
+        path: "/v1/authorization/search"
+      - relatedAPI: 
+        title: relatedDoc2 TITle 
+        type: "post"        
+        path: "/v1/authorization/search"
   - title: Data Feeds
     description: Setup native integrations with AWS, Azure or GCP to receive your data as soon as they are available and query feed status. Get near real-time data shares natively within Snowflake.
     tags: ["Enterprise"]
@@ -54,7 +90,25 @@ featuredFeatures:
       bullet1: Create, manage and utilize developer api tokens in order to protect customer data.
       bullet2: Uniquely identify and track developer access.
       bullet3: Grant accessibilty to only those groups who it is required. 
-    links: ["/docs/Security/security.md"]
+    relatedDocs:
+      - relatedDoc1: 
+        title: relatedDoc1 TITle 
+        description: relatedDoc1 DESC
+        link: "/docs/APIs/data_feeds.md"
+      - relatedDoc2: 
+        title: relatedDoc2 TITle 
+        description: relatedDoc2 DESC
+        link: "/docs/APIs/data_feeds.md"
+    relatedAPIs:
+      - relatedAPI: 
+        title: relatedDoc1 TITle 
+        description: relatedDoc1 DESC
+        type: "post"        
+        path: "/v1/authorization/search"
+      - relatedAPI: 
+        title: relatedDoc2 TITle 
+        type: "post"        
+        path: "/v1/authorization/search"
 featuredAPIs:
   - name: Authorization Transactions
     description: Provides a list of transactions and their attributes.
