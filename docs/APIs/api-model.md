@@ -1,6 +1,8 @@
-# Merchant Portal Reporting
+# Merchant Reporting Portal
 
-[TBD] pls find attached Reporting image for better understanding 
+You can build your own integrated merchant portal experience utilizing the APIs available here. Whether it is for a responsive web application or a native mobile application, all the APIs needed to build thee experience are available.
+ 
+Here is a sample Merchant Dashboard we created to show case the APIs. Click here (coming soon) on your favorite browser to see the dashboard live in-action and trace the exact API calls invoked. 
 
 ![searchsummary](../../assets/images/searchsummary.png)
 
