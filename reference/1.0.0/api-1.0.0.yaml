@@ -1304,10 +1304,36 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AuthorizationSummaryRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              summaryBy: Network
+            examples:
+              Auth summary:
+                description: Auth summary
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+              Auth summary by Network:
+                description: Auth summary by Network
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: Network
+              Auth summary for a store by Payment Method:
+                description: Auth summary for a store by Payment Method
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: PaymentMethod
+                  filters:
+                    siteIDs:
+                      - '1111111'
+              Auth trend for a store:
+                description: Auth trend for a store
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: TxnDay
+                  filters:
+                    siteIDs:
+                      - '1111111'
         required: true
       responses:
         '200':
@@ -1376,8 +1402,8 @@ paths:
             schema:
               $ref: '#/components/schemas/AuthorizationSearchRequest'
             examples:
-              Default:
-                description: Default
+              List auths:
+                description: List auths
                 value:
                   fromDate: '20210801'
                   toDate: '20210807'
@@ -1412,13 +1438,30 @@ paths:
                   filters:
                     authCode: I7B1Q1
                     last4: '0000'
-              List auths for a specific store:
-                description: List auths for a specific store
+              List declined auths:
+                description: List declined auths
                 value:
                   fromDate: '20210801'
                   toDate: '20210807'
                   limit: 3
                   fields:
+                    - ApprovalCode
+                    - AccountNumber
+                    - Amount
+                    - Currency
+                    - PaymentMethod
+                    - Network
+                  filters:
+                    approvalCodes:
+                      - Declined
+              List approved auths for a specific store:
+                description: List approved auths for a specific store
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - ApprovalCode
                     - AccountNumber
                     - Amount
                     - Currency
@@ -1427,6 +1470,8 @@ paths:
                   filters:
                     siteIDs:
                       - '1111111'
+                    approvalCodes:
+                      - Approved
         required: true
       responses:
         '200':
@@ -11454,6 +11499,16 @@ components:
     AuthorizationFilters:
       type: object
       properties:
+        approvalCodes:
+          type: array
+          description: Any transactions matching with any one of the specified Approval Codes
+          items:
+            type: string
+            description: Any transactions matching with any one of the specified Approval Codes
+            enum:
+              - Unknown
+              - Approved
+              - Declined
         paymentMethods:
           type: array
           description: Any transactions matching with any one of the specified Payment Methods
@@ -13594,13 +13649,13 @@ components:
             type: string
             description: Determines the user attribute value for respective application
             example: '["4"]'
-        isRequired:
-          type: boolean
-          description: Determines if respective attribute is required to provision the application for user
-          example: true
         isReferencedValue:
           type: boolean
           description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
+          example: true
+        isRequired:
+          type: boolean
+          description: Determines if respective attribute is required to provision the application for user
           example: true
       description: '// Respective Application specific attributes(For example: Entitlements)'
     AttributeOptionDto:
