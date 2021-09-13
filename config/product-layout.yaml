@@ -41,6 +41,10 @@ featuredFeatures:
       bullet2: Leverage our easy to use tools for real time insight into customer behavior.
       bullet3: Get up and running quickly an easily with our step by step instructions. 
     relatedDocs:
+      - relatedDoc:
+        title: Getting Started
+        description: Reporting information is available across the value chain. Our APIs provide you with the ability to pull information across these various stages.
+        link: "/docs/getting-started.md"
       - relatedDoc: 
         title: Generate Reports 
         description: ...
@@ -62,6 +66,10 @@ featuredFeatures:
     bullets:
       bullet1: Learn more about our API objects, methods, requests and responses.
     relatedDocs:
+      - relatedDoc:
+        title: Getting Started
+        description: Reporting information is available across the value chain. Our APIs provide you with the ability to pull information across these various stages.
+        link: "/docs/getting-started.md"
       - relatedDoc: 
         title: Build Your Merchant Portal
         description: set of easy-to-use APIs to build your own online experience for your merchants
@@ -84,6 +92,10 @@ featuredFeatures:
       bullet2: Uniquely identify and track developer access.
       bullet3: Grant accessibilty to only those groups who it is required. 
     relatedDocs:
+      - relatedDoc:
+        title: Getting Started
+        description: Reporting information is available across the value chain. Our APIs provide you with the ability to pull information across these various stages.
+        link: "/docs/getting-started.md"
       - relatedDoc1: 
         title: Data Feeds
         description: Setup native integrations with AWS, Azure or GCP to receive your data as soon as they are available and query feed status
