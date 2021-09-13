@@ -878,6 +878,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/PrepaidTransactionSearchRequest'
+            example:
+              fromDate: '20210801'
+              toDate: '20210807'
+              limit: 1
         required: true
       responses:
         '200':
@@ -1371,10 +1375,25 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/AuthorizationSearchRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              limit: 3
+            examples:
+              List auths:
+                description: List auths
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+              List auths with specific fields:
+                description: List auths with specific fields
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - AccountNumber
+                    - Amount
+                    - Currency
+                    - PaymentMethod
+                    - Network
         required: true
       responses:
         '200':
@@ -2185,7 +2204,7 @@ components:
             - IVR
         ECIIndicatorKey:
           type: string
-          description: Indicates the Electronic Commerce Indicator used for the transaction. (Key)
+          description: Indicates the Electronic Commerce Indicator used for the transaction. (Code)
           example: '4'
         accountNumber:
           type: string
@@ -2431,7 +2450,7 @@ components:
             - ZMW
         authCurrencyKey:
           type: string
-          description: Currency code used for the transaction. (Key)
+          description: Currency code used for the transaction. (Code)
           example: '1'
         authSource:
           type: string
@@ -2749,7 +2768,7 @@ components:
             - ZMW
         currencyKey:
           type: string
-          description: Processing Currency code used for the transaction. (Key)
+          description: Processing Currency code used for the transaction. (Code)
           example: '1'
         customTracking:
           type: string
@@ -2793,7 +2812,7 @@ components:
             - TTNP
         entryModeSourceKey:
           type: string
-          description: The last byte from POS_ENTRY_MODE which tells us the PIN capability. (Key)
+          description: The last byte from POS_ENTRY_MODE which tells us the PIN capability. (Code)
           example: '0'
         externalMID:
           type: string
@@ -2907,7 +2926,7 @@ components:
           format: int32
         merchantCategoryKey:
           type: string
-          description: Identifies the standard merchant category code assigned to the transaction. (Key)
+          description: Identifies the standard merchant category code assigned to the transaction. (Code)
           example: '9999'
         merchantReferenceNumber:
           type: string
@@ -2922,7 +2941,7 @@ components:
           format: int32
         mobileWalletKey:
           type: string
-          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Key)
+          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Code)
           example: ''
         netSalesCount:
           type: integer
@@ -2979,7 +2998,7 @@ components:
             - PaypalVenmo
         networkKey:
           type: string
-          description: Name of the authorizing network associated with the transaction. (Key)
+          description: Name of the authorizing network associated with the transaction. (Code)
           example: '6'
         networkSecurityFeeAmount:
           type: number
@@ -3034,7 +3053,7 @@ components:
             - ContactlessMagneticStripe
         paymentMethodKey:
           type: string
-          description: Identifies the method of payment used on the transaction. (Key)
+          description: Identifies the method of payment used on the transaction. (Code)
           example: '4'
         pcTaxAmount:
           type: number
@@ -3105,7 +3124,7 @@ components:
             - Tampa
         processorKey:
           type: string
-          description: Identifies the settlement platform. (Key)
+          description: Identifies the settlement platform. (Code)
           example: '1'
         productCode:
           type: string
@@ -3213,7 +3232,7 @@ components:
             - UPICredit
         productCodeKey:
           type: string
-          description: Name of the cardbrand associated with the transaction. (Key)
+          description: Name of the cardbrand associated with the transaction. (Code)
           example: '10'
         purchaseIdentifier:
           type: string
@@ -3232,7 +3251,7 @@ components:
             - Reclass
         reclassCdKey:
           type: string
-          description: Reclass code used to identify the Reclassification record. (Key)
+          description: Reclass code used to identify the Reclassification record. (Code)
           example: '0'
         recordDate:
           type: string
@@ -3280,7 +3299,7 @@ components:
           example: ''
         siteIDKey:
           type: string
-          description: An unique identifier assigned to the merchant. Also known as a MID. (Key)
+          description: An unique identifier assigned to the merchant. Also known as a MID. (Code)
           example: ''
         storeNumber:
           type: string
@@ -3381,7 +3400,7 @@ components:
             - Swiped
         transactionModeKey:
           type: string
-          description: Transaction Mode associated with the transaction. Also known as Capture Method. (Key)
+          description: Transaction Mode associated with the transaction. Also known as Capture Method. (Code)
           example: '2'
         transactionSource:
           type: string
@@ -3400,7 +3419,7 @@ components:
             - Cancelled
         transactionStatusKey:
           type: string
-          description: Transaction Processing Status associated with the Settle transaction. (Key)
+          description: Transaction Processing Status associated with the Settle transaction. (Code)
           example: '1'
         transactionTime:
           type: string
@@ -3449,7 +3468,7 @@ components:
             - Cashback
         typeKey:
           type: string
-          description: Transaction type code e.g. sale, refund etc. (Key)
+          description: Transaction type code e.g. sale, refund etc. (Code)
           example: '2'
         userData:
           type: string
@@ -3737,7 +3756,7 @@ components:
             - Other
         ReasonKey:
           type: string
-          description: Descriptive reason associated with a specific Retrieval. (Key)
+          description: Descriptive reason associated with a specific Retrieval. (Code)
           example: '124'
         UserData2:
           type: string
@@ -3804,7 +3823,7 @@ components:
             - PaypalVenmo
         authNetworkKey:
           type: string
-          description: Authorization network of the credit card utilized for the transaction. (Key)
+          description: Authorization network of the credit card utilized for the transaction. (Code)
           example: '1'
         backendProcessor:
           type: string
@@ -3828,7 +3847,7 @@ components:
             - Tampa
         backendProcessorKey:
           type: string
-          description: Internal settlement platform. (Key)
+          description: Internal settlement platform. (Code)
           example: '0'
         batchNumber:
           type: string
@@ -4036,7 +4055,7 @@ components:
             - ZMW
         currencyKey:
           type: string
-          description: Currency code used for the transaction. (Key)
+          description: Currency code used for the transaction. (Code)
           example: '49'
         debitNetworkID:
           type: integer
@@ -4070,7 +4089,7 @@ components:
             - IVR
         ecIndicatorKey:
           type: string
-          description: Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions. (Key)
+          description: Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions. (Code)
           example: '4'
         externalMid:
           type: string
@@ -4116,7 +4135,7 @@ components:
           format: int32
         merchantCategoryKey:
           type: string
-          description: Identifies the standard merchant category code assigned to the transaction. (Key)
+          description: Identifies the standard merchant category code assigned to the transaction. (Code)
           example: '1111'
         mobileIndicator:
           type: string
@@ -4176,7 +4195,7 @@ components:
             - PreChargeback
         retrievalRequestTypeKey:
           type: string
-          description: Request Type for the Retrieval. (Key)
+          description: Request Type for the Retrieval. (Code)
           example: '1'
         siteID:
           type: string
@@ -4201,7 +4220,7 @@ components:
           example: 12/31/2021
         statusKey:
           type: string
-          description: Status of Retrieval. (Key)
+          description: Status of Retrieval. (Code)
           example: '3'
         storeNumber:
           type: string
@@ -4516,7 +4535,7 @@ components:
             - Tampa
         platformKey:
           type: string
-          description: Identifies the processor for the merchant. (Key)
+          description: Identifies the processor for the merchant. (Code)
           example: '1'
         st_abbr_nm:
           type: string
@@ -4697,7 +4716,7 @@ components:
             - YT
         EBTStateKey:
           type: string
-          description: Identifies the EBT state, if the card is EBT eligible. (Key)
+          description: Identifies the EBT state, if the card is EBT eligible. (Code)
           example: '0'
         accel:
           type: string
@@ -4714,7 +4733,7 @@ components:
             - PinlessBillPayPinlessPOS
         accelKey:
           type: string
-          description: Identifies the routing eligibility to Accel network. (Key)
+          description: Identifies the routing eligibility to Accel network. (Code)
           example: '1'
         active:
           type: string
@@ -4735,7 +4754,7 @@ components:
             - PinlessBillPayPinlessPOS
         affnKey:
           type: string
-          description: Identifies the routing eligibility to AFFN network. (Key)
+          description: Identifies the routing eligibility to AFFN network. (Code)
           example: '0'
         ath:
           type: string
@@ -4752,7 +4771,7 @@ components:
             - PinlessBillPayPinlessPOS
         athKey:
           type: string
-          description: Identifies the routing eligibility to ATH network. (Key)
+          description: Identifies the routing eligibility to ATH network. (Code)
           example: '0'
         bin:
           type: string
@@ -4764,7 +4783,7 @@ components:
           format: int32
         binMapKey:
           type: string
-          description: A numeric description of the bin. (Key)
+          description: A numeric description of the bin. (Code)
           example: ''
         cardBrand:
           type: string
@@ -4781,7 +4800,7 @@ components:
             - PrivateLabel
         cardBrandKey:
           type: string
-          description: Identifies the card brand in the front of the card. (Key)
+          description: Identifies the card brand in the front of the card. (Code)
           example: '2'
         cardClass:
           type: string
@@ -4795,7 +4814,7 @@ components:
             - Purchase
         cardClassKey:
           type: string
-          description: Categorizes the BIN as a Business card, Corporate T&E card, Purchase card or Consumer card. Assists the POS device with prompting decisions – to collect addenda or not.  Visa, MasterCard and Discover only. (Key)
+          description: Categorizes the BIN as a Business card, Corporate T&E card, Purchase card or Consumer card. Assists the POS device with prompting decisions – to collect addenda or not.  Visa, MasterCard and Discover only. (Code)
           example: '2'
         cardSubType:
           type: string
@@ -4965,7 +4984,7 @@ components:
             - V161
         cardSubTypeKey:
           type: string
-          description: Identifies the card sub type. Applicable to credit networks. (Key)
+          description: Identifies the card sub type. Applicable to credit networks. (Code)
           example: '3'
         country:
           type: string
@@ -5229,7 +5248,7 @@ components:
             - QZZ
         countryKey:
           type: string
-          description: The Global BIN file includes cards issued from other countries and will be reported as long as they reside on the VISA ARDEF, MC MPE, and Maestro BIN file. Debit networks other than Maestro will recognize all BINs as USA and no international distinction. (Key)
+          description: The Global BIN file includes cards issued from other countries and will be reported as long as they reside on the VISA ARDEF, MC MPE, and Maestro BIN file. Debit networks other than Maestro will recognize all BINs as USA and no international distinction. (Code)
           example: '1'
         cu24:
           type: string
@@ -5246,7 +5265,7 @@ components:
             - PinlessBillPayPinlessPOS
         cu24Key:
           type: string
-          description: Identifies the routing eligibility to CU24 network. (Key)
+          description: Identifies the routing eligibility to CU24 network. (Code)
           example: '0'
         details:
           type: string
@@ -5269,7 +5288,7 @@ components:
             - Unknown
         detailsKey:
           type: string
-          description: A detailed identification of the card type. (Key)
+          description: A detailed identification of the card type. (Code)
           example: '0'
         ebt:
           type: string
@@ -5286,7 +5305,7 @@ components:
             - PinlessBillPayPinlessPOS
         ebtKey:
           type: string
-          description: Identifies the routing eligibility to EBT network. (Key)
+          description: Identifies the routing eligibility to EBT network. (Code)
           example: '0'
         highacct:
           type: string
@@ -5311,7 +5330,7 @@ components:
             - PinlessBillPayPinlessPOS
         interacKey:
           type: string
-          description: Identifies the routing eligibility to Interac network. (Key)
+          description: Identifies the routing eligibility to Interac network. (Code)
           example: '0'
         interlink:
           type: string
@@ -5328,7 +5347,7 @@ components:
             - PinlessBillPayPinlessPOS
         interlinkKey:
           type: string
-          description: Identifies the routing eligibility to InterLink network. (Key)
+          description: Identifies the routing eligibility to InterLink network. (Code)
           example: '0'
         issuer:
           type: integer
@@ -5336,7 +5355,7 @@ components:
           format: int32
         issuerKey:
           type: string
-          description: Identifies the issuing bank institution. (Key)
+          description: Identifies the issuing bank institution. (Code)
           example: XXX BANK
         jeanie:
           type: string
@@ -5353,7 +5372,7 @@ components:
             - PinlessBillPayPinlessPOS
         jeanieKey:
           type: string
-          description: Identifies the routing eligibility to Jeanie network. (Key)
+          description: Identifies the routing eligibility to Jeanie network. (Code)
           example: '0'
         lowacct:
           type: string
@@ -5374,7 +5393,7 @@ components:
             - PinlessBillPayPinlessPOS
         maestroKey:
           type: string
-          description: Identifies the routing eligibility to Maestro network. (Key)
+          description: Identifies the routing eligibility to Maestro network. (Code)
           example: '0'
         nyce:
           type: string
@@ -5391,7 +5410,7 @@ components:
             - PinlessBillPayPinlessPOS
         nyceKey:
           type: string
-          description: Identifies the routing eligibility to NYCE network. (Key)
+          description: Identifies the routing eligibility to NYCE network. (Code)
           example: '1'
         pulse:
           type: string
@@ -5408,7 +5427,7 @@ components:
             - PinlessBillPayPinlessPOS
         pulseKey:
           type: string
-          description: Identifies the routing eligibility to Pulse network. (Key)
+          description: Identifies the routing eligibility to Pulse network. (Code)
           example: '3'
         regulated:
           type: string
@@ -5421,7 +5440,7 @@ components:
             - RegulatedWithFraud
         regulatedKey:
           type: string
-          description: Identifies the bank regulation of the card. (Key)
+          description: Identifies the bank regulation of the card. (Code)
           example: '3'
         reloadable:
           type: string
@@ -5433,7 +5452,7 @@ components:
             - NonReloadable
         reloadableKey:
           type: string
-          description: Identifies if the card is reloadable. (Key)
+          description: Identifies if the card is reloadable. (Code)
           example: '2'
         shazam:
           type: string
@@ -5450,7 +5469,7 @@ components:
             - PinlessBillPayPinlessPOS
         shazamKey:
           type: string
-          description: Identifies the routing eligibility to Shazam network. (Key)
+          description: Identifies the routing eligibility to Shazam network. (Code)
           example: '0'
         star:
           type: string
@@ -5467,7 +5486,7 @@ components:
             - PinlessBillPayPinlessPOS
         starKey:
           type: string
-          description: Identifies the routing eligibility to Star network. (Key)
+          description: Identifies the routing eligibility to Star network. (Code)
           example: '1'
         type:
           type: string
@@ -5480,7 +5499,7 @@ components:
             - Prepaid
         typeKey:
           type: string
-          description: Identifies the card as credit, debit or prepaid. (Key)
+          description: Identifies the card as credit, debit or prepaid. (Code)
           example: '1'
         visa:
           type: string
@@ -5497,7 +5516,7 @@ components:
             - PinlessBillPayPinlessPOS
         visaKey:
           type: string
-          description: Identifies the routing eligibility to Visa network. (Key)
+          description: Identifies the routing eligibility to Visa network. (Code)
           example: '0'
     PrepaidAccountObj:
       type: object
@@ -5557,7 +5576,7 @@ components:
           format: int32
         baseCurrencyCodeKey:
           type: string
-          description: Currency code where the activation occurred for non-denominated cards. Denominated cards are set by the card promotions currency (Key)
+          description: Currency code where the activation occurred for non-denominated cards. Denominated cards are set by the card promotions currency (Code)
           example: ''
         cardNo:
           type: string
@@ -5578,7 +5597,7 @@ components:
           format: int64
         consortiumIDKey:
           type: string
-          description: A unique ID number assigned to the highest level of the gift card program (Key)
+          description: A unique ID number assigned to the highest level of the gift card program (Code)
           example: ''
         consortiumName:
           type: string
@@ -5590,7 +5609,7 @@ components:
           format: int32
         currencyCodeKey:
           type: string
-          description: Currency code where the transaction occurred (Key)
+          description: Currency code where the transaction occurred (Code)
           example: ''
         daysSinceLastTxn:
           type: string
@@ -5666,7 +5685,7 @@ components:
           format: int64
         promotionIDKey:
           type: string
-          description: '8 digit Promotion ID # assigned when card promotion is setup (Key)'
+          description: '8 digit Promotion ID # assigned when card promotion is setup (Code)'
           example: ''
         promotionName:
           type: string
@@ -5776,611 +5795,6 @@ components:
         filters:
           $ref: '#/components/schemas/PrepaidAccountFilters'
       description: Request object for Prepaid Accounts search.
-    PrepaidTransactionObj:
-      type: object
-      properties:
-        accountNo:
-          type: string
-          description: 16 digit Gift Card embossed Account Number
-          example: '12345678901234'
-        accountOrigin:
-          type: string
-          description: Optional field specifying the method used to acquire the card number in the transaction
-          example: ''
-        accountOriginKey:
-          type: string
-          description: Optional field specifying the method used to acquire the card number in the transaction (Key)
-          example: ''
-        accountStatus:
-          type: integer
-          description: Account Status at time of processing the Transaction.
-          format: int32
-        accountStatusKey:
-          type: string
-          description: Account Status at time of processing the Transaction. (Key)
-          example: ''
-        activationAltMerchantNo:
-          type: string
-          description: '11 digit Store/Location ID # where GC was originally activated (a.k.a.- Alternate MID)'
-          example: '974767'
-        activationDate:
-          type: string
-          description: Date when the GC was originally purchased (EST)
-          example: 09/03/2018
-        activationLocDesc:
-          type: string
-          description: Description of the Activation Location. The client provides this on the MPOS file
-          example: ACTIVATION LOCATION NAME
-        activationMIDDesc:
-          type: string
-          description: Description of the Activation MID. The client provides this on the MPOS file
-          example: ACTIVATION MERCHANT NAME
-        activationMerchantNo:
-          type: string
-          description: '11 digit Merchant ID # where the GC was activated. Designates a group of locations and exists as a higher level to location'
-          example: '7476748949'
-        activationMonth:
-          type: string
-          description: Activation Fiscal or Regular month associated with the account based on merchant's fiscal calendar
-          example: Y2020M01
-        activationQuarter:
-          type: string
-          description: Activation Fiscal or Regular quarter associated with the account based on merchant's fiscal calendar
-          example: Y2020Q1
-        activationTime:
-          type: string
-          description: 'Timestamp when the GC was originally purchased (Format: 24HH:MM:SS) (EST)'
-          example: '11:23:30'
-        activationWeek:
-          type: string
-          description: Activation Fiscal or Regular week of the year associated with the account based on merchant's fiscal calendar
-          example: Y2020W01
-        activationYear:
-          type: string
-          description: Activation Fiscal or Regular year associated with the account based on merchant's fiscal calendar
-          example: Y2020
-        activityDay:
-          type: string
-          description: Fiscal or Regular day of the year associated with the transaction based on merchant's fiscal calendar
-          example: '20200101'
-        activityMonth:
-          type: string
-          description: Fiscal or Regular month associated with the transaction based on merchant's fiscal calendar
-          example: Y2020M01
-        activityQuarter:
-          type: string
-          description: Fiscal or Regular quarter associated with the transaction based on merchant's fiscal calendar
-          example: Y2020Q1
-        activityWeek:
-          type: string
-          description: Fiscal or Regular week of the year associated with the transaction based on merchant's fiscal calendar
-          example: Y2020W01
-        activityYear:
-          type: string
-          description: Fiscal or Regular year associated with the transaction based on merchant's fiscal calendar
-          example: Y2020
-        altAccountNo:
-          type: string
-          description: Embossed Account Number of the Foreign/Converted Gift Card.
-          example: '7476748949'
-        altMerchantNo:
-          type: string
-          description: '11 digit Store/Location ID # where Gift Card transaction activity occurred (a.k.a.- Alternate MID)'
-          example: '974767'
-        amount:
-          type: number
-          description: Amount of the transaction in currency where the activity occurred
-          format: double
-          example: 999.99
-        authCode:
-          type: string
-          description: Authorization code present on approvals only
-          example: T6Y3E3
-        balance:
-          type: number
-          description: The remaining funds on a card after any successful transaction
-          format: double
-          example: 999.99
-        baseAmount:
-          type: number
-          description: Amount of the transaction in the currency where the activation occurred
-          format: double
-          example: 999.99
-        baseCashBackAmount:
-          type: number
-          description: Amount of payout in Base Currency from POS to the customer as a result of balance below minimum. Function set on promo
-          format: double
-          example: 999.99
-        baseCurrencyCode:
-          type: integer
-          description: Currency code where the activation occurred for non-denominated cards. Denominated cards are set by the card promotions currency
-          format: int32
-        baseCurrencyCodeKey:
-          type: string
-          description: Currency code where the activation occurred for non-denominated cards. Denominated cards are set by the card promotions currency (Key)
-          example: ''
-        baseFundedAmount:
-          type: number
-          description: 'Merchant Fund amount based on the Base Currency '
-          format: double
-          example: 999.99
-        baseLockAmt:
-          type: number
-          description: Amount in Base Currency locked on the account due to a balance lock transaction received
-          format: double
-          example: 999.99
-        batchNo:
-          type: string
-          description: Batch number to reference which batch job transaction came from.
-          example: '9999'
-        bonusAmt:
-          type: number
-          description: Amount if the activation or reload transaction on a card is different from the account balance due to a programmed bonus by promo
-          format: double
-          example: 999.99
-        campaignEndDate:
-          type: string
-          description: The date when campaign expires. This is the end date of Limited Time Offer (LTO) segment
-          example: 09/09/2019 09:00:00 AM
-        cardClass:
-          type: string
-          description: Merchant defined identifier assigned to the promotion. Value passed in this field can only be interpreted by the merchant. A value of ‘0’ indicates the card does not belong to any card class
-          example: N/A
-        cardCostAmt:
-          type: number
-          description: Cost of the card
-          format: double
-          example: 999.99
-        cardNo:
-          type: string
-          description: Card Number associated with the prepaid card.
-          example: '12345678901234'
-        cashBackAmount:
-          type: number
-          description: Amount of payout in Local Currency from POS to the customer as a result of balance below minimum.  Function set on promo
-          format: double
-          example: 999.99
-        checkSum:
-          type: string
-          description: Offset for the merchant, only available if the merchant requested this functionality.
-          example: '1234'
-        clerk:
-          type: string
-          description: Merchant-generated to identify individual clerks
-          example: CLERK
-        consortiumDesc:
-          type: string
-          description: Consortium description assigned by the client for the gift card program
-          example: CONSORTIUM NAME
-        consortiumID:
-          type: integer
-          description: A unique ID number assigned to the highest level of the gift card program
-          format: int64
-        consortiumIDKey:
-          type: string
-          description: A unique ID number assigned to the highest level of the gift card program (Key)
-          example: ''
-        consumerBaseFundedAmount:
-          type: number
-          description: Balance -  the Merchant Funded Amount in Base currency
-          format: double
-          example: 999.99
-        consumerFundedAmount:
-          type: number
-          description: Balance - the Merchant Funded Amount in Local currency
-          format: double
-          example: 999.99
-        couponId:
-          type: string
-          description: Coupon ID assocaited with an Transaction Event
-          example: COUPON ID
-        currencyCode:
-          type: integer
-          description: Currency code where the transaction occurred
-          format: int32
-        currencyCodeKey:
-          type: string
-          description: Currency code where the transaction occurred (Key)
-          example: ''
-        discountAmount:
-          type: number
-          description: Discount amount applied to transaction
-          format: double
-          example: 999.99
-        escheatTxn:
-          type: string
-          description: Y = Escheatable N or ‘0’  = Non-escheatable (default)
-          example: '0'
-        excessiveActivityInterval:
-          type: integer
-          description: Step Size associated with the Distribution
-          format: int64
-          example: 999
-        excessiveActivitySize:
-          type: integer
-          description: Step Size associated with the Distribution
-          format: int64
-          example: 999
-        exchangeRate:
-          type: number
-          description: Exchange rate between the local and the base currency
-          format: double
-          example: 1
-        expirationDate:
-          type: string
-          description: Account expiration date is returned on approved transactions & declined transactions due to card being expired (EST)
-          example: 01/01/2025
-        extResponseCode:
-          type: integer
-          description: External Response Code of the activity-See Code Supplement
-          format: int32
-        extResponseCodeKey:
-          type: string
-          description: External Response Code of the activity-See Code Supplement (Key)
-          example: ''
-        financial:
-          type: string
-          description: Identify Financial or non-financial Transactions
-          example: ''
-        financialKey:
-          type: string
-          description: Identify Financial or non-financial Transactions (Key)
-          example: ''
-        fundedAmount:
-          type: number
-          description: Merchant Fund amount based on the Loal Currency
-          format: double
-          example: 999.99
-        fundingId:
-          type: string
-          description: Funding Id provided by Perka, Associated with sale like transactions.
-          example: '0'
-        gyftId:
-          type: string
-          description: Gyft ID
-          example: GYFT ID
-        linkedDiscountAmt:
-          type: number
-          description: Discount applied to the redemption’s requested amount.
-          format: double
-          example: 999.99
-        linkedLoyaltyAcct:
-          type: string
-          description: Embossed card number of the Valuelink gift card (if provided by Perka).
-          example: '9999999'
-        localLockAmt:
-          type: number
-          description: Amount in Local Currency locked on the account due to a balance lock transaction received
-          format: double
-          example: 999.99
-        lockId:
-          type: string
-          description: Lock Id Assocaited with an Multi Lock Transaction
-          example: '1'
-        loyaltyReqAcct:
-          type: string
-          description: Embossed Card Number of the card presented in the transaction request.  Expected to be either a Perka card or a Merchant’s “proxy” card.
-          example: '9999999'
-        loyaltyReqConsort:
-          type: integer
-          description: Consortium of the card presented in the transaction request
-          format: int64
-          example: 9999999
-        ltoAltMid:
-          type: string
-          description: Alternate MID of LTO segment
-          example: '9999999'
-        ltoFundUsed:
-          type: string
-          description: Amount of LTO merchant fund used for redemption
-          example: '0'
-        ltoMid:
-          type: string
-          description: MID of LTO segment
-          example: '9999999'
-        masterLoyaltyAcct:
-          type: string
-          description: 'Embossed account # of the Perka account'
-          example: '9999999'
-        masterLoyaltyConsort:
-          type: integer
-          description: Loyalty Associated Consortium code
-          format: int64
-          example: 9999999
-        memoField:
-          type: string
-          description: Alternate MID
-          example: TXN MEMO
-        merchantFundBal:
-          type: number
-          description: Merchant Funded Balance on the account
-          format: double
-          example: 999.99
-        merchantNo:
-          type: string
-          description: '11 digit Merchant ID # where GC transaction activity occurred'
-          example: '7476748949'
-        messaging:
-          type: string
-          description: Flag whether or not NRTM is used
-          example: 'Y'
-        mfEnable:
-          type: string
-          description: Y or N Flag set on the consortium
-          example: 'Y'
-        mfLocDesc:
-          type: string
-          description: Alternate MID
-          example: MF LOCATION NAME
-        mfMIDDesc:
-          type: string
-          description: Description of the MID associated with the funding of the Merchant Fund in the transaction
-          example: MF MERCHANT NAME
-        mfaltMerchantNo:
-          type: string
-          description: 'Alternate MID  MF merchant ID #'
-          example: '9999999'
-        mfmerchantNo:
-          type: string
-          description: MID associated with the funding of the Merchant Fund in the transaction
-          example: '9999999'
-        offset:
-          type: string
-          description: Offset for the merchant, only available if the merchant requested this functionality.
-          example: '0'
-        origExtRequestCodeDesc:
-          type: integer
-          description: Numeric request code Description assigned to the activity performed-See Code Supplement
-          format: int32
-        origExtRequestCodeDescKey:
-          type: string
-          description: Numeric request code Description assigned to the activity performed-See Code Supplement (Key)
-          example: ''
-        packId:
-          type: string
-          description: The unique package ID that is populated if the card is part of a multi-pack
-          example: '9999999'
-        packageAmount:
-          type: number
-          description: Combined amount of a multi-pack
-          format: double
-          example: 999.99
-        postDate:
-          type: string
-          description: Post Date is the posting date for the transaction. This date sent in this field is supplied by the client
-          example: 04/03/2021
-        prevAccountStatus:
-          type: string
-          description: The previous status of GC account before it was set to Fraud or Watch
-          example: '2'
-        primaryPromoCode:
-          type: integer
-          description: The promocode assigned to the manufacture record and is populated in the case of a card being activated using the variable promo feature.
-          format: int64
-          example: 9999999
-        processedDate:
-          type: string
-          description: FiServ system recorded date on processed transactions. *Updates to historical transactions could change this system date* (EST)
-          example: 04/03/2021
-        processedTime:
-          type: string
-          description: 'FiServ system recorded timestamp on processed transactions. *Updates to historical transactions could change this system timestamp* (Format: 24HH:MM:SS) (EST)'
-          example: '05:00:00'
-        promotionDesc:
-          type: string
-          description: Promotion description assigned by the client for the unique card promotion
-          example: PROMOTION NAME
-        promotionID:
-          type: integer
-          description: '8 digit Promotion ID # assigned when card promotion is setup'
-          format: int64
-        promotionIDKey:
-          type: string
-          description: '8 digit Promotion ID # assigned when card promotion is setup (Key)'
-          example: ''
-        reasonCode:
-          type: integer
-          description: Reason code associated with the transaction.
-          format: int32
-        reasonCodeKey:
-          type: string
-          description: Reason code associated with the transaction. (Key)
-          example: ''
-        referenceNum:
-          type: string
-          description: Reference or customer number used for reporting purposes
-          example: '1'
-        replaceSerialNo:
-          type: string
-          description: 'The serial number that replaces the current account number.  This field will be populated for card replacement transactions '
-          example: '1234567890'
-        reportingAmount:
-          type: number
-          description: Amount of the transaction based on the currency assigned to the Consortium
-          format: double
-          example: 999.99
-        reportingCashBackAmount:
-          type: number
-          description: Amount of payout in reporting currency from POS to the customer as a result of balance below minimum
-          format: double
-          example: 999.99
-        reportingCurrencyCode:
-          type: integer
-          description: 'Currency code on the Consortium''s Reporting Currency Code '
-          format: int32
-        reportingCurrencyCodeKey:
-          type: string
-          description: Currency code on the Consortium's Reporting Currency Code  (Key)
-          example: ''
-        reportingFundedAmount:
-          type: number
-          description: Merchant Fund Amount in Reporting Currency
-          format: double
-          example: 999.99
-        requestCode:
-          type: integer
-          description: Numeric request code that is assigned to activity
-          format: int32
-        requestCodeKey:
-          type: string
-          description: Numeric request code that is assigned to activity (Key)
-          example: ''
-        requestGroupCode:
-          type: integer
-          description: Request group associated with the transaction.
-          format: int32
-        requestGroupCodeKey:
-          type: string
-          description: Request group associated with the transaction. (Key)
-          example: ''
-        responseCode:
-          type: integer
-          description: Response code Description associated with the transaction.
-          format: int32
-        responseCodeKey:
-          type: string
-          description: Response code Description associated with the transaction. (Key)
-          example: ''
-        reversed:
-          type: integer
-          description: This field is populated after timeout reversal has been done
-          format: int32
-        reversedKey:
-          type: string
-          description: This field is populated after timeout reversal has been done (Key)
-          example: ''
-        reversedTimestampDate:
-          type: string
-          description: Date of original transaction that was reversed or voided (EST)
-          example: 04/03/2021
-        reversedTimestampTime:
-          type: string
-          description: 'Timestamp of original transaction that was reversed or voided (Format: 24HH:MM:SS) (EST)'
-          example: '05:00:00'
-        rewardAmount:
-          type: number
-          description: Reward Amount Granted for current Transaction
-          format: double
-          example: 999.99
-        routeInfo:
-          type: string
-          description: Used by the IVR to log the phone number that initiated the call
-          example: '?'
-        serialNo:
-          type: string
-          description: Serial Number associated with the prepaid card.
-          example: '1234567890'
-        sign:
-          type: string
-          description: Derived Sign that signifies the direction of the transaction.
-          example: +
-        source:
-          type: integer
-          description: 'Description of the code used  to identify the source of the transaction (e.g.: internet, pos etc)- See Code Supplement'
-          format: int32
-        sourceKey:
-          type: string
-          description: 'Description of the code used  to identify the source of the transaction (e.g.: internet, pos etc)- See Code Supplement (Key)'
-          example: ''
-        targetConsortiumCode:
-          type: integer
-          description: 'Target consortium code for the balance merge. '
-          format: int64
-          example: 4567
-        targetPromoCode:
-          type: integer
-          description: Target promo code for the balance merge
-          format: int64
-          example: 9999999
-        termTxnNo:
-          type: string
-          description: Merchant generated transaction number, which if supplied in the request is returned in the response- Unique per terminal/device.
-          example: '9999999'
-        terminalNo:
-          type: string
-          description: Original merchant location terminal number
-          example: '9999'
-        timestampEST:
-          type: string
-          description: EST Timestamp of the transaction.
-          example: 01/31/2020 15:00:00
-        timestampGMT:
-          type: string
-          description: GMT Timestamp of the transaction.
-          example: 01/31/2020 15:00:00
-        timestampLCL:
-          type: string
-          description: Local Timestamp of the transaction.
-          example: 01/31/2020 15:00:00
-        transactionDate:
-          type: string
-          description: Business Date of the transaction.
-          example: 12/31/2020
-        transactionDateEst:
-          type: string
-          description: FiServ System recorded Date on processing of transactions (EST)
-          example: 04/03/2021
-        transactionDateGMT:
-          type: string
-          description: Date on transaction based on Greenwich Mean Time- Date  (GMT)
-          example: 04/03/2021
-        transactionDateLocal:
-          type: string
-          description: Date provided from terminal on the transaction request
-          example: 04/03/2021
-        transactionDayGMT:
-          type: string
-          description: Local Time of the transaction.
-          example: Sat
-        transactionLocDesc:
-          type: string
-          description: '11 digit Store/Location ID # where GC transaction activity occurred (a.k.a.- Alternate MID)'
-          example: LOCATION NAME
-        transactionMIDDesc:
-          type: string
-          description: Description of the Merchant ID that is provided by the client on the MPOS file
-          example: MERCHANT NAME
-        transactionTimeEst:
-          type: string
-          description: 'FiServ System recorded timestamp (EST) on processing of transactions (Format: 24HH:MM:SS)  (EST)'
-          example: '05:00:00'
-        transactionTimeGMT:
-          type: string
-          description: 'Timestamp on transaction based on Greenwich Mean Time- (Format: 24HH:MM:SS) (GMT)'
-          example: '10:00:00'
-        transactionTimeLocal:
-          type: string
-          description: 'Timestamp provided from terminal on the transaction request. (Format: 24HH:MM:SS)'
-          example: '05:00:00'
-        txnGroupId:
-          type: string
-          description: Transaction group information
-          example: '02'
-        txnId:
-          type: string
-          description: Valuelink-generated, internal unique transaction ID
-          example: '9999999'
-        upliftAmount:
-          type: number
-          description: For a split tender transaction, the difference between the gift card amount used and the total transaction amount
-          format: double
-          example: 999.99
-        user1:
-          type: string
-          description: Generic field used at merchant’s discretion
-          example: USER1
-        user2:
-          type: string
-          description: Generic field used at merchant’s discretion
-          example: USER2
-        userID:
-          type: string
-          description: Business Track or PBC
-          example: P9999999
-        wicNo:
-          type: string
-          description: '11 digit Store/Location ID # where GC transaction activity occurred (a.k.a.- Alternate MID)'
-          example: '974767'
     PrepaidTransactionFilters:
       type: object
       description: Various filter options for prepaid transaction queries
@@ -6559,6 +5973,611 @@ components:
         filters:
           $ref: '#/components/schemas/PrepaidTransactionFilters'
       description: Request object for Prepaid Transactions search.
+    PrepaidTransactionObj:
+      type: object
+      properties:
+        accountNo:
+          type: string
+          description: 16 digit Gift Card embossed Account Number
+          example: '12345678901234'
+        accountOrigin:
+          type: string
+          description: Optional field specifying the method used to acquire the card number in the transaction
+          example: ''
+        accountOriginKey:
+          type: string
+          description: Optional field specifying the method used to acquire the card number in the transaction (Code)
+          example: ''
+        accountStatus:
+          type: integer
+          description: Account Status at time of processing the Transaction.
+          format: int32
+        accountStatusKey:
+          type: string
+          description: Account Status at time of processing the Transaction. (Code)
+          example: ''
+        activationAltMerchantNo:
+          type: string
+          description: '11 digit Store/Location ID # where GC was originally activated (a.k.a.- Alternate MID)'
+          example: '974767'
+        activationDate:
+          type: string
+          description: Date when the GC was originally purchased (EST)
+          example: 09/03/2018
+        activationLocDesc:
+          type: string
+          description: Description of the Activation Location. The client provides this on the MPOS file
+          example: ACTIVATION LOCATION NAME
+        activationMIDDesc:
+          type: string
+          description: Description of the Activation MID. The client provides this on the MPOS file
+          example: ACTIVATION MERCHANT NAME
+        activationMerchantNo:
+          type: string
+          description: '11 digit Merchant ID # where the GC was activated. Designates a group of locations and exists as a higher level to location'
+          example: '7476748949'
+        activationMonth:
+          type: string
+          description: Activation Fiscal or Regular month associated with the account based on merchant's fiscal calendar
+          example: Y2020M01
+        activationQuarter:
+          type: string
+          description: Activation Fiscal or Regular quarter associated with the account based on merchant's fiscal calendar
+          example: Y2020Q1
+        activationTime:
+          type: string
+          description: 'Timestamp when the GC was originally purchased (Format: 24HH:MM:SS) (EST)'
+          example: '11:23:30'
+        activationWeek:
+          type: string
+          description: Activation Fiscal or Regular week of the year associated with the account based on merchant's fiscal calendar
+          example: Y2020W01
+        activationYear:
+          type: string
+          description: Activation Fiscal or Regular year associated with the account based on merchant's fiscal calendar
+          example: Y2020
+        activityDay:
+          type: string
+          description: Fiscal or Regular day of the year associated with the transaction based on merchant's fiscal calendar
+          example: '20200101'
+        activityMonth:
+          type: string
+          description: Fiscal or Regular month associated with the transaction based on merchant's fiscal calendar
+          example: Y2020M01
+        activityQuarter:
+          type: string
+          description: Fiscal or Regular quarter associated with the transaction based on merchant's fiscal calendar
+          example: Y2020Q1
+        activityWeek:
+          type: string
+          description: Fiscal or Regular week of the year associated with the transaction based on merchant's fiscal calendar
+          example: Y2020W01
+        activityYear:
+          type: string
+          description: Fiscal or Regular year associated with the transaction based on merchant's fiscal calendar
+          example: Y2020
+        altAccountNo:
+          type: string
+          description: Embossed Account Number of the Foreign/Converted Gift Card.
+          example: '7476748949'
+        altMerchantNo:
+          type: string
+          description: '11 digit Store/Location ID # where Gift Card transaction activity occurred (a.k.a.- Alternate MID)'
+          example: '974767'
+        amount:
+          type: number
+          description: Amount of the transaction in currency where the activity occurred
+          format: double
+          example: 999.99
+        authCode:
+          type: string
+          description: Authorization code present on approvals only
+          example: T6Y3E3
+        balance:
+          type: number
+          description: The remaining funds on a card after any successful transaction
+          format: double
+          example: 999.99
+        baseAmount:
+          type: number
+          description: Amount of the transaction in the currency where the activation occurred
+          format: double
+          example: 999.99
+        baseCashBackAmount:
+          type: number
+          description: Amount of payout in Base Currency from POS to the customer as a result of balance below minimum. Function set on promo
+          format: double
+          example: 999.99
+        baseCurrencyCode:
+          type: integer
+          description: Currency code where the activation occurred for non-denominated cards. Denominated cards are set by the card promotions currency
+          format: int32
+        baseCurrencyCodeKey:
+          type: string
+          description: Currency code where the activation occurred for non-denominated cards. Denominated cards are set by the card promotions currency (Code)
+          example: ''
+        baseFundedAmount:
+          type: number
+          description: 'Merchant Fund amount based on the Base Currency '
+          format: double
+          example: 999.99
+        baseLockAmt:
+          type: number
+          description: Amount in Base Currency locked on the account due to a balance lock transaction received
+          format: double
+          example: 999.99
+        batchNo:
+          type: string
+          description: Batch number to reference which batch job transaction came from.
+          example: '9999'
+        bonusAmt:
+          type: number
+          description: Amount if the activation or reload transaction on a card is different from the account balance due to a programmed bonus by promo
+          format: double
+          example: 999.99
+        campaignEndDate:
+          type: string
+          description: The date when campaign expires. This is the end date of Limited Time Offer (LTO) segment
+          example: 09/09/2019 09:00:00 AM
+        cardClass:
+          type: string
+          description: Merchant defined identifier assigned to the promotion. Value passed in this field can only be interpreted by the merchant. A value of ‘0’ indicates the card does not belong to any card class
+          example: N/A
+        cardCostAmt:
+          type: number
+          description: Cost of the card
+          format: double
+          example: 999.99
+        cardNo:
+          type: string
+          description: Card Number associated with the prepaid card.
+          example: '12345678901234'
+        cashBackAmount:
+          type: number
+          description: Amount of payout in Local Currency from POS to the customer as a result of balance below minimum.  Function set on promo
+          format: double
+          example: 999.99
+        checkSum:
+          type: string
+          description: Offset for the merchant, only available if the merchant requested this functionality.
+          example: '1234'
+        clerk:
+          type: string
+          description: Merchant-generated to identify individual clerks
+          example: CLERK
+        consortiumDesc:
+          type: string
+          description: Consortium description assigned by the client for the gift card program
+          example: CONSORTIUM NAME
+        consortiumID:
+          type: integer
+          description: A unique ID number assigned to the highest level of the gift card program
+          format: int64
+        consortiumIDKey:
+          type: string
+          description: A unique ID number assigned to the highest level of the gift card program (Code)
+          example: ''
+        consumerBaseFundedAmount:
+          type: number
+          description: Balance -  the Merchant Funded Amount in Base currency
+          format: double
+          example: 999.99
+        consumerFundedAmount:
+          type: number
+          description: Balance - the Merchant Funded Amount in Local currency
+          format: double
+          example: 999.99
+        couponId:
+          type: string
+          description: Coupon ID assocaited with an Transaction Event
+          example: COUPON ID
+        currencyCode:
+          type: integer
+          description: Currency code where the transaction occurred
+          format: int32
+        currencyCodeKey:
+          type: string
+          description: Currency code where the transaction occurred (Code)
+          example: ''
+        discountAmount:
+          type: number
+          description: Discount amount applied to transaction
+          format: double
+          example: 999.99
+        escheatTxn:
+          type: string
+          description: Y = Escheatable N or ‘0’  = Non-escheatable (default)
+          example: '0'
+        excessiveActivityInterval:
+          type: integer
+          description: Step Size associated with the Distribution
+          format: int64
+          example: 999
+        excessiveActivitySize:
+          type: integer
+          description: Step Size associated with the Distribution
+          format: int64
+          example: 999
+        exchangeRate:
+          type: number
+          description: Exchange rate between the local and the base currency
+          format: double
+          example: 1
+        expirationDate:
+          type: string
+          description: Account expiration date is returned on approved transactions & declined transactions due to card being expired (EST)
+          example: 01/01/2025
+        extResponseCode:
+          type: integer
+          description: External Response Code of the activity-See Code Supplement
+          format: int32
+        extResponseCodeKey:
+          type: string
+          description: External Response Code of the activity-See Code Supplement (Code)
+          example: ''
+        financial:
+          type: string
+          description: Identify Financial or non-financial Transactions
+          example: ''
+        financialKey:
+          type: string
+          description: Identify Financial or non-financial Transactions (Code)
+          example: ''
+        fundedAmount:
+          type: number
+          description: Merchant Fund amount based on the Loal Currency
+          format: double
+          example: 999.99
+        fundingId:
+          type: string
+          description: Funding Id provided by Perka, Associated with sale like transactions.
+          example: '0'
+        gyftId:
+          type: string
+          description: Gyft ID
+          example: GYFT ID
+        linkedDiscountAmt:
+          type: number
+          description: Discount applied to the redemption’s requested amount.
+          format: double
+          example: 999.99
+        linkedLoyaltyAcct:
+          type: string
+          description: Embossed card number of the Valuelink gift card (if provided by Perka).
+          example: '9999999'
+        localLockAmt:
+          type: number
+          description: Amount in Local Currency locked on the account due to a balance lock transaction received
+          format: double
+          example: 999.99
+        lockId:
+          type: string
+          description: Lock Id Assocaited with an Multi Lock Transaction
+          example: '1'
+        loyaltyReqAcct:
+          type: string
+          description: Embossed Card Number of the card presented in the transaction request.  Expected to be either a Perka card or a Merchant’s “proxy” card.
+          example: '9999999'
+        loyaltyReqConsort:
+          type: integer
+          description: Consortium of the card presented in the transaction request
+          format: int64
+          example: 9999999
+        ltoAltMid:
+          type: string
+          description: Alternate MID of LTO segment
+          example: '9999999'
+        ltoFundUsed:
+          type: string
+          description: Amount of LTO merchant fund used for redemption
+          example: '0'
+        ltoMid:
+          type: string
+          description: MID of LTO segment
+          example: '9999999'
+        masterLoyaltyAcct:
+          type: string
+          description: 'Embossed account # of the Perka account'
+          example: '9999999'
+        masterLoyaltyConsort:
+          type: integer
+          description: Loyalty Associated Consortium code
+          format: int64
+          example: 9999999
+        memoField:
+          type: string
+          description: Alternate MID
+          example: TXN MEMO
+        merchantFundBal:
+          type: number
+          description: Merchant Funded Balance on the account
+          format: double
+          example: 999.99
+        merchantNo:
+          type: string
+          description: '11 digit Merchant ID # where GC transaction activity occurred'
+          example: '7476748949'
+        messaging:
+          type: string
+          description: Flag whether or not NRTM is used
+          example: 'Y'
+        mfEnable:
+          type: string
+          description: Y or N Flag set on the consortium
+          example: 'Y'
+        mfLocDesc:
+          type: string
+          description: Alternate MID
+          example: MF LOCATION NAME
+        mfMIDDesc:
+          type: string
+          description: Description of the MID associated with the funding of the Merchant Fund in the transaction
+          example: MF MERCHANT NAME
+        mfaltMerchantNo:
+          type: string
+          description: 'Alternate MID  MF merchant ID #'
+          example: '9999999'
+        mfmerchantNo:
+          type: string
+          description: MID associated with the funding of the Merchant Fund in the transaction
+          example: '9999999'
+        offset:
+          type: string
+          description: Offset for the merchant, only available if the merchant requested this functionality.
+          example: '0'
+        origExtRequestCodeDesc:
+          type: integer
+          description: Numeric request code Description assigned to the activity performed-See Code Supplement
+          format: int32
+        origExtRequestCodeDescKey:
+          type: string
+          description: Numeric request code Description assigned to the activity performed-See Code Supplement (Code)
+          example: ''
+        packId:
+          type: string
+          description: The unique package ID that is populated if the card is part of a multi-pack
+          example: '9999999'
+        packageAmount:
+          type: number
+          description: Combined amount of a multi-pack
+          format: double
+          example: 999.99
+        postDate:
+          type: string
+          description: Post Date is the posting date for the transaction. This date sent in this field is supplied by the client
+          example: 04/03/2021
+        prevAccountStatus:
+          type: string
+          description: The previous status of GC account before it was set to Fraud or Watch
+          example: '2'
+        primaryPromoCode:
+          type: integer
+          description: The promocode assigned to the manufacture record and is populated in the case of a card being activated using the variable promo feature.
+          format: int64
+          example: 9999999
+        processedDate:
+          type: string
+          description: FiServ system recorded date on processed transactions. *Updates to historical transactions could change this system date* (EST)
+          example: 04/03/2021
+        processedTime:
+          type: string
+          description: 'FiServ system recorded timestamp on processed transactions. *Updates to historical transactions could change this system timestamp* (Format: 24HH:MM:SS) (EST)'
+          example: '05:00:00'
+        promotionDesc:
+          type: string
+          description: Promotion description assigned by the client for the unique card promotion
+          example: PROMOTION NAME
+        promotionID:
+          type: integer
+          description: '8 digit Promotion ID # assigned when card promotion is setup'
+          format: int64
+        promotionIDKey:
+          type: string
+          description: '8 digit Promotion ID # assigned when card promotion is setup (Code)'
+          example: ''
+        reasonCode:
+          type: integer
+          description: Reason code associated with the transaction.
+          format: int32
+        reasonCodeKey:
+          type: string
+          description: Reason code associated with the transaction. (Code)
+          example: ''
+        referenceNum:
+          type: string
+          description: Reference or customer number used for reporting purposes
+          example: '1'
+        replaceSerialNo:
+          type: string
+          description: 'The serial number that replaces the current account number.  This field will be populated for card replacement transactions '
+          example: '1234567890'
+        reportingAmount:
+          type: number
+          description: Amount of the transaction based on the currency assigned to the Consortium
+          format: double
+          example: 999.99
+        reportingCashBackAmount:
+          type: number
+          description: Amount of payout in reporting currency from POS to the customer as a result of balance below minimum
+          format: double
+          example: 999.99
+        reportingCurrencyCode:
+          type: integer
+          description: 'Currency code on the Consortium''s Reporting Currency Code '
+          format: int32
+        reportingCurrencyCodeKey:
+          type: string
+          description: Currency code on the Consortium's Reporting Currency Code  (Code)
+          example: ''
+        reportingFundedAmount:
+          type: number
+          description: Merchant Fund Amount in Reporting Currency
+          format: double
+          example: 999.99
+        requestCode:
+          type: integer
+          description: Numeric request code that is assigned to activity
+          format: int32
+        requestCodeKey:
+          type: string
+          description: Numeric request code that is assigned to activity (Code)
+          example: ''
+        requestGroupCode:
+          type: integer
+          description: Request group associated with the transaction.
+          format: int32
+        requestGroupCodeKey:
+          type: string
+          description: Request group associated with the transaction. (Code)
+          example: ''
+        responseCode:
+          type: integer
+          description: Response code Description associated with the transaction.
+          format: int32
+        responseCodeKey:
+          type: string
+          description: Response code Description associated with the transaction. (Code)
+          example: ''
+        reversed:
+          type: integer
+          description: This field is populated after timeout reversal has been done
+          format: int32
+        reversedKey:
+          type: string
+          description: This field is populated after timeout reversal has been done (Code)
+          example: ''
+        reversedTimestampDate:
+          type: string
+          description: Date of original transaction that was reversed or voided (EST)
+          example: 04/03/2021
+        reversedTimestampTime:
+          type: string
+          description: 'Timestamp of original transaction that was reversed or voided (Format: 24HH:MM:SS) (EST)'
+          example: '05:00:00'
+        rewardAmount:
+          type: number
+          description: Reward Amount Granted for current Transaction
+          format: double
+          example: 999.99
+        routeInfo:
+          type: string
+          description: Used by the IVR to log the phone number that initiated the call
+          example: '?'
+        serialNo:
+          type: string
+          description: Serial Number associated with the prepaid card.
+          example: '1234567890'
+        sign:
+          type: string
+          description: Derived Sign that signifies the direction of the transaction.
+          example: +
+        source:
+          type: integer
+          description: 'Description of the code used  to identify the source of the transaction (e.g.: internet, pos etc)- See Code Supplement'
+          format: int32
+        sourceKey:
+          type: string
+          description: 'Description of the code used  to identify the source of the transaction (e.g.: internet, pos etc)- See Code Supplement (Code)'
+          example: ''
+        targetConsortiumCode:
+          type: integer
+          description: 'Target consortium code for the balance merge. '
+          format: int64
+          example: 4567
+        targetPromoCode:
+          type: integer
+          description: Target promo code for the balance merge
+          format: int64
+          example: 9999999
+        termTxnNo:
+          type: string
+          description: Merchant generated transaction number, which if supplied in the request is returned in the response- Unique per terminal/device.
+          example: '9999999'
+        terminalNo:
+          type: string
+          description: Original merchant location terminal number
+          example: '9999'
+        timestampEST:
+          type: string
+          description: EST Timestamp of the transaction.
+          example: 01/31/2020 15:00:00
+        timestampGMT:
+          type: string
+          description: GMT Timestamp of the transaction.
+          example: 01/31/2020 15:00:00
+        timestampLCL:
+          type: string
+          description: Local Timestamp of the transaction.
+          example: 01/31/2020 15:00:00
+        transactionDate:
+          type: string
+          description: Business Date of the transaction.
+          example: 12/31/2020
+        transactionDateEst:
+          type: string
+          description: FiServ System recorded Date on processing of transactions (EST)
+          example: 04/03/2021
+        transactionDateGMT:
+          type: string
+          description: Date on transaction based on Greenwich Mean Time- Date  (GMT)
+          example: 04/03/2021
+        transactionDateLocal:
+          type: string
+          description: Date provided from terminal on the transaction request
+          example: 04/03/2021
+        transactionDayGMT:
+          type: string
+          description: Local Time of the transaction.
+          example: Sat
+        transactionLocDesc:
+          type: string
+          description: '11 digit Store/Location ID # where GC transaction activity occurred (a.k.a.- Alternate MID)'
+          example: LOCATION NAME
+        transactionMIDDesc:
+          type: string
+          description: Description of the Merchant ID that is provided by the client on the MPOS file
+          example: MERCHANT NAME
+        transactionTimeEst:
+          type: string
+          description: 'FiServ System recorded timestamp (EST) on processing of transactions (Format: 24HH:MM:SS)  (EST)'
+          example: '05:00:00'
+        transactionTimeGMT:
+          type: string
+          description: 'Timestamp on transaction based on Greenwich Mean Time- (Format: 24HH:MM:SS) (GMT)'
+          example: '10:00:00'
+        transactionTimeLocal:
+          type: string
+          description: 'Timestamp provided from terminal on the transaction request. (Format: 24HH:MM:SS)'
+          example: '05:00:00'
+        txnGroupId:
+          type: string
+          description: Transaction group information
+          example: '02'
+        txnId:
+          type: string
+          description: Valuelink-generated, internal unique transaction ID
+          example: '9999999'
+        upliftAmount:
+          type: number
+          description: For a split tender transaction, the difference between the gift card amount used and the total transaction amount
+          format: double
+          example: 999.99
+        user1:
+          type: string
+          description: Generic field used at merchant’s discretion
+          example: USER1
+        user2:
+          type: string
+          description: Generic field used at merchant’s discretion
+          example: USER2
+        userID:
+          type: string
+          description: Business Track or PBC
+          example: P9999999
+        wicNo:
+          type: string
+          description: '11 digit Store/Location ID # where GC transaction activity occurred (a.k.a.- Alternate MID)'
+          example: '974767'
     FundingFilters:
       type: object
       description: Various filter options for Funding queries
@@ -6996,7 +7015,7 @@ components:
             - ZMW
         currencyKey:
           type: string
-          description: Currency code used for the transaction. (Key)
+          description: Currency code used for the transaction. (Code)
           example: '1'
         dda:
           type: string
@@ -7036,7 +7055,7 @@ components:
             - ServiceCharges
         depositTypeCdKey:
           type: string
-          description: DepositType. (Key)
+          description: DepositType. (Code)
           example: '5'
         feeSeqCode:
           type: string
@@ -7098,7 +7117,7 @@ components:
             - NA
         majorCategoryKey:
           type: string
-          description: Identifies the major category for the merchant. (Key)
+          description: Identifies the major category for the merchant. (Code)
           example: '1'
         minorCategory:
           type: string
@@ -8429,7 +8448,7 @@ components:
             - Visa3DSFee
         minorCategoryKey:
           type: string
-          description: Identifies the minor category for the merchant. (Key)
+          description: Identifies the minor category for the merchant. (Code)
           example: '676'
         netSalesAmt:
           type: number
@@ -8471,7 +8490,7 @@ components:
             - Tampa
         processorKey:
           type: string
-          description: Identifies the funding platform. (Key)
+          description: Identifies the funding platform. (Code)
           example: '5'
         productCode:
           type: string
@@ -8579,7 +8598,7 @@ components:
             - UPICredit
         productCodeKey:
           type: string
-          description: Name of the authorizing network associated with the transaction. (Key)
+          description: Name of the authorizing network associated with the transaction. (Code)
           example: '1'
         recordDate:
           type: string
@@ -8647,7 +8666,7 @@ components:
             - Declined
         approvalCodeKey:
           type: string
-          description: Approval code. (Key)
+          description: Approval code. (Code)
           example: '1'
         bankName:
           type: string
@@ -8867,7 +8886,7 @@ components:
             - ZMW
         currencyKey:
           type: string
-          description: Currency of the transaction. (Key)
+          description: Currency of the transaction. (Code)
           example: '1'
         dfaAccountNumber:
           type: string
@@ -9175,7 +9194,7 @@ components:
             - ZMW
         fundsCurrencyKey:
           type: string
-          description: Currency of the transaction. (Key)
+          description: Currency of the transaction. (Code)
           example: '1'
         fundsExpiryDate:
           type: string
@@ -9209,7 +9228,7 @@ components:
             - Debit
         fundsPaymentChannelKey:
           type: string
-          description: The channel type for fund activity report.  IE ACH, DEBIT. (Key)
+          description: The channel type for fund activity report.  IE ACH, DEBIT. (Code)
           example: '3'
         fundsPaymentDate:
           type: string
@@ -9248,7 +9267,7 @@ components:
             - InProcess
         fundsPaymentStatusKey:
           type: string
-          description: The status of the payment. (Key)
+          description: The status of the payment. (Code)
           example: '4'
         fundsPaymentTime:
           type: string
@@ -9301,7 +9320,7 @@ components:
             - Reversed
         fundsTxnStatusKey:
           type: string
-          description: The status of the transaction. (Key)
+          description: The status of the transaction. (Code)
           example: '8'
         fundsTxnTime:
           type: string
@@ -9333,7 +9352,7 @@ components:
             - Inactive
         merchantStatusKey:
           type: string
-          description: The current status of the merchant. (Key)
+          description: The current status of the merchant. (Code)
           example: '1'
         mid:
           type: string
@@ -9359,7 +9378,7 @@ components:
             - Debit
         paymentChannelKey:
           type: string
-          description: Funding source type. (Key)
+          description: Funding source type. (Code)
           example: '3'
         paymentDate:
           type: string
@@ -9402,7 +9421,7 @@ components:
             - InProcess
         paymentStatusKey:
           type: string
-          description: The status of the payment. (Key)
+          description: The status of the payment. (Code)
           example: '4'
         paymentTime:
           type: string
@@ -9421,7 +9440,7 @@ components:
             - Refunds
         paymentTypeKey:
           type: string
-          description: Determine the type of payment that is being processed. (Key)
+          description: Determine the type of payment that is being processed. (Code)
           example: '1'
         paymentVendorId:
           type: string
@@ -9468,7 +9487,7 @@ components:
             - NotGuest
         recipientGuestKey:
           type: string
-          description: The guest status of the recipient. (Key)
+          description: The guest status of the recipient. (Code)
           example: '0'
         recipientId:
           type: string
@@ -9507,7 +9526,7 @@ components:
             - ClientInitiated
         recipientReasonKey:
           type: string
-          description: Recipient reason. (Key)
+          description: Recipient reason. (Code)
           example: '1'
         recipientStatus:
           type: string
@@ -9522,7 +9541,7 @@ components:
             - Closed
         recipientStatusKey:
           type: string
-          description: The recipients current status. (Key)
+          description: The recipients current status. (Code)
           example: '2'
         recipientTin:
           type: string
@@ -9538,7 +9557,7 @@ components:
             - Business
         recipientTypeKey:
           type: string
-          description: Type of the recipient, consumer or business. (Key)
+          description: Type of the recipient, consumer or business. (Code)
           example: '1'
         referenceId:
           type: string
@@ -9566,7 +9585,7 @@ components:
             - Clear
         settlementStatusKey:
           type: string
-          description: The settlement status of the transaction. (Key)
+          description: The settlement status of the transaction. (Code)
           example: '2'
         state:
           type: string
@@ -9643,7 +9662,7 @@ components:
             - YT
         stateKey:
           type: string
-          description: The state where the recipient resides. (Key)
+          description: The state where the recipient resides. (Code)
           example: '11'
         streetOne:
           type: string
@@ -9697,7 +9716,7 @@ components:
             - Reversed
         transactionStatusKey:
           type: string
-          description: The status of the transaction. (Key)
+          description: The status of the transaction. (Code)
           example: '8'
         txnDesc:
           type: string
@@ -10194,7 +10213,7 @@ components:
             - StatusUpdateToClosed
         DispositionKey:
           type: string
-          description: Describing final settlement of a Chargeback. (Key)
+          description: Describing final settlement of a Chargeback. (Code)
           example: '47'
         ECIndicator:
           type: string
@@ -10216,7 +10235,7 @@ components:
             - IVR
         ECIndicatorKey:
           type: string
-          description: Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions. (Key)
+          description: Electronic Commerce Indicator (ECI) is a value returned by Visa, MasterCard, JCB, and American Express etc. indicating the outcome of authentication attempted on transactions. (Code)
           example: '4'
         Reason:
           type: string
@@ -10482,7 +10501,7 @@ components:
             - ProblemWithRemittance
         ReasonKey:
           type: string
-          description: Descriptive reason associated with a specific Chargeback. (Key)
+          description: Descriptive reason associated with a specific Chargeback. (Code)
           example: '10'
         accountNumber:
           type: string
@@ -10559,7 +10578,7 @@ components:
             - PaypalVenmo
         authNetworkKey:
           type: string
-          description: Authorization network of the credit card utilized for the transaction. (Key)
+          description: Authorization network of the credit card utilized for the transaction. (Code)
           example: '2'
         authRecordSequence:
           type: string
@@ -10587,7 +10606,7 @@ components:
             - Tampa
         backendProcessorKey:
           type: string
-          description: Internal settlement platform. (Key)
+          description: Internal settlement platform. (Code)
           example: '1'
         batchNumber:
           type: string
@@ -10618,7 +10637,7 @@ components:
             - Open
         categoryKey:
           type: string
-          description: Categorization of Chargeback. (Key)
+          description: Categorization of Chargeback. (Code)
           example: '8'
         ccn:
           type: string
@@ -10831,7 +10850,7 @@ components:
             - ZMW
         currencyKey:
           type: string
-          description: Currency code used for the transaction. (Key)
+          description: Currency code used for the transaction. (Code)
           example: '1'
         customTracking:
           type: string
@@ -10903,7 +10922,7 @@ components:
           format: int32
         merchantCategoryKey:
           type: string
-          description: Identifies the standard merchant category code assigned to the transaction. (Key)
+          description: Identifies the standard merchant category code assigned to the transaction. (Code)
           example: '1111'
         merchantFUndingAmount:
           type: string
@@ -10946,7 +10965,7 @@ components:
             - India
         mobileWalletKey:
           type: string
-          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Key)
+          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Code)
           example: '0'
         networkSettleAmount:
           type: string
@@ -10963,7 +10982,7 @@ components:
           format: int32
         nonFinancialKey:
           type: string
-          description: Financial Category. (Key)
+          description: Financial Category. (Code)
           example: '1'
         omnipayClienNumber:
           type: string
@@ -11008,7 +11027,7 @@ components:
             - ContactlessMagneticStripe
         paymentMethodKey:
           type: string
-          description: Identifies the method of payment used on the transaction. (Key)
+          description: Identifies the method of payment used on the transaction. (Code)
           example: '2'
         paypalTransactionID:
           type: string
@@ -11024,7 +11043,7 @@ components:
           example: 'Yes'
         preDisputeIndicatorKey:
           type: string
-          description: Pre Dispute Indicator. (Key)
+          description: Pre Dispute Indicator. (Code)
           example: 'Y'
         previousTransferToMerchant:
           type: string
@@ -11055,7 +11074,7 @@ components:
             - Deferred
         recurringKey:
           type: string
-          description: Describes the recurrence type for the transaction. (Key)
+          description: Describes the recurrence type for the transaction. (Code)
           example: '0'
         referenceNumber:
           type: string
@@ -11070,7 +11089,7 @@ components:
             - Seen
         relevanceKey:
           type: string
-          description: Denotes whether the chargeback should be seen by the merchant. (Key)
+          description: Denotes whether the chargeback should be seen by the merchant. (Code)
           example: '1'
         requestDate:
           type: string
@@ -11112,7 +11131,7 @@ components:
             - Offline
         sendModeKey:
           type: string
-          description: Indicates store and forward mode of the transaction. (Key)
+          description: Indicates store and forward mode of the transaction. (Code)
           example: '1'
         siteID:
           type: string
@@ -11137,7 +11156,7 @@ components:
           example: 12/31/2021
         statusKey:
           type: string
-          description: Status of Chargeback. (Key)
+          description: Status of Chargeback. (Code)
           example: '2'
         submittedMerchantId:
           type: string
@@ -11303,7 +11322,7 @@ components:
             - ERR_STM_EXCEPTION
         tokenResponseIndKey:
           type: string
-          description: Tokenization response indicator. (Key)
+          description: Tokenization response indicator. (Code)
           example: '0'
         trackingNumber:
           type: string
@@ -11336,7 +11355,7 @@ components:
             - Void
         transactionTypeKey:
           type: string
-          description: Transaction Type that identifies the transactions as a sale/refund etc. (Key)
+          description: Transaction Type that identifies the transactions as a sale/refund etc. (Code)
           example: '9'
         uniqueTransactionId:
           type: string
@@ -11367,7 +11386,7 @@ components:
             - Loss
         winLossKey:
           type: string
-          description: Status of dispute, describing if it has been won, loss or pending. (Key)
+          description: Status of dispute, describing if it has been won, loss or pending. (Code)
           example: '2'
         workByDate:
           type: string
@@ -11397,7 +11416,7 @@ components:
             - Oploss
         workTypeKey:
           type: string
-          description: Various stages of Chargeback resolution. (Key)
+          description: Various stages of Chargeback resolution. (Code)
           example: '1'
     AuthorizationFilters:
       type: object
@@ -11635,7 +11654,6 @@ components:
               - DCCINDKey
               - ECIIndicator
               - ECIIndicatorKey
-              - IssuerScript
               - P2PEncryptionType
               - P2PEncryptionTypeKey
               - P2PTokenAssurance
@@ -11682,6 +11700,7 @@ components:
               - FuelPurchaseLocation
               - FuelPurchaseLocationKey
               - GiftCardNumber
+              - IssuerScript1
               - IssuerScriptResults
               - Last4
               - Lcldt
@@ -11822,7 +11841,7 @@ components:
             - AddressZipDiscAddress
         AVSResponseKey:
           type: string
-          description: Identifies the result, obtained from the cardholder name, during address verification. (Key)
+          description: Identifies the result, obtained from the cardholder name, during address verification. (Code)
           example: '20'
         CAVVResponse:
           type: string
@@ -11843,7 +11862,7 @@ components:
             - NotValidAuthentication
         CAVVResponseKey:
           type: string
-          description: Identifies name verification result response from the authorizer. (Key)
+          description: Identifies name verification result response from the authorizer. (Code)
           example: '1'
         CVVResult:
           type: string
@@ -11860,7 +11879,7 @@ components:
             - NoResponse
         CVVResultKey:
           type: string
-          description: Identifies the card verification value (CVV2) response from the authorizer. (Key)
+          description: Identifies the card verification value (CVV2) response from the authorizer. (Code)
           example: '2'
         DCCAmount:
           type: number
@@ -12061,7 +12080,7 @@ components:
             - ZMW
         DCCCurrencyKey:
           type: string
-          description: Identifies non-local merchant enabled dynamic currency code. (Key)
+          description: Identifies non-local merchant enabled dynamic currency code. (Code)
           example: '1'
         DCCIND:
           type: integer
@@ -12069,7 +12088,7 @@ components:
           format: int32
         DCCINDKey:
           type: string
-          description: Identifies the acceptance of dynamic currency code transaction processing. (Key)
+          description: Identifies the acceptance of dynamic currency code transaction processing. (Code)
           example: '0'
         ECIIndicator:
           type: string
@@ -12091,12 +12110,8 @@ components:
             - IVR
         ECIIndicatorKey:
           type: string
-          description: Indicates the Electronic Commerce Indicator used for the transaction. (Key)
+          description: Indicates the Electronic Commerce Indicator used for the transaction. (Code)
           example: '4'
-        IssuerScript:
-          type: string
-          description: Identifies the issuer script commands the issuer sends to the card in the response
-          example: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
         P2PEncryptionType:
           type: string
           description: 'Point to Point Encryption: Identifies the encryption type.'
@@ -12107,7 +12122,7 @@ components:
             - PlainText
         P2PEncryptionTypeKey:
           type: string
-          description: 'Point to Point Encryption: Identifies the encryption type. (Key)'
+          description: 'Point to Point Encryption: Identifies the encryption type. (Code)'
           example: '1'
         P2PTokenAssurance:
           type: string
@@ -12120,7 +12135,7 @@ components:
             - TokenOnly
         P2PTokenAssuranceKey:
           type: string
-          description: 'Point to Point Encryption: Identifies the pan token assurance level. (Key)'
+          description: 'Point to Point Encryption: Identifies the pan token assurance level. (Code)'
           example: '0'
         P2PTokenType:
           type: string
@@ -12138,7 +12153,7 @@ components:
             - Recurring
         P2PTokenTypeKey:
           type: string
-          description: 'Point to Point Encryption: Identifies the token type. (Key)'
+          description: 'Point to Point Encryption: Identifies the token type. (Code)'
           example: '0'
         accountNumber:
           type: string
@@ -12179,7 +12194,7 @@ components:
             - Declined
         approvalCodeKey:
           type: string
-          description: Identifies if the authorization was approved or declined. (Key)
+          description: Identifies if the authorization was approved or declined. (Code)
           example: '1'
         assocRespCode:
           type: string
@@ -12312,7 +12327,7 @@ components:
             - EncryptionError
         assocRespCodeKey:
           type: string
-          description: Identifies the initial association response code for the transaction. (Key)
+          description: Identifies the initial association response code for the transaction. (Code)
           example: '1'
         authAmountSign:
           type: string
@@ -12557,7 +12572,7 @@ components:
             - ZMW
         currencyKey:
           type: string
-          description: Currency code used for the transaction. (Key)
+          description: Currency code used for the transaction. (Code)
           example: '1'
         customerName:
           type: string
@@ -12707,7 +12722,7 @@ components:
             - EncryptionError
         declineReasonKey:
           type: string
-          description: Identifies the decline reason for the transaction. (Key)
+          description: Identifies the decline reason for the transaction. (Code)
           example: '3'
         driverID:
           type: string
@@ -12740,12 +12755,16 @@ components:
           format: int32
         fuelPurchaseLocationKey:
           type: string
-          description: Identifies whether the fuel was purchased At the pump or In-Store (Key)
+          description: Identifies whether the fuel was purchased At the pump or In-Store (Code)
           example: '5541'
         giftCardNumber:
           type: string
           description: Gift Card Number used for authorization transaction.
           example: '9999999999999999'
+        issuerScript1:
+          type: string
+          description: Identifies the issuer script commands the issuer sends to the card in the response
+          example: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
         issuerScriptResults:
           type: string
           description: Identifies the results of script processing
@@ -12873,7 +12892,7 @@ components:
             - LPGBottled
         merchandiseCodeKey:
           type: string
-          description: Describes the type of fuel purchased. (Key)
+          description: Describes the type of fuel purchased. (Code)
           example: '1'
         merchantCategory:
           type: integer
@@ -12881,7 +12900,7 @@ components:
           format: int32
         merchantCategoryKey:
           type: string
-          description: Identifies the standard merchant category code assigned to the transaction. (Key)
+          description: Identifies the standard merchant category code assigned to the transaction. (Code)
           example: Fast Food Restaurants (5814)
         messageTypeIdentifier:
           type: string
@@ -12909,7 +12928,7 @@ components:
             - India
         mobileWalletKey:
           type: string
-          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Key)
+          description: Identifies wallet type indicator (e.g. Apple Pay, Samsung Pay, Google Pay etc.). (Code)
           example: '0'
         mrchTranId:
           type: string
@@ -12969,7 +12988,7 @@ components:
             - PaypalVenmo
         networkKey:
           type: string
-          description: Name of the authorizing network associated with the transaction. (Key)
+          description: Name of the authorizing network associated with the transaction. (Code)
           example: '2'
         networkTokenNumber:
           type: string
@@ -13022,7 +13041,7 @@ components:
             - ContactlessMagneticStripe
         paymentMethodKey:
           type: string
-          description: Identifies the method of payment used on the transaction. (Key)
+          description: Identifies the method of payment used on the transaction. (Code)
           example: '6'
         paypalAccountNumber:
           type: string
@@ -13062,7 +13081,7 @@ components:
             - Tampa
         processorKey:
           type: string
-          description: Identifies the originating platform (Switch). (Key)
+          description: Identifies the originating platform (Switch). (Code)
           example: '1'
         productAmount:
           type: number
@@ -13104,7 +13123,7 @@ components:
             - Deferred
         recurringKey:
           type: string
-          description: Describes the recurrence type for the transaction. (Key)
+          description: Describes the recurrence type for the transaction. (Code)
           example: '0'
         referenceNumber:
           type: string
@@ -13158,7 +13177,7 @@ components:
             - DeferredRetry
         rtActionKey:
           type: string
-          description: 'Card Account Updater: Identifies the action that was taken on the account. (Key)'
+          description: 'Card Account Updater: Identifies the action that was taken on the account. (Code)'
           example: '8'
         rtStatus:
           type: string
@@ -13171,7 +13190,7 @@ components:
             - NotRetried
         rtStatusKey:
           type: string
-          description: 'Card Account Updater: Identifies the status of account update. (Key)'
+          description: 'Card Account Updater: Identifies the status of account update. (Code)'
           example: '2'
         sendMode:
           type: string
@@ -13183,7 +13202,7 @@ components:
             - Offline
         sendModeKey:
           type: string
-          description: Indicates store and forward mode of the transaction. (Key)
+          description: Indicates store and forward mode of the transaction. (Code)
           example: '1'
         seqno:
           type: string
@@ -13219,7 +13238,7 @@ components:
             - Signature
         subTypeKey:
           type: string
-          description: Transaction sub type codes e.g. Pin, Signature, etc. (Key)
+          description: Transaction sub type codes e.g. Pin, Signature, etc. (Code)
           example: '0'
         termCapCode:
           type: string
@@ -13389,7 +13408,7 @@ components:
             - ERR_STM_EXCEPTION
         tokenResponseIndKey:
           type: string
-          description: Tokenization response indicator. (Key)
+          description: Tokenization response indicator. (Code)
           example: '0'
         tppVarID:
           type: string
@@ -13451,7 +13470,7 @@ components:
             - Cashback
         typeKey:
           type: string
-          description: Transaction type code e.g. sale, refund etc. (Key)
+          description: Transaction type code e.g. sale, refund etc. (Code)
           example: '2'
         unpredictableNumber:
           type: string

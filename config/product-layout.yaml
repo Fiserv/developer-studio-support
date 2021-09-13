@@ -63,21 +63,17 @@ featuredFeatures:
       bullet1: Learn more about our API objects, methods, requests and responses.
     relatedDocs:
       - relatedDoc: 
-        title: relatedDoc1 TITle 
-        description: relatedDoc1 DESC
-        link: "/docs/APIs/api-model.md"
-      - relatedDoc: 
-        title: relatedDoc2 TITle 
-        description: relatedDoc2 DESC
+        title: Build Your Merchant Portal
+        description: set of easy-to-use APIs to build your own online experience for your merchants
         link: "/docs/APIs/api-model.md"
     relatedAPIs:
       - relatedAPI: 
-        title: relatedDoc1 TITle 
+        title: Auth Search
         description: relatedDoc1 DESC
         type: "post"        
         path: "/v1/authorization/search"
       - relatedAPI: 
-        title: relatedDoc2 TITle 
+        title: Auth Summary
         type: "post"        
         path: "/v1/authorization/search"
   - title: Data Feeds
@@ -89,21 +85,17 @@ featuredFeatures:
       bullet3: Grant accessibilty to only those groups who it is required. 
     relatedDocs:
       - relatedDoc1: 
-        title: relatedDoc1 TITle 
-        description: relatedDoc1 DESC
-        link: "/docs/APIs/data_feeds.md"
-      - relatedDoc2: 
-        title: relatedDoc2 TITle 
-        description: relatedDoc2 DESC
+        title: Data Feeds
+        description: Setup native integrations with AWS, Azure or GCP to receive your data as soon as they are available and query feed status
         link: "/docs/APIs/data_feeds.md"
     relatedAPIs:
       - relatedAPI: 
-        title: relatedDoc1 TITle 
+        title: Auth Search
         description: relatedDoc1 DESC
         type: "post"        
         path: "/v1/authorization/search"
       - relatedAPI: 
-        title: relatedDoc2 TITle 
+        title: Auth Summary
         type: "post"        
         path: "/v1/authorization/search"
 featuredAPIs:
