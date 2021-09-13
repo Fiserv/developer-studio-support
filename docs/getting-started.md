@@ -13,7 +13,7 @@ The Fiserv Reporting APIs are built on the foundation of REST. The APIs accept s
 
 Reporting information is available across the value chain. The following diagram depicts typical flow of information through the settlement process. Our APIs provide you with the ability to pull information across these various stages.
 
-![reportingoverview](../.../../assets/images/reportingoverview.png)
+![reportingoverview](../assets/images/reportingoverview.png)
 
 #### Authorizations
 
