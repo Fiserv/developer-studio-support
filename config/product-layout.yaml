@@ -69,7 +69,7 @@ featuredFeatures:
     relatedAPIs:
       - relatedAPI: 
         title: Auth Search
-        description: relatedDoc1 DESC
+        description: Search for Authorizations
         type: "post"        
         path: "/v1/authorization/search"
       - relatedAPI: 

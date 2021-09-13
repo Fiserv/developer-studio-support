@@ -1376,8 +1376,8 @@ paths:
             schema:
               $ref: '#/components/schemas/AuthorizationSearchRequest'
             examples:
-              List auths:
-                description: List auths
+              Default:
+                description: Default
                 value:
                   fromDate: '20210801'
                   toDate: '20210807'
@@ -1394,6 +1394,39 @@ paths:
                     - Currency
                     - PaymentMethod
                     - Network
+              Search auths Auth Code, Last 4:
+                description: Search auths Auth Code, Last 4
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - Amount
+                    - PaymentMethod
+                    - Currency
+                    - AccountNumber
+                    - Network
+                    - AuthCode
+                    - First6
+                    - Last4
+                  filters:
+                    authCode: I7B1Q1
+                    last4: '0000'
+              List auths for a specific store:
+                description: List auths for a specific store
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - AccountNumber
+                    - Amount
+                    - Currency
+                    - PaymentMethod
+                    - Network
+                  filters:
+                    siteIDs:
+                      - '1111111'
         required: true
       responses:
         '200':
