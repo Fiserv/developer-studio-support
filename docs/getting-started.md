@@ -17,7 +17,7 @@ Reporting information is available across data/information produced by the set o
 
 ### Testing Image
 
-<img src="../assets/images/reportingoverview.png" width="50%" height="50%">
+<img src="../assets/images/reportingoverview.png" width="80%" height="70%">
 
 #### Authorizations
 
