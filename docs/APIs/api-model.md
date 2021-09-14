@@ -7,7 +7,7 @@ Here is a sample Merchant Dashboard we created to show case the APIs. Click here
 ![searchsummary](../../assets/images/searchsummary.png)
 
 
-#### ![oneicon](../../assets/images/oneicon(1).png) Number of Transactions,Total Sales,Approval Rat
+#### ![oneicon](../../assets/images/oneicon(1).png)  Number of Transactions,Total Sales,Approval Rat
 
 <!-- theme: success -->
 >**POST** `/v1/authorization/summary`
