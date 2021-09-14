@@ -47,7 +47,7 @@ featuredFeatures:
         link: "/docs/getting-started.md"
       - relatedDoc: 
         title: Generate Reports 
-        description: ...
+        description: Our robust reporting API provides you with the ability to integrate your systems directly with the financial and non-financial reporting APIs
         link: "/docs/Examples/allapis.md"
     relatedAPIs:
       - relatedAPI: 
@@ -72,7 +72,7 @@ featuredFeatures:
         link: "/docs/getting-started.md"
       - relatedDoc: 
         title: Build Your Merchant Portal
-        description: set of easy-to-use APIs to build your own online experience for your merchants
+        description: You can build your own integrated merchant portal experience utilizing the APIs available here
         link: "/docs/APIs/api-model.md"
     relatedAPIs:
       - relatedAPI: 
@@ -98,7 +98,7 @@ featuredFeatures:
         link: "/docs/getting-started.md"
       - relatedDoc1: 
         title: Data Feeds
-        description: Setup native integrations with AWS, Azure or GCP to receive your data as soon as they are available and query feed status
+        description: If traditional restful APIs do not satisfy your requirements and you would rather get data feeds, we have multiple ways to get your data to you easily and in a timely manner.
         link: "/docs/APIs/data_feeds.md"
     relatedAPIs:
       - relatedAPI: 
