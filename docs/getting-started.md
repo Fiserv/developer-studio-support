@@ -16,7 +16,8 @@ Reporting information is available across data/information produced by the set o
 ![reportingoverview](../assets/images/reportingoverview.png)
 
 ### Testing Image
-img src="../assets/images/reportingoverview.png" width="25" height="25">
+
+<img src="../assets/images/reportingoverview.png" width="25%" height="25%">
 
 #### Authorizations
 
