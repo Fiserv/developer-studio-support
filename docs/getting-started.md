@@ -15,10 +15,6 @@ Reporting information is available across data/information produced by the set o
 
 ![reportingoverview](../assets/images/reportingoverview.png)
 
-### Testing Image
-
-<img src="../assets/images/reportingoverview.png" width="80%" height="80%">
-
 #### Authorizations
 
 Authorizations refers to the transactions as soon as they are received by the receiving end point. An authorization can either be Approved or Declined. There are many details associated with the transaction that will determine where the authorization is ultimately routed to.
