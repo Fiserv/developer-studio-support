@@ -822,8 +822,17 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/BinsSearchRequest'
-            example:
-              limit: 10
+            examples:
+              List all bins:
+                description: List all bins
+                value:
+                  limit: 5
+              Get bin details:
+                description: Get bin details
+                value:
+                  limit: 5
+                  filters:
+                    binID: '582023'
         required: true
       responses:
         '200':
@@ -1031,10 +1040,30 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FundingSummaryRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              summaryBy: BatchDate
+            examples:
+              Funding Summary:
+                description: Funding Summary
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+              Funding Summary by funded date:
+                description: Funding Summary by funded date
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: FundedDate
+              Funding Summary by DDA last 4:
+                description: Funding Summary by DDA last 4
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: DdaLast4
+              Funding Summary by category:
+                description: Funding Summary by category
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: MajorCategory
         required: true
       responses:
         '200':
@@ -1102,10 +1131,57 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FundingSearchRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              limit: 10
+            examples:
+              List Funding transactions:
+                description: List Funding transactions
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+              List Funding transactions with specific fields:
+                description: List Funding transactions with specific fields
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - Currency
+                    - DdaLast4
+                    - MajorCategory
+                    - DepositAmt
+                    - ReferenceNo
+                    - FundedDate
+              Search Funding transactions DDA last 4:
+                description: Search Funding transactions DDA last 4
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - Currency
+                    - DdaLast4
+                    - MajorCategory
+                    - DepositAmt
+                    - ReferenceNo
+                    - FundedDate
+                  filters:
+                    DdaLast4: '9087'
+              Search Funding transactions DDA last 4 for specific day:
+                description: Search Funding transactions DDA last 4 for specific day
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - Currency
+                    - DdaLast4
+                    - MajorCategory
+                    - DepositAmt
+                    - ReferenceNo
+                    - FundedDate
+                  filters:
+                    fundedDate: 08/03/2021
+                    DdaLast4: '9087'
         required: true
       responses:
         '200':
@@ -4864,13 +4940,23 @@ components:
           type: integer
           description: The maximum number of records that will be returned
           format: int32
+          example: 5
           default: 10
         fields:
           type: array
           description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          example:
+            - Id
+            - Bin
+            - Issuer
+            - Country
+            - CardBrand
+            - CardClass
+            - CardSubType
           items:
             type: string
             description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            example: '["Id","Bin","Issuer","Country","CardBrand","CardClass","CardSubType"]'
             enum:
               - EBTState
               - EBTStateKey
@@ -6872,6 +6958,24 @@ components:
           example: '974767'
     FundingFilters:
       type: object
+      properties:
+        ddaLast4:
+          type: string
+          description: Last 4 DDA
+          example: '9087'
+        fundedDate:
+          type: string
+          description: Funded date, mm/dd/yyyy
+          example: 08/03/2021
+        siteIDs:
+          type: array
+          description: Funding associated with one of the Site IDs specified
+          example:
+            - '1111111'
+          items:
+            type: string
+            description: Funding associated with one of the Site IDs specified
+            example: '["1111111"]'
       description: Various filter options for Funding queries
     FundingSummaryRequest:
       required:
@@ -6897,6 +7001,7 @@ components:
             - ProductCode
             - DdaLast4
             - BatchDate
+            - FundedDate
         filters:
           $ref: '#/components/schemas/FundingFilters'
       description: Request object for funding summary report creation
@@ -6982,9 +7087,16 @@ components:
         fields:
           type: array
           description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          example:
+            - Currency
+            - DdaLast4
+            - MajorCategory
+            - DepositAmt
+            - ReferenceNo
           items:
             type: string
             description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            example: '["Currency","DdaLast4","MajorCategory","DepositAmt","ReferenceNo"]'
             enum:
               - ServiceChangesAmt
               - AccountCurrency
@@ -13103,7 +13215,7 @@ components:
           example: 12/31/2020 10:00:00 AM
         linkResponseCode:
           type: string
-          description: Old Card number.
+          description: Identifies the Card N/w (i.e. VISA, Mastercard, Discover, AMEX) link response
           example: A99
         lodgNoShowIndicator:
           type: string
