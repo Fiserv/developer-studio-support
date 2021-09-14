@@ -396,10 +396,36 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SettlementSummaryRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              summaryBy: TxnDay
+            examples:
+              Settled transactions summary:
+                description: Settled transactions summary
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+              Settled transactions summary by Network:
+                description: Settled transactions summary by Network
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: Network
+              Settled transactions summary for a store by Payment Method:
+                description: Settled transactions summary for a store by Payment Method
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: PaymentMethod
+                  filters:
+                    siteIDs:
+                      - '222222222222'
+              Settled transactions trend for a store:
+                description: Settled transactions trend for a store
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: TxnDay
+                  filters:
+                    siteIDs:
+                      - '222222222222'
         required: true
       responses:
         '200':
@@ -467,10 +493,58 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SettlementSearchRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              limit: 2
+            examples:
+              List settled transactions:
+                description: List settled transactions
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+              List settled transactions with specific fields:
+                description: List settled transactions with specific fields
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - AccountNumber
+                    - ProcessedNetAmount
+                    - Currency
+                    - PaymentMethod
+                    - Network
+              Search settled transactions Auth Code, Last 4:
+                description: Search settled transactions Auth Code, Last 4
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - ProcessedNetAmount
+                    - PaymentMethod
+                    - Currency
+                    - AccountNumber
+                    - Network
+                    - AuthCode
+                    - First6
+                    - Last4
+                  filters:
+                    authCode: I7B1Q1
+                    last4: '0000'
+              List settled transactions for a specific store:
+                description: List settled transactions for a specific store
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - AccountNumber
+                    - ProcessedNetAmount
+                    - Currency
+                    - PaymentMethod
+                    - Network
+                  filters:
+                    siteIDs:
+                      - '222222222222'
         required: true
       responses:
         '200':
@@ -1917,19 +1991,148 @@ components:
     SettlementFilters:
       type: object
       properties:
+        paymentMethods:
+          type: array
+          description: Any transactions matching with any one of the specified Payment Methods
+          example:
+            - EMV
+          items:
+            type: string
+            description: Any transactions matching with any one of the specified Payment Methods
+            example: '["EMV"]'
+            enum:
+              - Unknown
+              - Manual
+              - MagneticStripe
+              - OCR
+              - EMV
+              - ContactlessChip
+              - MobileECommerce
+              - Fallback
+              - BarCode
+              - NotSpecified
+              - CredentialOnFile
+              - ContactlessMagneticStripe
+        networks:
+          type: array
+          description: Any transactions matching with any one of the specified Networks
+          example:
+            - Visa
+          items:
+            type: string
+            description: Any transactions matching with any one of the specified Networks
+            example: '["Visa"]'
+            enum:
+              - Unknown
+              - Amex
+              - Visa
+              - Master
+              - Discover
+              - Pulse
+              - Accel
+              - Interlink
+              - Jeanie
+              - Maestro
+              - NYCE
+              - CU24
+              - Shazam
+              - EBT
+              - AFFN
+              - Telecheck
+              - Diners
+              - PayPal
+              - ValueLink
+              - Private
+              - Debit
+              - Voyager
+              - ATH
+              - JCB
+              - StarNE
+              - StarSE
+              - StarW
+              - StarAccess
+              - FleetCor
+              - SVS
+              - WEX
+              - Incomm
+              - Interac
+              - NA
+              - Moneris
+              - VaultedCard
+              - PAVD
+              - MCSend
+              - UnionPay
+              - FraudFlex
+              - Certegy
+              - MCI
+              - PaypalVenmo
+        types:
+          type: array
+          description: Any transactions matching with any one of the specified Transaction Types
+          example:
+            - Purchase
+          items:
+            type: string
+            description: Any transactions matching with any one of the specified Transaction Types
+            example: '["Purchase"]'
+            enum:
+              - Unknown
+              - Totals
+              - Purchase
+              - PreAuthRequest
+              - PreAuthComplete
+              - Reversal
+              - Return
+              - Cancellation
+              - MailAuth
+              - Activate
+              - Recharge
+              - Verification
+              - TeleCheck
+              - StartFueling
+              - DoNotUse
+              - Fee
+              - Withdrawal
+              - Deposit
+              - Transfer
+              - Balance
+              - FraudScore
+              - GenToken
+              - Adjustment
+              - ReportAsLost
+              - CloseAccount
+              - FreezeAccount
+              - UnfreezeAccount
+              - History
+              - TimeoutReversal
+              - SetupAutoReload
+              - ReturnReversal
+              - Cashback
+        siteIDs:
+          type: array
+          description: Transactions associated with one of the Site IDs specified
+          example:
+            - '1111111'
+          items:
+            type: string
+            description: Transactions associated with one of the Site IDs specified
+            example: '["1111111"]'
         authCode:
           type: string
           description: Auth Code, Full match
+          example: I7B1Q1
         first6:
           maxLength: 6
           minLength: 6
           type: string
           description: 'First 6 of the card #, Full match'
+          example: '123456'
         last4:
           maxLength: 4
           minLength: 4
           type: string
           description: 'Last 4 of the card #, Full match'
+          example: '0000'
         dateType:
           type: string
           description: Search/Analysis date type. default value is settle date
@@ -1939,12 +2142,6 @@ components:
             - FundedDate
             - RecordDate
           default: SettleDate
-        siteIDs:
-          type: array
-          description: Transactions associated with one of the Site IDs specified
-          items:
-            type: string
-            description: Transactions associated with one of the Site IDs specified
       description: Various filter options for settlement transaction queries
     SettlementSummaryRequest:
       required:
@@ -11502,9 +11699,12 @@ components:
         approvalCodes:
           type: array
           description: Any transactions matching with any one of the specified Approval Codes
+          example:
+            - Approved
           items:
             type: string
             description: Any transactions matching with any one of the specified Approval Codes
+            example: '["Approved"]'
             enum:
               - Unknown
               - Approved
@@ -11512,9 +11712,12 @@ components:
         paymentMethods:
           type: array
           description: Any transactions matching with any one of the specified Payment Methods
+          example:
+            - EMV
           items:
             type: string
             description: Any transactions matching with any one of the specified Payment Methods
+            example: '["EMV"]'
             enum:
               - Unknown
               - Manual
@@ -11531,9 +11734,12 @@ components:
         networks:
           type: array
           description: Any transactions matching with any one of the specified Networks
+          example:
+            - Visa
           items:
             type: string
             description: Any transactions matching with any one of the specified Networks
+            example: '["Visa"]'
             enum:
               - Unknown
               - Amex
@@ -11581,9 +11787,12 @@ components:
         types:
           type: array
           description: Any transactions matching with any one of the specified Transaction Types
+          example:
+            - Purchase
           items:
             type: string
             description: Any transactions matching with any one of the specified Transaction Types
+            example: '["Purchase"]'
             enum:
               - Unknown
               - Totals
@@ -11620,13 +11829,16 @@ components:
         siteIDs:
           type: array
           description: Transactions associated with one of the Site IDs specified
+          example:
+            - '1111111'
           items:
             type: string
             description: Transactions associated with one of the Site IDs specified
+            example: '["1111111"]'
         authCode:
           type: string
           description: Auth Code, Full match
-          example: FH48J3
+          example: I7B1Q1
         first6:
           maxLength: 6
           minLength: 6
@@ -11638,7 +11850,7 @@ components:
           minLength: 4
           type: string
           description: 'Last 4 of the card #, Full match'
-          example: '5555'
+          example: '0000'
       description: Various filter options for authorizations queries
     AuthorizationSummaryRequest:
       required:
@@ -11725,9 +11937,16 @@ components:
         fields:
           type: array
           description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          example:
+            - Network
+            - ApprovalCode
+            - Amount
+            - AuthCode
+            - OrdNo
           items:
             type: string
             description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            example: '["Network","ApprovalCode","Amount","AuthCode","OrdNo"]'
             enum:
               - AVSResponse
               - AVSResponseKey
