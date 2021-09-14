@@ -746,7 +746,15 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SitesSearchRequest'
-            example: {}
+            examples:
+              List all sites:
+                description: List all sites
+                value: {}
+              List sites for a platform:
+                description: List sites for a platform
+                value:
+                  filters:
+                    platform: Buypass
         required: true
       responses:
         '200':
@@ -4666,9 +4674,18 @@ components:
         fields:
           type: array
           description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          example:
+            - Name
+            - Address
+            - City
+            - St_abbr_nm
+            - Zip
+            - Id
+            - Platform
           items:
             type: string
             description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            example: '["Name","Address","City","St_abbr_nm","Zip","Id","Platform"]'
             enum:
               - Name
               - Address
@@ -13868,13 +13885,13 @@ components:
             type: string
             description: Determines the user attribute value for respective application
             example: '["4"]'
-        isReferencedValue:
-          type: boolean
-          description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
-          example: true
         isRequired:
           type: boolean
           description: Determines if respective attribute is required to provision the application for user
+          example: true
+        isReferencedValue:
+          type: boolean
+          description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
           example: true
       description: '// Respective Application specific attributes(For example: Entitlements)'
     AttributeOptionDto:
