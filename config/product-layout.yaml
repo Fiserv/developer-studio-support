@@ -82,6 +82,7 @@ featuredFeatures:
         path: "/v1/authorization/search"
       - relatedAPI: 
         title: Auth Summary
+        description: Summary for Authorizations
         type: "post"        
         path: "/v1/authorization/search"
   - title: Data Feeds
@@ -103,11 +104,12 @@ featuredFeatures:
     relatedAPIs:
       - relatedAPI: 
         title: Auth Search
-        description: relatedDoc1 DESC
+        description: Search for Authorizations
         type: "post"        
         path: "/v1/authorization/search"
       - relatedAPI: 
         title: Auth Summary
+        description: Summary for Authorizations
         type: "post"        
         path: "/v1/authorization/search"
 featuredAPIs:
