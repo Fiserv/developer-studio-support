@@ -6,6 +6,10 @@ If traditional restful APIs do not satisfy your requirements and you would rathe
 
 ![snowflake](../../assets/images/snowflake.jpeg)
 
+![reportingoverview](../assets/images/reportingoverview.png)
+
+![reportingoverview](../../assets/images/reportingoverview.png)
+
 [Snowflake](https://www.snowflake.com) is a cloud-based data warehousing solution. We have partnered with Snowflake to make [Secure data shares](https://www.snowflake.com/workloads/data-sharing) available. Data is available in your share on a near real-time basis. Authorizations, Gateway, and Value-added services transactions are available within a few seconds. Batch processed objects are available as soon as the processing is complete. No messy ETL, file exchanges etc. to worry about. Spin up your [Warehouses](https://www.snowflake.com/workloads/data-warehouse-modernization) and join/mingle it with your data in Snowflake. Use traditional SQL to query and analyze your data.
 
 If you are interested in this option, please contact your account rep to enable a secure share.
