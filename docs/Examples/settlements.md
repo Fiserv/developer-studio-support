@@ -16,7 +16,7 @@ title: Request
 
 ```json
 curl -X 'POST' \
-  'http://localhost:5005/v1/authorization/search' \
+  'http://localhost:5005/v1/settlement/search' \
   -H 'accept: application/json' \
   -H 'apiKey: YOUR KEY' \
   -H 'Content-Type: application/json' \
@@ -222,7 +222,7 @@ title: Request
 
 ```json
 curl -X 'POST' \
-  'http://localhost:5005/v1/authorization/search' \
+  'http://localhost:5005/v1/settlement/search' \
   -H 'accept: application/json' \
   -H 'apiKey: YOUR KEY' \
   -H 'Content-Type: application/json' \
@@ -289,7 +289,7 @@ title: Request
 
 ```json
 curl -X 'POST' \
-  'http://localhost:5005/v1/authorization/search' \
+  'http://localhost:5005/v1/settlement/search' \
   -H 'accept: application/json' \
   -H 'apiKey: YOUR KEY' \
   -H 'Content-Type: application/json' \
@@ -352,7 +352,7 @@ title: Request
 
 ```json
 curl -X 'POST' \
-  'http://localhost:5005/v1/authorization/search' \
+  'http://localhost:5005/v1/settlement/search' \
   -H 'accept: application/json' \
   -H 'apiKey: YOUR KEY' \
   -H 'Content-Type: application/json' \
@@ -424,7 +424,7 @@ title: Request
 
 ```json
 curl -X 'POST' \
-  'http://localhost:5005/v1/authorization/search' \
+  'http://localhost:5005/v1/settlement/summary' \
   -H 'accept: application/json' \
   -H 'apiKey: YOUR KEY' \
   -H 'Content-Type: application/json' \
@@ -480,7 +480,7 @@ title: Request
 
 ```json
 curl -X 'POST' \
-  'http://localhost:5005/v1/authorization/search' \
+  'http://localhost:5005/v1/settlement/summary' \
   -H 'accept: application/json' \
   -H 'apiKey: YOUR KEY' \
   -H 'Content-Type: application/json' \
@@ -596,7 +596,7 @@ title: Request
 
 ```json
 curl -X 'POST' \
-  'http://localhost:5005/v1/authorization/search' \
+  'http://localhost:5005/v1/settlement/summary' \
   -H 'accept: application/json' \
   -H 'apiKey: YOUR KEY' \
   -H 'Content-Type: application/json' \
@@ -716,7 +716,7 @@ title: Request
 
 ```json
 curl -X 'POST' \
-  'http://localhost:5005/v1/authorization/search' \
+  'http://localhost:5005/v1/settlement/summary' \
   -H 'accept: application/json' \
   -H 'apiKey: YOUR KEY' \
   -H 'Content-Type: application/json' \
