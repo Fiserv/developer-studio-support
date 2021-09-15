@@ -1439,7 +1439,7 @@ paths:
                   limit: 10
                   filters:
                     dateType: ChargebackDate
-                    caseNumber: '12345'
+                    caseNumber: '212494451501'
         required: true
       responses:
         '200':
@@ -2146,11 +2146,11 @@ components:
           type: array
           description: Any transactions matching with any one of the specified Networks
           example:
-            - Visa
+            - Master
           items:
             type: string
             description: Any transactions matching with any one of the specified Networks
-            example: '["Visa"]'
+            example: '["Master"]'
             enum:
               - Unknown
               - Amex
@@ -2241,11 +2241,11 @@ components:
           type: array
           description: Transactions associated with one of the Site IDs specified
           example:
-            - '1111111'
+            - '111111111111'
           items:
             type: string
             description: Transactions associated with one of the Site IDs specified
-            example: '["1111111"]'
+            example: '["111111111111"]'
         authCode:
           type: string
           description: Auth Code, Full match
@@ -2255,7 +2255,7 @@ components:
           minLength: 6
           type: string
           description: 'First 6 of the card #, Full match'
-          example: '123456'
+          example: '528757'
         last4:
           maxLength: 4
           minLength: 4
@@ -2265,6 +2265,7 @@ components:
         dateType:
           type: string
           description: Search/Analysis date type. default value is settle date
+          example: SettleDate
           enum:
             - AuthDate
             - SettleDate
@@ -2409,6 +2410,7 @@ components:
           type: integer
           description: The maximum number of records that will be returned
           format: int32
+          example: 1
           default: 10
         fields:
           type: array
@@ -3922,19 +3924,23 @@ components:
         authCode:
           type: string
           description: Auth Code, Full match
+          example: FH48J3
         first6:
           maxLength: 6
           minLength: 6
           type: string
           description: 'First 6 of the card #, Full match'
+          example: '123456'
         last4:
           maxLength: 4
           minLength: 4
           type: string
           description: 'Last 4 of the card #, Full match'
+          example: '5555'
         dateType:
           type: string
           description: Search/Analysis date type. default value is retrieval date
+          example: RetrievalDate
           enum:
             - AuthDate
             - StatusDate
@@ -3965,13 +3971,9 @@ components:
         summaryBy:
           type: string
           description: Summary grouped by this field
-          example: Category
+          example: AuthNetwork
           enum:
-            - Category
-            - WorkType
-            - Disposition
-            - Status
-            - WinLoss
+            - AuthNetwork
             - TxnDay
             - TxnWeek
             - TxnMonth
@@ -3979,7 +3981,7 @@ components:
             - TxnYear
         filters:
           $ref: '#/components/schemas/RetrievalFilters'
-      description: Request object for chargeback summary report creation
+      description: Request object for retrieval summary report creation
     RetrievalObj:
       type: object
       properties:
@@ -4681,6 +4683,7 @@ components:
           type: integer
           description: The maximum number of records that will be returned
           format: int32
+          example: 1
           default: 10
         fields:
           type: array
@@ -6242,6 +6245,7 @@ components:
           type: integer
           description: The maximum number of records that will be returned
           format: int32
+          example: 1
           default: 10
         fields:
           type: array
@@ -7016,11 +7020,11 @@ components:
           type: array
           description: Funding associated with one of the Site IDs specified
           example:
-            - '1111111'
+            - '111111111111'
           items:
             type: string
             description: Funding associated with one of the Site IDs specified
-            example: '["1111111"]'
+            example: '["111111111111"]'
       description: Various filter options for Funding queries
     FundingSummaryRequest:
       required:
@@ -7128,6 +7132,7 @@ components:
           type: integer
           description: The maximum number of records that will be returned
           format: int32
+          example: 1
           default: 10
         fields:
           type: array
@@ -10196,6 +10201,7 @@ components:
           type: integer
           description: The maximum number of records that will be returned
           format: int32
+          example: 1
           default: 10
         fields:
           type: array
@@ -10339,7 +10345,7 @@ components:
         caseNumber:
           type: string
           description: Case Number
-          example: FH48J3
+          example: '212494451501'
         authCode:
           type: string
           description: Auth Code, Full match
@@ -10371,9 +10377,12 @@ components:
         siteIDs:
           type: array
           description: Chargebacks associated with one of the Site IDs specified
+          example:
+            - '111111111111'
           items:
             type: string
             description: Chargebacks associated with one of the Site IDs specified
+            example: '["111111111111"]'
       description: Various filter options for Chargeback queries
     ChargebackSummaryRequest:
       required:
@@ -10459,6 +10468,7 @@ components:
           type: integer
           description: The maximum number of records that will be returned
           format: int32
+          example: 1
           default: 10
         fields:
           type: array
@@ -11913,11 +11923,11 @@ components:
           type: array
           description: Any transactions matching with any one of the specified Networks
           example:
-            - Visa
+            - Master
           items:
             type: string
             description: Any transactions matching with any one of the specified Networks
-            example: '["Visa"]'
+            example: '["Master"]'
             enum:
               - Unknown
               - Amex
@@ -12022,7 +12032,7 @@ components:
           minLength: 6
           type: string
           description: 'First 6 of the card #, Full match'
-          example: '123456'
+          example: '528757'
         last4:
           maxLength: 4
           minLength: 4
@@ -12111,6 +12121,7 @@ components:
           type: integer
           description: The maximum number of records that will be returned
           format: int32
+          example: 1
           default: 10
         fields:
           type: array
@@ -14046,13 +14057,13 @@ components:
             type: string
             description: Determines the user attribute value for respective application
             example: '["4"]'
-        isReferencedValue:
-          type: boolean
-          description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
-          example: true
         isRequired:
           type: boolean
           description: Determines if respective attribute is required to provision the application for user
+          example: true
+        isReferencedValue:
+          type: boolean
+          description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
           example: true
       description: '// Respective Application specific attributes(For example: Entitlements)'
     AttributeOptionDto:
