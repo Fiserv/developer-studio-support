@@ -1316,12 +1316,37 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ChargebackSummaryRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              groupBy: WorkType
-              filters:
-                dateType: StatusDate
+            examples:
+              Chargeback Summary based on status date:
+                description: Chargeback Summary based on status date
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  filters:
+                    dateType: StatusDate
+              Chargeback Summary based on chargeback date:
+                description: Chargeback Summary based on chargeback date
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  filters:
+                    dateType: ChargebackDate
+              Chargeback Summary by Work Type:
+                description: Chargeback Summary by Work Type
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: WorkType
+                  filters:
+                    dateType: StatusDate
+              Chargeback Summary by wins & losses:
+                description: Chargeback Summary by wins & losses
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: WinLoss
+                  filters:
+                    dateType: StatusDate
         required: true
       responses:
         '200':
@@ -1389,12 +1414,32 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ChargebackSearchRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              limit: 10
-              filters:
-                dateType: StatusDate
+            examples:
+              Search chargebacks by status date:
+                description: Search chargebacks by status date
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 10
+                  filters:
+                    dateType: StatusDate
+              Search chargebacks by chargeback date:
+                description: Search chargebacks by chargeback date
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 10
+                  filters:
+                    dateType: ChargebackDate
+              Search chargebacks by case number:
+                description: Search chargebacks by case number
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 10
+                  filters:
+                    dateType: ChargebackDate
+                    caseNumber: '12345'
         required: true
       responses:
         '200':
@@ -10291,6 +10336,10 @@ components:
     ChargebackFilters:
       type: object
       properties:
+        caseNumber:
+          type: string
+          description: Case Number
+          example: FH48J3
         authCode:
           type: string
           description: Auth Code, Full match
@@ -13997,13 +14046,13 @@ components:
             type: string
             description: Determines the user attribute value for respective application
             example: '["4"]'
-        isRequired:
-          type: boolean
-          description: Determines if respective attribute is required to provision the application for user
-          example: true
         isReferencedValue:
           type: boolean
           description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
+          example: true
+        isRequired:
+          type: boolean
+          description: Determines if respective attribute is required to provision the application for user
           example: true
       description: '// Respective Application specific attributes(For example: Entitlements)'
     AttributeOptionDto:
