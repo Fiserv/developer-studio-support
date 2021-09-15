@@ -61,7 +61,7 @@ title: Response
 ]
 ```
 
-#### (2) Sales Details
+#### ![twoicon](../../assets/images/twoicon(2).jpg) Sales Details
 
 <!-- theme: success -->
 >**POST** `/v1/authorization/search`
@@ -119,7 +119,7 @@ title: Response
 ]
 ```
 
-#### (3) Total Funded
+#### ![threeicon](../../assets/images/threeicon(3).jpg) Total Funded
 
 <!-- theme: success -->
 >**POST** `/v1/funding/summary`
@@ -182,7 +182,7 @@ title: Response
 ]
 ```
 
-#### (4) Chargebacks Received
+#### ![fouricon](../../assets/images/fouricon(4).jpg) Chargebacks Received
 
 <!-- theme: success -->
 >**POST** `/v1/chargeback/summary`
@@ -226,9 +226,9 @@ title: Response
 ]
 ```
 
-#### (5) Sales Trend [TBD]
+#### ![fiveicon](../../assets/images/fiveicon(5).jpg) Sales Trend [TBD]
 
-#### (6) Associations
+#### ![sixicon](../../assets/images/sixicon(6).jpg) Associations
 
 <!-- theme: success -->
 >**POST** `/v1/authorization/summary`
