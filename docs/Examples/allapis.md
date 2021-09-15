@@ -4,7 +4,7 @@ Our robust reporting API provides you with the ability to integrate your systems
  
 These are the object types available for reporting and you can utilize the summary or search API.
   - [Authorizations](?path=docs/Examples/authorizations.md)
-  * Settlement
+  - [Settlement](?path=docs/Examples/settlements.md)
   * Chargebacks
   * Retrievals
   * Funding

@@ -396,10 +396,36 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SettlementSummaryRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              summaryBy: TxnDay
+            examples:
+              Settled transactions summary:
+                description: Settled transactions summary
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+              Settled transactions summary by Network:
+                description: Settled transactions summary by Network
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: Network
+              Settled transactions summary for a store by Payment Method:
+                description: Settled transactions summary for a store by Payment Method
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: PaymentMethod
+                  filters:
+                    siteIDs:
+                      - '222222222222'
+              Settled transactions trend for a store:
+                description: Settled transactions trend for a store
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: TxnDay
+                  filters:
+                    siteIDs:
+                      - '222222222222'
         required: true
       responses:
         '200':
@@ -467,10 +493,58 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SettlementSearchRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              limit: 2
+            examples:
+              List settled transactions:
+                description: List settled transactions
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+              List settled transactions with specific fields:
+                description: List settled transactions with specific fields
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - AccountNumber
+                    - ProcessedNetAmount
+                    - Currency
+                    - PaymentMethod
+                    - Network
+              Search settled transactions Auth Code, Last 4:
+                description: Search settled transactions Auth Code, Last 4
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - ProcessedNetAmount
+                    - PaymentMethod
+                    - Currency
+                    - AccountNumber
+                    - Network
+                    - AuthCode
+                    - First6
+                    - Last4
+                  filters:
+                    authCode: I7B1Q1
+                    last4: '0000'
+              List settled transactions for a specific store:
+                description: List settled transactions for a specific store
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - AccountNumber
+                    - ProcessedNetAmount
+                    - Currency
+                    - PaymentMethod
+                    - Network
+                  filters:
+                    siteIDs:
+                      - '222222222222'
         required: true
       responses:
         '200':
@@ -672,7 +746,15 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/SitesSearchRequest'
-            example: {}
+            examples:
+              List all sites:
+                description: List all sites
+                value: {}
+              List sites for a platform:
+                description: List sites for a platform
+                value:
+                  filters:
+                    platform: Buypass
         required: true
       responses:
         '200':
@@ -740,8 +822,17 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/BinsSearchRequest'
-            example:
-              limit: 10
+            examples:
+              List all bins:
+                description: List all bins
+                value:
+                  limit: 5
+              Get bin details:
+                description: Get bin details
+                value:
+                  limit: 5
+                  filters:
+                    binID: '582023'
         required: true
       responses:
         '200':
@@ -949,10 +1040,30 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FundingSummaryRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              summaryBy: BatchDate
+            examples:
+              Funding Summary:
+                description: Funding Summary
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+              Funding Summary by funded date:
+                description: Funding Summary by funded date
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: FundedDate
+              Funding Summary by DDA last 4:
+                description: Funding Summary by DDA last 4
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: DdaLast4
+              Funding Summary by category:
+                description: Funding Summary by category
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  summaryBy: MajorCategory
         required: true
       responses:
         '200':
@@ -1020,10 +1131,57 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/FundingSearchRequest'
-            example:
-              fromDate: '20210801'
-              toDate: '20210807'
-              limit: 10
+            examples:
+              List Funding transactions:
+                description: List Funding transactions
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+              List Funding transactions with specific fields:
+                description: List Funding transactions with specific fields
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - Currency
+                    - DdaLast4
+                    - MajorCategory
+                    - DepositAmt
+                    - ReferenceNo
+                    - FundedDate
+              Search Funding transactions DDA last 4:
+                description: Search Funding transactions DDA last 4
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - Currency
+                    - DdaLast4
+                    - MajorCategory
+                    - DepositAmt
+                    - ReferenceNo
+                    - FundedDate
+                  filters:
+                    DdaLast4: '9087'
+              Search Funding transactions DDA last 4 for specific day:
+                description: Search Funding transactions DDA last 4 for specific day
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 3
+                  fields:
+                    - Currency
+                    - DdaLast4
+                    - MajorCategory
+                    - DepositAmt
+                    - ReferenceNo
+                    - FundedDate
+                  filters:
+                    fundedDate: 08/03/2021
+                    DdaLast4: '9087'
         required: true
       responses:
         '200':
@@ -1917,19 +2075,148 @@ components:
     SettlementFilters:
       type: object
       properties:
+        paymentMethods:
+          type: array
+          description: Any transactions matching with any one of the specified Payment Methods
+          example:
+            - EMV
+          items:
+            type: string
+            description: Any transactions matching with any one of the specified Payment Methods
+            example: '["EMV"]'
+            enum:
+              - Unknown
+              - Manual
+              - MagneticStripe
+              - OCR
+              - EMV
+              - ContactlessChip
+              - MobileECommerce
+              - Fallback
+              - BarCode
+              - NotSpecified
+              - CredentialOnFile
+              - ContactlessMagneticStripe
+        networks:
+          type: array
+          description: Any transactions matching with any one of the specified Networks
+          example:
+            - Visa
+          items:
+            type: string
+            description: Any transactions matching with any one of the specified Networks
+            example: '["Visa"]'
+            enum:
+              - Unknown
+              - Amex
+              - Visa
+              - Master
+              - Discover
+              - Pulse
+              - Accel
+              - Interlink
+              - Jeanie
+              - Maestro
+              - NYCE
+              - CU24
+              - Shazam
+              - EBT
+              - AFFN
+              - Telecheck
+              - Diners
+              - PayPal
+              - ValueLink
+              - Private
+              - Debit
+              - Voyager
+              - ATH
+              - JCB
+              - StarNE
+              - StarSE
+              - StarW
+              - StarAccess
+              - FleetCor
+              - SVS
+              - WEX
+              - Incomm
+              - Interac
+              - NA
+              - Moneris
+              - VaultedCard
+              - PAVD
+              - MCSend
+              - UnionPay
+              - FraudFlex
+              - Certegy
+              - MCI
+              - PaypalVenmo
+        types:
+          type: array
+          description: Any transactions matching with any one of the specified Transaction Types
+          example:
+            - Purchase
+          items:
+            type: string
+            description: Any transactions matching with any one of the specified Transaction Types
+            example: '["Purchase"]'
+            enum:
+              - Unknown
+              - Totals
+              - Purchase
+              - PreAuthRequest
+              - PreAuthComplete
+              - Reversal
+              - Return
+              - Cancellation
+              - MailAuth
+              - Activate
+              - Recharge
+              - Verification
+              - TeleCheck
+              - StartFueling
+              - DoNotUse
+              - Fee
+              - Withdrawal
+              - Deposit
+              - Transfer
+              - Balance
+              - FraudScore
+              - GenToken
+              - Adjustment
+              - ReportAsLost
+              - CloseAccount
+              - FreezeAccount
+              - UnfreezeAccount
+              - History
+              - TimeoutReversal
+              - SetupAutoReload
+              - ReturnReversal
+              - Cashback
+        siteIDs:
+          type: array
+          description: Transactions associated with one of the Site IDs specified
+          example:
+            - '1111111'
+          items:
+            type: string
+            description: Transactions associated with one of the Site IDs specified
+            example: '["1111111"]'
         authCode:
           type: string
           description: Auth Code, Full match
+          example: I7B1Q1
         first6:
           maxLength: 6
           minLength: 6
           type: string
           description: 'First 6 of the card #, Full match'
+          example: '123456'
         last4:
           maxLength: 4
           minLength: 4
           type: string
           description: 'Last 4 of the card #, Full match'
+          example: '0000'
         dateType:
           type: string
           description: Search/Analysis date type. default value is settle date
@@ -1939,12 +2226,6 @@ components:
             - FundedDate
             - RecordDate
           default: SettleDate
-        siteIDs:
-          type: array
-          description: Transactions associated with one of the Site IDs specified
-          items:
-            type: string
-            description: Transactions associated with one of the Site IDs specified
       description: Various filter options for settlement transaction queries
     SettlementSummaryRequest:
       required:
@@ -4469,9 +4750,18 @@ components:
         fields:
           type: array
           description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          example:
+            - Name
+            - Address
+            - City
+            - St_abbr_nm
+            - Zip
+            - Id
+            - Platform
           items:
             type: string
             description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            example: '["Name","Address","City","St_abbr_nm","Zip","Id","Platform"]'
             enum:
               - Name
               - Address
@@ -4650,13 +4940,23 @@ components:
           type: integer
           description: The maximum number of records that will be returned
           format: int32
+          example: 5
           default: 10
         fields:
           type: array
           description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          example:
+            - Id
+            - Bin
+            - Issuer
+            - Country
+            - CardBrand
+            - CardClass
+            - CardSubType
           items:
             type: string
             description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            example: '["Id","Bin","Issuer","Country","CardBrand","CardClass","CardSubType"]'
             enum:
               - EBTState
               - EBTStateKey
@@ -6658,6 +6958,24 @@ components:
           example: '974767'
     FundingFilters:
       type: object
+      properties:
+        ddaLast4:
+          type: string
+          description: Last 4 DDA
+          example: '9087'
+        fundedDate:
+          type: string
+          description: Funded date, mm/dd/yyyy
+          example: 08/03/2021
+        siteIDs:
+          type: array
+          description: Funding associated with one of the Site IDs specified
+          example:
+            - '1111111'
+          items:
+            type: string
+            description: Funding associated with one of the Site IDs specified
+            example: '["1111111"]'
       description: Various filter options for Funding queries
     FundingSummaryRequest:
       required:
@@ -6683,6 +7001,7 @@ components:
             - ProductCode
             - DdaLast4
             - BatchDate
+            - FundedDate
         filters:
           $ref: '#/components/schemas/FundingFilters'
       description: Request object for funding summary report creation
@@ -6768,9 +7087,16 @@ components:
         fields:
           type: array
           description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          example:
+            - Currency
+            - DdaLast4
+            - MajorCategory
+            - DepositAmt
+            - ReferenceNo
           items:
             type: string
             description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            example: '["Currency","DdaLast4","MajorCategory","DepositAmt","ReferenceNo"]'
             enum:
               - ServiceChangesAmt
               - AccountCurrency
@@ -11502,9 +11828,12 @@ components:
         approvalCodes:
           type: array
           description: Any transactions matching with any one of the specified Approval Codes
+          example:
+            - Approved
           items:
             type: string
             description: Any transactions matching with any one of the specified Approval Codes
+            example: '["Approved"]'
             enum:
               - Unknown
               - Approved
@@ -11512,9 +11841,12 @@ components:
         paymentMethods:
           type: array
           description: Any transactions matching with any one of the specified Payment Methods
+          example:
+            - EMV
           items:
             type: string
             description: Any transactions matching with any one of the specified Payment Methods
+            example: '["EMV"]'
             enum:
               - Unknown
               - Manual
@@ -11531,9 +11863,12 @@ components:
         networks:
           type: array
           description: Any transactions matching with any one of the specified Networks
+          example:
+            - Visa
           items:
             type: string
             description: Any transactions matching with any one of the specified Networks
+            example: '["Visa"]'
             enum:
               - Unknown
               - Amex
@@ -11581,9 +11916,12 @@ components:
         types:
           type: array
           description: Any transactions matching with any one of the specified Transaction Types
+          example:
+            - Purchase
           items:
             type: string
             description: Any transactions matching with any one of the specified Transaction Types
+            example: '["Purchase"]'
             enum:
               - Unknown
               - Totals
@@ -11620,13 +11958,16 @@ components:
         siteIDs:
           type: array
           description: Transactions associated with one of the Site IDs specified
+          example:
+            - '1111111'
           items:
             type: string
             description: Transactions associated with one of the Site IDs specified
+            example: '["1111111"]'
         authCode:
           type: string
           description: Auth Code, Full match
-          example: FH48J3
+          example: I7B1Q1
         first6:
           maxLength: 6
           minLength: 6
@@ -11638,7 +11979,7 @@ components:
           minLength: 4
           type: string
           description: 'Last 4 of the card #, Full match'
-          example: '5555'
+          example: '0000'
       description: Various filter options for authorizations queries
     AuthorizationSummaryRequest:
       required:
@@ -11725,9 +12066,16 @@ components:
         fields:
           type: array
           description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          example:
+            - Network
+            - ApprovalCode
+            - Amount
+            - AuthCode
+            - OrdNo
           items:
             type: string
             description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            example: '["Network","ApprovalCode","Amount","AuthCode","OrdNo"]'
             enum:
               - AVSResponse
               - AVSResponseKey
@@ -12867,7 +13215,7 @@ components:
           example: 12/31/2020 10:00:00 AM
         linkResponseCode:
           type: string
-          description: Old Card number.
+          description: Identifies the Card N/w (i.e. VISA, Mastercard, Discover, AMEX) link response
           example: A99
         lodgNoShowIndicator:
           type: string
@@ -13649,13 +13997,13 @@ components:
             type: string
             description: Determines the user attribute value for respective application
             example: '["4"]'
-        isReferencedValue:
-          type: boolean
-          description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
-          example: true
         isRequired:
           type: boolean
           description: Determines if respective attribute is required to provision the application for user
+          example: true
+        isReferencedValue:
+          type: boolean
+          description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
           example: true
       description: '// Respective Application specific attributes(For example: Entitlements)'
     AttributeOptionDto:
