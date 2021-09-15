@@ -37,6 +37,6 @@ If you are interested in this option, please contact your account rep to get a s
 Schedule on demand requests or periodic requests for delivery to your Reporting Inbox. Files are available at the logical business end of day. We support multiple file formats including CSV, JSON and Parquet. Use the feed status APIs to lookup the status of your feeds.
  
  
-#### Feed status API
+Feed status API
  
-Coming soon…..
+To be filled in…..
