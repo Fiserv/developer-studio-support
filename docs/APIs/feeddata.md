@@ -10,7 +10,7 @@ If traditional restful APIs do not satisfy your requirements and you would rathe
 
 If you are interested in this option, please contact your account rep to enable a secure share.
 
-To learn more about Snowflake and setup an account ![click here](https://signup.snowflake.com/?plan=enterprise_sensitive&cloud=SDM&owner=Fiserv)
+To learn more about Snowflake and setup an account [click here](https://signup.snowflake.com/?plan=enterprise_sensitive&cloud=SDM&owner=Fiserv)
  
 ### AWS S3 Integration
 
