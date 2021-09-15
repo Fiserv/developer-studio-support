@@ -4,7 +4,7 @@ If traditional restful APIs do not satisfy your requirements and you would rathe
  
 #### Snowflake
 
-![snowflake](../../assets/images/snowflake.png)
+![snowflake](../../assets/images/snowflake.jpeg)
 
 [Snowflake](https://www.snowflake.com) is a cloud-based data warehousing solution. We have partnered with Snowflake to make [Secure data shares](https://www.snowflake.com/workloads/data-sharing) available. Data is available in your share on a near real-time basis. Authorizations, Gateway, and Value-added services transactions are available within a few seconds. Batch processed objects are available as soon as the processing is complete. No messy ETL, file exchanges etc. to worry about. Spin up your [Warehouses](https://www.snowflake.com/workloads/data-warehouse-modernization) and join/mingle it with your data in Snowflake. Use traditional SQL to query and analyze your data.
 
@@ -37,6 +37,6 @@ If you are interested in this option, please contact your account rep to get a s
 Schedule on demand requests or periodic requests for delivery to your Reporting Inbox. Files are available at the logical business end of day. We support multiple file formats including CSV, JSON and Parquet. Use the feed status APIs to lookup the status of your feeds.
  
  
-Feed status API
+#### Feed status API
  
-To be filled in…..
+Coming soon…..
