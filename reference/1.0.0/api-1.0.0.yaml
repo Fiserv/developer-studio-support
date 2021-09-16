@@ -1505,8 +1505,8 @@ paths:
       requestBody:
         content:
           application/json:
-            #schema:
-              #$ref: '#/components/schemas/AuthorizationSummaryRequest'
+            schema:
+              $ref: '#/components/schemas/AuthorizationSummaryRequest'
             examples:
               Auth summary:
                 description: Auth summary
@@ -3921,22 +3921,6 @@ components:
     RetrievalFilters:
       type: object
       properties:
-        authCode:
-          type: string
-          description: Auth Code, Full match
-          example: FH48J3
-        first6:
-          maxLength: 6
-          minLength: 6
-          type: string
-          description: 'First 6 of the card #, Full match'
-          example: '123456'
-        last4:
-          maxLength: 4
-          minLength: 4
-          type: string
-          description: 'Last 4 of the card #, Full match'
-          example: '5555'
         dateType:
           type: string
           description: Search/Analysis date type. default value is retrieval date
@@ -4688,9 +4672,18 @@ components:
         fields:
           type: array
           description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          example:
+            - Reason
+            - AccountNumber
+            - AuthNetwork
+            - Currency
+            - InvoiceNumber
+            - Status
+            - TrackingNumber
           items:
             type: string
             description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            example: '["Reason","AccountNumber","AuthNetwork","Currency","InvoiceNumber","Status","TrackingNumber"]'
             enum:
               - Reason
               - ReasonKey
@@ -4779,18 +4772,6 @@ components:
           type: string
           description: Platform specific Site ID
           example: '1111111'
-        agentID:
-          type: string
-          description: Agent hierarchy ID
-          example: '778899445566'
-        corporateID:
-          type: string
-          description: Corporate hierarchy ID
-          example: '112233445566'
-        leadID:
-          type: string
-          description: Lead hierarchy ID
-          example: '778899112233'
       description: Various filter options for sites queries
     SitesSearchRequest:
       type: object
@@ -6004,10 +5985,6 @@ components:
           type: string
           description: Currency code where the activation occurred for non-denominated cards. Denominated cards are set by the card promotions currency (Code)
           example: ''
-        cardNo:
-          type: string
-          description: Card Number associated with the prepaid card.
-          example: '12345678901234'
         cardStatus:
           type: string
           description: Account Status at time of processing the Transaction.
@@ -6185,7 +6162,6 @@ components:
               - BalanceMin
               - BaseCurrencyCode
               - BaseCurrencyCodeKey
-              - CardNo
               - CardStatus
               - CashbackBaseAmount
               - ConsortiumID
@@ -6290,7 +6266,6 @@ components:
               - CampaignEndDate
               - CardClass
               - CardCostAmt
-              - CardNo
               - CashBackAmount
               - CheckSum
               - Clerk
@@ -6555,10 +6530,6 @@ components:
           description: Cost of the card
           format: double
           example: 999.99
-        cardNo:
-          type: string
-          description: Card Number associated with the prepaid card.
-          example: '12345678901234'
         cashBackAmount:
           type: number
           description: Amount of payout in Local Currency from POS to the customer as a result of balance below minimum.  Function set on promo
@@ -9680,6 +9651,7 @@ components:
             - ACH
             - Prepaid
             - Debit
+            - VENMO
         fundsPaymentChannelKey:
           type: string
           description: The channel type for fund activity report.  IE ACH, DEBIT. (Code)
@@ -9784,6 +9756,29 @@ components:
           type: string
           description: The transaction type for fund activity report. IE Initiation, disbursement, adjustment.
           example: DISBURSED
+        fundsTxnTypeNm:
+          type: string
+          description: The transaction type for fund activity report. IE Initiation, disbursement, adjustment.
+          example: Disbursed
+          enum:
+            - Unknown
+            - Settled
+            - Disbursed
+            - Debited
+            - InhouseReversed
+            - Initialized
+            - CreditRejected
+            - Cancelled
+            - DebitRejected
+            - Reversed
+            - Expired
+            - Rejected
+            - Credited
+            - Deposited
+        fundsTxnTypeNmKey:
+          type: string
+          description: The transaction type for fund activity report. IE Initiation, disbursement, adjustment. (Code)
+          example: '2'
         fundsVendorId:
           type: string
           description: Vendor id provided by the merchant also known as merchant customer id.
@@ -9830,6 +9825,7 @@ components:
             - ACH
             - Prepaid
             - Debit
+            - VENMO
         paymentChannelKey:
           type: string
           description: Funding source type. (Code)
@@ -10272,6 +10268,8 @@ components:
               - FundsTxnStatusKey
               - FundsTxnTime
               - FundsTxnType
+              - FundsTxnTypeNm
+              - FundsTxnTypeNmKey
               - FundsVendorId
               - MerchantId
               - MerchantName
@@ -10346,22 +10344,6 @@ components:
           type: string
           description: Case Number
           example: '212494451501'
-        authCode:
-          type: string
-          description: Auth Code, Full match
-          example: FH48J3
-        first6:
-          maxLength: 6
-          minLength: 6
-          type: string
-          description: 'First 6 of the card #, Full match'
-          example: '123456'
-        last4:
-          maxLength: 4
-          minLength: 4
-          type: string
-          description: 'Last 4 of the card #, Full match'
-          example: '5555'
         dateType:
           type: string
           description: Search/Analysis date type. default value is chargeback date
@@ -10473,9 +10455,17 @@ components:
         fields:
           type: array
           description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          example:
+            - Disposition
+            - Reason
+            - AdjustmentAmount
+            - AccountNumber
+            - WorkType
+            - WinLoss
           items:
             type: string
             description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            example: '["Disposition","Reason","AdjustmentAmount","AccountNumber","WorkType","WinLoss"]'
             enum:
               - Disposition
               - DispositionKey
@@ -10494,12 +10484,12 @@ components:
               - AuthRecordSequence
               - BackendProcessor
               - BackendProcessorKey
+              - BatchDate
               - BatchNumber
               - BinId
               - CaptureMethod
               - Category
               - CategoryKey
-              - Ccn
               - CentralProcessingDate
               - ChargebackAmount
               - ChargebackReferenceId
@@ -10516,7 +10506,6 @@ components:
               - DueDate
               - ExternalMid
               - First6
-              - FirstChargebackDate
               - InvoiceNumber
               - ItemSlipNumber
               - Last4
@@ -10525,21 +10514,22 @@ components:
               - MerchantCategoryKey
               - MerchantFUndingAmount
               - MerchantFundingCurrency
+              - MerchantFundingCurrencyKey
               - MerchantSettleAmount
-              - MerchantSettleCurrency
               - MobileIndicator
               - MobileWallet
               - MobileWalletKey
               - NetworkSettleAmount
               - NetworkSettleCurrency
+              - NetworkSettleCurrencyKey
               - NonFinancial
               - NonFinancialKey
               - OmnipayClienNumber
               - OrderNumber
-              - OrigPostDate
               - OrigSlipNumber
               - OrigTranCurrency
               - OriginalChargebackSlipNumber
+              - PartialAmountFlag
               - PaymentMethod
               - PaymentMethodKey
               - PaypalTransactionID
@@ -10555,13 +10545,11 @@ components:
               - ReferenceNumber
               - Relevance
               - RelevanceKey
-              - RequestDate
               - RespondedDate
               - ResponseReceived
               - RetrievalRequestId
               - ReversedByMerchant
               - ReversedToIssuer
-              - SecondChargebackDate
               - SendMode
               - SendModeKey
               - SiteID
@@ -10570,8 +10558,8 @@ components:
               - StatusDate
               - StatusKey
               - SubmittedMerchantId
-              - SubmittedTxnAmount
               - SubmittedTxnCurrencyCode
+              - SubmittedTxnCurrencyCodeKey
               - SvcCd
               - TerminalId
               - TokenResponseInd
@@ -10583,12 +10571,10 @@ components:
               - TransactionTypeKey
               - UniqueTransactionId
               - UserData
-              - UserData2
               - VmeAdditionalAuthMethod
               - VmeAdditionalAuthReasonCode
               - WinLoss
               - WinLossKey
-              - WorkByDate
               - WorkType
               - WorkTypeKey
         filters:
@@ -11071,6 +11057,10 @@ components:
           type: string
           description: Internal settlement platform. (Code)
           example: '1'
+        batchDate:
+          type: string
+          description: Date group of transactions was settled
+          example: 12/31/2021
         batchNumber:
           type: string
           description: Number assigned to each group of settled transactions
@@ -11102,10 +11092,6 @@ components:
           type: string
           description: Categorization of Chargeback. (Code)
           example: '8'
-        ccn:
-          type: string
-          description: The issuer reference number (Chargeback Control Number/CCN) for the transaction.
-          example: '20200610710502'
         centralProcessingDate:
           type: string
           description: Central Processing Date of the latest incoming transaction for the chargeback case
@@ -11359,10 +11345,6 @@ components:
           type: string
           description: First six digits of card number.
           example: '123456'
-        firstChargebackDate:
-          type: string
-          description: Date the chargeback was initiated
-          example: 12/31/2021
         invoiceNumber:
           type: string
           description: Invoice number associated with the inquiry.
@@ -11392,20 +11374,206 @@ components:
           description: Only populated for some item type with the content of the field dependent on the item type.
           example: '999.9999'
         merchantFundingCurrency:
-          type: integer
-          description: ' Currency in which the original presentment was funded to the merchant.'
-          format: int32
-          example: 124
+          type: string
+          description: Currency in which the original presentment was funded to the merchant.
+          example: USD
+          enum:
+            - Unknown
+            - USD
+            - AFN
+            - DZD
+            - ARS
+            - AMD
+            - AWG
+            - AUD
+            - AZN
+            - BSD
+            - BHD
+            - THB
+            - PAB
+            - BBD
+            - BYR
+            - BZD
+            - BMD
+            - VEF
+            - BOB
+            - BRL
+            - BND
+            - BGN
+            - BIF
+            - CAD
+            - CVE
+            - KYD
+            - XOF
+            - XAF
+            - XPF
+            - CLP
+            - COP
+            - KMF
+            - BAM
+            - NIO
+            - CRC
+            - HRK
+            - CUP
+            - CZK
+            - GMD
+            - DKK
+            - MKD
+            - DJF
+            - STD
+            - DOP
+            - VND
+            - XCD
+            - EGP
+            - SVC
+            - ETB
+            - EUR
+            - FKP
+            - FJD
+            - HUF
+            - CDF
+            - GHS
+            - GIP
+            - HTG
+            - PYG
+            - GNF
+            - GWP
+            - GYD
+            - HKD
+            - UAH
+            - ISK
+            - INR
+            - IRR
+            - IQD
+            - JMD
+            - JOD
+            - KES
+            - PGK
+            - LAK
+            - KWD
+            - MWK
+            - ZMK
+            - AOA
+            - MMK
+            - GEL
+            - LVL
+            - LBP
+            - ALL
+            - HNL
+            - SLL
+            - LRD
+            - LYD
+            - SZL
+            - LTL
+            - LSL
+            - MGA
+            - MYR
+            - MUR
+            - MZN
+            - MXN
+            - MXV
+            - MDL
+            - MAD
+            - BOV
+            - NGN
+            - ERN
+            - NAD
+            - NPR
+            - ANG
+            - ILS
+            - RON
+            - TWD
+            - TRY
+            - NZD
+            - BTN
+            - KPW
+            - NOK
+            - PEN
+            - MRO
+            - TOP
+            - PKR
+            - MOP
+            - UYU
+            - PHP
+            - GBP
+            - BWP
+            - QAR
+            - GTQ
+            - ZAR
+            - OMR
+            - KHR
+            - MVR
+            - IDR
+            - RUB
+            - RWF
+            - SHP
+            - SAR
+            - XDR
+            - RSD
+            - SCR
+            - SGD
+            - SBD
+            - KGS
+            - SOS
+            - TJS
+            - LKR
+            - SDG
+            - SRD
+            - SEK
+            - CHF
+            - SYP
+            - BDT
+            - WST
+            - TZS
+            - KZT
+            - TTD
+            - MNT
+            - TND
+            - AED
+            - UGX
+            - COU
+            - CLF
+            - UYI
+            - USN
+            - USS
+            - UZS
+            - VUV
+            - CHE
+            - CHW
+            - KRW
+            - YER
+            - JPY
+            - CNY
+            - PLN
+            - XBA
+            - XTS
+            - XBB
+            - XBD
+            - XBC
+            - XAU
+            - XPD
+            - XPT
+            - XAG
+            - XXX
+            - XFU
+            - TMT
+            - ZWL
+            - CUC
+            - SSP
+            - XUA
+            - XSU
+            - BYN
+            - VES
+            - ZMW
+        merchantFundingCurrencyKey:
+          type: string
+          description: Currency in which the original presentment was funded to the merchant. (Code)
+          example: '1'
         merchantSettleAmount:
           type: number
           description: The amount settled with the merchant for the original presentment (that is, the amount posted to the merchant account), before the deduction of any charges.
           format: double
           example: 999.9999
-        merchantSettleCurrency:
-          type: integer
-          description: The currency of the amount settled with the merchant for the original presentment before the deduction of any charges.
-          format: int32
-          example: 124
         mobileIndicator:
           type: string
           description: Mobile indicator
@@ -11435,10 +11603,201 @@ components:
           description: Amount settled with the payment network for the presentment (that is, the interchange settlement amount), before the deduction of any charges.
           example: '999.9999'
         networkSettleCurrency:
-          type: integer
+          type: string
           description: Currency settled with the payment network for the presentment before the deduction of any charges.
-          format: int32
-          example: 124
+          example: USD
+          enum:
+            - Unknown
+            - USD
+            - AFN
+            - DZD
+            - ARS
+            - AMD
+            - AWG
+            - AUD
+            - AZN
+            - BSD
+            - BHD
+            - THB
+            - PAB
+            - BBD
+            - BYR
+            - BZD
+            - BMD
+            - VEF
+            - BOB
+            - BRL
+            - BND
+            - BGN
+            - BIF
+            - CAD
+            - CVE
+            - KYD
+            - XOF
+            - XAF
+            - XPF
+            - CLP
+            - COP
+            - KMF
+            - BAM
+            - NIO
+            - CRC
+            - HRK
+            - CUP
+            - CZK
+            - GMD
+            - DKK
+            - MKD
+            - DJF
+            - STD
+            - DOP
+            - VND
+            - XCD
+            - EGP
+            - SVC
+            - ETB
+            - EUR
+            - FKP
+            - FJD
+            - HUF
+            - CDF
+            - GHS
+            - GIP
+            - HTG
+            - PYG
+            - GNF
+            - GWP
+            - GYD
+            - HKD
+            - UAH
+            - ISK
+            - INR
+            - IRR
+            - IQD
+            - JMD
+            - JOD
+            - KES
+            - PGK
+            - LAK
+            - KWD
+            - MWK
+            - ZMK
+            - AOA
+            - MMK
+            - GEL
+            - LVL
+            - LBP
+            - ALL
+            - HNL
+            - SLL
+            - LRD
+            - LYD
+            - SZL
+            - LTL
+            - LSL
+            - MGA
+            - MYR
+            - MUR
+            - MZN
+            - MXN
+            - MXV
+            - MDL
+            - MAD
+            - BOV
+            - NGN
+            - ERN
+            - NAD
+            - NPR
+            - ANG
+            - ILS
+            - RON
+            - TWD
+            - TRY
+            - NZD
+            - BTN
+            - KPW
+            - NOK
+            - PEN
+            - MRO
+            - TOP
+            - PKR
+            - MOP
+            - UYU
+            - PHP
+            - GBP
+            - BWP
+            - QAR
+            - GTQ
+            - ZAR
+            - OMR
+            - KHR
+            - MVR
+            - IDR
+            - RUB
+            - RWF
+            - SHP
+            - SAR
+            - XDR
+            - RSD
+            - SCR
+            - SGD
+            - SBD
+            - KGS
+            - SOS
+            - TJS
+            - LKR
+            - SDG
+            - SRD
+            - SEK
+            - CHF
+            - SYP
+            - BDT
+            - WST
+            - TZS
+            - KZT
+            - TTD
+            - MNT
+            - TND
+            - AED
+            - UGX
+            - COU
+            - CLF
+            - UYI
+            - USN
+            - USS
+            - UZS
+            - VUV
+            - CHE
+            - CHW
+            - KRW
+            - YER
+            - JPY
+            - CNY
+            - PLN
+            - XBA
+            - XTS
+            - XBB
+            - XBD
+            - XBC
+            - XAU
+            - XPD
+            - XPT
+            - XAG
+            - XXX
+            - XFU
+            - TMT
+            - ZWL
+            - CUC
+            - SSP
+            - XUA
+            - XSU
+            - BYN
+            - VES
+            - ZMW
+        networkSettleCurrencyKey:
+          type: string
+          description: Currency settled with the payment network for the presentment before the deduction of any charges. (Code)
+          example: '1'
         nonFinancial:
           type: integer
           description: Financial Category.
@@ -11455,10 +11814,6 @@ components:
           type: string
           description: Merchant order number.
           example: '111'
-        origPostDate:
-          type: string
-          description: Original Presentment Posting Date
-          example: 12/31/2021
         origSlipNumber:
           type: string
           description: The OmniPay internal slip number of the original presentment.
@@ -11471,6 +11826,10 @@ components:
           type: string
           description: If the item type is a 1st or 2nd Chargeback this field is equal to the field Item_Slip, but for representments and transfer this field will indicate which is the related chargeback
           example: '12789346250'
+        partialAmountFlag:
+          type: string
+          description: Flag to Indicate if the Issuer has identified this chargeback as a partial chargeback.
+          example: 'Yes'
         paymentMethod:
           type: string
           description: Identifies the method of payment used on the transaction.
@@ -11554,10 +11913,6 @@ components:
           type: string
           description: Denotes whether the chargeback should be seen by the merchant. (Code)
           example: '1'
-        requestDate:
-          type: string
-          description: Date the request was generated to the merchant
-          example: 12/31/2021
         respondedDate:
           type: string
           description: Responded on date.
@@ -11580,10 +11935,6 @@ components:
           description: Reversed to Issuer.
           format: int32
           example: 1
-        secondChargebackDate:
-          type: string
-          description: Represented to MasterCard after initially disputing
-          example: 12/31/2021
         sendMode:
           type: string
           description: Indicates store and forward mode of the transaction.
@@ -11625,15 +11976,202 @@ components:
           type: string
           description: Available for PSPs
           example: '123456'
-        submittedTxnAmount:
-          type: number
-          description: The transaction amount in the currency the transaction was processed in at the POS
-          format: double
-          example: 999.9999
         submittedTxnCurrencyCode:
           type: string
-          description: ISO 4217 3 digit code representing the  Currency the transaction was processed in at the POS
-          example: '124'
+          description: ISO 4217 3 digit code representing the  Currency the transaction was processed in at the POS.
+          example: USD
+          enum:
+            - Unknown
+            - USD
+            - AFN
+            - DZD
+            - ARS
+            - AMD
+            - AWG
+            - AUD
+            - AZN
+            - BSD
+            - BHD
+            - THB
+            - PAB
+            - BBD
+            - BYR
+            - BZD
+            - BMD
+            - VEF
+            - BOB
+            - BRL
+            - BND
+            - BGN
+            - BIF
+            - CAD
+            - CVE
+            - KYD
+            - XOF
+            - XAF
+            - XPF
+            - CLP
+            - COP
+            - KMF
+            - BAM
+            - NIO
+            - CRC
+            - HRK
+            - CUP
+            - CZK
+            - GMD
+            - DKK
+            - MKD
+            - DJF
+            - STD
+            - DOP
+            - VND
+            - XCD
+            - EGP
+            - SVC
+            - ETB
+            - EUR
+            - FKP
+            - FJD
+            - HUF
+            - CDF
+            - GHS
+            - GIP
+            - HTG
+            - PYG
+            - GNF
+            - GWP
+            - GYD
+            - HKD
+            - UAH
+            - ISK
+            - INR
+            - IRR
+            - IQD
+            - JMD
+            - JOD
+            - KES
+            - PGK
+            - LAK
+            - KWD
+            - MWK
+            - ZMK
+            - AOA
+            - MMK
+            - GEL
+            - LVL
+            - LBP
+            - ALL
+            - HNL
+            - SLL
+            - LRD
+            - LYD
+            - SZL
+            - LTL
+            - LSL
+            - MGA
+            - MYR
+            - MUR
+            - MZN
+            - MXN
+            - MXV
+            - MDL
+            - MAD
+            - BOV
+            - NGN
+            - ERN
+            - NAD
+            - NPR
+            - ANG
+            - ILS
+            - RON
+            - TWD
+            - TRY
+            - NZD
+            - BTN
+            - KPW
+            - NOK
+            - PEN
+            - MRO
+            - TOP
+            - PKR
+            - MOP
+            - UYU
+            - PHP
+            - GBP
+            - BWP
+            - QAR
+            - GTQ
+            - ZAR
+            - OMR
+            - KHR
+            - MVR
+            - IDR
+            - RUB
+            - RWF
+            - SHP
+            - SAR
+            - XDR
+            - RSD
+            - SCR
+            - SGD
+            - SBD
+            - KGS
+            - SOS
+            - TJS
+            - LKR
+            - SDG
+            - SRD
+            - SEK
+            - CHF
+            - SYP
+            - BDT
+            - WST
+            - TZS
+            - KZT
+            - TTD
+            - MNT
+            - TND
+            - AED
+            - UGX
+            - COU
+            - CLF
+            - UYI
+            - USN
+            - USS
+            - UZS
+            - VUV
+            - CHE
+            - CHW
+            - KRW
+            - YER
+            - JPY
+            - CNY
+            - PLN
+            - XBA
+            - XTS
+            - XBB
+            - XBD
+            - XBC
+            - XAU
+            - XPD
+            - XPT
+            - XAG
+            - XXX
+            - XFU
+            - TMT
+            - ZWL
+            - CUC
+            - SSP
+            - XUA
+            - XSU
+            - BYN
+            - VES
+            - ZMW
+        submittedTxnCurrencyCodeKey:
+          type: string
+          description: ISO 4217 3 digit code representing the  Currency the transaction was processed in at the POS. (Code)
+          example: '1'
         svcCd:
           type: string
           description: The tracking number of the disputed transaction.
@@ -11828,9 +12366,6 @@ components:
           type: string
           description: Discretionary data sent on transaction by the merchant
           example: '200639793945459453'
-        userData2:
-          type: string
-          example: '200639793945459453'
         vmeAdditionalAuthMethod:
           type: string
           description: V.me Additional Auth Method  from the original presentment
@@ -11851,10 +12386,6 @@ components:
           type: string
           description: Status of dispute, describing if it has been won, loss or pending. (Code)
           example: '2'
-        workByDate:
-          type: string
-          description: The field indicates the date by which the case should be worked according to the institution or merchant requirements.
-          example: 12/31/2021
         workType:
           type: string
           description: Various stages of Chargeback resolution.
@@ -12167,14 +12698,16 @@ components:
               - ApprovalCodeKey
               - AssocRespCode
               - AssocRespCodeKey
-              - AuthAmountSign
               - AuthCode
+              - AuthResponseCode
               - AuthorizationTraceNumber
               - BankFiid
               - BanknetRef
               - BinID
               - CardExpiryDate
               - CardLevelResult
+              - CardNetworkCVCError
+              - CardNetworkDataError
               - CashBackIndicator
               - CavvDowngradeReason
               - CrossBorderIndicator
@@ -12185,14 +12718,35 @@ components:
               - DailyRentalRate
               - DccCountryCode
               - DccRate
+              - DebitFeeAmount
               - DeclineReason
               - DeclineReasonKey
               - DriverID
+              - DutyAmount
+              - EmvAppCryptogram
+              - EmvAppInterchangeProfile
+              - EmvAppTxnCounter
+              - EmvAppVersionNumber
+              - EmvCVMResult
+              - EmvChipAuthResult
+              - EmvChipTxnInd
+              - EmvCryptoInfoData
+              - EmvDedicatedFileName
+              - EmvExpDate
+              - EmvIssuerAppData
+              - EmvIssuerAuthData
+              - EmvTermCapProfile
+              - EmvTermCountryCode
+              - EmvTermVerificationResult
+              - EmvTxnType
+              - EntryModeIndicator
               - ExternalMid
               - ExtraChargeAmount
               - First6
               - FolioNumber
+              - FormFactor
               - FraudScore
+              - FreightAmount
               - FuelPurchaseLocation
               - FuelPurchaseLocationKey
               - GiftCardNumber
@@ -12200,6 +12754,7 @@ components:
               - IssuerScriptResults
               - Last4
               - Lcldt
+              - LineItemTotal
               - LinkResponseCode
               - LodgNoShowIndicator
               - LodgingAmount
@@ -12223,11 +12778,14 @@ components:
               - NativeRejectCode
               - Network
               - NetworkKey
+              - NetworkTokenIndicator
+              - NetworkTokenIndicatorKey
               - NetworkTokenNumber
               - OdometerReading
               - OldAccountNumber
               - OrdNo
               - OrigAuthResponse
+              - OrigAuthResponseDesc
               - ParID
               - PartialApprovalFlag
               - PartnerOrderID
@@ -12236,13 +12794,16 @@ components:
               - PaypalAccountNumber
               - PaypalTransactionID
               - PosConditionCode
+              - PosData
               - PosTermCap
               - Processor
               - ProcessorKey
               - ProductAmount
               - ProductQuantity
+              - ProductUnitOfMeasure
               - ProductUnitPrice
               - PumpRegisterNumber
+              - PurchaseCode
               - Quantity
               - RecordNumber
               - Recurring
@@ -12252,28 +12813,38 @@ components:
               - RentalClass
               - RentalDate
               - RentalReturnCity
+              - RentalReturnCountry
               - RentalReturnDate
               - RentalReturnLocationID
+              - RentalReturnState
               - RentalState
               - RenterName
+              - Reversed
               - RtAction
               - RtActionKey
               - RtStatus
               - RtStatusKey
+              - SalesTaxAmount
               - SendMode
               - SendModeKey
               - Seqno
               - ServerId
+              - ServiceCode
               - SettleCutOffTime
+              - ShipmentFromZip
+              - ShipmentToCountryCode
+              - ShipmentToZip
               - SiteID
               - SourceType
               - SubType
               - SubTypeKey
+              - TaxRate
               - TermCapCode
               - TerminalID
               - TerminalSerialNumber
               - TerminalType
               - TimeTaken
+              - TipAmount
               - TokenId
               - TokenResponseInd
               - TokenResponseIndKey
@@ -12282,6 +12853,7 @@ components:
               - TransactionDateTime
               - TransactionTime
               - Trckrid
+              - TxnCatCode
               - TxnID
               - Type
               - TypeKey
@@ -12825,14 +13397,14 @@ components:
           type: string
           description: Identifies the initial association response code for the transaction. (Code)
           example: '1'
-        authAmountSign:
-          type: string
-          description: 'Identifies the amount sign of  the transaction : +/-'
-          example: +
         authCode:
           type: string
           description: Authorization code from Association(s). Generally 6/7 alphanumeric code that gets printed on the receipt.
           example: 99AA99
+        authResponseCode:
+          type: string
+          description: Identifies the Response Code from the authorizer
+          example: 9Z
         authorizationTraceNumber:
           type: string
           description: Identifies the authorization’s Trace Number
@@ -12857,6 +13429,14 @@ components:
           type: string
           description: Result obtained from the account type & track data type information supplied by the issuer.
           example: '003140252999074'
+        cardNetworkCVCError:
+          type: string
+          description: Identifies Banknet® interchange data returned by MasterCard, indicating an invalid card validation code
+          example: 9AZ
+        cardNetworkDataError:
+          type: string
+          description: Identifies a MasterCard Banknet® data error (track, POS, or MasterCard transaction category code error) for the transaction
+          example: 9AZ
         cashBackIndicator:
           type: string
           description: Indicates whether or not the transaction is a cash back transaction
@@ -13087,6 +13667,11 @@ components:
           description: 'Identifies the non-US currency conversion rate used to convert the value of Total Transaction Amt to the value of DCC Amt '
           format: double
           example: 999999999.99
+        debitFeeAmount:
+          type: number
+          description: Identifies amount of the debit fees
+          format: double
+          example: 999.99
         declineReason:
           type: string
           description: Identifies the decline reason for the transaction.
@@ -13224,6 +13809,79 @@ components:
           type: string
           description: Driver License Number
           example: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+        dutyAmount:
+          type: number
+          description: Identifies the amount of duty charges in the transaction
+          format: double
+          example: 999999999.99
+        emvAppCryptogram:
+          type: string
+          description: Identifies the Online Card Authentication cryptogram generated by the card during the transaction
+          example: 98765432ABCDEFGH
+        emvAppInterchangeProfile:
+          type: string
+          description: Identifies a series of indicators reflecting the specific functions supported by the chip card application
+          example: 99ZZ
+        emvAppTxnCounter:
+          type: string
+          description: Identifies the counter from the card. Used to identify possible fraud
+          example: '9999'
+        emvAppVersionNumber:
+          type: string
+          description: Identifies the Application identifier (AID) of the chip application
+          example: 99ZZ
+        emvCVMResult:
+          type: string
+          description: Identifies the Cardholder Verification Method (CVM) used for the transaction
+          example: 999ZZZ
+        emvChipAuthResult:
+          type: string
+          description: Identifies the card authentication results for a chip card
+          example: Z
+        emvChipTxnInd:
+          type: string
+          description: Identifies if it is a chip transaction
+          example: Z
+        emvCryptoInfoData:
+          type: string
+          description: Identifies the type of Application Cryptogram (AC) carried in the transaction
+          example: 9Z
+        emvDedicatedFileName:
+          type: string
+          description: Identifies the Application identifier (AID) of the chip application
+          example: 999999ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        emvExpDate:
+          type: string
+          description: Identifies the expiration date of the application
+          example: '20211231'
+        emvIssuerAppData:
+          type: string
+          description: Identifies the various card-related data which is transmitted from the issuer
+          example: 9876543210ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        emvIssuerAuthData:
+          type: string
+          description: Identifies the Issuer Authentication Data sent by the issuer to the card in the authorization response
+          example: 999999ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        emvTermCapProfile:
+          type: string
+          description: Identifies the card data input,  Cardholder Verification Method (CVM) & the security capabilities supported by the chip terminal
+          example: 999ZZZ
+        emvTermCountryCode:
+          type: string
+          description: Identifies the country where the merchant device is located
+          example: ZZZ
+        emvTermVerificationResult:
+          type: string
+          description: Identifies the results of risk management performed by the device
+          example: 98765ABCDE
+        emvTxnType:
+          type: string
+          description: Identifies the type of EMV financial transaction as represented by the first two digits of the processing code
+          example: 9Z
+        entryModeIndicator:
+          type: string
+          description: Identifies the account number method of data entry; the PIN pad capabilities
+          example: 99ZZ
         externalMid:
           type: string
           description: External Merchant ID.
@@ -13240,11 +13898,20 @@ components:
           type: string
           description: Identifies the portfolio number associated with the transaction
           example: 012345ABCD
+        formFactor:
+          type: string
+          description: Identifies the Form Factor in the chip
+          example: 9876ABCD
         fraudScore:
           type: integer
           description: Indicates the fraud score on the transaction.
           format: int32
           example: 0
+        freightAmount:
+          type: number
+          description: Identifies the amount of freight charges in the transaction
+          format: double
+          example: 999999999.99
         fuelPurchaseLocation:
           type: integer
           description: Identifies whether the fuel was purchased At the pump or In-Store
@@ -13273,6 +13940,11 @@ components:
           type: string
           description: Local Date Time of the transaction.
           example: 12/31/2020 10:00:00 AM
+        lineItemTotal:
+          type: number
+          description: Line Item Total. May be zero for zero cost items
+          format: double
+          example: 999.99
         linkResponseCode:
           type: string
           description: Identifies the Card N/w (i.e. VISA, Mastercard, Discover, AMEX) link response
@@ -13282,9 +13954,10 @@ components:
           description: Lodging/Rental No Show Indicator
           example: 'Y'
         lodgingAmount:
-          type: string
+          type: number
           description: Identifies the room rate for Amex or the total authorized amount for Visa.
-          example: '9.9999999999E8'
+          format: double
+          example: 999999999.99
         lodgingArrivalDate:
           type: string
           description: Identifies the check-in date in the transaction
@@ -13486,6 +14159,18 @@ components:
           type: string
           description: Name of the authorizing network associated with the transaction. (Code)
           example: '2'
+        networkTokenIndicator:
+          type: string
+          description: Identifies the value that merchant sent in the Cardholder ID field as PAN or NT
+          example: Value Not Provided
+          enum:
+            - Unknown
+            - NT
+            - PAN
+        networkTokenIndicatorKey:
+          type: string
+          description: Identifies the value that merchant sent in the Cardholder ID field as PAN or NT (Code)
+          example: '0'
         networkTokenNumber:
           type: string
           description: Network Token Number
@@ -13506,6 +14191,10 @@ components:
           type: string
           description: Original Authorization Response
           example: AB98
+        origAuthResponseDesc:
+          type: string
+          description: Original Authorization Response Description
+          example: 9876543210ABCDEFGHIJKLMNOPQRSTUVWXYZ
         parID:
           type: string
           description: Par ID
@@ -13551,10 +14240,14 @@ components:
           type: string
           description: Identifies the POS Condition Code
           example: 9Z
+        posData:
+          type: string
+          description: Identifies Card N/w (i.e. VISA, Mastercard, Discover, AMEX) POS data
+          example: 98765432ABCDEFG
         posTermCap:
           type: string
           description: Identifies the term-cap sent in the initial or original authorization request
-          example: 0123456789ABCDEFGHIJKLP
+          example: 9AZ
         processor:
           type: string
           description: Identifies the originating platform (Switch).
@@ -13589,6 +14282,10 @@ components:
           description: Identifies the number of units in the transaction.
           format: double
           example: 9999999.99
+        productUnitOfMeasure:
+          type: string
+          description: Unit Measure Code
+          example: 9876543ABCDEFGH
         productUnitPrice:
           type: number
           description: Identifies the unit price of the product described in this record.
@@ -13598,6 +14295,10 @@ components:
           type: string
           description: Identifies the pump number.
           example: '9'
+        purchaseCode:
+          type: string
+          description: Identifies the merchant’s purchase order number
+          example: 99999999ABCDEFGH
         quantity:
           type: number
           description: Indicates the quantity of gas in gallons purchased.
@@ -13641,6 +14342,10 @@ components:
           type: string
           description: Renter Return City
           example: ABCDEFGHIJKLM
+        rentalReturnCountry:
+          type: string
+          description: Country where the car was returned to the rental agency.
+          example: ZZZ
         rentalReturnDate:
           type: string
           description: Car Rental Return Date
@@ -13649,6 +14354,10 @@ components:
           type: string
           description: Address, phone number, etc. Identifying Rental Return Location
           example: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        rentalReturnState:
+          type: string
+          description: State where the car was returned to the rental agency.
+          example: ZZ
         rentalState:
           type: string
           description: The State, County or Province where the rented car was picked up
@@ -13657,6 +14366,10 @@ components:
           type: string
           description: Identifies the Renter Name
           example: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        reversed:
+          type: string
+          description: Contains the character Y if the authorisation has been reversed else N
+          example: Z
         rtAction:
           type: string
           description: 'Card Account Updater: Identifies the action that was taken on the account.'
@@ -13688,6 +14401,11 @@ components:
           type: string
           description: 'Card Account Updater: Identifies the status of account update. (Code)'
           example: '2'
+        salesTaxAmount:
+          type: number
+          description: Identifies the amount of sales tax in the transaction
+          format: double
+          example: 999999999.99
         sendMode:
           type: string
           description: Indicates store and forward mode of the transaction.
@@ -13708,11 +14426,27 @@ components:
           type: string
           description: Indicates server Id for certain types of transactions like eating joints
           example: Z99
+        serviceCode:
+          type: string
+          description: Value determines if card is chip capable
+          example: 9ZZ
         settleCutOffTime:
           type: integer
           description: Cutoff time setup for settlement of transaction(s) for a Merchant
           format: int64
           example: 7874787487
+        shipmentFromZip:
+          type: string
+          description: Identifies the ZIP + 4 post office code in the shipping source address
+          example: 99999ABCDE
+        shipmentToCountryCode:
+          type: string
+          description: Identifies the post office country code in the shipping destination address
+          example: ZZZ
+        shipmentToZip:
+          type: string
+          description: Identifies the ZIP + 4 post office code in the shipping destination address
+          example: 99999ABCDE
         siteID:
           type: integer
           description: An unique identifier assigned to the merchant. Also known as a MID.
@@ -13736,6 +14470,10 @@ components:
           type: string
           description: Transaction sub type codes e.g. Pin, Signature, etc. (Code)
           example: '0'
+        taxRate:
+          type: string
+          description: Rate used to generate VAT/Tax amount on freight/shipping
+          example: '999999999'
         termCapCode:
           type: string
           description: Identifies the transaction capabilities of the terminal associated with the transaction
@@ -13757,6 +14495,11 @@ components:
           description: Indicates time taken to send a transaction to issuer.
           format: int32
           example: 999
+        tipAmount:
+          type: number
+          description: Applicable for certain types of transactions, like eating joints
+          format: double
+          example: 999.99
         tokenId:
           type: string
           description: Token Number.
@@ -13923,6 +14666,10 @@ components:
           type: string
           description: Uniquely identifies a transaction.
           example: '999999999999'
+        txnCatCode:
+          type: string
+          description: Identifies the category code of the transaction
+          example: 9Z
         txnID:
           type: string
           description: Network Transaction ID
@@ -14057,13 +14804,13 @@ components:
             type: string
             description: Determines the user attribute value for respective application
             example: '["4"]'
-        isRequired:
-          type: boolean
-          description: Determines if respective attribute is required to provision the application for user
-          example: true
         isReferencedValue:
           type: boolean
           description: If true, the attribute value holds the reference ID from attribute option. If false, the attribute value holds direct value for respective attribute
+          example: true
+        isRequired:
+          type: boolean
+          description: Determines if respective attribute is required to provision the application for user
           example: true
       description: '// Respective Application specific attributes(For example: Entitlements)'
     AttributeOptionDto:
