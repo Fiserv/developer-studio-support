@@ -1505,8 +1505,8 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/AuthorizationSummaryRequest'
+            #schema:
+              #$ref: '#/components/schemas/AuthorizationSummaryRequest'
             examples:
               Auth summary:
                 description: Auth summary
