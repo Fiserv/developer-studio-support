@@ -100,7 +100,7 @@ featuredFeatures:
       - relatedDoc1: 
         title: Data Feeds
         description: If traditional restful APIs do not satisfy your requirements and you would rather get data feeds, we have multiple ways to get your data to you easily and in a timely manner.
-        link: "/docs/APIs/feeddata.md"
+        link: "/docs/APIs/feedsdata.md"
     relatedAPIs:
       - relatedAPI: 
         title: Auth Search
