@@ -1249,6 +1249,22 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DisbursementSearchRequest'
+            examples:
+              Disbursement Search based on ExpiryDate:
+                description: Disbursement Search based on ExpiryDate
+                value:
+                  fromDate: '20210801'
+                  toDate: '20210807'
+                  limit: 5
+                  fields:
+                    - TransactionId
+                    - MerchantName
+                    - PaymentId
+                    - ReferenceId
+                  filters:
+                    dateType: ExpiryDate
+                    currency: USD
+                    timeZone: EST
         required: true
       responses:
         '200':
@@ -9070,6 +9086,382 @@ components:
           type: string
           description: Value Date
           example: 12/31/2020
+    DisbursementSearchRequest:
+      required:
+        - fromDate
+        - limit
+        - toDate
+      type: object
+      properties:
+        fromDate:
+          type: string
+          description: yyyymmdd string denoting the start date for the query
+          example: '20210801'
+        toDate:
+          type: string
+          description: yyyymmdd string denoting the end date for the query
+          example: '20210807'
+        limit:
+          maximum: 1000000
+          minimum: 1
+          type: integer
+          description: The maximum number of records that will be returned
+          format: int32
+          example: 1
+          default: 10
+        fields:
+          type: array
+          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+          items:
+            type: string
+            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
+            enum:
+              - AccountLastFour
+              - ApplyDate
+              - ApprovalCode
+              - ApprovalCodeKey
+              - BankName
+              - City
+              - Comments
+              - ControlNumber
+              - Country
+              - CreateDate
+              - Currency
+              - CurrencyKey
+              - DfaAccountNumber
+              - DfaBalanceDate
+              - DfaClosingAvailable
+              - DfaClosingLedger
+              - DfaMid
+              - DfaOpeningAvailable
+              - DfaOpeningLedger
+              - DfaPendingAmount
+              - DfaPendingTxns
+              - DfaPreviousPendingAmount
+              - DfaPreviousPendingTxns
+              - Email
+              - ExpiryDate
+              - FeeAmount
+              - FundingAccount
+              - FundsAccount
+              - FundsAcctLastFour
+              - FundsActivityID
+              - FundsActualBalance
+              - FundsAmount
+              - FundsApplyDate
+              - FundsAvailableBalance
+              - FundsChannelType
+              - FundsComments
+              - FundsCreateDate
+              - FundsCurrency
+              - FundsCurrencyKey
+              - FundsExpiryDate
+              - FundsFeeAmount
+              - FundsMerchantName
+              - FundsMid
+              - FundsOrigId
+              - FundsPaymentChannel
+              - FundsPaymentChannelKey
+              - FundsPaymentDate
+              - FundsPaymentId
+              - FundsPaymentStatus
+              - FundsPaymentStatusKey
+              - FundsPaymentTime
+              - FundsReferenceId
+              - FundsTSCreateDate
+              - FundsTxnClaimNumber
+              - FundsTxnDate
+              - FundsTxnDesc
+              - FundsTxnId
+              - FundsTxnPaymentNumber
+              - FundsTxnStatus
+              - FundsTxnStatusKey
+              - FundsTxnTime
+              - FundsTxnType
+              - FundsTxnTypeNm
+              - FundsTxnTypeNmKey
+              - FundsVendorId
+              - MerchantId
+              - MerchantName
+              - MerchantStatus
+              - MerchantStatusKey
+              - Mid
+              - OrigId
+              - PaymentAmount
+              - PaymentChannel
+              - PaymentChannelKey
+              - PaymentDate
+              - PaymentId
+              - PaymentRecipientId
+              - PaymentStatus
+              - PaymentStatusKey
+              - PaymentTime
+              - PaymentType
+              - PaymentTypeKey
+              - PaymentVendorId
+              - PostalCode
+              - ProcessingDate
+              - ProcessingTime
+              - RecipientClient
+              - RecipientComments
+              - RecipientCompany
+              - RecipientExtension
+              - RecipientFName
+              - RecipientGuest
+              - RecipientGuestKey
+              - RecipientId
+              - RecipientIdentifier
+              - RecipientIdentifierValue
+              - RecipientLName
+              - RecipientPhone
+              - RecipientReason
+              - RecipientReasonKey
+              - RecipientStatus
+              - RecipientStatusKey
+              - RecipientTin
+              - RecipientType
+              - RecipientTypeKey
+              - ReferenceId
+              - ReturnCode
+              - RoutingNumber
+              - SettlementDate
+              - SettlementStatus
+              - SettlementStatusKey
+              - State
+              - StateKey
+              - StreetOne
+              - StreetTwo
+              - TransactionAmount
+              - TransactionClaimNumber
+              - TransactionCreateDate
+              - TransactionDate
+              - TransactionId
+              - TransactionPaymentNumber
+              - TransactionStatus
+              - TransactionStatusKey
+              - TxnDesc
+              - VendorId
+        filters:
+          $ref: '#/components/schemas/DisbursementsFilters'
+      description: Request object for Disbursement search
+    DisbursementsFilters:
+      type: object
+      properties:
+        dateType:
+          type: string
+          description: Search/Analysis date type
+          example: PaymentDate
+          enum:
+            - PaymentDate
+            - ApplyDate
+            - ExpiryDate
+        currency:
+          type: string
+          description: Currency of the transaction.
+          example: USD
+          enum:
+            - Unknown
+            - USD
+            - AFN
+            - DZD
+            - ARS
+            - AMD
+            - AWG
+            - AUD
+            - AZN
+            - BSD
+            - BHD
+            - THB
+            - PAB
+            - BBD
+            - BYR
+            - BZD
+            - BMD
+            - VEF
+            - BOB
+            - BRL
+            - BND
+            - BGN
+            - BIF
+            - CAD
+            - CVE
+            - KYD
+            - XOF
+            - XAF
+            - XPF
+            - CLP
+            - COP
+            - KMF
+            - BAM
+            - NIO
+            - CRC
+            - HRK
+            - CUP
+            - CZK
+            - GMD
+            - DKK
+            - MKD
+            - DJF
+            - STD
+            - DOP
+            - VND
+            - XCD
+            - EGP
+            - SVC
+            - ETB
+            - EUR
+            - FKP
+            - FJD
+            - HUF
+            - CDF
+            - GHS
+            - GIP
+            - HTG
+            - PYG
+            - GNF
+            - GWP
+            - GYD
+            - HKD
+            - UAH
+            - ISK
+            - INR
+            - IRR
+            - IQD
+            - JMD
+            - JOD
+            - KES
+            - PGK
+            - LAK
+            - KWD
+            - MWK
+            - ZMK
+            - AOA
+            - MMK
+            - GEL
+            - LVL
+            - LBP
+            - ALL
+            - HNL
+            - SLL
+            - LRD
+            - LYD
+            - SZL
+            - LTL
+            - LSL
+            - MGA
+            - MYR
+            - MUR
+            - MZN
+            - MXN
+            - MXV
+            - MDL
+            - MAD
+            - BOV
+            - NGN
+            - ERN
+            - NAD
+            - NPR
+            - ANG
+            - ILS
+            - RON
+            - TWD
+            - TRY
+            - NZD
+            - BTN
+            - KPW
+            - NOK
+            - PEN
+            - MRO
+            - TOP
+            - PKR
+            - MOP
+            - UYU
+            - PHP
+            - GBP
+            - BWP
+            - QAR
+            - GTQ
+            - ZAR
+            - OMR
+            - KHR
+            - MVR
+            - IDR
+            - RUB
+            - RWF
+            - SHP
+            - SAR
+            - XDR
+            - RSD
+            - SCR
+            - SGD
+            - SBD
+            - KGS
+            - SOS
+            - TJS
+            - LKR
+            - SDG
+            - SRD
+            - SEK
+            - CHF
+            - SYP
+            - BDT
+            - WST
+            - TZS
+            - KZT
+            - TTD
+            - MNT
+            - TND
+            - AED
+            - UGX
+            - COU
+            - CLF
+            - UYI
+            - USN
+            - USS
+            - UZS
+            - VUV
+            - CHE
+            - CHW
+            - KRW
+            - YER
+            - JPY
+            - CNY
+            - PLN
+            - XBA
+            - XTS
+            - XBB
+            - XBD
+            - XBC
+            - XAU
+            - XPD
+            - XPT
+            - XAG
+            - XXX
+            - XFU
+            - TMT
+            - ZWL
+            - CUC
+            - SSP
+            - XUA
+            - XSU
+            - BYN
+            - VES
+            - ZMW
+        Timezone:
+          type: string
+          description: TimeZone of the transaction.
+          example: UTC
+          enum:
+            - UTC
+            - Greenwich
+            - NY
+            - Chicago
+            - Denver
+            - LosAngeles
+            - Halifax
+            - Honolulu
+            - EST
+      description: Various filter options for Disbursements queries
     DisbursementsObj:
       type: object
       properties:
@@ -10176,167 +10568,6 @@ components:
           type: string
           description: Vendor id provided by the merchant also known as merchant customer id.
           example: NB2XV2NIW5RPXLVHMCSW
-    DisbursementSearchRequest:
-      required:
-        - fromDate
-        - limit
-        - toDate
-      type: object
-      properties:
-        fromDate:
-          type: string
-          description: yyyymmdd string denoting the start date for the query
-          example: '20210801'
-        toDate:
-          type: string
-          description: yyyymmdd string denoting the end date for the query
-          example: '20210807'
-        limit:
-          maximum: 1000000
-          minimum: 1
-          type: integer
-          description: The maximum number of records that will be returned
-          format: int32
-          example: 1
-          default: 10
-        fields:
-          type: array
-          description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-          items:
-            type: string
-            description: Specify specific fields to be pulled back instead of the entire set (default behavior)
-            enum:
-              - AccountLastFour
-              - ApplyDate
-              - ApprovalCode
-              - ApprovalCodeKey
-              - BankName
-              - City
-              - Comments
-              - ControlNumber
-              - Country
-              - CreateDate
-              - Currency
-              - CurrencyKey
-              - DfaAccountNumber
-              - DfaBalanceDate
-              - DfaClosingAvailable
-              - DfaClosingLedger
-              - DfaMid
-              - DfaOpeningAvailable
-              - DfaOpeningLedger
-              - DfaPendingAmount
-              - DfaPendingTxns
-              - DfaPreviousPendingAmount
-              - DfaPreviousPendingTxns
-              - Email
-              - ExpiryDate
-              - FeeAmount
-              - FundingAccount
-              - FundsAccount
-              - FundsAcctLastFour
-              - FundsActivityID
-              - FundsActualBalance
-              - FundsAmount
-              - FundsApplyDate
-              - FundsAvailableBalance
-              - FundsChannelType
-              - FundsComments
-              - FundsCreateDate
-              - FundsCurrency
-              - FundsCurrencyKey
-              - FundsExpiryDate
-              - FundsFeeAmount
-              - FundsMerchantName
-              - FundsMid
-              - FundsOrigId
-              - FundsPaymentChannel
-              - FundsPaymentChannelKey
-              - FundsPaymentDate
-              - FundsPaymentId
-              - FundsPaymentStatus
-              - FundsPaymentStatusKey
-              - FundsPaymentTime
-              - FundsReferenceId
-              - FundsTSCreateDate
-              - FundsTxnClaimNumber
-              - FundsTxnDate
-              - FundsTxnDesc
-              - FundsTxnId
-              - FundsTxnPaymentNumber
-              - FundsTxnStatus
-              - FundsTxnStatusKey
-              - FundsTxnTime
-              - FundsTxnType
-              - FundsTxnTypeNm
-              - FundsTxnTypeNmKey
-              - FundsVendorId
-              - MerchantId
-              - MerchantName
-              - MerchantStatus
-              - MerchantStatusKey
-              - Mid
-              - OrigId
-              - PaymentAmount
-              - PaymentChannel
-              - PaymentChannelKey
-              - PaymentDate
-              - PaymentId
-              - PaymentRecipientId
-              - PaymentStatus
-              - PaymentStatusKey
-              - PaymentTime
-              - PaymentType
-              - PaymentTypeKey
-              - PaymentVendorId
-              - PostalCode
-              - ProcessingDate
-              - ProcessingTime
-              - RecipientClient
-              - RecipientComments
-              - RecipientCompany
-              - RecipientExtension
-              - RecipientFName
-              - RecipientGuest
-              - RecipientGuestKey
-              - RecipientId
-              - RecipientIdentifier
-              - RecipientIdentifierValue
-              - RecipientLName
-              - RecipientPhone
-              - RecipientReason
-              - RecipientReasonKey
-              - RecipientStatus
-              - RecipientStatusKey
-              - RecipientTin
-              - RecipientType
-              - RecipientTypeKey
-              - ReferenceId
-              - ReturnCode
-              - RoutingNumber
-              - SettlementDate
-              - SettlementStatus
-              - SettlementStatusKey
-              - State
-              - StateKey
-              - StreetOne
-              - StreetTwo
-              - TransactionAmount
-              - TransactionClaimNumber
-              - TransactionCreateDate
-              - TransactionDate
-              - TransactionId
-              - TransactionPaymentNumber
-              - TransactionStatus
-              - TransactionStatusKey
-              - TxnDesc
-              - VendorId
-        filters:
-          $ref: '#/components/schemas/DisbursementsFilters'
-      description: Request object for Disbursement search
-    DisbursementsFilters:
-      type: object
-      description: Various filter options for Disbursements queries
     ChargebackFilters:
       type: object
       properties:
