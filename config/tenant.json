@@ -23,13 +23,7 @@
         "version": "1.0.0",
         "versionType": "major",
         "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
-        "apiSpecFileNames": ["api-1.0.0"]
-      },
-     {
-        "version": "1.0.1",
-        "versionType": "minor",
-        "releaseNotesPath": "/release-notes/release-notes-1.0.1.md",
-        "apiSpecFileNames": ["api-1.0.1"]
+        "apiSpecFileNames": ["accounts_api"]
       }
   ],
   "product": {
