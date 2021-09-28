@@ -1,9 +1,9 @@
 {
-  "title": "Reporting",
-  "name": "Reporting",
+  "title": "First Vision",
+  "name": "FirstVision",
   "brand": "Fiserv",
-  "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/ClientLineX/develop/assets/images/Fiserv_Logo.jpg",
-  "solution": "merchants",
+  "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
+  "solution": "financial-institutions",
   "brandDescription": "Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments).",
   "categories": [
     {
@@ -11,35 +11,41 @@
       "value": "Business Types",
       "subcategories": [
         {
-          "name": "enterprise",
-          "value": "Enterprise"
+          "name": "valueAddedServices",
+          "value": "Value Added Services"
         }
       ]
     }
   ],
+  
   "apiVersions": [
-    {
-      "version": "1.0.0",
-      "versionType": "major",
-      "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
-      "apiSpecFileNames": ["api-1.0.0"]
-    }
+      {
+        "version": "1.0.0",
+        "versionType": "major",
+        "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
+        "apiSpecFileNames": ["api-1.0.0"]
+      },
+     {
+        "version": "1.0.1",
+        "versionType": "minor",
+        "releaseNotesPath": "/release-notes/release-notes-1.0.1.md",
+        "apiSpecFileNames": ["api-1.0.1"]
+      }
   ],
   "product": {
     "featured": true,
-    "logoURL": "https://raw.githubusercontent.com/Fiserv/ClientLineX/develop/assets/images/reporting.svg",
-    "description": "Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit their own unique needs. By leveraging itemized data and summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.",
-    "longDescription": "Fiserv Reporting allows the consumer the ability to fine tune their analytics to fit their own unique needs. By leveraging itemized data and summarized models through our easy to use APIs the consumer can track sales on a grandular level. Analyze payment processing with an easy-to-use suite of online tools, gaining greater insight to quickly and effectively manage your electronic transactions.",
+    "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
+    "description": "To onboard properly into the Developer Studio as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.",
+    "longDescription":"To onboard properly into the Developer Studi as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.",
     "apiSpecification": "/v1/apis",
     "layout": "/v1/layouts",
     "documentation": "/v1/docs",
     "documenttree": "/v1/docs",
     "documenttreeV2": "/v2/docs",
-    "sandbox": "/v1/sandboxrun",
-    "feature": [
+    "feature":[
       {
         "name": "sandBox",
-        "value": true
+        "value": false
       },
       {
         "name": "plugins",
@@ -51,8 +57,8 @@
       },
       {
         "name": "editParameterAPIExplorer",
-        "value": true
+        "value": false
       }
-    ]
+  ]
   }
 }
