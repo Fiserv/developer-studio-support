@@ -36,7 +36,7 @@
     - title: Release Notes
       link: docs/Release-Notes/Release-Notes.md
 - sections:
-   - title: Customer Management
+   - title: Customer Management
       sections:
       - title: Customer Add
         link: docs/APIs/Customer-Management/Customer-Add.md        
@@ -44,8 +44,8 @@
         link: docs/APIs/Customer-Management/Customer-Data-Update.md
       - title: Customer Demograpic Inquiry
         link: docs/APIs/Customer-Management/Customer-Demograpic-Inquiry.md
- - sections:
-   - title: Account Management
+- sections:
+   - title: Account Management
       sections:
       - title: Account Block Code Update
         link: docs/APIs/Account-Management/Account-Block-Code-Update.md
@@ -55,8 +55,8 @@
         link: docs/APIs/Account-Management/Credit-Limit-Update.md
       - title: Find Account Number
         link: docs/APIs/Account-Management/Find-Account-Number.md
-  - sections:
-    - title: Card Management
+- sections:
+    - title: Card Management
       sections:
       - title: Card Activation
         link: docs/APIs/Card-Management/Card-Activation.md
