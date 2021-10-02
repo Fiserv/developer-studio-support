@@ -32,3 +32,44 @@
   - title: Getting Started
     link: docs/getting-started.md
     open: true
+- sections:
+  - title: API Reference
+    sections:
+    - title: Release Notes
+      link: docs/Release-Notes/Release-Notes.md
+    - title: Customer Management
+      sections:
+      - title: Add Customer
+        link: docs/APIs/Customer-Management/Add-Customer.md
+      - title: Update Customer
+        link: docs/APIs/Customer-Management/Update-Customer.md
+      - title: Inquire DemographicData
+        link: docs/APIs/Customer-Management/Inquire-Demographic-Data.md
+    - title: Account Management
+      sections:
+      - title: Block / Unblock Account
+        link: docs/APIs/Account-Management/Block-Unblock-Account.md
+      - title: Update Credit limit
+        link: docs/APIs/Account-Management/Update-Credit-Limit.md
+      - title: Account transfer promotional product upgrade
+        link: docs/APIs/Account-Management/Account-transfer-promotional-product-upgrade.md
+      - title: Find Account Number
+        link: docs/APIs/Account-Management/Find-Account-Number.md
+    - title: Card Management
+      sections:
+      - title: Get Card Details
+        link: docs/APIs/Card-Management/Get-Card-Details.md
+      - title: Update Card or Plastic record
+        link: docs/APIs/Card-Management/Update-Card-or-Plastic-record.md
+      - title: Activate Card
+        link: docs/APIs/Card-Management/Activate-Card.md
+      - title: Update spending limits
+        link: docs/APIs/Card-Management/Update-spending-limits.md
+      - title: Update Card transfer
+        link: docs/APIs/Card-Management/Update-Card-Transfer.md
+      - title: Inquire Card or PAN token
+        link: docs/APIs/Card-Management/Inquire-Card-or-PAN-token.md
+      - title: Inquire security values
+        link: docs/APIs/Card-Managment/Inquire-security-values.md
+      - title: Card PIN change
+        link: docs/APIs/Card-Managment/Card-PIN-change.md

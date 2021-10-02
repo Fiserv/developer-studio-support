@@ -615,8 +615,8 @@ components:
         chargeOffStatus:
           type: string
           enum:
-            - '0'
-            - '1'
+            - '0 - sdfjklsdfjsl'
+            - '1 - sdffs'
             - '2'
             - '3'
             - '4'
