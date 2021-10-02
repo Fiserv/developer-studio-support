@@ -31,14 +31,12 @@
 - sections:
   - title: Getting Started
     link: docs/getting-started.md
-    open: true
 - sections:
   - title: API Reference
     sections:
     - title: Release Notes
       link: docs/Release-Notes/Release-Notes.md
     - title: Customer Management
-      open: false
       sections:
       - title: Customer Add
         link: docs/APIs/Customer-Management/Customer-Add.md        
