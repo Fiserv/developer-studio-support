@@ -39,37 +39,35 @@
       link: docs/Release-Notes/Release-Notes.md
     - title: Customer Management
       sections:
-      - title: Add Customer
-        link: docs/APIs/Customer-Management/Add-Customer.md
-      - title: Update Customer
-        link: docs/APIs/Customer-Management/Update-Customer.md
-      - title: Inquire DemographicData
-        link: docs/APIs/Customer-Management/Inquire-Demographic-Data.md
+      - title: Customer Add
+        link: docs/APIs/Customer-Management/Customer-Add.md
+      - title: Customer Data Update
+        link: docs/APIs/Customer-Management/Customer-Data-Update.md
+      - title: Customer Demograpic Inquiry
+        link: docs/APIs/Customer-Management/Customer-Demograpic-Inquiry.md
     - title: Account Management
       sections:
-      - title: Block / Unblock Account
-        link: docs/APIs/Account-Management/Block-Unblock-Account.md
-      - title: Update Credit limit
-        link: docs/APIs/Account-Management/Update-Credit-Limit.md
-      - title: Account transfer promotional product upgrade
-        link: docs/APIs/Account-Management/Account-transfer-promotional-product-upgrade.md
+      - title: Account Block Code Update
+        link: docs/APIs/Account-Management/Account-Block-Code-Update.md
+      - title: Account Transfer
+        link: docs/APIs/Account-Management/Account-Transfer.md
+      - title: Credit Limit Update
+        link: docs/APIs/Account-Management/Credit-Limit-Update.md
       - title: Find Account Number
         link: docs/APIs/Account-Management/Find-Account-Number.md
     - title: Card Management
       sections:
-      - title: Get Card Details
-        link: docs/APIs/Card-Management/Get-Card-Details.md
-      - title: Update Card or Plastic record
-        link: docs/APIs/Card-Management/Update-Card-or-Plastic-record.md
-      - title: Activate Card
-        link: docs/APIs/Card-Management/Activate-Card.md
-      - title: Update spending limits
-        link: docs/APIs/Card-Management/Update-spending-limits.md
-      - title: Update Card transfer
-        link: docs/APIs/Card-Management/Update-Card-Transfer.md
-      - title: Inquire Card or PAN token
-        link: docs/APIs/Card-Management/Inquire-Card-or-PAN-token.md
-      - title: Inquire security values
-        link: docs/APIs/Card-Managment/Inquire-security-values.md
-      - title: Card PIN change
-        link: docs/APIs/Card-Managment/Card-PIN-change.md
+      - title: Card Activation
+        link: docs/APIs/Card-Management/Card-Activation.md
+      - title: Card Inquiry
+        link: docs/APIs/Card-Management/Card-Inquiry.md
+      - title: Card transfer Update
+        link: docs/APIs/Card-Management/Card-Transfer-Update.md
+      - title: Card Update
+        link: docs/APIs/Card-Management/Card-Update.md
+      - title: Credit Limit Update
+        link: docs/APIs/Card-Management/Credit-Limit-Update.md
+      - title: CVV2 Inquiry
+        link: docs/APIs/Card-Managment/CVV2-Inquiry.md
+      - title: PIN Block Change
+        link: docs/APIs/Card-Managment/PIN-Block-Change.md

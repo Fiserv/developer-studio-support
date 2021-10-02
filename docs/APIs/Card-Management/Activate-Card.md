@@ -1,3 +1,0 @@
-# Activate Card
-
-Coming Soon...
