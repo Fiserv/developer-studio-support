@@ -41,10 +41,13 @@
       sections:
       - title: Customer Add
         link: docs/APIs/Customer-Management/Customer-Add.md
+        open: false
       - title: Customer Data Update
         link: docs/APIs/Customer-Management/Customer-Data-Update.md
+        open: false
       - title: Customer Demograpic Inquiry
         link: docs/APIs/Customer-Management/Customer-Demograpic-Inquiry.md
+        open: false
     - title: Account Management
       sections:
       - title: Account Block Code Update
