@@ -33,12 +33,14 @@
     open: true
 - sections:
   - title: API Reference
+    link:
     open: true
     sections:
     - title: Release Notes
       link: docs/Release-Notes/Release-Notes.md
 - sections:
   - title: Customer Management
+    link:
     open: true
     sections:
     - title: Customer Add
@@ -49,6 +51,7 @@
       link: docs/APIs/Customer-Management/Customer-Demograpic-Inquiry.md
 - sections:
   - title: Account Management
+    link:
     open: true
     sections:
     - title: Account Block Code Update
@@ -61,6 +64,7 @@
       link: docs/APIs/Account-Management/Find-Account-Number.md
 - sections:
   - title: Card Management
+    link:
     open: true
     sections:
     - title: Card Activation
