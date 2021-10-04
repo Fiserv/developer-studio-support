@@ -27,13 +27,14 @@
 # are granted or extended by this work or 
 # the delivery of this work
 ################################################################################
-
 - sections:
   - title: Getting Started
     link: docs/getting-started.md
     open: true
 - sections:
   - title: API Reference
+    link:
+    open: true
     sections:
     - title: Release Notes
       link: docs/Release-Notes/Release-Notes.md
