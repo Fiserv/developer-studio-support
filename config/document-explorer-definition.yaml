@@ -61,7 +61,7 @@
         link: docs/APIs/Card-Management/Card-Activation.md
       - title: Card Inquiry
         link: docs/APIs/Card-Management/Card-Inquiry.md
-      - title: Card transfer Update
+      - title: Card Transfer Update
         link: docs/APIs/Card-Management/Card-Transfer-Update.md
       - title: Card Update
         link: docs/APIs/Card-Management/Card-Update.md
