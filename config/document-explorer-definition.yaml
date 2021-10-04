@@ -27,48 +27,45 @@
 # are granted or extended by this work or 
 # the delivery of this work
 ################################################################################
+
+- sections:
+    - title: Introduction
+      link:
+      open: true
+      sections:
+        - title: Contact Us
+          link: docs/introduction/contact-us.md
 - sections:
   - title: Getting Started
     link: docs/getting-started.md
     open: true
+    sections:
+    - title: Setup a Tenant
+      link: docs/getting-started/setup-tenant/setup-tenant.md
+    - title: Deploy Tenant
+      link: docs/getting-started/setup-tenant/deploy-tenant.md
+    - title: Register Tenant
+      link: docs/getting-started/setup-tenant/register-tenant.md
+    - title: Code a Tenant
+      link: docs/getting-started/code-a-tenant/code-tenant.md
+    - title: Preview & Publish
+      link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
 - sections:
-  - title: API Reference
+  - title: Resources
     link:
     open: true
     sections:
-    - title: Release Notes
-      link: docs/Release-Notes/Release-Notes.md
-    - title: Customer Management
-      sections:
-      - title: Customer Add
-        link: docs/APIs/Customer-Management/Customer-Add.md
-      - title: Customer Data Update
-        link: docs/APIs/Customer-Management/Customer-Data-Update.md
-      - title: Customer Demograpic Inquiry
-        link: docs/APIs/Customer-Management/Customer-Demograpic-Inquiry.md
-    - title: Account Management
-      sections:
-      - title: Account Block Code Update
-        link: docs/APIs/Account-Management/Account-Block-Code-Update.md
-      - title: Account Transfer
-        link: docs/APIs/Account-Management/Account-Transfer.md
-      - title: Credit Limit Update
-        link: docs/APIs/Account-Management/Credit-Limit-Update.md
-      - title: Find Account Number
-        link: docs/APIs/Account-Management/Find-Account-Number.md
-    - title: Card Management
-      sections:
-      - title: Card Activation
-        link: docs/APIs/Card-Management/Card-Activation.md
-      - title: Card Inquiry
-        link: docs/APIs/Card-Management/Card-Inquiry.md
-      - title: Card Transfer Update
-        link: docs/APIs/Card-Management/Card-Transfer-Update.md
-      - title: Card Update
-        link: docs/APIs/Card-Management/Card-Update.md
-      - title: Credit Limit Update
-        link: docs/APIs/Card-Management/Credit-Limit-Update.md
-      - title: CVV2 Inquiry
-        link: docs/APIs/Card-Managment/CVV2-Inquiry.md
-      - title: PIN Block Change
-        link: docs/APIs/Card-Managment/PIN-Block-Change.md
+    - title: API Guide
+      link: docs/resources/guides/api-guide.md
+    - title: How it works
+      link: docs/resources/guides/how-it-works.md
+    - title: How to use Stoplight
+      link: docs/resources/guides/how-to-use-stoplight.md
+    - title: How to use Docignore
+      link: docs/resources/guides/how-to-use-docignore.md
+    - title: Markdown Support
+      link: docs/resources/markdown-support.md
+    - title: Tutorials
+      link: docs/tutorials/tutorials.md
+    - title: FAQ
+      link: docs/faq/faq.md
