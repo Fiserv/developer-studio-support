@@ -1,5 +1,5 @@
 {
-  "title": "First Vision",
+  "title": "FirstVision",
   "name": "FirstVision",
   "brand": "Fiserv",
   "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
@@ -23,13 +23,7 @@
         "version": "1.0.0",
         "versionType": "major",
         "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
-        "apiSpecFileNames": ["api-1.0.0"]
-      },
-     {
-        "version": "1.0.1",
-        "versionType": "minor",
-        "releaseNotesPath": "/release-notes/release-notes-1.0.1.md",
-        "apiSpecFileNames": ["api-1.0.1"]
+        "apiSpecFileNames": ["accounts_api","accounts_nab_api_3.0","cards_nab_api_3.0"]
       }
   ],
   "product": {
@@ -42,10 +36,11 @@
     "documentation": "/v1/docs",
     "documenttree": "/v1/docs",
     "documenttreeV2": "/v2/docs",
+    "sandbox": "/v1/sandboxrun",
     "feature":[
       {
         "name": "sandBox",
-        "value": false
+        "value": true
       },
       {
         "name": "plugins",
