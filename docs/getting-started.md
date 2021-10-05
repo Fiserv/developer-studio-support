@@ -1,38 +1,25 @@
-# Getting Started
+# Welcome to **FirstVision™** RESTful Web Services
 
-## Welcome to the Developer Studio!
+**Fiserv** provides a single, consolidated processing platform for all of your payment cards, loans, prepaid, and commercial card products.
 
-To onboard into the `Fiserv Developer Studio` as a new Tenant each product must support following APIs standard. So that `Fiserv` will able to retrieve product API specifications and documentation.
- 
-## Setting up Tenant
+**FirstVision™** is our outsourced processing solution that meets your challenges head-on and transforms your technology capability. Built on core VisionPLUS® software, **FirstVision™** provides an end-to-end solution that delivers global processing economies of scale plus fully integrated adjacent services that span the issuing lifecycle.
 
-Products within the Fiserv portfolio that are showcase through the Studio are known as `tenants`.  Tenants standup a `tenant server` that will serve all the content through the studio to developers visiting the Fiserv Developer Studio.
-For more information please refere to [Setup tenant](?path=docs/getting-started/setup-tenant/setup-tenant.md)
+**FirstVision™** is a powerful processing solution — an integrated suite of payment and servicing solutions that drives your platform modernisation and competitive edge.
 
+**Fiserv**'s digital agenda is built on a consumer-centric approach to digital banking solutions. We are focused on the technology of the future, but also solutions that drive consumer value today, across the customer lifecycle.
 
-## Deploying Tenant
+**FirstVision™ Restful Web services** enable you to achieve platform modernisation  and competitive edge delivering the following **benefits to your business**.
 
-New registered Tenant must provide public tenant server.
-For more information please refer to [How to deploy tenant Server](?path=docs/getting-started/setup-tenant/deploy-tenant.md)
+## Accelerating Your Time to Market
 
+Extensive parameterisation and service-based architecture with API enabled and a fully integrated suite of solutions for managing credit, debit, loans and payments ensures quicker application development and integration, rapid roll-out of new products and services.
 
-## Tenant Registration
+## Helping You Ride the Latest Wave of Innovation
 
-To get started with as a new Tenant, developer needs to setup new account by [Tenant Registration](?path=docs/getting-started/setup-tenant/register-tenant.md)
+Platform architecture built around technology simplification and leveraging open APIs, reducing the cost of change and meeting your need for ongoing innovation to differentiate your product set – now and forward into the future.
 
+## Enables Rapid Speed of Change / Speed to Market
 
-## Code Tenant
-New Tenant can start with [Sample tenant repo](https://github.com/fiserv/sample-tenant) to setup Tenant server. Tenant can also build new codebase with choice of their own programming language. To learn more this, please refere to [Code Tenant](?path=docs/getting-started/code-a-tenant/code-tenant.md)
-___
+**FirstVision™** oriented architecture with open APIs enables service consumption rather than change management.
 
-##  Next steps [Setup Tenant](?path=docs/getting-started/setup-tenant/setup-tenant.md)
-
-
-Need Help ?
-[FAQ](?path=docs/faq/faq.md)
-
-
-___
-
-
- 
+Click [here](../api/?type=get&path=/v1/docs) to view and test the APIs.
