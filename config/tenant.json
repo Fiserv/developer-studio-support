@@ -23,7 +23,7 @@
         "version": "1.0.0",
         "versionType": "major",
         "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
-        "apiSpecFileNames": ["accounts_api"]
+        "apiSpecFileNames": ["accounts_api","accounts_nab_api_3.0","cards_nab_api_3.0"]
       }
   ],
   "product": {
