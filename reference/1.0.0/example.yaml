@@ -1,0 +1,2515 @@
+openapi: 3.0.0
+info:
+  title: Vision10 API Documentation
+  description: V10 open API document.
+  version: "1.0.0"
+paths:
+  /actionCode/monetary:
+    delete:
+      tags:
+        - Accounts
+      x-group-name: Accounts
+      x-proxy-name: Delete Accounts
+      summary: Account Details
+      description: DeleteAccounts
+      operationId: /actionCode/monetary
+      parameters:
+        - in: header
+          name: X-Language
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 3
+        - in: header
+          name: X-Correl-Id
+          required: false
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 40
+        - in: header
+          name: X-Name
+          required: true
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 20
+        - in: header
+          name: X-context
+          required: true
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 20
+        - in: header
+          name: X-Client-Id
+          required: false
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 5
+        - in: header
+          name: X-Next-Token
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: transactionType
+          required: true
+          schema:
+            type: string
+            enum:
+              - D
+              - V
+              - C
+              - L
+              - R
+              - M
+              - P
+              - A
+              - ' '
+        - in: query
+          name: actionCodeType
+          required: true
+          schema:
+            type: string
+            format: uppercase
+        - in: query
+          name: businessUnit
+          required: true
+          schema:
+            type: number
+            minimum: 0
+            maximum: 999
+            default: 0
+        - in: query
+          name: actionCode
+          required: true
+          schema:
+            type: string
+            format: uppercase
+            maxLength: 4
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountDeleteResponse'
+        '400':
+          description: >-
+            Below are the error codes you can expect when connecting over
+            internet:API-Sec-003 - Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorList'
+        '401':
+          description: >-
+            Unauthorized: Authorization failed due to missing or invalid
+            credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorList'
+  /accounts:
+    put:
+      tags:
+        - Accounts
+      x-group-name: Accounts
+      x-proxy-name: Update Accounts
+      summary: Account Details
+      description: Update Accounts
+      operationId: accounts
+      parameters:
+        - in: header
+          name: X-Language
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 3
+        - in: header
+          name: X-Correl-Id
+          required: false
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 40
+        - in: header
+          name: X-Name
+          required: true
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 20
+        - in: header
+          name: X-context
+          required: true
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 20
+        - in: header
+          name: X-Client-Id
+          required: false
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 5
+        - in: header
+          name: X-Next-Token
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: product
+          required: true
+          schema:
+            type: number
+            minimum: 0
+            maximum: 998
+            default: 0
+        - in: query
+          name: businessUnit
+          required: true
+          schema:
+            type: number
+            minimum: 0
+            maximum: 999
+            default: 0
+        - in: query
+          name: accountNumber
+          required: true
+          schema:
+            type: string
+            format: uppercase
+        - in: query
+          name: billingAcctInd
+          required: true
+          schema:
+            type: number
+            minimum: 0
+            maximum: 3
+            default: 0
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountUpdateResponse'
+        '400':
+          description: >-
+            Below are the error codes you can expect when connecting over
+            internet:API-Sec-003 - Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorList'
+        '401':
+          description: >-
+            Unauthorized: Authorization failed due to missing or invalid
+            credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorList'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountsUpdateRequest'
+  /boardAccounts:
+    post:
+      tags:
+        - boardAccount
+      x-group-name: Board Accounts
+      x-proxy-name: Create Accounts
+      summary: Board Accounts
+      description: Create Accounts
+      operationId: boardAccounts
+      parameters:
+        - in: header
+          name: X-Language
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 3
+        - in: header
+          name: X-Correl-Id
+          required: false
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 40
+        - in: header
+          name: X-Name
+          required: true
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 20
+        - in: header
+          name: X-context
+          required: true
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 20
+        - in: header
+          name: X-Client-Id
+          required: false
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 5
+        - in: header
+          name: X-Next-Token
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: createRelationshipRecord
+          required: true
+          schema:
+            type: string
+            enum:
+              - 'N'
+              - 'Y'
+        - in: query
+          name: createCustomerRecord
+          required: true
+          schema:
+            type: string
+            enum:
+              - 'Y'
+              - 'N'
+        - in: query
+          name: baseAccountNumber
+          required: true
+          schema:
+            type: string
+            format: uppercase
+            maxLength: 19
+        - in: query
+          name: createAccountRecord
+          required: true
+          schema:
+            type: string
+            enum:
+              - 'Y'
+              - 'N'
+        - in: query
+          name: sameCustBaseNumber
+          required: true
+          schema:
+            type: string
+            enum:
+              - 'Y'
+              - 'N'
+        - in: query
+          name: createEmbosserRecords
+          required: true
+          schema:
+            type: string
+            enum:
+              - 'Y'
+              - 'N'
+      responses:
+        '200':
+          description: Save an account for Business Unit
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/newAccountSetupResp'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/newAccountSetup'
+    get:
+      tags:
+        - accounts
+      x-group-name: Board Accounts
+      x-proxy-name: Account Details
+      summary: Account Details - Account Base Segment
+      description: Account Details
+      operationId: ''
+      parameters:
+        - in: header
+          name: X-Language
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 3
+        - in: header
+          name: X-Correl-Id
+          required: false
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 40
+        - in: header
+          name: X-Name
+          required: true
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 20
+        - in: header
+          name: X-context
+          required: true
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 20
+        - in: header
+          name: X-Client-Id
+          required: false
+          schema:
+            type: string
+            minLength: 0
+            maxLength: 5
+        - in: header
+          name: X-Next-Token
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: businessUnit
+          required: true
+          schema:
+            type: number
+            minimum: 0
+            maximum: 999
+            default: 0
+        - in: query
+          name: billingAcctInd
+          required: true
+          schema:
+            type: number
+            minimum: 0
+            maximum: 3
+            default: 0
+        - in: query
+          name: product
+          required: true
+          schema:
+            type: number
+            minimum: 0
+            maximum: 998
+            default: 0
+        - in: query
+          name: accountNumber
+          required: true
+          schema:
+            type: string
+            format: uppercase
+            maxLength: 19
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/accountBaseSegment'
+servers:
+  - url: 'https://11.100.10.68/api/v10'
+components:
+  schemas:
+    newAccountSetupResp:
+      type: object
+      required:
+        - businessUnit
+        - product
+        - accountNumber
+      properties:
+        encryptedSecureCode:
+          type: string
+        businessUnit:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        embosserRecordcreationflag:
+          format: uppercase
+          type: string
+        cardActivationPhoneNumber:
+          type: string
+        allowedTransactionsCounter:
+          type: string
+        expiryDate:
+          format: date
+          type: string
+        singleUsageFlag:
+          type: string
+        virtualCardCurrencyFlag:
+          type: string
+        virtualTransactionAmountAllowed:
+          type: string
+        maskedPANNumber:
+          format: uppercase
+          type: string
+        nameOnCard:
+          format: uppercase
+          type: string
+        foreignBusinessUnit:
+          type: string
+        cardNumberFVTOKEN:
+          format: uppercase
+          type: string
+        product:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        cardSequence:
+          default: 0
+          maximum: 9999
+          type: number
+          minimum: 0
+        cardActivationStatus:
+          format: uppercase
+          type: string
+        virtualCardTolerancePercentage:
+          type: string
+        customerNumber:
+          format: uppercase
+          type: string
+        accountNumber:
+          format: uppercase
+          type: string
+        currentChipSequence:
+          type: string
+        accountRecordcreationflag:
+          format: uppercase
+          type: string
+        relationshipNumber:
+          format: uppercase
+          type: string
+        productCode:
+          format: uppercase
+          type: string
+        customerRecordcreationflag:
+          format: uppercase
+          type: string
+        onlineCommunicationPreference:
+          type: string
+        statusCode:
+          format: uppercase
+          type: string
+    AccountsUpdateRequest:
+      type: object
+      required:
+        - billingAcctInd
+        - businessUnit
+        - accountNumber
+        - product
+      properties:
+        businessUnit:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        userDefinedChargeOffReason:
+          format: uppercase
+          type: string
+          maxLength: 1
+        dateofNotificationReceived:
+          format: date
+          type: string
+        cardScheme:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+        alternateCustomerNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        vIPStatus:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        collateralCode:
+          format: uppercase
+          type: string
+          maxLength: 2
+        numberofChargeOffDays:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: -999
+        customerStatementFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        customerStatementLetterFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        correspondenceCustomerNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        altCustomeraddressEffectiveDate:
+          format: date
+          type: string
+        cardFeeDate:
+          format: date
+          type: string
+        flexBillingFlag:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        dateNextCRIntPymt:
+          format: date
+          type: string
+        permanentCollector:
+          format: uppercase
+          type: string
+          maxLength: 3
+        returnMailDate:
+          format: date
+          type: string
+        creditLimit:
+          default: 0
+          type: string
+        chargeOffStatus:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+            - '6'
+            - '9'
+        letterRequest:
+          format: uppercase
+          type: string
+          maxLength: 3
+        userAccountNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        incomeoftheAccount:
+          default: 0
+          type: string
+        returnMailUser:
+          format: uppercase
+          type: string
+          maxLength: 3
+        internalStatus:
+          type: string
+          enum:
+            - 'N'
+            - A
+            - F
+            - D
+            - I
+            - M
+            - Z
+            - B
+            - C
+            - H
+            - V
+            - X
+            - Q
+            - J
+            - V
+            - T
+            - R
+            - K
+            - J
+            - '8'
+            - '9'
+            - P
+            - H
+        altCustomerExpiryDate:
+          format: date
+          type: string
+        nextStatementDate:
+          format: date
+          type: string
+        dateLastMaintenance:
+          format: date
+          type: string
+        billingCycle:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        reissueScheme:
+          type: string
+          enum:
+            - '0'
+            - '2'
+            - '3'
+        accountDisplayRequest:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        dateAccountOpened:
+          format: date
+          type: string
+        ownerFlag:
+          format: uppercase
+          type: string
+          maxLength: 1
+        statementReprintDate:
+          format: date
+          type: string
+        shortName:
+          format: uppercase
+          type: string
+          maxLength: 20
+        applicationDate:
+          format: date
+          type: string
+        primaryAccountFlag:
+          type: string
+          enum:
+            - ''
+            - P
+        statementFlag:
+          type: string
+          enum:
+            - H
+            - O
+            - R
+            - S
+            - U
+            - Z
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+            - '6'
+            - '7'
+            - '8'
+            - '9'
+            - ''
+        restructureFlag:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        statementFrequency:
+          type: string
+          enum:
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+            - '6'
+            - '7'
+            - '8'
+            - '9'
+            - '10'
+            - '11'
+            - '12'
+            - '62'
+            - '99'
+        reportFraudulentActivity:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        dueDay:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        dateClosed:
+          format: date
+          type: string
+        employeeCode:
+          format: uppercase
+          type: string
+          maxLength: 2
+        blockCodeDate1:
+          format: date
+          type: string
+        blockCodeDate2:
+          format: date
+          type: string
+        returnMailCounter:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        billingLevel:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        highBalanceAmount:
+          default: 0
+          type: string
+        cCMCustomerID:
+          format: uppercase
+          type: string
+        numberofUnblockedCards:
+          default: 0
+          maximum: 99999
+          type: number
+          minimum: -99999
+        dateLastCycle:
+          format: date
+          type: string
+        product:
+          default: 0
+          maximum: 998
+          type: number
+          minimum: 0
+        deferMembershipFeeDate:
+          format: date
+          type: string
+        dualBillingFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        systemDefinedChargeOffReason:
+          type: string
+          enum:
+            - C
+            - B
+            - F
+            - T
+            - ''
+        relationshipnumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        memoBillingCurrency:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        resetChargeoffDaysSwitch:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        alternateCustomerNumberFlag:
+          type: string
+          enum:
+            - ''
+            - A
+            - B
+            - C
+        customerNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        accountNumber:
+          format: uppercase
+          type: string
+        liabilityIndicator:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        collateralCardRequest:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        billingAcctInd:
+          default: 0
+          maximum: 3
+          type: number
+          minimum: 0
+        statementReprintFlag:
+          type: string
+          enum:
+            - P
+            - C
+            - I
+            - F
+            - D
+            - Q
+        greatestExpiryDate:
+          format: date
+          type: string
+        blockCode1:
+          type: string
+          enum:
+            - A
+            - B
+            - C
+            - D
+            - E
+            - F
+            - G
+            - H
+            - I
+            - J
+            - K
+            - L
+            - M
+            - 'N'
+            - O
+            - P
+            - Q
+            - R
+            - S
+            - T
+            - U
+            - V
+            - W
+            - X
+            - 'Y'
+            - Z
+            - ''
+        cardExpirationDate:
+          format: date
+          type: string
+        blockCode2:
+          type: string
+          enum:
+            - A
+            - B
+            - C
+            - D
+            - E
+            - F
+            - G
+            - H
+            - I
+            - J
+            - K
+            - L
+            - M
+            - 'N'
+            - O
+            - P
+            - Q
+            - R
+            - S
+            - T
+            - U
+            - V
+            - W
+            - X
+            - 'Y'
+            - Z
+            - ''
+        currencyCode:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+    ErrorList:
+      type: array
+      items:
+        type: object
+        properties:
+          err_code:
+            type: string
+          error_message:
+            type: string
+    AccountDeleteResponse:
+      type: object
+      required:
+        - businessUnit
+        - actionCode
+        - actionCodeType
+        - transactionType
+      properties:
+        transactionType:
+          type: string
+          enum:
+            - D
+            - V
+            - C
+            - L
+            - R
+            - M
+            - P
+            - A
+            - ' '
+        actionCodeType:
+          format: uppercase
+          type: string
+        businessUnit:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        actionCode:
+          format: uppercase
+          type: string
+          maxLength: 4
+    newAccountSetup:
+      type: object
+      required:
+        - baseAccountNumber
+        - createEmbosserRecords
+        - createAccountRecord
+        - createCustomerRecord
+        - sameCustBaseNumber
+        - createRelationshipRecord
+      properties:
+        dateofBirth:
+          format: date
+          type: string
+        userFiller:
+          format: uppercase
+          type: string
+          maxLength: 500
+        mobileNumber:
+          format: uppercase
+          type: string
+          maxLength: 20
+        typeCardMailer:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        premiumRate:
+          default: 0
+          maximum: 999999999
+          type: number
+          minimum: 0
+        corporateIDNumber:
+          default: 0
+          maximum: 2147483647
+          type: number
+          minimum: 0
+        iBSDDARoutingNumber:
+          default: 0
+          maximum: 2147483647
+          type: number
+          minimum: 0
+        eMail:
+          format: uppercase
+          type: string
+          maxLength: 60
+        sourceCode:
+          format: uppercase
+          type: string
+          maxLength: 10
+        createAccountRecord:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        state:
+          format: uppercase
+          type: string
+          maxLength: 3
+        customerGroupCode:
+          format: uppercase
+          type: string
+          maxLength: 3
+        mobileProvisionStatus:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+        userAmount2:
+          default: 0
+          type: string
+        userAmount1:
+          default: 0
+          type: string
+        mailCode:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        employeePhone:
+          format: uppercase
+          type: string
+          maxLength: 20
+        name2TypeIndicator:
+          type: string
+          enum:
+            - '0'
+            - '3'
+        iDOfThePCTOverrideTables:
+          format: uppercase
+          type: string
+          maxLength: 3
+        userField5:
+          format: uppercase
+          type: string
+          maxLength: 15
+        userField6:
+          format: uppercase
+          type: string
+          maxLength: 15
+        startDateOfTheOverride:
+          format: date
+          type: string
+        usercardfiller:
+          format: uppercase
+          type: string
+          maxLength: 100
+        baseAccountNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        suppressLetter:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        waiveMembershipFees:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+        officerName:
+          format: uppercase
+          type: string
+          maxLength: 30
+        expiryDateofTempCreditLimit:
+          format: date
+          type: string
+        shortName:
+          format: uppercase
+          type: string
+          maxLength: 20
+        name2:
+          format: uppercase
+          type: string
+          maxLength: 40
+        name1:
+          format: uppercase
+          type: string
+          maxLength: 40
+        cardNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        statusCode:
+          type: string
+          enum:
+            - F
+            - I
+            - ''
+        lastName:
+          format: uppercase
+          type: string
+          maxLength: 40
+        gender:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        currentExpiryDate:
+          format: date
+          type: string
+        cardholderFlag:
+          type: string
+          enum:
+            - '1'
+            - '0'
+        city:
+          format: uppercase
+          type: string
+          maxLength: 30
+        plasticID:
+          format: uppercase
+          type: string
+          maxLength: 10
+        accountControlTableOverride:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        expireDateOfTheOverride:
+          format: date
+          type: string
+        iBSDDAAccountNumber:
+          format: uppercase
+          type: string
+          maxLength: 17
+        authorizationCriteriaTable:
+          format: uppercase
+          type: string
+          maxLength: 3
+        memoPaymentReversalTransactionCode:
+          default: 0
+          maximum: 9999
+          type: number
+          minimum: 0
+        annualFeeChangeAllowed:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        updateCreditLimit:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        countryCode:
+          format: uppercase
+          type: string
+          maxLength: 3
+        lateFeeAssessmentLevel:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        cancelReason:
+          type: string
+          enum:
+            - ''
+            - C
+            - D
+            - U
+            - A
+            - P
+            - T
+            - X
+            - B
+            - M
+            - F
+            - G
+            - I
+            - J
+            - R
+        mobilePIFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        lateFeeChangeAllowed:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        product:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        embossedName2:
+          format: uppercase
+          type: string
+          maxLength: 26
+        requestedCardType:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        embossedName1:
+          format: uppercase
+          type: string
+          maxLength: 26
+        ficheNumber:
+          format: uppercase
+          type: string
+          maxLength: 9
+        owningBranchNumber:
+          default: 0
+          maximum: 999999999
+          type: number
+          minimum: 0
+        memoBillingCurrency:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        relationshipNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        memoBalanceIndicator:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        productCode:
+          format: uppercase
+          type: string
+          maxLength: 2
+        mailStatement:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        statementType:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        cardAction:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+            - '6'
+            - '7'
+            - '8'
+            - '9'
+        filler:
+          format: uppercase
+          type: string
+          maxLength: 500
+        numberOfCardsRequested:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        createEmbosserRecords:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        billingCycle1:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        contactPhone:
+          format: uppercase
+          type: string
+          maxLength: 20
+        iBSSavingsAccountNumber:
+          format: uppercase
+          type: string
+          maxLength: 17
+        effectiveDate:
+          format: date
+          type: string
+        eMailFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        relationshipBlockCode:
+          format: uppercase
+          type: string
+          maxLength: 1
+        vGScardfiller:
+          format: uppercase
+          type: string
+          maxLength: 100
+        createCustomerRecord:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        businessUnit:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        postalCode:
+          format: uppercase
+          type: string
+          maxLength: 10
+        alternateCustomerNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        nSFFeeChangeAllowed:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        nameLine1:
+          format: uppercase
+          type: string
+          maxLength: 40
+        nameLine2:
+          format: uppercase
+          type: string
+          maxLength: 40
+        cashPlanNumber:
+          default: 0
+          maximum: 99999
+          type: number
+          minimum: 0
+        source:
+          format: uppercase
+          type: string
+          maxLength: 2
+        billingLevelModify:
+          type: string
+          enum:
+            - '1'
+            - '0'
+        userDate2:
+          format: date
+          type: string
+        nameLine3:
+          format: uppercase
+          type: string
+          maxLength: 40
+        userDate1:
+          format: date
+          type: string
+        annualFeeAssessmentLevel:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        reserveAmountPCTFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        billingCurrency:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        mailLetter:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        addressLine1:
+          format: uppercase
+          type: string
+          maxLength: 40
+        creditLimit:
+          default: 0
+          type: string
+        addressLine2:
+          format: uppercase
+          type: string
+          maxLength: 40
+        mailLetterFee:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        relationshipCreditLimit:
+          default: 0
+          type: string
+        insuredPartyIndicator:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+        availableReserveAmountPCT:
+          default: 0
+          type: string
+        name1TypeIndicator:
+          type: string
+          enum:
+            - '0'
+            - '3'
+        contactName:
+          format: uppercase
+          type: string
+          maxLength: 30
+        accountType:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+        homePhone:
+          format: uppercase
+          type: string
+          maxLength: 20
+        cardTechnology:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+        stateProvince:
+          format: uppercase
+          type: string
+          maxLength: 3
+        suppressTKNataccntlevel:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        createRelationshipRecord:
+          type: string
+          enum:
+            - 'N'
+            - 'Y'
+        firstName:
+          format: uppercase
+          type: string
+          maxLength: 40
+        mobileDeviceID:
+          format: uppercase
+          type: string
+          maxLength: 20
+        billingCycle:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        issuanceID:
+          format: uppercase
+          type: string
+          maxLength: 3
+        sameCustBaseNumber:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        cardNumberingScheme:
+          default: 0
+          maximum: 9
+          type: number
+          minimum: 0
+        expirationDateOfPCToverride:
+          format: date
+          type: string
+        ownerCoowner:
+          type: string
+          enum:
+            - '1'
+            - '2'
+        deviceIndicator:
+          format: uppercase
+          type: string
+          maxLength: 1
+        temporaryCreditLimit:
+          default: 0
+          type: string
+        dualFlag:
+          default: 0
+          maximum: 9
+          type: number
+          minimum: 0
+        primaryAccountFlag:
+          type: string
+          enum:
+            - ''
+            - P
+        altEMail:
+          format: uppercase
+          type: string
+          maxLength: 50
+        processingControlLevel:
+          format: uppercase
+          type: string
+          maxLength: 1
+        title:
+          format: uppercase
+          type: string
+          maxLength: 20
+        residenceID:
+          format: uppercase
+          type: string
+          maxLength: 3
+        pOSServiceCode:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        nameType:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '3'
+        fiscalYearEnd:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        visaMiniIndicator:
+          format: uppercase
+          type: string
+          maxLength: 1
+        nationalID:
+          format: uppercase
+          type: string
+          maxLength: 25
+        addInsuranceProduct:
+          type: string
+          enum:
+            - 'N'
+            - 'Y'
+        billingLevel:
+          type: string
+          enum:
+            - '1'
+            - '0'
+            - '2'
+        enrollID:
+          format: uppercase
+          type: string
+          maxLength: 3
+        memoPaymentTransactionCode:
+          default: 0
+          maximum: 9999
+          type: number
+          minimum: 0
+        programID:
+          default: 0
+          maximum: 999999999
+          type: number
+          minimum: 0
+        mCCGroupLimitS:
+          default: 0
+          maximum: 2147483647
+          type: number
+          minimum: 0
+        iBSSavingsRoutingNumber:
+          default: 0
+          maximum: 2147483647
+          type: number
+          minimum: 0
+        nSFFeeAssessmentLevel:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        cardSequence:
+          default: 0
+          maximum: 9999
+          type: number
+          minimum: 0
+        typeOfCard:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        dualBillingFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        retailPlanNumber:
+          default: 0
+          maximum: 99999
+          type: number
+          minimum: 0
+        corporateCustomerNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        startDateOfPCTOverride:
+          format: date
+          type: string
+        defaultCreditLimit:
+          default: 0
+          type: string
+        customerNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        costCenterReportingNumber:
+          format: uppercase
+          type: string
+          maxLength: 16
+        billingLevel1:
+          type: string
+          enum:
+            - '1'
+            - '0'
+        nameTypeInd1:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '3'
+        commercialFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+        dualIndicator:
+          type: string
+          enum:
+            - L
+            - F
+            - ''
+        residenceFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+        middleName:
+          format: uppercase
+          type: string
+          maxLength: 40
+        customerSelectedDueDay:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        nameTypeInd3:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '3'
+        nameTypeInd2:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '3'
+    accountBaseSegment:
+      type: object
+      required:
+        - billingAcctInd
+        - businessUnit
+        - accountNumber
+        - product
+      properties:
+        businessUnit:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        userDefinedChargeOffReason:
+          format: uppercase
+          type: string
+        dateofNotificationReceived:
+          format: date
+          type: string
+        cardScheme:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+        alternateCustomerNumber:
+          format: uppercase
+          type: string
+        vIPStatus:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        collateralCode:
+          format: uppercase
+          type: string
+        numberofChargeOffDays:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: -999
+        customerStatementFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        customerStatementLetterFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        correspondenceCustomerNumber:
+          format: uppercase
+          type: string
+        altCustomeraddressEffectiveDate:
+          format: date
+          type: string
+        cardFeeDate:
+          format: date
+          type: string
+        flexBillingFlag:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        dateNextCRIntPymt:
+          format: date
+          type: string
+        permanentCollector:
+          format: uppercase
+          type: string
+        returnMailDate:
+          format: date
+          type: string
+        creditLimit:
+          default: 0
+          type: string
+        chargeOffStatus:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+            - '6'
+            - '9'
+        letterRequest:
+          format: uppercase
+          type: string
+        userAccountNumber:
+          format: uppercase
+          type: string
+        incomeoftheAccount:
+          default: 0
+          type: string
+        returnMailUser:
+          format: uppercase
+          type: string
+        internalStatus:
+          type: string
+          enum:
+            - 'N'
+            - A
+            - F
+            - D
+            - I
+            - M
+            - Z
+            - B
+            - C
+            - H
+            - V
+            - X
+            - Q
+            - J
+            - V
+            - T
+            - R
+            - K
+            - J
+            - '8'
+            - '9'
+            - P
+            - H
+        altCustomerExpiryDate:
+          format: date
+          type: string
+        nextStatementDate:
+          format: date
+          type: string
+        dateLastMaintenance:
+          format: date
+          type: string
+        billingCycle:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        reissueScheme:
+          type: string
+          enum:
+            - '0'
+            - '2'
+            - '3'
+        accountDisplayRequest:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        dateAccountOpened:
+          format: date
+          type: string
+        ownerFlag:
+          format: uppercase
+          type: string
+        statementReprintDate:
+          format: date
+          type: string
+        shortName:
+          format: uppercase
+          type: string
+        applicationDate:
+          format: date
+          type: string
+        primaryAccountFlag:
+          type: string
+          enum:
+            - ' '
+            - P
+        statementFlag:
+          type: string
+          enum:
+            - H
+            - O
+            - R
+            - S
+            - U
+            - Z
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+            - '6'
+            - '7'
+            - '8'
+            - '9'
+            - ' '
+        restructureFlag:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        statementFrequency:
+          type: string
+          enum:
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+            - '6'
+            - '7'
+            - '8'
+            - '9'
+            - '10'
+            - '11'
+            - '12'
+            - '62'
+            - '99'
+        reportFraudulentActivity:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        dueDay:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        dateClosed:
+          format: date
+          type: string
+        employeeCode:
+          format: uppercase
+          type: string
+        blockCodeDate1:
+          format: date
+          type: string
+        blockCodeDate2:
+          format: date
+          type: string
+        returnMailCounter:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        billingLevel:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        highBalanceAmount:
+          default: 0
+          type: string
+        cCMCustomerID:
+          format: uppercase
+          type: string
+        numberofUnblockedCards:
+          default: 0
+          maximum: 99999
+          type: number
+          minimum: -99999
+        dateLastCycle:
+          format: date
+          type: string
+        product:
+          default: 0
+          maximum: 998
+          type: number
+          minimum: 0
+        deferMembershipFeeDate:
+          format: date
+          type: string
+        dualBillingFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        systemDefinedChargeOffReason:
+          type: string
+          enum:
+            - C
+            - B
+            - F
+            - T
+            - ' '
+        relationshipnumber:
+          format: uppercase
+          type: string
+        memoBillingCurrency:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        resetChargeoffDaysSwitch:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        alternateCustomerNumberFlag:
+          type: string
+          enum:
+            - ' '
+            - A
+            - B
+            - C
+        customerNumber:
+          format: uppercase
+          type: string
+        accountNumber:
+          format: uppercase
+          type: string
+        liabilityIndicator:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        collateralCardRequest:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        billingAcctInd:
+          default: 0
+          maximum: 3
+          type: number
+          minimum: 0
+        statementReprintFlag:
+          type: string
+          enum:
+            - P
+            - C
+            - I
+            - F
+            - D
+            - Q
+        greatestExpiryDate:
+          format: date
+          type: string
+        blockCode1:
+          type: string
+          enum:
+            - A
+            - B
+            - C
+            - D
+            - E
+            - F
+            - G
+            - H
+            - I
+            - J
+            - K
+            - L
+            - M
+            - 'N'
+            - O
+            - P
+            - Q
+            - R
+            - S
+            - T
+            - U
+            - V
+            - W
+            - X
+            - 'Y'
+            - Z
+            - ' '
+        cardExpirationDate:
+          format: date
+          type: string
+        blockCode2:
+          type: string
+          enum:
+            - A
+            - B
+            - C
+            - D
+            - E
+            - F
+            - G
+            - H
+            - I
+            - J
+            - K
+            - L
+            - M
+            - 'N'
+            - O
+            - P
+            - Q
+            - R
+            - S
+            - T
+            - U
+            - V
+            - W
+            - X
+            - 'Y'
+            - Z
+            - ' '
+        currencyCode:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+    AccountUpdateResponse:
+      type: object
+      required:
+        - billingAcctInd
+        - businessUnit
+        - accountNumber
+        - product
+      properties:
+        businessUnit:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        userDefinedChargeOffReason:
+          format: uppercase
+          type: string
+          maxLength: 1
+        dateofNotificationReceived:
+          format: date
+          type: string
+        cardScheme:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+        alternateCustomerNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        vIPStatus:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        collateralCode:
+          format: uppercase
+          type: string
+          maxLength: 2
+        numberofChargeOffDays:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: -999
+        customerStatementFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        customerStatementLetterFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        correspondenceCustomerNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        altCustomeraddressEffectiveDate:
+          format: date
+          type: string
+        cardFeeDate:
+          format: date
+          type: string
+        flexBillingFlag:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        dateNextCRIntPymt:
+          format: date
+          type: string
+        permanentCollector:
+          format: uppercase
+          type: string
+          maxLength: 3
+        returnMailDate:
+          format: date
+          type: string
+        creditLimit:
+          default: 0
+          type: string
+        chargeOffStatus:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+            - '6'
+            - '9'
+        letterRequest:
+          format: uppercase
+          type: string
+          maxLength: 3
+        userAccountNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        incomeoftheAccount:
+          default: 0
+          type: string
+        returnMailUser:
+          format: uppercase
+          type: string
+          maxLength: 3
+        internalStatus:
+          type: string
+          enum:
+            - 'N'
+            - A
+            - F
+            - D
+            - I
+            - M
+            - Z
+            - B
+            - C
+            - H
+            - V
+            - X
+            - Q
+            - J
+            - V
+            - T
+            - R
+            - K
+            - J
+            - '8'
+            - '9'
+            - P
+            - H
+        altCustomerExpiryDate:
+          format: date
+          type: string
+        nextStatementDate:
+          format: date
+          type: string
+        dateLastMaintenance:
+          format: date
+          type: string
+        billingCycle:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        reissueScheme:
+          type: string
+          enum:
+            - '0'
+            - '2'
+            - '3'
+        accountDisplayRequest:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        dateAccountOpened:
+          format: date
+          type: string
+        ownerFlag:
+          format: uppercase
+          type: string
+          maxLength: 1
+        statementReprintDate:
+          format: date
+          type: string
+        shortName:
+          format: uppercase
+          type: string
+          maxLength: 20
+        applicationDate:
+          format: date
+          type: string
+        primaryAccountFlag:
+          type: string
+          enum:
+            - ''
+            - P
+        statementFlag:
+          type: string
+          enum:
+            - H
+            - O
+            - R
+            - S
+            - U
+            - Z
+            - '0'
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+            - '6'
+            - '7'
+            - '8'
+            - '9'
+            - ''
+        restructureFlag:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        statementFrequency:
+          type: string
+          enum:
+            - '1'
+            - '2'
+            - '3'
+            - '4'
+            - '5'
+            - '6'
+            - '7'
+            - '8'
+            - '9'
+            - '10'
+            - '11'
+            - '12'
+            - '62'
+            - '99'
+        reportFraudulentActivity:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        dueDay:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        dateClosed:
+          format: date
+          type: string
+        employeeCode:
+          format: uppercase
+          type: string
+          maxLength: 2
+        blockCodeDate1:
+          format: date
+          type: string
+        blockCodeDate2:
+          format: date
+          type: string
+        returnMailCounter:
+          default: 0
+          maximum: 99
+          type: number
+          minimum: 0
+        billingLevel:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        highBalanceAmount:
+          default: 0
+          type: string
+        cCMCustomerID:
+          format: uppercase
+          type: string
+        numberofUnblockedCards:
+          default: 0
+          maximum: 99999
+          type: number
+          minimum: -99999
+        dateLastCycle:
+          format: date
+          type: string
+        product:
+          default: 0
+          maximum: 998
+          type: number
+          minimum: 0
+        deferMembershipFeeDate:
+          format: date
+          type: string
+        dualBillingFlag:
+          type: string
+          enum:
+            - '0'
+            - '1'
+        systemDefinedChargeOffReason:
+          type: string
+          enum:
+            - C
+            - B
+            - F
+            - T
+            - ''
+        relationshipnumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        memoBillingCurrency:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
+        resetChargeoffDaysSwitch:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        alternateCustomerNumberFlag:
+          type: string
+          enum:
+            - ''
+            - A
+            - B
+            - C
+        customerNumber:
+          format: uppercase
+          type: string
+          maxLength: 19
+        accountNumber:
+          format: uppercase
+          type: string
+        liabilityIndicator:
+          type: string
+          enum:
+            - '0'
+            - '1'
+            - '2'
+        collateralCardRequest:
+          type: string
+          enum:
+            - 'Y'
+            - 'N'
+        billingAcctInd:
+          default: 0
+          maximum: 3
+          type: number
+          minimum: 0
+        statementReprintFlag:
+          type: string
+          enum:
+            - P
+            - C
+            - I
+            - F
+            - D
+            - Q
+        greatestExpiryDate:
+          format: date
+          type: string
+        blockCode1:
+          type: string
+          enum:
+            - A
+            - B
+            - C
+            - D
+            - E
+            - F
+            - G
+            - H
+            - I
+            - J
+            - K
+            - L
+            - M
+            - 'N'
+            - O
+            - P
+            - Q
+            - R
+            - S
+            - T
+            - U
+            - V
+            - W
+            - X
+            - 'Y'
+            - Z
+            - ''
+        cardExpirationDate:
+          format: date
+          type: string
+        blockCode2:
+          type: string
+          enum:
+            - A
+            - B
+            - C
+            - D
+            - E
+            - F
+            - G
+            - H
+            - I
+            - J
+            - K
+            - L
+            - M
+            - 'N'
+            - O
+            - P
+            - Q
+            - R
+            - S
+            - T
+            - U
+            - V
+            - W
+            - X
+            - 'Y'
+            - Z
+            - ''
+        currencyCode:
+          default: 0
+          maximum: 999
+          type: number
+          minimum: 0
