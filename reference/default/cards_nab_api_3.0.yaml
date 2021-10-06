@@ -10,6 +10,8 @@ paths:
     patch:
       tags:
       - Cards Management
+      x-group-name: Cards Management
+      x-proxy-name: Cards Profile
       summary: Update Card Data
       description: Update Card Data
       operationId: cardsProfile
@@ -391,6 +393,8 @@ paths:
     patch:
       tags:
       - Cards Management
+      x-group-name: Cards Management
+      x-proxy-name: Cards Pin
       summary: Card PIN change
       description: PIN for both magnetic stripe and chip-based prepaid cards
       operationId: Pin Change
@@ -470,6 +474,8 @@ paths:
     patch:
       tags:
       - Cards Management
+      x-group-name: Cards Management
+      x-proxy-name: Spend Limits
       summary: Update Spending Limit Fields
       description: Updates Spending Limit Fields
       operationId: Card Limits
@@ -851,6 +857,8 @@ paths:
     patch:
       tags:
       - Cards Management
+      x-group-name: Cards Management
+      x-proxy-name: Cards Block Unblock
       summary: Block Unblock Card
       description: Update Block Unblock
       operationId: cardsBlock
@@ -1241,6 +1249,8 @@ paths:
     post:
       tags:
       - Cards Management
+      x-group-name: Cards Management
+      x-proxy-name: Secure Codes
       summary: inquire security values
       description: fetches security valuesoftheCards
       operationId: secureCode
@@ -1327,6 +1337,8 @@ paths:
     get:
       tags:
       - Cards Management
+      x-group-name: Cards Management
+      x-proxy-name: Clear Pan
       summary: cardsDetails
       description: cardsClearPlan
       operationId: cards
@@ -1406,6 +1418,8 @@ paths:
     put:
       tags:
       - Cards Management
+      x-group-name: Cards Management
+      x-proxy-name: Cards Transfer
       summary: Update Card transfer
       description: Updates Card transfer service
       operationId: Card transferservice

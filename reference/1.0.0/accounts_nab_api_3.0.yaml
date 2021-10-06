@@ -10,6 +10,8 @@ paths:
     patch:
       tags:
       - Accounts Management
+      x-group-name: Accounts Management
+      x-proxy-name: Block Unblock
       summary: block code on an Account
       description: Adds changes or removes a block code on an Account
       operationId: blockUnblock
@@ -776,6 +778,8 @@ paths:
     put:
       tags:
       - Accounts Management
+      x-group-name: Accounts Management
+      x-proxy-name: Accounts Transfer
       summary: Accounts Transfer
       description: Enables Accounts Transfer
       operationId: Account Management
@@ -969,9 +973,11 @@ paths:
     patch:
       tags:
       - Accounts Management
-      summary: Update Credit limit
-      description: Update Credit limit
-      operationId: creditLimits
+      x-group-name: Accounts Management
+      x-proxy-name: Profile
+      summary: Update Accounts
+      description: Update Accounts
+      operationId: accountsprofile
       parameters:
       - name: X-Language
         in: header
