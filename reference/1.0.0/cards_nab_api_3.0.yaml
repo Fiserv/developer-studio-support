@@ -9,9 +9,9 @@ paths:
   /cards/profile:
     patch:
       tags:
-      - Cards Management
+      - Update Cards Profile
       x-group-name: Cards Management
-      x-proxy-name: Cards Profile
+      x-proxy-name: Update Cards Profile
       summary: Update Card Data
       description: Update Card Data
       operationId: cardsProfile
@@ -392,9 +392,9 @@ paths:
   /cards/pin:
     patch:
       tags:
-      - Cards Management
+      - Update Cards Pin
       x-group-name: Cards Management
-      x-proxy-name: Cards Pin
+      x-proxy-name: Update Cards Pin
       summary: Card PIN change
       description: PIN for both magnetic stripe and chip-based prepaid cards
       operationId: Pin Change
@@ -473,9 +473,9 @@ paths:
   /card/spendLimits:
     patch:
       tags:
-      - Cards Management
+      - Update Spend Limits
       x-group-name: Cards Management
-      x-proxy-name: Spend Limits
+      x-proxy-name: Update Spend Limits
       summary: Update Spending Limit Fields
       description: Updates Spending Limit Fields
       operationId: Card Limits
@@ -856,9 +856,9 @@ paths:
   /cards/blockUnblock:
     patch:
       tags:
-      - Cards Management
+      - Update Cards Block Unblock
       x-group-name: Cards Management
-      x-proxy-name: Cards Block Unblock
+      x-proxy-name: Update Cards Block Unblock
       summary: Block Unblock Card
       description: Update Block Unblock
       operationId: cardsBlock
@@ -1248,9 +1248,9 @@ paths:
   /cards/secureCode:
     post:
       tags:
-      - Cards Management
+      - Create Secure Codes
       x-group-name: Cards Management
-      x-proxy-name: Secure Codes
+      x-proxy-name: Create Secure Codes
       summary: inquire security values
       description: fetches security valuesoftheCards
       operationId: secureCode
@@ -1336,9 +1336,9 @@ paths:
   /cards/clearPan:
     get:
       tags:
-      - Cards Management
+      - Get Cards Clear Pan
       x-group-name: Cards Management
-      x-proxy-name: Clear Pan
+      x-proxy-name: Get Cards Clear Pan
       summary: cardsDetails
       description: cardsClearPlan
       operationId: cards
@@ -1417,9 +1417,9 @@ paths:
   /cards/transfer:
     put:
       tags:
-      - Cards Management
+      - Update Cards Transfer
       x-group-name: Cards Management
-      x-proxy-name: Cards Transfer
+      x-proxy-name: Update Cards Transfer
       summary: Update Card transfer
       description: Updates Card transfer service
       operationId: Card transferservice

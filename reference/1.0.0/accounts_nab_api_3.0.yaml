@@ -9,9 +9,9 @@ paths:
   /accounts/blockUnblock:
     patch:
       tags:
-      - Accounts Management
+      - Update Accounts Block Unblock
       x-group-name: Accounts Management
-      x-proxy-name: Block Unblock
+      x-proxy-name: Update Accounts Block Unblock
       summary: block code on an Account
       description: Adds changes or removes a block code on an Account
       operationId: blockUnblock
@@ -777,9 +777,9 @@ paths:
   /accounts/transfer:
     put:
       tags:
-      - Accounts Management
+      - Update Accounts Transfer
       x-group-name: Accounts Management
-      x-proxy-name: Accounts Transfer
+      x-proxy-name: Update Accounts Transfer
       summary: Accounts Transfer
       description: Enables Accounts Transfer
       operationId: Account Management
@@ -972,9 +972,9 @@ paths:
   /accounts/profile:
     patch:
       tags:
-      - Accounts Management
+      - Update Accounts Profile
       x-group-name: Accounts Management
-      x-proxy-name: Profile
+      x-proxy-name: Update Accounts Profile
       summary: Update Accounts
       description: Update Accounts
       operationId: accountsprofile
