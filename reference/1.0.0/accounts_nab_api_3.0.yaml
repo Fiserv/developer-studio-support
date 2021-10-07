@@ -779,7 +779,7 @@ paths:
       tags:
       - Update Accounts Transfersss
       x-group-name: Accounts Management
-      x-proxy-name: Update Accounts Transfer
+      x-proxy-name: Update Accounts Transfersssss
       summary: Accounts Transfer
       description: Enables Accounts Transfer
       operationId: Account Management
