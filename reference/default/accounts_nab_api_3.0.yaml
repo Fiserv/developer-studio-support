@@ -763,6 +763,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AccountsBlockUnblockResp'
+      x-codegen-request-body-name: body
   /accounts/transfer:
     put:
       tags:
@@ -1612,6 +1613,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UpdateAccountsProfileResp'
+      x-codegen-request-body-name: body
 components:
   schemas:
     UpdateAccountsTransferReq:
