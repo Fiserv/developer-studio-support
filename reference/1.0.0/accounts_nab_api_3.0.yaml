@@ -777,7 +777,7 @@ paths:
   /accounts/transfer:
     put:
       tags:
-      - Update Accounts Transfer
+      - Update Accounts Transfersss
       x-group-name: Accounts Management
       x-proxy-name: Update Accounts Transfer
       summary: Accounts Transfer
