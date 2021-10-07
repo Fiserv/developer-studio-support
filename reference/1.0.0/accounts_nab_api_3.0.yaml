@@ -9,7 +9,9 @@ paths:
   /accounts/blockUnblock:
     patch:
       tags:
-      - Accounts Management
+      - Update Accounts Block Unblock
+      x-group-name: Accounts Management
+      x-proxy-name: Update Accounts Block Unblock
       summary: block code on an Account
       description: Adds changes or removes a block code on an Account
       operationId: blockUnblock
@@ -772,12 +774,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AccountsBlockUnblockResp'
-      x-group-name: Accounts Management
-      x-proxy-name: Add/Removes block code
   /accounts/transfer:
     put:
       tags:
-      - Accounts Management
+      - Update Accounts Transfer
+      x-group-name: Accounts Management
+      x-proxy-name: Update Accounts Transfer
       summary: Accounts Transfer
       description: Enables Accounts Transfer
       operationId: Account Management
@@ -966,16 +968,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UpdateAccountsTransferResp'
-      x-group-name: Accounts Management
-      x-proxy-name: Accounts Transfer
       x-codegen-request-body-name: body
   /accounts/profile:
     patch:
       tags:
-      - Accounts Management
-      summary: Update Credit limit
-      description: Update Credit limit
-      operationId: creditLimits
+      - Update Accounts Profile
+      x-group-name: Accounts Management
+      x-proxy-name: Update Accounts Profile
+      summary: Update Accounts
+      description: Update Accounts
+      operationId: accountsprofile
       parameters:
       - name: X-Language
         in: header
@@ -1741,8 +1743,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CreditLimitUpdateResponse'
-      x-group-name: Accounts Management
-      x-proxy-name: Update Credit limit
 components:
   schemas:
     UpdateAccountsTransferReq:
