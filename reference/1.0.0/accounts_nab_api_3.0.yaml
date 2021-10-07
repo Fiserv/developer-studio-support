@@ -60,22 +60,6 @@ paths:
         schema:
           type: number
           default: 0.0
-      - name: billingAcctInd
-        in: query
-        description: ACCOUNT TYPE-Code that indicates whether the account being added
-          is atransaction (cardholder), billing, control, or diversion account
-        required: true
-        schema:
-          type: number
-          default: 0.0
-      - name: product
-        in: query
-        description: Product - Product associated with this Account. The values are
-          001–998
-        required: true
-        schema:
-          type: number
-          default: 0.0
       - name: accountNumber
         in: query
         description: Account- Customer account number. Must be numeric and greater
@@ -85,6 +69,11 @@ paths:
           maxLength: 19
           type: string
           format: uppercase
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountsBlockUnblockReq'
       responses:
         200:
           description: 'Backend Response Code and message in odsMessages field: <BR/>V5BS0102SA
@@ -820,45 +809,6 @@ paths:
         in: header
         schema:
           type: string
-      - name: blockCode
-        in: query
-        description: Block code-Block code to apply to the transfer cardThe values
-          are blank(or space) and A to Z,
-        required: true
-        schema:
-          maxLength: 1
-          type: string
-          format: uppercase
-      - name: product
-        in: query
-        description: Product - Product associated with this Account. The values are
-          001–998
-        required: true
-        schema:
-          maximum: 999.0
-          minimum: 0.0
-          type: number
-          default: 0.0
-      - name: cardReplacementIndicator
-        in: query
-        description: Card replacement indicator-Code that indicates whether CMS replaces
-          the transfer card bygenerating a new Embosser record on the original account.
-          The values are 0=Replace lost/stolen/fraud card (Default), 1=Do not replace
-          lost/stolen/fraud card
-        required: true
-        schema:
-          type: string
-          enum:
-          - 0 - Replace
-          - 1 - Do Not Replace
-      - name: terminalId
-        in: query
-        description: Terminal id- The terminal from where the service was called
-        required: true
-        schema:
-          maxLength: 4
-          type: string
-          format: uppercase
       - name: accountNumber
         in: query
         description: Account number-Account currently associated with the card
@@ -867,81 +817,16 @@ paths:
           maxLength: 19
           type: string
           format: uppercase
-      - name: transferToAccount
+      - name: businessUnit
         in: query
-        description: Transfer to account-Number of the account to which you want to
-          transfer the cardYou can enter a specific account number or enter a slash
-          (/) ifthe auto-generation functionality is active for account numbers.
+        description: Business Unit -Identification number of the organization associated with thisAccount Base Segment record. The values are 001–998.
         required: true
         schema:
-          maxLength: 19
-          type: string
-          format: uppercase
-      - name: transferToCustomer
-        in: query
-        description: Transfer to customer-Number that identifies the Customer Name/Address
-          recordassociated with the transfer-to accountIf you are transferring the
-          card to an existing accountdo notmake an entry in the CUSTOMER fieldCMS
-          uses the customernumber associated with the existing account
-        required: true
-        schema:
-          maxLength: 19
-          type: string
-          format: uppercase
-      - name: action
-        in: query
-        description: Action-This field issystem-generated; you cannot modify it. The
-          values are R=Reverse a card transfer, T=Transfer the card (lost, stolen,
-          or fraud).
-        required: true
-        schema:
-          type: string
-          enum:
-          - T - Transfer
-          - R - Reversal
-      - name: operatorId
-        in: query
-        description: Operator id-user signon operator id
-        required: true
-        schema:
-          maxLength: 3
-          type: string
-          format: uppercase
-      - name: cardNumber
-        in: query
-        description: CARD NUMBER-Number that is embossed on the plastic card. Enter
-          a value inthis field only if the card number is different from the post-toaccount
-          number
-        required: true
-        schema:
-          maxLength: 19
-          type: string
-          format: uppercase
-      - name: effectiveDate
-        in: query
-        description: Effective date-Date that the fraud card transfer is effective
-          The value must be a date less than or equal to today’sdateThe default value
-          is today’s date. If you enter a future date The system will abend
-        required: true
-        schema:
-          type: string
-          format: date
-      - name: cardSequenceNumber
-        in: query
-        description: Card sequence- This a static value value 0001 should be passed
-        required: true
-        schema:
-          maximum: 9999.0
-          minimum: 1.0
           type: number
-          default: 1.0
-      - name: startDate
-        in: query
-        description: Start date- the date when the serivce was called
-        required: true
-        schema:
-          type: string
-          format: date
+          default: 0.0
+          minimum: 0.0
+          maximum: 999
+
       requestBody:
         content:
           application/json:
@@ -1015,16 +900,6 @@ paths:
         in: header
         schema:
           type: string
-      - name: product
-        in: query
-        description: Product - Product associated with this Account. The values are
-          001–998
-        required: true
-        schema:
-          maximum: 998.0
-          minimum: 0.0
-          type: number
-          default: 0.0
       - name: businessUnit
         in: query
         description: Business Unit -Identification number of the organization associated
@@ -1043,17 +918,11 @@ paths:
         schema:
           type: string
           format: uppercase
-      - name: billingAcctInd
-        in: query
-        description: Billing Account Indicator- that indicates whether the account
-          being added is a transaction (cardholder), billing, control, or diversion
-          account
-        required: true
-        schema:
-          maximum: 3.0
-          minimum: 0.0
-          type: number
-          default: 0.0
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAccountsProfileReq'
       responses:
         200:
           description: 'Backend Response Code and message in odsMessages field: <BR/>V5BS0102SA
@@ -1742,7 +1611,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreditLimitUpdateResponse'
+                $ref: '#/components/schemas/UpdateAccountsProfileResp'
 components:
   schemas:
     UpdateAccountsTransferReq:
@@ -1774,12 +1643,7 @@ components:
           type: number
           description: Product - Product associated with this Account. The values
             are 001–998
-        businessUnit:
-          maximum: 999
-          minimum: 0
-          type: number
-          description: Business Unit -Identification number of the organization associated
-            with thisAccount Base Segment record. The values are 001–998.
+        
         cardReplacementIndicator:
           type: string
           description: Card replacement indicator-Code that indicates whether CMS
@@ -1939,7 +1803,590 @@ components:
           type: string
           description: Transfer From Account- The account asscoicated to the old card
           format: uppercase
-    CreditLimitUpdateResponse:
+    
+    UpdateAccountsProfileReq:
+      required:
+      - billingAcctInd
+      - product
+      type: object
+      properties:
+        businessUnit:
+          maximum: 999
+          minimum: 0
+          type: number
+          description: Business Unit -Identification number of the organization associated
+            with thisAccount Base Segment record. The values are 001–998
+        userDefinedChargeOffReason:
+          maxLength: 1
+          type: string
+          description: ""
+          format: uppercase
+        dateofNotificationReceived:
+          type: string
+          description: Date NotificationReceived-Date on which a bankruptcy notification
+            was received or dateon which a fraudulent loan was discoveredThis date
+            is alsoused if you are required to charge off an account within aspecific
+            time period for bankruptcies and fraudulent loans
+          format: date
+        cardScheme:
+          type: string
+          description: Card Number Scheme-Card numbering scheme that determines the
+            card numbers thatare assigned to Embosser records associated with the
+            account, The values are 0=Standard, nonrelationship account in which theaccount
+            number and all card numbers are thesame (Default), 1=Relationship account
+            in which the accountnumber and all card numbers are the same,2=Account
+            number and all card numbers are thesame; each card includes a unique sequencenumber;
+            valid only for accounts processed by arevolving/retail logo, 3=Account
+            number and all card numbers areunique
+          enum:
+          - 0 - Nonrelationship account-Same Account & Card number
+          - 1 - Relationship account-Same Account & Card number
+          - 2 - Same Account & Card number
+          - 3 - Unique Account & Card number
+        alternateCustomerNumber:
+          maxLength: 19
+          type: string
+          description: Alternate CustomerStart Date-that indicates the effective date
+            and theexpiration date of the alternate customer address
+          format: uppercase
+        vIPStatus:
+          type: string
+          description: VIP Status-that indicates this account holder is an important
+            or influential customer
+          enum:
+          - 0 - Reg Customer
+          - 1 - Customer
+        collateralCode:
+          maxLength: 2
+          type: string
+          description: Collateral Code-Code that indicates whether collateral (a Collateral
+            record) isassociated with the account
+          format: uppercase
+        numberofChargeOffDays:
+          maximum: 999
+          minimum: -999
+          type: number
+          description: Number of charge of days-Number of days until charge-off. you
+            cannotchange the value
+        customerStatementFlag:
+          type: string
+          description: Customer Statement Flag- Field that determines whether Visionplus
+            sends statements and letters to the owner only or both the owner and co-owner
+          enum:
+          - '0 - Owner Only '
+          - 1 - Owner-Coowner
+        customerStatementLetterFlag:
+          type: string
+          description: Customer Letter Flag - Field that determines whether Visionplus
+            sends statements and letters to the owner only or both the owner and co-owner
+          enum:
+          - 0 - Do not send
+          - 1 - Send Owner
+          - 2 - Send Owner/Coowner
+        correspondenceCustomerNumber:
+          maxLength: 19
+          type: string
+          description: CorrespondingCustomer Number-Number that identifies the Customer
+            Name/Address record thatcontains the correspondence customer address for
+            statementsand other correspondence
+          format: uppercase
+        altCustomeraddressEffectiveDate:
+          type: string
+          description: Alternate CustomerExpire Date-the effective date and theexpiration
+            date of the alternate customer address
+          format: date
+        cardFeeDate:
+          type: string
+          description: Card Fee Date - Date on which card fee is applied
+          format: date
+        flexBillingFlag:
+          type: string
+          description: Flexible Billing Flag-Code that indicates if the account is
+            eligible to participate inflexible billing The values are Y=Account is
+            eligible to participate in flexiblebilling, N=Account is not eligible
+            to participate in flexiblebilling. (Default)
+          enum:
+          - Y - Active
+          - N - Not Active
+        dateNextCRIntPymt:
+          type: string
+          description: Date Next Credit interest Payment- Interest rate that will
+            go into effect on the next interest effective date
+          format: date
+        permanentCollector:
+          maxLength: 3
+          type: string
+          description: Permanent Collector-Code or initials used to identify the permanent
+            collector assigned to the account
+          format: uppercase
+        returnMailDate:
+          type: string
+          description: Return Mail Date- This field is the date of the previously
+            returned mail
+          format: date
+        creditLimit:
+          type: string
+          description: Credit Limit- Credit limit of the account in whole monetary
+            units
+          default: "0.0"
+        chargeOffStatus:
+          type: string
+          description: Charge of status - Code that identifies the charge-off status
+            of this account
+          enum:
+          - 0 - Chargeoff Not In Progress
+          - 1 - Potential Chargeoff
+          - 2 - Pending
+          - 3 - Manual
+          - 4 - Blocked
+          - 5 - Auto Complete
+          - 6 - Manual Complete
+          - 9 - Chargeoff Purged
+        letterRequest:
+          maxLength: 3
+          type: string
+          description: Letter Request-that identifies a letter to be generated during
+            the next Visionplus daily run
+          format: uppercase
+        userAccountNumber:
+          maxLength: 19
+          type: string
+          description: User Account Number-User-defined information for the account
+          format: uppercase
+        incomeoftheAccount:
+          type: string
+          description: Income-Income of the account holder in thousands of monetary
+            units
+          default: "0.0"
+        returnMailUser:
+          maxLength: 3
+          type: string
+          description: Return Mail User Code -This field identifies the type of mail
+            previously returned
+          format: uppercase
+        internalStatus:
+          type: string
+          description: Account Internal Status - Code that indicates the status of
+            the account
+          enum:
+          - N - New
+          - A - Active & No Fraud
+          - F - Fraud
+          - D - Dormant
+          - I - Inactive
+          - M - Reactive Only
+          - Z - Chargeoff Normal
+          - B - Converted Fraud
+          - C - Converted Transfer
+          - V - Region Converted
+          - X - Chargedoff Converted
+          - Q
+          - 'T - Transfer No fraud '
+          - R
+          - K - Transfer Out Reactive
+          - J
+          - 8 - Closed Normal
+          - 9 - Pending Purge
+          - P - Purged
+          - H - Closed Converted
+        altCustomerExpiryDate:
+          type: string
+          description: Alternate CustomerExpire Date-the effective date and theexpiration
+            date of the alternate customer address
+          format: date
+        nextStatementDate:
+          type: string
+          description: Date Next Statement-Date on which the next statement is due
+            to be generated for the account
+          format: date
+        dateLastMaintenance:
+          type: string
+          description: Date Last Maintenance-Date of the last maintenance for this
+            Account Base Segment record.This date is system-generated; you cannot
+            change it
+          format: date
+        billingCycle:
+          maximum: 99
+          minimum: 0
+          type: number
+          description: Billing cycle-Cycle code that indicates the day of the month
+            that CMS performs cycle processing for the account The values are 01–31
+        reissueScheme:
+          type: string
+          description: Reissue Scheme-Code that indicates whether CMS updates the
+            card numbering scheme of an account
+          enum:
+          - 0 - No Action
+          - 2 - CHG-To-2
+          - 3 - CHG-To-3
+        accountDisplayRequest:
+          type: string
+          description: Account Display-Flag that requests a master file display for
+            this account. The Values are Y =Produce a master file display, N=Do not
+            produce a master file display
+          enum:
+          - Y - Yes
+          - N - No
+        dateAccountOpened:
+          type: string
+          description: Date Opened-Date on which the account was opened
+          format: date
+        ownerFlag:
+          maxLength: 1
+          type: string
+          description: Owner Flag -code that identifies ownership of a business
+          format: uppercase
+        statementReprintDate:
+          type: string
+          description: Date of DuplicateStatement-used to request a reprint of a billing
+            statement orto request an interim statement.
+          format: date
+        shortName:
+          maxLength: 20
+          type: string
+          description: ""
+          format: uppercase
+        applicationDate:
+          type: string
+          description: Application Date-Date on which the application was originally
+            submitted or processed
+          format: date
+        primaryAccountFlag:
+          type: string
+          description: Primary Account Flag - indicates primary card or seconday card
+          enum:
+          - '  - Not the primary account'
+          - P - Primary account in a relationship
+        statementFlag:
+          type: string
+          description: statement Flag- Code that indicates how Visionplus generates
+            a statement for this account
+          enum:
+          - H - Hold
+          - O - Online Only
+          - R - Returned Statement
+          - S - Sign-Out Statement
+          - U - Suppress Statement
+          - Z - User Defined 
+          - 0 - User Hold Code-10
+          - 1 - User Hold Code-1
+          - 2 - User Hold Code-2
+          - 3 - User Hold Code-3
+          - 4 - User Hold Code-4
+          - 5 - User Hold Code-5
+          - 6 - User Hold Code-6
+          - 7 - User Hold Code-7
+          - 8 - User Hold Code-8
+          - 9 - User Hold Code-9
+          - ' '
+        restructureFlag:
+          type: string
+          description: Restructure Flag-Flag that forces an account to restructure
+            The account must be assigned to the VisionPLUS Collections Tracking, and
+            Analysis system
+          enum:
+          - Y - Requested
+          - N - Not Requested
+        statementFrequency:
+          type: string
+          description: Statement Frequency- Code that indicates how often CMS generates
+            statements for the account
+          enum:
+          - 1 - To generate a statement every 1 month
+          - 2 - To generate a statement every 2 month
+          - 3 - To generate a statement every 3 month
+          - 4 - To generate a statement every 4 month
+          - 5 - To generate a statement every 5 month
+          - 6 - To generate a statement every 6 month
+          - 7 - To generate a statement every 7 month
+          - 8 - To generate a statement every 8 month
+          - 9 - To generate a statement every 9 month
+          - 10 - To generate a statement every 10 month
+          - 11 - To generate a statement every 11 month
+          - 12 - To generate a statement every 12 month
+          - 62 - Frequency Force
+          - 99 - Frequency Never
+        reportFraudulentActivity:
+          type: string
+          description: Report Fraud activity-Flag that determines whether fraud reporting
+            is active for theaccount. The values are:N=Do not report potentially fraudulent
+            activity, Y=Report potentially fraudulent activity.
+          enum:
+          - Y - Reporting
+          - N - Not Reporting
+        dueDay:
+          maximum: 99
+          minimum: 0
+          type: number
+          description: Customer Selected Due Day-Number of days prior to the customer-selected
+            payment duedate that is used to calculate the cycle day for the accountfield
+            also indicates whether the customer-selected due dateThe values are 00=Customer-selected
+            due date functionality is notallowed 01-28=Customer-selected due date
+            is allowed,99=Customer-selected due date is allowed.cycle date is the
+            same as the customer-selecteddue date.
+        dateClosed:
+          type: string
+          description: Date Closed- Date the account was closed
+          format: date
+        employeeCode:
+          maxLength: 2
+          type: string
+          description: Employee code-User-defined employee code
+          format: uppercase
+        blockCodeDate1:
+          type: string
+          description: Block code date 1 -Date on which block code 1 was entered The
+            value in this field is system-generated
+          format: date
+        blockCodeDate2:
+          type: string
+          description: Block code date 2 -Date on which block code 2 was entered The
+            value in this field is system-generated
+          format: date
+        returnMailCounter:
+          maximum: 99
+          minimum: 0
+          type: number
+          description: Returned Mail Counter-this field indicates the number of times
+            mail has been returned
+        billingLevel:
+          type: string
+          description: Relationship BillingLevel-Code that indicates whether billing
+            occurs for the account at therelationship level or subordinate account
+            level. The values are 0=Relationship level, 1=Subordinate account level
+          enum:
+          - 0 - Consolidate
+          - 1 - Subordinate
+        highBalanceAmount:
+          type: string
+          description: User Account Number-User-defined information for the account
+          default: 0.0
+        cCMCustomerID:
+          type: string
+          description: CCM Customer id
+          format: uppercase
+        numberofUnblockedCards:
+          maximum: 99999
+          minimum: -99999
+          type: number
+          description: Number of unblocked cards-Number of unblocked outstanding cards(plastic)
+            for thisaccount. The value in this field is system-generated; you cannotchange
+            it.
+        dateLastCycle:
+          type: string
+          description: Date Last cycle date -Date on which the account last cycled
+          format: date
+        product:
+          maximum: 998
+          minimum: 0
+          type: number
+          description: Product - Product associated with this Account. The values
+            are 001–998
+        deferMembershipFeeDate:
+          type: string
+          description: Membership Fee DeferDate-Code that indicates whether CMS waives
+            account-levelmembership fees and supplemental card membership fees foraccounts
+            assigned this block code. The values are:0=Do not waive membership fees
+            (Default), 1=Waive membership fee for both account andsupplemental cards,2=Waive
+            membership fee for account but do notwaive membership fee for supplemental
+            cards, 3=Waive membership fee for supplemental cardsbut do not waive membership
+            fee for account
+          format: date
+        dualBillingFlag:
+          type: string
+          description: Dual Billing Flag - Code that indicates whether Visionplus
+            uses the foreign or localcurrency to request the minimum payment
+          enum:
+          - 0 - No
+          - 1 - Yes
+        systemDefinedChargeOffReason:
+          type: string
+          description: ""
+          enum:
+          - C - Credit Loss
+          - B - BANKRUPTCY
+          - F - FRAUD Loss
+          - T - COUNTERFEIT
+          - ' '
+        relationshipnumber:
+          maxLength: 19
+          type: string
+          description: Relationship AccountNumber-Number that identifies the Relationship
+            record to which thissubordinate account is assigned. This field is blank
+            for accounts This field is blank for accounts
+          format: uppercase
+        memoBillingCurrency:
+          maximum: 999
+          minimum: 0
+          type: number
+          description: 'Memo Billing currency - ISO currency code used to generate
+            converted memo-billinginformation on statements for this account.The values
+            are: 00=Memo billing is not active,001-999=Memo billing is activegenerates
+            converted memo-billinginformation in the currencyidentified by this currency
+            code'
+        resetChargeoffDaysSwitch:
+          type: string
+          description: Charge Off Auto Reset-Code that indicates whether CMS automatically
+            resets thecharge-off block code and the charge-off days (DAYS) when thecharge-off
+            reason code (RSN) is changed. This untitled fielddisplays to the right
+            of the RSN field. The values are 0=Do not reset the charge-off block code
+            or thenumber of charge-off days (Default),1=Reset the number of charge-off
+            days,2=Reset the charge-off block code and thenumber of charge-off days
+          enum:
+          - '0 - Do not Reset '
+          - 1 - Reset days
+          - 2 - Reset Block
+        alternateCustomerNumberFlag:
+          type: string
+          description: Alternative customer Number Flag – Code that indicates how
+            we generates statements when an alternate Customer Name/Address record
+            exists for the account
+          enum:
+          - ""
+          - A - SEND-TO-ALT
+          - B - SEND-TO-BOTH
+          - C - REL-LETTER
+        customerNumber:
+          maxLength: 19
+          type: string
+          description: Customer Number – Customer number That identifies Customer
+            name/address Record to which this account is assigned
+          format: uppercase
+        accountNumber:
+          type: string
+          description: Account- Customer account number. Must be numeric and greater
+            than zero. Max length = 19. Should be a valid Account number
+          format: uppercase
+        liabilityIndicator:
+          type: string
+          description: Liability Indicator-Code that indicates the type of liability
+            for the accountvalue defaults from HCS and is used for collection purposes
+            The values are 0=Company liability (CL). The company isresponsible for
+            the balance generated bysubordinate accounts., 1=Individual liability
+            (IL). Individual accountholders are responsible for the account balances,
+            2=Individual liability with company indemnityILCI). Individual cardholders
+            are responsiblefor account balances
+          enum:
+          - 0 - Company
+          - 1 Individual
+          - 2 Individual Company Indemnity
+        collateralCardRequest:
+          type: string
+          description: Collection Card Request-Code that determines whether CMS generates
+            a collection card for this account
+          enum:
+          - Y - Yes
+          - N - No
+        billingAcctInd:
+          maximum: 3
+          minimum: 0
+          type: number
+          description: Billing Account Indicator- that indicates whether the account
+            being added is a transaction (cardholder), billing, control, or diversion
+            account
+        statementReprintFlag:
+          type: string
+          description: 'Duplicate Statement Address Flag-this field is a code that
+            indicates whether torequest a reprinted statement or an interim statement.
+            Thevalues are: C=Request a reprint statement using the currentbilling
+            address. (Default),D=Request a reprint statement using the currentbilling
+            address and assess the fee defined in theService Charge/Fee table, I=Request
+            an interim statement during the nextCMS daily run and do not assess a
+            fee.F=Request an interim statement during the nextCMS daily run and assess
+            the fee defined in theService Charge/Fee table,P=Request a reprint statement
+            using the previousbilling address, Q=Request a reprint statement with
+            previousbilling address during the next CMS daily run'
+          enum:
+          - P - Prior
+          - C - Current
+          - I - Interim
+          - F - Interim Fee
+          - D Current Fee
+          - Q - Prior Fee
+        greatestExpiryDate:
+          type: string
+          description: Greatest Expire date-Date on which the last card associated
+            with the account expiresThe date is system-generated; you cannot change
+            it.
+          format: date
+        blockCode1:
+          type: string
+          description: 'Block code 1-Block codes control specific processing options
+            at theaccount level. Valid block codes are the letters A to Z and spces '
+          enum:
+          - A
+          - B
+          - C
+          - D
+          - E
+          - F
+          - G
+          - H
+          - I
+          - J
+          - K
+          - L
+          - M
+          - N
+          - O
+          - P
+          - Q
+          - R
+          - S
+          - T
+          - U
+          - V
+          - W
+          - X
+          - Y
+          - Z
+          - ""
+        cardExpirationDate:
+          type: string
+          description: Card Expiration Date-Card expiration date (month and year)
+            assigned to each Embosser record added to this account
+          format: date
+        blockCode2:
+          type: string
+          description: Block code date 2 -Date on which block code 2 was entered The
+            value in this field is system-generated
+          enum:
+          - A
+          - B
+          - C
+          - D
+          - E
+          - F
+          - G
+          - H
+          - I
+          - J
+          - K
+          - L
+          - M
+          - N
+          - O
+          - P
+          - Q
+          - R
+          - S
+          - T
+          - U
+          - V
+          - W
+          - X
+          - Y
+          - Z
+          - ""
+        currencyCode:
+          maximum: 999
+          minimum: 0
+          type: number
+          description: currency code -ISO currency code that identifies the currency
+            of this accountThis code defaults from the Organization recordyou cannot
+            change it at the account level
+            
+    UpdateAccountsProfileResp:
       required:
       - accountNumber
       - billingAcctInd
@@ -2204,7 +2651,7 @@ components:
           - R - Returned Statement
           - S - Sign-Out Statement
           - U - Suppress Statement
-          - 'Z - User Defined '
+          - Z - User Defined 
           - 0 - User Hold Code-10
           - 1 - User Hold Code-1
           - 2 - User Hold Code-2
@@ -2296,8 +2743,8 @@ components:
           - 1 - Subordinate
         highBalanceAmount:
           type: string
-          description: ""
-          default: "0.0"
+          description: User Account Number-User-defined information for the account
+          default: 0.0
         cCMCustomerID:
           type: string
           description: CCM Customer id
@@ -2522,6 +2969,35 @@ components:
           description: currency code -ISO currency code that identifies the currency
             of this accountThis code defaults from the Organization recordyou cannot
             change it at the account level
+    AccountsBlockUnblockReq:
+      required:
+      - product
+      - billingAcctInd
+      type: object
+      properties:
+        product:
+          type: number
+          description: Product associated with this Account. The values are 001–998
+        billingAcctInd:
+          type: number
+          description: ACCOUNT TYPE-Code that indicates whether the account being
+            added is atransaction (cardholder), billing, control, or diversion account
+        blockCode1:
+          type: string
+          description: Block code 1-Field that identifies the block codes assigned to this account. Block codes control specific processing options at theaccount level. Valid block codes are the letters A to Z and spaces
+        blockCode2:
+          type: string
+          description: Block code 2-Field that identifies the block codes assigned to this account. Block codes control specific processing options at theaccount level. Valid block codes are the letters A to Z and spaces
+        blockCodeDate1:
+          type: string
+          format: uppercase
+          description: BLOCK DATE 1-Date on which block code 1 was entered. The value in this fieldis system-generated; you cannot change it
+        blockCodeDate2:
+          type: string
+          format: uppercase
+          description: BLOCK DATE 2-Date on which block code 1 was entered. The value in this fieldis system-generated; you cannot change it
+          
+    
     AccountsBlockUnblockResp:
       required:
       - accountNumber
@@ -2547,3 +3023,17 @@ components:
           type: number
           description: ACCOUNT TYPE-Code that indicates whether the account being
             added is atransaction (cardholder), billing, control, or diversion account
+        blockCode1:
+          type: string
+          description: Block code 1-Field that identifies the block codes assigned to this account. Block codes control specific processing options at theaccount level. Valid block codes are the letters A to Z and spaces
+        blockCode2:
+          type: string
+          description: Block code 2-Field that identifies the block codes assigned to this account. Block codes control specific processing options at theaccount level. Valid block codes are the letters A to Z and spaces
+        blockCodeDate1:
+          type: string
+          format: uppercase
+          description: BLOCK DATE 1-Date on which block code 1 was entered. The value in this fieldis system-generated; you cannot change it
+        blockCodeDate2:
+          type: string
+          format: uppercase
+          description: BLOCK DATE 2-Date on which block code 1 was entered. The value in this fieldis system-generated; you cannot change it
