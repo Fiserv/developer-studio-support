@@ -1,0 +1,3 @@
+# PIN Block Change
+
+The PIN Block Change Service is used to update the PIN Block with the prerequisite that the existing PIN block must be supplied and validated before the new PIN block is replaced. The PIN Block Change service will track and record the PIN Block Change in the Pin History File. This service could be triggered from the ATM or other digital channels such as online (WEB) or mobile banking.
