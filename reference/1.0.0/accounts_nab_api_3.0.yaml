@@ -57,7 +57,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AccountBlockUnblockReq'
+              $ref: '#/components/schemas/AccountsBlockUnblockReq'
       responses:
         200:
           description: 'Backend Response Code and message in odsMessages field: <BR/>V5BS0102SA
@@ -746,12 +746,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AccountBlockUnblockResp'
+                $ref: '#/components/schemas/AccountsBlockUnblockResp'
 
 
 components:
   schemas:
-    AccountBlockUnblockReq:
+    AccountsBlockUnblockReq:
       required:
       - product
       - billingAcctInd
@@ -761,35 +761,43 @@ components:
       properties:
         businessUnit:
           type: number
-          description: Business Unit -Identification number of the organization associated with thisAccount Base Segment record. The values are 001–998
           default: 0.0
+          example: 100
+          description: Business Unit -Identification number of the organization associated with thisAccount Base Segment record. The values are 001–998
         accountNumber:
           type: string
           maxLength: 19
           format: uppercase
+          example: 0001000010000510481
           description: Account- Customer account number. Must be numeric and greater than zero. Max length = 19. Should be a valid Account number.
         product:
           type: number
+          example: 001
           description: Product associated with this Account. The values are 001–998
         billingAcctInd:
           type: number
+          example: 0
           description: ACCOUNT TYPE-Code that indicates whether the account being
             added is atransaction (cardholder), billing, control, or diversion account
         blockCode1:
           type: string
+          example: X
           description: Block code 1-Field that identifies the block codes assigned to this account. Block codes control specific processing options at theaccount level. Valid block codes are the letters A to Z and spaces
         blockCode2:
           type: string
+          example:
           description: Block code 2-Field that identifies the block codes assigned to this account. Block codes control specific processing options at theaccount level. Valid block codes are the letters A to Z and spaces
         blockCodeDate1:
           type: string
           format: uppercase
+          example: 
           description: BLOCK DATE 1-Date on which block code 1 was entered. The value in this fieldis system-generated; you cannot change it
         blockCodeDate2:
           type: string
           format: uppercase
+          example: 
           description: BLOCK DATE 2-Date on which block code 1 was entered. The value in this fieldis system-generated; you cannot change it
-    AccountBlockUnblockResp:
+    AccountsBlockUnblockResp:
       required:
       - accountNumber
       - billingAcctInd
@@ -799,34 +807,42 @@ components:
       properties:
         product:
           type: number
+          example: 1
           description: Product associated with this Account. The values are 001–998
         businessUnit:
           type: number
+          example: 100
           description: 'Business Unit -Identification number of the organization associated
             with thisAccount Base Segment record. The values are 001–998 '
         accountNumber:
           maxLength: 19
           type: string
+          example: 0001000010000510481
           description: Account- Customer account number. Must be numeric and greater
             than zero. Max length = 19. Should be a valid Account number.
           format: uppercase
         billingAcctInd:
           type: number
+          example: 0
           description: ACCOUNT TYPE-Code that indicates whether the account being
             added is atransaction (cardholder), billing, control, or diversion account
         blockCode1:
           type: string
+          example: X
           description: Block code 1-Field that identifies the block codes assigned to this account. Block codes control specific processing options at theaccount level. Valid block codes are the letters A to Z and spaces
         blockCode2:
           type: string
+          example: " "
           description: Block code 2-Field that identifies the block codes assigned to this account. Block codes control specific processing options at theaccount level. Valid block codes are the letters A to Z and spaces
         blockCodeDate1:
           type: string
           format: uppercase
+          example: 01/10/2021
           description: BLOCK DATE 1-Date on which block code 1 was entered. The value in this fieldis system-generated; you cannot change it
         blockCodeDate2:
           type: string
           format: uppercase
+          example: 00/00/0000
           description: BLOCK DATE 2-Date on which block code 1 was entered. The value in this fieldis system-generated; you cannot change it
     ErrorList:
       type: array
