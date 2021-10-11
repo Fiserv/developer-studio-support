@@ -10,7 +10,7 @@ paths:
     patch:
       tags:
       - Primary Suplementary Indicatory
-      x-group-name: Cards Management
+      x-group-name: Card Management
       x-proxy-name: Update Cards Profile
       summary: Primary Suplementary Indicatory
       description: Primary Suplementary Indicatory
@@ -365,7 +365,7 @@ paths:
     patch:
       tags:
       - Update Cards Pin
-      x-group-name: Cards Management
+      x-group-name: Card Management
       x-proxy-name: Update Cards Pin
       summary: Card PIN change
       description: PIN for both magnetic stripe and chip-based prepaid cards
@@ -425,7 +425,7 @@ paths:
     patch:
       tags:
       - Spend Limit Updates
-      x-group-name: Cards Management
+      x-group-name: Card Management
       x-proxy-name: Update Spend Limits
       summary: Spend Limit Updates
       description: Spend Limit Updates
@@ -780,7 +780,7 @@ paths:
     patch:
       tags:
       - Card Block UnBlock
-      x-group-name: Cards Management
+      x-group-name: Card Management
       x-proxy-name: Update Cards Block Unblock
       summary: Card Block UnBlock
       description: Card Block UnBlock
@@ -1144,7 +1144,7 @@ paths:
     post:
       tags:
       - Card Secure Code validation
-      x-group-name: Cards Management
+      x-group-name: Card Management
       x-proxy-name: Create Secure Codes
       summary: Card Secure Code validation
       description: Card Secure Code validation
@@ -1205,7 +1205,7 @@ paths:
     get:
       tags:
       - Token PAN to Clear PAN
-      x-group-name: Cards Management
+      x-group-name: Card Management
       x-proxy-name: Get Cards Clear Pan
       summary: Token PAN to Clear PAN
       description: Token PAN to Clear PAN
@@ -1292,7 +1292,7 @@ paths:
     put:
       tags:
       - Lost Stolen Card Transfer
-      x-group-name: Cards Management
+      x-group-name: Card Management
       x-proxy-name: Update Cards Transfer
       summary: Lost Stolen Card Transfer
       description: Lost Stolen Card Transfer
@@ -1364,6 +1364,8 @@ paths:
     put:
       tags:
       - Card Management
+      x-group-name: Card Management
+      x-proxy-name: Update Cards Status
       summary: Card activation
       description: Card Activation service
       operationId: Card Activate
