@@ -10,7 +10,7 @@ paths:
     patch:
       tags:
       - Update Accounts Block Unblock
-      x-group-name: Accounts Management
+      x-group-name: Account Management
       x-proxy-name: Update Accounts Block Unblock
       summary: block code on an Account
       description: Adds changes or removes a block code on an Account
@@ -57,7 +57,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AccountsBlockUnblockReq'
+              $ref: '#/components/schemas/AccountBlockUnblockReq'
       responses:
         200:
           description: 'Backend Response Code and message in odsMessages field: <BR/>V5BS0102SA
@@ -746,12 +746,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AccountsBlockUnblockResp'
+                $ref: '#/components/schemas/AccountBlockUnblockResp'
 
 
 components:
   schemas:
-    AccountsBlockUnblockReq:
+    AccountBlockUnblockReq:
       required:
       - product
       - billingAcctInd
@@ -789,7 +789,7 @@ components:
           type: string
           format: uppercase
           description: BLOCK DATE 2-Date on which block code 1 was entered. The value in this fieldis system-generated; you cannot change it
-    AccountsBlockUnblockResp:
+    AccountBlockUnblockResp:
       required:
       - accountNumber
       - billingAcctInd
