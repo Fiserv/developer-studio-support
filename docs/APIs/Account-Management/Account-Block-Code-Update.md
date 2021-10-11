@@ -6,3 +6,5 @@ This service can be called with an account number. When either Block Code 1 or B
 
 
 Fields that are not provided in the Request object will be initialised to their default values. All numeric fields are initialised to zero and alphanumeric fields initialised to spaces
+
+[Click here](../api/?type=patch&path=/accounts/blockUnblock) to explore the *Account Block Code Update API*. 
