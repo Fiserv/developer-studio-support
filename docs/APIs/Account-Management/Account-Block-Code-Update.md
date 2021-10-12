@@ -18,7 +18,7 @@ This service can be called with an account number. When either *blockCode 1* or 
 ```json
 {
   "businessUnit": 100,
-  "accountNumber": 100001ASWRAI0481,
+  "accountNumber": "100001NNNNNN0481",
   "product": 1,
   "billingAcctInd": 0,
   "blockCode1": "X",
@@ -45,7 +45,7 @@ The below table identifies the required parameters in the request payload.
 {
   "product": 1,
   "businessUnit": 100,
-  "accountNumber": 100001ASWRAI0481,
+  "accountNumber": "100001NNNNNN0481",
   "billingAcctInd": 0,
   "blockCode1": "X",
   "blockCode2": " ",
@@ -58,8 +58,8 @@ The below table identifies the required parameters in the request payload.
 
 ```json
 {
-  "errorCode": V5BS0125SV,
-  "errorMessage": AMBS - Invalid Block Code 1  
+  "errorCode": "V5BS0125SV",
+  "errorMessage": "AMBS - Invalid Block Code 1"  
 }
 ```
 Below table provides the list of application's error code and its description. 
