@@ -38,7 +38,7 @@ The below table identifies the required parameters in the request payload.
 
 
 
-### *** Successful Response  Payload***
+### ***Successful Response Payload***
 
 
 ```json
@@ -54,7 +54,7 @@ The below table identifies the required parameters in the request payload.
 }
 ```
 
-### *** Application Error Response  Payload***
+### ***Error Response Payload***
 
 ```json
 {
