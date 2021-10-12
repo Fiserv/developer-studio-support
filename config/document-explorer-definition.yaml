@@ -36,8 +36,6 @@
     link:
     open: true
     sections:
-    - title: Release Notes
-      link: docs/Release-Notes/Release-Notes.md
     - title: Customer Management
       sections:
       - title: Customer Add
