@@ -72,5 +72,7 @@
         link: docs/APIs/Card-Managment/CVV2-Inquiry.md
       - title: Spend Limit Updates
         link: docs/APIs/Card-Managment/Spend-limit-Updates.md      
+      - title: Fetch Clear PAN from Token
+        link: docs/APIs/Card-Managment/Fetch-Clear-PAN-from-Token.md
       - title: PIN Block Change
         link: docs/APIs/Card-Managment/PIN-Block-Change.md
