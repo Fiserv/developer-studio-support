@@ -75,4 +75,4 @@
       - title: Fetch Clear PAN from Token
         link: docs/APIs/Card-Management/Fetch-Clear-PAN-from-Token.md
       - title: PIN Block Change
-        link: docs/APIs/Card-Managment/PIN-Block-Change.md
+        link: docs/APIs/Card-Management/PIN-Block-Change.md
