@@ -57,14 +57,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AccountsBlockUnblockResp'
+              examples: 
+                BlockAccount: {$ref: '#/components/examples/BlockAccountResp'}
+                                  
         400:
           description: The request cannot be validated
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorList'
-              examples:
-                "400":
+              schema: {$ref: '#/components/schemas/ErrorList'}
+              example:
+                400:
                   $ref: '#/components/examples/400-Errors'
         401:
           description: The request was unauthorized
@@ -72,8 +74,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
-              examples:
-                "401":
+              example:
+                401:
                   $ref: '#/components/examples/401-Errors'
         404:
           description: The request resource does not exist
@@ -81,8 +83,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
-              examples:
-                "401":
+              example:
+                404:
                   $ref: '#/components/examples/404-Errors'
         500:
           description: An unexpected internal server error occurred
@@ -90,8 +92,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
-              examples:
-                "500":
+              example:
+                500:
                   $ref: '#/components/examples/500-Errors'
         503:
           description: The service was unavailable
@@ -99,8 +101,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
-              examples:
-                "503":
+              example:
+                503:
                   $ref: '#/components/examples/503-Errors'
         504:
           description: The request timed out while waiting for a response
@@ -108,11 +110,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
-              examples:
-                "504":
+              example:
+                504:
                   $ref: '#/components/examples/504-Errors'
-                  
-
+              
 components:
   schemas:
     AccountsBlockUnblockReq:
@@ -171,7 +172,7 @@ components:
         accountNumber:
           maxLength: 19
           type: string
-          example: 0001000010000510481
+          example: 100001NNNXX0481
           description: Account- Customer account number. Must be numeric and greater
             than zero. Max length = 19. Should be a valid Account number.
           format: uppercase
@@ -214,6 +215,10 @@ components:
   examples:
     BlockAccount:
       value: { businessUnit: '100', accountNumber: '100001NNNXX0481', product: '001', billingAcctInd: '0', blockCode1: X, blockCode2: ' '   }
+    BlockAccountResp:
+      value: { businessUnit: '100', accountNumber: '100001NNNXX0481',
+             product: '1', billingAcctInd: '0', blockCode1: X,
+             blockCode2: '', blockCodeDate1: '01/10/2021',      blockCodeDate2: '00/00/0000'  }
     400-Errors:
       value:
         erorrCode: XXXXXXXX
