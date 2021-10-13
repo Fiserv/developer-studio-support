@@ -63,7 +63,7 @@
       - title: Card Transfer Update
         link: docs/APIs/Card-Management/Card-Transfer-Update.md
       - title: Card Update
-        link: docs/APIs/Card-Management/Card-Update.md
+        link: docs/APIs/Card-Management/CardType-Update.md
       - title: Credit Limit Update
         link: docs/APIs/Card-Management/Credit-Limit-Update.md
       - title: CVV2 Inquiry
