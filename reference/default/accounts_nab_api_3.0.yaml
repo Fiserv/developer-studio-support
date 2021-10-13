@@ -213,7 +213,7 @@ components:
             description: Error message associated with the response
   examples:
     BlockAccount:
-      value: { product: '001', billingAcctInd: '0', blockCode1: X, businessUnit: '100', accountNumber: '100001NNNXX0481'}
+      value: { businessUnit: '100', accountNumber: '100001NNNXX0481', product: '001', billingAcctInd: '0', blockCode1: X, blockCode2: ' '   }
     400-Errors:
       value:
         erorrCode: XXXXXXXX
