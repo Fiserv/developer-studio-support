@@ -1,4 +1,4 @@
-# Account Block Code Update
+# Block Account
 
 This service is used to update the Account Block Code.
 
@@ -26,7 +26,7 @@ This service can be called with an account number. When either *blockCode 1* or 
 ```
 
 ### Minimum Requirements
-The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/accounts/blockUnblock).
+The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/v1/accounts/blockUnblock).
 
 The below table identifies the required parameters in the request payload.
 
