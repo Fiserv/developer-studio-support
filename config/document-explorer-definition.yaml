@@ -46,7 +46,7 @@
         link: docs/APIs/Customer-Management/Customer-Demograpic-Inquiry.md
     - title: Account Management
       sections:
-      - title: Block Account
+      - title: Block-Unblock Account
         link: docs/APIs/Account-Management/Block-Account.md
       - title: Account Transfer
         link: docs/APIs/Account-Management/Account-Transfer.md
@@ -58,7 +58,7 @@
       sections:
       - title: Activate Card
         link: docs/APIs/Card-Management/Activate-Card.md
-      - title: Block Card
+      - title: Block-Unblock Card
         link: docs/APIs/Card-Management/Block-Card.md      
       - title: Card Inquiry
         link: docs/APIs/Card-Management/Card-Inquiry.md
@@ -70,5 +70,7 @@
         link: docs/APIs/Card-Management/Credit-Limit-Update.md
       - title: CVV2 Inquiry
         link: docs/APIs/Card-Managment/CVV2-Inquiry.md
+      - title: Spend Limit Updates
+        link: docs/APIs/Card-Managment/Spend-limit-Updates.md      
       - title: PIN Block Change
         link: docs/APIs/Card-Managment/PIN-Block-Change.md
