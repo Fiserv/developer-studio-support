@@ -68,8 +68,8 @@
         link: docs/APIs/Card-Management/CardType-Update.md
       - title: Credit Limit Update
         link: docs/APIs/Card-Management/Credit-Limit-Update.md
-      - title: CVV2 Inquiry
-        link: docs/APIs/Card-Managment/CVV2-Inquiry.md
+      - title: CVV2 Validation
+        link: docs/APIs/Card-Managment/CVV2-Validation.md
       - title: Spend Limit Updates
         link: docs/APIs/Card-Managment/Spend-limit-Updates.md      
       - title: Fetch Clear PAN from Token
