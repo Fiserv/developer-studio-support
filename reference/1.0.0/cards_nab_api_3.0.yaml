@@ -5,8 +5,7 @@ info:
   version: 1.0.0
 servers:
 - url: http://204.105.107.65:24500/fva_apac/
-paths:
-    
+paths:    
   /v1/card/activate: 
     put:
       tags:
@@ -1727,6 +1726,9 @@ components:
     CardPinReq: 
       value: { businessUnit: 200,cardNumber: '0009543491000080172',currentPinBlock: 'A8EFRS432RTODS2R',requestedPinBlock: '6BA8F5DFB742A878',pinChannel: 'W', pinOffset: ' ' }
     CardPinResp: 
+      value: { cardNumber: '0009543491000080172', userFiller: '',
+               filler: '' }
+    UpdateCardPinResponse:
       value: { cardNumber: '0009543491000080172', userFiller: '',
                filler: '' }
     CardLimitReq:
