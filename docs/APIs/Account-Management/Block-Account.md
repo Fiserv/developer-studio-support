@@ -13,12 +13,12 @@ This service can be called with an account number. When either *blockCode 1* or 
 ## Payload Example
 
 
-### ***Request Payload***
+### Request Payload
 
 ```json
 {
   "businessUnit": 100,
-  "accountNumber": "100001NNNNNN0481",
+  "accountNumber": "0001000010000510760",
   "product": 1,
   "billingAcctInd": 0,
   "blockCode1": "X",
@@ -38,14 +38,14 @@ The below table identifies the required parameters in the request payload.
 
 
 
-### ***Successful Response Payload***
+### Successful Response Payload
 
 
 ```json
 {
   "product": 1,
   "businessUnit": 100,
-  "accountNumber": "100001NNNNNN0481",
+  "accountNumber": "0001000010000510760",
   "billingAcctInd": 0,
   "blockCode1": "X",
   "blockCode2": " ",
@@ -54,7 +54,7 @@ The below table identifies the required parameters in the request payload.
 }
 ```
 
-### ***Error Response Payload***
+### Error Response Payload
 
 ```json
 {
@@ -66,6 +66,10 @@ Below table provides the list of application's error code and its description.
 
 | ErrorCode |  Description/Values |
 | --------  | ------------------ |
+| `V5BS0011SF` |	Update Request - Record Add Pending|
+| `V5BS4001EA` |	Invalid Business Unit|                                      
+| `V5BS4001SC` |	Business Unit is in Purged Status|     
+| `V5BS4002SA` |	Invalid Account Number|  
 | `V5BS0125SV` | AMBS - Invalid Block Code 1 |
 | `V5BS0127SV` | AMBS - Invalid Block Code 2 |
 | `V5BS0125SC` | Block Code 1 cannot be replaced with one of the lower priority |  
