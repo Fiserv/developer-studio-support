@@ -36,38 +36,20 @@
     link:
     open: true
     sections:
-    - title: Customer Management
-      sections:
-      - title: Customer Add
-        link: docs/APIs/Customer-Management/Customer-Add.md
-      - title: Customer Data Update
-        link: docs/APIs/Customer-Management/Customer-Data-Update.md
-      - title: Customer Demograpic Inquiry
-        link: docs/APIs/Customer-Management/Customer-Demograpic-Inquiry.md
     - title: Account Management
       sections:
       - title: Block-Unblock Account
         link: docs/APIs/Account-Management/Block-Account.md
-      - title: Account Transfer
-        link: docs/APIs/Account-Management/Account-Transfer.md
-      - title: Credit Limit Update
-        link: docs/APIs/Account-Management/Credit-Limit-Update.md
-      - title: Find Account Number
-        link: docs/APIs/Account-Management/Find-Account-Number.md
     - title: Card Management
       sections:
       - title: Activate Card
         link: docs/APIs/Card-Management/Activate-Card.md
       - title: Block-Unblock Card
-        link: docs/APIs/Card-Management/Block-Card.md      
-      - title: Card Inquiry
-        link: docs/APIs/Card-Management/Card-Inquiry.md
+        link: docs/APIs/Card-Management/Block-Card.md     
       - title: Lost Stolen Card Transfer
         link: docs/APIs/Card-Management/Lost-Stolen-Card-Transfer.md
       - title: CardType Update
-        link: docs/APIs/Card-Management/CardType-Update.md
-      - title: Credit Limit Update
-        link: docs/APIs/Card-Management/Credit-Limit-Update.md
+        link: docs/APIs/Card-Management/CardType-Update.md 
       - title: CVV2 Validation
         link: docs/APIs/Card-Management/CVV2-Validation.md
       - title: Spend Limit Updates
