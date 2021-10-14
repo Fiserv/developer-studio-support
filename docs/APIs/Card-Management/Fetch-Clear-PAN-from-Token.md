@@ -9,7 +9,7 @@ This service is used to fetch the clear pan for the requested First Vision's Tok
 
 ## Payload Example
 
-### ***Request Payload***
+### Request Payload
 
 ```json
 {
@@ -30,26 +30,28 @@ The below table identifies the required parameters in the request payload.
 
 
 
-### ***Successful Response Payload***
+### Successful Response Payload
 
 ```json
 {
-    "clearCardNumber": "000404940NNNNNN4818"
+    "clearCardNumber": "0004049400000274818"
 }
 
 ```
 
-### ***Error Response Payload***
+### Error Response Payload
 
 ```json
 {
-  "errorCode": "V5CL4002EA",
-  "errorMessage": "Token Number not on file"  
+  "errorCode": "V5CL4002AS",
+  "errorMessage": "Token number not found"  
 }
 ```
 Below table provides the list of application's error code and its description. 
 
 | ErrorCode |  Description |
 | --------  | ------------------ |
-| `V5CL4001EA` | Business Unit must be between 000 and 998 |
-| `V5CL4002EA` | Account not found in file |
+|`V5CL4001EA` |	Invalid Business Unit|
+|`V5CL4002EA` |	Invalid card number|
+|`V5CL4001AS` |	Business Unit not found|
+|`V5CL4002AS` |	Token number not found|
