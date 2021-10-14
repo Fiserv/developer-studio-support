@@ -14,7 +14,7 @@ This service is used to update the block codes and the reason codes for the bloc
 ```json
 {
   "businessUnit": "100",
-  "cardNumber": "000984680NNNNNN3605",
+  "cardNumber": "0009846801010273605",
   "cardSequence": "0001",
   "blockCode": "X" 
 }
@@ -40,9 +40,9 @@ The below table identifies the required parameters in the request payload.
 ```json
 {
     "businessUnit": "100",
-    "cardNumber": "00098468NNNNNNN3605",
+    "cardNumber": "0009846801010273605",
     "cardSequence": "1",
-    "postToAccountNumber": "000100001NNNNNN0760",    
+    "postToAccountNumber": "0001000010000510760",    
     "blockCode": "X",
     "blockDate": "01/10/2021", 
     "warningCode1": "1",
@@ -62,8 +62,18 @@ Below table provides the list of application's error code and its description.
 
 | ErrorCode |  Description/Values |
 | --------  | ------------------ |
-| `V5ED0301EA` | Priority of new block code cannnot be lower than the existing block code |
+| `V5ED4001SA` | Business Unit not found |
+| `V5ED4001SB` | Business Unit is in Add Pending Status |
+| `V5ED4001SC` | Business Unit is in Purge Status |
+| `V5ED0010SF` | Update Request - Record not found | 
+| `V5ED0011SF` | Update Request - Record Add Pending |
+| `V5ED4002ED` | Card Number must be provided | 
+| `V5ED4003ED` | CARD Sequence number must be greater than zero |   
+| `V5ED4004SF` | Invalid Card Sequence |   
+| `V5ED0301EA` | Priority of new block code cannnot be lower than the existing block code |            
 | `V5ED0301EB` | Block Code not maintainable for card scheme 0 |
 | `V5ED4005ED` | Can't update Block Code when card status is F |  
-| `V5ED4005SA` | Business Unit not found |
+
+
+
 

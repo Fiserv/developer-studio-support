@@ -12,12 +12,12 @@ This service is used to activate the card after successful verification of the c
 
 ## Payload Example
 
-### ***Request Payload***
+### Request Payload
 
 ```json
 {
     "businessUnit":"100",
-    "cardNumber":"000984NNNNNNNNN3613",
+    "cardNumber":"0009846801010273613",
     "cardSequence": "0001",
     "currentCardRequireActivation": "N",
     "postToAccountNumber": "",    
@@ -39,25 +39,25 @@ The below table identifies the required parameters in the request payload.
 
 
 
-### ***Successful Response Payload***
+### Successful Response Payload
 
 ```json
 {
     "businessUnit": "100",
-    "cardNumber": "000984NNNNNNNNN3613",
+    "cardNumber": "0009846801010273613",
     "cardSequence": "1",
     "lastCardActivation": "N",
     "currentCardRequireActivation": "N",
     "cardActivatedDate": "01/10/2021",
-    "postToAccountNumber": "000100NNNNNNNNN0760"    
+    "postToAccountNumber": "0001000010000510760"    
 }
 ```
 
-### ***Error Response Payload***
+### Error Response Payload
 
 ```json
 {
-  "errorCode": "V5ED0407SB",
+  "errorCode": "V5ED4001SA",
   "errorMessage": "Business Unit not found in the system"  
 }
 ```
@@ -65,7 +65,11 @@ Below table provides the list of application's error code and its description.
 
 | ErrorCode |  Description |
 | --------  | ------------------ |
-| `V5ED4001SN` | Business Unit is not numeric |
-| `V5ED0407SB` | Business Unit not found in the system |
-| `V5ED0407SE` | Post to Account record not in file |
-| `V5ED9981SF` | Record Not Found |  
+| `V5ED0010SF` | Update Request - Record not found |  
+| `V5ED0011SF` | Update Request - Record Add Pending |
+| `V5ED4002ED` | Card Number must be provided |
+| `V5ED4001SA` | Business Unit not found in the system |
+| `V5ED4001SB` | Business Unit is in Add Pending Status |
+| `V5ED4001SC` | Business Unit is in Purge Status |
+| `V5ED0309SV` | Invalid Current Card Activation | 
+| `V5ED0310SV` | Invalid Last Card Activation |  

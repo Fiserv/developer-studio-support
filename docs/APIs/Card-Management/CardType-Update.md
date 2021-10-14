@@ -8,12 +8,12 @@ This service is used to update the type of cardholder between primary and supple
 
 ## Payload Example
 
-### ***Request Payload***
+### Request Payload
 
 ```json
 {
     "businessUnit":"100",
-    "cardNumber":"000984680NNNNNN3613",
+    "cardNumber":"0009846801010273613",
     "cardSequence": "0001",
     "cardholderType": "1",
 }
@@ -33,19 +33,19 @@ The below table identifies the required parameters in the request payload.
 
 
 
-### ***Successful Response Payload***
+### Successful Response Payload
 
 ```json
 {
     "businessUnit": "100",
-    "cardNumber": "000984680NNNNNN3613",
+    "cardNumber": "0009846801010273613",
     "cardSequence": "1",
-    "postToAccountNumber": "000100001NNNNNN0760",    
+    "postToAccountNumber": "0001000010000510760",    
     "cardholderType": "1",
 }
 ```
 
-### ***Error Response Payload***
+### Error Response Payload
 
 ```json
 {
@@ -57,8 +57,14 @@ Below table provides the list of application's error code and its description.
 
 | ErrorCode |  Description |
 | --------  | ------------------ |
-| `V5ED4001SN` | Business Unit is not numeric |
-| `V5ED0407SB` | Business Unit not found in the system |
-| `V5ED0407SE` | Post to Account record not in file |
-| `V5ED9981SF` | Record Not Found |  
-| `V5ED0237SV` | Invalid Cardholder-type |  
+|`V5ED4001SA` |	Business Unit not found |
+|`V5ED4001SB` |	Business Unit is in Add Pending Status|
+|`V5ED4001SC` |	Business Unit in Purged Status|
+|`V5ED4001SE` |	Invalid Business Unit|
+|`V5ED0010SF` |	Update Request - Record not found|
+|`V5ED0011SF` |  Update Request - Record Add Pending|
+|`V5ED4003ED` |  Card Sequence must be greater than zeroes|   
+|`V5ED4004SF` |  Invalid Card Sequence| 
+|`V5ED0237SV` |	Invalid  Cardholder-type|
+|`V5ED0237EA` |	User not allowed to change cardholder type from 1 to 0 |
+|`V5ED0237EB` |	Cannot have more than one primary card|
