@@ -834,7 +834,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdateCardPinResponse'
+                $ref: '#/components/schemas/UpdateCardPinResp'
               examples: 
                 CardsPin: { $ref: '#/components/examples/CardPinResp' }
         400:
@@ -1726,9 +1726,6 @@ components:
     CardPinReq: 
       value: { businessUnit: 200,cardNumber: '0009543491000080172',currentPinBlock: 'A8EFRS432RTODS2R',requestedPinBlock: '6BA8F5DFB742A878',pinChannel: 'W', pinOffset: ' ' }
     CardPinResp: 
-      value: { cardNumber: '0009543491000080172', userFiller: '',
-               filler: '' }
-    UpdateCardPinResponse:
       value: { cardNumber: '0009543491000080172', userFiller: '',
                filler: '' }
     CardLimitReq:
