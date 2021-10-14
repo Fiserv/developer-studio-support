@@ -7,7 +7,7 @@ This service is used to activate the card after successful verification of the c
 
 
 # Endpoint
-`PUT /v1/card/activate`
+`PUT /v1/cards/activate`
 
 
 ## Payload Example
