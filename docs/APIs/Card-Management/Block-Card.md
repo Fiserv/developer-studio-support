@@ -9,7 +9,7 @@ This service is used to update the block codes and the reason codes for the bloc
 ## Payload Example
 
 
-### ***Request Payload***
+### Request Payload
 
 ```json
 {
@@ -34,7 +34,7 @@ The below table identifies the required parameters in the request payload.
 
 
 
-### ***Successful Response Payload***
+### Successful Response Payload
 
 
 ```json
@@ -50,7 +50,7 @@ The below table identifies the required parameters in the request payload.
 }
 ```
 
-### ***Error Response Payload***
+### Error Response Payload
 
 ```json
 {
