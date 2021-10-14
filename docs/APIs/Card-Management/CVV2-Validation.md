@@ -1,4 +1,4 @@
-# CVV2 Inquiry
+# CVV2 Validation
 
 The Card Secure Code Validation service is used to validate the CVV2  and optionally the expiry date of a given card. 
 
@@ -10,12 +10,12 @@ This service is typically called before the card activation or PIN reset service
 
 ## Payload Example
 
-### ***Request Payload***
+### Request Payload
 
 ```json
 {
     "businessUnit": "100",
-    "cardNumber": "000984680NNNNNN5787",
+    "cardNumber": "0009846801010065787",
     "cVV2": "855",
     "expiryDateMMYY": "1123"
 }
@@ -34,15 +34,15 @@ The below table identifies the required parameters in the request payload.
 
 
 
-### ***Successful Response Payload***
+### Successful Response Payload
 
 ```json
 {
-    "cardNumber": "000984680NNNNNN5787"
+    "cardNumber": "0009846801010065787"
 }
 ```
 
-### ***Error Response Payload***
+### Error Response Payload
 
 ```json
 {
@@ -54,9 +54,9 @@ Below table provides the list of application's error code and its description.
 
 | ErrorCode |  Description |
 | --------  | ------------------ |
-| `V5VC4001EA` | Invalid Business Unit |
-| `V5VC4002EA` | Invalid Card number |
-| `V5VC0284EA` | Business Unit not in file |
-| `V5VC4002EA` | Card Number not in file |
-| `V5VC4004AE` | Invalid expire date |  
-| `V5VC4003AE` | Invalid CVV2 |  
+|`V5VC4001EA` |	Invalid Business Unit|
+|`V5VC0287EA` |	Business Unit not found or in add-pending status|
+|`V5VC4002EA` |	Invalid Card number|
+|`V5VC4002EA` |	Card number not found |
+|`V5VC4004AE` |	Invalid expiry date|
+|`V5VC4003AE` |	Invalid CVV2 |
