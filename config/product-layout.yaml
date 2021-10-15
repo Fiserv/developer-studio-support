@@ -70,7 +70,7 @@ featuredFeatures:
         link: 
       - relatedDoc: 
         title: Card Management
-        description: Allows management of payment instrument that is used to perform financial transaction.  Example: physical Card, Virtual Card, Wallet Token. 
+        description: Allows management of payment instrument that is used to perform financial transaction.  Example physical Card, Virtual Card, Wallet Token. 
         link: 
     relatedAPIs:
       - relatedAPI: 
@@ -119,13 +119,13 @@ featuredFeatures:
         type: "PATCH"        
         path: "/v1/customers/nameAddress"
   - title: Debit Issuance
-    description:  FirstVision solution allows financial Institution to issue and manage the Credit Card products to their end customers. 
-    tags: ["APAC", "FirstVision", "Credit"]
+    description:  FirstVision solution allows financial Institution to issue and manage the Debit Card products to their end customers. 
+    tags: ["APAC", "FirstVision", "Debit"]
     bullets: ["Activate Card", "Block Card", "Lost Stolen Card Transfer", "CVV2 Validation" ]  
     relatedDocs:
       - relatedDoc: 
         title: Account Management
-        description: Allows management of an accounts that holds financial information of Credit available/ used.
+        description: Allows management of an accounts that holds financial information of balance available.
         link: 
       - relatedDoc: 
         title: Customer Management
@@ -133,7 +133,7 @@ featuredFeatures:
         link: 
       - relatedDoc: 
         title: Card Management
-        description: Allows management of payment instrument that is used to perform financial transaction.  Example: physical Card, Virtual Card, Wallet Token. 
+        description: Allows management of payment instrument that is used to perform financial transaction.  Example physical Card, Virtual Card, Wallet Token. 
         link: 
     relatedAPIs:
       - relatedAPI: 
@@ -182,8 +182,8 @@ featuredFeatures:
         type: "PATCH"        
         path: "/v1/customers/nameAddress"
   - title: Prepaid Card Issuance
-    description:  FirstVision solution allows financial Institution to issue and manage the Credit Card products to their end customers. 
-    tags: ["APAC", "FirstVision", "Credit"]
+    description:  FirstVision solution allows financial Institution to issue and manage the Prepaid Card products to their end customers. 
+    tags: ["APAC", "FirstVision", "Prepaid"]
     bullets: ["Activate Card", "Block Card", "Lost Stolen Card Transfer", "CVV2 Validation" ]  
     relatedDocs:
       - relatedDoc: 
@@ -196,7 +196,7 @@ featuredFeatures:
         link: 
       - relatedDoc: 
         title: Card Management
-        description: Allows management of payment instrument that is used to perform financial transaction.  Example: physical Card, Virtual Card, Wallet Token. 
+        description: Allows management of payment instrument that is used to perform financial transaction.  Example physical Card, Virtual Card, Wallet Token. 
         link: 
     relatedAPIs:
       - relatedAPI: 
@@ -245,8 +245,8 @@ featuredFeatures:
         type: "PATCH"        
         path: "/v1/customers/nameAddress"
   - title: Corporate Card Issuance
-    description:  FirstVision solution allows financial Institution to issue and manage the Credit Card products to their end customers. 
-    tags: ["APAC", "FirstVision", "Credit"]
+    description:  FirstVision solution allows financial Institution to issue and manage the Corporate Card products to their customers. 
+    tags: ["APAC", "FirstVision", "Corporate"]
     bullets: ["Activate Card", "Block Card", "Lost Stolen Card Transfer", "CVV2 Validation" ]  
     relatedDocs:
       - relatedDoc: 
@@ -259,7 +259,7 @@ featuredFeatures:
         link: 
       - relatedDoc: 
         title: Card Management
-        description: Allows management of payment instrument that is used to perform financial transaction.  Example: physical Card, Virtual Card, Wallet Token. 
+        description: Allows management of payment instrument that is used to perform financial transaction.  Example physical Card, Virtual Card, Wallet Token. 
         link: 
     relatedAPIs:
       - relatedAPI: 
@@ -308,8 +308,8 @@ featuredFeatures:
         type: "PATCH"        
         path: "/v1/customers/nameAddress"
   - title: loans Products
-    description:  FirstVision solution allows financial Institution to issue and manage the Credit Card products to their end customers. 
-    tags: ["APAC", "FirstVision", "Credit"]
+    description:  FirstVision solution allows financial Institution to issue and manage the loan products to their customers. 
+    tags: ["APAC", "FirstVision", "loans"]
     bullets: ["Activate Card", "Block Card", "Lost Stolen Card Transfer", "CVV2 Validation" ]  
     relatedDocs:
       - relatedDoc: 
@@ -322,7 +322,7 @@ featuredFeatures:
         link: 
       - relatedDoc: 
         title: Card Management
-        description: Allows management of payment instrument that is used to perform financial transaction.  Example: physical Card, Virtual Card, Wallet Token. 
+        description: Allows management of payment instrument that is used to perform financial transaction.  Example physical Card, Virtual Card, Wallet Token. 
         link: 
     relatedAPIs:
       - relatedAPI: 
