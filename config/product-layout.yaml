@@ -372,3 +372,184 @@ featuredFeatures:
         description: This service will be used to update the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
         type: "PATCH"        
         path: "/v1/customers/nameAddress"
+featuredAPIs:
+  - name: Authorization Transactions
+    description: Provides a list of transactions and their attributes.
+    type: post
+    path: /v1/authorization/details/byDate
+    codeSample: '[json
+      {
+        "date": 20210217,
+        "fields": [
+            "a_approvalCode",
+            "a_type",
+            "a_transactionDateTime",
+            "a_accountNumber",
+            "a_cardExpiryDate",
+            "a_amount",
+            "a_currency",
+            "a_network",
+            "a_paymentMethod",
+            "a_declineReason",
+            "a_authCode",
+            "a_siteID",
+            "a_merchantCategory",
+            "a_customerName",
+            "a_giftCardNumber",
+            "a_partnerOrderID",
+            "a_source",
+            "a_sendMode",
+            "a_mobileWallet",
+            "a_ECIIndicator",
+            "a_terminalID",
+            "a_CAVVResponse",
+            "a_AVSResponse",
+            "a_CVVResult",
+            "a_banknetRef",
+            "a_subType",
+            "a_tokenId",
+            "a_tokenResponseInd",
+            "a_ordNo",
+            "a_nativeRejectCode",
+            "a_externalMid",
+            "a_rtAction",
+            "a_rtStatus",
+            "a_merchandiseCode",
+            "a_pumpRegisterNumber",
+            "a_quantity",
+            "a_lcldt",
+            "a_transactionTime",
+            "a_GUID"
+        ],
+        "filters": [
+            {
+                "field": "o_timeZone",
+                "values": [
+                    "2"
+                ]
+            },
+            {
+                "field": "a_currency",
+                "values": [
+                    "1"
+                ]
+            }
+        ]
+    }]'
+    language: Curl
+    link: link to API Explorer
+  - name: Authorization Summary
+    description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+    type: post
+    path: /v1/authorization/summary/byDateRange
+    codeSample: '[json
+      {
+        "filters": [
+            {
+                "field": "o_timeZone",
+                "values": [
+                    "2"
+                ]
+            },
+            {
+                "field": "a_currency",
+                "values": [
+                    "1"
+                ]
+            }
+        ],
+        "from": 20210217,
+        "groupBy1": "a_network",
+        "groupBy2": "a_mobileWallet",
+        "groupBy3": "a_type",
+        "to": 20210218
+    }]'
+    language: Curl
+    link: link to API Explorer
+  - name: Chargeback Transactions
+    description: Provides a list of transactions and their attributes.
+    type: post
+    path: /v1/chargeback/details/byDate
+    codeSample: '[json
+      {
+        "date": 20210217,
+        "fields": [
+            "cb_backendMID",
+            "cb_authNetwork",
+            "cb_receivedDate",
+            "cb_statusDate",
+            "cb_transactionDate",
+            "cb_status",
+            "cb_category",
+            "cb_workType",
+            "cb_winLoss",
+            "cb_Reason",
+            "cb_reasonCode",
+            "cb_currency",
+            "cb_chargebackAmount",
+            "cb_dueDate",
+            "cb_transactionType",
+            "cb_dispositionDate",
+            "cb_Disposition",
+            "cb_ECIndicator",
+            "cb_transactionAmount",
+            "cb_accountNumber",
+            "cb_first6",
+            "cb_last4",
+            "cb_invoiceNumber",
+            "cb_terminalId",
+            "cb_disputeID",
+            "cb_referenceNumber",
+            "cb_authCode",
+            "cb_trackingNumber",
+            "cb_svcCd",
+            "cb_merchantCategory",
+            "cb_orderNumber",
+            "cb_responseReceived",
+            "cb_respondedDate",
+            "cb_externalMid",
+            "cb_paymentMethod",
+            "cb_sendMode",
+            "cb_recurring",
+            "cb_mobileWallet",
+            "cb_tokenResponseInd",
+            "cb_adjDate",
+            "cb_captureMethod"
+        ],
+        "filters": [
+            {
+                "field": "o_chargebackDateType",
+                "values": [
+                    "1"
+                ]
+            }
+        ]
+    }]'
+    language: Curl
+    link: link to API Explorer
+  - name: Chargeback Summary
+    description: Returns an aggregated view of the entity utilizing various pivots across a specified date range. For instance total count and amount total by card type for the previous week of transactions.
+    type: post
+    path: /v1/chargeback/summary/byDateRange
+    codeSample: '[json
+      {
+        "filters": [
+            {
+                "field": "o_chargebackDateType",
+                "values": [
+                    "1"
+                ]
+            },
+            {
+                "field": "cb_currency",
+                "values": [
+                    "1"
+                ]
+            }
+        ],
+        "from": 20210201,
+        "groupBy1": "bi_cardBrand",
+        "to": 20210227
+    }]'
+    language: Curl
+    link: link to API Explorer
