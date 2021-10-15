@@ -36,6 +36,12 @@
     link:
     open: true
     sections:
+    - title: Customer Management
+      sections:
+      - title: Customer Demographic Inquiry
+        link: docs/APIs/Account-Management/Customer-Demographic-Inquiry.md    
+      - title: Customer Demographic Update
+        link: docs/APIs/Account-Management/Customer-Demographic-Update.md    
     - title: Account Management
       sections:
       - title: Block-Unblock Account
