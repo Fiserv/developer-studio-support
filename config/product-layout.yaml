@@ -63,60 +63,60 @@ featuredFeatures:
       - relatedDoc: 
         title: Account Management
         description: Allows management of an accounts that holds financial information of Credit available/ used.
-        link: 
+        link: ./docs/Account-Management.md
       - relatedDoc: 
         title: Customer Management
         description: Allows management of a cardholder's demographic information like Name, Address, phone numbers.  
-        link: 
+        link: ./docs/Customer-Management.md
       - relatedDoc: 
         title: Card Management
         description: Allows management of payment instrument that is used to perform financial transaction.  Example physical Card, Virtual Card, Wallet Token. 
-        link: 
+        link: ./docs/Card-Management.md
     relatedAPIs:
       - relatedAPI: 
         title: Block-Unblock Account
         description: This service is used to update the Account Block Code.
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/accounts/blockUnblock"
       - relatedAPI: 
         title: Block-Unblock Card
         description: This service is used to update the block codes and the reason codes for the block codes for cards and accounts
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/cards/blockUnblock"
       - relatedAPI: 
         title: Spend Limit Updates
         description: This service is used to update the spending limits to control the card usage.  These limits are set at individual card level.
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/cardS/spendLimits"
       - relatedAPI: 
         title: Fetch Clear PAN from Token
         description: This service is used to fetch the clear pan for the requested First Vision's Token PAN.
-        type: "GET"        
+        type: "get"        
         path: "/v1/cards/clearPan"
       - relatedAPI: 
         title: CVV2 Validation
         description: The Card Secure Code Validation service is used to validate the CVV2  and optionally the expiry date of a given card. 
-        type: "POST"        
+        type: "post"        
         path: "/v1/cards/secureCode"
       - relatedAPI: 
         title: Lost Stolen Card Transfer
         description: This Lost or Stolen service is used to block the lost card and request for the replacement card. 
-        type: "PUT"        
+        type: "put"        
         path: "/v1/cards/transfer"
       - relatedAPI: 
         title: Activate Card
         description: This service is used to activate the card after successful verification of the cardholder.  
-        type: "PUT"        
+        type: "put"        
         path: "/v1/cards/activate"
       - relatedAPI: 
         title: Inquire Customer Demographic Information
         description: This service will be used to enquire the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
-        type: "GET"        
+        type: "get"        
         path: "/v1/customers/nameAddress"
       - relatedAPI: 
         title: Update Customer Demographic Information
         description: This service will be used to update the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/customers/nameAddress"
   - title: Debit Issuance
     description:  FirstVision solution allows financial Institution to issue and manage the Debit Card products to their end customers. 
@@ -139,47 +139,47 @@ featuredFeatures:
       - relatedAPI: 
         title: Block-Unblock Account
         description: This service is used to update the Account Block Code.
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/accounts/blockUnblock"
       - relatedAPI: 
         title: Block-Unblock Card
         description: This service is used to update the block codes and the reason codes for the block codes for cards and accounts
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/cards/blockUnblock"
       - relatedAPI: 
         title: Spend Limit Updates
         description: This service is used to update the spending limits to control the card usage.  These limits are set at individual card level.
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/cardS/spendLimits"
       - relatedAPI: 
         title: Fetch Clear PAN from Token
         description: This service is used to fetch the clear pan for the requested First Vision's Token PAN.
-        type: "GET"        
+        type: "get"        
         path: "/v1/cards/clearPan"
       - relatedAPI: 
         title: CVV2 Validation
         description: The Card Secure Code Validation service is used to validate the CVV2  and optionally the expiry date of a given card. 
-        type: "POST"        
+        type: "post"        
         path: "/v1/cards/secureCode"
       - relatedAPI: 
         title: Lost Stolen Card Transfer
         description: This Lost or Stolen service is used to block the lost card and request for the replacement card. 
-        type: "PUT"        
+        type: "put"        
         path: "/v1/cards/transfer"
       - relatedAPI: 
         title: Activate Card
         description: This service is used to activate the card after successful verification of the cardholder.  
-        type: "PUT"        
+        type: "put"        
         path: "/v1/cards/activate"
       - relatedAPI: 
         title: Inquire Customer Demographic Information
         description: This service will be used to enquire the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
-        type: "GET"        
+        type: "get"        
         path: "/v1/customers/nameAddress"
       - relatedAPI: 
         title: Update Customer Demographic Information
         description: This service will be used to update the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/customers/nameAddress"
   - title: Prepaid Card Issuance
     description:  FirstVision solution allows financial Institution to issue and manage the Prepaid Card products to their end customers. 
@@ -202,47 +202,47 @@ featuredFeatures:
       - relatedAPI: 
         title: Block-Unblock Account
         description: This service is used to update the Account Block Code.
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/accounts/blockUnblock"
       - relatedAPI: 
         title: Block-Unblock Card
         description: This service is used to update the block codes and the reason codes for the block codes for cards and accounts
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/cards/blockUnblock"
       - relatedAPI: 
         title: Spend Limit Updates
         description: This service is used to update the spending limits to control the card usage.  These limits are set at individual card level.
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/cardS/spendLimits"
       - relatedAPI: 
         title: Fetch Clear PAN from Token
         description: This service is used to fetch the clear pan for the requested First Vision's Token PAN.
-        type: "GET"        
+        type: "get"        
         path: "/v1/cards/clearPan"
       - relatedAPI: 
         title: CVV2 Validation
         description: The Card Secure Code Validation service is used to validate the CVV2  and optionally the expiry date of a given card. 
-        type: "POST"        
+        type: "post"        
         path: "/v1/cards/secureCode"
       - relatedAPI: 
         title: Lost Stolen Card Transfer
         description: This Lost or Stolen service is used to block the lost card and request for the replacement card. 
-        type: "PUT"        
+        type: "put"        
         path: "/v1/cards/transfer"
       - relatedAPI: 
         title: Activate Card
         description: This service is used to activate the card after successful verification of the cardholder.  
-        type: "PUT"        
+        type: "put"        
         path: "/v1/cards/activate"
       - relatedAPI: 
         title: Inquire Customer Demographic Information
         description: This service will be used to enquire the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
-        type: "GET"        
+        type: "get"        
         path: "/v1/customers/nameAddress"
       - relatedAPI: 
         title: Update Customer Demographic Information
         description: This service will be used to update the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/customers/nameAddress"
   - title: Corporate Card Issuance
     description:  FirstVision solution allows financial Institution to issue and manage the Corporate Card products to their customers. 
@@ -265,47 +265,47 @@ featuredFeatures:
       - relatedAPI: 
         title: Block-Unblock Account
         description: This service is used to update the Account Block Code.
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/accounts/blockUnblock"
       - relatedAPI: 
         title: Block-Unblock Card
         description: This service is used to update the block codes and the reason codes for the block codes for cards and accounts
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/cards/blockUnblock"
       - relatedAPI: 
         title: Spend Limit Updates
         description: This service is used to update the spending limits to control the card usage.  These limits are set at individual card level.
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/cardS/spendLimits"
       - relatedAPI: 
         title: Fetch Clear PAN from Token
         description: This service is used to fetch the clear pan for the requested First Vision's Token PAN.
-        type: "GET"        
+        type: "get"        
         path: "/v1/cards/clearPan"
       - relatedAPI: 
         title: CVV2 Validation
         description: The Card Secure Code Validation service is used to validate the CVV2  and optionally the expiry date of a given card. 
-        type: "POST"        
+        type: "post"        
         path: "/v1/cards/secureCode"
       - relatedAPI: 
         title: Lost Stolen Card Transfer
         description: This Lost or Stolen service is used to block the lost card and request for the replacement card. 
-        type: "PUT"        
+        type: "put"        
         path: "/v1/cards/transfer"
       - relatedAPI: 
         title: Activate Card
         description: This service is used to activate the card after successful verification of the cardholder.  
-        type: "PUT"        
+        type: "put"        
         path: "/v1/cards/activate"
       - relatedAPI: 
         title: Inquire Customer Demographic Information
         description: This service will be used to enquire the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
-        type: "GET"        
+        type: "get"        
         path: "/v1/customers/nameAddress"
       - relatedAPI: 
         title: Update Customer Demographic Information
         description: This service will be used to update the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/customers/nameAddress"
   - title: loans Products
     description:  FirstVision solution allows financial Institution to issue and manage the loan products to their customers. 
@@ -328,45 +328,45 @@ featuredFeatures:
       - relatedAPI: 
         title: Block-Unblock Account
         description: This service is used to update the Account Block Code.
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/accounts/blockUnblock"
       - relatedAPI: 
         title: Block-Unblock Card
         description: This service is used to update the block codes and the reason codes for the block codes for cards and accounts
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/cards/blockUnblock"
       - relatedAPI: 
         title: Spend Limit Updates
         description: This service is used to update the spending limits to control the card usage.  These limits are set at individual card level.
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/cardS/spendLimits"
       - relatedAPI: 
         title: Fetch Clear PAN from Token
         description: This service is used to fetch the clear pan for the requested First Vision's Token PAN.
-        type: "GET"        
+        type: "get"        
         path: "/v1/cards/clearPan"
       - relatedAPI: 
         title: CVV2 Validation
         description: The Card Secure Code Validation service is used to validate the CVV2  and optionally the expiry date of a given card. 
-        type: "POST"        
+        type: "post"        
         path: "/v1/cards/secureCode"
       - relatedAPI: 
         title: Lost Stolen Card Transfer
         description: This Lost or Stolen service is used to block the lost card and request for the replacement card. 
-        type: "PUT"        
+        type: "put"        
         path: "/v1/cards/transfer"
       - relatedAPI: 
         title: Activate Card
         description: This service is used to activate the card after successful verification of the cardholder.  
-        type: "PUT"        
+        type: "put"        
         path: "/v1/cards/activate"
       - relatedAPI: 
         title: Inquire Customer Demographic Information
         description: This service will be used to enquire the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
-        type: "GET"        
+        type: "get"        
         path: "/v1/customers/nameAddress"
       - relatedAPI: 
         title: Update Customer Demographic Information
         description: This service will be used to update the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
-        type: "PATCH"        
+        type: "patch"        
         path: "/v1/customers/nameAddress"
