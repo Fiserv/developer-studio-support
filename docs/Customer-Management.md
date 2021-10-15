@@ -4,6 +4,6 @@ The Customer Management group of APIs provides comprehensive function to update 
 
 Please click on the below link to explore the specific API of interest
 
-- [Demographic Inquiry](./APIs/Customer-Management/Customer-Demograpic-Inquiry.md)
-- [Demographic Updates](./APIs/Customer-Management/Customer-Demograpic-Update.md) 
+- [Demographic Inquiry](./?path=docs/APIs/Customer-Management/Customer-Demograpic-Inquiry.md)
+- [Demographic Updates](./?path=docs/APIs/Customer-Management/Customer-Demograpic-Update.md) 
 

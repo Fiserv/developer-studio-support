@@ -4,5 +4,5 @@ The Account Management group of APIs provides comprehensive function to update/e
 
 Please click on the below link to explore the specific API of interest
 
-- [Block Unblock Account](./APIs/Account-Management/Block-Account.md)
+- [Block Unblock Account](./?path=docs/APIs/Account-Management/Block-Account.md)
 
