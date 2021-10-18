@@ -35,7 +35,7 @@ paths:
           example: John Smith
       - name: X-context
         in: header
-        required: true
+        required: false
         description: A unique random ID assigned to the requestor once authenticated to the First Vision application. Value passed in this field will be used within application to authenticate the valid signed-on user
         schema:
           maxLength: 20
