@@ -1,4 +1,4 @@
-# Welcome to **FirstVision™** RESTful Web Services
+# Welcome to FirstVision™ RESTful Web Services
 
 **Fiserv** provides a single, consolidated processing platform for all of your payment cards, loans, prepaid, and commercial card products.
 
