@@ -26,7 +26,7 @@ paths:
           example: EXC-ID-12345678-SUB
       - name: X-Name
         in: header
-        required: true
+        required: false
         description: User’s sign-on name. The value passed in this field will be validated within application for user's authority to consume the requested API
         schema:
           maxLength: 30
@@ -35,7 +35,7 @@ paths:
           example: John Smith
       - name: X-context
         in: header
-        required: false
+        required: true
         description: A unique random ID assigned to the requestor once authenticated to the First Vision application. Value passed in this field will be used within application to authenticate the valid signed-on user
         schema:
           maxLength: 20
