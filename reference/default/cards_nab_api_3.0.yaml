@@ -5,9 +5,8 @@ info:
   version: 1.0.0
 servers:
 - url: http://204.105.107.65:24500/fva_apac/
-paths:
-    
-  /v1/card/activate: 
+paths:    
+  /v1/cards/activate: 
     put:
       tags:
       - Card Management
@@ -548,7 +547,7 @@ paths:
                 504:
                   $ref: '#/components/examples/504-Errors'
   
-  /v1/card/spendLimits:
+  /v1/cards/spendLimits:
     patch:
       tags:
       -  Card Management
@@ -835,7 +834,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UpdateCardPinResponse'
+                $ref: '#/components/schemas/UpdateCardPinResp'
               examples: 
                 CardsPin: { $ref: '#/components/examples/CardPinResp' }
         400:
