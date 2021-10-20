@@ -55,7 +55,7 @@
       - title: CardType Update
         link: docs/APIs/Card-Management/CardType-Update.md
       - title: CVV2 Validation
-	link: docs/APIs/Card-Management/CVV2-Validation.md
+        link: docs/APIs/Card-Management/CVV2-Validation.md
       - title: Fetch Clear PAN from Token
         link: docs/APIs/Card-Management/Fetch-Clear-PAN-from-Token.md
       - title: Lost Stolen Card Transfer
