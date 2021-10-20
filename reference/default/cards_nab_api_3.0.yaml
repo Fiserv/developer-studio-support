@@ -1707,7 +1707,7 @@ components:
     CardTransferReq:
       value: { businessUnit: 100, cardNumber: '0009846801010001264',
           cardSequenceNumber: 0001, accountNumber: '0001000010000003777',
-          action: T, effectiveDate:' ' , cardReplacementIndicator: '1',
+          action: T, effectiveDate: ' ' , cardReplacementIndicator: '1',
           blockCode: L }
     CardTransferResp:
       value: {serviceReturnCode: P, numberOfErrors: 0, maskCardnumber: '000404940XXXXXX4481', cardNumber: '0009846801010000089', effectiveDate: '10/01/2021', transferFromAccount: '0001000010000003777', blockCode: L}
