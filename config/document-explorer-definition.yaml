@@ -51,16 +51,16 @@
       - title: Activate Card
         link: docs/APIs/Card-Management/Activate-Card.md
       - title: Block-Unblock Card
-        link: docs/APIs/Card-Management/Block-Card.md     
+        link: docs/APIs/Card-Management/Block-Card.md
+	  - title: CardType Update
+        link: docs/APIs/Card-Management/CardType-Update.md
+	  - title: CVV2 Validation
+	    link: docs/APIs/Card-Management/CVV2-Validation.md
+	  - title: Fetch Clear PAN from Token
+        link: docs/APIs/Card-Management/Fetch-Clear-PAN-from-Token.md
       - title: Lost Stolen Card Transfer
         link: docs/APIs/Card-Management/Lost-Stolen-Card-Transfer.md
-      - title: CardType Update
-        link: docs/APIs/Card-Management/CardType-Update.md 
-      - title: CVV2 Validation
-        link: docs/APIs/Card-Management/CVV2-Validation.md
-      - title: Spend Limit Updates
-        link: docs/APIs/Card-Management/Spend-limit-Updates.md      
-      - title: Fetch Clear PAN from Token
-        link: docs/APIs/Card-Management/Fetch-Clear-PAN-from-Token.md
       - title: PIN Block Change
-        link: docs/APIs/Card-Management/PIN-Block-Change.md
+        link: docs/APIs/Card-Management/PIN-Block-Change.md      
+      - title: Spend Limit Updates
+        link: docs/APIs/Card-Management/Spend-limit-Updates.md
