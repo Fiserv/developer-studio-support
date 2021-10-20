@@ -52,11 +52,11 @@
         link: docs/APIs/Card-Management/Activate-Card.md
       - title: Block-Unblock Card
         link: docs/APIs/Card-Management/Block-Card.md
-	  - title: CardType Update
+      - title: CardType Update
         link: docs/APIs/Card-Management/CardType-Update.md
-	  - title: CVV2 Validation
-	    link: docs/APIs/Card-Management/CVV2-Validation.md
-	  - title: Fetch Clear PAN from Token
+      - title: CVV2 Validation
+	link: docs/APIs/Card-Management/CVV2-Validation.md
+      - title: Fetch Clear PAN from Token
         link: docs/APIs/Card-Management/Fetch-Clear-PAN-from-Token.md
       - title: Lost Stolen Card Transfer
         link: docs/APIs/Card-Management/Lost-Stolen-Card-Transfer.md
