@@ -481,8 +481,7 @@ paths:
               $ref: '#/components/schemas/CardsSecureCodeReq'
             examples:
               CardsSecure: { $ref: '#/components/examples/CardSecureReq' }
-              
-      x-codegen-request-body-name: body
+
       responses:
         200:
           description: Success
