@@ -35,13 +35,7 @@
   - title: API Reference
     link:
     open: true
-    sections:
-    - title: Customer Management
-      sections:
-      - title: Customer Demographic Inquiry
-        link: docs/APIs/Customer-Management/Customer-Demographic-Inquiry.md    
-      - title: Customer Demographic Update
-        link: docs/APIs/Customer-Management/Customer-Demographic-Update.md    
+    sections:    
     - title: Account Management
       sections:
       - title: Block-Unblock Account
@@ -64,3 +58,9 @@
         link: docs/APIs/Card-Management/PIN-Block-Change.md      
       - title: Spend Limit Updates
         link: docs/APIs/Card-Management/Spend-limit-Updates.md
+    - title: Customer Management
+      sections:
+      - title: Customer Demographic Inquiry
+        link: docs/APIs/Customer-Management/Customer-Demographic-Inquiry.md    
+      - title: Customer Demographic Update
+        link: docs/APIs/Customer-Management/Customer-Demographic-Update.md
