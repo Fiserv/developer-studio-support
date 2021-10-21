@@ -27,126 +27,346 @@
 # are granted or extended by this work or 
 # the delivery of this work
 ################################################################################
-
-productPage:
-  - hero:
-    - image: /assests/image/hero.png #???
-    - descrption: Hero description
-  - journey Cards:
-      - journeyCard:
-        - title: Learn # => learn 
-        - description: 'Use our AI-powered studio to quickly discover the right integration for your next app project.
-        
-        Experiment with our API’s in our intelligent API Explorer. 
-        
-        Browse sample code and follow our guided tutorials to learn best practices for integration.'
-        - link: 
-          - type: markdown
-          - uri: /docs/learn.md
-        - contextualNavigationCards: #cnav card
-          - contextualNavigationCard:
-            - title: Getting Started
-            - description: Get Started with Developer Studio.
-            - link: 
-              - type: markdown
-              - uri: /docs/getting-started.md
-          - contextualNavigationCard:
-            - title: Tutorials
-            - description: Learn how to integrate with Developer Studio.
-            - link: 
-              - type: markdown
-              - uri: /docs/tutorials.md
-          - contextualNavigationCard:
-            - title: Video
-            - description: Watch how to create more unified commerce
-            - link: 
-              - type: externalLink # [externalLink | internalLink | markdown]
-              - uri: https://www.youtube.com/watch?v=X8jKx8pPjrU
-      - journeyCard:
-        - title: Build
-        - description: 'Build on top of our sample code to get your app coded in minutes.
-        
-        Our lightweight SDK’s and plug-in’s might be the fastest path to completing your app.'
-        - link: 
-          - type: markdown
-          - uri: /docs/build.md
-        - contextualNavigationCards:
-          - contextualNavigationCard:
-            - title: API Reference
-            - description: Explore all our APIs
-            - link: 
-              - type: internalLink
-              - uri: /docs/apis
-          - contextualNavigationCard:
-            - title: SDKs
-            - description: Use SDKs to accelarate your development
-            - cardType: reference | page
-            - link: 
-              - type: markdown
-              - uri: /docs/sdks.md # => http://dev.fiserv.com/docs/api
-          - contextualNavigationCard:
-            - title: Sample Code
-            - description: Free just like Costco samples & no limit
-            - cardType: reference | page
-            - link: 
-              - type: markdown
-              - uri: /docs/samples.md # => http://dev.fiserv.com/docs/api
-      - journeyCard:
-        - title: Test
-        - description: 'Flex your app end-to-end in our full-featured Sandbox.
-        
-        Incorporate Sandbox testing into your CI pipeline.
-        
-        Use our intelligent Test Tracker to discover parts of your app that need more attention. 
-        
-        *Requires registration'
-        - link: 
-          - type: markdown
-          - uri: /docs/test.md
-        - contextualNavigationCards: #cnav card
-          - contextualNavigationCard:
-            - title: Sandbox
-            - description: Use our sandbox to test your app end-to-end
-            - link: 
-              - type: internalLink
-              - uri: /sandbox
-          - contextualNavigationCard:
-            - title: Score Card
-            - description: See how your app is doing
-            - link: 
-              - type: internalLink
-              - uri: /scorecard
-          - contextualNavigationCard:
-            - title: Unit Testing
-            - description: Test with confidence
-            - link: 
-              - type: internalLink # [externalLink | internalLink | markdown]
-              - uri: /testing
-      - journeyCard:
-        - title: Deploy
-        - description: 'When your app is ready for prime time, submit it for automated certification. 
-        Your certified app is now ready to be deployed to Production. 
-        Congratulations!! 
-        *Requires registration'
-        - link: 
-          - type: markdown
-          - uri: /docs/deploy.md
-        - contextualNavigationCards:
-          - contextualNavigationCard:
-            - title: Certify
-            - description: Get your stamp of approval from us
-            - link: 
-              - type: markdown
-              - uri: /docs/certify.md
-          - contextualNavigationCard:
-            - title: Deploy
-            - description: Ready, set, Deploy!
-            - link: 
-              - type: internalLink
-              - uri: /docs/api # => http://dev.fiserv.com/docs/api
-          - contextualNavigationCard:
-            - title: Operate
-            - description: Setup montioring and alerting
-            - link: 
-              - type: internalLink
-              - uri: /docs/api # => http://dev.fiserv.com/docs/api
+header:
+  productName: FirstVision
+  productionDescription: FirstVision is our outsourced processing solution that meets your challenges head-on and transforms your technology capability. Built on core VisionPLUS® software, FirstVision™ provides an end-to-end solution that delivers global processing economies of scale plus fully integrated adjacent services that span the issuing lifecycle.
+  image: 
+    link: "/assets/images/Fiserv_Logo.jpg"
+    altText: FirstVision™
+steps:  
+  learnSteps:
+    - title: Learn
+      description: >
+        Follow our documentation and easy to use examples to build your own mobile or web integrated online applications. 
+      link:
+  buildSteps:
+    - title: Build
+      description: >
+        Get your application up and running with our proprietary integration tools and developer keys. 
+      link:
+  validateSteps:
+    - title: API Explorer
+      description: >
+        Interact with our live api interface for real time responses to the developed application. 
+      link:
+  deploySteps:
+    - title: Deploy
+      description: >
+        Deploy your applications in our testing environment for quality assurance testing.  Once ready promote your application to our production environment. 
+      link:
+featuredFeatures:
+  - title: Credit Issuance
+    description:  FirstVision solution allows financial Institution to issue and manage the Credit Card products to their end customers. 
+    tags: ["APAC", "FirstVision", "Credit"]
+    bullets: ["Activate Card", "Block Card", "Lost Stolen Card Transfer", "CVV2 Validation" ]  
+    relatedDocs:
+      - relatedDoc: 
+        title: Account Management
+        description: Allows management of an accounts that holds financial information of Credit available/ used.
+        link: ./docs/Account-Management.md
+      - relatedDoc: 
+        title: Customer Management
+        description: Allows management of a cardholder's demographic information like Name, Address, phone numbers.  
+        link: ./docs/Customer-Management.md
+      - relatedDoc: 
+        title: Card Management
+        description: Allows management of payment instrument that is used to perform financial transaction.  Example physical Card, Virtual Card, Wallet Token. 
+        link: ./docs/Card-Management.md
+    relatedAPIs:
+      - relatedAPI: 
+        title: Block-Unblock Account
+        description: This service is used to update the Account Block Code.
+        type: "patch"        
+        path: "/v1/accounts/blockUnblock"
+      - relatedAPI: 
+        title: Block-Unblock Card
+        description: This service is used to update the block codes and the reason codes for the block codes for cards and accounts
+        type: "patch"        
+        path: "/v1/cards/blockUnblock"
+      - relatedAPI: 
+        title: Spend Limit Updates
+        description: This service is used to update the spending limits to control the card usage.  These limits are set at individual card level.
+        type: "patch"        
+        path: "/v1/cardS/spendLimits"
+      - relatedAPI: 
+        title: Fetch Clear PAN from Token
+        description: This service is used to fetch the clear pan for the requested First Vision's Token PAN.
+        type: "get"        
+        path: "/v1/cards/clearPan"
+      - relatedAPI: 
+        title: CVV2 Validation
+        description: The Card Secure Code Validation service is used to validate the CVV2  and optionally the expiry date of a given card. 
+        type: "post"        
+        path: "/v1/cards/secureCode"
+      - relatedAPI: 
+        title: Lost Stolen Card Transfer
+        description: This Lost or Stolen service is used to block the lost card and request for the replacement card. 
+        type: "put"        
+        path: "/v1/cards/transfer"
+      - relatedAPI: 
+        title: Activate Card
+        description: This service is used to activate the card after successful verification of the cardholder.  
+        type: "put"        
+        path: "/v1/cards/activate"
+      - relatedAPI: 
+        title: Inquire Customer Demographic Information
+        description: This service will be used to enquire the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
+        type: "get"        
+        path: "/v1/customers/nameAddress"
+      - relatedAPI: 
+        title: Update Customer Demographic Information
+        description: This service will be used to update the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
+        type: "patch"        
+        path: "/v1/customers/nameAddress"
+  - title: Debit Issuance
+    description:  FirstVision solution allows financial Institution to issue and manage the Debit Card products to their end customers. 
+    tags: ["APAC", "FirstVision", "Debit"]
+    bullets: ["Activate Card", "Block Card", "Lost Stolen Card Transfer", "CVV2 Validation" ]  
+    relatedDocs:
+      - relatedDoc: 
+        title: Account Management
+        description: Allows management of an accounts that holds financial information of balance available.
+        link: 
+      - relatedDoc: 
+        title: Customer Management
+        description: Allows management of a cardholder's demographic information like Name, Address, phone numbers.  
+        link: 
+      - relatedDoc: 
+        title: Card Management
+        description: Allows management of payment instrument that is used to perform financial transaction.  Example physical Card, Virtual Card, Wallet Token. 
+        link: 
+    relatedAPIs:
+      - relatedAPI: 
+        title: Block-Unblock Account
+        description: This service is used to update the Account Block Code.
+        type: "patch"        
+        path: "/v1/accounts/blockUnblock"
+      - relatedAPI: 
+        title: Block-Unblock Card
+        description: This service is used to update the block codes and the reason codes for the block codes for cards and accounts
+        type: "patch"        
+        path: "/v1/cards/blockUnblock"
+      - relatedAPI: 
+        title: Spend Limit Updates
+        description: This service is used to update the spending limits to control the card usage.  These limits are set at individual card level.
+        type: "patch"        
+        path: "/v1/cardS/spendLimits"
+      - relatedAPI: 
+        title: Fetch Clear PAN from Token
+        description: This service is used to fetch the clear pan for the requested First Vision's Token PAN.
+        type: "get"        
+        path: "/v1/cards/clearPan"
+      - relatedAPI: 
+        title: CVV2 Validation
+        description: The Card Secure Code Validation service is used to validate the CVV2  and optionally the expiry date of a given card. 
+        type: "post"        
+        path: "/v1/cards/secureCode"
+      - relatedAPI: 
+        title: Lost Stolen Card Transfer
+        description: This Lost or Stolen service is used to block the lost card and request for the replacement card. 
+        type: "put"        
+        path: "/v1/cards/transfer"
+      - relatedAPI: 
+        title: Activate Card
+        description: This service is used to activate the card after successful verification of the cardholder.  
+        type: "put"        
+        path: "/v1/cards/activate"
+      - relatedAPI: 
+        title: Inquire Customer Demographic Information
+        description: This service will be used to enquire the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
+        type: "get"        
+        path: "/v1/customers/nameAddress"
+      - relatedAPI: 
+        title: Update Customer Demographic Information
+        description: This service will be used to update the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
+        type: "patch"        
+        path: "/v1/customers/nameAddress"
+  - title: Prepaid Card Issuance
+    description:  FirstVision solution allows financial Institution to issue and manage the Prepaid Card products to their end customers. 
+    tags: ["APAC", "FirstVision", "Prepaid"]
+    bullets: ["Activate Card", "Block Card", "Lost Stolen Card Transfer", "CVV2 Validation" ]  
+    relatedDocs:
+      - relatedDoc: 
+        title: Account Management
+        description: Allows management of an accounts that holds financial information of Credit available/ used.
+        link: 
+      - relatedDoc: 
+        title: Customer Management
+        description: Allows management of a cardholder's demographic information like Name, Address, phone numbers.  
+        link: 
+      - relatedDoc: 
+        title: Card Management
+        description: Allows management of payment instrument that is used to perform financial transaction.  Example physical Card, Virtual Card, Wallet Token. 
+        link: 
+    relatedAPIs:
+      - relatedAPI: 
+        title: Block-Unblock Account
+        description: This service is used to update the Account Block Code.
+        type: "patch"        
+        path: "/v1/accounts/blockUnblock"
+      - relatedAPI: 
+        title: Block-Unblock Card
+        description: This service is used to update the block codes and the reason codes for the block codes for cards and accounts
+        type: "patch"        
+        path: "/v1/cards/blockUnblock"
+      - relatedAPI: 
+        title: Spend Limit Updates
+        description: This service is used to update the spending limits to control the card usage.  These limits are set at individual card level.
+        type: "patch"        
+        path: "/v1/cardS/spendLimits"
+      - relatedAPI: 
+        title: Fetch Clear PAN from Token
+        description: This service is used to fetch the clear pan for the requested First Vision's Token PAN.
+        type: "get"        
+        path: "/v1/cards/clearPan"
+      - relatedAPI: 
+        title: CVV2 Validation
+        description: The Card Secure Code Validation service is used to validate the CVV2  and optionally the expiry date of a given card. 
+        type: "post"        
+        path: "/v1/cards/secureCode"
+      - relatedAPI: 
+        title: Lost Stolen Card Transfer
+        description: This Lost or Stolen service is used to block the lost card and request for the replacement card. 
+        type: "put"        
+        path: "/v1/cards/transfer"
+      - relatedAPI: 
+        title: Activate Card
+        description: This service is used to activate the card after successful verification of the cardholder.  
+        type: "put"        
+        path: "/v1/cards/activate"
+      - relatedAPI: 
+        title: Inquire Customer Demographic Information
+        description: This service will be used to enquire the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
+        type: "get"        
+        path: "/v1/customers/nameAddress"
+      - relatedAPI: 
+        title: Update Customer Demographic Information
+        description: This service will be used to update the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
+        type: "patch"        
+        path: "/v1/customers/nameAddress"
+  - title: Corporate Card Issuance
+    description:  FirstVision solution allows financial Institution to issue and manage the Corporate Card products to their customers. 
+    tags: ["APAC", "FirstVision", "Corporate"]
+    bullets: ["Activate Card", "Block Card", "Lost Stolen Card Transfer", "CVV2 Validation" ]  
+    relatedDocs:
+      - relatedDoc: 
+        title: Account Management
+        description: Allows management of an accounts that holds financial information of Credit available/ used.
+        link: 
+      - relatedDoc: 
+        title: Customer Management
+        description: Allows management of a cardholder's demographic information like Name, Address, phone numbers.  
+        link: 
+      - relatedDoc: 
+        title: Card Management
+        description: Allows management of payment instrument that is used to perform financial transaction.  Example physical Card, Virtual Card, Wallet Token. 
+        link: 
+    relatedAPIs:
+      - relatedAPI: 
+        title: Block-Unblock Account
+        description: This service is used to update the Account Block Code.
+        type: "patch"        
+        path: "/v1/accounts/blockUnblock"
+      - relatedAPI: 
+        title: Block-Unblock Card
+        description: This service is used to update the block codes and the reason codes for the block codes for cards and accounts
+        type: "patch"        
+        path: "/v1/cards/blockUnblock"
+      - relatedAPI: 
+        title: Spend Limit Updates
+        description: This service is used to update the spending limits to control the card usage.  These limits are set at individual card level.
+        type: "patch"        
+        path: "/v1/cardS/spendLimits"
+      - relatedAPI: 
+        title: Fetch Clear PAN from Token
+        description: This service is used to fetch the clear pan for the requested First Vision's Token PAN.
+        type: "get"        
+        path: "/v1/cards/clearPan"
+      - relatedAPI: 
+        title: CVV2 Validation
+        description: The Card Secure Code Validation service is used to validate the CVV2  and optionally the expiry date of a given card. 
+        type: "post"        
+        path: "/v1/cards/secureCode"
+      - relatedAPI: 
+        title: Lost Stolen Card Transfer
+        description: This Lost or Stolen service is used to block the lost card and request for the replacement card. 
+        type: "put"        
+        path: "/v1/cards/transfer"
+      - relatedAPI: 
+        title: Activate Card
+        description: This service is used to activate the card after successful verification of the cardholder.  
+        type: "put"        
+        path: "/v1/cards/activate"
+      - relatedAPI: 
+        title: Inquire Customer Demographic Information
+        description: This service will be used to enquire the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
+        type: "get"        
+        path: "/v1/customers/nameAddress"
+      - relatedAPI: 
+        title: Update Customer Demographic Information
+        description: This service will be used to update the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
+        type: "patch"        
+        path: "/v1/customers/nameAddress"
+  - title: loans Products
+    description:  FirstVision solution allows financial Institution to issue and manage the loan products to their customers. 
+    tags: ["APAC", "FirstVision", "loans"]
+    bullets: ["Activate Card", "Block Card", "Lost Stolen Card Transfer", "CVV2 Validation" ]  
+    relatedDocs:
+      - relatedDoc: 
+        title: Account Management
+        description: Allows management of an accounts that holds financial information of Credit available/ used.
+        link: 
+      - relatedDoc: 
+        title: Customer Management
+        description: Allows management of a cardholder's demographic information like Name, Address, phone numbers.  
+        link: 
+      - relatedDoc: 
+        title: Card Management
+        description: Allows management of payment instrument that is used to perform financial transaction.  Example physical Card, Virtual Card, Wallet Token. 
+        link: 
+    relatedAPIs:
+      - relatedAPI: 
+        title: Block-Unblock Account
+        description: This service is used to update the Account Block Code.
+        type: "patch"        
+        path: "/v1/accounts/blockUnblock"
+      - relatedAPI: 
+        title: Block-Unblock Card
+        description: This service is used to update the block codes and the reason codes for the block codes for cards and accounts
+        type: "patch"        
+        path: "/v1/cards/blockUnblock"
+      - relatedAPI: 
+        title: Spend Limit Updates
+        description: This service is used to update the spending limits to control the card usage.  These limits are set at individual card level.
+        type: "patch"        
+        path: "/v1/cardS/spendLimits"
+      - relatedAPI: 
+        title: Fetch Clear PAN from Token
+        description: This service is used to fetch the clear pan for the requested First Vision's Token PAN.
+        type: "get"        
+        path: "/v1/cards/clearPan"
+      - relatedAPI: 
+        title: CVV2 Validation
+        description: The Card Secure Code Validation service is used to validate the CVV2  and optionally the expiry date of a given card. 
+        type: "post"        
+        path: "/v1/cards/secureCode"
+      - relatedAPI: 
+        title: Lost Stolen Card Transfer
+        description: This Lost or Stolen service is used to block the lost card and request for the replacement card. 
+        type: "put"        
+        path: "/v1/cards/transfer"
+      - relatedAPI: 
+        title: Activate Card
+        description: This service is used to activate the card after successful verification of the cardholder.  
+        type: "put"        
+        path: "/v1/cards/activate"
+      - relatedAPI: 
+        title: Inquire Customer Demographic Information
+        description: This service will be used to enquire the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
+        type: "get"        
+        path: "/v1/customers/nameAddress"
+      - relatedAPI: 
+        title: Update Customer Demographic Information
+        description: This service will be used to update the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer.  
+        type: "patch"        
+        path: "/v1/customers/nameAddress"

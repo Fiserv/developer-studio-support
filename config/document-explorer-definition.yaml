@@ -35,40 +35,32 @@
   - title: API Reference
     link:
     open: true
-    sections:
-    - title: Release Notes
-      link: docs/Release-Notes/Release-Notes.md
-    - title: Customer Management
-      sections:
-      - title: Customer Add
-        link: docs/APIs/Customer-Management/Customer-Add.md
-      - title: Customer Data Update
-        link: docs/APIs/Customer-Management/Customer-Data-Update.md
-      - title: Customer Demograpic Inquiry
-        link: docs/APIs/Customer-Management/Customer-Demograpic-Inquiry.md
+    sections:    
     - title: Account Management
       sections:
-      - title: Account Block Code Update
-        link: docs/APIs/Account-Management/Account-Block-Code-Update.md
-      - title: Account Transfer
-        link: docs/APIs/Account-Management/Account-Transfer.md
-      - title: Credit Limit Update
-        link: docs/APIs/Account-Management/Credit-Limit-Update.md
-      - title: Find Account Number
-        link: docs/APIs/Account-Management/Find-Account-Number.md
+      - title: Block-Unblock Account
+        link: docs/APIs/Account-Management/Block-Account.md
     - title: Card Management
       sections:
-      - title: Card Activation
-        link: docs/APIs/Card-Management/Card-Activation.md
-      - title: Card Inquiry
-        link: docs/APIs/Card-Management/Card-Inquiry.md
-      - title: Card Transfer Update
-        link: docs/APIs/Card-Management/Card-Transfer-Update.md
-      - title: Card Update
-        link: docs/APIs/Card-Management/Card-Update.md
-      - title: Credit Limit Update
-        link: docs/APIs/Card-Management/Credit-Limit-Update.md
-      - title: CVV2 Inquiry
-        link: docs/APIs/Card-Managment/CVV2-Inquiry.md
+      - title: Activate Card
+        link: docs/APIs/Card-Management/Activate-Card.md
+      - title: Block-Unblock Card
+        link: docs/APIs/Card-Management/Block-Card.md
+      - title: CardType Update
+        link: docs/APIs/Card-Management/CardType-Update.md
+      - title: CVV2 Validation
+        link: docs/APIs/Card-Management/CVV2-Validation.md
+      - title: Fetch Clear PAN from Token
+        link: docs/APIs/Card-Management/Fetch-Clear-PAN-from-Token.md
+      - title: Lost Stolen Card Transfer
+        link: docs/APIs/Card-Management/Lost-Stolen-Card-Transfer.md
       - title: PIN Block Change
-        link: docs/APIs/Card-Managment/PIN-Block-Change.md
+        link: docs/APIs/Card-Management/PIN-Block-Change.md      
+      - title: Spend Limit Updates
+        link: docs/APIs/Card-Management/Spend-limit-Updates.md
+    - title: Customer Management
+      sections:
+      - title: Customer Demographic Inquiry
+        link: docs/APIs/Customer-Management/Customer-Demographic-Inquiry.md    
+      - title: Customer Demographic Update
+        link: docs/APIs/Customer-Management/Customer-Demographic-Update.md
