@@ -20,7 +20,6 @@ This service is used to activate the card after successful verification of the c
     "cardNumber":"0009846801010273613",
     "cardSequence": "0001",
     "currentCardRequireActivation": "N",
-    "postToAccountNumber": "",    
     "lastCardActivation": "N"    
 }
 ```
