@@ -9,7 +9,6 @@ Our APIs are broadly grouped into following sub-catagories.  Please click to spe
 
 - [Account Management](?path=./docs/Account-Management.md)
 
-
 - [Card Management](?path=./docs/Card-Management.md)
 
 ---

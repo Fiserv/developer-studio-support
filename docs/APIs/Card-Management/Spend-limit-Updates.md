@@ -30,7 +30,7 @@ This service is used to update the spending limits to control the card usage.  T
 ```
 
 ### Minimum Requirements
-The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/v1/card/spendLimits).
+The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/v1/cards/spendLimits).
 
 The below table identifies the required parameters in the request payload.
 

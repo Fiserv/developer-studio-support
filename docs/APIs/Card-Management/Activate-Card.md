@@ -25,7 +25,7 @@ This service is used to activate the card after successful verification of the c
 ```
 
 ### Minimum Requirements
-The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/v1/card/activate).
+The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=put&path=/v1/card/activate).
 
 The below table identifies the required parameters in the request payload.
 

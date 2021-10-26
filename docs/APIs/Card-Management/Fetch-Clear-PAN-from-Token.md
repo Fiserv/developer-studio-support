@@ -16,7 +16,7 @@ Empty. The Business Unit and CardNumber should be send in the query parameters
 ```
 
 ### Minimum Requirements
-The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/v1/cards/clearPan).
+The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=get&path=/v1/cards/clearPan).
 
 The below table identifies the required query parameters in the request payload.
 
