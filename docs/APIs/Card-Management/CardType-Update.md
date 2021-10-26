@@ -15,7 +15,7 @@ This service is used to update the type of cardholder between primary and supple
     "businessUnit":"100",
     "cardNumber":"0009846801010273613",
     "cardSequence": "0001",
-    "cardholderType": "1",
+    "cardholderType": "1"
 }
 ```
 
