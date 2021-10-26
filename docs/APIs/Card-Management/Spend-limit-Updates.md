@@ -4,7 +4,7 @@ This service is used to update the spending limits to control the card usage.  T
 
 
 # Endpoint
-`PATCH /v1/cardS/spendLimits`
+`PATCH /v1/cards/spendLimits`
 
 
 ## Payload Example

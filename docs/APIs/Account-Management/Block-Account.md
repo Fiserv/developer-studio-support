@@ -17,11 +17,9 @@ This service can be called with an account number. When either *blockCode 1* or 
 
 ```json
 {
-  "businessUnit": 100,
-  "accountNumber": "0001000010000510760",
-  "product": 1,
-  "billingAcctInd": 0,
-  "blockCode1": "X",
+  "businessUnit": "100",
+  "accountNumber": "0001000010000510481",
+  "blockCode1": "X"
 }
 ```
 
@@ -43,14 +41,14 @@ The below table identifies the required parameters in the request payload.
 
 ```json
 {
-  "product": 1,
-  "businessUnit": 100,
-  "accountNumber": "0001000010000510760",
-  "billingAcctInd": 0,
-  "blockCode1": "X",
-  "blockCode2": " ",
-  "blockCodeDate1": "01/10/2021",
-  "blockCodeDate2": "00/00/0000"
+    "businessUnit": "100",
+    "accountNumber": "0001000010000510481",
+    "product": "1",
+    "billingAcctInd": "0",
+    "blockCode1": "X",
+    "blockCodeDate1": "08/18/2021",
+    "blockCode2": " ",
+    "blockCodeDate2": "00/00/0000"
 }
 ```
 

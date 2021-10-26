@@ -5,7 +5,7 @@ This service will be used to enquire the customer demographic details such as Na
 
 
 # Endpoint
-`GET /v1/customers/nameAddress`
+`GET /v1/customers/nameAddress?businessunit=100&accountNumber=0001000000000150191`
 
 
 ## Payload Example
@@ -14,16 +14,13 @@ This service will be used to enquire the customer demographic details such as Na
 ### Request Payload
 
 ```json
-{ 
-  "businessunit" : "100",
-  "accountNumber" : "0001000000000150191
-}
+Empty. The Business Unit and AccountNumber should be send in the query parameters
 ```
 
 ### Minimum Requirements
 The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/v1/customers/nameAddress).
 
-The below table identifies the required parameters in the request payload.
+The below table identifies the required query parameters in the request message.
 
 | Variable | Type | Length | Description/Values |
 | -------- | :--: | :------------: | ------------------ |
@@ -35,29 +32,35 @@ The below table identifies the required parameters in the request payload.
 
 ```json
 {
-  "businessunit": "100",
-  "accountNumber": "0001000000000150191",	
-  "nameLine11" : "KIARA",
-  "nameLine21" : "CHRISTIAN",
-  "nameLine31" : "HARBER",
-  "addressLine11": "80.ANGLES",
-  "addressLine21": "",	
-  "addressLine31": "",
-  "addressLine41": "",
-  "city1": "US",
-  "state/Province1": "USA",  
-  "countryCode1": "USA",
-  "postalCode1": "27899",
-  "emailAddress1": "SAM@GMAIL.COM",
-  "homePhoneFlag1": "0",
-  "mobileNumber1": "11110976444",
-  "homePhoneNumber1": "123456788999999",
-  "faxNumber1": "",
-  "sMSFlag1": "0",
-  "faxPhoneFlag1": "0",		
-  "mobilePhoneFlag1": "0",
-  "languageIndicator1": "AUS"
-}  
+    "postalCode1": "2011",
+    "city1": "SYDNEY",
+    "nameLine21": "CHRISTIAN",
+    "firstName1": "KIARA",
+    "emailAddress1": "SAM@GMAIL.COM",
+    "homePhoneFlag1": "0",
+    "userDefinedField41": "Y",
+    "stateProvince1": "NSW",
+    "middleName1": "CHRISTIAN",
+    "faxNumber1": "",
+    "addressLine21": "",
+    "addressLine41": "",
+    "lastName1": "HARBER",
+    "faxPhoneFlag1": "0",
+    "nameLine31": "HARBER",
+    "nameLine11": "KIARA",
+    "mobileNumber1": "12345678901",
+    "countryCode1": "AU",
+    "accountNumber": "0001000000000150191",
+    "businessunit": "100",
+    "languageIndicator1": "AUS",
+    "addressLine31": "",
+    "sMSFlag1": "0",
+    "homePhoneNumber1": "123456788999999",
+    "addressLine11": "77 30 HARVEY ISLAND",
+    "houseNumber1": "",
+    "mobilePhoneFlag1": "0",
+    "dateOfBirth1": "04/02/1975"
+}
 ```
 
 ### Error Response Payload

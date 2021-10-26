@@ -4,7 +4,7 @@ This service is used to fetch the clear pan for the requested First Vision's Tok
 
 
 # Endpoint
-`GET /v1/cards/clearPan`
+`GET /v1/cards/clearPan?businessUnit=100&cardNumber=0009846801010273605`
 
 
 ## Payload Example
@@ -12,16 +12,13 @@ This service is used to fetch the clear pan for the requested First Vision's Tok
 ### Request Payload
 
 ```json
-{
-    "businessUnit": "100",
-    "cardNumber": "0009846801010273605"
-}
+Empty. The Business Unit and CardNumber should be send in the query parameters
 ```
 
 ### Minimum Requirements
 The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/v1/cards/clearPan).
 
-The below table identifies the required parameters in the request payload.
+The below table identifies the required query parameters in the request payload.
 
 | Variable | Type | Length | Description |
 | -------- | :--: | :------------: | ------------------ |
