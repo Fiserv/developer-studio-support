@@ -18,30 +18,33 @@ paths:
       parameters:
       - name: X-Correl-Id
         in: header
+        example: ABC123
         description: Any correlational text client's may want to send in the request for mapping the response on their side. Any value passed in the request message will be return back as-is in the API response message
         schema:
           maxLength: 40
           minLength: 0
           type: string
-          example: EXC-ID-12345678-SUB
+          
       - name: X-Name
         in: header
         required: false
+        example: 00001AUVMA
         description: User’s sign-on name. The value passed in this field will be validated within application for user's authority to consume the requested API
         schema:
           maxLength: 30
           minLength: 0
           type: string
-          example: John Smith
+          
       - name: X-context
         in: header
         required: true
+        example: 00001AUVMA
         description: A unique random ID assigned to the requestor once authenticated to the First Vision application. Value passed in this field will be used within application to authenticate the valid signed-on user
         schema:
           maxLength: 20
           minLength: 0
           type: string
-          example: 00001AUVMX
+          
           
       requestBody:
         content:
