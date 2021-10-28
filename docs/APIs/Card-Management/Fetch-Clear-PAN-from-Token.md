@@ -11,9 +11,10 @@ This service is used to fetch the clear pan for the requested First Vision's Tok
 
 ### Request Payload
 
-```json
-Empty. The Business Unit and CardNumber should be send in the query parameters
-```
+
+>Shoud be empty.  
+***The Business Unit and AccountNumber should be sent as query parameters.***
+
 
 ### Minimum Requirements
 The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=get&path=/v1/cards/clearPan).
