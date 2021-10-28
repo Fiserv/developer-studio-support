@@ -64,7 +64,6 @@ The below table identifies the required parameters in the request payload.
     "maximumAuthorizationsFrequnecy": "1",
     "maximumAmountOTCCashAuthorizationsAllowed": "$200.00"    
 }
-
 ```
 
 ### Error Response Payload
