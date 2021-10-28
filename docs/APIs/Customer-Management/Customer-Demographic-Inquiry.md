@@ -14,7 +14,7 @@ This service will be used to enquire the customer demographic details such as Na
 ### Request Payload
 
 >Shoud be empty.  
-***The Business Unit and AccountNumber should be sent in the query parameters.***
+***The Business Unit and AccountNumber should be sent as query parameters.***
 
 ### Minimum Requirements
 The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=get&path=/v1/customers/nameAddress).

@@ -29,16 +29,12 @@ The below table identifies the required query parameters in the request payload.
 
 ### Successful Response Payload
 
-```json
-{
-    "clearCardNumber": "0004049400000274818"
-}
-
-```
+>Shoud be empty. 
+***The Business Unit and cardNumber should be sent as query parameters.***
 
 ### Error Response Payload
 
-```json
+
 {
   "errorCode": "V5CL4002AS",
   "errorMessage": "Token number not found"  
