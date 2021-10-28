@@ -13,7 +13,7 @@ paths:
       x-group-name: Account Management
       x-proxy-name: Block-Unblock Account
       summary: Block-Unblock Account
-      description: This service is used to update the Account Block Code. testing
+      description: This service is used to update the Account Block Code.
       operationId: blockUnblock
       parameters:
         - name: X-Correl-Id
