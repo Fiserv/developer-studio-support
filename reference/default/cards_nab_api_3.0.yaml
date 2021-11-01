@@ -67,8 +67,8 @@ paths:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
         401:
           description: The request was unauthorized
           content:
@@ -76,8 +76,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
+                - '401':
+                    $ref: '#/components/examples/401-Errors'
         404:
           description: The request resource does not exist
           content:
@@ -85,8 +85,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
-                  $ref: '#/components/examples/404-Errors'
+               - '404':
+                    $ref: '#/components/examples/404-Errors'
         500:
           description: An unexpected internal server error occurred
           content:
@@ -94,8 +94,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
+               - '500':
+                   $ref: '#/components/examples/500-Errors'
         503:
           description: The service was unavailable
           content:
@@ -103,8 +103,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
         504:
           description: The request timed out while waiting for a response
           content:
@@ -112,8 +112,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
   
   /v1/cards/blockUnblock:
     patch:
@@ -174,8 +174,8 @@ paths:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
         401:
           description: The request was unauthorized
           content:
@@ -183,8 +183,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
         404:
           description: The request resource does not exist
           content:
@@ -192,8 +192,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
-                  $ref: '#/components/examples/404-Errors'
+               - '404':
+                    $ref: '#/components/examples/404-Errors'
         500:
           description: An unexpected internal server error occurred
           content:
@@ -201,8 +201,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
         503:
           description: The service was unavailable
           content:
@@ -210,8 +210,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
         504:
           description: The request timed out while waiting for a response
           content:
@@ -219,8 +219,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
   
   /v1/cards/transfer:
     put:
@@ -283,8 +283,8 @@ paths:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
         401:
           description: The request was unauthorized
           content:
@@ -292,8 +292,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
         404:
           description: The request resource does not exist
           content:
@@ -301,8 +301,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
-                  $ref: '#/components/examples/404-Errors'
+               - '404':
+                    $ref: '#/components/examples/404-Errors'
         500:
           description: An unexpected internal server error occurred
           content:
@@ -310,8 +310,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
         503:
           description: The service was unavailable
           content:
@@ -319,8 +319,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
         504:
           description: The request timed out while waiting for a response
           content:
@@ -328,8 +328,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'                  
+               - '504':
+                    $ref: '#/components/examples/504-Errors'                  
   
   /v1/cards/profile:
     patch:
@@ -389,8 +389,8 @@ paths:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
         401:
           description: The request was unauthorized
           content:
@@ -398,8 +398,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
         404:
           description: The request resource does not exist
           content:
@@ -407,8 +407,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
-                  $ref: '#/components/examples/404-Errors'
+               - '404':
+                    $ref: '#/components/examples/404-Errors'
         500:
           description: An unexpected internal server error occurred
           content:
@@ -416,8 +416,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
         503:
           description: The service was unavailable
           content:
@@ -425,8 +425,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
         504:
           description: The request timed out while waiting for a response
           content:
@@ -434,8 +434,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
   
   /v1/cards/secureCode:
     post:
@@ -498,8 +498,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
         401:
           description: The request was unauthorized
           content:
@@ -507,8 +507,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
         404:
           description: The request resource does not exist
           content:
@@ -516,8 +516,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/404-Errors'
+               - '401':
+                    $ref: '#/components/examples/404-Errors'
         500:
           description: An unexpected internal server error occurred
           content:
@@ -525,8 +525,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
         503:
           description: The service was unavailable
           content:
@@ -534,8 +534,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
         504:
           description: The request timed out while waiting for a response
           content:
@@ -543,8 +543,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
   
   /v1/cards/spendLimits:
     patch:
@@ -606,8 +606,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
         401:
           description: The request was unauthorized
           content:
@@ -615,8 +615,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
         404:
           description: The request resource does not exist
           content:
@@ -624,8 +624,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/404-Errors'
+               - '401':
+                    $ref: '#/components/examples/404-Errors'
         500:
           description: An unexpected internal server error occurred
           content:
@@ -633,8 +633,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
         503:
           description: The service was unavailable
           content:
@@ -642,8 +642,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
         504:
           description: The request timed out while waiting for a response
           content:
@@ -651,8 +651,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
   
   /v1/cards/clearPan:
     get:
@@ -735,8 +735,8 @@ paths:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
         401:
           description: The request was unauthorized
           content:
@@ -744,8 +744,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
         404:
           description: The request resource does not exist
           content:
@@ -753,8 +753,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
-                  $ref: '#/components/examples/404-Errors'
+               - '404':
+                    $ref: '#/components/examples/404-Errors'
         500:
           description: An unexpected internal server error occurred
           content:
@@ -762,8 +762,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
         503:
           description: The service was unavailable
           content:
@@ -771,8 +771,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
         504:
           description: The request timed out while waiting for a response
           content:
@@ -780,8 +780,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'      
+               - '504':
+                    $ref: '#/components/examples/504-Errors'      
                   
   /v1/cards/pinBlock:
     patch:
@@ -843,8 +843,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
         401:
           description: The request was unauthorized
           content:
@@ -852,8 +852,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
         404:
           description: The request resource does not exist
           content:
@@ -861,8 +861,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/404-Errors'
+               - '401':
+                    $ref: '#/components/examples/404-Errors'
         500:
           description: An unexpected internal server error occurred
           content:
@@ -870,8 +870,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
         503:
           description: The service was unavailable
           content:
@@ -879,8 +879,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
         504:
           description: The request timed out while waiting for a response
           content:
@@ -888,8 +888,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
                 
 components:
   schemas:
@@ -990,8 +990,8 @@ components:
           type: string
           example: 'Y'
           enum:
-           - 'Y - Yes'
-           - 'N - No'
+           - 'Y'
+           - 'N'
           description: Current activation flag-Indicates whether cardactivation needs to occur for the most recently issued card values are N=No card activation is required or cardactivation has already occurred, Y=Card activation needs to occur
         cardActivatedDate: 
           type: string
@@ -1032,8 +1032,8 @@ components:
           type: string
           example: 'N'
           enum:
-           - 'Y - Yes'
-           - 'N - No'
+           - 'Y'
+           - 'N'
           description: Current activation flag-Indicates whether cardactivation needs to occur for the most recently issued card values are N=No card activation is required or cardactivation has already occurred, Y=Card activation needs to occur
         cardActivatedDate: 
           type: string
@@ -1122,7 +1122,7 @@ components:
           format: uppercase
         effectiveDate:
           type: string
-          example: '10/01/2021'
+          example: "10/01/2021"
           description: Effective Date-Date that the fraud card transfer is effective
           format: date
         transferFromAccount:
@@ -1188,8 +1188,8 @@ components:
           description: Cardholder Type-Code that indicates whether the cardholder is the primarycardholder or an additional cardholder associated with theaccount. The value for this field is set in the card-adding processwith the first cardholder designated as the primary cardholderand the other cardholders as additional cardholders. The values are 0 =Additional cardholder 1=Primary
             cardholder
           enum:
-          - 0 - Additional
-          - 1 - Primary
+          - '0' 
+          - '1' 
         businessUnit:
           type: number
           example: 100
@@ -1223,12 +1223,12 @@ components:
           description: Business Unit -Identification number of the organization associated with thisAccount Base Segment record. The values are 001–998.
         product:
           type: number
-          example: ' '
+          example: 100
           description: Product - Product associated with this Account. The values are 001–998
         cardNumber:
           type: string
           maxLength: 19
-          example: '000954349CCCCCCC0172'
+          example: '000954349CCCCCC0172'
           description: Card Number-if the service is sucessiful, the response the updated card number will be send this will
           format: uppercase
         requestedPinBlock:
@@ -1244,7 +1244,7 @@ components:
           description: Current pin block( Old Pin Block)- The old pin block should be provided, This will be old pin Enter by customer
         pinOffSet:
           type: number
-          example: ' '
+          example: 0
           description: Current pin block( Old Pin Block)- The old pin block should be provided, This will be old pin Enter by customer
         pinChannel:
           type: string
@@ -1336,8 +1336,8 @@ components:
           example: '0'
           description: Card replacement indicator-Code that indicates whether CMS replaces the transfer card bygenerating a new Embosser record on the original account. The values are 0=Replace lost/stolen/fraud card (Default), 1=Do not replace lost/stolen/fraud card
           enum:
-          - 0 - Replace
-          - 1 - Do Not Replace
+          - '0'
+          - '1'
         terminalId:
           maxLength: 4
           type: string
@@ -1348,7 +1348,7 @@ components:
           maximum: 999
           minimum: 0
           type: number
-          example: ' '
+          example: 100
           description: Card transfer org-Identification number of the organization
             associated with thisAccount Base Segment record. The values are 001–9
         transferToAccount:
@@ -1376,8 +1376,8 @@ components:
             The values are R=Reverse a card transfer, T=Transfer the card (lost, stolen,
             or fraud).
           enum:
-          - T - Transfer
-          - R - Reversal
+          - 'T'
+          - 'R'
         securitySignon:
           type: string
           description: security signon
