@@ -1124,7 +1124,7 @@ components:
           type: string
           example: "10/01/2021"
           description: Effective Date-Date that the fraud card transfer is effective
-          format: date
+          pattern: '^\d{2}\/\d{2}\/\d{4}$'
         transferFromAccount:
           type: string
           example: '000100001NNNNNN3777'
@@ -1145,7 +1145,6 @@ components:
       - businessUnit
       - cardNumber
       - cardSequence
-      - postToAccountNumber
       type: object
       properties:
         businessUnit:
@@ -1296,12 +1295,6 @@ components:
       - cardReplacementIndicator
       - cardSequenceNumber
       - effectiveDate
-      - operatorId
-      - product
-      - startDate
-      - terminalId
-      - transferToAccount
-      - transferToCustomer
       type: object
       properties:
         businessUnit:
@@ -1400,7 +1393,6 @@ components:
           description: Effective date-Date that the fraud card transfer is effective
             The value must be a date less than or equal to today’sdateThe default
             value is today’s date. If you enter a future date The system will abend
-          format: date
         cardSequenceNumber:
           maximum: 9999
           minimum: 1
@@ -1411,13 +1403,11 @@ components:
           type: string
           example: ' '
           description: Start date- the date when the serivce was called
-          format: date
     CardsBlockUnblockReq:
       required:
       - businessUnit
       - cardNumber
       - cardSequence
-      - postToAccountNumber
       type: object
       properties:
         businessUnit:
@@ -1469,8 +1459,8 @@ components:
             as additional cardholders, values are 0=Additional cardholder, 1=Primary
             cardholder
           enum:
-          - 1 - Primary
-          - 0 - Additional
+          - '1'
+          - '0'
         blockCode:
           type: string
           example: 'E'
@@ -1518,15 +1508,15 @@ components:
             cardholder ID,6=Decline for suspected fraud,8=Decline with a user exit,9=VIP
             account; always approve
           enum:
-          - 0 - No Action
+          - '0'
           - ' '
-          - 1 - Decline Auth
-          - 2 - Decline Pickup
-          - 3 - Decline Fraud
-          - 4 - Decline Refer
-          - 6 - Decline Susp Fraud
-          - 8 - Decline User Exit 
-          - 9 - Approve Tip
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+          - '6'
+          - '8' 
+          - '9'
     UpdateCardLimitReq:
       required:
       - businessUnit
@@ -1563,24 +1553,24 @@ components:
           example: '1'
           description: Maximum authorization frequency-Code that indicates the frequency for the maximumauthorization parameters The values are 0=Not used,1=Daily,2=Cycle-to-date,3=Year-to-date
           enum:
-          - 0 - Frequency Not Used
-          - 1 - Daily Frequency
-          - 2 - Cycle To Date Frequency
-          - 3 - Year To Date Frequency
+          - '0'
+          - '1'
+          - '2'
+          - '3'
         maximumAmountATMCashAuthorizationsAllowed:
           type: string
           example: '10000'
           description: Maximum amount ATM cash authorization-Maximum amount in monetary units and subunits of ATM cashauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: '0.0'
         maximumNumberATMCashAuthorizationsAllowed:
           type: number
           example: 1
           description: Maximum number ATM cash authorization-Maximum number of ATM cash authorizations allowed for thisEmbosser record for the frequency defined in the FREQ field
         maximumAmountSingleATMTransactionAllowed:
           type: string
-          example: 10000
+          example: "10000"
           description: Maximum amount SINGLE ATM Transaction-Maximum authorization amount in monetary units and subunitsof a single ATM transaction allowed for this Embosser recordfor the frequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         maximumNumberOTCAuthorizationsAllowed:
           type: number
           example: 1
@@ -1589,18 +1579,18 @@ components:
             field
         maximumAmountOTCCashAuthorizationsAllowed:
           type: string
-          example: 2000
+          example: "2000"
           description: Maximum amount OTC cash authorization-Maximum amount in monetary units and subunits of OTC cashauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
         singleOTCCashAuthorizationAllowed:
           type: string
-          example: 10000
+          example: "10000"
           description: Maximum Amount Single OTC cash authorization allowed-Maximum amount in monetary units and subunits of OTCauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         maximumAmountRetailAuthorizationsAllowed:
           type: string
-          example: 1000
+          example: "1000"
           description: Maximum amount retail authorization-Maximum amount in monetary units and subunits of retailauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         maximumNumberRetailAuthorizationsAllowed:
           type: number
           example: 1
@@ -1609,7 +1599,7 @@ components:
           type: string
           example: '0000'
           description: Maximum Amount Single retail authorization allowed- Maximum amount in monetary units and subunits of OTCauthorizations allowed for 'this Embosser record for thefrequency defined in the FREQ field.
-          default: 0.0
+          default: "0.0"
           
     UpdateCardLimitResp:
       required:
@@ -1634,12 +1624,12 @@ components:
           type: string
           example: '1000'
           description: Maximum amount SINGLE ATM Transaction-Maximum authorization amount in monetary units and subunitsof a single ATM transaction allowed for this Embosser recordfor the frequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         singleOTCCashAuthorizationAllowed:
           type: string
           example: '100'
           description: Maximum Amount Single OTC cash authorization allowed-Maximum amount in monetary units and subunits of OTCauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         postToAccountNumber:
           maxLength: 19
           type: string
@@ -1650,7 +1640,7 @@ components:
           type: string
           example: '100'
           description: Maximum amount ATM cash authorization-Maximum amount in monetary units and subunits of ATM cashauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         maximumNumberOTCAuthorizationsAllowed:
           type: number
           example: 1
@@ -1665,21 +1655,21 @@ components:
           type: string
           example: '0'
           description: Maximum Amount Single retail authorization allowed- Maximum amount in monetary units and subunits of OTCauthorizations allowed for 'this Embosser record for thefrequency defined in the FREQ field.
-          default: 0.0
+          default: "0.0"
         maximumAmountRetailAuthorizationsAllowed:
           type: string
           example: '1000'
           description: Maximum amount retail authorization-Maximum amount in monetary units and subunits of retailauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         maximumAuthorizationsFrequnecy:
           type: string
           example: '1'
           description: Maximum authorization frequency-Code that indicates the frequency for the maximumauthorization parameters The values are 0=Not used,1=Daily,2=Cycle-to-date,3=Year-to-date
           enum:
-          - 0 - Frequency Not Used
-          - 1 - Daily Frequency
-          - 2 - Cycle To Date Frequency
-          - 3 - Year To Date Frequency
+          - '0'
+          - '1'
+          - '2'
+          - '3'
         maximumAmountOTCCashAuthorizationsAllowed:
           type: string
           example: '2000'
@@ -1695,8 +1685,8 @@ components:
     CardActivateReq:
       value: { businessUnit: 100, cardNumber: '0009846801010273613', cardSequence: 0001, currentCardRequireActivation: 'N', postToAccountNumber: ' ', lastCardActivation: 'N'}
     CardActivateResp:
-      value: {businessUnit: 100, cardNumber: 0009846801010273613,
-        cardSequence: 1, lastCardActivation: N, currentCardRequireActivation: N, cardActivatedDate: 01/10/2021, postToAccountNumber: 0001000010000510760}
+      value: {businessUnit: 100, cardNumber: "0009846801010273613",
+        cardSequence: 1, lastCardActivation: N, currentCardRequireActivation: N, cardActivatedDate: 01/10/2021, postToAccountNumber: "0001000010000510760"}
       
     BlockCardReq:
       value: { businessUnit: 100, cardNumber: '0009846801010273605',
@@ -1709,7 +1699,7 @@ components:
           action: T, effectiveDate: ' ' , cardReplacementIndicator: '1',
           blockCode: L }
     CardTransferResp:
-      value: {serviceReturnCode: P, numberOfErrors: 0, maskCardnumber: '000404940XXXXXX4481', cardNumber: '0009846801010000089', effectiveDate: '10/01/2021', transferFromAccount: '0001000010000003777', blockCode: L}
+      value: {serviceReturnCode: P, numberOfErrors: "0", maskCardnumber: '000404940XXXXXX4481', cardNumber: '0009846801010000089', effectiveDate: '10/01/2021', transferFromAccount: '0001000010000003777', blockCode: L}
     
     CardSecureReq:
       value: {businessUnit: 100, cardNumber: '0009846801010065787',cVV2: '855',expiryDateMMYY: '1123'}
@@ -1718,7 +1708,7 @@ components:
     CardProfileReq: 
       value: {businessUnit: 100, cardNumber: '0009846801010273613', cardSequence: 0001, cardholderType: 1}
     CardsProfileResp:
-      value: { businessUnit: 100, cardNumber: '0009846801010273613', cardSequence: 1, postToAccountNumber: '0001000010000510760', cardholderType: 1 }
+      value: { businessUnit: 100, cardNumber: '0009846801010273613', cardSequence: 1, postToAccountNumber: '0001000010000510760', cardholderType: "1" }
     CardClearResp:
       value: { cardNumber: '0004049400000274818' }
     
