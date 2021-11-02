@@ -121,7 +121,7 @@ paths:
               example:
                 504:
                   $ref: '#/components/examples/504-Errors'        
-  /customers/nameAddress:
+  /v1/customers/nameAddress:
     patch:
       tags:
       - Customer Management

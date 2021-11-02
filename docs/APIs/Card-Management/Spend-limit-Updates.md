@@ -16,7 +16,7 @@ This service is used to update the spending limits to control the card usage.  T
   "businessUnit":"100",
   "cardNumber":"0009846801010273605",
   "cardSequence": "0001",
-  "maximumAuthorizationsFrequency": "1",
+  "maximumAuthorizationsFrequnecy": "1",
   "maximumAmountSingleATMTransactionAllowed": "10000",
   "maximumAmountATMCashAuthorizationsAllowed": "10000",
   "maximumNumberATMCashAuthorizationsAllowed": "1",  
@@ -64,7 +64,6 @@ The below table identifies the required parameters in the request payload.
     "maximumAuthorizationsFrequnecy": "1",
     "maximumAmountOTCCashAuthorizationsAllowed": "$200.00"    
 }
-
 ```
 
 ### Error Response Payload

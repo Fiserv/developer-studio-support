@@ -3,8 +3,12 @@ info:
   title: Vision10 API Documentation
   description: V10 open API document.
   version: 1.0.0
+  contact:
+    name : "Fiserv"
 servers:
-- url: http://204.105.107.65:24500/fva_apac/
+- url: 'https://stg34.visionplus.io:24500'
+tags:
+ - name : 'Card Management'
 paths:    
   /v1/cards/activate: 
     put:
@@ -13,8 +17,8 @@ paths:
       x-group-name: Card Management
       x-proxy-name: Activate Card
       summary: Activate Card
-      description: This service is used to activate the card after successful verification of the cardholder.
-      operationId: Card Activate
+      description: This service is used to activate the card after successful verification of the"ccarholder.
+      operationId: activate
       parameters: 
       - name: X-Correl-Id
         in: header
@@ -52,7 +56,7 @@ paths:
               ActivateCard: { $ref: '#/components/examples/CardActivateReq'}
               
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -61,59 +65,59 @@ paths:
               examples: 
                 ActivateCard: {$ref: '#/components/examples/CardActivateResp'}
 
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
-        401:
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
+        '401':
           description: The request was unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
-        404:
+                - '401':
+                    $ref: '#/components/examples/401-Errors'
+        '404':
           description: The request resource does not exist
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
-                  $ref: '#/components/examples/404-Errors'
-        500:
+               - '404':
+                    $ref: '#/components/examples/404-Errors'
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
-        503:
+               - '500':
+                   $ref: '#/components/examples/500-Errors'
+        '503':
           description: The service was unavailable
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
-        504:
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
   
   /v1/cards/blockUnblock:
     patch:
@@ -160,7 +164,7 @@ paths:
             examples: 
               BlockCard: {$ref: '#/components/examples/BlockCardReq'}
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -168,59 +172,59 @@ paths:
                 $ref: '#/components/schemas/CardsBlockUnblockResp'
               examples:
                 BlockCard: {$ref: '#/components/examples/BlockCardResp'}
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
-        401:
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
+        '401':
           description: The request was unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
-        404:
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
+        '404':
           description: The request resource does not exist
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
-                  $ref: '#/components/examples/404-Errors'
-        500:
+               - '404':
+                    $ref: '#/components/examples/404-Errors'
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
-        503:
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
+        '503':
           description: The service was unavailable
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
-        504:
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
   
   /v1/cards/transfer:
     put:
@@ -268,7 +272,7 @@ paths:
               CardTransfer: { $ref: '#/components/examples/CardTransferReq'}
            
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -277,59 +281,59 @@ paths:
               examples:
                 CardTransfer: { $ref: '#/components/examples/CardTransferResp'}
                 
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
-        401:
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
+        '401':
           description: The request was unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
-        404:
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
+        '404':
           description: The request resource does not exist
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
-                  $ref: '#/components/examples/404-Errors'
-        500:
+               - '404':
+                    $ref: '#/components/examples/404-Errors'
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
-        503:
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
+        '503':
           description: The service was unavailable
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
-        504:
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'                  
+               - '504':
+                    $ref: '#/components/examples/504-Errors'                  
   
   /v1/cards/profile:
     patch:
@@ -375,7 +379,7 @@ paths:
             examples: 
               CardsProfile: { $ref: '#/components/examples/CardProfileReq' }
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -383,59 +387,59 @@ paths:
                 $ref: '#/components/schemas/UpdateCardsProfileResp'
               examples: 
                 CardsProfile: { $ref: '#/components/examples/CardsProfileResp'}
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
-        401:
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
+        '401':
           description: The request was unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
-        404:
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
+        '404':
           description: The request resource does not exist
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
-                  $ref: '#/components/examples/404-Errors'
-        500:
+               - '404':
+                    $ref: '#/components/examples/404-Errors'
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
-        503:
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
+        '503':
           description: The service was unavailable
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
-        504:
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
   
   /v1/cards/secureCode:
     post:
@@ -483,7 +487,7 @@ paths:
               CardsSecure: { $ref: '#/components/examples/CardSecureReq' }
 
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -491,60 +495,60 @@ paths:
                 $ref: '#/components/schemas/CardsSecureCodeResp'
               examples: 
                 CardsSecure: { $ref: '#/components/examples/CardSecureResp' }
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
-        401:
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
+        '401':
           description: The request was unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
-        404:
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
+        '404':
           description: The request resource does not exist
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/404-Errors'
-        500:
+               - '401':
+                    $ref: '#/components/examples/404-Errors'
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
-        503:
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
+        '503':
           description: The service was unavailable
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
-        504:
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
   
   /v1/cards/spendLimits:
     patch:
@@ -554,7 +558,7 @@ paths:
       x-proxy-name: Spend Limit Updates
       summary: Spend Limit Updates
       description: This service is used to update the spending limits to control the card usage. These limits are set at individual card level.
-      operationId: Card Limits
+      operationId: spendLimits
       parameters:
       - name: X-Correl-Id
         in: header
@@ -591,7 +595,7 @@ paths:
               #CardsLimit: { $ref: '#/components/examples/CardLimitReq' }
                           
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -599,60 +603,60 @@ paths:
                 $ref: '#/components/schemas/UpdateCardLimitResp'
               #examples: 
                 #CardsLimit: { $ref: '#/components/examples/CardLimitResp' }
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
-        401:
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
+        '401':
           description: The request was unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
-        404:
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
+        '404':
           description: The request resource does not exist
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/404-Errors'
-        500:
+               - '401':
+                    $ref: '#/components/examples/404-Errors'
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
-        503:
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
+        '503':
           description: The service was unavailable
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
-        504:
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
   
   /v1/cards/clearPan:
     get:
@@ -720,7 +724,7 @@ paths:
           format: uppercase
 
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -729,59 +733,59 @@ paths:
               examples: 
                 CardsClear: { $ref: '#/components/examples/CardClearResp' }
               
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
-        401:
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
+        '401':
           description: The request was unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
-        404:
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
+        '404':
           description: The request resource does not exist
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
-                  $ref: '#/components/examples/404-Errors'
-        500:
+               - '404':
+                    $ref: '#/components/examples/404-Errors'
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
-        503:
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
+        '503':
           description: The service was unavailable
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
-        504:
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'      
+               - '504':
+                    $ref: '#/components/examples/504-Errors'      
                   
   /v1/cards/pinBlock:
     patch:
@@ -828,7 +832,7 @@ paths:
             examples: 
               CardsPin: { $ref: '#/components/examples/CardPinReq' }
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -836,60 +840,60 @@ paths:
                 $ref: '#/components/schemas/UpdateCardPinResp'
               examples: 
                 CardsPin: { $ref: '#/components/examples/CardPinResp' }
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
-        401:
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
+        '401':
           description: The request was unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
-        404:
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
+        '404':
           description: The request resource does not exist
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/404-Errors'
-        500:
+               - '401':
+                    $ref: '#/components/examples/404-Errors'
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
-        503:
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
+        '503':
           description: The service was unavailable
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
-        504:
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'
+               - '504':
+                    $ref: '#/components/examples/504-Errors'
                 
 components:
   schemas:
@@ -933,25 +937,6 @@ components:
           type: string
           example: ' '
           description: Security signon
-        
-    CardsClearReq:
-      required:
-      - indicator
-      - businessUnit
-      - cardNumber
-      type: object
-      properties:
-        cardNumber:
-          type: string
-          description: Clear Pan - 19 digit Clear card number
-          format: uppercase
-        indicator:
-          type: string
-          description: Indicator - Value 'Y' should be passed
-        businessUnit:
-          type: number
-          description: 'Business Unit: Identification number of the organization associated
-          with thisAccount Base Segment record,The values are 001–998'
     cardsClearResponse:
       type: object
       properties:
@@ -990,8 +975,8 @@ components:
           type: string
           example: 'Y'
           enum:
-           - 'Y - Yes'
-           - 'N - No'
+           - 'Y'
+           - 'N'
           description: Current activation flag-Indicates whether cardactivation needs to occur for the most recently issued card values are N=No card activation is required or cardactivation has already occurred, Y=Card activation needs to occur
         cardActivatedDate: 
           type: string
@@ -1032,8 +1017,8 @@ components:
           type: string
           example: 'N'
           enum:
-           - 'Y - Yes'
-           - 'N - No'
+           - 'Y'
+           - 'N'
           description: Current activation flag-Indicates whether cardactivation needs to occur for the most recently issued card values are N=No card activation is required or cardactivation has already occurred, Y=Card activation needs to occur
         cardActivatedDate: 
           type: string
@@ -1122,9 +1107,9 @@ components:
           format: uppercase
         effectiveDate:
           type: string
-          example: '10/01/2021'
+          example: "10/01/2021"
           description: Effective Date-Date that the fraud card transfer is effective
-          format: date
+          pattern: '^\d{2}\/\d{2}\/\d{4}$'
         transferFromAccount:
           type: string
           example: '000100001NNNNNN3777'
@@ -1145,7 +1130,6 @@ components:
       - businessUnit
       - cardNumber
       - cardSequence
-      - postToAccountNumber
       type: object
       properties:
         businessUnit:
@@ -1188,8 +1172,8 @@ components:
           description: Cardholder Type-Code that indicates whether the cardholder is the primarycardholder or an additional cardholder associated with theaccount. The value for this field is set in the card-adding processwith the first cardholder designated as the primary cardholderand the other cardholders as additional cardholders. The values are 0 =Additional cardholder 1=Primary
             cardholder
           enum:
-          - 0 - Additional
-          - 1 - Primary
+          - '0' 
+          - '1' 
         businessUnit:
           type: number
           example: 100
@@ -1223,12 +1207,12 @@ components:
           description: Business Unit -Identification number of the organization associated with thisAccount Base Segment record. The values are 001–998.
         product:
           type: number
-          example: ' '
+          example: 100
           description: Product - Product associated with this Account. The values are 001–998
         cardNumber:
           type: string
           maxLength: 19
-          example: '000954349CCCCCCC0172'
+          example: '000954349CCCCCC0172'
           description: Card Number-if the service is sucessiful, the response the updated card number will be send this will
           format: uppercase
         requestedPinBlock:
@@ -1244,7 +1228,7 @@ components:
           description: Current pin block( Old Pin Block)- The old pin block should be provided, This will be old pin Enter by customer
         pinOffSet:
           type: number
-          example: ' '
+          example: 0
           description: Current pin block( Old Pin Block)- The old pin block should be provided, This will be old pin Enter by customer
         pinChannel:
           type: string
@@ -1296,12 +1280,6 @@ components:
       - cardReplacementIndicator
       - cardSequenceNumber
       - effectiveDate
-      - operatorId
-      - product
-      - startDate
-      - terminalId
-      - transferToAccount
-      - transferToCustomer
       type: object
       properties:
         businessUnit:
@@ -1336,8 +1314,8 @@ components:
           example: '0'
           description: Card replacement indicator-Code that indicates whether CMS replaces the transfer card bygenerating a new Embosser record on the original account. The values are 0=Replace lost/stolen/fraud card (Default), 1=Do not replace lost/stolen/fraud card
           enum:
-          - 0 - Replace
-          - 1 - Do Not Replace
+          - '0'
+          - '1'
         terminalId:
           maxLength: 4
           type: string
@@ -1348,7 +1326,7 @@ components:
           maximum: 999
           minimum: 0
           type: number
-          example: ' '
+          example: 100
           description: Card transfer org-Identification number of the organization
             associated with thisAccount Base Segment record. The values are 001–9
         transferToAccount:
@@ -1376,8 +1354,8 @@ components:
             The values are R=Reverse a card transfer, T=Transfer the card (lost, stolen,
             or fraud).
           enum:
-          - T - Transfer
-          - R - Reversal
+          - 'T'
+          - 'R'
         securitySignon:
           type: string
           description: security signon
@@ -1400,7 +1378,6 @@ components:
           description: Effective date-Date that the fraud card transfer is effective
             The value must be a date less than or equal to today’sdateThe default
             value is today’s date. If you enter a future date The system will abend
-          format: date
         cardSequenceNumber:
           maximum: 9999
           minimum: 1
@@ -1411,13 +1388,11 @@ components:
           type: string
           example: ' '
           description: Start date- the date when the serivce was called
-          format: date
     CardsBlockUnblockReq:
       required:
       - businessUnit
       - cardNumber
       - cardSequence
-      - postToAccountNumber
       type: object
       properties:
         businessUnit:
@@ -1469,8 +1444,8 @@ components:
             as additional cardholders, values are 0=Additional cardholder, 1=Primary
             cardholder
           enum:
-          - 1 - Primary
-          - 0 - Additional
+          - '1'
+          - '0'
         blockCode:
           type: string
           example: 'E'
@@ -1518,15 +1493,15 @@ components:
             cardholder ID,6=Decline for suspected fraud,8=Decline with a user exit,9=VIP
             account; always approve
           enum:
-          - 0 - No Action
+          - '0'
           - ' '
-          - 1 - Decline Auth
-          - 2 - Decline Pickup
-          - 3 - Decline Fraud
-          - 4 - Decline Refer
-          - 6 - Decline Susp Fraud
-          - 8 - Decline User Exit 
-          - 9 - Approve Tip
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+          - '6'
+          - '8' 
+          - '9'
     UpdateCardLimitReq:
       required:
       - businessUnit
@@ -1563,24 +1538,24 @@ components:
           example: '1'
           description: Maximum authorization frequency-Code that indicates the frequency for the maximumauthorization parameters The values are 0=Not used,1=Daily,2=Cycle-to-date,3=Year-to-date
           enum:
-          - 0 - Frequency Not Used
-          - 1 - Daily Frequency
-          - 2 - Cycle To Date Frequency
-          - 3 - Year To Date Frequency
+          - '0'
+          - '1'
+          - '2'
+          - '3'
         maximumAmountATMCashAuthorizationsAllowed:
           type: string
           example: '10000'
           description: Maximum amount ATM cash authorization-Maximum amount in monetary units and subunits of ATM cashauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: '0.0'
         maximumNumberATMCashAuthorizationsAllowed:
           type: number
           example: 1
           description: Maximum number ATM cash authorization-Maximum number of ATM cash authorizations allowed for thisEmbosser record for the frequency defined in the FREQ field
         maximumAmountSingleATMTransactionAllowed:
           type: string
-          example: 10000
+          example: "10000"
           description: Maximum amount SINGLE ATM Transaction-Maximum authorization amount in monetary units and subunitsof a single ATM transaction allowed for this Embosser recordfor the frequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         maximumNumberOTCAuthorizationsAllowed:
           type: number
           example: 1
@@ -1589,18 +1564,18 @@ components:
             field
         maximumAmountOTCCashAuthorizationsAllowed:
           type: string
-          example: 2000
+          example: "2000"
           description: Maximum amount OTC cash authorization-Maximum amount in monetary units and subunits of OTC cashauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
         singleOTCCashAuthorizationAllowed:
           type: string
-          example: 10000
+          example: "10000"
           description: Maximum Amount Single OTC cash authorization allowed-Maximum amount in monetary units and subunits of OTCauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         maximumAmountRetailAuthorizationsAllowed:
           type: string
-          example: 1000
+          example: "1000"
           description: Maximum amount retail authorization-Maximum amount in monetary units and subunits of retailauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         maximumNumberRetailAuthorizationsAllowed:
           type: number
           example: 1
@@ -1609,7 +1584,7 @@ components:
           type: string
           example: '0000'
           description: Maximum Amount Single retail authorization allowed- Maximum amount in monetary units and subunits of OTCauthorizations allowed for 'this Embosser record for thefrequency defined in the FREQ field.
-          default: 0.0
+          default: "0.0"
           
     UpdateCardLimitResp:
       required:
@@ -1634,12 +1609,12 @@ components:
           type: string
           example: '1000'
           description: Maximum amount SINGLE ATM Transaction-Maximum authorization amount in monetary units and subunitsof a single ATM transaction allowed for this Embosser recordfor the frequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         singleOTCCashAuthorizationAllowed:
           type: string
           example: '100'
           description: Maximum Amount Single OTC cash authorization allowed-Maximum amount in monetary units and subunits of OTCauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         postToAccountNumber:
           maxLength: 19
           type: string
@@ -1650,7 +1625,7 @@ components:
           type: string
           example: '100'
           description: Maximum amount ATM cash authorization-Maximum amount in monetary units and subunits of ATM cashauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         maximumNumberOTCAuthorizationsAllowed:
           type: number
           example: 1
@@ -1665,21 +1640,21 @@ components:
           type: string
           example: '0'
           description: Maximum Amount Single retail authorization allowed- Maximum amount in monetary units and subunits of OTCauthorizations allowed for 'this Embosser record for thefrequency defined in the FREQ field.
-          default: 0.0
+          default: "0.0"
         maximumAmountRetailAuthorizationsAllowed:
           type: string
           example: '1000'
           description: Maximum amount retail authorization-Maximum amount in monetary units and subunits of retailauthorizations allowed for this Embosser record for thefrequency defined in the FREQ field
-          default: 0.0
+          default: "0.0"
         maximumAuthorizationsFrequnecy:
           type: string
           example: '1'
           description: Maximum authorization frequency-Code that indicates the frequency for the maximumauthorization parameters The values are 0=Not used,1=Daily,2=Cycle-to-date,3=Year-to-date
           enum:
-          - 0 - Frequency Not Used
-          - 1 - Daily Frequency
-          - 2 - Cycle To Date Frequency
-          - 3 - Year To Date Frequency
+          - '0'
+          - '1'
+          - '2'
+          - '3'
         maximumAmountOTCCashAuthorizationsAllowed:
           type: string
           example: '2000'
@@ -1695,8 +1670,8 @@ components:
     CardActivateReq:
       value: { businessUnit: 100, cardNumber: '0009846801010273613', cardSequence: 0001, currentCardRequireActivation: 'N', postToAccountNumber: ' ', lastCardActivation: 'N'}
     CardActivateResp:
-      value: {businessUnit: 100, cardNumber: 0009846801010273613,
-        cardSequence: 1, lastCardActivation: N, currentCardRequireActivation: N, cardActivatedDate: 01/10/2021, postToAccountNumber: 0001000010000510760}
+      value: {businessUnit: 100, cardNumber: "0009846801010273613",
+        cardSequence: 1, lastCardActivation: N, currentCardRequireActivation: N, cardActivatedDate: 01/10/2021, postToAccountNumber: "0001000010000510760"}
       
     BlockCardReq:
       value: { businessUnit: 100, cardNumber: '0009846801010273605',
@@ -1709,7 +1684,7 @@ components:
           action: T, effectiveDate: ' ' , cardReplacementIndicator: '1',
           blockCode: L }
     CardTransferResp:
-      value: {serviceReturnCode: P, numberOfErrors: 0, maskCardnumber: '000404940XXXXXX4481', cardNumber: '0009846801010000089', effectiveDate: '10/01/2021', transferFromAccount: '0001000010000003777', blockCode: L}
+      value: {serviceReturnCode: P, numberOfErrors: "0", maskCardnumber: '000404940XXXXXX4481', cardNumber: '0009846801010000089', effectiveDate: '10/01/2021', transferFromAccount: '0001000010000003777', blockCode: L}
     
     CardSecureReq:
       value: {businessUnit: 100, cardNumber: '0009846801010065787',cVV2: '855',expiryDateMMYY: '1123'}
@@ -1718,7 +1693,7 @@ components:
     CardProfileReq: 
       value: {businessUnit: 100, cardNumber: '0009846801010273613', cardSequence: 0001, cardholderType: 1}
     CardsProfileResp:
-      value: { businessUnit: 100, cardNumber: '0009846801010273613', cardSequence: 1, postToAccountNumber: '0001000010000510760', cardholderType: 1 }
+      value: { businessUnit: 100, cardNumber: '0009846801010273613', cardSequence: 1, postToAccountNumber: '0001000010000510760', cardholderType: "1" }
     CardClearResp:
       value: { cardNumber: '0004049400000274818' }
     
@@ -1727,10 +1702,6 @@ components:
     CardPinResp: 
       value: { cardNumber: '0009543491000080172', userFiller: '',
                filler: '' }
-    CardLimitReq:
-      value: { businessUnit: 100, cardNumber: '0009846801010273605', cardSequence: 0001, maximumAuthorizationsFrequency: '1', maximumAmountSingleATMTransactionAllowed: '10000', maximumAmountATMCashAuthorizationsAllowed: '10000', maximumNumberATMCashAuthorizationsAllowed: 1,  singleOTCCashAuthorizationAllowed: '10000', maximumNumberOTCAuthorizationsAllowed: 1, maximumAmountOTCCashAuthorizationsAllowed: '20000',  singleRetailAuthorizationAllowed: '00000', maximumNumberRetailAuthorizationsAllowed: 1,  maximumAmountRetailAuthorizationsAllowed: '10000'   }
-    CardLimitResp:
-      value: { businessUnit: 100, cardNumber: '0009846801010273605', cardSequence: 1, maximumNumberRetailAuthorizationsAllowed: 1, maximumAmountSingleATMTransactionAllowed: '$100.00', singleOTCCashAuthorizationAllowed: '$100.00', maximumAmountATMCashAuthorizationsAllowed: '$100.00', postToAccountNumber: '0001000010000510760', maximumNumberOTCAuthorizationsAllowed: 1, maximumNumberATMCashAuthorizationsAllowed: 1, singleRetailAuthorizationAllowed: '$0.00', maximumAmountRetailAuthorizationsAllowed: '$100.00', maximumAuthorizationsFrequnecy: 1, maximumAmountOTCCashAuthorizationsAllowed: '$200.00' }
              
     400-Errors:
       value:
