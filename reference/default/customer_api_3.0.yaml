@@ -120,8 +120,7 @@ paths:
                 $ref: '#/components/schemas/ErrorList'
               example:
                 504:
-                  $ref: '#/components/examples/504-Errors'        
-  /v1/customers/nameAddress:
+                  $ref: '#/components/examples/504-Errors'
     patch:
       tags:
       - Customer Management
@@ -163,10 +162,7 @@ paths:
             schema:
               $ref: '#/components/schemas/CustomerAddressUpdateReq'
             examples: 
-              AddressUpdate: {$ref: '#/components/examples/AddressUpdateReq'}
-      
-
-      responses:
+              AddressUpdate: {$ref: '#/components/examples/AddressUpdateReq'}     
         200:
           description: success
           content:
