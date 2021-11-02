@@ -4,7 +4,7 @@ info:
   description: V10 open API document.
   version: 1.0.0
 servers:
-- url: http://204.105.107.65:24500/fva_apac/
+- url: 'https://stg34.visionplus.io:24500/fva_apac'
 paths:    
   /v1/cards/activate: 
     put:
@@ -587,8 +587,8 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/UpdateCardLimitReq'
-            #examples:
-              #CardsLimit: { $ref: '#/components/examples/CardLimitReq' }
+            examples:
+              CardsLimit: { $ref: '#/components/examples/CardLimitReq' }
                           
       responses:
         200:
@@ -597,8 +597,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UpdateCardLimitResp'
-              #examples: 
-                #CardsLimit: { $ref: '#/components/examples/CardLimitResp' }
+              examples: 
+                CardsLimit: { $ref: '#/components/examples/CardLimitResp' }
         400:
           description: The request cannot be validated
           content:
