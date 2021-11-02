@@ -3,8 +3,12 @@ info:
   title: Vision10 API Documentation
   description: V10 open API document.
   version: 1.0.0
+  contact:
+    name : "Fiserv"
 servers:
-- url: http://204.105.107.65:24500/fva_apac/
+- url: 'https://stg34.visionplus.io:24500'
+tags:
+ - name : 'Card Management'
 paths:    
   /v1/cards/activate: 
     put:
@@ -13,8 +17,8 @@ paths:
       x-group-name: Card Management
       x-proxy-name: Activate Card
       summary: Activate Card
-      description: This service is used to activate the card after successful verification of the cardholder.
-      operationId: Card Activate
+      description: This service is used to activate the card after successful verification of the"ccarholder.
+      operationId: activate
       parameters: 
       - name: X-Correl-Id
         in: header
@@ -52,7 +56,7 @@ paths:
               ActivateCard: { $ref: '#/components/examples/CardActivateReq'}
               
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -61,7 +65,7 @@ paths:
               examples: 
                 ActivateCard: {$ref: '#/components/examples/CardActivateResp'}
 
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
@@ -69,7 +73,7 @@ paths:
               example:
                - '400':
                     $ref: '#/components/examples/400-Errors'
-        401:
+        '401':
           description: The request was unauthorized
           content:
             application/json:
@@ -78,7 +82,7 @@ paths:
               example:
                 - '401':
                     $ref: '#/components/examples/401-Errors'
-        404:
+        '404':
           description: The request resource does not exist
           content:
             application/json:
@@ -87,7 +91,7 @@ paths:
               example:
                - '404':
                     $ref: '#/components/examples/404-Errors'
-        500:
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
@@ -96,7 +100,7 @@ paths:
               example:
                - '500':
                    $ref: '#/components/examples/500-Errors'
-        503:
+        '503':
           description: The service was unavailable
           content:
             application/json:
@@ -105,7 +109,7 @@ paths:
               example:
                - '503':
                     $ref: '#/components/examples/503-Errors'
-        504:
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
@@ -160,7 +164,7 @@ paths:
             examples: 
               BlockCard: {$ref: '#/components/examples/BlockCardReq'}
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -168,7 +172,7 @@ paths:
                 $ref: '#/components/schemas/CardsBlockUnblockResp'
               examples:
                 BlockCard: {$ref: '#/components/examples/BlockCardResp'}
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
@@ -176,7 +180,7 @@ paths:
               example:
                - '400':
                     $ref: '#/components/examples/400-Errors'
-        401:
+        '401':
           description: The request was unauthorized
           content:
             application/json:
@@ -185,7 +189,7 @@ paths:
               example:
                - '401':
                     $ref: '#/components/examples/401-Errors'
-        404:
+        '404':
           description: The request resource does not exist
           content:
             application/json:
@@ -194,7 +198,7 @@ paths:
               example:
                - '404':
                     $ref: '#/components/examples/404-Errors'
-        500:
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
@@ -203,7 +207,7 @@ paths:
               example:
                - '500':
                     $ref: '#/components/examples/500-Errors'
-        503:
+        '503':
           description: The service was unavailable
           content:
             application/json:
@@ -212,7 +216,7 @@ paths:
               example:
                - '503':
                     $ref: '#/components/examples/503-Errors'
-        504:
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
@@ -268,7 +272,7 @@ paths:
               CardTransfer: { $ref: '#/components/examples/CardTransferReq'}
            
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -277,7 +281,7 @@ paths:
               examples:
                 CardTransfer: { $ref: '#/components/examples/CardTransferResp'}
                 
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
@@ -285,7 +289,7 @@ paths:
               example:
                - '400':
                     $ref: '#/components/examples/400-Errors'
-        401:
+        '401':
           description: The request was unauthorized
           content:
             application/json:
@@ -294,7 +298,7 @@ paths:
               example:
                - '401':
                     $ref: '#/components/examples/401-Errors'
-        404:
+        '404':
           description: The request resource does not exist
           content:
             application/json:
@@ -303,7 +307,7 @@ paths:
               example:
                - '404':
                     $ref: '#/components/examples/404-Errors'
-        500:
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
@@ -312,7 +316,7 @@ paths:
               example:
                - '500':
                     $ref: '#/components/examples/500-Errors'
-        503:
+        '503':
           description: The service was unavailable
           content:
             application/json:
@@ -321,7 +325,7 @@ paths:
               example:
                - '503':
                     $ref: '#/components/examples/503-Errors'
-        504:
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
@@ -375,7 +379,7 @@ paths:
             examples: 
               CardsProfile: { $ref: '#/components/examples/CardProfileReq' }
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -383,7 +387,7 @@ paths:
                 $ref: '#/components/schemas/UpdateCardsProfileResp'
               examples: 
                 CardsProfile: { $ref: '#/components/examples/CardsProfileResp'}
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
@@ -391,7 +395,7 @@ paths:
               example:
                - '400':
                     $ref: '#/components/examples/400-Errors'
-        401:
+        '401':
           description: The request was unauthorized
           content:
             application/json:
@@ -400,7 +404,7 @@ paths:
               example:
                - '401':
                     $ref: '#/components/examples/401-Errors'
-        404:
+        '404':
           description: The request resource does not exist
           content:
             application/json:
@@ -409,7 +413,7 @@ paths:
               example:
                - '404':
                     $ref: '#/components/examples/404-Errors'
-        500:
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
@@ -418,7 +422,7 @@ paths:
               example:
                - '500':
                     $ref: '#/components/examples/500-Errors'
-        503:
+        '503':
           description: The service was unavailable
           content:
             application/json:
@@ -427,7 +431,7 @@ paths:
               example:
                - '503':
                     $ref: '#/components/examples/503-Errors'
-        504:
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
@@ -483,7 +487,7 @@ paths:
               CardsSecure: { $ref: '#/components/examples/CardSecureReq' }
 
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -491,7 +495,7 @@ paths:
                 $ref: '#/components/schemas/CardsSecureCodeResp'
               examples: 
                 CardsSecure: { $ref: '#/components/examples/CardSecureResp' }
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
@@ -500,7 +504,7 @@ paths:
               example:
                - '400':
                     $ref: '#/components/examples/400-Errors'
-        401:
+        '401':
           description: The request was unauthorized
           content:
             application/json:
@@ -509,7 +513,7 @@ paths:
               example:
                - '401':
                     $ref: '#/components/examples/401-Errors'
-        404:
+        '404':
           description: The request resource does not exist
           content:
             application/json:
@@ -518,7 +522,7 @@ paths:
               example:
                - '401':
                     $ref: '#/components/examples/404-Errors'
-        500:
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
@@ -527,7 +531,7 @@ paths:
               example:
                - '500':
                     $ref: '#/components/examples/500-Errors'
-        503:
+        '503':
           description: The service was unavailable
           content:
             application/json:
@@ -536,7 +540,7 @@ paths:
               example:
                - '503':
                     $ref: '#/components/examples/503-Errors'
-        504:
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
@@ -554,7 +558,7 @@ paths:
       x-proxy-name: Spend Limit Updates
       summary: Spend Limit Updates
       description: This service is used to update the spending limits to control the card usage. These limits are set at individual card level.
-      operationId: Card Limits
+      operationId: spendLimits
       parameters:
       - name: X-Correl-Id
         in: header
@@ -591,7 +595,7 @@ paths:
               #CardsLimit: { $ref: '#/components/examples/CardLimitReq' }
                           
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -599,7 +603,7 @@ paths:
                 $ref: '#/components/schemas/UpdateCardLimitResp'
               #examples: 
                 #CardsLimit: { $ref: '#/components/examples/CardLimitResp' }
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
@@ -608,7 +612,7 @@ paths:
               example:
                - '400':
                     $ref: '#/components/examples/400-Errors'
-        401:
+        '401':
           description: The request was unauthorized
           content:
             application/json:
@@ -617,7 +621,7 @@ paths:
               example:
                - '401':
                     $ref: '#/components/examples/401-Errors'
-        404:
+        '404':
           description: The request resource does not exist
           content:
             application/json:
@@ -626,7 +630,7 @@ paths:
               example:
                - '401':
                     $ref: '#/components/examples/404-Errors'
-        500:
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
@@ -635,7 +639,7 @@ paths:
               example:
                - '500':
                     $ref: '#/components/examples/500-Errors'
-        503:
+        '503':
           description: The service was unavailable
           content:
             application/json:
@@ -644,7 +648,7 @@ paths:
               example:
                - '503':
                     $ref: '#/components/examples/503-Errors'
-        504:
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
@@ -720,7 +724,7 @@ paths:
           format: uppercase
 
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -729,7 +733,7 @@ paths:
               examples: 
                 CardsClear: { $ref: '#/components/examples/CardClearResp' }
               
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
@@ -737,7 +741,7 @@ paths:
               example:
                - '400':
                     $ref: '#/components/examples/400-Errors'
-        401:
+        '401':
           description: The request was unauthorized
           content:
             application/json:
@@ -746,7 +750,7 @@ paths:
               example:
                - '401':
                     $ref: '#/components/examples/401-Errors'
-        404:
+        '404':
           description: The request resource does not exist
           content:
             application/json:
@@ -755,7 +759,7 @@ paths:
               example:
                - '404':
                     $ref: '#/components/examples/404-Errors'
-        500:
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
@@ -764,7 +768,7 @@ paths:
               example:
                - '500':
                     $ref: '#/components/examples/500-Errors'
-        503:
+        '503':
           description: The service was unavailable
           content:
             application/json:
@@ -773,7 +777,7 @@ paths:
               example:
                - '503':
                     $ref: '#/components/examples/503-Errors'
-        504:
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
@@ -828,7 +832,7 @@ paths:
             examples: 
               CardsPin: { $ref: '#/components/examples/CardPinReq' }
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -836,7 +840,7 @@ paths:
                 $ref: '#/components/schemas/UpdateCardPinResp'
               examples: 
                 CardsPin: { $ref: '#/components/examples/CardPinResp' }
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
@@ -845,7 +849,7 @@ paths:
               example:
                - '400':
                     $ref: '#/components/examples/400-Errors'
-        401:
+        '401':
           description: The request was unauthorized
           content:
             application/json:
@@ -854,7 +858,7 @@ paths:
               example:
                - '401':
                     $ref: '#/components/examples/401-Errors'
-        404:
+        '404':
           description: The request resource does not exist
           content:
             application/json:
@@ -863,7 +867,7 @@ paths:
               example:
                - '401':
                     $ref: '#/components/examples/404-Errors'
-        500:
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
@@ -872,7 +876,7 @@ paths:
               example:
                - '500':
                     $ref: '#/components/examples/500-Errors'
-        503:
+        '503':
           description: The service was unavailable
           content:
             application/json:
@@ -881,7 +885,7 @@ paths:
               example:
                - '503':
                     $ref: '#/components/examples/503-Errors'
-        504:
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
@@ -933,25 +937,6 @@ components:
           type: string
           example: ' '
           description: Security signon
-        
-    CardsClearReq:
-      required:
-      - indicator
-      - businessUnit
-      - cardNumber
-      type: object
-      properties:
-        cardNumber:
-          type: string
-          description: Clear Pan - 19 digit Clear card number
-          format: uppercase
-        indicator:
-          type: string
-          description: Indicator - Value 'Y' should be passed
-        businessUnit:
-          type: number
-          description: 'Business Unit: Identification number of the organization associated
-          with thisAccount Base Segment record,The values are 001–998'
     cardsClearResponse:
       type: object
       properties:
@@ -1717,10 +1702,6 @@ components:
     CardPinResp: 
       value: { cardNumber: '0009543491000080172', userFiller: '',
                filler: '' }
-    CardLimitReq:
-      value: { businessUnit: 100, cardNumber: '0009846801010273605', cardSequence: 0001, maximumAuthorizationsFrequency: '1', maximumAmountSingleATMTransactionAllowed: '10000', maximumAmountATMCashAuthorizationsAllowed: '10000', maximumNumberATMCashAuthorizationsAllowed: 1,  singleOTCCashAuthorizationAllowed: '10000', maximumNumberOTCAuthorizationsAllowed: 1, maximumAmountOTCCashAuthorizationsAllowed: '20000',  singleRetailAuthorizationAllowed: '00000', maximumNumberRetailAuthorizationsAllowed: 1,  maximumAmountRetailAuthorizationsAllowed: '10000'   }
-    CardLimitResp:
-      value: { businessUnit: 100, cardNumber: '0009846801010273605', cardSequence: 1, maximumNumberRetailAuthorizationsAllowed: 1, maximumAmountSingleATMTransactionAllowed: '$100.00', singleOTCCashAuthorizationAllowed: '$100.00', maximumAmountATMCashAuthorizationsAllowed: '$100.00', postToAccountNumber: '0001000010000510760', maximumNumberOTCAuthorizationsAllowed: 1, maximumNumberATMCashAuthorizationsAllowed: 1, singleRetailAuthorizationAllowed: '$0.00', maximumAmountRetailAuthorizationsAllowed: '$100.00', maximumAuthorizationsFrequnecy: 1, maximumAmountOTCCashAuthorizationsAllowed: '$200.00' }
              
     400-Errors:
       value:
