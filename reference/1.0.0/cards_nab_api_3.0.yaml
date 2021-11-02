@@ -1723,7 +1723,7 @@ components:
       value: { cardNumber: '0004049400000274818' }
     
     CardPinReq: 
-      value: { businessUnit: 200,cardNumber: '0009543491000080172',currentPinBlock: 'A8EFRS432RTODS2R',requestedPinBlock: '6BA8F5DFB742A878',pinChannel: 'W', pinOffset: ' ' }
+      value: { businessUnit: 200,cardNumber: '0009543491000080172',product: ' ', requestedPinBlock: '6BA8F5DFB742A878',pinChannel: 'W', pinOffset: ' ' }
     CardPinResp: 
       value: { cardNumber: '0009543491000080172', userFiller: '',
                filler: '' }
