@@ -214,22 +214,9 @@ components:
             description: Error message associated with the response
   examples:
     BlockAccount:
-      value:
-        businessUnit: 100
-        accountNumber: '0001000010000510481'
-        product: 1
-        billingAcctInd: 0
-        blockCode1: X
+      value: { "businessUnit": "100", "accountNumber": "0001000010000510481", "blockCode1": "X" }
     BlockAccountResp:
-      value:
-        businessUnit: 100
-        accountNumber: '0001000010000510481'
-        product: 1
-        billingAcctInd: 0
-        blockCode1: X
-        blockCodeDate1: 01/10/2021
-        blockCode2: ' '
-        blockCodeDate2: 00/00/0000
+      value: { "blockCodeDate1": "08/19/2021", "product": "1", "blockCodeDate2": "00/00/0000", "businessUnit": "100", "blockCode1": "X", "blockCode2": " ", "accountNumber": "0001000010000510481", "billingAcctInd": "0" }
     400-Errors:
       value:
         erorrCode: XXXXXXXX
