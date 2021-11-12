@@ -3,8 +3,12 @@ info:
   title: Vision10 API Documentation
   description: V10 open API document.
   version: 1.0.0
+  contact:
+    name: Fiserv
 servers:
-  - url: 'http://204.105.107.65:24500/fva_apac/'
+  - url: 'https://stg34.visionplus.io:24500/fva_apac'
+tags: 
+  - name: 'Account Management'
 paths:
   /v1/accounts/blockUnblock:
     patch:
@@ -13,7 +17,7 @@ paths:
       x-group-name: Account Management
       x-proxy-name: Block-Unblock Account
       summary: Block-Unblock Account
-      description: This service is used to update the Account Block Code.
+      description: This service is used to update the Account Block Code
       operationId: blockUnblock
       parameters:
         - name: X-Correl-Id
@@ -67,8 +71,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                '400':
-                  $ref: '#/components/examples/400-Errors'
+                - '400':
+                    $ref: '#/components/examples/400-Errors'
         '401':
           description: The request was unauthorized
           content:
@@ -76,8 +80,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                '401':
-                  $ref: '#/components/examples/401-Errors'
+                - '401':
+                    $ref: '#/components/examples/401-Errors'
         '404':
           description: The request resource does not exist
           content:
@@ -85,8 +89,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                '404':
-                  $ref: '#/components/examples/404-Errors'
+                - '404':
+                    $ref: '#/components/examples/404-Errors'
         '500':
           description: An unexpected internal server error occurred
           content:
@@ -94,8 +98,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                '500':
-                  $ref: '#/components/examples/500-Errors'
+                - '500':
+                    $ref: '#/components/examples/500-Errors'
         '503':
           description: The service was unavailable
           content:
@@ -103,8 +107,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                '503':
-                  $ref: '#/components/examples/503-Errors'
+                - '503':
+                    $ref: '#/components/examples/503-Errors'
         '504':
           description: The request timed out while waiting for a response
           content:
@@ -112,8 +116,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                '504':
-                  $ref: '#/components/examples/504-Errors'
+                - '504':
+                    $ref: '#/components/examples/504-Errors'
 components:
   schemas:
     AccountsBlockUnblockReq:
@@ -210,22 +214,9 @@ components:
             description: Error message associated with the response
   examples:
     BlockAccount:
-      value:
-        businessUnit: 100
-        accountNumber: '0001000010000510481'
-        product: 1
-        billingAcctInd: 0
-        blockCode1: X
+      value: { "businessUnit": "100", "accountNumber": "0001000010000510481", "blockCode1": "X" }
     BlockAccountResp:
-      value:
-        businessUnit: 100
-        accountNumber: '0001000010000510481'
-        product: 1
-        billingAcctInd: 0
-        blockCode1: X
-        blockCodeDate1: 01/10/2021
-        blockCode2: ' '
-        blockCodeDate2: 00/00/0000
+      value: { "blockCodeDate1": "08/19/2021", "product": "1", "blockCodeDate2": "00/00/0000", "businessUnit": "100", "blockCode1": "X", "blockCode2": " ", "accountNumber": "0001000010000510481", "billingAcctInd": "0" }
     400-Errors:
       value:
         erorrCode: XXXXXXXX
