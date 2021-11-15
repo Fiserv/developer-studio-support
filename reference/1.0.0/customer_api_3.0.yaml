@@ -567,10 +567,10 @@ components:
     AddressInquiryResponse:
       value: { nameLine31: '', nameLine11: '', nameLine21: '' , businessUnit: 100 , accountNumber: '0001000000000150191', houseNumber1: ' ', addressLine11: '80.ANGLES', addressLine21: '', addressLine31: '', addressLine41: '', city1: 'US', stateProvince1: 'USA', countryCode1: 'USA', postalCode1: '27899', languageIndicator1: 'AUS', homePhoneNumber1: '123456788999999', homePhoneFlag1: '0', faxNumber1: '', faxPhoneFlag1: '0', mobileNumber1: '11110976444', sMSFlag1: '0', mobilePhoneFlag1: '0', emailAddress1: 'SAM@GMAIL'}
     AddressUpdateReq:
-      value: {businessunit: 100, accountNumber: '0001000000000150191', homePhoneNumber1: '123456788999999', mobileNumber1: '11110976444', emailAddress1: 'SAM@GMAIL'}
+      value: { businessUnit: 100, accountNumber: '0001000000000150191', homePhoneNumber1: '123456788999999',   mobileNumber1: '11110976444', emailAddress1: 'SAM@GMAIL.COM'}
     
     AddressUpdateResponse:
-      value: { businessunit: 100, accountNumber: '0001000000000150191', nameLine11: '', nameLine21: '', nameLine31: '', houseNumber1: '', addressLine11: '80.ANGLES', addressLine21: '', addressLine31: '', addressLine41: '', city1: 'US', stateProvince1: 'USA', countryCode1: 'USA', postalCode1: '27899', languageIndicator1: 'AUS', homePhoneNumber1: '123456788999999', homePhoneFlag1: '0', faxNumber1: '', faxPhoneFlag1: '0', mobileNumber1: '11110976444', sMSFlag1: '0',mobilePhoneFlag1: '0', emailAddress1: 'SAM@GMAIL' }
+      value: { businessUnit: 100, accountNumber: '0001000000000150191', nameLine11: '', nameLine21: '', nameLine31: '', houseNumber1: '', addressLine11: '80.ANGLES', addressLine21: '', addressLine31: '', addressLine41: '', city1: 'US', stateProvince1: 'USA', countryCode1: 'USA', postalCode1: '27899', languageIndicator1: 'AUS', homePhoneNumber1: '123456788999999', homePhoneFlag1: '0', faxNumber1: '', faxPhoneFlag1: '0', mobileNumber1: '11110976444', sMSFlag1: '0',mobilePhoneFlag1: '0', emailAddress1: 'SAM@GMAIL' }
     400-Errors:
       value:
         erorrCode: XXXXXXXX
