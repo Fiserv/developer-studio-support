@@ -1,10 +1,10 @@
 {
-  "title": "FirstVision",
-  "name": "FirstVision",
+  "title": "FirstVision - APAC",
+  "name": "FirstVisionAPAC",
   "brand": "Fiserv",
   "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
   "solution": "financial-institutions",
-  "brandDescription": "Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments).",
+  "brandDescription": "FirstVision is our outsourced processing solution that meets your challenges head-on and transforms your technology capability. Built on core VisionPLUS® software, FirstVision™ provides an end-to-end solution that delivers global processing economies of scale plus fully integrated adjacent services that span the issuing lifecycle.",
   "categories": [
     {
       "name": "businessTypes",
