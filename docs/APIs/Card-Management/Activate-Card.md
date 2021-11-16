@@ -3,7 +3,7 @@
 This service is used to activate the card after successful verification of the cardholder. 
 
 
->Cardholder verification is the separate API that must be called in the card activation workflow.  Please [click here](../docs/?path=docs/APIs/Card-Management/card-secure-code-validation.md) to explore the cardholder verfication APIs.
+>Cardholder verification is the separate API that must be called in the card activation workflow.  Please [click here](./?path=docs/APIs/Card-Management/CVV2-Validation.md) to explore the cardholder verfication APIs.
 
 
 # Endpoint
@@ -20,13 +20,12 @@ This service is used to activate the card after successful verification of the c
     "cardNumber":"0009846801010273613",
     "cardSequence": "0001",
     "currentCardRequireActivation": "N",
-    "postToAccountNumber": "",    
     "lastCardActivation": "N"    
 }
 ```
 
 ### Minimum Requirements
-The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/v1/card/activate).
+The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=put&path=/v1/card/activate).
 
 The below table identifies the required parameters in the request payload.
 

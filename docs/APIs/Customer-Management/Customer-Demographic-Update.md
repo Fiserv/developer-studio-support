@@ -5,7 +5,7 @@ This service will be used to update the customer demographic details such as Nam
 
 
 # Endpoint
-`PATCH /v1/customers/nameAddress`
+`PATCH /v1/customers/nameAddress?businessunit=100&accountNumber=0001000000000150191`
 
 
 ## Payload Example
@@ -13,11 +13,9 @@ This service will be used to update the customer demographic details such as Nam
 ### Request Payload
 
 ```json
-{ 
-  "businessunit": "100",
-  "accountNumber": "0001000000000150191",	  
-  "nameLine11" : "John",
-  "nameLine11" : "Smith"  
+{  
+  "firstName1" : "JOHN",
+  "middleName1" : "SMITH"  
 }
 ```
 
@@ -38,28 +36,35 @@ Along with above key fields any of the Name / address / Phone number / email ID 
 
 ```json
 {
-  "businessunit": "100",
-  "accountNumber": "0001000000000150191",	
-  "nameLine11" : "John",
-  "nameLine11" : "Smith", 
-  "addressLine11": "80.ANGLES",
-  "addressLine21": "",	
-  "addressLine31": "",
-  "addressLine41": "",
-  "city1": "US",
-  "state/Province1": "USA",  
-  "countryCode1": "USA",
-  "postalCode1": "27899",
-  "emailAddress1": "SAM@GMAIL.COM",
-  "homePhoneFlag1": "0",
-  "mobileNumber1": "11110976444",
-  "homePhoneNumber1": "123456788999999",
-  "faxNumber1": "",
-  "sMSFlag1": "0",
-  "faxPhoneFlag1": "0",		
-  "mobilePhoneFlag1": "0",
-  "languageIndicator1": "AUS"
-}  
+    "postalCode1": "2011",
+    "city1": "SYDNEY",
+    "nameLine21": "CHRISTIAN",
+    "firstName1": "JOHN",
+    "emailAddress1": "SAM@GMAIL.COM",
+    "homePhoneFlag1": "0",
+    "userDefinedField41": "Y",
+    "stateProvince1": "NSW",
+    "middleName1": "SMITH",
+    "faxNumber1": " ",
+    "addressLine21": " ",
+    "addressLine41": " ",
+    "lastName1": "HARBER",
+    "faxPhoneFlag1": "0",
+    "nameLine31": "HARBER",
+    "nameLine11": "Smith",
+    "mobileNumber1": "11110976444",
+    "accountNumber": "0001000000000150191",
+    "countryCode1": "AU",
+    "businessunit": "100",
+    "languageIndicator1": "AUS",
+    "addressLine31": " ",
+    "sMSFlag1": "0",
+    "homePhoneNumber1": "123456788999999",
+    "addressLine11": "77 30 HARVEY ISLAND",
+    "houseNumber1": " ",
+    "mobilePhoneFlag1": "0",
+    "dateOfBirth1": "04/02/1975"
+} 
 ```
 
 ### Error Response Payload

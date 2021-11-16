@@ -25,7 +25,7 @@ This Lost or Stolen service is used to block the lost card and request for the r
 ```
 
 ### Minimum Requirements
-The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/v1/card/activate).
+The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=put&path=/v1/cards/transfer).
 
 The below table identifies the required parameters in the request payload.
 

@@ -21,7 +21,7 @@ This service is used to update the block codes and the reason codes for the bloc
 ```
 
 ### Minimum Requirements
-The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/v1/Cards/blockUnblock).
+The below table contains the mandatory fields required for a successful request. The full request schemas are available in our [API Explorer](../api/?type=patch&path=/v1/cards/blockUnblock).
 
 The below table identifies the required parameters in the request payload.
 
