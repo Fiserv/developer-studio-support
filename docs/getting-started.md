@@ -1,25 +1,34 @@
-# Welcome to **FirstVision™** RESTful Web Services
+# Welcome to FirstVision™ RESTful Web Services
 
-**Fiserv** provides a single, consolidated processing platform for all of your payment cards, loans, prepaid, and commercial card products.
 
-**FirstVision™** is our outsourced processing solution that meets your challenges head-on and transforms your technology capability. Built on core VisionPLUS® software, **FirstVision™** provides an end-to-end solution that delivers global processing economies of scale plus fully integrated adjacent services that span the issuing lifecycle.
+The FirstVision-APAC APIs are built on the foundation of REST. The APIs accept standard JSON requests and return JSON encoded responses while leveraging industry standard [HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) for a seamless integration. Interaction through our APIs provides the developer community the ability to retrieve/update the customer demographic information, account's financial information,and, the payment instrument details in a simple and intuitive manner. It also provides APIs to retrieve transactions, statements details, loyalty points, offers, and, multiple EMIs conversion details.  
 
-**FirstVision™** is a powerful processing solution — an integrated suite of payment and servicing solutions that drives your platform modernisation and competitive edge.
+Our APIs are broadly grouped into following sub-catagories.  Please click to specific category of interest to get more details
 
-**Fiserv**'s digital agenda is built on a consumer-centric approach to digital banking solutions. We are focused on the technology of the future, but also solutions that drive consumer value today, across the customer lifecycle.
+- [Customer Management](./?path=/docs/Customer-Management.md)
 
-**FirstVision™ Restful Web services** enable you to achieve platform modernisation  and competitive edge delivering the following **benefits to your business**.
+- [Account Management](./?path=/docs/Account-Management.md)
 
-## Accelerating Your Time to Market
+- [Card Management](./?path=/docs/Card-Management.md)
 
-Extensive parameterisation and service-based architecture with API enabled and a fully integrated suite of solutions for managing credit, debit, loans and payments ensures quicker application development and integration, rapid roll-out of new products and services.
+---
 
-## Helping You Ride the Latest Wave of Innovation
+## Access FirstVision-APAC APIs
 
-Platform architecture built around technology simplification and leveraging open APIs, reducing the cost of change and meeting your need for ongoing innovation to differentiate your product set – now and forward into the future.
+Follow the below steps to get an access to the Developer Studio and use FirstVision APIs.
 
-## Enables Rapid Speed of Change / Speed to Market
+### 1. Sign up for  Developer Studio
 
-**FirstVision™** oriented architecture with open APIs enables service consumption rather than change management.
+Request for APIs credentials through your account relationship manager.
 
-Click [here](../api/?type=get&path=/v1/docs) to view and test the APIs.
+### 2. Getting the API key
+
+The relationship manager will share the credentials via the preferred secure channel
+
+### 3. Constructing the API call
+
+Once the credentials are provided, make a call to the signon API. In the response, a a unique one-time token will be provided in the response. 
+
+Use the token for any subsequent API calls.  The token must be passed in the request header name "X-context".  In addition to token, passed the assigned credential name in the "X-name" tag.
+
+---

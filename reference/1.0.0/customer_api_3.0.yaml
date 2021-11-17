@@ -3,8 +3,12 @@ info:
   title: Vision10 API Documentation
   description: V10 open API document.
   version: 1.0.0
+  contact:
+    name: "Fiserv"
 servers:
-- url: http://204.105.107.65:24500/fva_apac/
+- url: 'https://stg34.visionplus.io:24500'
+tags:
+ - name: "Customer Management"
 paths:
   /v1/customers/nameAddress:
     get:
@@ -14,7 +18,7 @@ paths:
       x-proxy-name:  Customer Demographic Inquiry
       summary:  Customer Demographic Inquiry
       description: This service will be used to enquire the customer demographic details such as Name / Address / Phone Number / Email ID/ Date of Birth of the given customer. The customer ID will be passed in the input request to retrieve the demographic information.
-      operationId: Demographic Data
+      operationId: nameAddress
       parameters:
       - name: X-Correl-Id
         in: header
@@ -60,7 +64,7 @@ paths:
           format: uppercase
           example: 100001NNNXX0481
       responses:
-        200:
+        '200':
           description: Success
           content:
             application/json:
@@ -68,60 +72,59 @@ paths:
                 $ref: '#/components/schemas/CustomerAddressResponse'
               examples: 
                 AddressInquiry: {$ref: '#/components/examples/AddressInquiryResponse'}  
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
-        401:
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
+        '401':
           description: The request was unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
-        404:
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
+        '404':
           description: The request resource does not exist
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
+               - '404':
                   $ref: '#/components/examples/404-Errors'
-        500:
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
+               - '500':
                   $ref: '#/components/examples/500-Errors'
-        503:
+        '503':
           description: The service was unavailable
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
-        504:
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'        
-  /customers/nameAddress:
+                - '504':
+                    $ref: '#/components/examples/504-Errors'        
     patch:
       tags:
       - Customer Management
@@ -167,7 +170,7 @@ paths:
       
 
       responses:
-        200:
+        '200':
           description: success
           content:
             application/json:
@@ -175,59 +178,59 @@ paths:
                 $ref: '#/components/schemas/CustomerAddressUpdateResponse'
               examples: 
                 AddressUpdate: {$ref: '#/components/examples/AddressUpdateResponse'}  
-        400:
+        '400':
           description: The request cannot be validated
           content:
             application/json:
               schema: {$ref: '#/components/schemas/ErrorList'}
               example:
-                400:
-                  $ref: '#/components/examples/400-Errors'
-        401:
+               - '400':
+                    $ref: '#/components/examples/400-Errors'
+        '401':
           description: The request was unauthorized
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                401:
-                  $ref: '#/components/examples/401-Errors'
-        404:
+               - '401':
+                    $ref: '#/components/examples/401-Errors'
+        '404':
           description: The request resource does not exist
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                404:
-                  $ref: '#/components/examples/404-Errors'
-        500:
+               - '404':
+                    $ref: '#/components/examples/404-Errors'
+        '500':
           description: An unexpected internal server error occurred
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                500:
-                  $ref: '#/components/examples/500-Errors'
-        503:
+               - '500':
+                    $ref: '#/components/examples/500-Errors'
+        '503':
           description: The service was unavailable
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                503:
-                  $ref: '#/components/examples/503-Errors'
-        504:
+               - '503':
+                    $ref: '#/components/examples/503-Errors'
+        '504':
           description: The request timed out while waiting for a response
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorList'
               example:
-                504:
-                  $ref: '#/components/examples/504-Errors'                     
+               - '504':
+                    $ref: '#/components/examples/504-Errors'                     
 components:
   schemas:
     CustomerAddressResponse:
@@ -327,11 +330,11 @@ components:
           maxLength: 20
           type: string
           format: uppercase
-          example: 1111235464447576
+          example: "1111235464447576"
           description: "Home Phone Number-that indicates the home telephone number ofthe owner"
         homePhoneFlag1:
           type: string
-          example: 0
+          example: "0"
           description: "Home Phone Flag-this field is a code that specifies whether theyou have the owner’s permission to call this number. The values 0 =No, do not contact the customer at this number,1=Yes, you can contact the customer at thisnumber (Default) 2=Preferred contact method" 
         faxNumber1:
           type: string
@@ -339,21 +342,21 @@ components:
           description: "Fax Number-field that indicates the facsimile (fax) number of theowner"
         faxPhoneFlag1:
           type: string
-          example: 0
+          example: "0"
           description: "Fax Phone Flagthis field is a code that specifies whether theyou have the owner’s permission to call this number. The values 0 =No, do not contact the customer at this number,1=Yes, you can contact the customer at thisnumber (Default) 2=Preferred contact method" 
         mobileNumber1:
           maxLength: 20
           type: string
           format: uppercase
-          example: 11110976234
+          example: "11110976234"
           description: "Mobile Number-that indicates the mobile telephone number ofthe owner"
         sMSFlag1:
           type: string
-          example: 1
+          example: "1"
           description: "SMS Flag-Code that indicates whether an SMS (short message service)message can be sent to the owner. The values are 0=No, do not contact the customer via SMS, 1=Yes, you can contact the customer via SMS(Default)"
         mobilePhoneFlag1: 
           type: string
-          example: 0
+          example: "0"
           description: "Mobile Phone Flag-this field is a code that indicates whether youhave the owner’s permission to call this number. The values are0 =No, do not contact the customer at this number,1=Yes, you can contact the customer at thisnumber (Default) 2=Preferred contact method"
         emailAddress1:  
           maxLength: 60
@@ -447,7 +450,7 @@ components:
           maxLength: 10
           type: string
           format: uppercase
-          example: 12345
+          example: "12345"
           description: "Postal Code-Postal code portion of the mailing address of the owner"
         languageIndicator1:
           maxLength: 3
@@ -459,15 +462,15 @@ components:
           maxLength: 20
           type: string
           format: uppercase
-          example: 12345678989898
+          example: "12345678989898"
           description: "Home Phone Number-that indicates the home telephone number ofthe owner"
         homePhoneFlag1:
           type: string
           enum:
-          - 0 - No
-          - 1 - Yes
-          - 2 - Preferred Contact Method
-          example: 0
+          - '0'
+          - '1'
+          - '2'
+          example: '0'
           description: "Home Phone Flag-this field is a code that specifies whether theyou have the owner’s permission to call this number. The values 0 =No, do not contact the customer at this number,1=Yes, you can contact the customer at thisnumber (Default) 2=Preferred contact method"
         faxNumber1:
           maxLength: 20
@@ -478,31 +481,31 @@ components:
         faxPhoneFlag1:
           type: string
           enum:
-          - 0 - No
-          - 1 - Yes
-          - 2 - Preferred Contact Method
-          example: 1
+          - '0'
+          - '1'
+          - '2' 
+          example: '1'
           description: "Fax Phone Flagthis field is a code that specifies whether theyou have the owner’s permission to call this number. The values 0 =No, do not contact the customer at this number,1=Yes, you can contact the customer at thisnumber (Default) 2=Preferred contact method"
         mobileNumber1:
           maxLength: 20
           type: string
           format: uppercase
-          example: 12345678901
+          example: "12345678901"
           description: "Mobile Number-that indicates the mobile telephone number ofthe owner"
         sMSFlag1:
           type: string
           enum:
-          - 0 - No
-          - 1 - Yes
-          example: 1
+          - '0'
+          - '1'
+          example: '1'
           description: "SMS Flag-Code that indicates whether an SMS (short message service)message can be sent to the owner. The values are 0=No, do not contact the customer via SMS, 1=Yes, you can contact the customer via SMS(Default)"
         mobilePhoneFlag1:
           type: string
           enum:
-          - 0 - No
-          - 1 - Yes
-          - 2 - Preferred Contact Method
-          example: 1
+          - '0'
+          - '1' 
+          - '2'
+          example: '1'
           description: "Mobile Phone Flag-this field is a code that indicates whether youhave the owner’s permission to call this number. The values are0 =No, do not contact the customer at this number,1=Yes, you can contact the customer at thisnumber (Default) 2=Preferred contact method"
         emailAddress1:
           maxLength: 60
@@ -534,13 +537,13 @@ components:
           type: string
           format: uppercase
           description: "Home Phone Number-that indicates the home telephone number ofthe owner"
-          example: 123456788999346
+          example: "123456788999346"
         mobileNumber1:
           maxLength: 20
           type: string
           format: uppercase
           description: "Mobile Number-that indicates the mobile telephone number ofthe owner."
-          example: 111109701444
+          example: "111109701444"
         emailAddress1:
           maxLength: 60
           type: string
@@ -564,10 +567,10 @@ components:
     AddressInquiryResponse:
       value: { nameLine31: '', nameLine11: '', nameLine21: '' , businessUnit: 100 , accountNumber: '0001000000000150191', houseNumber1: ' ', addressLine11: '80.ANGLES', addressLine21: '', addressLine31: '', addressLine41: '', city1: 'US', stateProvince1: 'USA', countryCode1: 'USA', postalCode1: '27899', languageIndicator1: 'AUS', homePhoneNumber1: '123456788999999', homePhoneFlag1: '0', faxNumber1: '', faxPhoneFlag1: '0', mobileNumber1: '11110976444', sMSFlag1: '0', mobilePhoneFlag1: '0', emailAddress1: 'SAM@GMAIL'}
     AddressUpdateReq:
-      value: {businessunit: 100, accountNumber: '0001000000000150191', homePhoneNumber1: '123456788999999', mobileNumber1: '11110976444', emailAddress1: 'SAM@GMAIL'}
+      value: { businessUnit: 100, accountNumber: '0001000000000150191', homePhoneNumber1: '123456788999999',   mobileNumber1: '11110976444', emailAddress1: 'SAM@GMAIL.COM'}
     
     AddressUpdateResponse:
-      value: { businessunit: 100, accountNumber: '0001000000000150191', nameLine11: '', nameLine21: '', nameLine31: '', houseNumber1: '', addressLine11: '80.ANGLES', addressLine21: '', addressLine31: '', addressLine41: '', city1: 'US', stateProvince1: 'USA', countryCode1: 'USA', postalCode1: '27899', languageIndicator1: 'AUS', homePhoneNumber1: '123456788999999', homePhoneFlag1: '0', faxNumber1: '', faxPhoneFlag1: '0', mobileNumber1: '11110976444', sMSFlag1: '0',mobilePhoneFlag1: '0', emailAddress1: 'SAM@GMAIL' }
+      value: { businessUnit: 100, accountNumber: '0001000000000150191', nameLine11: '', nameLine21: '', nameLine31: '', houseNumber1: '', addressLine11: '80.ANGLES', addressLine21: '', addressLine31: '', addressLine41: '', city1: 'US', stateProvince1: 'USA', countryCode1: 'USA', postalCode1: '27899', languageIndicator1: 'AUS', homePhoneNumber1: '123456788999999', homePhoneFlag1: '0', faxNumber1: '', faxPhoneFlag1: '0', mobileNumber1: '11110976444', sMSFlag1: '0',mobilePhoneFlag1: '0', emailAddress1: 'SAM@GMAIL' }
     400-Errors:
       value:
         erorrCode: XXXXXXXX
