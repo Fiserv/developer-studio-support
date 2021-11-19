@@ -62,13 +62,11 @@
 			"template": "bug.md",
 			"assignees": "awaneesh.srivastava@fiserv.com"
 		},
-
 		"feedback": {
 			"label": "feedback,firstvision",
 			"template": "feedback.md",
 			"assignees": "awaneesh.srivastava@fiserv.com"
 		},
-
 		"enhancement": {
 			"label": "enhancement,firstvision",
 			"template": "feature.md",
