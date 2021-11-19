@@ -55,5 +55,24 @@
         "value": true
       }
   ]
-  }
+  },
+   "supportConfig": [{ 
+		"bug": {
+			"label": "bug,firstvision",
+			"template": "bug.md",
+			"assignees": ""
+		},
+
+		"feedback": {
+			"label": "feedback,firstvision",
+			"template": "feedback.md",
+			"assignees": ""
+		},
+
+		"enhancement": {
+			"label": "enhancement,firstvision",
+			"template": "feature.md",
+			"assignees": ""
+		}
+	}]
 }
