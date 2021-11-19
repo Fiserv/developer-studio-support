@@ -60,7 +60,7 @@
 		"bug": {
 			"label": "bug,firstvision",
 			"template": "bug.md",
-			"assignees": "awaneesh.srivastava@fiserv.com"
+			"assignees": "awaneesh.srivastava@fiserv.com,palani.p@fiserv.com"
 		},
 		"feedback": {
 			"label": "feedback,firstvision",
