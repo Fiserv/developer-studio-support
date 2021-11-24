@@ -64,3 +64,7 @@
         link: docs/APIs/Customer-Management/Customer-Demographic-Inquiry.md    
       - title: Customer Demographic Update
         link: docs/APIs/Customer-Management/Customer-Demographic-Update.md
+    - title: Transaction Management
+      sections:
+      - title: Inquire Transaction Details
+        link: docs/APIs/Transaction-Management/Inquire-Transaction-Details.md
