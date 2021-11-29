@@ -10,7 +10,7 @@ paths:
     get:
       tags:
       - Transaction APIs
-      x-group-name:  "Transactions Management"
+      x-group-name:  "Transaction Management"
       x-proxy-name:  "Inquire Transaction Details"
       summary: Transaction details
       description: "Provides transaction detail information from the last billing cycle"
@@ -57,6 +57,20 @@ paths:
           type: string
           format: uppercase
           example: 100001NNNXX0481
+      - name: product
+        in: query
+        description: "Product - Identification number of the product associated with the Account"
+        schema:
+          type: number
+          default: 0
+          example: 1
+      - name: statementDate
+        in: query
+        description: "Statement Date - Period for which the user want to view the important statement details of the Account"
+        schema:
+          type: string
+          format: date
+          example: 04/09/2021
 
       responses:
         200:
@@ -342,5 +356,3 @@ components:
       value:
         erorrCode: XXXXXXXX
         errorMessage: Some message from the service
-
-            
