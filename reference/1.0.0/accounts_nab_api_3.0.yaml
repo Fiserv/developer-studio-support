@@ -11,7 +11,7 @@ tags:
   - name: 'Account Management'
 paths:
   /v1/accounts/blockUnblock:
-    patch:
+    put:
       tags:
         - Account Management
       x-group-name: Account Management
