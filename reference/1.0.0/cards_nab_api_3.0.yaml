@@ -116,7 +116,7 @@ paths:
                   $ref: '#/components/examples/504-Errors'
   
   /v1/cards/blockUnblock:
-    patch:
+    put:
       tags:
       - Card Management
       x-group-name: Card Management
@@ -332,7 +332,7 @@ paths:
                   $ref: '#/components/examples/504-Errors'                  
   
   /v1/cards/profile:
-    patch:
+    put:
       tags:
       - Card Management
       x-group-name: Card Management
@@ -547,7 +547,7 @@ paths:
                   $ref: '#/components/examples/504-Errors'
   
   /v1/cards/spendLimits:
-    patch:
+    put:
       tags:
       -  Card Management
       x-group-name: Card Management
@@ -784,7 +784,7 @@ paths:
                   $ref: '#/components/examples/504-Errors'      
                   
   /v1/cards/pinBlock:
-    patch:
+    put:
       tags:
       - Card Management
       x-group-name: Card Management
