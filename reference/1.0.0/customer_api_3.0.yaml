@@ -125,7 +125,7 @@ paths:
               example:
                 - '504':
                     $ref: '#/components/examples/504-Errors'        
-    patch:
+    put:
       tags:
       - Customer Management
       x-group-name: Customer Management
