@@ -67,4 +67,4 @@
     - title: Transaction Management
       sections:
       - title: Inquire Transaction Details
-        link: docs/APIs/Transaction-Management/Inquire-Transaction-Details.md
+        link: docs/Inquire-Transaction-Details.md
