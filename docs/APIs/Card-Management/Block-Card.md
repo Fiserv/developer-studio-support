@@ -3,7 +3,7 @@
 This service is used to update the block codes and the reason codes for the block codes for cards and accounts. Same service can be used to unblock the card by passing spaces in the block-code field of the request body.
 
 # Endpoint
-`PATCH /v1/cards/blockUnblock`
+`PUT /v1/cards/blockUnblock`
 
 
 ## Payload Example

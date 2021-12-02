@@ -3,7 +3,7 @@
 This service is used to update the type of cardholder between primary and supplementary (Joint Cardholder). 
 
 # Endpoint
-`PATCH /v1/cards/profile`
+`PUT /v1/cards/profile`
 
 
 ## Payload Example

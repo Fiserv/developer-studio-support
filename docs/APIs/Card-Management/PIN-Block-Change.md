@@ -3,7 +3,7 @@
 The PIN Block Change Service is used to update the PIN Block with the prerequisite that the existing PIN block must be supplied and validated.
 
 # Endpoint
-`PATCH /v1/cards/pinBlock`
+`PUT /v1/cards/pinBlock`
 
 
 ## Payload Example

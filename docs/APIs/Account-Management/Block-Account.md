@@ -7,7 +7,7 @@ This service can be called with an account number. When either *blockCode 1* or 
 
 
 # Endpoint
-`PATCH /v1/accounts/blockUnblock`
+`PUT /v1/accounts/blockUnblock`
 
 
 ## Payload Example

@@ -5,7 +5,7 @@ This service will be used to update the customer demographic details such as Nam
 
 
 # Endpoint
-`PATCH /v1/customers/nameAddress?businessunit=100&accountNumber=0001000000000150191`
+`PUT /v1/customers/nameAddress?businessunit=100&accountNumber=0001000000000150191`
 
 
 ## Payload Example
