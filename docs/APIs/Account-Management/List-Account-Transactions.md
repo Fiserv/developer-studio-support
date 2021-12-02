@@ -1,4 +1,4 @@
-# List Accounts' Transactions
+# List Account Transactions
 
  The service provides list of transactions along with detail information for transactions posted in the last statement cycle. 
 
