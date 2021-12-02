@@ -4,7 +4,7 @@
   "brand": "Fiserv",
   "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
   "solution": "support",
-  "brandDescription": "FirstVision is our outsourced processing solution that meets your challenges head-on and transforms your technology capability. Built on core VisionPLUS® software, FirstVision™ provides an end-to-end solution that delivers global processing economies of scale plus fully integrated adjacent services that span the issuing lifecycle.",
+  "brandDescription": "Whether you’re new to API integrations or an experienced developer, you’ll find here guides, resources and references to build with Developer Studio.",
   "categories": [
     {
       "name": "businessTypes",
@@ -18,19 +18,11 @@
     }
   ],
   
-  "apiVersions": [
-      {
-        "version": "1.0.0",
-        "versionType": "major",
-        "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
-        "apiSpecFileNames": ["customer_api_3.0","accounts_nab_api_3.0","cards_nab_api_3.0","transactions_api_3.0"]
-      }
-  ],
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
-    "description": "FirstVision™ is a powerful processing solution — an integrated suite of payment and servicing solutions that drives your platform modernisation and competitive edge",
-    "longDescription":"FirstVision™ is our outsourced processing solution that meets your challenges head-on and transforms your technology capability. Built on core VisionPLUS® software, FirstVision™ provides an end-to-end solution that delivers global processing economies of scale plus fully integrated adjacent services that span the issuing lifecycle.",
+    "description": "Whether you’re new to API integrations or an experienced developer, you’ll find here guides, resources and references to build with Developer Studio.",
+    "longDescription":"Whether you’re new to API integrations or an experienced developer, you’ll find here guides, resources and references to build with Developer Studio.",
     "layout": "/v1/layouts/DeveloperStudioSupport",
     "documentation": "/v1/docs/DeveloperStudioSupport",
     "documenttree": "/v1/docs/DeveloperStudioSupport",
