@@ -3,7 +3,7 @@
   "name": "DeveloperStudioSupport",
   "brand": "Fiserv",
   "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
-  "solution": "financial-institutions",
+  "solution": "merchants",
   "brandDescription": "Whether you’re new to API integrations or an experienced developer, you’ll find here guides, resources and references to build with Developer Studio.",
   "categories": [
     {
