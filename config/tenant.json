@@ -3,8 +3,8 @@
   "name": "DeveloperStudioSupport",
   "brand": "Fiserv",
   "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
-  "solution": "merchants",
-  "brandDescription": "Whether you’re new to API integrations or an experienced developer, you’ll find here guides, resources and references to build with Developer Studio.",
+  "solution": "financial-institutions",
+  "brandDescription": "Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments).",
   "categories": [
     {
       "name": "businessTypes",
@@ -17,29 +17,18 @@
       ]
     }
   ],
-  "apiVersions": [
-    {
-      "version": "11.0.0",
-      "versionType": "major",
-      "releaseNotesPath": "/release-notes/release-notes-11.0.0.md",
-      "apiSpecFileNames": []
-    }
-  ]
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
-    "description": "Whether you’re new to API integrations or an experienced developer, you’ll find here guides, resources and references to build with Developer Studio.",
-    "longDescription":"Whether you’re new to API integrations or an experienced developer, you’ll find here guides, resources and references to build with Developer Studio.",
+    "description": "To onboard properly into the Developer Studio as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.",
+    "longDescription":"To onboard properly into the Developer Studi as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.",
     "apiSpecification": "/v1/apis/DeveloperStudioSupport",
     "layout": "/v1/layouts/DeveloperStudioSupport",
     "documentation": "/v1/docs/DeveloperStudioSupport",
     "documenttree": "/v1/docs/DeveloperStudioSupport",
     "documenttreeV2": "/v2/docs/DeveloperStudioSupport",
+    "sandbox": "/v1/sandboxrun/DeveloperStudioSupport",
     "feature":[
-	{
-        "name": "sandBox",
-        "value": false
-      },
       {
         "name": "plugins",
         "value": false
@@ -47,28 +36,26 @@
       {
         "name": "industryOptionsAPIExplorer",
         "value": false
-      },
-      {
-        "name": "editParameterAPIExplorer",
-        "value": false
       }
-    ]
+  ]
   },
-   "supportConfig": [{ 
+  "supportConfig": [{ 
 		"bug": {
-			"label": "bug,firstvision",
+			"label": "bug,devStudio",
 			"template": "bug.md",
-			"assignees": "alvin.cho@fiserv.com"
+			"assignees": "abhishek.singh3@fiserv.com"
 		},
+
 		"feedback": {
-			"label": "feedback,firstvision",
+			"label": "feedback,devStudio",
 			"template": "feedback.md",
-			"assignees": "alvin.cho@fiserv.com"
+			"assignees": "abhishek.singh3@fiserv.com"
 		},
+
 		"enhancement": {
-			"label": "enhancement,firstvision",
+			"label": "enhancement,devStudio",
 			"template": "feature.md",
-			"assignees": "alvin.cho@fiserv.com"
+			"assignees": "abhishek.singh3@fiserv.com"
 		}
 	}]
 }
