@@ -43,19 +43,19 @@
 		"bug": {
 			"label": "bug,devStudio",
 			"template": "bug.md",
-			"assignees": "abhishek.singh3@fiserv.com"
+			"assignees": "TaniaSarkar89"
 		},
 
 		"feedback": {
 			"label": "feedback,devStudio",
 			"template": "feedback.md",
-			"assignees": "abhishek.singh3@fiserv.com"
+			"assignees": "TaniaSarkar89"
 		},
 
 		"enhancement": {
 			"label": "enhancement,devStudio",
 			"template": "feature.md",
-			"assignees": "abhishek.singh3@fiserv.com"
+			"assignees": "TaniaSarkar89"
 		}
 	}]
 }
