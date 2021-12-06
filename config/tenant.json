@@ -22,7 +22,6 @@
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
     "description": "To onboard properly into the Developer Studio as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.",
     "longDescription":"To onboard properly into the Developer Studi as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.",
-    "apiSpecification": "/v1/apis/DeveloperStudioSupport",
     "layout": "/v1/layouts/DeveloperStudioSupport",
     "documentation": "/v1/docs/DeveloperStudioSupport",
     "documenttree": "/v1/docs/DeveloperStudioSupport",
