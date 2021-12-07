@@ -2,7 +2,9 @@
 ## What is a product area?
 Product area is the general location you can find products related to your industry.  To figure out which product area is right for you, review the card description and click which one best describes your business. 
 
-![This is an image](https://github.com/Fiserv/developer-studio-support/blob/develop/assets/images/product_area_1_adobespark.png)
+<p align="center">
+  <img src="https://github.com/Fiserv/developer-studio-support/blob/develop/assets/images/product_area_1_adobespark.png"/>
+</p>
 
 ## Products offered on Developer Studio 
 There are many products to choose from and we want to help you figure out which one to integrate. On the left side of the Product Area page, we’ve listed our products by brand name. Some products live in Developer Studio while other products direct you to their external website indicated with the linkout icon. Each product offers APIs that serve different purposes for your business. There are a few ways to help you decide which product is right for you. 
