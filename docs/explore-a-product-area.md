@@ -24,7 +24,7 @@ If you know what feature you want to integrate but you don’t know the product 
 We categorize the cards as “Product”, “Features”, and “Endpoints”.  You can change the cards by clicking on the categories. “Products” show the cards based on brand name. “Features”show the cards based by similar service. “Endpoints” show the cards by the specific endpoint. 
 
 <p align="center">
-  <img src="../assets/images/product_area_4.png"/>
+  <img src="../assets/images/product_area_4_adobespark.png"/>
 </p>
 
 
