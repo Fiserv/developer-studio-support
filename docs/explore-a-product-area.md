@@ -30,7 +30,9 @@ We categorize the cards as “Product”, “Features”, and “Endpoints”.  
 
 Starting from the top of the card, we listed the product name, the endpoint name with its feature, a description of the endpoint, a hyperlink and (blue-boxed) tags. There are two ways to view the cards: preview and full-display. You can toggle the size by clicking on the icon on the right corner. 
 
-IMAGE
+<p align="center">
+  <img src="../assets/images/product_area_5_adobespark.png"/>
+</p>
 
 You can narrow down the list by using our filtering features. The filter corresponds with the blue-boxed tags in the card so it would only pull up cards based on what you checked on the filter. 
 
