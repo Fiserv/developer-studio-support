@@ -10,7 +10,7 @@ Product area is the general location you can find products related to your indus
 There are many products to choose from and we want to help you figure out which one to integrate. On the left side of the Product Area page, we’ve listed our products by brand name. Some products live in Developer Studio while other products direct you to their external website indicated with the linkout icon. Each product offers APIs that serve different purposes for your business. There are a few ways to help you decide which product is right for you. 
 
 <p align="center">
-  <img src="../assets/images/product_area_2"/>
+  <img src="../assets/images/product_area_2_adobespark (2).png"/>
 </p>
 
 ## Read use cases to learn about product
