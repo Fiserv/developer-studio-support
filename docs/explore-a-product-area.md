@@ -23,7 +23,10 @@ If you know what feature you want to integrate but you don’t know the product 
 ## Browse products, features and endpoints 
 We categorize the cards as “Product”, “Features”, and “Endpoints”.  You can change the cards by clicking on the categories. “Products” show the cards based on brand name. “Features”show the cards based by similar service. “Endpoints” show the cards by the specific endpoint. 
 
-IMAGE
+<p align="center">
+  <img src="../assets/images/product_area_4.png"/>
+</p>
+
 
 Starting from the top of the card, we listed the product name, the endpoint name with its feature, a description of the endpoint, a hyperlink and (blue-boxed) tags. There are two ways to view the cards: preview and full-display. You can toggle the size by clicking on the icon on the right corner. 
 
