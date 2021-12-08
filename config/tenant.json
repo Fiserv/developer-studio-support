@@ -1,8 +1,8 @@
 {
-  "title": "Developer Studio Support",
-  "name": "DeveloperStudioSupport",
+  "title": "Support",
+  "name": "Support",
   "brand": "Fiserv",
-  "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
+  "brandLogoURL": "",
   "solution": "support",
   "brandDescription": "Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments).",
   "categories": [
@@ -19,14 +19,14 @@
   ],
   "product": {
     "featured": true,
-    "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
-    "description": "To onboard properly into the Developer Studio as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.",
-    "longDescription":"To onboard properly into the Developer Studi as a tenant each product must support these APIs so that we can retrieve product specific API specifications and documentation.",
-    "layout": "/v1/layouts/DeveloperStudioSupport",
-    "documentation": "/v1/docs/DeveloperStudioSupport",
-    "documenttree": "/v1/docs/DeveloperStudioSupport",
-    "documenttreeV2": "/v2/docs/DeveloperStudioSupport",
-    "sandbox": "/v1/sandboxrun/DeveloperStudioSupport",
+    "logoURL": "",
+    "description": "Developer Studio Support pages",
+    "longDescription":"Developer Studio Support pages",
+    "layout": "/v1/layouts/Support",
+    "documentation": "/v1/docs/Support",
+    "documenttree": "/v1/docs/Support",
+    "documenttreeV2": "/v2/docs/Support",
+    "sandbox": "/v1/sandboxrun/Support",
     "feature":[
       {
         "name": "plugins",
@@ -40,19 +40,19 @@
   },
   "supportConfig": [{ 
 		"bug": {
-			"label": "bug,DeveloperStudioSupport",
+			"label": "bug,SupportPages",
 			"template": "bug.md",
 			"assignees": "TaniaSarkar89"
 		},
 
 		"feedback": {
-			"label": "feedback,DeveloperStudioSupport",
+			"label": "feedback,SupportPages",
 			"template": "feedback.md",
 			"assignees": "TaniaSarkar89"
 		},
 
 		"enhancement": {
-			"label": "enhancement,DeveloperStudioSupport",
+			"label": "enhancement,SupportPages",
 			"template": "feature.md",
 			"assignees": "TaniaSarkar89"
 		}
