@@ -16,7 +16,9 @@ There are many products to choose from and we want to help you figure out which 
 ## Read use cases to learn about product
 If you know what feature you want to integrate but you don’t know the product name, check out our use cases. The top set of cards is the feature you want for your business with a brief description. The feature card highlights below related Fiserv products. The hyperlink takes you to the product’s page where you can learn everything the product can offer to you.
 
-IMAGE
+<p align="center">
+  <img src="../assets/images/product_area_2_adobespark (2).png"/>
+</p>
 
 ## Browse products, features and endpoints 
 We categorize the cards as “Product”, “Features”, and “Endpoints”.  You can change the cards by clicking on the categories. “Products” show the cards based on brand name. “Features”show the cards based by similar service. “Endpoints” show the cards by the specific endpoint. 
