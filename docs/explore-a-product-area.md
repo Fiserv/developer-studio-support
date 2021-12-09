@@ -31,12 +31,12 @@ You can narrow down the list by using our filtering features. The filter corresp
 
 [product_area_1]: <../assets/images/product_area_1.jpg>
 
-[product_area_2]:<../assets/images/product_area_2.png>
+[product_area_2]: <../assets/images/product_area_2.png>
 
-[product_area_3]:<../assets/images/product_area_3.png>
+[product_area_3]: <../assets/images/product_area_3.png>
 
-[product_area_4]:<../assets/images/product_area_4.png>
+[product_area_4]: <../assets/images/product_area_4.png>
 
-[product_area_5]:<../assets/images/product_area_5.png>
+[product_area_5]: <../assets/images/product_area_5.png>
 
-[product_area_6]:<../assets/images/product_area_6.png>
+[product_area_6]: <../assets/images/product_area_6.png>
