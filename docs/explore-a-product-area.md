@@ -23,7 +23,7 @@ Starting from the top of the card, we listed the product name, the endpoint name
 
 ![product_area_5_adobespark]
 
-You can narrow down the list by using our filtering features. The filter corresponds with the blue-boxed tags in the card so it would only pull up cards based on what you checked on the filter. 
+You can narrow down the list by using our filtering features. The filter corresponds with the blue-boxed tags in the card so it would only pull up cards based on what you checked on the filter.
 
 [//]: # (These are reference links used in markdown file)
 
