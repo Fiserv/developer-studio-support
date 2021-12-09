@@ -33,7 +33,7 @@
     open: true
 - sections:  
   - title: Explore a product area
-    link: docs/explore-a-product-area.md
+    link: docs/explore-a-product-area1.md
 - sections:  
   - title: Dive into a product
     link: docs/dive-into-a-product.md 
