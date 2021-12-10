@@ -73,3 +73,4 @@ It might seem a bit overwhelming, but let’s break down some of the key concept
 [product_api_9]:<../assets/images/product_api_9.png>
 
 [product_api_10]:<../assets/images/product_api_10.png>
+
