@@ -27,40 +27,28 @@
 # are granted or extended by this work or 
 # the delivery of this work
 ################################################################################
-- sections:
-  - title: Getting Started
-    link: docs/getting-started.md
+- sections:    
+  - title: About Developer Studio
+    link: docs/about-developer-studio.md
     open: true
+- sections:  
+  - title: Explore a product area
+    link: docs/explore-a-product-area.md
+- sections:  
+  - title: Dive into a product
+    link: docs/dive-into-a-product.md 
 - sections:
-  - title: API Reference
-    link:
-    open: true
-    sections:    
-    - title: Account Management
-      sections:
-      - title: Block-Unblock Account
-        link: docs/APIs/Account-Management/Block-Account.md
-    - title: Card Management
-      sections:
-      - title: Activate Card
-        link: docs/APIs/Card-Management/Activate-Card.md
-      - title: Block-Unblock Card
-        link: docs/APIs/Card-Management/Block-Card.md
-      - title: CardType Update
-        link: docs/APIs/Card-Management/CardType-Update.md
-      - title: CVV2 Validation
-        link: docs/APIs/Card-Management/CVV2-Validation.md
-      - title: Fetch Clear PAN from Token
-        link: docs/APIs/Card-Management/Fetch-Clear-PAN-from-Token.md
-      - title: Lost Stolen Card Transfer
-        link: docs/APIs/Card-Management/Lost-Stolen-Card-Transfer.md
-      - title: PIN Block Change
-        link: docs/APIs/Card-Management/PIN-Block-Change.md      
-      - title: Spend Limit Updates
-        link: docs/APIs/Card-Management/Spend-limit-Updates.md
-    - title: Customer Management
-      sections:
-      - title: Customer Demographic Inquiry
-        link: docs/APIs/Customer-Management/Customer-Demographic-Inquiry.md    
-      - title: Customer Demographic Update
-        link: docs/APIs/Customer-Management/Customer-Demographic-Update.md
+  - title: Explore Documentation
+    link: docs/explore-documentation.md
+- sections:
+  - title: Try out the API Sandbox
+    link: docs/try-out-the-api-sandbox.md 
+- sections:
+  - title: Search and All APIs 
+    link: docs/search-and-all-apis.md
+- sections:
+  - title: API Glossary
+    link: docs/api-glossary.md
+- sections:
+  - title: FAQ
+    link: docs/FAQ.md

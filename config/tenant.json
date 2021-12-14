@@ -1,10 +1,10 @@
 {
-  "title": "FirstVision - APAC",
-  "name": "FirstVisionAPAC",
+  "title": "Support",
+  "name": "Support",
   "brand": "Fiserv",
-  "brandLogoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Fiserv_Logo.jpg",
-  "solution": "financial-institutions",
-  "brandDescription": "FirstVision is our outsourced processing solution that meets your challenges head-on and transforms your technology capability. Built on core VisionPLUS® software, FirstVision™ provides an end-to-end solution that delivers global processing economies of scale plus fully integrated adjacent services that span the issuing lifecycle.",
+  "brandLogoURL": "",
+  "solution": "support",
+  "brandDescription": "Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments).",
   "categories": [
     {
       "name": "businessTypes",
@@ -17,31 +17,17 @@
       ]
     }
   ],
-  
-  "apiVersions": [
-      {
-        "version": "1.0.0",
-        "versionType": "major",
-        "releaseNotesPath": "/release-notes/release-notes-1.0.0.md",
-        "apiSpecFileNames": ["customer_api_3.0","accounts_nab_api_3.0","cards_nab_api_3.0"]
-      }
-  ],
   "product": {
     "featured": true,
-    "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
-    "description": "FirstVision™ is a powerful processing solution — an integrated suite of payment and servicing solutions that drives your platform modernisation and competitive edge",
-    "longDescription":"FirstVision™ is our outsourced processing solution that meets your challenges head-on and transforms your technology capability. Built on core VisionPLUS® software, FirstVision™ provides an end-to-end solution that delivers global processing economies of scale plus fully integrated adjacent services that span the issuing lifecycle.",
-    "apiSpecification": "/v1/apis",
-    "layout": "/v1/layouts",
-    "documentation": "/v1/docs",
-    "documenttree": "/v1/docs",
-    "documenttreeV2": "/v2/docs",
-    "sandbox": "/v1/sandboxrun",
+    "logoURL": "",
+    "description": "Developer Studio Support pages",
+    "longDescription":"Developer Studio Support pages",
+    "layout": "/v1/layouts/Support",
+    "documentation": "/v1/docs/Support",
+    "documenttree": "/v1/docs/Support",
+    "documenttreeV2": "/v2/docs/Support",
+    "sandbox": "/v1/sandboxrun/Support",
     "feature":[
-      {
-        "name": "sandBox",
-        "value": true
-      },
       {
         "name": "plugins",
         "value": false
@@ -49,11 +35,26 @@
       {
         "name": "industryOptionsAPIExplorer",
         "value": false
-      },
-      {
-        "name": "editParameterAPIExplorer",
-        "value": true
       }
   ]
-  }
+  },
+  "supportConfig": [{ 
+		"bug": {
+			"label": "bug,SupportPages",
+			"template": "bug.md",
+			"assignees": "TaniaSarkar89"
+		},
+
+		"feedback": {
+			"label": "feedback,SupportPages",
+			"template": "feedback.md",
+			"assignees": "TaniaSarkar89"
+		},
+
+		"enhancement": {
+			"label": "enhancement,SupportPages",
+			"template": "feature.md",
+			"assignees": "TaniaSarkar89"
+		}
+	}]
 }
