@@ -1,0 +1,60 @@
+{
+  "title": "Support",
+  "name": "Support",
+  "brand": "Fiserv",
+  "brandLogoURL": "",
+  "solution": "support",
+  "brandDescription": "Fiserv, Inc. is a global provider of payments and financial services technology solutions. The Company provides account processing and digital banking solutions, card issuer processing and network services, payments, e-commerce, merchant acquiring and processing, and the Clover cloud-based point-of-sale solution. The Company operates through three segments: Merchant Acceptance (Acceptance), Financial Technology (Fintech) and Payments and Network (Payments).",
+  "categories": [
+    {
+      "name": "businessTypes",
+      "value": "Business Types",
+      "subcategories": [
+        {
+          "name": "valueAddedServices",
+          "value": "Value Added Services"
+        }
+      ]
+    }
+  ],
+  "product": {
+    "featured": true,
+    "logoURL": "",
+    "description": "Developer Studio Support pages",
+    "longDescription":"Developer Studio Support pages",
+    "layout": "/v1/layouts/Support",
+    "documentation": "/v1/docs/Support",
+    "documenttree": "/v1/docs/Support",
+    "documenttreeV2": "/v2/docs/Support",
+    "sandbox": "/v1/sandboxrun/Support",
+    "feature":[
+      {
+        "name": "plugins",
+        "value": false
+      },
+      {
+        "name": "industryOptionsAPIExplorer",
+        "value": false
+      }
+  ]
+  },
+  "supportConfig": [{ 
+		"bug": {
+			"label": "bug,SupportPages",
+			"template": "bug.md",
+			"assignees": "TaniaSarkar89"
+		},
+
+		"feedback": {
+			"label": "feedback,SupportPages",
+			"template": "feedback.md",
+			"assignees": "TaniaSarkar89"
+		},
+
+		"enhancement": {
+			"label": "enhancement,SupportPages",
+			"template": "feature.md",
+			"assignees": "TaniaSarkar89"
+		}
+	}]
+}

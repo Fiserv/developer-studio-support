@@ -1,0 +1,87 @@
+################################################################################
+# Copyrights © 2021-2022 Fiserv, Inc. or its affiliates. 
+# Fiserv is a trademark of Fiserv, Inc., 
+# registered or used in the United States and foreign countries, 
+# and may or may not be registered in your country.  
+# All trademarks, service marks, 
+# and trade names referenced in this 
+# material are the property of their 
+# respective owners. This work, including its contents 
+# and programming, is confidential and its use 
+# is strictly limited. This work is furnished only 
+# for use by duly authorized licensees of Fiserv, Inc. 
+# or its affiliates, and their designated agents 
+# or employees responsible for installation or 
+# operation of the products. Any other use, 
+# duplication, or dissemination without the 
+# prior written consent of Fiserv, Inc. 
+# or its affiliates is strictly prohibited. 
+# Except as specified by the agreement under 
+# which the materials are furnished, Fiserv, Inc. 
+# and its affiliates do not accept any liabilities 
+# with respect to the information contained herein 
+# and are not responsible for any direct, indirect, 
+# special, consequential or exemplary damages 
+# resulting from the use of this information. 
+# No warranties, either express or implied, 
+# are granted or extended by this work or 
+# the delivery of this work
+################################################################################
+header:
+  productName: DeveloperStudioSupport
+  productionDescription: Whether you’re new to API integrations or an experienced developer, you’ll find here guides, resources and references to build with Developer Studio.
+  whoIsItFor: Whether you’re new to API integrations or an experienced developer, you’ll find here guides, resources and references to build with Developer Studio.
+  image: 
+    link: "/assets/images/Fiserv_Logo.jpg"
+    altText: 
+featuredFeatures:
+  - title: Documentation
+    description:  Guides, resources and references. 
+    tags: ["Docs"]
+    bullets: []  
+    relatedDocs:
+      - relatedDoc: 
+        title: About Developer Studio
+        description: A developer portal built by Fiserv to bring their financial technology products onto one platform.
+        link: ./docs/about-developer-studio.md
+      - relatedDoc: 
+        title: Explore Documentation
+        description: A technical guide that explains how to use and integrate the API.  
+        link: ./docs/explore-documentation.md
+      - relatedDoc: 
+        title: FAQ
+        description: How to get started & more. 
+        link: ./docs/FAQ.md
+    relatedAPIs: []
+  - title: API
+    description: Search and try out Fiserv APIs. 
+    tags: ["Docs"]
+    bullets: []  
+    relatedDocs:
+      - relatedDoc: 
+        title: Try out the API Sandbox
+        description: Try out the endpoint on the API sandbox!
+        link: ./docs/try-out-the-api-sandbox.md
+      - relatedDoc: 
+        title: Search and All APIs
+        description: Display our entire catalogue of endpoints or narrow down your search by using our filter. 
+        link: ./docs/search-and-all-apis.md
+      - relatedDoc: 
+        title: API Glossary
+        description: A list of programming and API-related terms, acronyms, and phrases to help you understand the terminology. 
+        link: ./docs/api-glossary.md
+    relatedAPIs: []
+  - title: Explore our products
+    description:  There are many products to choose from and we want to help you figure out which one to integrate.
+    tags: ["Docs"]
+    bullets: []  
+    relatedDocs:
+      - relatedDoc: 
+        title: Explore a product area
+        description: We offer few ways to help you decide which product is right for you.
+        link: ./docs/explore-a-product-area.md
+      - relatedDoc: 
+        title: Dive into a product
+        description: A product is a Fiserv brand that offers a set of APIs that meet certain needs of a business.
+        link: ./docs/dive-into-a-product.md
+    relatedAPIs: []
