@@ -1,23 +1,23 @@
-## Tabset
+## Tabsets
 
 To add tabset to the document
 
-    tabs: [title one, title two]
+    {tabs: [tab title, tab title]}
     
-    tab: start
+    {tab: start}
     
          tab content goes here
          
-    tab:
+    {tab:}
     
          next tab content goes here
          
-    tabs: end
+    {tabs: end}
     
     
 Here is the example:
 
-{tabs: [title one, title two]}
+{tabs: [First tab, Second tab]}
 
 {tab: one}
 
