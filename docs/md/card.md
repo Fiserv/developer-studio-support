@@ -6,4 +6,4 @@ To add card(s) to the document
    
 Card example:
 
-[{(Title)(Some Description)(?path=docs/about-developer-studio.md)}]
+[{(Title)(Some Description)(?path=docs/about-developer-studio.md)},{(Another Card)(Another Description)(?path=docs/about-developer-studio.md)}]
