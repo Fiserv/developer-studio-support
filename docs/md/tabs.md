@@ -6,11 +6,11 @@
     
     {tab: start}
     
-         tab content goes here
+      tab content goes here
          
     {tab:}
     
-         next tab content goes here
+      next tab content goes here
          
     {tabs: end}
     
