@@ -1,6 +1,6 @@
 ## Tabsets
 
-To add tabset to the document
+###To add tabset to the document
 
     {tabs: [tab title, tab title]}
     
@@ -15,13 +15,28 @@ To add tabset to the document
     {tabs: end}
     
     
-Here is the example:
+####Tabset example
 
 {tabs: [First tab, Second tab]}
 
 {tab: one}
 
 [{(Card)(Content of tab one)(?path=docs/about-developer-studio.md)}]
+
+{tab:}
+
+content of tab two
+
+{tabs: end}
+
+
+####Secont tabset
+
+{tabs: [First, Second]}
+
+{tabs: one}
+
+[{(Card One)(Card with a link)(?path=docs/about-developer-studio.md)},{(Card Two)(Card without a link)}]
 
 {tab:}
 
