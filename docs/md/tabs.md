@@ -17,15 +17,15 @@ To add tabset to the document
     
 Here is the example:
 
-tabs: [title one, title two]
+{tabs: [title one, title two]}
 
-tab:
+{tab: one}
 
-content of tab one
+[{(Card)(Content of tab one)(?path=docs/about-developer-studio.md)}]
 
-tab:
+{tab:}
 
 content of tab two
 
-tabs: end
+{tabs: end}
 
