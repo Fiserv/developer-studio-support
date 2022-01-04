@@ -12,6 +12,8 @@
 
 <img align="center" src="../../assets/images/product_area_1.jpg">
 
+## p centering
+
 <p align="center">
-  <img align="center" src="../../assets/images/product_area_1.jpg">
+  <img src="../../assets/images/product_area_1.jpg">
 </p>
