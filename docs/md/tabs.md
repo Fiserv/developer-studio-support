@@ -1,6 +1,6 @@
 ## Tabsets
 
-###To add tabset to the document
+### To add tabset to the document
 
     {tabs: [tab title, tab title]}
     
@@ -15,7 +15,7 @@
     {tabs: end}
     
     
-####Tabset example
+### Tabset example
 
 {tabs: [First tab, Second tab]}
 
@@ -30,7 +30,7 @@ content of tab two
 {tabs: end}
 
 
-####Secont tabset
+### Secont tabset
 
 {tabs: [First, Second]}
 
