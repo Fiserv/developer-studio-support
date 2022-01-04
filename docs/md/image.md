@@ -10,10 +10,10 @@
 
 ## HTML tags
 
-<img align="center" src="../../assets/images/product_area_1.jpg">
+<img align="center" src="https://raw.githubusercontent.com/Fiserv/developer-studio-support/develop/assets/images/product_area_1.jpg">
 
 ## p centering
 
 <p align="center">
-  <img src="../../assets/images/product_area_1.jpg">
+  <img src="https://raw.githubusercontent.com/Fiserv/developer-studio-support/develop/assets/images/product_area_1.jpg">
 </p>
