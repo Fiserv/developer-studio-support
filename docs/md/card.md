@@ -2,7 +2,7 @@
 
 To add card(s) to the document
 
-   [{(Card title)(Description)(?path=docs/path/to/file.md)}]
+    [{(Card title)(Description)(?path=docs/path/to/file.md)}]
    
 Card example:
 
