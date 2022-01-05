@@ -30,7 +30,7 @@ content of tab two
 {tabs: end}
 
 
-### Secont tabset
+### Second tabset
 
 {tabs: [First, Second]}
 
