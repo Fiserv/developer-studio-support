@@ -8,7 +8,7 @@
 
 <img width="75%" style="display:block;margin:0 auto;" src="https://raw.githubusercontent.com/Fiserv/developer-studio-support/develop/assets/images/md/image_style.png">
 
-## Image centering using paragraph align attribute is obsolete & should not be used
+## Align attribute is obsolete & should not be used
 
     <p align="center">
       <img src="path/to/image/file">
