@@ -7,7 +7,7 @@
 <img width="75%" src="https://raw.githubusercontent.com/Fiserv/developer-studio-support/develop/assets/images/md/card_syntax.png">
    
    
-    For multiple cards in the same row, separate each {} with a comma [{},{}]
+    For multiple cards in the same row, separate each set {} with a comma
 
 
 ### Card example:
