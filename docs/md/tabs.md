@@ -15,6 +15,8 @@
     {tabs: end}
     
     
+    
+    
 ### Tabset example
 
 {tabs: [First tab, Second tab]}
@@ -30,9 +32,11 @@ content of tab two
 {tabs: end}
 
 
-### Second tabset
 
-{tabs: [First, Second]}
+
+### Another tabset example
+
+{tabs: [Cards, Description]}
 
 {tabs: one}
 
