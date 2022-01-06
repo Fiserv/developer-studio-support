@@ -4,7 +4,7 @@
 
 ### To add card(s) to the document
 
-    [{(Card title)(Description)(?path=docs/path/to/file.md)}]
+    <img src="https://raw.githubusercontent.com/Fiserv/developer-studio-support/develop/assets/images/md/card_syntax.png">
    
 ### Card example:
 
