@@ -30,19 +30,19 @@
 - sections:    
   - title: Developer Studio overview
     open: true
-    - sections:    
-      - title: About Developer Studio
-        link: docs/about-developer-studio.md
-      - title: Explore a product area
-        link: docs/explore-a-product-area.md
-      - title: Dive into a product
-        link: docs/dive-into-a-product.md 
-      - title: Explore Documentation
-        link: docs/explore-documentation.md
-      - title: Try out the API Sandbox
-        link: docs/try-out-the-api-sandbox.md 
-      - title: Search and All APIs 
-        link: docs/search-and-all-apis.md
+    sections:    
+    - title: About Developer Studio
+      link: docs/about-developer-studio.md
+    - title: Explore a product area
+      link: docs/explore-a-product-area.md
+    - title: Dive into a product
+      link: docs/dive-into-a-product.md 
+    - title: Explore Documentation
+      link: docs/explore-documentation.md
+    - title: Try out the API Sandbox
+      link: docs/try-out-the-api-sandbox.md 
+    - title: Search and All APIs 
+      link: docs/search-and-all-apis.md
 - sections:
   - title: API Glossary
     link: docs/api-glossary.md
