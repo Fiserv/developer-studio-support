@@ -29,6 +29,7 @@
 ################################################################################
 - sections:
   - title: Developer Studio overview
+    open: true
     sections:
     - title: About Developer Studio
       link: docs/about-developer-studio.md
