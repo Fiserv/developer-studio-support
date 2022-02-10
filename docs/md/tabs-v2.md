@@ -14,3 +14,13 @@ type: tab
 second tab content
 
 <!-- type: tab-end -->
+
+<!-- type: row -->
+
+<!-- type: card
+title: Card One
+desctiption: About...
+link: ?path=docs/about-developer-studio.md
+-->
+
+<!- type: row-end -->
