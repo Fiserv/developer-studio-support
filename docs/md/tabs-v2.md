@@ -11,9 +11,7 @@ tab content
 type: tab
 -->
 
-second tab content
-
-<!-- type: tab-end -->
+second tab content:
 
 <!-- type: row -->
 
@@ -30,3 +28,6 @@ link: ?path=docs/about-developer-studio.md
 -->
 
 <!-- type: row-end -->
+
+<!-- type: tab-end -->
+
