@@ -23,4 +23,10 @@ desctiption: About...
 link: ?path=docs/about-developer-studio.md
 -->
 
-<!- type: row-end -->
+<!-- type: card
+title: Second Card
+desctiption: About...
+link: ?path=docs/about-developer-studio.md
+-->
+
+<!-- type: row-end -->
