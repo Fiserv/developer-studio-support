@@ -1,20 +1,5 @@
 ## Tabsets
 
-<!--
-type: tab
-titles: First Tab, Second Tab
--->
-
-tab content
-
-<!--
-type: tab
--->
-
-second tab content
-
-<!-- type: tab-end -->
-
 ### To add tabset to the document
 
     {tabs: [tab title, tab title]}
@@ -62,4 +47,39 @@ content of tab two
 content of tab two
 
 {tabs: end}
+
+#Tabs version 2
+
+<!--
+type: tab
+title: First Tab
+titles: First Tab, Second Tab
+-->
+
+tab content
+
+<!--
+type: tab
+title: Second Tab
+-->
+
+second tab content
+
+<!-- type: tab-end -->
+
+<!-- type: row -->
+
+<!-- type: card
+title: Card One
+description: About...
+link: ?path=docs/about-developer-studio.md
+-->
+
+<!-- type: card
+title: Second Card
+description: About...
+link: ?path=docs/about-developer-studio.md
+-->
+
+<!-- type: row-end -->
 
