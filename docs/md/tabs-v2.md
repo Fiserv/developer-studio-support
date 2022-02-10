@@ -19,13 +19,13 @@ second tab content
 
 <!-- type: card
 title: Card One
-desctiption: About...
+description: About...
 link: ?path=docs/about-developer-studio.md
 -->
 
 <!-- type: card
 title: Second Card
-desctiption: About...
+description: About...
 link: ?path=docs/about-developer-studio.md
 -->
 
