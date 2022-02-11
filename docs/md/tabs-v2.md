@@ -77,51 +77,6 @@ JSON string format for `additionalDataCommon`:
          "requestedTestResponseCode":"NO_CONNECTION_AVAILABLE",
          "emvParameterDownloadIndicator":true
       },
-      "amountComponents":{
-         "subTotal": 12.00, // Future Release
-         "convenienceFee": 1.00, // Future Release
-         "ITBISTaxAmount": 0.50, // Future Release
-         "localTax": 1.00, // Future Release
-         "shippingAmount": 5.00, // Future Release
-         "surcharge": 1.20, // Future Release
-         "vatAmount": 1.00 // Future Release
-      },
-      "directedRouting":{ // Future Release
-         "network": "VISA", // Future Release
-         "cardFunction": "CREDIT", // Future Release
-         "processor": "fiserv" // Future Release
-      },
-      "subMerchant":{ // Future Release
-         "id": "9999", // Future Release
-         "name": "Some Business", // Future Release
-         "street": "123 Main Street", // Future Release
-         "city": "Atlanta", // Future Release
-         "state": "GA", // Future Release
-         "postalCode": "30303-001", // Future Release
-         "country": "US", // Future Release
-         "taxId": "123456789" // Future Release
-      },
-      "billPaymentType": "RECURRING",
-      "installments":{
-         "installmentAmount": 20.00, // Future Release
-         "lastInstallmentAmount": 20.00, // Future Release
-         "interestRate": 10, // Future Release
-         "paymentFirstDay": 10.00, // Future Release
-         "invoiceId": "534242", // Future Release
-         "invoiceDate": "05-01-2020", // Future Release
-         "deliveryDate": "05-01-2020", // Future Release
-         "dueDate": "05-01-2030", // Future Release
-         "installmentCount": 12 
-      },
-      "deferredPayments":{ // Future Release
-         "numberOfPayments": "5", // Future Release
-         "paymentPlan": "PAY_LATER", // Future Release
-         "timePeriod": "12" // Future Release
-      },
-      "recurringPayments":{
-        "frequency": "MONTHLY",
-        "expiry": "05-05-2025"
-      },
       "privateLabel":{ // Future Release
          "paymentSource": "SHELL", // Future Release
          "paymentType": "REFUND", // Future Release
@@ -146,6 +101,18 @@ JSON string format for `additionalDataCommon`:
 <!-- theme: warning -->
 > Bill Payment Indicator is required for Charges, Cancel and Capture transactions where a bill payment is being processed.
 
+---
+
+## Additional Data
+
+Additional Data identifies various elments based on the specific transaction type.
+
+<!--
+type: tab
+titles: additionalData, JSON Example
+-->
+
+
 The below table identifies the valid values of the `billPaymentIndicator`.
 
 | Value | Description |
@@ -155,27 +122,6 @@ The below table identifies the valid values of the `billPaymentIndicator`.
 | *INSTALLMENT* | Single purchase where the cardholder is billed (charged) in installments. |
 | *RECURRING* | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
 
----
-
-## Additional Data
-
-Additional Data identifies various elments based on the specific transaction type.
-
-<!--
-type: tab
-additionalData, JSON Example
--->
-
-
-| Variable | Type | Maximum Length | Description/Values |
-| ----- | ----- | ----- | ----- |
-| `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
-| `requestedTestResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
-
-<!---
-| `baiFlag` | *string* | 31 | Visa required [Business Application Identifier](#business-application-identifier) (BAI) used to identify the intended use of a [disbursement](?path=docs/Resources/Guides/Disbursement.md). |
-| `emvParameterDownloadIndicator` | *boolean* |  N/A  | Indicator if EMV Parameter has to be downloaded, sent as part of Auth/Sale Response.|
--->
 
 ---
 
@@ -201,28 +147,6 @@ JSON string format for `additionalData`:
 ---
 
 <!---
-#### Business Application Identifier
-The BAI determines the data carried in the message, the limits and economics that may apply to the transaction, and may be used by the sending and/or receiving issuer to make an authorization decision. Below table identifies the valid values of `baiFlag`.
-
-| Value | Description |
-| ----- | ----- |
-| *PERSON_TO_PERSON* | Person to person initiated. |
-| *PERSON_TO_PERSON_BANK_INITIATED* | Person to person bank initiated. |
-| *BUSINESS_TO_BUSINESS* | Business to business initiated. |
-| *DIGITAL_WALLET* | Digital Wallet transfer. |
-| *ACCOUNT_TO_ACCOUNT* | Account to account transfer. |
-| *TOP_OFF* | Account top off or reload. |
-| *ACCOUNT_VERIFICATION* | [Account verification](?path=docs/Resources/API-Documents/Payments_VAS/Verification.md) or $0.00 auth. |
-| *FUNDS_TRANSFER* | Funds Transfer. |
-| *DISBURSEMENT* | Funds disbursement or payout. |
-| *GAMBLING_PAYOUT* | Gambling payout non-online. |
-| *GAMBLING_PAYOUT_ONLINE* | Online gambling payout. |
--->
-
-<!---
 - [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 -->
-
----
-
