@@ -1,3 +1,8 @@
+#Image centering
+
+<!-- align: center -->
+![Image center](../assets/images/product_1.png)
+
 #Tabs
 
 <!--
