@@ -164,9 +164,6 @@ type: tab
 additionalData, JSON Example
 -->
 
-<!--
-type: tab
--->
 
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
