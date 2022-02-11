@@ -44,7 +44,9 @@ type: tab
 titles: additionalDataCommon, JSON Example
 -->
 
+
 The below table identifies the parameters in the `additionalDataCommon` object.
+
 
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
