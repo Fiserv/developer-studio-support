@@ -9,18 +9,7 @@ For example, this entire page was created using Markdown!
 
 Below is a quick reference of all the Markdown syntax that is supported by Stoplight.
 
-### Table of Contents  
-* [Headers](#headers)
-* [Emphasis](#emphasis)  
-* [Lists](#lists)  
-* [Links](#lnks)  
-* [Images](#imgs)  
-* [Code and Syntax Highlighting](#code)  
-* [Tables](#tables)  
-* [Blockquotes](#blockquotes)   
-* [Horizontal Rule](#hr)
-
-## <a name="headers"/>  Headers
+## Headers
 
 ```no-highlight
 # H1
@@ -38,7 +27,7 @@ Below is a quick reference of all the Markdown syntax that is supported by Stopl
 ##### H5
 ###### H6
 
-## <a name="emphasis"/> Emphasis
+## Emphasis
 
 ```no-highlight
 Emphasis, aka italics, with *asterisks* or _underscores_.
@@ -50,7 +39,7 @@ Combined emphasis with **asterisks and _underscores_**.
 Strikethrough uses two tildes. ~~Scratch this.~~
 ```
 
-## <a name="lists"/> Lists
+## Lists
 
 >In this example, leading and trailing spaces are shown with with dots: ⋅⋅⋅
 
@@ -64,7 +53,7 @@ Strikethrough uses two tildes. ~~Scratch this.~~
 
 ...You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
 ```
-## <a name="lnks"/> Links
+## Links
 
 Different ways to create links.
 
@@ -85,14 +74,14 @@ Different ways to create links.
 
 ```
 
-## <a name="imgs"/> Images
+## Images
 
 Here's our logo ( hover to see the title text ):
 
-![Fiserv Logo]
+![Fiserv Logo](../../assets/images/Fiserv_Logo.jpg)
 
 
-## <a name="code"/> Code and Syntax Highlighting
+## Code and Syntax Highlighting
 
 Inline `code` has `back-ticks around` it.
 
@@ -112,8 +101,7 @@ alert(s);
 ```
 
 
-
-## <a name="tables"/> Tables
+## Tables
 
 Tables aren't part of the core Markdown spec, but they are part of GFM and *Markdown Here* supports them. They are an easy way of adding tables to your email -- a task that would otherwise require copy-pasting from another application.
 
@@ -134,7 +122,7 @@ Markdown | Less | Pretty
 1 | 2 | 3
 ```
 
-## <a name="blockquotes"/> Blockquotes
+## Blockquotes
 
 ```no-highlight
 > Blockquotes are very handy in email to emulate reply text.
@@ -145,7 +133,7 @@ Quote break.
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
 ```
 
-## <a name="hr"/> Horizontal Rule
+## Horizontal Rule
 
 ```
 Three or more...
@@ -162,7 +150,3 @@ ___
 
 Underscores
 ```
-
-[//]: # (These are reference links used in markdown file)
-
-[Fiserv Logo]: <https://gist.githubusercontent.com/f2zdirk/0d6e1e22180086f6169a2686a3ae1ec9/raw/22c36a3fbd595844296c2d25dc0e14b27d51e1ab/Fiserv_Logo.jpg> 
