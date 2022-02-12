@@ -1,8 +1,8 @@
 #Image centering
 
 <!-- align: center -->
-![Image centered](../assets/images/product_1.png)
-![Image NOT centered](../assets/images/product_1.png)
+![Logo centered](../assets/images/Fiserv_Logo.jpg)
+![Logo NOT centered](../assets/images/Fiserv_Logo.jpg)
 
 #Tabs
 
@@ -82,17 +82,6 @@ JSON string format for `additionalDataCommon`:
          "ecomURL":"https://www.somedomain.com",
          "requestedTestResponseCode":"NO_CONNECTION_AVAILABLE",
          "emvParameterDownloadIndicator":true
-      },
-      "privateLabel":{ // Future Release
-         "paymentSource": "SHELL", // Future Release
-         "paymentType": "REFUND", // Future Release
-         "specialFinanceIndicator": "24/0" // Future Release
-      },
-      "customFields":{ // Future Release
-         "keyValuePair":{ // Future Release
-            "key": "", // Future Release
-            "value": "" // Future Release
-         }
       }
    }
 }
@@ -102,10 +91,15 @@ JSON string format for `additionalDataCommon`:
 
 ---
 
-#### Bill Payment Indicator
+## Blockquotes Themes
 
+> Blockquotes in default color.
 <!-- theme: warning -->
-> Bill Payment Indicator is required for Charges, Cancel and Capture transactions where a bill payment is being processed.
+> Blockquotes in warning theme.
+<!-- theme: danger -->
+> Blockquotes in danger theme.
+<!-- theme: success -->
+> Blockquotes in success theme.
 
 ---
 
@@ -151,8 +145,3 @@ JSON string format for `additionalData`:
 <!-- type: tab-end -->
 
 ---
-
-<!---
-- [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
-- [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
--->
