@@ -123,6 +123,8 @@ Markdown | Less | Pretty
 
 ## Blockquotes
 
+> This is a blockquote.
+
 ```no-highlight
 > Blockquotes are very handy in email to emulate reply text.
 > This line is part of the same quote.
