@@ -94,12 +94,12 @@ JSON string format for `additionalDataCommon`:
 ## Blockquotes Themes
 
 > Blockquotes in default color.
+<!-- theme: success -->
+> Blockquotes in success theme: <!-- theme: success -->
 <!-- theme: warning -->
 > Blockquotes in warning theme.
 <!-- theme: danger -->
 > Blockquotes in danger theme.
-<!-- theme: success -->
-> Blockquotes in success theme.
 
 ---
 
