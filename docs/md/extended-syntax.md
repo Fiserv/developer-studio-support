@@ -1,23 +1,27 @@
-#Image centering
+# Extended markdown syntax
+
+## Image centering
 
 <!-- align: center -->
-![Logo centered](../assets/images/Fiserv_Logo.jpg)
-![Logo NOT centered](../assets/images/Fiserv_Logo.jpg)
+![Image centering](../assets/images/md/align_image.png "Image centering")
 
-#Tabs
 
-<!--
-type: tab
-titles: First Tab, Second Tab
--->
+## Blockquotes Themes
 
-tab content
+![Themes](../assets/images/md/theme_syntax.png "Themes")
 
-<!--
-type: tab
--->
+> Blockquotes in default color.
+<!-- theme: success -->
+> Blockquotes in success theme.
+<!-- theme: warning -->
+> Blockquotes in warning theme.
+<!-- theme: danger -->
+> Blockquotes in danger theme.
 
-second tab content:
+
+# Cards & rows of cards
+
+![Row of Cards](../assets/images/md/card_syntax.png "Row of cards")
 
 <!-- type: row -->
 
@@ -35,13 +39,28 @@ link: ?path=docs/about-developer-studio.md
 
 <!-- type: row-end -->
 
+
+## Tab sets
+
+![Tab sets](../assets/images/md/tab_syntax.png "Tab sets")
+
+<!--
+type: tab
+titles: First Tab, Second Tab
+-->
+
+tab content
+
+<!--
+type: tab
+-->
+
+second tab content:
+
 <!-- type: tab-end -->
 
----
-tags: [carat, commerce-hub, enterprise, master-data, additional-transaction-data]
----
 
-# Additional Data Common
+# Additional Tabsets
 
 Additional data common is used for specific business requirements.
 
@@ -88,18 +107,6 @@ JSON string format for `additionalDataCommon`:
 ```
 
 <!-- type: tab-end -->
-
----
-
-## Blockquotes Themes
-
-> Blockquotes in default color.
-<!-- theme: success -->
-> Blockquotes in success theme: <!-- theme: success -->
-<!-- theme: warning -->
-> Blockquotes in warning theme.
-<!-- theme: danger -->
-> Blockquotes in danger theme.
 
 ---
 
