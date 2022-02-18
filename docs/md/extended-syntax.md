@@ -1,14 +1,16 @@
 # Extended markdown syntax
 
 ## Image centering
+To center an image annotate `align` wrapped in HTNL comments:
 
 <!-- align: center -->
 ![Image centering](../assets/images/md/align_image.png "Image centering")
 
 
 ## Blockquotes Themes
+There are four blockquote themes: the default (no annotation required), success, warning, and danger:
 
-![Themes](../assets/images/md/theme_syntax.png "Themes")
+![Themes](../assets/images/md/theme_syntax.png "Blockquote Themes")
 
 > Blockquotes in default color.
 <!-- theme: success -->
@@ -20,6 +22,8 @@
 
 
 # Cards & rows of cards
+A `card` has a border and optional values for a title, a description, and a link.
+To have a number of cards in a row, use `row` & `row-end` annotation before and after cards to be in a row.
 
 ![Row of Cards](../assets/images/md/card_syntax.png "Row of cards")
 
@@ -40,9 +44,11 @@ link: ?path=docs/about-developer-studio.md
 <!-- type: row-end -->
 
 
-## Tab sets
+## Tabsets
+To organize content in tabs, annotate `titles` with the first `tab`, followed by the tab content, and closed by a final `tab-end` annotation.
+> Users of Stoplight Flavored Markdown, need to include additional `title` annotation for each tab.
 
-![Tab sets](../assets/images/md/tab_syntax.png "Tab sets")
+![Tab sets](../assets/images/md/tab_syntax.png "Tabsets")
 
 <!--
 type: tab
@@ -60,9 +66,9 @@ second tab content:
 <!-- type: tab-end -->
 
 
-# Additional Tabsets
+# Additional tabset example
 
-Additional data common is used for specific business requirements.
+Bellow example of a tabset contains a table and a code block.
 
 <!--
 type: tab
@@ -102,49 +108,6 @@ JSON string format for `additionalDataCommon`:
          "requestedTestResponseCode":"NO_CONNECTION_AVAILABLE",
          "emvParameterDownloadIndicator":true
       }
-   }
-}
-```
-
-<!-- type: tab-end -->
-
----
-
-## Additional Data
-
-Additional Data identifies various elments based on the specific transaction type.
-
-<!--
-type: tab
-titles: additionalData, JSON Example
--->
-
-
-The below table identifies the valid values of the `billPaymentIndicator`.
-
-| Value | Description |
-| ----- | ----- |
-| *SINGLE* | Single charge not for recurring services or installment plan. |
-| *DEFERRED* | A charge for an order with a delayed payment for a specified amount of time. |
-| *INSTALLMENT* | Single purchase where the cardholder is billed (charged) in installments. |
-| *RECURRING* | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
-
-
----
-
-<!-- type: tab -->
-
-JSON string format for `additionalData`:
-
-```json
-{
-   "additionalData":{
-      "baiFlag": "PERSON_TO_PERSON", // Future Release
-      "billPayment": false, // Future Release
-      "ecomURL": "https://www.somedomain.com",
-      "goodsSoldCode": "GIFT_CARD", // Future Release
-      "requestedTestResponseCode": "705", // Future Release
-      "emvParameterDownloadIndicator": true // Future Release
    }
 }
 ```
