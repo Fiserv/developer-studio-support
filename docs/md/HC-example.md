@@ -165,5 +165,4 @@ The BAI determines the data carried in the message, the limits and economics tha
 - [Credit Request](?path=docs/Resources/API-Documents/Payments/Credit.md)
 - [Forced Post](?path=docs/Resources/API-Documents/Payments/Forced.md)
 -->
-
----
+<!-- Example of the comment... -->
