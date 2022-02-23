@@ -21,7 +21,7 @@ There are four blockquote themes: the default (no annotation required), success,
 > Blockquotes in danger theme.
 
 
-# Cards & rows of cards
+## Cards & rows of cards
 A `card` has a border and optional values for a title, a description, and a link.
 To have a number of cards in a row, use `row` & `row-end` annotation before and after cards to be in a row.
 
@@ -50,6 +50,8 @@ To organize content in tabs, annotate `titles` with the first `tab`, followed by
 
 ![Tab sets](../assets/images/md/tab_syntax.png "Tabsets")
 
+## Example
+
 <!--
 type: tab
 titles: First Tab, Second Tab
@@ -66,7 +68,7 @@ second tab content:
 <!-- type: tab-end -->
 
 
-# Additional tabset example
+## Additional tabset example
 
 Bellow example of a tabset contains a table and a code block.
 
