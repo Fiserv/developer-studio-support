@@ -42,6 +42,12 @@
       link: docs/try-out-the-api-sandbox.md
     - title: Search and All APIs
       link: docs/search-and-all-apis.md
+    - title: Markdown Support
+      sections:
+      - title: Basic Syntax
+        link: docs/md/basic-syntax.md
+      - title: Extended Syntax
+        link: docs/md/extended-syntax.md
 - sections:
   - title: API Glossary
     link: docs/api-glossary.md
