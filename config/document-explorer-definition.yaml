@@ -44,9 +44,9 @@
       link: docs/search-and-all-apis.md
     - title: Markdown Support
       sections:
-      - title: Basic Markdown
+      - title: Basic Syntax
         link: docs/md/basic-syntax.md
-      - title: Extended Markdown
+      - title: Extended Syntax
         link: docs/md/extended-syntax.md
 - sections:
   - title: API Glossary
