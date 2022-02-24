@@ -1,4 +1,4 @@
-# 31 January 2022
+# January 2022
 ## Announcements
 - Release notes for Developer Studio are now available. Read about the latest feature releases, enhancements, and bug fixes. You can find the release notes on the Support page.  
 ## Fixed
