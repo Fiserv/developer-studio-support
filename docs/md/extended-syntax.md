@@ -1,14 +1,19 @@
 # Extended markdown syntax
 
+Developer Studio Markdown extends standard Markdown with inline comment annotations.
+The value inside of the annotations is one or more key-value pairs, and the annotation affects the Markdown block right after it in the document.
+
 ## Image centering
-To center an image annotate `align` wrapped in HTNL comments:
+To center an image annotate `align` wrapped in a comment:
 
 <!-- align: center -->
 ![Image centering](../assets/images/md/align_image.png "Image centering")
 
 
-## Blockquotes Themes
-There are four blockquote themes: the default (no annotation required), success, warning, and danger:
+## Callouts, themed blockquotes
+
+Callouts are MD blockquotes with optional annotation to indicate intent.
+There are four blockquote themes: the default (no annotation required), success, warning, and danger.
 
 ![Themes](../assets/images/md/theme_syntax.png "Blockquote Themes")
 
@@ -23,7 +28,7 @@ There are four blockquote themes: the default (no annotation required), success,
 
 ## Cards & rows of cards
 A `card` has a border and optional values for a title, a description, and a link.
-To have a number of cards in a row, use `row` & `row-end` annotation before and after cards to be in a row.
+To have a number of cards in a row, use `row` & `row-end` annotation before and after card(s) to be in a row.
 
 ![Row of Cards](../assets/images/md/card_syntax.png "Row of cards")
 
@@ -45,7 +50,7 @@ link: ?path=docs/about-developer-studio.md
 
 
 ## Tabsets
-To organize content in tabs, annotate `titles` with the first `tab`, followed by the tab content, and closed by a final `tab-end` annotation.
+To organize content in tabs, indicate `titles` within the first `tab` annotation, followed by the tab content, and closed by a final `tab-end` annotation.
 > Users of Stoplight Flavored Markdown, need to include additional `title` annotation for each tab.
 
 ![Tab sets](../assets/images/md/tab_syntax.png "Tabsets")
