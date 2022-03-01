@@ -54,6 +54,13 @@
 - sections:
   - title: FAQ
     link: docs/FAQ.md
+- sectiions:
+  - title: Fiserv
+    sections:
+    - title: Terms of Use
+      link: docs/fiserv/terms-of-use/2022/january.md
+    - title: Privacy Notice
+      link: docs/fiserv/privacy-notice/2022/january.md
 - sections:
   - title: Release notes
     sections:
