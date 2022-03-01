@@ -13,8 +13,8 @@ Table of Contents
 5. [International transfers] (#international-transfers)
 6. [How we keep your data safe] (#how-we-keep-your-data-safe)
 7. [This Website May Link to Other Websites] (#this-website-may-link-to-other-websites)
-8. [Changes to this Privacy Notice] (#changes to this Privacy Notice)
-9. [Contact Us] (#)
+8. [Changes to this Privacy Notice] (#changes-to-this-privacy-notice)
+9. [Contact Us] (#contact-us)
 
 # The personal data we collect
 
@@ -200,7 +200,7 @@ We reserve the right to modify this Privacy Notice at any time. We encourage you
 
 Any modifications to this Privacy Notice will be effective upon our posting of the new terms and/or upon implementation of the new changes (or as otherwise indicated at the time of posting). In all cases, your continued use of our products or services after the posting of any modified Privacy Notice indicates your acceptance of the terms of the modified Privacy Notice. 
 
-#. Contact us
+# Contact us
 
 If you have any questions, concerns, or complaints about this Privacy Notice or our privacy practices, or to request access to your personal data, you may contact our Data Protection Officer at dpo@fiserv.com. 
 
