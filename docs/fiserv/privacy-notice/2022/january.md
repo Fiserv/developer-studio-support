@@ -139,3 +139,69 @@ Fiserv may sell or transfer some or all of its business or assets, including you
 
 Fiserv may transfer your personal data to any third party who is not otherwise covered by the other listed categories above where you have given us permission to do so, or with whom you have entered into a contract when we need to transfer your personal data to that party in order to fulfil that contract.
 
+# Your rights and choices
+
+In this section, we describe the rights and choices available to all users.
+
+*A. Marketing communications*
+
+You can ask us to stop sending you marketing messages at any time by contacting us or clicking on the opt-out link included in each marketing message. You may continue to receive service-related and other non-marketing messages. You may unsubscribe from a specific Developers’ communications sent to you via Fiserv’s technology by clicking “Unfollow” (or a similarly-titled opt-out link).
+
+*B. Targeted online advertising*
+
+Some of the business partners that collect information about users’ activities on our websites or in our mobile applications may be members of organizations or programs that provide choices to individuals regarding the use of their browsing behavior or mobile application usage for purposes of targeted advertising. Users may opt out of receiving targeted advertising on websites through participating members of the following organizations or programs: 
+
+- Network Advertising Initiative (USA) 
+- Digital Advertising Alliance (USA) 
+- European Interactive Digital Advertising Alliance (Europe) 
+- Digital Advertising Alliance of Canada (Canada) 
+- Australian Digital Advertising Alliance (Australia) 
+- Data Driven Advertising Initiative (Japan) 
+
+Users of mobile applications may opt out of receiving targeted advertising in mobile applications through participating members of the Digital Advertising Alliance by installing the AppChoices mobile application, available here, and selecting the user’s choices. In addition, your mobile device settings may provide functionality to limit our, or our partners’, ability to engage in ad tracking or targeted advertising using the Google Advertising ID or Apple ID for Advertising associated with your mobile device. 
+
+Please note that we also may work with companies that offer their own opt-out mechanisms and may not participate in the opt-out mechanisms that we linked above. 
+
+If you choose to opt-out of targeted advertisements, you will still see advertisements online but they may not be relevant to you. Even if you do choose to opt out, not all companies that serve online behavioural advertising are included in this list, and so you may still receive some cookies and tailored advertisements from companies that are not listed. 
+
+*C. Do Not Track Signals*
+
+Some Internet browsers may be configured to send "Do Not Track" signals to the online services that you visit. We currently do not respond to do not track signals. To find out more about "Do Not Track," please visit [http://www.allaboutdnt.com](http://www.allaboutdnt.com). 
+
+*D. Choosing not to provide your personal data*
+
+Where we request personal data directly from you, you do not have to provide it to us. If you decide not to provide the requested information, in some circumstances we may be unable to provide products or services to you.  
+
+*E. Accessing, modifying or deleting your information*
+
+In some jurisdictions, applicable law may provide a right for individuals to access, modify, or delete their personal data. You may contact us directly to request access to, or modification or deletion of, your information. We may not be able to provide access to, or modify or delete, your information in all circumstances.
+
+*F. Complaints*
+
+If you have a complaint about our handling of your personal data, you may contact our data protection officer using the contact information below. We request that a complaint be made in writing. Please provide details about your concern or complaint so that our data protection officer can investigate it. We will take appropriate action in response to your complaint, which may include conducting internal discussions with relevant business representatives. We may contact you for additional details or clarification about your concern or complaint. We will contact you to inform you of our response to your complaint. You also may have a right to file a complaint with a national or local regulatory agency.
+
+# International transfers
+
+Fiserv is headquartered in the United States, and it maintains offices and has service providers in other countries. Your personal data may be transferred to the United States or other locations outside of your state, province, country or other governmental jurisdiction where we or our service providers maintain offices and where privacy laws may not be as protective as those in your jurisdiction. If we make such a transfer, we will require that the recipients of your personal data provide data security and protection in accordance with applicable law.  
+
+# How we keep your data safe
+
+We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions and they are subject to a duty of confidentiality. 
+
+We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator of a breach where we are legally required to do so. 
+
+# Links to other websites
+
+We may link to third-party websites, mobile applications, and other content. Fiserv is not responsible for the privacy practices of any third party, and this privacy notice does not apply to such third party’s websites, mobile applications, or other content. Fiserv does not guarantee, approve, or endorse any information, material, services, or products contained on or available through any linked third-party website, mobile application, or other content. Fiserv is not responsible for any content on third-party properties to which we link. Fiserv provides links to third-party properties or content as a convenience, and visiting or using linked third-party properties or content is at your own risk. 
+
+# Changes to this Privacy Notice
+
+We reserve the right to modify this Privacy Notice at any time. We encourage you to periodically review this page for the latest information on our privacy practices. If we make material changes to this Privacy Notice, we will notify you by updating the date of this Privacy Notice and posting it on our website and in app stores where our mobile applications covered by this Privacy Notice are available for download. We may (and, where required by law, will) also provide notification of changes in another way that we believe is reasonably likely to reach you, such as via e-mail (if you have an account where we have your contact information) or another manner through our website or mobile applications. 
+
+Any modifications to this Privacy Notice will be effective upon our posting of the new terms and/or upon implementation of the new changes (or as otherwise indicated at the time of posting). In all cases, your continued use of our products or services after the posting of any modified Privacy Notice indicates your acceptance of the terms of the modified Privacy Notice. 
+
+#. Contact us
+
+If you have any questions, concerns, or complaints about this Privacy Notice or our privacy practices, or to request access to your personal data, you may contact our Data Protection Officer at dpo@fiserv.com. 
+
+We also maintain a Data Privacy Hotline, which is available 24 hours per day from the United States, at +1 877-591-8519. The Hotline is the most appropriate contact for an urgent concern, such as to report a suspected data breach regarding your personal data. 
