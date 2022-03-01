@@ -5,16 +5,17 @@ This “Privacy Notice” describes the practices of Open Banking…Fiserv, Inc.
 
 Fiserv may provide additional or supplemental privacy notices to individuals at the time we collect their data, which will govern how we may process the information provided at that time. We may alter this Privacy Notice as needed to abide by local laws or regulations around the world, such as by providing supplemental information in certain countries. This Privacy Notice does not apply to Fiserv’s processing of the personal data of its personnel, such as employees and contractors. 
 
-Table of Contents 
-1. [The personal data we collect] (#the-personal-data-we-collect)
-2. [How we use your personal data] (#how-we-use-your-personal-data)
-3. [How we share your personal data] (#how-we-share-your-personal-data)
-4. [Your rights and choices] (#your-rights-and-choices)
-5. [International transfers] (#international-transfers)
-6. [How we keep your data safe] (#how-we-keep-your-data-safe)
-7. [This Website May Link to Other Websites] (#this-website-may-link-to-other-websites)
-8. [Changes to this Privacy Notice] (#changes-to-this-privacy-notice)
-9. [Contact Us] (#contact-us)
+Table of Contents
+
+1. [The personal data we collect](#the-personal-data-we-collect)
+2. [How we use your personal data](#how-we-use-your-personal-data)
+3. [How we share your personal data](#how-we-share-your-personal-data)
+4. [Your rights and choices](#your-rights-and-choices)
+5. [International transfers](#international-transfers)
+6. [How we keep your data safe](#how-we-keep-your-data-safe)
+7. [This Website May Link to Other Websites](#this-website-may-link-to-other-websites)
+8. [Changes to this Privacy Notice](#changes-to-this-privacy-notice)
+9. [Contact Us](#contact-us)
 
 # The personal data we collect
 
