@@ -63,9 +63,11 @@
   - title: Terms of Use
     sections:
     - title: January 2022
-      link: docs/fiserv/terms-of-use/latest.md
+      link: docs/terms-of-use/latest.md
 - sections:
   -title: Privacy Notice
    sections:
     - title: January 2022
-      link: docs/fiserv/privacy-notice/latest.md
+      link: docs/privacy-notice/latest.md
+    - title: June 2021
+      link: docs/privacy-notice/june-2021.md
