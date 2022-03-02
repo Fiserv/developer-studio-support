@@ -45,7 +45,7 @@ We may also maintain pages for our company and our products and services on a va
 
 When you access our websites or use our mobile applications, we, our service providers, and our partners may automatically collect information about you, your computer or mobile device, and activity on our websites or mobile applications. Typically, this information includes your computer or mobile device operating system type and version number, manufacturer and model, device identifier (such as the Google Advertising ID or Apple ID for Advertising), browser type, screen resolution, IP address, the website you visited before browsing to our website, general location information such as city, state or geographic area; and information about your use of and actions on or in our websites or mobile applications, such as pages or screens you accessed, how long you spent on a page or screen, navigation paths between pages or screens, information about your activity on a page or screen, access times, and length of access. Certain products or services that we provide or which Developers may incorporate into their websites or mobile applications may automatically collect additional information, as may be further described in a separate privacy notice.
 
-Our service providers and business partners may collect this type of information over time and across third-party websites. This information is collected via various mechanisms, such as via cookies, web beacons, embedded scripts, through our mobile applications, and similar technologies. This type of information may also be collected when you read our HTML-enabled emails. Please refer to our Cookies Disclosure for more details. You can choose to disable cookies or to opt out of the use of your browsing behaviour for purposes of targeted advertising. For opt out instructions, please review the “Targeted online advertising” portion of the “Your Choices” section of this Privacy Notice.
+Our service providers and business partners may collect this type of information over time and across third-party websites. This information is collected via various mechanisms, such as via cookies, web beacons, embedded scripts, through our mobile applications, and similar technologies. This type of information may also be collected when you read our HTML-enabled emails. Please refer to our [Cookies Disclosure](https://www.fiserv.com/en/legal/cookie-statement.html) for more details. You can choose to disable cookies or to opt out of the use of your browsing behaviour for purposes of targeted advertising. For opt out instructions, please review the “[Targeted online advertising](#your-rights-and-choices)” portion of the “Your Choices” section of this Privacy Notice.
 
 *D. Sensitive personal data*
 
@@ -82,7 +82,7 @@ We may contact Developers and Developer’s personnel with marketing communicati
 
 Where required by law, we will get your express opt-in consent before we share your personal data with any company outside the Fiserv group for marketing purposes. 
 
-You can ask us to stop sending you marketing messages at any time by contacting us using the details at Contact us section or clicking on the opt-out link included in each marketing message. 
+You can ask us to stop sending you marketing messages at any time by contacting us using the details at [Contact us](#contact-us) section or clicking on the opt-out link included in each marketing message. 
 
 Should you choose to opt out of receiving our marketing messages, we will continue to carry out our other relevant activities using your personal data, including sending non-marketing messages.
 
@@ -96,7 +96,7 @@ We use your personal data as we believe necessary or appropriate to (a) enforce 
 
 *G. With your consent*
 
-In some jurisdictions, applicable law may require us to request your consent to use your personal data in certain contexts, such as when we use certain cookies or similar technologies or would like to send you certain marketing messages. If we request your consent to use your personal data, you have the right to withdraw your consent any time in the manner indicated when we requested the consent or by contacting us. If you have consented to receive marketing communications from our third party partners, you may withdraw your consent by contacting those partners directly. 
+In some jurisdictions, applicable law may require us to request your consent to use your personal data in certain contexts, such as when we use certain cookies or similar technologies or would like to send you certain marketing messages. If we request your consent to use your personal data, you have the right to withdraw your consent any time in the manner indicated when we requested the consent or by [contacting us](#contact-us). If you have consented to receive marketing communications from our third party partners, you may withdraw your consent by contacting those partners directly. 
 
 *H. To create anonymous data*
 
@@ -152,12 +152,12 @@ You can ask us to stop sending you marketing messages at any time by contacting 
 
 Some of the business partners that collect information about users’ activities on our websites or in our mobile applications may be members of organizations or programs that provide choices to individuals regarding the use of their browsing behavior or mobile application usage for purposes of targeted advertising. Users may opt out of receiving targeted advertising on websites through participating members of the following organizations or programs: 
 
-- Network Advertising Initiative (USA) 
-- Digital Advertising Alliance (USA) 
-- European Interactive Digital Advertising Alliance (Europe) 
-- Digital Advertising Alliance of Canada (Canada) 
-- Australian Digital Advertising Alliance (Australia) 
-- Data Driven Advertising Initiative (Japan) 
+- [Network Advertising Initiative (USA)](https://optout.networkadvertising.org/?c=1)
+- [Digital Advertising Alliance (USA)](https://optout.aboutads.info/?c=2&lang=EN)
+- [European Interactive Digital Advertising Alliance (Europe)](https://www.youronlinechoices.eu/)
+- [Digital Advertising Alliance of Canada (Canada)](https://youradchoices.ca/en/tools)
+- [Australian Digital Advertising Alliance (Australia)](https://youronlinechoices.com.au/)
+- [Data Driven Advertising Initiative (Japan)](https://www.fiserv.com/en/about-fiserv/privacy-notice.html)
 
 Users of mobile applications may opt out of receiving targeted advertising in mobile applications through participating members of the Digital Advertising Alliance by installing the AppChoices mobile application, available here, and selecting the user’s choices. In addition, your mobile device settings may provide functionality to limit our, or our partners’, ability to engage in ad tracking or targeted advertising using the Google Advertising ID or Apple ID for Advertising associated with your mobile device. 
 
