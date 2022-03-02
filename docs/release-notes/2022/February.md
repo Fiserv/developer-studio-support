@@ -4,5 +4,5 @@
 - Fixed modals in merchant flow to allow scrolling.
 
 ## Enhancement
-- Added additional tags next to product’s name.
+- Added additional tags next to a product’s name.
 - Updated UI for mobile view of the API Explorer page.
