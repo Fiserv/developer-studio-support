@@ -30,24 +30,24 @@
 - sections:
   - title: Developer Studio overview
     sections:
-    - link: docs/about-developer-studio.md
-      title: About Developer Studio
-    - link: docs/explore-a-product-area.md
-      title: Explore a product area
-    - link: docs/dive-into-a-product.md
-      title: Dive into a product
-    - link: docs/explore-documentation.md
-      title: Explore Documentation
-    - link: docs/try-out-the-api-sandbox.md
-      title: Try out the API Sandbox
-    - link: docs/search-and-all-apis.md
-      title: Search and All APIs
+    - title: About Developer Studio
+      link: docs/about-developer-studio.md
+    - title: Explore a product area
+      link: docs/explore-a-product-area.md
+    - title: Dive into a product
+      link: docs/dive-into-a-product.md
+    - title: Explore Documentation
+      link: docs/explore-documentation.md
+    - title: Try out the API Sandbox
+      link: docs/try-out-the-api-sandbox.md
+    - title: Search and All APIs
+      link: docs/search-and-all-apis.md
     - title: Markdown Support
       sections:
-      - link: docs/md/basic-syntax.md
-        title: Basic Syntax
-      - link: docs/md/extended-syntax.md
-        title: Extended Syntax
+      - title: Basic Syntax
+        link: docs/md/basic-syntax.md
+      - title: Extended Syntax
+        link: docs/md/extended-syntax.md
 - sections:
   - title: API Glossary
     link: docs/api-glossary.md
