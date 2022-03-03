@@ -28,46 +28,48 @@
 # the delivery of this work
 ################################################################################
 - sections:
-    - sections:
-        - link: docs/about-developer-studio.md
-          title: About Developer Studio
-        - link: docs/explore-a-product-area.md
-          title: Explore a product area
-        - link: docs/dive-into-a-product.md
-          title: Dive into a product
-        - link: docs/explore-documentation.md
-          title: Explore Documentation
-        - link: docs/try-out-the-api-sandbox.md
-          title: Try out the API Sandbox
-        - link: docs/search-and-all-apis.md
-          title: Search and All APIs
-        - sections:
-            - link: docs/md/basic-syntax.md
-              title: Basic Syntax
-            - link: docs/md/extended-syntax.md
-              title: Extended Syntax
-          title: Markdown Support
-      title: Developer Studio overview
+  - title: Developer Studio overview
+    sections:
+    - link: docs/about-developer-studio.md
+      title: About Developer Studio
+    - link: docs/explore-a-product-area.md
+      title: Explore a product area
+    - link: docs/dive-into-a-product.md
+      title: Dive into a product
+    - link: docs/explore-documentation.md
+      title: Explore Documentation
+    - link: docs/try-out-the-api-sandbox.md
+      title: Try out the API Sandbox
+    - link: docs/search-and-all-apis.md
+      title: Search and All APIs
+    - title: Markdown Support
+      sections:
+      - link: docs/md/basic-syntax.md
+        title: Basic Syntax
+      - link: docs/md/extended-syntax.md
+        title: Extended Syntax
 - sections:
-    - link: docs/api-glossary.md
-      title: API Glossary
+  - title: API Glossary
+    link: docs/api-glossary.md
 - sections:
-    - link: docs/FAQ.md
-      title: FAQ
+  - title: FAQ
+    link: docs/FAQ.md
 - sections:
-    - sections:
-        - link: docs/release-notes/2022/january.md
-          title: January 2022
-      title: Release notes
+  - title: Release notes
+    sections:
+    - title: January 2022
+      link: docs/release-notes/2022/january.md
 - sections:
-    - sections:
-        - link: docs/terms-of-use/latest.md
-          title: January 2022
-      title: Terms of Use
+  - title: Terms of Use
+    sections:
+    - title: Latest
+      link: docs/terms-of-use/latest.md
 - sections:
-    - sections:
-        - link: docs/privacy-notice/latest.md
-          title: January 2022
-        - link: docs/privacy-notice/june-2021.md
-          title: June 2021
-      title: Privacy Notice
+  - title: Privacy Notice
+    sections:
+    - title: Latest
+      link: docs/privacy-notice/latest.md
+    - title: Archive
+      sections:
+      - title: June 2021
+        link: docs/privacy-notice/june-2021.md
