@@ -41,7 +41,7 @@ JSON string format for `additionalDataCommon`:
 }
 ```
 
-<!-- type: tab-end -->
+<!-- type: tab -->
 
 JSON string format for `additionalDataCommon`:
 
@@ -58,7 +58,7 @@ JSON string format for `additionalDataCommon`:
 }
 ```
 
-<!-- type: tab-end -->
+<!-- type: tab -->
 
 JSON string format for `additionalDataCommon`:
 
