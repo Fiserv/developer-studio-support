@@ -10,7 +10,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 
 | Variable | Type  | Description |
-| -------- | --- |  ------------------ |
+|--------|---|------------------|
 | `additionalData` | *object*  | Used to identify specific data based on transaction requirements. |
 | `installments` | *object*| Used in installment bill payments |
 | `recurring` | *object*  | Used in recurring bill payments |
