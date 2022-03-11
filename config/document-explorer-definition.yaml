@@ -57,10 +57,10 @@
 - sections:
   - title: Release notes
     sections:
-    - title: January 2022
-      link: docs/release-notes/2022/january.md
     - title: February 2022
       link: docs/release-notes/2022/february.md
+    - title: January 2022
+      link: docs/release-notes/2022/january.md
 - sections:
   - title: Terms of Use
     sections:
