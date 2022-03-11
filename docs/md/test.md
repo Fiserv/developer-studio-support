@@ -9,15 +9,15 @@ titles: additionalDataCommon, JSON Example, example 3, example 4
 The below table identifies the parameters in the `additionalDataCommon` object.
 
 
-| Variable | Type | Maximum Length | Description |
+| Variable | Type  | Description |
 | -------- | --- | ------------ | ------------------ |
-| `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
-| `installments` | *object* | N/A | Used in installment bill payments |
-| `recurring` | *object* | N/A | Used in recurring bill payments |
-| `deferredPayments` | *object* | N/A | Used in defferred bill payments |
-| `directedRouting` | *object* | N/A | Required in Directed Routing transactions. |
-| `privateLabel` | *object* | N/A | Used to process Private Label payment cards. |
-| `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
+| `additionalData` | *object*  | Used to identify specific data based on transaction requirements. |
+| `installments` | *object*| Used in installment bill payments |
+| `recurring` | *object*  | Used in recurring bill payments |
+| `deferredPayments` | *object* |  Used in defferred bill payments |
+| `directedRouting` | *object* |  Required in Directed Routing transactions. |
+| `privateLabel` | *object* |  Used to process Private Label payment cards. |
+| `customFields` | *array* |  Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 
 
 ---
