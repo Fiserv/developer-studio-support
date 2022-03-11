@@ -10,7 +10,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 
 
 | Variable | Type | Maximum Length | Description |
-| -------- | -- | ------------ | ------------------ |
+| -------- | --- | ------------ | ------------------ |
 | `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
 | `installments` | *object* | N/A | Used in installment bill payments |
 | `recurring` | *object* | N/A | Used in recurring bill payments |
