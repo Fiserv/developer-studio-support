@@ -55,7 +55,7 @@ To organize content in tabs, indicate `titles` within the first `tab` annotation
 
 ![Tab sets](../assets/images/md/tab_syntax.png "Tabsets")
 
-## Example
+### Example
 
 <!--
 type: tab
@@ -73,7 +73,7 @@ second tab content:
 <!-- type: tab-end -->
 
 
-## Additional tabset example
+### Additional tabset example
 
 Bellow example of a tabset contains a table and a code block.
 

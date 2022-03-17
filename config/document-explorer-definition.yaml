@@ -57,6 +57,21 @@
 - sections:
   - title: Release notes
     sections:
+    - title: February 2022
+      link: docs/release-notes/2022/february.md
     - title: January 2022
       link: docs/release-notes/2022/january.md
-      
+- sections:
+  - title: Terms of Use
+    sections:
+    - title: Latest
+      link: docs/terms-of-use/latest.md
+- sections:
+  - title: Privacy Notice
+    sections:
+    - title: Latest
+      link: docs/privacy-notice/latest.md
+    - title: Archive
+      sections:
+      - title: June 2021
+        link: docs/privacy-notice/june-2021.md
