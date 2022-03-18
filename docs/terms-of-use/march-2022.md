@@ -22,7 +22,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   **1.8 Developer Sandbox** means a limited simulation environment which enables you to view and execute Fiserv APIs in isolation (i.e., not in a Test Environment).
 
-  **1.9 Developer Studio** means the website located at [developer.fiserv.com](www.developer.fiserv.com).
+  **1.9 Developer Studio** means the website located at [developer.fiserv.com](https://developer.fiserv.com/).
 
   **1.10 Documentation** means the operating instructions, user manuals, help files, Swagger documentation, and other documentation, and any updates to these, in written or electronic form, which we may make available to you that are intended to be used in connection with your activities within the Developer Studio.
 
@@ -42,7 +42,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   **1.18 Login Credentials** means the username and password you create as part of your registering a Developer Account to use the Developer Studio.
 
-  **1.19 Open Source Software** means software that is subject to a license identified as an open source license by the Open Source Initiative (www.opensource.org) or any substantially similar license.
+  **1.19 Open Source Software** means software that is subject to a license identified as an open source license by the Open Source Initiative ([www.opensource.org](https://opensource.org/)) or any substantially similar license.
 
   **1.20 Personal Data** means any information that can be used to identify an individual person or any other information defined as “personal information,” “personally identifiable information,” “personal data,” or a similar term under Applicable Law.
   
@@ -57,5 +57,16 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
   **1.25 You** means the developer whose details are set out in the Developer Account and includes the employer of the developer and/or any other entity the developer represents.
 
 **2. Developer Account.**
+
+  - 2.1 To access and use the Developer Studio, including any Fiserv APIs or a Developer Build Space, you must first register for a Developer Account and establish your Login Credentials.
+
+  - 2.2 You are responsible for all activity in the Developer Studio associated with your Developer Account. You must keep your Login Credentials confidential and prevent others from using your Login Credentials. You must notify us immediately (in any event within 24 hours) of any unauthorized use of your Login Credentials or your Developer Account, or of any other security breach related to the Developer Studio of which you become aware or which you reasonably suspect. You may not sell, transfer, or sublicense your Login Credentials, or use your Login Credentials for any other purpose than permitted in these Terms. We may periodically require you to renew your registration for a Developer Account.
+
+  - 2.3 When you register for a Developer Account, you will need to submit, and we will collect, certain public and non-public information, including Personal Data, about you to authenticate your identity and determine your eligibility for a Developer Account. We may decline or approve your registration for a Developer Account. We may transfer any information you provide to us to third parties that assist us in providing, administering and managing, and evaluating your eligibility for, a Developer Account. You must keep the information in your Developer Account current at all times.
+
+  - 2.4 Fiserv may reject your registration for a Developer Account, or suspend or terminate your Developer Account at any time, in our sole discretion and may deny your reapplication for a Developer Account in the future. You may terminate your Developer Account at any time upon written notice to us. Upon any suspension or termination of your Developer Account: (1) all rights granted to you under these Terms will immediately cease; and (2) you must immediately cease accessing and/or using your Developer Account, including the Developer Build Space, and any derivative works thereof.
+
+**3. Licenses and Restictions.**
+
 
  
