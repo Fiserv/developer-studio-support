@@ -2,14 +2,14 @@
 
 ## Enhancements
 - Dark mode is available on Developer Studio
-- Terms of Use and Privacy Notice are now available
-- Updated GraphQL API key endpoints with Apigee API pagination
-- Added Search pagination enhancements 
-- Added additional color schemes for markdown syntax
+- Terms of Use and Privacy Notice have been updated. You can review them [here](https://developer.fiserv.com/product/Support).
+- Updated GraphQL API key endpoints with Apigee API pagination ****
+- Added pagination on Search page
+- Added color schemes for system notifications
 - Updated API Explorer with additional enhancements i.e. download API spec file, code snippet, and dark mode
 - Added validator in Github to check syntax of config files, API spec files, and markdowns
 
 ## Fixed
-- Fixed API pagination 
-- Fixed error message when creating API key
+- Fixed pagination for API key table 
+- Updated error message when creating API key
 - Fixed date format to display correctly on API Explorer
