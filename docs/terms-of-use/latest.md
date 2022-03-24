@@ -1,4 +1,4 @@
-# Fiserv Developer Studio Terms of Use - Testing changes
+# Fiserv Developer Studio Terms of Use
 
 ***Update on: March 23, 2022***
 
