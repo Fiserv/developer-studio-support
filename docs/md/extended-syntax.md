@@ -62,16 +62,17 @@ type: tab
 titles: First Tab, Second Tab
 -->
 
-tab content
+First tab content...
 
 <!--
 type: tab
 -->
 
-second tab content:
+Second tab content...
 
 <!-- type: tab-end -->
 
+---
 
 ### Additional tabset example
 
