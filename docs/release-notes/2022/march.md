@@ -3,7 +3,6 @@
 ## Enhancements
 - Dark mode is available on Developer Studio
 - Terms of Use and Privacy Notice have been updated. You can review them [here](https://developer.fiserv.com/product/Support).
-- Updated GraphQL API key endpoints with Apigee API pagination ****
 - Added pagination on Search page
 - Added color schemes for system notifications
 - Updated API Explorer with additional enhancements i.e. download API spec file, code snippet, and dark mode
