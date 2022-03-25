@@ -19,7 +19,7 @@ The variable `sourceType` is used to determine the source of the transaction. De
 <!-- type: tab -->
 
 JSON string format for `additionalDataCommon`:
-
+<!---(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)--->
 ```json
 {
    "additionalDataCommon":{
@@ -32,7 +32,7 @@ JSON string format for `additionalDataCommon`:
    }
 }
 ```
-
+<!---(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)--->
 <!-- type: tab-end -->
 
 ---
