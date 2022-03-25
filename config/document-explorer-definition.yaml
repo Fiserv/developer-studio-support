@@ -57,6 +57,8 @@
 - sections:
   - title: Release notes
     sections:
+    - title: March 2022
+      link: docs/release-notes/2022/march.md
     - title: February 2022
       link: docs/release-notes/2022/february.md
     - title: January 2022
