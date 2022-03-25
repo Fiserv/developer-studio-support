@@ -13,13 +13,13 @@ The variable `sourceType` is used to determine the source of the transaction. De
 | [DecryptedWallet](?path=docs/Resources/Guides/Payment-Sources/Decrypted-Wallet.md) | **Decrypted Wallet** |
 | [NetworkToken]<!--(?path=docs/Resources/Guides/Payment-Sources/Network-Token.md)--> | **Network Token** |
 | [Payment3DS](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) | **3-D Secure** |
-<!---(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)--->
+<!---Test 0--->
 ---
 
 <!-- type: tab -->
-
+<!Test 2--->
 JSON string format for `additionalDataCommon`:
-<!---(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)--->
+<!--- Test 3--->
 ```json
 {
    "additionalDataCommon":{
@@ -32,7 +32,7 @@ JSON string format for `additionalDataCommon`:
    }
 }
 ```
-<!---(?path=docs/Online-Mobile-Digital/Wallets-AltPayments/Samsung-Pay/Samsung-Pay.md)--->
+<!---Test 4--->
 <!-- type: tab-end -->
 
 ---
