@@ -17,7 +17,7 @@ The below table identifies the parameters in the `additionalDataCommon` object.
 | Variable | Type | Maximum Length | Description |
 | -------- | -- | ------------ | ------------------ |
 | `additionalData` | *object* | N/A | Used to identify specific data based on transaction requirements. |
-| `directedRouting` | *object* | N/A | Required in Directed Routing transactions. |
+| [NetworkToken]<!--(?path=docs/Resources/Guides/Payment-Sources/Network-Token.md)--> | *object* | N/A | Required in Directed Routing transactions. |
 | `customFields` | *array* | N/A | Used to submit merchant custom fields used in terminal processing such as Key Value Pair. |
 
 
@@ -81,7 +81,7 @@ The below table identifies the valid values of the `billPaymentIndicator`.
 
 | Value | Description |
 | ----- | ----- |
-| *SINGLE* | Single charge not for recurring services or installment plan. |
+| [NetworkToken]<!--(?path=docs/Resources/Guides/Payment-Sources/Network-Token.md)--> | Single charge not for recurring services or installment plan. |
 | *DEFERRED* | A charge for an order with a delayed payment for a specified amount of time. |
 | *INSTALLMENT* | Single purchase where the cardholder is billed (charged) in installments. |
 | *RECURRING* | Agreement where charges will occur on a periodic basis (e.g. subscriptions). |
@@ -100,7 +100,7 @@ title: additionalDataCommon
 
 | Variable | Type | Maximum Length | Description/Values |
 | ----- | ----- | ----- | ----- |
-| `ecomURL` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
+|[NetworkToken]<!--(?path=docs/Resources/Guides/Payment-Sources/Network-Token.md)-->` | *string* | 512 | Contains the URL of the site performing the Ecommerce transaction. |
 | `requestedTestResponseCode` | *string* | 28 | Value used to test/replicate a transaction Error. **Valid Values:** NO_CONNECTION_AVAILABLE, IOEXCEPTION_RECEIVED.|
 
 <!---

@@ -66,12 +66,12 @@
     sections:
     - title: Latest
       link: docs/terms-of-use/latest.md
+    - title: August 2015
+      link: docs/terms-of-use/august-2015.md
 - sections:
   - title: Privacy Notice
     sections:
     - title: Latest
       link: docs/privacy-notice/latest.md
-    - title: Archive
-      sections:
-      - title: June 2021
-        link: docs/privacy-notice/june-2021.md
+    - title: June 2021
+      link: docs/privacy-notice/june-2021.md
