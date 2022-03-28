@@ -47,7 +47,7 @@ It might seem a bit overwhelming, but let’s break down some of the key concept
 
 ![product_api_9]
 
-**Reponse Schema** is an explanation of the result and lists each property that could possibly be returned.
+**Reponse Schema** is an explanation of the result and lists each property that could possibly be returned. 
 
 ![product_api_10]
 
