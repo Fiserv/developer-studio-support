@@ -14,8 +14,5 @@ The variable `sourceType` is used to determine the source of the transaction. De
 | [NetworkToken]<!--(?path=docs/Resources/Guides/Payment-Sources/Network-Token.md)--> | **Network Token** |
 | [Payment3DS](?path=docs/Online-Mobile-Digital/3D-Secure/3DSecure.md) | **3-D Secure** |
 
-<!-- theme: success -->
-> testing themes, should be in green
-
-<!-- align: center --> 
-![image](../assets/images/Fiserv_Logo.jpg)
+<!-- theme: warning -->
+> testing themes, should be in orange
