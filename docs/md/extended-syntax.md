@@ -55,6 +55,9 @@ To organize content in tabs, indicate `titles` within the first `tab` annotation
 
 ![Tab sets](../assets/images/md/tab_syntax.png "Tabsets")
 
+<!-- theme: danger -->
+> Tab containers cannot be nested.
+
 ### Example
 
 <!--
