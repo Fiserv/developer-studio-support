@@ -7,4 +7,3 @@ Feburary 2022
 ## Fixed
 - Removed added space from one-time password to prevent it from pasting into text field.
 - Fixed modals in merchant flow to allow scrolling.
-- 
