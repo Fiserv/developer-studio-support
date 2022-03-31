@@ -1,5 +1,6 @@
-# January 2022
-## Announcements
+# Release notes
+January 2022
+## What's new
 - Release notes for Developer Studio are now available. Read about the latest feature releases, enhancements, and bug fixes. You can find the release notes on the Support page.  
 ## Enhancement
 - Expand and view all Merchant IDs and API keys on one page by using the advanced pagination. 
