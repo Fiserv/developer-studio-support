@@ -1,4 +1,5 @@
-# Feburary 2022
+# Release Notes
+Feburary 2022
 
 ## Enhancement
 - Added additional tags next to a product’s name.
