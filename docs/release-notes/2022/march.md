@@ -1,4 +1,5 @@
-# March 2022
+# Release Notes
+March 2022
 
 ## Enhancements
 - Dark mode is available on Developer Studio
