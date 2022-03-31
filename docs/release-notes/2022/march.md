@@ -21,3 +21,4 @@ March 2022
 - Fixed Markdown files displaying commented contents
 - Fixed a bug in navigation for mobile and tablet
 - Fixed the select input display issue in dark mode
+
