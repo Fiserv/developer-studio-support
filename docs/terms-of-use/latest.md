@@ -72,6 +72,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   3.2  Your access to and use of each Fiserv API may be subject to additional terms and conditions or additional authorization(s) from us (**Specific API Terms**). If there are any inconsistencies between these Terms and the Specific API Terms, the Specific API Terms will govern to the limited extent there are inconsistencies and solely for the use of the applicable Fiserv API. The number of Fiserv API calls you make during a certain time period will be limited. If you exceed those limits, we may charge you for the Fiserv API calls that exceed those limits and/or terminate your access to the applicable Fiserv API. You will not attempt to circumvent any limits documented with each Fiserv API.
   
+
   3.3  You will not and will not allow anyone else to:
 
   -  access, use, modify, adapt, reformat, exploit or copy the Fiserv APIs or Documentation, in whole or in part, except as expressly permitted in these Terms;
@@ -97,7 +98,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
   -  imply or represent that any Integration or your Apps are “certified,” approved, preferred, or that any of their performance is guaranteed by us; or
 
   -  access any portion of the Developer Studio, if you are (A) located in a Prohibited Country; or (B) are listed on any U.S. Government list of prohibited or restricted parties.
-  
+
   3.4  You irrevocably assign, without reservation, to Fiserv all right, title, and interest in and to all ideas, comments, suggestions, and any other feedback you provide related to the Fiserv APIs, the Fiserv Platform, and/or the Developer Studio (or any portion thereof) (**Feedback**), including without limitation all Intellectual Property Rights contained in such Feedback.
 
 
