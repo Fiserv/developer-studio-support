@@ -99,7 +99,8 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   -  access any portion of the Developer Studio, if you are (A) located in a Prohibited Country; or (B) are listed on any U.S. Government list of prohibited or restricted parties.
 
-  3.4  You irrevocably assign, without reservation, to Fiserv all right, title, and interest in and to all ideas, comments, suggestions, and any other feedback you provide related to the Fiserv APIs, the Fiserv Platform, and/or the Developer Studio (or any portion thereof) (**Feedback**), including without limitation all Intellectual Property Rights contained in such Feedback.
+
+3.4  You irrevocably assign, without reservation, to Fiserv all right, title, and interest in and to all ideas, comments, suggestions, and any other feedback you provide related to the Fiserv APIs, the Fiserv Platform, and/or the Developer Studio (or any portion thereof) (**Feedback**), including without limitation all Intellectual Property Rights contained in such Feedback.
 
 **4.  Test Data**. You are responsible for your use, retention, and handling of all Test Data, and any data generated or derived from Test Data. We have no obligation to maintain Test Data on our servers and may delete any Test Data from our systems at any time without notice. You may only submit or upload dummy Test Data on or through your Developer Account (i.e., real account numbers, names, addresses, and other Personal Data may not be used). Load testing your Developer Account or in the Developer Build Space or the Fiserv Platform (or any portion thereof) is prohibited. We have no obligation to monitor or validate any information submitted or uploaded by you on or through your Developer Account.
 
