@@ -1,6 +1,6 @@
 # Fiserv Developer Studio Terms of Use
 
-***Update on: April 11, 2022***
+***Update on: March 23, 2022***
 
 Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LLC and/or its Affiliates will provide the Developer Studio, including the Developer Build Space, to you subject to these terms of use. These terms, together with the Documentation and any applicable polices and guidelines, constitute a legal agreement between you and Fiserv for your use of the Developer Studio (**Terms**). By registering for a Developer Account, you agree to be bound by these Terms. If you register for a Developer Account on behalf of a legal entity, you represent and warrant that you have the authority to bind that entity to these Terms and all references to “you” in these Terms will then refer to that entity. The Developer Studio is not offered to any person under the age of 13. If you are over the age of 13 but under the age of 18, you must either: (1) be an emancipated minor, or (2) have obtained the legal consent of your parent or legal guardian to use this Developer Studio and agree to these Terms.
 
@@ -72,7 +72,6 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   3.2  Your access to and use of each Fiserv API may be subject to additional terms and conditions or additional authorization(s) from us (**Specific API Terms**). If there are any inconsistencies between these Terms and the Specific API Terms, the Specific API Terms will govern to the limited extent there are inconsistencies and solely for the use of the applicable Fiserv API. The number of Fiserv API calls you make during a certain time period will be limited. If you exceed those limits, we may charge you for the Fiserv API calls that exceed those limits and/or terminate your access to the applicable Fiserv API. You will not attempt to circumvent any limits documented with each Fiserv API.
   
-
   3.3  You will not and will not allow anyone else to:
 
   -  access, use, modify, adapt, reformat, exploit or copy the Fiserv APIs or Documentation, in whole or in part, except as expressly permitted in these Terms;
@@ -98,9 +97,6 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
   -  imply or represent that any Integration or your Apps are “certified,” approved, preferred, or that any of their performance is guaranteed by us; or
 
   -  access any portion of the Developer Studio, if you are (A) located in a Prohibited Country; or (B) are listed on any U.S. Government list of prohibited or restricted parties.
-
-
-3.4  You irrevocably assign, without reservation, to Fiserv all right, title, and interest in and to all ideas, comments, suggestions, and any other feedback you provide related to the Fiserv APIs, the Fiserv Platform, and/or the Developer Studio (or any portion thereof) (**Feedback**), including without limitation all Intellectual Property Rights contained in such Feedback.
 
 **4.  Test Data**. You are responsible for your use, retention, and handling of all Test Data, and any data generated or derived from Test Data. We have no obligation to maintain Test Data on our servers and may delete any Test Data from our systems at any time without notice. You may only submit or upload dummy Test Data on or through your Developer Account (i.e., real account numbers, names, addresses, and other Personal Data may not be used). Load testing your Developer Account or in the Developer Build Space or the Fiserv Platform (or any portion thereof) is prohibited. We have no obligation to monitor or validate any information submitted or uploaded by you on or through your Developer Account.
 
