@@ -4,7 +4,7 @@ April 1, 2022
 ##Announcement
 - Every product team would need to add Release Notes as part of the documentation.
 - Postman collections are now downloadable for some products.
-- 
+
 ##Enhancement
 - When force-logged-out the user will stay on the same page or sent to homepage in case the page requires login.
 - Elastic Search indexing jobs are now run independently without Mongo DB hashes
