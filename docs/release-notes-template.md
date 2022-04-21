@@ -3,7 +3,7 @@
 <!-- theme: success -->
 > Every product team must add Release Notes as part of the documentation.
 
-Use the following location for your release notes <repo-name>/docs/release-notes/<year>/<month>.md
+Use the following location for your release notes repo-name/docs/release-notes/2022/month.md
 
 Use the bellow template to document monthly changes.
   
