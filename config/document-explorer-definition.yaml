@@ -42,6 +42,8 @@
       link: docs/try-out-the-api-sandbox.md
     - title: Search and All APIs
       link: docs/search-and-all-apis.md
+    - title: Release Notes Template
+      link: docs/release-notes-template.md
     - title: Markdown Support
       sections:
       - title: Basic Syntax
