@@ -1,8 +1,9 @@
 # Release Notes Template
 
 <!-- theme: success -->
-> Every product team must add Release Notes as part of the documentation to the followig location for Developer Studio to index
-> <repo-name>/docs/release-notes/<year>/<month>.md
+> Every product team must add Release Notes as part of the documentation.
+
+Use the following location for your release notes <repo-name>/docs/release-notes/<year>/<month>.md
 
 Use the bellow template to document monthly changes.
   
