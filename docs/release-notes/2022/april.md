@@ -1,11 +1,11 @@
 # Release Notes
 April 1, 2022
 
-##Announcement
+## What's new
 - Every product team must add Release Notes as part of the documentation.
 - Postman collections are now downloadable for some products.
 
-##Enhancement
+## Enhancements
 - When a user is force-logged-out of the system, the user will remain on the same page or be sent to the Home page when the page requires login.
 - Elastic Search indexing jobs are now run independently of Mongo DB hashes.
 - The documentation tree on the side navigation pane loads near real-time.
@@ -16,7 +16,7 @@ April 1, 2022
 - The Webby Award badge has been added to the footer.
 - A feedback clause has been added to Section 3.4 of the [Terms of Use](?path=/docs/terms-of-use/latest.md). 
 
-##Fixed
+## Fixed
 - New tab links will now open in a new tab on the API Explorer page.
 - A payload generation issue has been corrected [Git-issue #115](https://github.com/Fiserv/Support/issues/115).
 - The link to Security Questions, in Set Up notifications has been corrected.
