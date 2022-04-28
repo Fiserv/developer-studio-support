@@ -1,6 +1,7 @@
 ## What's new
 - Mega menu has been introduced to simplify user search for a solution/product.
-- Product & API Versioning has been introduced to enable the use to experience different versions of the same solution.
+- The new mega menu header has been introduced to to help facilitate user discovery to show products that are relevant based on customer segment.
+- Product & API Versioning has been enabled to view Preview, Active and Previous versions of the product.
 - [Release Notes Template](?path=/docs/release-notes-template.md) has been added for product teams to use.
 
 ## Enhancement
