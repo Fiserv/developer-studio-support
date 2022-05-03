@@ -7,7 +7,7 @@ The value inside of the annotations is one or more key-value pairs, and the anno
 To center an image annotate `align` wrapped in a comment:
 
 <!-- align: center -->
-![Image centering](https://github.com/Fiserv/developer-studio-support/blob/develop/assets/images/md/align_image.png "Image centering")
+![Image centering](../assets/images/md/align_image.png "Image centering")
 
 
 ## Callouts, themed blockquotes
@@ -15,7 +15,7 @@ To center an image annotate `align` wrapped in a comment:
 Callouts are MD blockquotes with optional annotation to indicate intent.
 There are four blockquote themes: the default (no annotation required), success, warning, and danger.
 
-![Themes](https://github.com/Fiserv/developer-studio-support/blob/develop/assets/images/md/theme_syntax.png "Blockquote Themes")
+![Themes](../assets/images/md/theme_syntax.png "Blockquote Themes")
 
 > Blockquotes in default color.
 <!-- theme: success -->
@@ -30,7 +30,7 @@ There are four blockquote themes: the default (no annotation required), success,
 A `card` has a border and optional values for a title, a description, and a link.
 To have a number of cards in a row, use `row` & `row-end` annotation before and after card(s) to be in a row.
 
-![Row of Cards](https://github.com/Fiserv/developer-studio-support/blob/develop/assets/images/md/card_syntax.png "Row of cards")
+![Row of Cards](../assets/images/md/card_syntax.png "Row of cards")
 
 <!-- type: row -->
 
@@ -53,7 +53,7 @@ link: ?path=docs/about-developer-studio.md
 To organize content in tabs, indicate `titles` within the first `tab` annotation, followed by the tab content, and closed by a final `tab-end` annotation.
 > Users of Stoplight Flavored Markdown, need to include additional `title` annotation for each tab.
 
-![Tab sets](https://github.com/Fiserv/developer-studio-support/blob/develop/assets/images/md/tab_syntax.png "Tabsets")
+![Tab sets](../assets/images/md/tab_syntax.png "Tabsets")
 
 <!-- theme: danger -->
 > Tab containers cannot be nested.
