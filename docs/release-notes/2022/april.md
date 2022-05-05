@@ -2,9 +2,9 @@
 April 1, 2022
 
 ## What's new
+- Product & API Versioning has been enabled to view Preview, Active and Previous versions of the product.
 - Every product team must add Release Notes as part of the documentation.
 - Now Postman collections are downloadable for some products.
-- Introduced versioning for Products and APIs.
 
 ## Enhancements
 - When a user is force-logged-out of the system, the user will remain on the same page or be sent to the Home page when the page requires login.
@@ -23,3 +23,17 @@ April 1, 2022
 - The link to Security Questions, in Set Up notifications has been corrected.
 - Request Schema properties are now aligned with theh Code Snippet on the API explorer page.
 - When the API explorer page or the Documentation page opens from a URL, the left navigation tree will expand with the page link highlighted.
+
+
+
+April 15, 2022
+
+## What's new
+- The [Release Notes Template](?path=/docs/release-notes-template.md) has been made available for product teams to use.
+
+## Enhancements
+- [Terms of Use](?path=/docs/terms-of-use/latest.md) has been updated.
+
+## Fixed
+- The mobile layout for cookie banner has been fixed.
+- The syntax error in Transaction-Details.md file has been fixed for Commerce Hub [GitHub Issue 128](https://www.github.com/Fiserv/Support/issues/128). 
