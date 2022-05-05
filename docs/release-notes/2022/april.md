@@ -4,6 +4,7 @@ April 1, 2022
 ## What's new
 - Every product team must add Release Notes as part of the documentation.
 - Postman collections are now downloadable for some products.
+- Introduced new Product and API-level versioning.
 
 ## Enhancements
 - When a user is force-logged-out of the system, the user will remain on the same page or be sent to the Home page when the page requires login.
