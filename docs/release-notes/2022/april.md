@@ -3,7 +3,7 @@ April 1, 2022
 
 ## What's new
 - Every product team must add Release Notes as part of the documentation.
-- Postman collections are now downloadable for some products.
+- Now Postman collections are downloadable for some products.
 - Introduced versioning for Products and APIs.
 
 ## Enhancements
