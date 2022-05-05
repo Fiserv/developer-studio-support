@@ -26,6 +26,7 @@ April 1, 2022
 
 <br>
 <br>
+<br>
 
 April 15, 2022
 
@@ -33,7 +34,7 @@ April 15, 2022
 - The [Release Notes Template](?path=/docs/release-notes-template.md) has been made available for product teams to use.
 
 ## Enhancements
-- [Terms of Use](?path=/docs/terms-of-use/latest.md) has been updated.
+- The [Terms of Use](?path=/docs/terms-of-use/latest.md) has been updated.
 
 ## Fixed
 - The mobile layout for cookie banner has been fixed.
