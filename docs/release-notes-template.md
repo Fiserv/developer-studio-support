@@ -13,7 +13,7 @@ March 30 2022 (publication date)
 ### v1.0.0 (api version)
 
 ## What's New
-- Something new that was added or introduced like a documents or a services.  [Possible link to the doc](?path=/docs/getting-started.md)
+- Something new that was added or introduced like a documents or a services.  [Possible link to the doc](?path=/docs/about-developer-studio.md)
 
 ## Enhancements
 - Description of an improvement or a change
