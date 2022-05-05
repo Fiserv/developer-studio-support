@@ -19,7 +19,7 @@ April 1, 2022
 
 ## Fixed
 - New tab links will now open in a new tab on the API Explorer page.
-- A payload generation issue has been corrected [Git-issue #115](https://github.com/Fiserv/Support/issues/115).
+- A payload generation issue has been corrected [GitHub Issue #115](https://github.com/Fiserv/Support/issues/115).
 - The link to Security Questions, in Set Up notifications has been corrected.
 - Request Schema properties are now aligned with theh Code Snippet on the API explorer page.
 - When the API explorer page or the Documentation page opens from a URL, the left navigation tree will expand with the page link highlighted.
