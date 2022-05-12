@@ -17,7 +17,7 @@
   ~ warranties, either express or implied, are granted or extended by this
   ~ work or the delivery of this work.
   -->
-<!--SUBJECT This is the subject of the email
+<!--SUBJECT This is the subject of the email-->
 <!DOCTYPE html>
 <html lang="en">
 test string1 = {{.var1}}
