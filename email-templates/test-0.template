@@ -22,4 +22,4 @@
 <html lang="en">
 test string1 = {{.var1}}
 test string2 = {{.var2}}
-</html
+</html>
