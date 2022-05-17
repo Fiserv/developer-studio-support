@@ -45,11 +45,11 @@ When creating release notes please include the following information:
   
   **Release notes sections** are described in [release notes template](./release-notes-template.md).
 
-    - *What's new*, in terms of additions to the documentation and endpoints.
-    - *Enhancements*, are changes to the existng documentation and endpoints.
-    - *Fixed*, is a list of mishaps that were patched or corrected with a work-arround.
-    - *Know Issues*, is a list of persistent issue(s) that's known and not fixed.
-    - *Deprecated*, is a document, an endpoint, or a payload field, regarded as obsolete and best avoided.
+  - *What's new*, in terms of additions to the documentation and endpoints.
+  - *Enhancements*, are changes to the existng documentation and endpoints.
+  - *Fixed*, is a list of mishaps that were patched or corrected with a work-arround.
+  - *Know Issues*, is a list of persistent issue(s) that's known and not fixed.
+  - *Deprecated*, is a document, an endpoint, or a payload field, regarded as obsolete and best avoided.
 
 It is a requirement to have published release notes in order for a Tenant to be promoted to higher environments: 
 
