@@ -23,7 +23,7 @@ Developer Studio began mandating the specific location in order to make it unifo
     developer-studio-support/config/document-explorer-definition.yaml
 
 
-The requirement is to have Release notes section at the top tier of the document tree
+The requirement is to have Release notes section at the top tier of the document tree.
 
     - sections:
       - title: Getting Started
@@ -35,14 +35,16 @@ The requirement is to have Release notes section at the top tier of the document
         - title: May 2022
           link: docs/release-notes/2022/may.md
 
-**Release notes sections** are described in [release notes template](./release-notes-template.md).
 
 When creating release notes please include the following information:
 
   * Title of the document, the header (H1), is always *Release Notes*
   * Publication date, in format: Month date, year
-  * Version of openAPI document is in header H3
-  * Recommended sections, in H2:
+  * Version of openAPI document, in header H3
+  * Recommended sections, in H2
+  
+  **Release notes sections** are described in [release notes template](./release-notes-template.md).
+
     - *What's new*, in terms of additions to the documentation and endpoints.
     - *Enhancements*, are changes to the existng documentation and endpoints.
     - *Fixed*, is a list of mishaps that were patched or corrected with a work-arround.
