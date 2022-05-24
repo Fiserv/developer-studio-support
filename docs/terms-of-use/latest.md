@@ -66,7 +66,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   2.4  Fiserv may reject your registration for a Developer Account, or suspend or terminate your Developer Account at any time, in our sole discretion and may deny your reapplication for a Developer Account in the future. You may terminate your Developer Account at any time upon written notice to us. Upon any suspension or termination of your Developer Account (1) all rights granted to you under these Terms will immediately cease, and (2) you must immediately cease accessing and/or using your Developer Account, including the Developer Build Space, and any derivative works thereof.
 
-**3.  Licenses and Restictions.**
+**3.  Licenses and Restrictions.**
 
   3.1  Subject to the limitations in Section 3.3 and in any Documentation, we grant to you a nonexclusive, non-sublicensable, nontransferable, revocable, limited license during the term of these Terms to (1) access and use the Developer Studio only within the Territory, (2) access, use, and copy the Fiserv APIs and Documentation to develop and test your Integrations or Apps in a Test Environment where such Integrations or Apps may be deemed derivative works of the Fiserv APIs, (3) use a Test Environment and Test Data according to the applicable Documentation, and (4) use the Documentation solely for your own internal use. You must attribute Fiserv as the source of the Fiserv APIs or Documentation and include on any copies or use of Fiserv APIs or Documentation, all copyright or other Fiserv source identifiers that appear on the original. For clarity, you will use the Developer Studio only as expressly permitted by and in compliance with these Terms, and not in any other manner.
 
