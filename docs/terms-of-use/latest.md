@@ -71,7 +71,6 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
   3.1  Subject to the limitations in Section 3.3 and in any Documentation, we grant to you a nonexclusive, non-sublicensable, nontransferable, revocable, limited license during the term of these Terms to (1) access and use the Developer Studio only within the Territory, (2) access, use, and copy the Fiserv APIs and Documentation to develop and test your Integrations or Apps in a Test Environment where such Integrations or Apps may be deemed derivative works of the Fiserv APIs, (3) use a Test Environment and Test Data according to the applicable Documentation, and (4) use the Documentation solely for your own internal use. You must attribute Fiserv as the source of the Fiserv APIs or Documentation and include on any copies or use of Fiserv APIs or Documentation, all copyright or other Fiserv source identifiers that appear on the original. For clarity, you will use the Developer Studio only as expressly permitted by and in compliance with these Terms, and not in any other manner.
 
   3.2  Your access to and use of each Fiserv API may be subject to additional terms and conditions or additional authorization(s) from us (**Specific API Terms**). If there are any inconsistencies between these Terms and the Specific API Terms, the Specific API Terms will govern to the limited extent there are inconsistencies and solely for the use of the applicable Fiserv API. The number of Fiserv API calls you make during a certain time period will be limited. If you exceed those limits, we may charge you for the Fiserv API calls that exceed those limits and/or terminate your access to the applicable Fiserv API. You will not attempt to circumvent any limits documented with each Fiserv API.
-  
 
   3.3  You will not and will not allow anyone else to:
 
@@ -190,7 +189,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
 **18.  Indemnification**. You will indemnify, hold harmless and defend Fiserv, our Affiliates, and our respective officers, directors, employees, and agents (collectively, **Indemnitees**) from and against all claims, liabilities, damages (actual and consequential), settlements, losses, fines, and expenses (including attorneys' fees and other litigation expenses) relating to any allegation or third party proceeding arising from (1) your use of the Developer Studio, including the Fiserv APIs, Documentation, Fiserv Platform, or Developer Build Space, (2) your Integration or Apps, (3) your breach or alleged breach of any representation, warranty, or obligation contained in these Terms, (4) any negligence, fraud, dishonesty or willful misconduct by you, your Affiliates, or any third party acting on your behalf, (5) any contract or agreement between you and a third party, (6) any materials posted or otherwise provided by you or on your behalf, (7) any infringement of any Intellectual Property Rights by any of your Integrations or Apps by any other materials provided by you or on your behalf, or (8) your alleged or actual violation of any Applicable Law. We reserve the right, at your expense, to assume the exclusive defense and control of any claim covered by this Section 18. You may not settle any claim that purports to bind us without our prior written consent.
 
-**19.  Limitation of Liability. Disclaimers**.
+**19.  Limitation of Liability Disclaimers**.
 
   19.1  **To the full extent permitted under Applicable Law, Fiserv, our Affiliates, or our respective suppliers, officers, directors, employees, agents and representatives (collectively, Fiserv Parties and each a Fiserv Party) will not be liable for any indirect, incidental, special, consequential, punitive, or exemplary damages, including damages for lost profits, lost revenues, business interruption, lost information, or other pecuniary loss, regardless of whether these damages were foreseeable or any Fiserv Party was advised they were possible. Fiserv Parties’ total cumulative liability to you or any third party, whether arising in tort (including negligence), contract or otherwise, arising out of or relating to these Terms, the Developer Studio, any Fiserv API, the Fiserv Platform, or any Documentation will not exceed a total of one thousand dollars ($1,000)**.
 
@@ -239,7 +238,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
 **21.  Additional Terms Applicable Only to Banking Hub**.
 
-21.1  *Additional Defined Terms*.
+21.1  **Additional Defined Terms**.
 
   -  **AppMarket** means the electronic marketplace operated by us through which Fiserv Clients may browse, locate, purchase, and install Apps. 
 
@@ -247,7 +246,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   -  **Fiserv Client** means a client of Fiserv or our Affiliates that has purchased a Fiserv Platform and that accesses the AppMarket to browse, locate, purchase, and/or install Apps.
 
-21.2 *AppMarket Terms*.
+21.2 **AppMarket Terms**.
 
   -  To be considered for publication in the AppMarket, your App must meet our requirements (which may change from time to time). We reserve the right to reject your Integrations or Apps in our sole discretion. 
 
@@ -255,9 +254,9 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   -  You grant to us a non-exclusive, non-transferable license during the term of these Terms to use, display, modify, publish, distribute, transmit, print, or otherwise exploit, without reservation or accounting, any content or material you provide in or through your Integrations and Apps and/or any unsolicited submissions, ideas, suggestions, feedback or other content or materials you provide or otherwise submit to us in connection with your use of the Developer Build Space or any portion of it.
 
-21.3  *Developer Subscription Packages*. You may purchase a Developer Subscription package from us; such packages are available in different tiers. The different tiers and applicable monthly fees for each are set forth in the Developer Studio. If you fail to make timely payments to us for the Developer Subscription package you choose, we may suspend your access to your Developer Account, the Developer Build Space, and any other support services.
+21.3  **Developer Subscription Packages**. You may purchase a Developer Subscription package from us; such packages are available in different tiers. The different tiers and applicable monthly fees for each are set forth in the Developer Studio. If you fail to make timely payments to us for the Developer Subscription package you choose, we may suspend your access to your Developer Account, the Developer Build Space, and any other support services.
 
-21.4  *Payment Terms*.
+21.4  **Payment Terms**.
 
   -  You agree to pay us (A) fees for the Developer Subscription you purchase, and (B) Taxes as defined, as defined below. Our fees, rates and charges may be increased annually effective each January 1 upon no less than 30 days’ prior notice. 
 
