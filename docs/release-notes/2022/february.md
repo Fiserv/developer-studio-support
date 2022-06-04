@@ -2,7 +2,7 @@
 
 ### Feburary 2022
 
-#### Enhancement
+#### Enhancements
 - Added additional tags next to a product’s name.
 - Updated UI for mobile view of the API Explorer page.
 
