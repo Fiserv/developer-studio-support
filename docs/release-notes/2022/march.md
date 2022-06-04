@@ -1,10 +1,11 @@
 # Release Notes
-March 2022
 
-## What's new
+### March 2022
+
+#### What's new
 - Dark mode is available on Developer Studio. Dark mode toggle can be found in the footer
 
-## Enhancements
+#### Enhancements
 - Added pagination for the search results on the Search page
 - Added system notifications when data is not available
 - Built a new lightweight mock server to support APIs and API versions
@@ -14,7 +15,7 @@ March 2022
 - Improved APIs & Documentation indexing/crawler to support versioning
 - Improved scrollbar consistency across multiple operating systems
 
-## Fixed
+#### Fixed
 - Fixed pagination for API key table
 - Updated error message when creating API key
 - Fixed API request/response date format to display correctly in the Runbox on API Explorer page
