@@ -1,6 +1,6 @@
-# Fiserv Developer Studio Terms of Use - By TOS team
+# Fiserv Developer Studio Terms of Use
 
-***Update on: April 18, 2022***
+***Update on: June 4, 2022***
 
 Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LLC and/or our Affiliates will provide the Developer Studio, including the Developer Build Space, to you subject to these terms of use. These terms, together with the Documentation and any applicable polices and guidelines, constitute a legal agreement between you and Fiserv for your use of the Developer Studio (**Terms**). By registering for a Developer Account, you agree to be bound by these Terms. If you register for a Developer Account on behalf of a legal entity, you represent and warrant that you have the authority to bind that entity to these Terms and all references to “you” in these Terms will then refer to that entity. The Developer Studio is not offered to any person under the age of 13. If you are over the age of 13 but under the age of 18, you must either: (1) be an emancipated minor, or (2) have obtained the legal consent of your parent or legal guardian to use this Developer Studio and agree to these Terms.
 
@@ -71,32 +71,33 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
   3.1  Subject to the limitations in Section 3.3 and in any Documentation, we grant to you a nonexclusive, non-sublicensable, nontransferable, revocable, limited license during the term of these Terms to (1) access and use the Developer Studio only within the Territory, (2) access, use, and copy the Fiserv APIs and Documentation to develop and test your Integrations or Apps in a Test Environment where such Integrations or Apps may be deemed derivative works of the Fiserv APIs, (3) use a Test Environment and Test Data according to the applicable Documentation, and (4) use the Documentation solely for your own internal use. You must attribute Fiserv as the source of the Fiserv APIs or Documentation and include on any copies or use of Fiserv APIs or Documentation, all copyright or other Fiserv source identifiers that appear on the original. For clarity, you will use the Developer Studio only as expressly permitted by and in compliance with these Terms, and not in any other manner.
 
   3.2  Your access to and use of each Fiserv API may be subject to additional terms and conditions or additional authorization(s) from us (**Specific API Terms**). If there are any inconsistencies between these Terms and the Specific API Terms, the Specific API Terms will govern to the limited extent there are inconsistencies and solely for the use of the applicable Fiserv API. The number of Fiserv API calls you make during a certain time period will be limited. If you exceed those limits, we may charge you for the Fiserv API calls that exceed those limits and/or terminate your access to the applicable Fiserv API. You will not attempt to circumvent any limits documented with each Fiserv API.
+  
 
   3.3  You will not and will not allow anyone else to:
 
-  -  access, use, modify, adapt, reformat, exploit or copy the Fiserv APIs or Documentation, in whole or in part, except as expressly permitted in these Terms;
+  (1)  access, use, modify, adapt, reformat, exploit or copy the Fiserv APIs or Documentation, in whole or in part, except as expressly permitted in these Terms;
 
-  -  alter or remove any copyright or other Fiserv source identifier contained in the Fiserv APIs or Documentation or in any copy of either;
+  (2)  alter or remove any copyright or other Fiserv source identifier contained in the Fiserv APIs or Documentation or in any copy of either;
 
-  -  distribute, resell, license, sublicense, rent, assign, transfer, distribute, or otherwise make available the Fiserv APIs or Documentation, or your access to the Fiserv Platform, in whole or in part, to any third party without our prior written consent;
+  (3)  distribute, resell, license, sublicense, rent, assign, transfer, distribute, or otherwise make available the Fiserv APIs or Documentation, or your access to the Fiserv Platform, in whole or in part, to any third party without our prior written consent;
 
-  -  access, use, distribute or otherwise provide the Fiserv APIs or Documentation, in whole or in part, outside of the Territory, in violation of Applicable Law, or in violation of any third party rights, including any Intellectual Property Rights or rights of privacy;
+  (4)  access, use, distribute or otherwise provide the Fiserv APIs or Documentation, in whole or in part, outside of the Territory, in violation of Applicable Law, or in violation of any third party rights, including any Intellectual Property Rights or rights of privacy;
 
-  -  access or use the Fiserv APIs or Documentation, in whole or in part, for any benchmarking or competitive purposes;
+  (5)  access or use the Fiserv APIs or Documentation, in whole or in part, for any benchmarking or competitive purposes;
 
-  -  modify, decompile, deconstruct, reverse engineer, disassemble or, except as expressly authorized in Section 3.1, create derivative works of the Fiserv APIs or Documentation;
+  (6)  modify, decompile, deconstruct, reverse engineer, disassemble or, except as expressly authorized in Section 3.1, create derivative works of the Fiserv APIs or Documentation;
 
-  -  use the Developer Studio, including by uploading, posting, or otherwise transmitting any content or materials, or otherwise perform any activity, that could in any way transmit, directly or indirectly, or introduce to the Developer Studio, the Developer Build Space, the Fiserv Platform, or any websites, servers, networks, systems, or equipment of Fiserv or any third party, any form of malicious or unwanted code or program, viruses, worms, defects, Trojan horses, malware, or any items of a destructive nature;
+  (7)  use the Developer Studio, including by uploading, posting, or otherwise transmitting any content or materials, or otherwise perform any activity, that could in any way transmit, directly or indirectly, or introduce to the Developer Studio, the Developer Build Space, the Fiserv Platform, or any websites, servers, networks, systems, or equipment of Fiserv or any third party, any form of malicious or unwanted code or program, viruses, worms, defects, Trojan horses, malware, or any items of a destructive nature;
 
-  -  perform any activity, including launching a denial of service attack, that could damage, overburden, impair or disable the performance, features or functionality of the Developer Studio (including the Developer Build Space or any network(s) connected to the Developer Build Space), any Fiserv Platform, the Fiserv APIs, or any of our or any third party’s servers or systems or interfere with any third party’s use of the Developer Studio;
+  (8)  perform any activity, including launching a denial of service attack, that could damage, overburden, impair or disable the performance, features or functionality of the Developer Studio (including the Developer Build Space or any network(s) connected to the Developer Build Space), any Fiserv Platform, the Fiserv APIs, or any of our or any third party’s servers or systems or interfere with any third party’s use of the Developer Studio;
 
-  -  employ any spiders, robots or other similar data mining programs or techniques on any content or materials or otherwise in connection with your use of the Developer Studio;
+  (9)  employ any spiders, robots or other similar data mining programs or techniques on any content or materials or otherwise in connection with your use of the Developer Studio;
 
-  -  imply or represent that we sponsor or endorse any of your products or services or your Apps;
+  (10)  imply or represent that we sponsor or endorse any of your products or services or your Apps;
 
-  -  imply or represent that any Integration or your Apps are “certified,” approved, preferred, or that any of their performance is guaranteed by us; or
+  (11)  imply or represent that any Integration or your Apps are “certified,” approved, preferred, or that any of their performance is guaranteed by us; or
 
-  -  access any portion of the Developer Studio, if you are (A) located in a Prohibited Country; or (B) are listed on any U.S. Government list of prohibited or restricted parties.
+  (12)  access any portion of the Developer Studio, if you are (A) located in a Prohibited Country; or (B) are listed on any U.S. Government list of prohibited or restricted parties.
 
 
 3.4  You irrevocably assign, without reservation, to Fiserv all right, title, and interest in and to all ideas, comments, suggestions, and any other feedback you provide related to the Fiserv APIs, the Fiserv Platform, and/or the Developer Studio (or any portion thereof) (**Feedback**), including without limitation all Intellectual Property Rights contained in such Feedback.
@@ -238,29 +239,27 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
 **21.  Additional Terms Applicable Only to Banking Hub**.
 
-21.1  **Additional Defined Terms**.
+  (1)  **AppMarket** means the electronic marketplace operated by us through which Fiserv Clients may browse, locate, purchase, and install Apps. 
 
-  -  **AppMarket** means the electronic marketplace operated by us through which Fiserv Clients may browse, locate, purchase, and install Apps. 
+  (2)  **Developer Subscription** means an annual package which includes, among other things, access to the Developer Build Space, developer support, and transaction volume limits. 
 
-  -  **Developer Subscription** means an annual package which includes, among other things, access to the Developer Build Space, developer support, and transaction volume limits. 
-
-  -  **Fiserv Client** means a client of Fiserv or our Affiliates that has purchased a Fiserv Platform and that accesses the AppMarket to browse, locate, purchase, and/or install Apps.
+  (3)  **Fiserv Client** means a client of Fiserv or our Affiliates that has purchased a Fiserv Platform and that accesses the AppMarket to browse, locate, purchase, and/or install Apps.
 
 21.2 **AppMarket Terms**.
 
-  -  To be considered for publication in the AppMarket, your App must meet our requirements (which may change from time to time). We reserve the right to reject your Integrations or Apps in our sole discretion. 
+  (1)  To be considered for publication in the AppMarket, your App must meet our requirements (which may change from time to time). We reserve the right to reject your Integrations or Apps in our sole discretion. 
 
-  -  You will not, and will not allow anyone else to (A) access or use the Fiserv APIs or Documentation, in whole or in part, to monitor the availability, performance or functionality of the AppMarket, or (B) perform any activity that could damage, overburden, impair or disable the features or functionality of the AppMarket. 
+  (2)  You will not, and will not allow anyone else to (A) access or use the Fiserv APIs or Documentation, in whole or in part, to monitor the availability, performance or functionality of the AppMarket, or (B) perform any activity that could damage, overburden, impair or disable the features or functionality of the AppMarket. 
 
-  -  You grant to us a non-exclusive, non-transferable license during the term of these Terms to use, display, modify, publish, distribute, transmit, print, or otherwise exploit, without reservation or accounting, any content or material you provide in or through your Integrations and Apps and/or any unsolicited submissions, ideas, suggestions, feedback or other content or materials you provide or otherwise submit to us in connection with your use of the Developer Build Space or any portion of it.
+  (3)  You grant to us a non-exclusive, non-transferable license during the term of these Terms to use, display, modify, publish, distribute, transmit, print, or otherwise exploit, without reservation or accounting, any content or material you provide in or through your Integrations and Apps and/or any unsolicited submissions, ideas, suggestions, feedback or other content or materials you provide or otherwise submit to us in connection with your use of the Developer Build Space or any portion of it.
 
 21.3  **Developer Subscription Packages**. You may purchase a Developer Subscription package from us; such packages are available in different tiers. The different tiers and applicable monthly fees for each are set forth in the Developer Studio. If you fail to make timely payments to us for the Developer Subscription package you choose, we may suspend your access to your Developer Account, the Developer Build Space, and any other support services.
 
 21.4  **Payment Terms**.
 
-  -  You agree to pay us (A) fees for the Developer Subscription you purchase, and (B) Taxes as defined, as defined below. Our fees, rates and charges may be increased annually effective each January 1 upon no less than 30 days’ prior notice. 
+  (1)  You agree to pay us (A) fees for the Developer Subscription you purchase, and (B) Taxes as defined, as defined below. Our fees, rates and charges may be increased annually effective each January 1 upon no less than 30 days’ prior notice. 
 
-  -  You are responsible to pay all sales, use, excise, value added, withholdings and other taxes and duties however designated that are levied by any taxing authority relating to your Developer Subscription (**Taxes**). All fees and other charges related to your Developer Subscription are exclusive of Taxes. You shall reimburse us for those Taxes that we are required to remit on your behalf. In no event shall Taxes include taxes based on our income. 
+  (2)  You are responsible to pay all sales, use, excise, value added, withholdings and other taxes and duties however designated that are levied by any taxing authority relating to your Developer Subscription (**Taxes**). All fees and other charges related to your Developer Subscription are exclusive of Taxes. You shall reimburse us for those Taxes that we are required to remit on your behalf. In no event shall Taxes include taxes based on our income. 
 
   We will invoice you upon your purchase of a Developer Subscription and monthly thereafter. Invoices are due and payable upon your receipt of such invoice. You shall pay us through the Automated Clearing House or by check. If any invoiced amounts remain unpaid 30 days after our delivery of an invoice to you, you shall pay a monthly late charge based on the unpaid amounts equal to the lesser of 1.5% or the highest amount allowed by law until such invoice amount is paid in full. You shall neither make nor assert any right of deduction or set-off from amounts invoiced. 
 
