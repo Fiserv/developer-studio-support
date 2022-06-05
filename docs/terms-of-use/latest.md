@@ -1,6 +1,6 @@
 # Fiserv Developer Studio Terms of Use
 
-***Update on: April 18, 2022***
+***Update on: June 4, 2022***
 
 Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LLC and/or our Affiliates will provide the Developer Studio, including the Developer Build Space, to you subject to these terms of use. These terms, together with the Documentation and any applicable polices and guidelines, constitute a legal agreement between you and Fiserv for your use of the Developer Studio (**Terms**). By registering for a Developer Account, you agree to be bound by these Terms. If you register for a Developer Account on behalf of a legal entity, you represent and warrant that you have the authority to bind that entity to these Terms and all references to “you” in these Terms will then refer to that entity. The Developer Studio is not offered to any person under the age of 13. If you are over the age of 13 but under the age of 18, you must either: (1) be an emancipated minor, or (2) have obtained the legal consent of your parent or legal guardian to use this Developer Studio and agree to these Terms.
 
