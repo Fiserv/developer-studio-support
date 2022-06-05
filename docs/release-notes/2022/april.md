@@ -13,8 +13,6 @@
 - The syntax error in Transaction-Details.md file has been fixed for Commerce Hub [GitHub Issue #128](https://www.github.com/Fiserv/Support/issues/128). 
 
 <br>
-<br>
-<br>
 
 ### April 1, 2022
 
