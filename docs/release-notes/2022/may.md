@@ -10,8 +10,6 @@
 - The direction in which card carousel is sliding by the previous and next controls has been corrected for Mobile application.
 
 <br>
-<br>
-<br>
 
 ### May 05, 2022
 
