@@ -3,11 +3,11 @@
 ### May 19, 2022
 
 #### Enhancements
-- The page header has become consistent throughout pages that have one.
-- The capability to set the default example for an endpoint, in the Sandbox on the API Explore page, has been enabled.
+- All page headers have been updated with the same consistent look.
+- The ability to set the default example for an endpoint, in the Sandbox on the API Explore page, has been enabled.
 
 #### Fixed
-- The direction in which card carousel is sliding by the previous and next controls has been corrected for Mobile application.
+- The direction in which the card carousel is sliding, by the previous and next controls, has been corrected for the Mobile application.
 
 <br>
 
