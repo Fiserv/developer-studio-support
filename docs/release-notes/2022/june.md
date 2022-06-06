@@ -4,8 +4,8 @@
 
 #### *Enhancements*
 - The Email Template for deleted users has been updated.
-- When a user account is deleted, the user will receive a notification via email associated with the account.
-- The creation of multiple personal workspaces has been enabled for a user with the account.
+- Users with an account can now create multiple personal workspaces.
+- When a user account is deleted, the user will receive a notification via email the account has been deleted.
 
 #### *Fixed*
 - The content of the Documentation page has been aligned with the header.
