@@ -59,9 +59,9 @@
 - sections:
   - title: Release notes
     sections:
-     - title: May 2022
+    - title: May 2022
       link: docs/release-notes/2022/may.md
-   - title: April 2022
+    - title: April 2022
       link: docs/release-notes/2022/april.md
     - title: March 2022
       link: docs/release-notes/2022/march.md
