@@ -1,3 +1,5 @@
+# Release Notes
+
 ### June 2, 2022
 
 #### *Enhancements*
