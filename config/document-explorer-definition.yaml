@@ -42,18 +42,6 @@
       link: docs/try-out-the-api-sandbox.md
     - title: Search and All APIs
       link: docs/search-and-all-apis.md
-    - title: How to Release Notes
-      sections:
-      - title: Release Notes Guidelines
-        link: docs/release-notes-guidelines.md
-      - title: Release Notes Template
-        link: docs/release-notes-template.md
-    - title: Markdown Support
-      sections:
-      - title: Basic Syntax
-        link: docs/md/basic-syntax.md
-      - title: Extended Syntax
-        link: docs/md/extended-syntax.md
   - title: API Glossary
     link: docs/api-glossary.md
   - title: FAQ
