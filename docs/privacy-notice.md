@@ -1,4 +1,4 @@
-# Privacy Notice - By TOS team
+# Privacy Notice
 ***Effective Date**: January 1, 2022*
 
 This “Privacy Notice” describes the practices of Open Banking…Fiserv, Inc. and its subsidiaries and affiliates (collectively, “Fiserv”, “we”, “us”, or “our”) and the rights and choices available to individuals, regarding personal data. Personal data means any information that relates to an identifiable individual. 
