@@ -8,7 +8,7 @@ Additional data common is used for specific business requirements.
 
 <!--
 type: tab
-titles: additionalDataCommon, JSON Example
+titles: ### additionalDataCommon, ### JSON Example
 title: additionalDataCommon
 -->
 
