@@ -47,7 +47,9 @@
   - title: FAQ
     link: docs/FAQ.md
   - title: Release notes
-    link: docs/release-notes.md
+    sections:
+    - title: 2022
+      link: docs/release-notes/2022.md
   - title: Terms of Use
     link: docs/terms-of-use.md
   - title: Privacy Notice
