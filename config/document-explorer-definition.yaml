@@ -42,48 +42,15 @@
       link: docs/try-out-the-api-sandbox.md
     - title: Search and All APIs
       link: docs/search-and-all-apis.md
-    - title: Release Notes Template
-      link: docs/release-notes-template.md
-    - title: Markdown Support
-      sections:
-      - title: Basic Syntax
-        link: docs/md/basic-syntax.md
-      - title: Extended Syntax
-        link: docs/md/extended-syntax.md
-- sections:
   - title: API Glossary
     link: docs/api-glossary.md
-- sections:
   - title: FAQ
     link: docs/FAQ.md
-- sections:
   - title: Release notes
     sections:
-    - title: May 2022
-      link: docs/release-notes/2022/may.md
-    - title: April 2022
-      link: docs/release-notes/2022/april.md
-    - title: March 2022
-      link: docs/release-notes/2022/march.md
-    - title: February 2022
-      link: docs/release-notes/2022/february.md
-    - title: January 2022
-      link: docs/release-notes/2022/january.md
-- sections:
+    - title: 2022
+      link: docs/release-notes/2022.md
   - title: Terms of Use
-    sections:
-    - title: Latest
-      link: docs/terms-of-use/latest.md
-    - title: April 2022
-      link: docs/terms-of-use/april-2022.md
-    - title: March 2022
-      link: docs/terms-of-use/march-2022.md
-    - title: August 2015
-      link: docs/terms-of-use/august-2015.md
-- sections:
+    link: docs/terms-of-use.md
   - title: Privacy Notice
-    sections:
-    - title: Latest
-      link: docs/privacy-notice/latest.md
-    - title: June 2021
-      link: docs/privacy-notice/june-2021.md
+    link: docs/privacy-notice.md
