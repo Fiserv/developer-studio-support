@@ -4,7 +4,7 @@ A product is a Fiserv brand that offers a set of APIs that meet certain needs of
 ## Available capabilities for the product
 There are certain capabilities a product has on Developer Studio. That information is displayed in this section. If you don’t know what the feature is, you can learn about it by clicking on the hyperlink. It will take you to this guide.   
 
-![[product_1]](https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_1.png)
+![product_1](https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_1.png)
 
 ## Read use cases to learn about endpoint
 Figure out whether the API is the right fit for you by reading its documentation. It’s a technical guide that explains how to use and integrate the API, shows the languages it supports, and provides examples of how implementation would look like. 
@@ -53,7 +53,6 @@ It might seem a bit overwhelming, but let’s break down some of the key concept
 
 
 [//]: # (These are reference links used in markdown file)
-
 
 [product_2]: <../assets/images/product_2.png>
 
