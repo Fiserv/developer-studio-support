@@ -11,6 +11,6 @@ On the Search page, type one or more keywords of what you’re looking for and a
 
 [//]: # (These are reference links used in markdown file)
 
-[search_allapis_1]:<../assets/images/search_allapis_1.png>
+[search_allapis_1]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/search_allapis_1.png>
 
-[search_allapis_2]:<../assets/images/search_allapis_2.png>
+[search_allapis_2]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/search_allapis_2.png>
