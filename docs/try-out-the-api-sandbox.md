@@ -28,13 +28,13 @@ Wherever you decide to enter your values, after you’re done, you’ll press �
 
 [//]: # (These are reference links used in markdown file)
 
-[product_api_6]:<../assets/images/product_api_6.png>
+[product_api_6]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_api_6.png>
 
-[product_api_7]:<../assets/images/product_api_7.png>
+[product_api_7]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_api_7.png>
 
-[product_api_8]:<../assets/images/product_api_8.png>
+[product_api_8]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_api_8.png>
 
-[product_api_9]:<../assets/images/product_api_9.png>
+[product_api_9]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_api_9.png>
 
-[product_api_10]:<../assets/images/product_api_10.png>
+[product_api_10]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_api_10.png>
 
