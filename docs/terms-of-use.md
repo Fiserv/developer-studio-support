@@ -42,7 +42,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   1.18  **Login Credentials** means the username and password you create as part of your registering a Developer Account to use the Developer Studio.
 
-  1.19  **Open Source Software** means software that is subject to a license identified as an open source license by the Open Source Initiative ([www.opensource.org](https://opensource.org/)) or any substantially similar license.
+  1.19  **Open Source Software** means software that is subject to a license identified as an open source license by the Open Source Initiative (www.opensource.org](https://opensource.org/) or any substantially similar license.
 
   1.20  **Personal Data** means any information that can be used to identify an individual person or any other information defined as “personal information,” “personally identifiable information,” “personal data,” or a similar term under Applicable Law.
   
