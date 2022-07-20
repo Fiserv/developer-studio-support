@@ -89,7 +89,7 @@
                   >Privacy Notice</a
                 >
                 to comply with requirements of General Data Protection Requlation (GDPR) which is the European Union
-                data protection law. These will go in affect on {date}, so please take some time to review it.
+                data protection law. These will go in affect on {{.date}}, so please take some time to review it.
               </p>
             </td>
           </tr>
