@@ -17,6 +17,20 @@ There are four blockquote themes: the default (no annotation required), success,
 
 ![Themes](../assets/images/md/theme_syntax.png "Blockquote Themes")
 
+``` markdown
+
+<!-- theme: info -->
+> Blockquotes in default color.
+<!-- theme: success -->
+> Blockquotes in success theme.
+<!-- theme: warning -->
+> Blockquotes in warning theme.
+<!-- theme: danger -->
+> Blockquotes in danger theme.
+
+```
+
+<!-- theme: info -->
 > Blockquotes in default color.
 <!-- theme: success -->
 > Blockquotes in success theme.
@@ -31,6 +45,26 @@ A `card` has a border and optional values for a title, a description, and a link
 To have a number of cards in a row, use `row` & `row-end` annotation before and after card(s) to be in a row.
 
 ![Row of Cards](../assets/images/md/card_syntax.png "Row of cards")
+
+```markdown
+
+<!-- type: row -->
+
+<!-- type: card
+title: Card One
+description: About...
+link: ?path=docs/about-developer-studio.md
+-->
+
+<!-- type: card
+title: Second Card
+description: About...
+link: ?path=docs/about-developer-studio.md
+-->
+
+<!-- type: row-end -->
+
+```
 
 <!-- type: row -->
 
@@ -54,6 +88,23 @@ To organize content in tabs, indicate `titles` within the first `tab` annotation
 > Users of Stoplight Flavored Markdown, need to include additional `title` annotation for each tab.
 
 ![Tab sets](../assets/images/md/tab_syntax.png "Tabsets")
+
+```markdown
+<!--
+type: tab
+titles: First Tab, Second Tab
+-->
+
+First tab content...
+
+<!--
+type: tab
+-->
+
+Second tab content...
+
+<!-- type: tab-end -->
+```
 
 <!-- theme: danger -->
 > Tab containers cannot be nested.
