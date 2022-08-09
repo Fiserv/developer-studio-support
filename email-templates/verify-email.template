@@ -130,7 +130,7 @@
         <tr>
             <td align="center" style="border-collapse: collapse">
                 <!--[if mso]>
-                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://dev-developerstudio.fiserv.com/emailRedirect/forgotUpdatePassword?key=${code.value}" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#ff6600">
+                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{.UiUrl}}/emailRedirect/accountPersonalDetails?id={{.PingID}}&key={{.EscapedPassword}}" style="height:40px;v-text-anchor:middle;width:200px;" arcsize="10%" stroke="f" fillcolor="#ff6600">
                     <w:anchorlock/>
                     <center>
                 <![endif]-->
