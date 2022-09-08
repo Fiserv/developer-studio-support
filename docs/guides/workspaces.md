@@ -18,13 +18,13 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 ## Standard Workspace Pages
 
-==Summary Page== – Every workspace will have a Workspace Summary page. This page will display the workspace name and description. The Summary page will provide a quick view of the number of API (Application Programming Interface) keys and other credentials in the workspace. You can also see the latest activity associated with the workspace
+`Summary Page` – Every workspace will have a Workspace Summary page. This page will display the workspace name and description. The Summary page will provide a quick view of the number of API (Application Programming Interface) keys and other credentials in the workspace. You can also see the latest activity associated with the workspace
 
-==Credentials Page== – Every workspace will have a Credentials page. This page will display a series of tables containing the necessary credentials for a successful integration with the specific Fiserv product. Although every workspace will have a credentials page the types of credentials will vary from product to product. From the credentials page you can create, edit, and manage credentials.
+`Credentials Page` – Every workspace will have a Credentials page. This page will display a series of tables containing the necessary credentials for a successful integration with the specific Fiserv product. Although every workspace will have a credentials page the types of credentials will vary from product to product. From the credentials page you can create, edit, and manage credentials.
 
-==Settings Page== – Every workspace will have a Settings page. This is where you can see the Fiserv product selected, in addition to the ability to edit the workspace name and description.
+`Settings Page` – Every workspace will have a Settings page. This is where you can see the Fiserv product selected, in addition to the ability to edit the workspace name and description.
 
-==Left Navigation== – Once a workspace has been created, you will see it in a list of all workspaces on the left-hand side of the Workspaces interface. Selecting “workspaces” from the top of this navigation will take you back to the My Workspaces page. On this page you can view all your workspace, select an existing workspace, or create a new one.
+`Left Navigation` – Once a workspace has been created, you will see it in a list of all workspaces on the left-hand side of the Workspaces interface. Selecting “workspaces” from the top of this navigation will take you back to the My Workspaces page. On this page you can view all your workspace, select an existing workspace, or create a new one.
 
 ## Create & Manage Workspaces
 
