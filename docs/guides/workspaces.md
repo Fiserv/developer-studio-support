@@ -44,15 +44,15 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 ### Create Workspace
 
-1) Create an account or Log-in
+1. Create an account or Log-in
 
 ![Login](../../assets/images/workspace_how_to_create_1.png "Login")
 
-2) Select Workspaces from global header (next to account avatar)
+2. Select Workspaces from global header (next to account avatar)
 
 ![Header](../../assets/images/workspace_how_to_create_2.png "Header")
 
-3) Create a new workspace
+3. Create a new workspace
 
   1. Enter Name
 
@@ -60,9 +60,9 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
   3. Select Product Area from dropdown (preselected at this time)
 
-> d. Select Product Integration from dropdown (preselected at this time – only CommerceHub is available)
+  4. Select Product Integration from dropdown (preselected at this time – only CommerceHub is available)
 
-> e. Hit the Create button
+  5. Hit the Create button
 
 ![Create](../../assets/images/workspace_how_to_create_3.png "Create")
 
