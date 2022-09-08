@@ -46,7 +46,11 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 1) Create an account or Log-in
 
+![Login](../../assets/images/workspace_how_to_create_1.png "Login")
+
 2) Select Workspaces from global header (next to account avatar)
+
+![Header](../../assets/images/workspace_how_to_create_2.png "Header")
 
 3) Create a new workspace
 
@@ -60,23 +64,39 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e. Hit the Create button
 
+![Create](../../assets/images/workspace_how_to_create_3.png "Create")
+
 ### Manage Workspace
 
 1) Create an account or Log-in
 
+![Login](../../assets/images/workspace_how_to_manage_1.png "Login")
+
 2) Select Workspaces from global header (next to account avatar)
+
+![Header](../../assets/images/workspace_how_to_manage_2.png "Header")
 
 3) Select specific workspace from the left navigation or workspace cards
 
+![Left Nav](../../assets/images/workspace_how_to_manage_3.png "Left Nav")
+
 4) View workspace summary
+
+![Summary](../../assets/images/workspace_how_to_manage_4.png "Summary")
 
 5) Manage Credentials
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Click "Credentials" on the tab to go to the Credentials page
 
+![Credentials](../../assets/images/workspace_how_to_manage_5.png "Credentials")
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. View MID details by selecting the View button in MID table
 
+![MID](../../assets/images/workspace_how_to_manage_6.png "MID")
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Add/Create API Key by selecting the Create API Key button
+
+![API key](../../assets/images/workspace_how_to_manage_7.png "API key")
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
 
@@ -89,6 +109,8 @@ All workspaces will display a tab navigation at the top of the screen with the v
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v. Hit the Create button
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
+
+![Create API key](../../assets/images/workspace_how_to_manage_8.png "Create API key")
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
 
