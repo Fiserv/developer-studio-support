@@ -68,33 +68,33 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 ### Manage Workspace
 
-1) Create an account or Log-in
+1. Create an account or Log-in
 
 ![Login](../../assets/images/workspace_how_to_manage_1.png "Login")
 
-2) Select Workspaces from global header (next to account avatar)
+2. Select Workspaces from global header (next to account avatar)
 
 ![Header](../../assets/images/workspace_how_to_manage_2.png "Header")
 
-3) Select specific workspace from the left navigation or workspace cards
+3. Select specific workspace from the left navigation or workspace cards
 
 ![Left Nav](../../assets/images/workspace_how_to_manage_3.png "Left Nav")
 
-4) View workspace summary
+4. View workspace summary
 
 ![Summary](../../assets/images/workspace_how_to_manage_4.png "Summary")
 
-5) Manage Credentials
+5. Manage Credentials
 
-> a. Click "Credentials" on the tab to go to the Credentials page
+  a. Click "Credentials" on the tab to go to the Credentials page
 
 ![Credentials](../../assets/images/workspace_how_to_manage_5.png "Credentials")
 
-> b. View MID details by selecting the View button in MID table
+  b. View MID details by selecting the View button in MID table
 
 ![MID](../../assets/images/workspace_how_to_manage_6.png "MID")
 
-> c. Add/Create API Key by selecting the Create API Key button
+  c. Add/Create API Key by selecting the Create API Key button
 
 ![API key](../../assets/images/workspace_how_to_manage_7.png "API key")
 
