@@ -10,7 +10,7 @@ Although each workspace may have different requirements and tools, all workspace
 
 Once logged-in you will see “Workspaces” appear in the global header at the top of the Developer Studio next to your account avatar.
 
-![Workspaces in the Header](../../assets/images/workspaces_how_to_1.png "Workspaces in the Header")
+![Workspaces in the Header](../../assets/images/workspace_how_to_1.png "Workspaces in the Header")
 
 Selecting this will take you to the My Workspaces page. From here you can view all your workspace, select an existing workspace, or create a new one.
 
