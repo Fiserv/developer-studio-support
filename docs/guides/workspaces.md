@@ -72,11 +72,11 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 5) Manage Credentials
 
->a. Click "Credentials" on the tab to go to the Credentials page
+&nbsp;&nbsp;&nbsp;a. Click "Credentials" on the tab to go to the Credentials page
 
->b. View MID details by selecting the View button in MID table
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. View MID details by selecting the View button in MID table
 
->c. Add/Create API Key by selecting the Create API Key button
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Add/Create API Key by selecting the Create API Key button
 
 >>i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
 
