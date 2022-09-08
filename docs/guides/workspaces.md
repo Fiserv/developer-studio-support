@@ -1,10 +1,6 @@
-# Workspaces how-to guide (Recipe)
-Header 1
-========
+# Workspaces guide
 
 ## What are Workspaces
-Header 2
---------
 
 Workspaces are dedicated spaces for developers to manage their Fiserv product integrations and projects. Each workspace may contain a different suite of self-service tools, outlined steps for integration, requirements and sharing permissions as set forth by the specific Fiserv product being integrated against. Developers can create a workspace for any supported Fiserv Product (not all products support workspaces or self-service functionality)
 
@@ -23,16 +19,12 @@ Selecting this will take you to the My Workspaces page. From here you can view a
 ![Workspaces landing page](../../assets/images/workspace_how_to_2.png "Workspaces landing page")
 
 ## Workspace Pages (Tab Navigation)
-Header 2
---------
 
 All workspaces will display a tab navigation at the top of the screen with the various accessible sections/pages. Each page will contain information and tools to help expedite your development process. Workspace pages may vary based on the specific Fiserv product selected upon during the creation of the workspace.
 
 ![Tab Navigation](../../assets/images/workspace_how_to_3.png "Tab Navigation")
 
 ## Standard Workspace Pages
-Header 2
---------
 
 * **Summary Page** – Every workspace will have a Workspace Summary page. This page will display the workspace name and description. The Summary page will provide a quick view of the number of API (Application Programming Interface) keys and other credentials in the workspace. You can also see the latest activity associated with the workspace
 
