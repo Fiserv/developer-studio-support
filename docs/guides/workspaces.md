@@ -112,36 +112,36 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 ![Create API key](../../assets/images/workspace_how_to_manage_8.png "Create API key")
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
+  d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
 
-    i. Enter the common name (name your CSR)
+   i. Enter the common name (name your CSR)
     
-    ii. Select Apple Pay from wallet dropdown
+   ii. Select Apple Pay from wallet dropdown
 
-    iii. Enter Organization Name
+   iii. Enter Organization Name
 
-    iv. Enter Organization Unit
+   iv. Enter Organization Unit
 
-    v. Select Country/Region from dropdown
+   v. Select Country/Region from dropdown
 
-    vi. Enter State/Province
+   vi. Enter State/Province
 
-    vii. Enter City/Locality
+   vii. Enter City/Locality
 
-    viii. Enter an optional description
+   viii. Enter an optional description
 
-    ix. Hit Create button
+   ix. Hit Create button
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
+  e. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f. Download CSR and upload to Apple to complete the CSR process for your application
+  f. Download CSR and upload to Apple to complete the CSR process for your application
 
-6) Update Settings
+6. Update Settings
 
-a. Hit Edit button
+  a. Hit Edit button
 
-i. Change Workspace Name
+   i. Change Workspace Name
 
-ii. Change Workspace Description
+   ii. Change Workspace Description
 
-b. Delete Workspace by hitting the Delete button
+  b. Delete Workspace by hitting the Delete button
