@@ -50,15 +50,15 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 3) Create a new workspace
 
-a. Enter Name
+  a. Enter Name
 
-b. Enter Description
+  b. Enter Description
 
-c. Select Product Area from dropdown (preselected at this time)
+  c. Select Product Area from dropdown (preselected at this time)
 
-d. Select Product Integration from dropdown (preselected at this time – only CommerceHub is available)
+  d. Select Product Integration from dropdown (preselected at this time – only CommerceHub is available)
 
-e. Hit the Create button
+  e. Hit the Create button
 
 ### Manage Workspace
 
@@ -72,47 +72,47 @@ e. Hit the Create button
 
 5) Manage Credentials
 
-a. Click "Credentials" on the tab to go to the Credentials page
+  a. Click "Credentials" on the tab to go to the Credentials page
 
-b. View MID details by selecting the View button in MID table
+  b. View MID details by selecting the View button in MID table
 
-c. Add/Create API Key by selecting the Create API Key button
+  c. Add/Create API Key by selecting the Create API Key button
 
-i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
+    i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
 
-ii. Name the API Key you are creating
+    ii. Name the API Key you are creating
 
-iii. Select Environment (if available)
+    iii. Select Environment (if available)
 
-iv. Add Features (if applicable)
+    iv. Add Features (if applicable)
 
-v. Hit the Create button
+    v. Hit the Create button
 
-vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
+    vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
 
-d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
+  d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
 
-i. Enter the common name (name your CSR)
+    i. Enter the common name (name your CSR)
 
-ii. Select Apple Pay from wallet dropdown
+    ii. Select Apple Pay from wallet dropdown
 
-iii. Enter Organization Name
+   iii. Enter Organization Name
 
-iv. Enter Organization Unit
+    iv. Enter Organization Unit
 
-v. Select Country/Region from dropdown
+    v. Select Country/Region from dropdown
 
-vi. Enter State/Province
+    vi. Enter State/Province
 
-vii. Enter City/Locality
+    vii. Enter City/Locality
 
-viii. Enter an optional description
+    viii. Enter an optional description
 
-ix. Hit Create button
+    ix. Hit Create button
 
-e. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
+  e. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
 
-f. Download CSR and upload to Apple to complete the CSR process for your application
+  f. Download CSR and upload to Apple to complete the CSR process for your application
 
 6) Update Settings
 
