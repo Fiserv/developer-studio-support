@@ -22,7 +22,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   1.8  **Developer Sandbox** means a limited simulation environment which enables you to view and execute Fiserv APIs in isolation (i.e., not in a Test Environment).
 
-  1.9  **Developer Studio** means the website located at [developer.fiserv.com](https://developer.fiserv.com/).
+  1.9  **Developer Studio** means the website located at [https://dev-developerstudio.fiserv.com/](https://dev-developerstudio.fiserv.com/).
 
   1.10  **Documentation** means the operating instructions, user manuals, help files, Swagger documentation, and other documentation, and any updates to these, in written or electronic form, which we may make available to you that are intended to be used in connection with your activities within the Developer Studio.
 
@@ -42,7 +42,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   1.18  **Login Credentials** means the username and password you create as part of your registering a Developer Account to use the Developer Studio.
 
-  1.19  **Open Source Software** means software that is subject to a license identified as an open source license by the Open Source Initiative ([www.opensource.org](https://opensource.org/)) or any substantially similar license.
+  1.19  **Open Source Software** means software that is subject to a license identified as an open source license by the Open Source Initiative [www.opensource.org](https://opensource.org/) or any substantially similar license.
 
   1.20  **Personal Data** means any information that can be used to identify an individual person or any other information defined as “personal information,” “personally identifiable information,” “personal data,” or a similar term under Applicable Law.
   
