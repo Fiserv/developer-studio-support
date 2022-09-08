@@ -50,15 +50,15 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 3) Create a new workspace
 
->a. Enter Name
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Enter Name
 
- >b. Enter Description
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. Enter Description
 
- >c. Select Product Area from dropdown (preselected at this time)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Select Product Area from dropdown (preselected at this time)
 
- >d. Select Product Integration from dropdown (preselected at this time – only CommerceHub is available)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Select Product Integration from dropdown (preselected at this time – only CommerceHub is available)
 
- >e. Hit the Create button
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e. Hit the Create button
 
 ### Manage Workspace
 
@@ -72,33 +72,33 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 5) Manage Credentials
 
-&nbsp;&nbsp;&nbsp;a. Click "Credentials" on the tab to go to the Credentials page
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a. Click "Credentials" on the tab to go to the Credentials page
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b. View MID details by selecting the View button in MID table
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c. Add/Create API Key by selecting the Create API Key button
 
->>i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
 
->>ii. Name the API Key you are creating
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii. Name the API Key you are creating
 
->>iii. Select Environment (if available)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii. Select Environment (if available)
 
->>iv. Add Features (if applicable)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv. Add Features (if applicable)
 
->>v. Hit the Create button
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v. Hit the Create button
 
->>vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
 
-  d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
 
-    i. Enter the common name (name your CSR)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i. Enter the common name (name your CSR)
 
-    ii. Select Apple Pay from wallet dropdown
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii. Select Apple Pay from wallet dropdown
 
-   iii. Enter Organization Name
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii. Enter Organization Name
 
-    iv. Enter Organization Unit
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv. Enter Organization Unit
 
     v. Select Country/Region from dropdown
 
