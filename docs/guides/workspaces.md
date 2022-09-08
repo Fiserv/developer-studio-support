@@ -72,9 +72,11 @@ e. Hit the Create button
 
 5) Manage Credentials
 
-a. View MID details by selecting the View button in MID table
+a. Click "Credentials" on the tab to go to the Credentials page
 
-b. Add/Create API Key by selecting the Create API Key button
+b. View MID details by selecting the View button in MID table
+
+c. Add/Create API Key by selecting the Create API Key button
 
 i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
 
@@ -88,7 +90,7 @@ v. Hit the Create button
 
 vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
 
-c. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
+d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
 
 i. Enter the common name (name your CSR)
 
@@ -108,9 +110,9 @@ viii. Enter an optional description
 
 ix. Hit Create button
 
-d. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
+e. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
 
-e. Download CSR and upload to Apple to complete the CSR process for your application
+f. Download CSR and upload to Apple to complete the CSR process for your application
 
 6) Update Settings
 
