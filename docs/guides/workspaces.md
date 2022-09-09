@@ -1,4 +1,3 @@
-# Workspaces guide 1
 # Workspaces guide
 
 ## What are Workspaces
@@ -99,17 +98,17 @@ All workspaces will display a tab navigation at the top of the screen with the v
   
   ![API key](../../assets/images/workspace_how_to_manage_7.png "API key")
 
-&emsp;&emsp; i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
+&emsp;&emsp;&emsp;&emsp; i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
 
-&emsp;&emsp; ii. Name the API Key you are creating
+&emsp;&emsp;&emsp;&emsp; ii. Name the API Key you are creating
 
-&emsp;&emsp; iii. Select Environment (if available)
+&emsp;&emsp;&emsp;&emsp; iii. Select Environment (if available)
 
-&emsp;&emsp; iv. Add Features (if applicable)
+&emsp;&emsp;&emsp;&emsp; iv. Add Features (if applicable)
 
-&emsp;&emsp; v. Hit the Create button
+&emsp;&emsp;&emsp;&emsp; v. Hit the Create button
     
-&emsp;&emsp; vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
+&emsp;&emsp;&emsp;&emsp; vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
 
 ![Create API key](../../assets/images/workspace_how_to_manage_8.png "Create API key")
 
@@ -136,6 +135,8 @@ All workspaces will display a tab navigation at the top of the screen with the v
   e. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
   
   f. Download CSR and upload to Apple to complete the CSR process for your application
+  
+5. Manage Credentials
   
 6. Update Settings
 
