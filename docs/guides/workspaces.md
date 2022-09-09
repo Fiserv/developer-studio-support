@@ -1,4 +1,4 @@
-# Workspaces guide
+# Workspaces guide 1
 
 ## What are Workspaces
 
@@ -97,7 +97,7 @@ All workspaces will display a tab navigation at the top of the screen with the v
   c. Add/Create API Key by selecting the Create API Key button
   
   ![API key](../../assets/images/workspace_how_to_manage_7.png "API key")
-
+  
 &emsp;&emsp;&emsp;&emsp; i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
 
 &emsp;&emsp;&emsp;&emsp; ii. Name the API Key you are creating
@@ -111,9 +111,9 @@ All workspaces will display a tab navigation at the top of the screen with the v
 &emsp;&emsp;&emsp;&emsp; vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
 
 ![Create API key](../../assets/images/workspace_how_to_manage_8.png "Create API key")
-
+  
   d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
-
+  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. Enter the common name (name your CSR)
     
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii. Select Apple Pay from wallet dropdown
@@ -131,17 +131,20 @@ All workspaces will display a tab navigation at the top of the screen with the v
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; viii. Enter an optional description
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ix. Hit Create button
-
+  
   e. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
   
   f. Download CSR and upload to Apple to complete the CSR process for your application
-  
+
 6. Update Settings
 
-  a. Hit Edit button
-
+  a. Click "Settings" on the tab to go to the Settings page
+  
+  b. Hit Edit button
+  
 &emsp;&emsp; i. Change Workspace Name
 
 &emsp;&emsp; ii. Change Workspace Description
+  
+  c. Delete Workspace by hitting the Delete button
 
-  b. Delete Workspace by hitting the Delete button
