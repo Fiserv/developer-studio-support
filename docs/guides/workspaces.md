@@ -98,17 +98,17 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 ![API key](../../assets/images/workspace_how_to_manage_7.png "API key")
 
-&emsp i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
+&emsp; i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
 
-&emsp ii. Name the API Key you are creating
+&emsp; ii. Name the API Key you are creating
 
-&emsp iii. Select Environment (if available)
+&emsp; iii. Select Environment (if available)
 
-&emsp iv. Add Features (if applicable)
+&emsp; iv. Add Features (if applicable)
 
-&emsp v. Hit the Create button
+&emsp; v. Hit the Create button
     
-&emsp vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
+&emsp; vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
 
 ![Create API key](../../assets/images/workspace_how_to_manage_8.png "Create API key")
 
