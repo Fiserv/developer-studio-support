@@ -114,29 +114,27 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
   d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
 
-&emsp;&emsp; i. Enter the common name (name your CSR)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. Enter the common name (name your CSR)
     
-&emsp;&emsp; ii. Select Apple Pay from wallet dropdown
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii. Select Apple Pay from wallet dropdown
 
-&emsp;&emsp; iii. Enter Organization Name
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; iii. Enter Organization Name
 
-&emsp;&emsp; iv. Enter Organization Unit
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; iv. Enter Organization Unit
 
-&emsp;&emsp; v. Select Country/Region from dropdown
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v. Select Country/Region from dropdown
 
-&emsp;&emsp; vi. Enter State/Province
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vi. Enter State/Province
 
-&emsp;&emsp; vii. Enter City/Locality
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vii. Enter City/Locality
 
-&emsp;&emsp; viii. Enter an optional description
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; viii. Enter an optional description
 
-&emsp;&emsp; ix. Hit Create button
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ix. Hit Create button
 
   e. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
   
   f. Download CSR and upload to Apple to complete the CSR process for your application
-  
-5. Manage Credentials
   
 6. Update Settings
 
