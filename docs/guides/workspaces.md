@@ -88,61 +88,61 @@ All workspaces will display a tab navigation at the top of the screen with the v
 5. Manage Credentials
 
   a. Click "Credentials" on the tab to go to the Credentials page
-
-![Credentials](../../assets/images/workspace_how_to_manage_5.png "Credentials")
-
+  
+  ![Credentials](../../assets/images/workspace_how_to_manage_5.png "Credentials")
+  
   b. View MID details by selecting the View button in MID table
-
-![MID](../../assets/images/workspace_how_to_manage_6.png "MID")
-
+  
+  ![MID](../../assets/images/workspace_how_to_manage_6.png "MID")
+  
   c. Add/Create API Key by selecting the Create API Key button
+  
+  ![API key](../../assets/images/workspace_how_to_manage_7.png "API key")
 
-![API key](../../assets/images/workspace_how_to_manage_7.png "API key")
+&emsp;&emsp; i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
 
-&emsp; i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
+&emsp;&emsp; ii. Name the API Key you are creating
 
-&emsp; ii. Name the API Key you are creating
+&emsp;&emsp; iii. Select Environment (if available)
 
-&emsp; iii. Select Environment (if available)
+&emsp;&emsp; iv. Add Features (if applicable)
 
-&emsp; iv. Add Features (if applicable)
-
-&emsp; v. Hit the Create button
+&emsp;&emsp; v. Hit the Create button
     
-&emsp; vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
+&emsp;&emsp; vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
 
 ![Create API key](../../assets/images/workspace_how_to_manage_8.png "Create API key")
 
   d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
 
-   i. Enter the common name (name your CSR)
+&emsp;&emsp; i. Enter the common name (name your CSR)
     
-   ii. Select Apple Pay from wallet dropdown
+&emsp;&emsp; ii. Select Apple Pay from wallet dropdown
 
-   iii. Enter Organization Name
+&emsp;&emsp; iii. Enter Organization Name
 
-   iv. Enter Organization Unit
+&emsp;&emsp; iv. Enter Organization Unit
 
-   v. Select Country/Region from dropdown
+&emsp;&emsp; v. Select Country/Region from dropdown
 
-   vi. Enter State/Province
+&emsp;&emsp; vi. Enter State/Province
 
-   vii. Enter City/Locality
+&emsp;&emsp; vii. Enter City/Locality
 
-   viii. Enter an optional description
+&emsp;&emsp; viii. Enter an optional description
 
-   ix. Hit Create button
+&emsp;&emsp; ix. Hit Create button
 
   e. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
-
+  
   f. Download CSR and upload to Apple to complete the CSR process for your application
-
+  
 6. Update Settings
 
   a. Hit Edit button
 
-&emsp i. Change Workspace Name
+&emsp;&emsp; i. Change Workspace Name
 
-&emsp ii. Change Workspace Description
-   
+&emsp;&emsp; ii. Change Workspace Description
+
   b. Delete Workspace by hitting the Delete button
