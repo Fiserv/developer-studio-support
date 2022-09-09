@@ -66,7 +66,7 @@ To update your organization, natigate to the Organization page.
 
 Security questions are used to recover or reset forgotten password. It is recommended to set them. **Please note** the questions and answers must be unique. So, no repeats.
 
-![User account security questions](../../assets/images/user-account/user-account-edit-security-questions.png)
+![User account security questions](../../assets/images/user-account/user-account-security-questions.png)
 
 
 ### Data & Privacy
