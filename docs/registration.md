@@ -18,7 +18,7 @@ Please read Fiserv [Privacy Notice](./privacy-notice.md) & [Terms of Use](./term
 
 To sign in, click **Sign in** link in the global header.
 
-![Create user account - step 2](../../assets/images/user-account/user-account-avatar.png)
+![Create user account - step 2](../../assets/images/user-account/user-account.png)
 
 We use Multi-Factor Authentication (MFA) to grant access to an account. In a few moments you should receive an email with temporary passcode.
 
