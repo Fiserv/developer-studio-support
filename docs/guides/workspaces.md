@@ -1,4 +1,4 @@
-# Workspaces guide 1
+# Workspaces guide
 
 ## What are Workspaces
 
@@ -88,15 +88,15 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
   a. Click "Credentials" on the tab to go to the Credentials page
   
-  ![Credentials](../../assets/images/workspace_how_to_manage_5.png "Credentials")
+![Credentials](../../assets/images/workspace_how_to_manage_5.png "Credentials")
   
   b. View MID details by selecting the View button in MID table
   
-  ![MID](../../assets/images/workspace_how_to_manage_6.png "MID")
+![MID](../../assets/images/workspace_how_to_manage_6.png "MID")
   
   c. Add/Create API Key by selecting the Create API Key button
   
-  ![API key](../../assets/images/workspace_how_to_manage_7.png "API key")
+![API key](../../assets/images/workspace_how_to_manage_7.png "API key")
   
 &emsp;&emsp;&emsp;&emsp; i. Select MID from dropdown. This will be the MID associated with the API key you are creating.
 
@@ -113,6 +113,8 @@ All workspaces will display a tab navigation at the top of the screen with the v
 ![Create API key](../../assets/images/workspace_how_to_manage_8.png "Create API key")
   
   d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
+  
+![Select CSR](../../assets/images/workspace_how_to_manage_9.png "Select CSR")
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. Enter the common name (name your CSR)
     
@@ -131,14 +133,22 @@ All workspaces will display a tab navigation at the top of the screen with the v
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; viii. Enter an optional description
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ix. Hit Create button
+
+![Add CSR](../../assets/images/workspace_how_to_manage_10.png "Add CSR")
   
   e. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
   
+![CSR Detail](../../assets/images/workspace_how_to_manage_11.png "CSR Detail")
+  
   f. Download CSR and upload to Apple to complete the CSR process for your application
+    
+![Download CSR](../../assets/images/workspace_how_to_manage_12.png "Download CSR")
 
 6. Update Settings
 
   a. Click "Settings" on the tab to go to the Settings page
+    
+![Click Settings](../../assets/images/workspace_how_to_manage_13.png "Click Settings")
   
   b. Hit Edit button
   
@@ -146,5 +156,9 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 &emsp;&emsp; ii. Change Workspace Description
   
+![Edit Settings](../../assets/images/workspace_how_to_manage_14.png "Edit Settings")
+  
   c. Delete Workspace by hitting the Delete button
+    
+![Delete WS](../../assets/images/workspace_how_to_manage_15.png "Delete WS")
 
