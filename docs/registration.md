@@ -1,8 +1,8 @@
-# Registration Guide
+# Create account
 
-Registration will allow to save account settings and preferences; receive documentation updates and notifications, and last but not least create workspaces to manage Fiserv product integrations.
+An account will allow to save account settings and preferences; receive documentation updates and notifications, and last but not least create workspaces to manage Fiserv product integrations.
 
-## Register a user account
+## How to create an account
 
 To create a user account click on 'Create account' button in the global header at the top of the Developer Studio. Then fill out required information including your Organization email. **Please note** that private email domains, such as gmail & yahoo, are not supported.
 
