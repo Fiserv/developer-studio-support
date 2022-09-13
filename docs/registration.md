@@ -1,6 +1,8 @@
-# User Account
+# Registration Guide
 
-## Create a user account
+Registration will allow to save account settings and preferences; receive documentation updates and notifications, and last but not least create workspaces to manage Fiserv product integrations.
+
+## Register a user account
 
 To create a user account click on 'Create account' button in the global header at the top of the Developer Studio. Then fill out required information including your Organization email. **Please note** that private email domains, such as gmail & yahoo, are not supported.
 
@@ -10,21 +12,21 @@ Once your account is created, you will receive a Welcome email with the temporar
 
 ![Create user account - temp password](../../assets/images/user-account/user-account-temp-pw.png)
 
-Please read Fiserv [Privacy Notice](./privacy-notice.md) & [Terms of Use](./terms-of-use.md) and confirm by clicking checkbox.
+Please read Fiserv [Privacy Notice](?path=docs/privacy-notice.md) & [Terms of Use](?path=docs/terms-of-use.md) and confirm by clicking checkbox.
 
 ![Create user account - step 2](../../assets/images/user-account/user-account-create-step-2.png)
 
 ## Sign in
 
 To sign in, click **Sign in** link in the global header.
-
-![Create user account - step 2](../../assets/images/user-account/user-account.png)
-
 We use Multi-Factor Authentication (MFA) to grant access to an account. In a few moments you should receive an email with temporary passcode.
 
 ![Sign in OTP](../../assets/images/user-account/user-account-otp.png)
 
 Once authenticated, click on the account avatar in the global header. Then number on top of the account avatar indicates unread notifications.
+
+![Avatar in global header](../../assets/images/user-account/user-account.png)
+
 
 ## Manage your account
 
