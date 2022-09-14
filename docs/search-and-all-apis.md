@@ -1,6 +1,6 @@
-# Search and All APIs
-## Explore endpoints on All APIs 
-Not sure which products apply to you? Look for the specific endpoint on All APIs. We display our entire catalogue of endpoints on this page. You can narrow down your search by using our filter. Each endpoint takes you to its sandbox and documentation. 
+# Search and Directory
+## Explore endpoints in Directory 
+Not sure which products apply to you? Look for the specific endpoint in Directory . We display our entire catalogue of endpoints on this page. You can narrow down your search by using our filter. Each endpoint takes you to its sandbox and documentation. 
 
 ![search_allapis_1]
 
