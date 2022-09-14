@@ -29,6 +29,7 @@
 ################################################################################
 - sections:
   - title: Developer Studio overview
+    open: true
     sections:
     - title: About Developer Studio
       link: docs/about-developer-studio.md
@@ -42,15 +43,19 @@
       link: docs/try-out-the-api-sandbox.md
     - title: Search and Directory
       link: docs/search-and-all-apis.md
-    - title: Create Account
-      link: docs/registration.md
-    - title: Workspaces Guide
-      link: docs/guides/workspaces.md
+  - title: Guides
+    open: true
+    sections:
+      - title: Create Account
+        link: docs/registration.md
+      - title: Workspaces Guide
+        link: docs/guides/workspaces.md
   - title: API Glossary
     link: docs/api-glossary.md
   - title: FAQ
     link: docs/FAQ.md
   - title: Release notes
+    open: true
     sections:
     - title: 2022
       link: docs/release-notes/2022.md
