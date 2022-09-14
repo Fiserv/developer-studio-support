@@ -2,23 +2,23 @@
 
 ## What are Workspaces
 
-Workspaces are dedicated spaces for developers to manage their Fiserv product integrations and projects. Each workspace may contain a different suite of self-service tools, outlined steps for integration, requirements and sharing permissions as set forth by the specific Fiserv product being integrated against. Developers can create a workspace for any supported Fiserv Product (not all products support workspaces or self-service functionality)
+Workspaces are dedicated spaces for developers to manage their Fiserv product integrations and projects. Each workspace may contain a different suite of self-service tools, outlined steps for integration, requirements and sharing permissions as set forth by the specific Fiserv product being integrated to. Developers can create a workspace for any supported Fiserv Product (not all products support workspaces or self-service functionality)
 
 Although each workspace may have different requirements and tools, all workspaces will contain the same set of standard features with a consistent interface as outlined in this how-to guide.
 
-## Getting to My Workspaces
+## Finding your Workspaces
 
 Once logged-in you will see “Workspaces” appear in the global header at the top of the Developer Studio next to your account avatar.
 
 ![Workspaces in the Header](../../assets/images/workspace_how_to_1.png "Workspaces in the Header")
 
-Selecting this will take you to the My Workspaces page. From here you can view all your workspace, select an existing workspace, or create a new one.
+Selecting this will take you to your Workspaces page. From here you can view all your workspaces, select an existing workspace, or create a new one.
 
 ![Workspaces landing page](../../assets/images/workspace_how_to_2.png "Workspaces landing page")
 
 ## Workspace Pages (Tab Navigation)
 
-All workspaces will display a tab navigation at the top of the screen with the various accessible sections/pages. Each page will contain information and tools to help expedite your development process. Workspace pages may vary based on the specific Fiserv product selected upon during the creation of the workspace.
+All workspaces will display a tab navigation at the top of the screen with the various accessible sections/pages. Each page will contain information and tools to help expedite your development process. Workspace pages may vary based on the specific Fiserv product selected during the creation of the workspace.
 
 ![Tab Navigation](../../assets/images/workspace_how_to_3.png "Tab Navigation")
 
@@ -36,7 +36,7 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 ![Settings](../../assets/images/workspace_how_to_6.png "Settings")
 
-* **Left Navigation** – Once a workspace has been created, you will see it in a list of all workspaces on the left-hand side of the Workspaces interface. Selecting “workspaces” from the top of this navigation will take you back to the My Workspaces page. On this page you can view all your workspace, select an existing workspace, or create a new one.
+* **Left Navigation** – Once a workspace has been created, you will see it in a list of all workspaces on the left-hand side of the Workspaces interface. Selecting “workspaces” from the top of this navigation will take you back to the Workspaces overview page. On this page you can view all your workspaces, select an existing workspace, or create a new one.
 
 ![Left Navigation](../../assets/images/workspace_how_to_7.png "Left Navigation")
 
@@ -90,7 +90,7 @@ All workspaces will display a tab navigation at the top of the screen with the v
   
 ![Credentials](../../assets/images/workspace_how_to_manage_5.png "Credentials")
   
-  b. View MID details by selecting the View button in MID table
+  b. View MID (Merchant Identifier) details by selecting the View button in MID table
   
 ![MID](../../assets/images/workspace_how_to_manage_6.png "MID")
   
