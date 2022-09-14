@@ -4,7 +4,7 @@ Creating an account will allow you to save account settings and preferences, vie
 
 ## How to create an account
 
-To create a user account click on 'Create account' button in the global header at the top of the Developer Studio. Then fill out required information including your Organization email. **Please note** that private email domains, such as gmail & yahoo, are not supported.
+To create an account click on 'Create account' button in the global header at the top of the Developer Studio. Then fill out required information including your Organization email. **Please note** that private email domains, such as gmail & yahoo, are not supported.
 
 ![Create user account - step 1](../../assets/images/user-account/user-account-create-step-1.png)
 
