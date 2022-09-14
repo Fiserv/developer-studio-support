@@ -1,6 +1,6 @@
 # Create account
 
-An account will allow to save account settings and preferences; receive documentation updates and notifications, and last but not least create workspaces to manage Fiserv product integrations.
+An account will allow you to save account settings and preferences; receive documentation updates and notifications, and last but not least create workspaces to manage Fiserv product integrations.
 
 ## How to create an account
 
