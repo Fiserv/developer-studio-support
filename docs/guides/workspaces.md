@@ -44,11 +44,11 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 ### Create Workspace
 
-1. Create an account or Log-in
+1. **Create account** or **Log-in**
 
 ![Login](../../assets/images/workspace_how_to_create_1.png "Login")
 
-2. Select Workspaces from global header (next to account avatar)
+2. Select **Workspaces** from global header (next to account avatar)
 
 ![Header](../../assets/images/workspace_how_to_create_2.png "Header")
 
@@ -62,17 +62,17 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
   d. Select Product Integration from dropdown (preselected at this time – only CommerceHub is available)
 
-  e. Hit the Create button
+  e. Hit the **Create Workspace** button
 
 ![Create](../../assets/images/workspace_how_to_create_3.png "Create")
 
 ### Manage Workspace
 
-1. Create an account or Log-in
+1. **Create account** or **Log in**
 
 ![Login](../../assets/images/workspace_how_to_manage_1.png "Login")
 
-2. Select Workspaces from global header (next to account avatar)
+2. Select **Workspaces** from global header (next to account avatar)
 
 ![Header](../../assets/images/workspace_how_to_manage_2.png "Header")
 
@@ -80,21 +80,21 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 ![Left Nav](../../assets/images/workspace_how_to_manage_3.png "Left Nav")
 
-4. View workspace summary
+4. View workspace Summary
 
 ![Summary](../../assets/images/workspace_how_to_manage_4.png "Summary")
 
 5. Manage Credentials
 
-  a. Click "Credentials" on the tab to go to the Credentials page
+  a. Click **Credentials** on the tab to go to the Credentials page
   
 ![Credentials](../../assets/images/workspace_how_to_manage_5.png "Credentials")
   
-  b. View MID (Merchant Identifier) details by selecting the View button in MID table
+  b. View MID (Merchant Identifier) details by selecting the **View** button in MID table
   
 ![MID](../../assets/images/workspace_how_to_manage_6.png "MID")
   
-  c. Add/Create API Key by selecting the Create API Key button
+  c. Add/Create API Key by selecting the **Create API key** button
   
 ![API key](../../assets/images/workspace_how_to_manage_7.png "API key")
   
@@ -106,13 +106,13 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 &emsp;&emsp;&emsp;&emsp; iv. Add Features (if applicable)
 
-&emsp;&emsp;&emsp;&emsp; v. Hit the Create button
+&emsp;&emsp;&emsp;&emsp; v. Hit the **Create** button
     
 &emsp;&emsp;&emsp;&emsp; vi. Download API Key details as a pdf file (this is your one chance to save the API Key details including secret)
 
 ![Create API key](../../assets/images/workspace_how_to_manage_8.png "Create API key")
   
-  d. Add/Create CSR (Certificate Signing Requests) by selecting the Create CSR button
+  d. Add/Create CSR (Certificate Signing Requests) by selecting the **Create CSR** button
   
 ![Select CSR](../../assets/images/workspace_how_to_manage_9.png "Select CSR")
   
@@ -132,11 +132,11 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; viii. Enter an optional description
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ix. Hit Create button
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ix. Hit **Create** button
 
 ![Add CSR](../../assets/images/workspace_how_to_manage_10.png "Add CSR")
   
-  e. View CSR Details by selecting the View button in the CSR table (only available after creating/adding a CSR)
+  e. View CSR Details by selecting the **View** button in the CSR table (only available after creating/adding a CSR)
   
 ![CSR Detail](../../assets/images/workspace_how_to_manage_11.png "CSR Detail")
   
@@ -146,11 +146,11 @@ All workspaces will display a tab navigation at the top of the screen with the v
 
 6. Update Settings
 
-  a. Click "Settings" on the tab to go to the Settings page
+  a. Click **Settings** on the tab to go to the Settings page
     
 ![Click Settings](../../assets/images/workspace_how_to_manage_13.png "Click Settings")
   
-  b. Hit Edit button
+  b. Hit **Edit** button
   
 &emsp;&emsp; i. Change Workspace Name
 
@@ -158,7 +158,7 @@ All workspaces will display a tab navigation at the top of the screen with the v
   
 ![Edit Settings](../../assets/images/workspace_how_to_manage_14.png "Edit Settings")
   
-  c. Delete Workspace by hitting the Delete button
+  c. Delete Workspace by hitting the **Delete** button
     
 ![Delete WS](../../assets/images/workspace_how_to_manage_15.png "Delete WS")
 
