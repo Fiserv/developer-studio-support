@@ -4,15 +4,15 @@ Creating an account will allow you to save account settings and preferences, vie
 
 ## How to create an account
 
-To create an account click on 'Create account' button in the global header at the top of the Developer Studio. Then fill out required information including your Organization email. **Please note** that private email domains, such as gmail & yahoo, are not supported.
+To create an account, click on **Create account** button in the global header at the top of the Developer Studio. Then fill out required information including your Organization email. <br> **Please note** that private email domains, such as gmail & yahoo, are not supported.
 
 ![Create user account - step 1](../../assets/images/user-account/user-account-create-step-1.png)
 
-Once your account is created, you will receive a Welcome email with a temporary password that is neccessary to confirm access to your email and to finish the account creation process. After entering the temporary password you will have the ability to set your own custom password.
+Once your account has been created, you will receive a Welcome email with a temporary password that is neccessary to confirm access to your email and to finish the account creation process. After entering the temporary password you will have the ability to set your own custom password.
 
 ![Create user account - temp password](../../assets/images/user-account/user-account-temp-pw.png)
 
-Please read Fiserv [Privacy Notice](?path=docs/privacy-notice.md) & [Terms of Use](?path=docs/terms-of-use.md) and confirm by clicking checkbox.
+Please read Fiserv [Privacy Notice](?path=docs/privacy-notice.md) & [Terms of Use](?path=docs/terms-of-use.md) and confirm by clicking checkbox. Hit the **Complete** button to confirm your password and complete the account creation process.
 
 ![Create user account - step 2](../../assets/images/user-account/user-account-create-step-2.png)
 
@@ -23,7 +23,7 @@ We use Multi-Factor Authentication (MFA) to grant access to an account. After si
 
 ![Sign in OTP](../../assets/images/user-account/user-account-otp.png)
 
-Once authenticated, you can click on the account avatar in the global header to view your account page. The number on top of the account avatar indicates unread notifications. At this point you can also select "workspaces" at the top of the page to create and manage your workspaces.
+Once authenticated, you can click on the account avatar in the global header to view your account page. The number on top of the account avatar indicates unread notifications. At this point you can also select **workspaces** at the top of the page to create and manage your workspaces.
 
 ![Avatar in global header](../../assets/images/user-account/user-account.png)
 
