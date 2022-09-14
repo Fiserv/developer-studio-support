@@ -48,7 +48,7 @@
     sections:
       - title: Create Account
         link: docs/registration.md
-      - title: Workspaces Guide
+      - title: Workspaces
         link: docs/guides/workspaces.md
   - title: API Glossary
     link: docs/api-glossary.md
