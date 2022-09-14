@@ -1,6 +1,6 @@
-# Create account
+# Create an account
 
-An account will allow you to save account settings and preferences; receive documentation updates and notifications, and last but not least create workspaces to manage Fiserv product integrations.
+Creating an account will allow you to save account settings and preferences, view notifications, and create workspaces to manage Fiserv product integrations.
 
 ## How to create an account
 
@@ -8,7 +8,7 @@ To create a user account click on 'Create account' button in the global header a
 
 ![Create user account - step 1](../../assets/images/user-account/user-account-create-step-1.png)
 
-Once your account is created, you will receive a Welcome email with the temporary password that is neccessary to create your account password.
+Once your account is created, you will receive a Welcome email with a temporary password that is neccessary to confirm access to your email and to finish the account creation process. After entering the temporary password you will have the ability to set your own custom password.
 
 ![Create user account - temp password](../../assets/images/user-account/user-account-temp-pw.png)
 
@@ -19,11 +19,11 @@ Please read Fiserv [Privacy Notice](?path=docs/privacy-notice.md) & [Terms of Us
 ## Sign in
 
 To sign in, click **Sign in** link in the global header.
-We use Multi-Factor Authentication (MFA) to grant access to an account. In a few moments you should receive an email with temporary passcode.
+We use Multi-Factor Authentication (MFA) to grant access to an account. After signing in you will receive an email with a One-Time Passcode (OTP). You will need to enter this OTP to access your account.
 
 ![Sign in OTP](../../assets/images/user-account/user-account-otp.png)
 
-Once authenticated, click on the account avatar in the global header. Then number on top of the account avatar indicates unread notifications.
+Once authenticated, you can click on the account avatar in the global header to view your account page. The number on top of the account avatar indicates unread notifications. At this point you can also select "workspaces" at the top of the page to create and manage your workspaces.
 
 ![Avatar in global header](../../assets/images/user-account/user-account.png)
 
@@ -59,21 +59,21 @@ Select a specific notification and use the icons for a desired action.
 
 ### Organization
 
-To update your organization, natigate to the Organization page.
+To update your organization, natigate to the Organization page. This information is optional and will help Fiserv better understand your product needs.
 
 ![User account Organization](../../assets/images/user-account/user-account-edit-organization.png)
 
 
 ### Security Question
 
-Security questions are used to recover or reset forgotten password. It is recommended to set them. **Please note** the questions and answers must be unique. So, no repeats.
+Security questions are used to recover or reset a forgotten password. It is recommended to set them. **Please note** the questions and answers must be unique. So, no repeats.
 
 ![User account security questions](../../assets/images/user-account/user-account-security-questions.png)
 
 
 ### Data & Privacy
 
-Data and privacy page has links to Terms of Use and Privacy Notice. Additionally, user data can be downloaded and the account deleted from that page.
+Data and privacy page has links to Terms of Use and Privacy Notice. Additionally, user data can be downloaded and the account deleted from this page.
 
 ![User account Privacy](../../assets/images/user-account/user-account-privacy.png)
 
