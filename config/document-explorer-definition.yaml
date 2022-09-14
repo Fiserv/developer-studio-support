@@ -46,7 +46,7 @@
   - title: Guides
     open: true
     sections:
-      - title: Create Account
+      - title: Create account
         link: docs/registration.md
       - title: Workspaces
         link: docs/guides/workspaces.md
