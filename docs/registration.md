@@ -1,4 +1,4 @@
-# Create an account
+# Create account guide
 
 Creating an account will allow you to save account settings and preferences, view notifications, and create workspaces to manage Fiserv product integrations.
 
