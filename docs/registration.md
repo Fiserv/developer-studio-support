@@ -23,7 +23,7 @@ We use Multi-Factor Authentication (MFA) to grant access to an account. After si
 
 ![Sign in OTP](../../assets/images/user-account/user-account-otp.png)
 
-Once authenticated, you can click on the account avatar in the global header to view your account page. The number on top of the account avatar indicates unread notifications. At this point you can also select **workspaces** at the top of the page to create and manage your workspaces.
+Once authenticated, you can click on the account avatar in the global header to view your account page. The number on top of the account avatar indicates unread notifications. At this point you can also select **Workspaces** on the top of the page to create and manage your [Workspaces](?path=docs/guides/workspaces.md).
 
 ![Avatar in global header](../../assets/images/user-account/user-account.png)
 
@@ -38,7 +38,7 @@ Profile information and filter preferences can be found on the User Account page
 
 ![user account page](../../assets/images/user-account/user-account-page.png)
 
-To change click on **Edit** button, update, and Confirm changes.
+To change click on **Edit** button, update, and **Confirm changes**.
 
 ![user account edit](../../assets/images/user-account/user-account-edit.png)
 
@@ -64,16 +64,16 @@ To update your organization, natigate to the Organization page. This information
 ![User account Organization](../../assets/images/user-account/user-account-edit-organization.png)
 
 
-### Security Question
+### Security Questions
 
-Security questions are used to recover or reset a forgotten password. It is recommended to set them. **Please note** the questions and answers must be unique. So, no repeats.
+Security questions are used to recover or reset a forgotten password. It is recommended to set them. <br> **Please note** the questions and answers must be unique. So, no repeats.
 
 ![User account security questions](../../assets/images/user-account/user-account-security-questions.png)
 
 
 ### Data & Privacy
 
-Data and privacy page has links to Terms of Use and Privacy Notice. Additionally, user data can be downloaded and the account deleted from this page.
+Data and privacy page has links to [Terms of Use](?path=docs/terms-of-use.md) & [Privacy Notice](?path=docs/privacy-notice.md). Additionally, user data can be downloaded and the account can be deleted from this page.
 
 ![User account Privacy](../../assets/images/user-account/user-account-privacy.png)
 
