@@ -2,3 +2,6 @@
 
 docs/release-notes/from-jira/
 docs/release-notes/from-jira/**
+
+# Excluding file from Ignored directory
+!docs/release-notes/from-jira/S9-release-notes-edited.md

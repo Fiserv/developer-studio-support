@@ -1,39 +1,10 @@
 # Release Notes
 
-### September 15, 2022
-
-#### What's new
-- A user will be able to [create an account](?path=docs/registration.md) to save filter preferences, view notifications and create workspaces.
-- Authenticated users will be able to create and manage Commerce Hub [workspace](?path=docs/guides/workspaces.md) with a default MID and API creation.
-- The API Recipe page has been added to product documentation.
-- Exchange & SnapPay have joined Developer Studio 
-
-#### Enhancements
-- The search results for the specified term and the filters are maintained after following an article and coming back to the search results. [GitHub Issue #148](https://www.github.com/Fiserv/Support/issues/148)
-- The first end-point example in the OpenAPI spec will be set as default unless otherwise specified by `x-default-example` field.
-- Commerce Hub introduced [Recipes](?path=recipes/Recipe-1.md) that can be used to create REST API end-points.
-- The system notifications for the updates to [Terms of Use](?path=/docs/terms-of-use.md) and [Privacy Notice](?path=/docs/privacy-notice.md) have beed added.
-- The Home page has been updated.
-
-<br>
-
-### June 16, 2022
-
-#### Enhancements
-- The All APIs page has been renamed to Directory. By selecting a respective tab, all APIs and all Products, featured in Developer Studio, are listed and searchable. 
-
-#### Fixed
-
-- The Product end-points duplication under API left-side navigation, on the API Explorer page, has been fixed.
-- Only available Product end-point versions can be selected from the dropdown on the API Explorer page.
-- The ability to share a link to the specific Product end-point version has been enabled.
-
-<br>
-
 ### June 2, 2022
 
 #### Enhancements
 - The Email Template for deleted users has been updated.
+- Users with an account can now create multiple personal workspaces.
 - When a user account is deleted, the user will receive a notification via email the account has been deleted.
 
 #### Fixed
@@ -71,7 +42,7 @@
 - The [Release Notes Template](?path=/docs/release-notes-template.md) has been made available for product teams to use.
 
 #### Enhancements
-- The [Terms of Use](?path=/docs/terms-of-use.md) has been updated.
+- The [Terms of Use](?path=/docs/terms-of-use/latest.md) has been updated.
 
 #### Fixed
 - The mobile layout for cookie banner has been fixed.
@@ -95,7 +66,7 @@
 - The Runbox on the API explorer page has been updated.
 - The Fast Company Award banner has been added to the Home page carousel.
 - The Webby Award badge has been added to the footer.
-- A feedback clause has been added to Section 3.4 of the [Terms of Use](?path=/docs/terms-of-use.md). 
+- A feedback clause has been added to Section 3.4 of the [Terms of Use](?path=/docs/terms-of-use/latest.md). 
 
 #### Fixed
 - New tab links will now open in a new tab on the API Explorer page.
@@ -115,7 +86,7 @@
 - Added pagination for the search results on the Search page
 - Added system notifications when data is not available
 - Built a new lightweight mock server to support APIs and API versions
-- Updated [Terms of Use](?path=/docs/terms-of-use.md) and [Privacy Notice](?path=/docs/privacy-notice.md).
+- Updated [Terms of Use](?path=/docs/terms-of-use/latest.md) and [Privacy Notice](?path=/docs/privacy-notice/latest.md).
 - Updated documentation under Support pages including March Release Notes
 - Updated API Explorer page with additional enhancements: download API spec file, code snippet
 - Improved APIs & Documentation indexing/crawler to support versioning
@@ -155,4 +126,3 @@
 - Fixed input fields for request schema to display corresponding schema example.
 - Fixed dropdowns for request schema to unveil input fields.
 - Fixed SwaggerHub example to reflect on Developer Studio.
-
