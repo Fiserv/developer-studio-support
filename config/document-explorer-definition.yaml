@@ -47,7 +47,7 @@
     open: true
     sections:
       - title: Create account
-        link: docs/registration.md
+        link: docs/guides/create-account.md
       - title: Workspaces
         link: docs/guides/workspaces.md
   - title: API Glossary
