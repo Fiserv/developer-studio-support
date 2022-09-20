@@ -22,7 +22,7 @@ Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LL
 
   1.8  **Developer Sandbox** means a limited simulation environment which enables you to view and execute Fiserv APIs in isolation (i.e., not in a Test Environment).
 
-  1.9  **Developer Studio** means the website located at [https://dev-developerstudio.fiserv.com/](https://dev-developerstudio.fiserv.com/).
+  1.9  **Developer Studio** means the website located at [https://developer.fiserv.com](https://developer.fiserv.com).
 
   1.10  **Documentation** means the operating instructions, user manuals, help files, Swagger documentation, and other documentation, and any updates to these, in written or electronic form, which we may make available to you that are intended to be used in connection with your activities within the Developer Studio.
 
