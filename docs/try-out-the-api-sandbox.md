@@ -19,13 +19,13 @@ It might seem a bit overwhelming, but let’s break down some of the key concept
 
 Wherever you decide to enter your values, after you’re done, you’ll press “Run” to send the changes to the system and it’ll return a response. 
 
-**Response Codes** is where you determine the result after you ran the values. In this case, the response came back with “200”, which means “Created” (or it came back with a successfully).
-
-![product_api_9]
-
 **Reponse Schema** is an explanation of the result and lists each property that could possibly be returned.
 
 ![product_api_10]
+
+**Response Codes** is where you determine the result after you ran the values. In this case, the response came back with “200”, which means “Created” (or it came back with a successfully).
+
+![product_api_9]
 
 [//]: # (These are reference links used in markdown file)
 
