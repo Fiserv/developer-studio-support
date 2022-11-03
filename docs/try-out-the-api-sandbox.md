@@ -2,7 +2,7 @@
 ## Make an API call
 Now that you have a better understanding of how the product works after reading documentation, you can try out the endpoint on the API sandbox! An API sandbox is an environment that testers use to mimic the characteristics of the production environment and create simulated responses. 
 
-On the left navigation, the endpoints are grouped based on features. In this case, “Search” is an endpoint of the feature “Authorization”.  
+On the left navigation, the endpoints are grouped based on features. In this case, “Charges” is an endpoint of the feature “Payments”.  
 
 ![product_api_6]
 
