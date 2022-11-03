@@ -8,6 +8,7 @@ On the left navigation, the endpoints are grouped based on features. In this cas
 
 It might seem a bit overwhelming, but let’s break down some of the key concepts that we’ll need to know.
 
+
 **Parameters** are options that can be passed with the endpoint to influence the response. They’re found in strings at the end of the API URL path.
 
 ![product_api_7]
