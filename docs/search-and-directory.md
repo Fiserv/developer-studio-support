@@ -13,4 +13,4 @@ On the Search page, type one or more keywords of what you’re looking for and a
 
 [search_allapis_1]:<../assets/images/Catalog.png>
 
-[search_allapis_2]:<../assets/images/search.png>
+[search_allapis_2]:<../assets/images/Search.png>
