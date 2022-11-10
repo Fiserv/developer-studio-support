@@ -1,6 +1,6 @@
-# Search and Directory
-## Explore endpoints in Directory 
-Not sure which products apply to you? Look for the specific endpoint in Directory . We display our entire catalogue of endpoints on this page. You can narrow down your search by using our filter. Each endpoint takes you to its sandbox and documentation. 
+# Search and Catalog
+## Explore endpoints in Catalog 
+Not sure which products apply to you? Look for the specific endpoint in Catalog . We display our entire catalog of endpoints on this page. You can narrow down your search by using our filter. Each endpoint takes you to its sandbox and documentation. 
 
 ![search_allapis_1]
 
