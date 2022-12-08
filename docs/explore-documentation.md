@@ -11,6 +11,6 @@ Once you click on “Documentation”, you’ll land on the “Getting Started�
 
 [//]: # (These are reference links used in markdown file)
 
-[product_documentation_4]:<../assets/images/product_documentation_4.png>
+[product_documentation_4]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_documentation_4.png>
 
-[product_documentation_5]:<../assets/images/product_documentation_5.png>
+[product_documentation_5]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_documentation_5.png>

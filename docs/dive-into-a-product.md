@@ -4,17 +4,17 @@ A product is a Fiserv brand that offers a set of APIs that meet certain needs of
 ## Available capabilities for the product
 There are certain capabilities a product has on Developer Studio. That information is displayed in this section. If you don’t know what the feature is, you can learn about it by clicking on the hyperlink. It will take you to this guide.   
 
-![product_1]
+![product_1](https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_1.png)
 
 ## Read use cases to learn about endpoint
 Figure out whether the API is the right fit for you by reading its documentation. It’s a technical guide that explains how to use and integrate the API, shows the languages it supports, and provides examples of how implementation would look like. 
 
-![product_2]
+![product_2](https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_2.png)
 
 ## Browse features and endpoints
 Figure out whether the API is the right fit for you by reading its documentation. It’s a guide that explains how to use and integrate the API, the languages it supports, and examples of how implementing would look like. 
 
-![product_3]
+![product_3](https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_3.png)
 
 ## Understand Documentation and API Explorer
 Now we’re getting into the technical aspect of Developer Studio...
@@ -54,23 +54,17 @@ It might seem a bit overwhelming, but let’s break down some of the key concept
 
 [//]: # (These are reference links used in markdown file)
 
-[product_1]: <../assets/images/product_1.png>
+[product_documentation_4]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_documentation_4.png>
 
-[product_2]: <../assets/images/product_2.png>
+[product_documentation_5]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_documentation_5.png>
 
-[product_3]: <../assets/images/product_3.png>
+[product_api_6]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_api_6.png>
 
-[product_documentation_4]:<../assets/images/product_documentation_4.png>
+[product_api_7]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_api_7.png>
 
-[product_documentation_5]:<../assets/images/product_documentation_5.png>
+[product_api_8]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_api_8.png>
 
-[product_api_6]:<../assets/images/product_api_6.png>
+[product_api_9]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_api_9.png>
 
-[product_api_7]:<../assets/images/product_api_7.png>
-
-[product_api_8]:<../assets/images/product_api_8.png>
-
-[product_api_9]:<../assets/images/product_api_9.png>
-
-[product_api_10]:<../assets/images/product_api_10.png>
+[product_api_10]:<https://raw.githubusercontent.com/Fiserv/developer-studio-support/main/assets/images/product_api_10.png>
 
