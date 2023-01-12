@@ -1,11 +1,9 @@
-
-
 ---
 version: 1.0.0
 Guidelines:
 - link: recipes/create-account.md
   title: Create account
-  type: recipe
+  type: recipes
 - link: recipes/workspaces.md
   title: Workspaces
-  type: recipe
+  type: recipes
