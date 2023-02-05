@@ -54,6 +54,11 @@
     link: docs/api-glossary.md
   - title: FAQ
     link: docs/FAQ.md
+  - title: Migrations
+    open: true
+    sections:
+      - title: FirstData Documentation
+        link: /docs/docs-firstdata-migration
   - title: Release notes
     open: true
     sections:
