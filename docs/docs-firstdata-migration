@@ -8,18 +8,15 @@ Apologies for the inconvience and thank you for understanding.
 
 ## Products *inside* the Developer Studio
 
-- [Issuer Solutions](/product/IssuerSolutions)
-- [Account Services](/product/IssuerSolutions)
-- [Collections CaseManagement](/product/IssuerSolutions)
-- [Identity Authorizations](/product/IssuerSolutions)
-- [Insurance](/product/IssuerSolutions)
-- [Payments](/product/IssuerSolutions)
 - [Signature International](/product/SignatureInternational)
 - [Brazil API](/product/BrazilAPI)
 - [FirstVision EMEA API](/product/FirstVisionEMEA)
 - [Merchant Acquiring - LATAM](/product/MerchantAcquiringLATAM)
 - [FirstVision - LATAM](/product/FirstVisionLATAM) 
-- [Internet Payment Gateway](NA) 
+- [Internet Payment Gateway](/product/IPGNA)
+- [Issuer Solutions](/product/IssuerSolutions)
+
+If you are looking for Account Services, Collections CaseManagement, Identity Authorizations, Insurance, Payments, Admin_Settings, Core Services , Core_Processing_Solutions, Customer_Service, Disputes Gateway, Disuputes_Fraud, PayPoint Gateway, Health Care, Lending, Loyalty_Rewards, Rewards Services, US API and Utilities;they are now listed under the API collection for Issuer Solutions
 
 
 ## Products *outside* of Developer Studio
@@ -27,8 +24,8 @@ Apologies for the inconvience and thank you for understanding.
 - [CardPointe](https://developer.cardpointe.com/)
 - [Clover](https://docs.clover.com/docs)
 - [Gyft](https://business.gyft.com/developers/)
-- [DDP](http://https://docs.firstdata.com/org/gateway)
-- [RapidConnect](https://www.rapidconnect.com)
-
+- [RapidConnect](https://www.rapidconnect.com/)
+- [FirstData-MarketPlace](https://developer.firstdata.com/marketplace/)
+- [FirstData-FInancialService](https://fiapi.firstdata.com/portal/)
 
 
