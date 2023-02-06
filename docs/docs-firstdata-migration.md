@@ -27,5 +27,3 @@ If you are looking for Account Services, Collections CaseManagement, Identity Au
 - [RapidConnect](https://www.rapidconnect.com/)
 - [FirstData-MarketPlace](https://developer.firstdata.com/marketplace/)
 - [FirstData-FInancialService](https://fiapi.firstdata.com/portal/)
-
-
