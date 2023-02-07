@@ -16,7 +16,7 @@ Apologies for the inconvience and thank you for understanding.
 - [Internet Payment Gateway](/product/IPGNA)
 - [Issuer Solutions](/product/IssuerSolutions)
 
-## Products *under* the Issuer Solution
+## Products *under* the Issuer Solutions
 
 Didn't find what you were looking for. Now few products have been listed under the API explorer of Issuer Solutions. Take a look:
 - [Account Services](/product/IssuerSolutions/api/?type=post&path=/account/v4/accountChangeInTermsAudit&branch=develop&version=1.0.0)
