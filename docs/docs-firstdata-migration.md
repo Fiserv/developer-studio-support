@@ -40,7 +40,7 @@ Didn't find what you were looking for. Now few products have been listed under t
 
 - [CardPointe](https://developer.cardpointe.com/)
 - [Clover](https://docs.clover.com/docs)
-- [FirstData-MarketPlace](https://developer.firstdata.com/marketplace/)
+- [FirstData-Marketplace](https://developer.firstdata.com/marketplace/)
 - [Gyft](https://business.gyft.com/developers/)
 - [RapidConnect](https://www.rapidconnect.com/)
 
