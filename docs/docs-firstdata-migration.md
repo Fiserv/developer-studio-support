@@ -8,7 +8,7 @@ Apologies for the inconvience and thank you for understanding.
 
 ## Products *inside* the Developer Studio
 
--  Brazil API - coming soon
+-  Brazil API - *coming soon* 
 - [FirstVision EMEA](/product/FirstVisionEMEA)
 - [FirstVision LATAM](/product/FirstVisionLATAM) 
 - [Internet Payment Gateway (IPG) NA](/product/IPGNA)
@@ -19,6 +19,7 @@ Apologies for the inconvience and thank you for understanding.
 ## Products *under* the Issuer Solutions
 
 Didn't find what you were looking for. Now few products have been listed under the API explorer of Issuer Solutions. Take a look:
+
 - [Account Services](/product/IssuerSolutions/api/?type=post&path=/account/v4/accountChangeInTermsAudit&branch=main&version=1.0.0)
 - [Admin Settings](/product/IssuerSolutions/api/?type=post&path=/ocs/v1/automatedAdjustmentProfile&branch=main&version=1.0.0)
 - [Collections CaseManagement](/product/IssuerSolutions/api/?type=post&path=/collectionsAccounts/v1/accountDetails&branch=main&version=1.0.0)
@@ -36,6 +37,7 @@ Didn't find what you were looking for. Now few products have been listed under t
 - [Rewards Services](/product/IssuerSolutions/api/?type=post&path=/rewardsui/v2/getRealTimeRewardDetails&branch=main&version=1.0.0)
 - [Utilities](/product/IssuerSolutions/api/?type=post&path=/utilities/v4/consumerAccounts&branch=main&version=1.0.0)
 
+
 ## Products *outside* of Developer Studio
 
 - [CardPointe](https://developer.cardpointe.com/)
@@ -45,4 +47,6 @@ Didn't find what you were looking for. Now few products have been listed under t
 - [Rapid Connect](https://www.rapidconnect.com/)
 
 
- Still can't find what you're looking for?  Please contact here: globaldevportal@firstdata.com
+
+  Still can't find what you're looking for? Please contact here: globaldevportal@firstdata.com
+
