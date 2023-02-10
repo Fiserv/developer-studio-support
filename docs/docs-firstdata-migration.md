@@ -8,12 +8,12 @@ Apologies for the inconvience and thank you for understanding.
 
 ## Products *inside* the Developer Studio
 
-- [Brazil API](/product/BrazilAPI)- *coming soon* 
-- [FirstVision- EMEA](/product/FirstVisionEMEA)
-- [FirstVision-LATAM](/product/FirstVisionLATAM) 
-- [Internet Payment Gateway](/product/IPGNA)
+-  Brazil API - *coming soon* 
+- [FirstVision EMEA](/product/FirstVisionEMEA)
+- [FirstVision LATAM](/product/FirstVisionLATAM) 
+- [Internet Payment Gateway (IPG) NA](/product/IPGNA)
 - [Issuer Solutions](/product/IssuerSolutions)
-- [Merchant Acquiring - LATAM](/product/MerchantAcquiringLATAM)
+- [Merchant Acquiring LATAM](/product/MerchantAcquiringLATAM)
 - [Signature International](/product/SignatureInternational)
 
 ## Products *under* the Issuer Solutions
@@ -40,9 +40,9 @@ Didn't find what you were looking for. Now few products have been listed under t
 
 - [CardPointe](https://developer.cardpointe.com/)
 - [Clover](https://docs.clover.com/docs)
-- [FirstData-Marketplace](https://developer.firstdata.com/marketplace/)
+- [First Data Marketplace](https://developer.firstdata.com/marketplace/)
 - [Gyft](https://business.gyft.com/developers/)
 - [RapidConnect](https://www.rapidconnect.com/)
 
 
-
+ Still can't find what you're looking for?  Please contact here: globaldevportal@firstdata.com
