@@ -8,6 +8,7 @@ Apologies for the inconvience and thank you for understanding.
 
 ## Products *inside* the Developer Studio
 
+- [Brazil API](/product/BrazilAPI)- *coming soon* 
 - [FirstVision- EMEA](/product/FirstVisionEMEA)
 - [FirstVision-LATAM](/product/FirstVisionLATAM) 
 - [Internet Payment Gateway](/product/IPGNA)
