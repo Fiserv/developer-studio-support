@@ -9,7 +9,7 @@ Apologies for the inconvience and thank you for understanding.
 ## Products *inside* the Developer Studio
 
 
-- [Brazil API](/product/BrazilAPI)
+- [Brazil API](/product/BrazilAPI)*coming soon*
 - [FirstVision- EMEA](/product/FirstVisionEMEA)
 - [FirstVision-LATAM](/product/FirstVisionLATAM) 
 - [Internet Payment Gateway](/product/IPGNA)
@@ -41,7 +41,7 @@ Didn't find what you were looking for. Now few products have been listed under t
 
 - [CardPointe](https://developer.cardpointe.com/)
 - [Clover](https://docs.clover.com/docs)
-- [FirstData-MarketPlace](https://developer.firstdata.com/marketplace/)
+- [FirstData-Marketplace](https://developer.firstdata.com/marketplace/)
 - [Gyft](https://business.gyft.com/developers/)
 - [RapidConnect](https://www.rapidconnect.com/)
 
