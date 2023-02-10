@@ -45,4 +45,4 @@ Didn't find what you were looking for. Now few products have been listed under t
 - [Rapid Connect](https://www.rapidconnect.com/)
 
 
- Still can't find what you're looking for?  Please contact here: globaldevportal@firstdata.com
+  Still can't find what you're looking for? Please contact here: globaldevportal@firstdata.com
