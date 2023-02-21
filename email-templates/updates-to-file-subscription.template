@@ -94,7 +94,7 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                <strong>{{.FileName}}</strong>
+                <strong>{{.DocumentName}}</strong>
                 </p>
             </td>
         </tr>
@@ -102,7 +102,7 @@
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                 To view your files on Developer Studio, please click 
-                <a href="{{.builtinUiUrl}}/documents" class="anchor-link">here</a>
+                <a href="{{.DocumentUrl}}" class="anchor-link">here</a>
                 </p>
             </td>
         </tr>
