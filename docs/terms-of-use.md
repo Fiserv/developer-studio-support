@@ -1,4 +1,4 @@
-# Developer Studio from Fiserv Terms of Use
+# Terms of Use
 
 **Update on: June 4, 2022**
 
@@ -106,7 +106,7 @@ Capitalized terms used in these Terms have the meanings stated below or where de
 
 You are responsible for your use, retention, and handling of all Test Data, and any data generated or derived from Test Data. We have no obligation to maintain Test Data on our servers and may delete any Test Data from our systems at any time without notice. You may only submit or upload dummy Test Data on or through your Developer Account (i.e., real account numbers, names, addresses, and other Personal Data may not be used). Load testing your Developer Account or in the Developer Build Space or the Fiserv Platform (or any portion thereof) is prohibited. We have no obligation to monitor or validate any information submitted or uploaded by you on or through your Developer Account.
 
-## 5.  Updates
+## Updates
 
 We have no obligation to provide any updates, upgrades, enhancements, modifications, or new releases or versions (collectively, Updates) of or to the Developer Studio, nor do we have any obligation to provide support for or maintenance to the Developer Studio. Further, we may, in our sole discretion, release Updates to the Fiserv APIs and/or Documentation and require you to obtain and use such Updates, which may result in you needing to make updates to your Integration(s), your software, your Apps or supporting services.
 
