@@ -1,5 +1,6 @@
 # Privacy Notice
-***Effective Date**: January 1, 2022*
+
+**Effective Date: January 1, 2022**
 
 This “Privacy Notice” describes the practices of Open Banking…Fiserv, Inc. and its subsidiaries and affiliates (collectively, “Fiserv”, “we”, “us”, or “our”) and the rights and choices available to individuals, regarding personal data. Personal data means any information that relates to an identifiable individual.
 
@@ -7,17 +8,18 @@ Fiserv may provide additional or supplemental privacy notices to individuals at 
 
 Table of Contents
 
-1. [The personal data we collect](#the-personal-data-we-collect)
-2. [How we use your personal data](#how-we-use-your-personal-data)
-3. [How we share your personal data](#how-we-share-your-personal-data)
-4. [Your rights and choices](#your-rights-and-choices)
-5. [International transfers](#international-transfers)
-6. [How we keep your data safe](#how-we-keep-your-data-safe)
-7. [This Website May Link to Other Websites](#this-website-may-link-to-other-websites)
-8. [Changes to this Privacy Notice](#changes-to-this-privacy-notice)
-9. [Contact Us](#contact-us)
+- [Privacy Notice](#privacy-notice)
+  - [The personal data we collect](#the-personal-data-we-collect)
+  - [How we use your personal data](#how-we-use-your-personal-data)
+  - [The parties with whom we share your personal data](#the-parties-with-whom-we-share-your-personal-data)
+  - [Your rights and choices](#your-rights-and-choices)
+  - [International transfers](#international-transfers)
+  - [How we keep your data safe](#how-we-keep-your-data-safe)
+  - [Links to other websites](#links-to-other-websites)
+  - [Changes to this Privacy Notice](#changes-to-this-privacy-notice)
+  - [Contact us](#contact-us)
 
-# The personal data we collect
+## The personal data we collect
 
 We collect personal data about individuals from various sources described below. Where applicable, we indicate whether and why individuals must provide us with personal data, as well as the consequences of failing to do so. 
 
@@ -53,7 +55,7 @@ In limited circumstances and when permitted by law, we may collect a Developer�
 
 Outside of these contexts or otherwise as we specifically request, we ask that you not provide us with any sensitive personal data (meaning information revealing racial or ethnic origin, political opinions, religion or philosophical beliefs, trade union membership, genetic, health, or biometric information, information about sex life or sexual orientation, or criminal convictions or offenses) through our websites or mobile applications, or otherwise to us.
 
-# How we use your personal data
+## How we use your personal data
 
 We use your personal data for the purposes of:
 
@@ -102,7 +104,7 @@ In some jurisdictions, applicable law may require us to request your consent to 
 
 We may create anonymous data from your personal data and from other individuals whose personal data we collect. We make personal data into anonymous data by excluding information that makes the data personally identifiable to you, and use that anonymous data for our lawful business purposes.
 
-# The parties with whom we share your personal data
+## The parties with whom we share your personal data
 
 A. Companies within the Fiserv group 
 
@@ -140,7 +142,7 @@ Fiserv may sell or transfer some or all of its business or assets, including you
 
 Fiserv may transfer your personal data to any third party who is not otherwise covered by the other listed categories above where you have given us permission to do so, or with whom you have entered into a contract when we need to transfer your personal data to that party in order to fulfil that contract.
 
-# Your rights and choices
+## Your rights and choices
 
 In this section, we describe the rights and choices available to all users.
 
@@ -181,27 +183,27 @@ In some jurisdictions, applicable law may provide a right for individuals to acc
 
 If you have a complaint about our handling of your personal data, you may contact our data protection officer using the contact information below. We request that a complaint be made in writing. Please provide details about your concern or complaint so that our data protection officer can investigate it. We will take appropriate action in response to your complaint, which may include conducting internal discussions with relevant business representatives. We may contact you for additional details or clarification about your concern or complaint. We will contact you to inform you of our response to your complaint. You also may have a right to file a complaint with a national or local regulatory agency.
 
-# International transfers
+## International transfers
 
 Fiserv is headquartered in the United States, and it maintains offices and has service providers in other countries. Your personal data may be transferred to the United States or other locations outside of your state, province, country or other governmental jurisdiction where we or our service providers maintain offices and where privacy laws may not be as protective as those in your jurisdiction. If we make such a transfer, we will require that the recipients of your personal data provide data security and protection in accordance with applicable law.  
 
-# How we keep your data safe
+## How we keep your data safe
 
 We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorized way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions and they are subject to a duty of confidentiality. 
 
 We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator of a breach where we are legally required to do so. 
 
-# Links to other websites
+## Links to other websites
 
 We may link to third-party websites, mobile applications, and other content. Fiserv is not responsible for the privacy practices of any third party, and this privacy notice does not apply to such third party’s websites, mobile applications, or other content. Fiserv does not guarantee, approve, or endorse any information, material, services, or products contained on or available through any linked third-party website, mobile application, or other content. Fiserv is not responsible for any content on third-party properties to which we link. Fiserv provides links to third-party properties or content as a convenience, and visiting or using linked third-party properties or content is at your own risk. 
 
-# Changes to this Privacy Notice
+## Changes to this Privacy Notice
 
 We reserve the right to modify this Privacy Notice at any time. We encourage you to periodically review this page for the latest information on our privacy practices. If we make material changes to this Privacy Notice, we will notify you by updating the date of this Privacy Notice and posting it on our website and in app stores where our mobile applications covered by this Privacy Notice are available for download. We may (and, where required by law, will) also provide notification of changes in another way that we believe is reasonably likely to reach you, such as via e-mail (if you have an account where we have your contact information) or another manner through our website or mobile applications. 
 
 Any modifications to this Privacy Notice will be effective upon our posting of the new terms and/or upon implementation of the new changes (or as otherwise indicated at the time of posting). In all cases, your continued use of our products or services after the posting of any modified Privacy Notice indicates your acceptance of the terms of the modified Privacy Notice. 
 
-# Contact us
+## Contact us
 
 If you have any questions, concerns, or complaints about this Privacy Notice or our privacy practices, or to request access to your personal data, you may contact our Data Protection Officer at dpo@fiserv.com. 
 
