@@ -49,7 +49,9 @@
   - title: Release notes
     sections:
     - title: 2022
-      link: docs/release-notes/2022.md
+      sections:
+      - title: q1
+        link: docs/release-notes/2022.md
   - title: Terms of Use
     link: docs/terms-of-use.md
   - title: Privacy Notice
