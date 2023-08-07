@@ -49,7 +49,9 @@
   #     - title: Create account
   #       link: docs/guides/create-account.md
   #     - title: Workspaces
+
   #       link: docs/guides/workspaces.md
+
   - title: API Glossary
     link: docs/api-glossary.md
   - title: FAQ
