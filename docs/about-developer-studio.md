@@ -19,9 +19,11 @@ Have full control of your account conveniently with everything right at your fin
 ## API Experimentation
 
 Boost efficiency in your production by experimenting with APIs to discover exactly what you need.
-![API Experimentation](../assets/images/api-experimentation.gif)
+![API Experimentation](../assets/images/api-experimentation%20(1).gif)
+
+
 
 ## Guides & Documentation
 
 Develop with confidence with all the right guides and documentations at your disposal.
-![Guides & Documentation.gif](../assets/images/Guides-%26-Documentation.gif)
+![Guides & Documentation.gif](../assets/images/guides-documentation(1).gif)
