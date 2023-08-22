@@ -29,10 +29,7 @@
 ################################################################################
 - sections:
   - title: Developer Studio overview
-    open: true
-    sections:
-    - title: About Developer Studio
-      link: docs/about-developer-studio.md
+    link: docs/about-developer-studio.md
   #   - title: Explore a product area
   #     link: docs/explore-a-product-area.md
   #   - title: Dive into a product
@@ -52,10 +49,8 @@
 
   #       link: docs/guides/workspaces.md
 
-  - title: API Glossary
-    link: docs/api-glossary.md
-  - title: FAQ
-    link: docs/FAQ.md
+  # - title: API Glossary
+  #   link: docs/api-glossary.md
   - title: Migrations
     open: true
     sections:
@@ -70,6 +65,8 @@
       link: docs/release-notes/2023.md
     - title: 2022
       link: docs/release-notes/2022.md   
+  - title: FAQ
+    link: docs/FAQ.md
   - title: Terms of Use
     link: docs/terms-of-use.md
   - title: Privacy Notice
