@@ -30,9 +30,9 @@ def redeliver_failed_deliveries(hook_id):
     deliveries = response.json()
     
     for delivery in deliveries:
-        if delivery["status_code"] == 500:
+        if delivery["status_code"] == 200:
             delivery_id = delivery["id"]
-            print(f"Not delivered - delivery ID {delivery_id} for hook ID {hook_id}")
+            print(f"Delivered - delivery ID {delivery_id} for hook ID {hook_id}")
 
 
 if __name__ == "__main__":
