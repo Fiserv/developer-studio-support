@@ -3,7 +3,7 @@ import json
 
 # Function to get a list of hook IDs for the repository
 def get_hook_ids():
-    url = f"https://api.github.com/repos/Fiserv/Testing-repo/hooks"
+    url = f"https://api.github.com/repos/Fiserv/developer-studio-support/hooks"
     headers = {
         "Authorization": f"Bearer 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",
         "Accept": "application/vnd.github.v3+json",
@@ -18,7 +18,7 @@ def get_hook_ids():
 
 # Function to redeliver failed deliveries with status code 500
 def redeliver_failed_deliveries(hook_id):
-    url = f"https://api.github.com/repos/Fiserv/Testing-repo/hooks/{hook_id}/deliveries"
+    url = f"https://api.github.com/repos/Fiserv/developer-studio-support/hooks/{hook_id}/deliveries"
     headers = {
         "Authorization": f"Bearer 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",
         "Accept": "application/vnd.github.v3+json",
@@ -30,9 +30,9 @@ def redeliver_failed_deliveries(hook_id):
     deliveries = response.json()
     
     for delivery in deliveries:
-        if delivery["status_code"] == 200:
+        if delivery["status_code"] == 500:
             delivery_id = delivery["id"]
-            print(f"Redelivered delivery ID {delivery_id} for hook ID {hook_id}")
+            print(f"Not delivered - delivery ID {delivery_id} for hook ID {hook_id}")
 
 
 if __name__ == "__main__":
