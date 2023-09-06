@@ -22,4 +22,6 @@ jobs:
       run: pip install -r .github/workflows/requirements.txt
 
     - name: Run Python script
+      env:
+        TEST_GITHUB_AUTH_TOKEN: ${{ secrets.TEST_GITHUB_AUTH_TOKEN }}
       run: python .github/workflows/test.py
