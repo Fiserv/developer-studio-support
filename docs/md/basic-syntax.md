@@ -151,3 +151,8 @@ ___
 
 Underscores
 ```
+## API Explorer Expand All for Nested Objects
+
+In every API Explorer, every API contains 4 inline tabs Parameters, Request Schema, Response Schema, and Response Codes. In Request and Response Schema, there is a Expand All toggle button, once toggled on, all the nested objects are expanded and shown with every child object indented to its parent object.
+
+![API Explorer Expand All for Nested Objects](../../assets/images/API_Explorer_Expand_All.gif)
