@@ -181,11 +181,10 @@ Underscores
 
 Table with nested objects, containing descriptions.
 
-| API | Description |
-|---|---|
-| Num | *int*  This is the first item in the nested object. |
-| Color | *string*  This is the first item in the nested object. |
-   * Blue 
-      * navy shade of blue
+| Item                                          | Description                    |
+|-----------------------------------------------|--------------------------------|
+| - Color<br>   &nbsp;&nbsp;&nbsp;&nbsp;- Navy<br>   &nbsp;&nbsp;&nbsp;&nbsp;- Sapphire | *string* shades of blue   <br>   &nbsp;&nbsp;&nbsp;&nbsp;   Dark blue <br>   &nbsp;&nbsp;&nbsp;&nbsp;   Rich blue|
+| - Number<br>   &nbsp;&nbsp;&nbsp;&nbsp;- age<br>   &nbsp;&nbsp;&nbsp;&nbsp;- speed limit | *int* there is no limit  <br>   &nbsp;&nbsp;&nbsp;&nbsp;   your age (i.e. 27) <br>   &nbsp;&nbsp;&nbsp;&nbsp;   mph (i.e. 200)   |
+---
 
 ![API Explorer Expand All for Nested Objects](../../assets/images/API_Explorer_Expand_All.gif)
