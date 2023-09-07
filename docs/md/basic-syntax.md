@@ -37,6 +37,13 @@ Combined emphasis with **asterisks and _underscores_**.
 
 Strikethrough uses two tildes. ~~Scratch this.~~
 ```
+Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses two tildes. ~~Scratch this.~~
 
 ## Lists
 
@@ -72,6 +79,19 @@ Different ways to create links.
 5. To create anchor link within the page. You can place anchor by declaring <a name = "portal"></a>. Now you can reference this link anywhere within the page by declaring link such as [Dev Portal](#portal)
 
 ```
+1. To link Inline-style
+[I'm an inline-style link](https://www.google.com)
+
+2. To link Reference-style
+[I'm a reference-style link][https://www.google.com "Google's Homepage"]
+
+3. To link to API explorer from documentation pages
+[API page](../api?type=post&path=/v1/apis)
+
+4. To link/reference to another document/markdown
+[Charge](?path=docs/Transactions/Charges.md)
+
+5. To create anchor link within the page. You can place anchor by declaring <a name = "portal"></a>. Now you can reference this link anywhere within the page by declaring link such as [Dev Portal](#portal)
 
 ## Images
 
@@ -113,6 +133,7 @@ Colons can be used to align columns.
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
+
 The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
 
 Markdown | Less | Pretty
@@ -120,6 +141,11 @@ Markdown | Less | Pretty
 *Still* | `renders` | **nicely**
 1 | 2 | 3
 ```
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
 
 ## Blockquotes
 
@@ -151,8 +177,15 @@ ___
 
 Underscores
 ```
-## API Explorer Expand All for Nested Objects
+## Table with Nested Object
 
-In every API Explorer, every API contains 4 inline tabs Parameters, Request Schema, Response Schema, and Response Codes. In Request and Response Schema, there is a Expand All toggle button, once toggled on, all the nested objects are expanded and shown with every child object indented to its parent object.
+Table with nested objects, containing descriptions.
+
+| API | Description |
+|---|---|
+| Num | *int*  This is the first item in the nested object. |
+| Color | *string*  This is the first item in the nested object. |
+   * Blue 
+      * navy shade of blue
 
 ![API Explorer Expand All for Nested Objects](../../assets/images/API_Explorer_Expand_All.gif)
