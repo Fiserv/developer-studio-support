@@ -179,12 +179,17 @@ Underscores
 ```
 ## Table with Nested Object
 
-Table with nested objects, containing descriptions.
+Table with nested objects, containing descriptions, HTML tags are also allowed.
 
-| Item                                          | Description                    |
-|-----------------------------------------------|--------------------------------|
-| - Color<br>   &nbsp;&nbsp;&nbsp;&nbsp;- Navy<br>   &nbsp;&nbsp;&nbsp;&nbsp;- Sapphire | *string* shades of blue   <br>   &nbsp;&nbsp;&nbsp;&nbsp;   Dark blue <br>   &nbsp;&nbsp;&nbsp;&nbsp;   Rich blue|
-| - Number<br>   &nbsp;&nbsp;&nbsp;&nbsp;- age<br>   &nbsp;&nbsp;&nbsp;&nbsp;- speed limit | *int* there is no limit  <br>   &nbsp;&nbsp;&nbsp;&nbsp;   your age (i.e. 27) <br>   &nbsp;&nbsp;&nbsp;&nbsp;   mph (i.e. 200)   |
+| Name | Description | Example | 
+|------|-------------|:----:|
+| Headers | Large text refer to Header section for more detail | <h1> Hello </h1>
+| Emphasis | italics, bold, or strikethrough | *italics*, **bold**, ~~strikethrough~~, **bold and _italics_**
+| Lists | Refer to Lists section for more details | 1. List item 1 <br> 2. List item 2
+| Links | Hyperlinks, refer to above Link section for more details | To link to API explorer from documentation pages API page [API page](../api?type=post&path=/v1/apis)
+| Images | Visual representation | ![Fiserv Logo](../../assets/images/Fiserv_Logo.jpg "Fiserv Logo")
+| Code | code blocks, syntax highlighting | <pre> String main(void) <br> { <b>this is a pre block </b> } </pre>  `rendering code snippets` 
+| Tables | contains rows and columns | <table><tr><td>Table</td><td>Mini Description</td></tr><tr><td>Type</td><td>String</td></tr></table>
 ---
 
 ![API Explorer Expand All for Nested Objects](../../assets/images/API_Explorer_Expand_All.gif)
