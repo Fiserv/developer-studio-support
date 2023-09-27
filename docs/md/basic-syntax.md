@@ -193,3 +193,8 @@ Table with nested objects, containing descriptions, HTML tags are also allowed.
 ---
 
 ![API Explorer Expand All for Nested Objects](../../assets/images/API_Explorer_Expand_All.gif)
+
+## Error Messages
+
+Light mode error message color: #DD3435 <p style="color: #DD3435;">This text is light mode error message color.</p>
+Dark mode error message color: #FF453A <p style="color: #FF453A;">This text is light mode error message color.</p>
