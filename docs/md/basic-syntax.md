@@ -37,6 +37,13 @@ Combined emphasis with **asterisks and _underscores_**.
 
 Strikethrough uses two tildes. ~~Scratch this.~~
 ```
+Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses two tildes. ~~Scratch this.~~
 
 ## Lists
 
@@ -72,6 +79,19 @@ Different ways to create links.
 5. To create anchor link within the page. You can place anchor by declaring <a name = "portal"></a>. Now you can reference this link anywhere within the page by declaring link such as [Dev Portal](#portal)
 
 ```
+1. To link Inline-style
+[I'm an inline-style link](https://www.google.com)
+
+2. To link Reference-style
+[I'm a reference-style link][https://www.google.com "Google's Homepage"]
+
+3. To link to API explorer from documentation pages
+[API page](../api?type=post&path=/v1/apis)
+
+4. To link/reference to another document/markdown
+[Charge](?path=docs/Transactions/Charges.md)
+
+5. To create anchor link within the page. You can place anchor by declaring <a name = "portal"></a>. Now you can reference this link anywhere within the page by declaring link such as [Dev Portal](#portal)
 
 ## Images
 
@@ -113,6 +133,7 @@ Colons can be used to align columns.
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
+
 The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
 
 Markdown | Less | Pretty
@@ -120,6 +141,11 @@ Markdown | Less | Pretty
 *Still* | `renders` | **nicely**
 1 | 2 | 3
 ```
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
 
 ## Blockquotes
 
@@ -151,3 +177,24 @@ ___
 
 Underscores
 ```
+## Table with Nested Object
+
+Table with nested objects, containing descriptions, HTML tags are also allowed.
+
+| Name | Description | Example | 
+|------|-------------|:----:|
+| Headers | Large text refer to Header section for more detail | <h1> Hello </h1>
+| Emphasis | italics, bold, or strikethrough | *italics*, **bold**, ~~strikethrough~~, **bold and _italics_**
+| Lists | Refer to Lists section for more details | 1. List item 1 <br> 2. List item 2
+| Links | Hyperlinks, refer to above Link section for more details | To link to API explorer from documentation pages API page [API page](../api?type=post&path=/v1/apis)
+| Images | Visual representation | ![Fiserv Logo](../../assets/images/Fiserv_Logo.jpg "Fiserv Logo")
+| Code | code blocks, syntax highlighting | <pre> String main(void) <br> { <b>this is a pre block </b> } </pre>  `rendering code snippets` 
+| Tables | contains rows and columns | <table><tr><td>Table</td><td>Mini Description</td></tr><tr><td>Type</td><td>String</td></tr></table>
+---
+
+![API Explorer Expand All for Nested Objects](../../assets/images/API_Explorer_Expand_All.gif)
+
+## Error Messages
+
+Light mode error message color: #DD3435 <p style="color: #DD3435;">This text is light mode error message color.</p>
+Dark mode error message color: #FF453A <p style="color: #FF453A;">This text is light mode error message color.</p>
