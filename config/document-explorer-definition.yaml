@@ -56,8 +56,8 @@
     sections:
       - title: FirstData Documentation
         link: /docs/docs-firstdata-migration.md
-      #- title: Payeezy Portal
-      #  link: /docs/payeezy-migration
+      - title: Payeezy Documentation
+        link: /docs/payeezy-migration.md
   - title: Release notes
     open: true
     sections:
