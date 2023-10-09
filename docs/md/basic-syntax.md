@@ -198,3 +198,8 @@ Table with nested objects, containing descriptions, HTML tags are also allowed.
 
 Light mode error message color: #DD3435 <p style="color: #DD3435;">This text is light mode error message color.</p>
 Dark mode error message color: #FF453A <p style="color: #FF453A;">This text is light mode error message color.</p>
+
+## Footer Color
+
+Light mode color: #e0e0e0 <hr style="border-color: #e0e0e0;">
+Dark mode color: #333333 <hr style="border-color: #333333;">
