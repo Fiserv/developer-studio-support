@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2021 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv,
+  ~ Copyright (c) 2023 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv,
   ~ Inc., registered or used in the United States and foreign countries, and
   ~ may or may not be registered in your country. All trademarks, service
   ~ marks, and trade names referenced in this material are the property
@@ -18,7 +18,7 @@
   ~ work or the delivery of this work.
   -->
 
-<!--SUBJECT Developer Studio from Fiserv - Subscription Notification-->
+<!--SUBJECT Developer Studio from Fiserv - Access Code Usage-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Studio | Updates to Subscription</title>
+    <title>Developer Studio | Company Approval</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
@@ -84,33 +84,59 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Hi there,
+                    Dear Product Team,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    <i>{{.TenantName}}</i> has recently made changes to the following file:
+                    {{.Name}} has created a company and requires approval, please see the details below:
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                <strong>{{.DocumentName.split('/').slice -1}}</strong>
-                </p>
+                <div style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem">
+                  <strong>Email: </strong>
+                  {{.Email}}
+                </div>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                To view your files on Developer Studio, please click 
-                <a href="{{.DocumentUrl}}" class="anchor-link">here</a>
-                </p>
+                <div style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem">
+                  <strong>Company name: </strong>
+                  {{.CompanyName}}
+                </div>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                Please note that you may need to be signed in to Developer Studio to access the file.
-                </p>
+                <div style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem">
+                  <strong>Client ID: </strong>
+                  {{.ClientID}}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-collapse: collapse">
+                <div style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem">
+                  <strong>Client logo: </strong>
+                  {{.ClientLogo}}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-collapse: collapse">
+                <div style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem">
+                  <strong>Phone number: </strong>
+                  {{.PhoneNumber}}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-collapse: collapse">
+                <div style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  <strong>Address: </strong>
+                  {{.Address}}
+                </div>
             </td>
         </tr>
         <tr>
@@ -161,7 +187,7 @@
                   margin-top: 20px;
                 "
                 >
-                    &copy; 2021 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
+                    &copy; 2023 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
                     the United States and foreign countries, and may or may not be registered in your country. All
                     trademarks, service marks, and trade names referenced in this material are the property of their
                     respective owners. &nbsp;<a
