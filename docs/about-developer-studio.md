@@ -27,5 +27,3 @@ Boost efficiency in your production by experimenting with APIs to discover exact
 
 Develop with confidence with all the right guides and documentations at your disposal.
 ![Guides & Documentation.gif](../assets/images/guides-documentation(1).gif)
-
-TEST
