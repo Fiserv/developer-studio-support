@@ -87,7 +87,7 @@
                     Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Thanks for visiting Developer Studio from Fiserv! Per your request, we have successfully changed your {{.updateType}}. 
+                    Thanks for visiting Developer Studio from Fiserv! Per your request, we have successfully changed your {{.UpdateType}}. 
                 </p>
             </td>
         </tr>
@@ -97,7 +97,7 @@
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                 To view your updated profile on Developer Studio, please sign in 
                 <a class="anchor-link"
-                href="https://developerstudio.fiserv.com/emailRedirect/login"
+                href="{{.UserLoginUrl}}"
                 target="_blank">here</a>.
                 </p>
             </td>
