@@ -106,7 +106,7 @@
                 Visit our 
                 <a 
                 class="anchor-link"
-                href="https://developer.fiserv.com/support"
+                href="{{.SupportPageUrl}}"
                 target="_blank">support page</a> for more information on preventing and reporting fraud. 
                 </p>
             </td>
