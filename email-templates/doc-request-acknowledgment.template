@@ -84,7 +84,7 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Hi there,
+                    Hi {{.UserName}},
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
                 Thank you for using Developer Studio from Fiserv. We have received your <br/>request for:<br /> 
@@ -98,14 +98,14 @@
                     <strong>Document Name:</strong> {{.DocumentName}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                <strong>Product Name:</strong> {{.ProductName}}
+                <strong>User Access Group:</strong> {{.ProductName}}
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
-                We will review your qualification together with Specfication Portal,
+                We will review your qualification together with {{.OrganizationName}},
                 <br/>and get back to you soon.<br />
                 </p>
             </td>

@@ -96,16 +96,13 @@
                     <strong>Document Name:</strong> {{.DocumentName}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                    <strong>Product Name:</strong> {{.ProductName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
                     <strong>Email:</strong> {{.EmailName}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
                 <strong>Organization Name:</strong> {{.OrganizationName}} 
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                <strong>User access group:</strong> {{.UserAccessGroup}} 
+                <strong>User Access Group:</strong> {{.UserAccessGroup}} 
                 </p>                  
             </td>
         </tr>
