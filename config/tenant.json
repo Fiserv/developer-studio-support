@@ -17,6 +17,7 @@
       ]
     }
   ],
+  "getStartedFilePath": "/docs/getting-started.md",
   "product": {
     "featured": true,
     "logoURL": "",
