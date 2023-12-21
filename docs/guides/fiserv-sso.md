@@ -21,9 +21,21 @@ DevStudio has a number of environments with each own unique purpose and its own 
 
 ### Device pairing flow by Environment
 
-Device pairing link for [DEV Environment](https://desktop.pingone.com/fiservdev)
-By clicking on the link a user is redirected to PingID
+Download and install the PingID app on your mobile device.<br><br>
 
+Device pairing link for [DEV Environment](https://desktop.pingone.com/fiservdev)<br><br>
+
+The link redirectes to PingID for authentication with **Fiserv email credentials**.
+![PingID SignOn page](../assets/images/sso/ping-singon.png)
+
+After authentication, click on the profile icon in the top right corner and choose **Devices** menu item
+![PingID Account page](../assets/images/sso/ping-profile.png)
+
+On **My Devices** page, click **+ Add** button to register your mobile device.
+![PingID My Devices page](../assets/images/sso/ping-add-devices.png)
+
+Open your **PingID mobile app** to view the list of registrations under **My Organizations** section.
+![PingID Mobile app](../assets/images/sso/ping-mobile.png)
 
 
 ## DevStudion authirization flow useing PingID
@@ -31,5 +43,5 @@ By clicking on the link a user is redirected to PingID
 By clicking on **Fiserv email log in** button a user is redirected to the PingID IAM (Identity Access Management) owned login page.<br>
 A user provides necessary credentials.<br>
 The PingID mobile app receives the notification to complete the authentication flow.<br>
-After authentication, a user is redirected back to DevStudio, that authorizes the user.
+After authentication, a user is redirected back to DevStudio to complete account authorization.
 
