@@ -15,11 +15,21 @@ Pairing creates a trust between the authentication method you want to use and yo
 
 To get started, you'll need to download the app to your mobile device, and pair (connect) your device with your account. After you've paired your device, each time you sign on to your account, you will receive a push notification to your mobile device asking you to authenticate.
 
+### Diferent Environments (DEV, QA, STAGE, PROD)
+
+DevStudio has a number of environments with each own unique purpose and its own resources. PingID has correspinding to DevStudio environments. In order to sign in with PingID for a particular environment, a user must pair (connect) a device with user account for that particular environment. Similarely a user would create an account for each environment separately.
+
+### Device pairing flow by Environment
+
+Device pairing link for [DEV Environment](https://desktop.pingone.com/fiservdev)
+By clicking on the link a user is redirected to PingID
+
+
+
 ## DevStudion authirization flow useing PingID
 
-By clicking on **Fiserv email log in** button the user is redirected to the IAM (Identity Access Management) owned login page.
-The user provides necessary credentials.
-The PingID mobile app receives the notification.
-and completes the authentication flow.
-After authentication, the user is redirected back to DevStudio, that authorizes the user.
+By clicking on **Fiserv email log in** button a user is redirected to the PingID IAM (Identity Access Management) owned login page.<br>
+A user provides necessary credentials.<br>
+The PingID mobile app receives the notification to complete the authentication flow.<br>
+After authentication, a user is redirected back to DevStudio, that authorizes the user.
 
