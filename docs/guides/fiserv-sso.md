@@ -26,7 +26,7 @@ Download and install the PingID app on your mobile device.<br><br>
 Device pairing link for [DEV Environment](https://desktop.pingone.com/fiservdev)<br><br>
 
 The link redirectes to PingID for authentication with **Fiserv email credentials**.
-![PingID SignOn page](../assets/images/sso/ping-singon.png)
+![PingID SignOn page](../assets/images/sso/ping-signon.png)
 
 After authentication, click on the profile icon in the top right corner and choose **Devices** menu item
 ![PingID Account page](../assets/images/sso/ping-profile.png)
