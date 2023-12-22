@@ -42,7 +42,7 @@ DevStudio has a number of environments with each own unique purpose and its own 
 
 ## DevStudion authirization flow useing PingID
 
-![Sing in modal](../assets/images/sso/sso-signin-modal.pgn)
+![Sign in modal](../assets/images/sso/sso-signin-modal.png)
 
 - Click **Sing in** link
 - Click **Fiserv email sign in** button to be redirected to IAM (Identity Access Management) owned login page.
