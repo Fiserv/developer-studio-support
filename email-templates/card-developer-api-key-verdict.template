@@ -18,7 +18,7 @@
   ~ work or the delivery of this work.
   -->
 
-<!--SUBJECT Developer Studio from Fiserv - Credentials Added to Workspace --> 
+<!--SUBJECT Developer Studio from Fiserv - Card Developer API key Request --> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Studio | Credentials Added to Workspace</title>
+    <title>Developer Studio | Card Developer API key Request</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
@@ -87,27 +87,45 @@
                     Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    You have {{.ActionMessage}} on Dev Studio, please check the details below:
+                    {{.VerdictStatement}}
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                    {{.ReasonIfDenied}}
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>Product name: </strong>{{.ProductName}}
+                  <strong>Client type: </strong>{{.ClientType}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>Workspace: </strong>{{.WorkspaceName}}
+                  <strong>Client ID: </strong>{{.ClientId}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>{{.CredentialsType}} name: </strong>{{.CrendentialName}}
+                  <strong>Client logo: </strong>{{.ClientLogo}}
+                </p>
+                  <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  <strong>Company name: </strong>{{.CompanyName}}
+                </p>
+                  <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  <strong>API key type: </strong>{{.APIKeyType}}
+                </p>
+                  <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  <strong>API key name: </strong>{{.APIKeyName}}
+                </p>
+                  <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  <strong>API key: </strong>{{.APIKey}}
+                </p>
+                  <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  <strong>Features: </strong>{{.Features}}
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                To view your credentials on Developer Studio, please click 
+                  You can click the link below to go to the workspace.
                 <a href="{{.WorkspaceCredentialsUrl}}" class="anchor-link">here</a>
                 </p>
             </td>
@@ -116,22 +134,6 @@
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                 Please note that you may need to be signed in to Developer Studio to access the workspace.
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                <strong>If you didn't make this change</strong>, please contact customer support to ensure your account is secure. 
-                </p>
-            </td>
-        </tr>
-
-        <tr>
-            <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                Visit our 
-                <a href="{{.SupportPageUrl}}" class="anchor-link" target="_blank">support page</a> for more information on preventing and reporting fraud. 
                 </p>
             </td>
         </tr>
