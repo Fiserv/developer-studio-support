@@ -71,7 +71,7 @@
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
                 <img
                         class="logo"
-                        src="https://dev-developerstudio.fiserv.com/assets/img/fiserv_logo_orange_rgb.png"
+                        src="https://dev-developerstudio.fiserv.com/assets/img/devstudio-logo.png"
                         alt="Fiserv"
                         height="40"
                         width="80"
@@ -94,21 +94,32 @@
         </tr>
         <tr>
             <td style="border-collapse: collapse">
+              <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <strong>Product Name:</strong> {{.ProductName}}
+                </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 0.5rem">
                     <strong>Document Name:</strong> {{.DocumentName}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                <strong>Product Name:</strong> {{.ProductName}}
-                </p>
+              
             </td>
         </tr> 
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
-                Please click the link below to to view the document.
-                </p>
+                You can click the link below to to view the status.                </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
-                <a href="{{.DocumentUrl}}" class="anchor-link">here</a>
+           {{.DocumentUrl}}
+                </p>
+                
+            </td>
+        </tr>
+
+            <tr>
+            <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
+                Or click this link to go to see the document.                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
+                {{.DocumentUrl}}
                 </p>
                 
             </td>

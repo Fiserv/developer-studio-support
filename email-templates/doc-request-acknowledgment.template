@@ -71,7 +71,7 @@
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
                 <img
                         class="logo"
-                        src="https://dev-developerstudio.fiserv.com/assets/img/fiserv_logo_orange_rgb.png"
+                        src="https://dev-developerstudio.fiserv.com/assets/img/devstudio-logo.png"
                         alt="Fiserv"
                         height="40"
                         width="80"
@@ -87,13 +87,16 @@
                     Hi {{.UserName}},
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
-                Thank you for using Developer Studio from Fiserv. We have received your <br/>request for:<br /> 
+                Thank you for using Developer Studio from Fiserv. We have received your request for:
                 </p>
                 
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
+              <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 0.5rem">
+                    <strong>Product Name:</strong> {{.OrganizationName}}
+                </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 0.5rem">
                     <strong>Document Name:</strong> {{.DocumentName}}
                 </p>
@@ -111,10 +114,10 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
-                Please click the link below to to view the request status.
-                </p>
+You can click the link below to to view the status.               
+ </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
-                <a href="{{.requestStatusUrl}}" class="anchor-link">here</a>
+             {{.requestStatusUrl}}
                 </p>
                 
             </td>
