@@ -1,4 +1,4 @@
-# Fiserv Single Sing On (SSO)
+# Fiserv Single Sign On (SSO)
 
 DevStudio application works with Ping to authenticate Fiserv internal users.
 
@@ -27,7 +27,7 @@ DevStudio has a number of environments with each own unique purpose and its own 
 
 - Download and install the PingID app on your mobile device.
 - Pair your device for specific [environment](https://desktop.pingone.com/fiservdev)
-- Authenticate with PingID usnig **Fiserv email credentials**.<br><br>
+- Authenticate with PingID using **Fiserv email credentials**.<br><br>
 ![PingID SignOn page](../assets/images/sso/ping-signon.png)
 
 - After authentication, on PingId profile page, click on the profile icon in the top right corner and choose **Devices** menu item.<br><br>
@@ -40,13 +40,13 @@ DevStudio has a number of environments with each own unique purpose and its own 
 ![PingID Mobile app](../assets/images/sso/ping-mobile.png)
 
 
-## DevStudion authirization flow useing PingID
+## DevStudio authorization flow using PingID
 
 ![Sign in modal](../assets/images/sso/sso-signin-modal.png)
 
-- Click **Sing in** link
+- Click **Sign in** link
 - Click **Fiserv email sign in** button to be redirected to IAM (Identity Access Management) owned login page.
-- Authenticate with PingID usnig **Fiserv email credentials**.
+- Authenticate with PingID using **Fiserv email credentials**.
 - Complete authentication using **PingID mobile app** on your registered device.<br>
 - After authentication, you will be redirected back to DevStudio to complete your account authorization.
 
