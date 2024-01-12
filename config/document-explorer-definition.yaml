@@ -61,6 +61,8 @@
   - title: Release notes
     open: true
     sections:
+    - title: 2024
+      link: docs/release-notes/2024.md
     - title: 2023
       link: docs/release-notes/2023.md
     - title: 2022
