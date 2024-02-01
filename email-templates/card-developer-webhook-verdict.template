@@ -18,7 +18,7 @@
   ~ work or the delivery of this work.
   -->
 
-<!--SUBJECT Developer Studio from Fiserv - Card Developer App Approval Request --> 
+<!--SUBJECT Developer Studio from Fiserv - Card Developer Webhook Request --> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Studio | Card Developer App Approval Request</title>
+    <title>Developer Studio | Card Developer Webhook Request</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
@@ -71,7 +71,7 @@
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
                 <img
                         class="logo"
-                        src="https://dev-developerstudio.fiserv.com/assets/img/devstudio-logo.png"
+                        src="https://dev-developerstudio.fiserv.com/assets/img/fiserv_logo_orange_rgb.png"
                         alt="Fiserv"
                         height="40"
                         width="80"
@@ -86,18 +86,18 @@
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                     Hi there,
                 </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                    {{.VerdictStatement}}
+                </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    {{.CompanyName}} created an API key waiting for approval.
+                   Please see the details below:
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                  <strong>Client type: </strong>{{.ClientType}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                  <strong>Client ID: </strong>{{.ClientId}}
+                  <strong>Client ID: </strong>{{ClientId}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
                   <strong>Client logo: </strong>{{.ClientLogo}}
@@ -106,29 +106,46 @@
                   <strong>Company name: </strong>{{.CompanyName}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                  <strong>Company admin email: </strong>{{.CompanyAdminEmails}}
+                  <strong>Company admin email: </strong>{{.CompanyAdminEmail}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                  <strong>API key type: </strong>{{.APIKeyType}}
+                  <strong>Webhook URL: </strong>{{.WebhookUrl}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                  <strong>API key name: </strong>{{.APIKeyName}}
+                  <strong>HealthCheck URL: </strong>{{.HealthCheckUrl}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                  <strong>Features: </strong>{{.Features}}
+                  <strong>Webhook enabled: </strong>{{.WebhookEnabled}}
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                  <strong>PCI compliance: </strong>{{.PCICompliance}}
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                  <strong>SSN format: </strong>{{.SSNFormat}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>API key: </strong>{{.APIkey}}
+                  <strong>Webhook events approved: </strong>{{.ApprovedEvents}}
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                  You can click the link below to go to the workspace.
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  <a href="{{.WorkspaceCredentialsUrl}}" class="anchor-link">{{.WorkspaceCredentialsUrl}}</a>
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                Thank you again for choosing Developer Studio from Fiserv.
+                Please note that you may need to be signed in to Developer Studio to access the workspace.
                 </p>
             </td>
         </tr>
+        
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
@@ -177,7 +194,7 @@
                   margin-top: 20px;
                 "
                 >
-                    &copy; 2021 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
+                    &copy; 2023 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
                     the United States and foreign countries, and may or may not be registered in your country. All
                     trademarks, service marks, and trade names referenced in this material are the property of their
                     respective owners. &nbsp;<a
