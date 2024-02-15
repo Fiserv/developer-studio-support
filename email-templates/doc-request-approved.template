@@ -119,7 +119,7 @@
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
                 Or click this link to go to see the document.                </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
-                {{.DocumentUrl}}
+                {{.RedirectUrl}}
                 </p>
                 
             </td>
