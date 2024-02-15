@@ -87,7 +87,7 @@
                     Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    {{.Name}} changed a webhook on Developer Studio. Please review the details below:
+                    {{.Name}} set up/changed a webhook on Developer Studio. Please review the details below:
                 </p>
             </td>
         </tr>
