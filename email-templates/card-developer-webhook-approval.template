@@ -87,7 +87,7 @@
                     Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    {{.CompanyName}} created an API key waiting for approval.
+                    {{.CompanyName}} created a webhook on Developer Studio. Please review the details below:
                 </p>
             </td>
         </tr>
@@ -103,16 +103,13 @@
                   <strong>Company name: </strong>{{.CompanyName}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                  <strong>Company admin email: </strong>{{.CompanyAdminEmail}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
                   <strong>Webhook URL: </strong>{{.WebhookUrl}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
                   <strong>HealthCheck URL: </strong>{{.HealthCheckUrl}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                  <strong>Webhook enabled: </strong>{{.WebhookEnabled}}
+                  <strong>Webhook condition: </strong>{{.WebhookCondition}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
                   <strong>PCI compliance: </strong>{{.PCICompliance}}
@@ -120,8 +117,11 @@
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
                   <strong>SSN format: </strong>{{.IdentificationFormat}}
                 </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                  <strong>Notification emails: </strong>{{.NotificationEmails}}
+                </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>Webhook events: </strong>{{.Events}}
+                  <strong>Webhook events added: </strong>{{.Events}}
                 </p>
             </td>
         </tr>
