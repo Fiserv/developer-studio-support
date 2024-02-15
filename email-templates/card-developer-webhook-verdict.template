@@ -86,11 +86,15 @@
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                     Hi there,
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                    {{.VerdictStatement}}
-                </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                   Please see the details below:
+                    Your webhook request has been reviewed. Please see the details below:
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  <strong>Webhook status: </strong>{{.WebhookStatus}}
                 </p>
             </td>
         </tr>
@@ -123,8 +127,11 @@
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
                   <strong>SSN format: </strong>{{.SSNFormat}}
                 </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                  <strong> Active webhook events: </strong>{{.ActiveEvents}}
+                </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>Webhook events approved: </strong>{{.ApprovedEvents}}
+                  <strong> Inactive webhook events: </strong>{{.InactiveEvents}}
                 </p>
             </td>
         </tr>
