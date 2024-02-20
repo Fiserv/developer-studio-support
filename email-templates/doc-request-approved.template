@@ -94,13 +94,12 @@
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-              <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+              <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                 <strong>Product Name:</strong> {{.ProductName}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 0.5rem">
                     <strong>Document Name:</strong> {{.DocumentName}}
                 </p>
-              
             </td>
         </tr> 
         <tr>
