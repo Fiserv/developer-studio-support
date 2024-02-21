@@ -153,7 +153,7 @@
                   margin-bottom: 1rem;
                 "
               >
-                <strong>Product Name:</strong> {{.ProductName}}
+                <strong>Product:</strong> {{.ProductName}}
               </p>
 
               <p
