@@ -149,7 +149,19 @@ Markdown | Less | Pretty
 
 ## Blockquotes
 
-> This is a blockquote.
+> This is a regular blockquote.
+
+<!-- theme: info -->
+> This is a informational blockquote.
+
+<!-- theme: success -->
+> This is a success blockquote.
+
+<!-- theme: warning -->
+> This is a warning blockquote.
+
+<!-- theme: danger -->
+> This is a danger blockquote.
 
 ```no-highlight
 > Blockquotes are very handy in email to emulate reply text.
