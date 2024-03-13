@@ -71,7 +71,7 @@
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
                 <img
                         class="logo"
-                        src="https://dev-developerstudio.fiserv.com/assets/img/devstudio-logo.png"
+                        src="https://dev-developer.fiserv.com/assets/img/devstudio-logo.png"
                         alt="Fiserv"
                         height="40"
                         width="80"
@@ -84,12 +84,11 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Hi {{.UserName}},
+                    Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
-                Thank you for using Developer Studio from Fiserv. We have received your request for:
+                  {{.UserName}} requested a documentation in Developer Studio. Please see details below:
                 </p>
-                
             </td>
         </tr>
         <tr>
@@ -100,7 +99,6 @@
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 0.5rem">
                     <strong>Document Name:</strong> {{.DocumentName}}
                 </p>
-              
             </td>
         </tr>
         <tr>
@@ -114,15 +112,21 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
-You can click the link below to to view the status.               
- </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
-             {{.requestStatusUrl}}
+                  You can click the link below to to view the status.               
                 </p>
-                
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
+                 {{.requestStatusUrl}}
+                </p>
             </td>
         </tr>      
-        
+        <tr>
+            <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
+                Thank you again for choosing Developer Studio from Fiserv.
+                </p> 
+            </td>
+        </tr>
+
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
