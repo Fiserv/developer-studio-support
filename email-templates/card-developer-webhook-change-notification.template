@@ -96,28 +96,24 @@
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>Workspace name: </strong>{{.WorkspaceName}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;m">
                   <strong>Notification emails changed:</strong>
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <ul>
-                    <li><strong>Removed: </strong>{{.RemovedNotificationEmails}}</li>
-                    <li><strong>Added: </strong>{{.AddedNotificationEmails}}</li>
-                  </ul>
-                </p>
+                <ul style="margin: 0 0 0.5rem">
+                  <li><strong>Removed: </strong>{{.RemovedNotificationEmails}}</li>
+                  <li><strong>Added: </strong>{{.AddedNotificationEmails}}</li>
+                </ul>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>Webhook condition changed to:</strong><br>
                   {{.ChangedWebhookCondition}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
                   <strong>Webhook events changed:</strong>
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <ul>
-                    <li><strong>Deactived: </strong>{{.DeactivatedWebhookEvents}}</li>
-                    <li><strong>Activated: </strong>{{.ActivatedWebhookEvents}}</li>
-                  </ul>
-                </p>
+                <ul style="margin: 0 0 2rem">
+                  <li><strong>Deactived: </strong>{{.DeactivatedWebhookEvents}}</li>
+                  <li><strong>Activated: </strong>{{.ActivatedWebhookEvents}}</li>
+                </ul>
             </td>
         </tr>
         <tr>
