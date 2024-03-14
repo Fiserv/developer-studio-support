@@ -85,6 +85,10 @@
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                     To sign up again, please visit Developer Studio using the link below:
                 </p>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" style="border-collapse: collapse">
                 <div class="btn-wrapper" style="margin: 0;">
                 <!--[if mso]>
                   <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{.builtinUiUrl}}" style="height:40px;v-text-anchor:middle;width:200px;" stroke="f" fillcolor="#ff6600">
