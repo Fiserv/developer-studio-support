@@ -45,9 +45,6 @@
             .content {
                 padding: 1rem;
             }
-            .email-container {
-                width: 100%;
-            }
         }
         @media (prefers-color-scheme: dark) {
             body {
@@ -65,13 +62,13 @@
 </head>
 <body style="margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale">
 <main class="content" style="margin-top: 2rem; padding: 2rem; display: flex; justify-content: center">
-    <table role="presentation" class="email-container" style="border-spacing: 0; max-width: 600px; width: 600px">
+    <table role="presentation" align="center" style="border-spacing: 0; max-width: 600px; width: 600px">
         <thead>
         <tr>
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
                 <img
                         class="logo"
-                        src="https://dev-developerstudio.fiserv.com/assets/img/fiserv_logo_orange_rgb.png"
+                        src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
                         alt="Fiserv"
                         height="40"
                         width="80"
