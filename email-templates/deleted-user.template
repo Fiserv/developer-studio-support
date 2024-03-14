@@ -67,8 +67,8 @@
                 src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
                 alt="Fiserv"
                 height="40"
-                width="40"
-                style="height: 4rem; width: 45%"
+                width="80"
+                style="height: 4rem; width: auto"
               />
             </td>
           </tr>
@@ -76,14 +76,14 @@
         <tbody>
           <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem;">
                 Hi there,
                 </p>
             </td>
           </tr>
           <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem;">
                   We are sorry to hear that your account has been deleted. Your account data can be found attached to this email. We look forward to
                   supporting you again in the future.
                 </p>
@@ -91,7 +91,7 @@
           </tr>
           <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem;">
                     Your feedback is always valuable to us! Take a short survey and help
                     us to improve the experience of Developer Studio.
                 </p>
@@ -99,7 +99,7 @@
           </tr>
           <tr>
             <td style="border-collapse: collapse; text-align: center">
-              <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+              <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem;">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNGL9zEFpq8M_CuW4mGQJLhyaoTWBSKDU69Est0hO1mG57kg/viewform" name="take survey" target="_blank" rel="noopener" style="padding: 10px;
                 text-decoration: none;
                 background: #FF6600;
@@ -111,7 +111,7 @@
           </tr>
           <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 2rem;">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem;">
                     Kind Regards,<br>
                     Developer Studio Team
                 </p>
