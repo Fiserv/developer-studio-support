@@ -45,9 +45,6 @@
             .content {
                 padding: 1rem;
             }
-            .email-container {
-                width: 100%;
-            }
         }
         @media (prefers-color-scheme: dark) {
             body {
@@ -65,13 +62,13 @@
 </head>
 <body style="margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale">
 <main class="content" style="margin-top: 2rem; padding: 2rem; display: flex; justify-content: center">
-    <table role="presentation" class="email-container" style="border-spacing: 0; max-width: 600px; width: 600px">
+    <table role="presentation" align="center" style="border-spacing: 0; max-width: 600px; width: 600px">
         <thead>
         <tr>
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
                 <img
                         class="logo"
-                        src="https://dev-developerstudio.fiserv.com/assets/img/devstudio-logo.png"
+                        src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
                         alt="Fiserv"
                         height="40"
                         width="80"
@@ -93,31 +90,31 @@
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>Client ID: </strong>{{.ClientId}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>Client logo: </strong>{{.ClientLogo}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>Company name: </strong>{{.CompanyName}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>Webhook URL: </strong>{{.WebhookUrl}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>HealthCheck URL: </strong>{{.HealthCheckUrl}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>Webhook condition: </strong>{{.WebhookCondition}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>PCI compliance: </strong>{{.PCICompliance}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>SSN format: </strong>{{.IdentificationFormat}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>Notification emails: </strong>{{.NotificationEmails}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
