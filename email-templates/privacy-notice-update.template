@@ -41,9 +41,6 @@
         .content {
           padding: 1rem;
         }
-        .email-container {
-          width: 100%;
-        }
       }
       @media (prefers-color-scheme: dark) {
         body {
@@ -61,24 +58,27 @@
   </head>
   <body style="margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale">
     <main class="content" style="margin-top: 2rem; padding: 2rem; display: flex; justify-content: center">
-      <table role="presentation" class="email-container" style="border-spacing: 0; max-width: 600px; width: 600px">
+    <table role="presentation" align="center" style="border-spacing: 0; max-width: 600px; width: 600px">
         <thead>
           <tr>
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
               <img
-                class="logo"
-                src="https://dev-developerstudio.fiserv.com/assets/img/fiserv_logo_orange_rgb.png"
-                alt="Fiserv"
-                height="40"
-                width="80"
-                style="height: 4rem; width: auto"
-              />
+                  class="logo"
+                  src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
+                  alt="Fiserv"
+                  height="40"
+                  width="80"
+                  style="height: 4rem; width: auto"
+                />
             </td>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                    Hi there,
+                </p>
               <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                 As part of our continued commitment to your privacy, we’ve updated our
                 <a
@@ -93,48 +93,33 @@
               </p>
             </td>
           </tr>
+        <tr>
+            <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  Thank you for choosing Developer Studio from Fiserv.
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                    Kind Regards,<br>Developer Studio Team
+                </p>
+            </td>
+        </tr>
         </tbody>
         <tfoot>
           <tr>
-            <td style="border-collapse: collapse; padding: 0 1rem">
-              <p
-                class="footer"
-                style="
-                  margin: 0;
-                  padding: 0;
-                  font-size: 1rem;
-                  line-height: 1.5rem;
-                  margin-bottom: 2rem;
-                  font-size: 0.625rem;
-                  line-height: 1rem;
-                  font-weight: 300;
-                "
-              >
-                <strong>Fiserv</strong> &nbsp;|&nbsp; 255 Fiserv Drive, Brookfield, WI 53045
-              </p>
-              <p
-                class="footer"
-                style="
-                  margin: 0;
-                  padding: 0;
-                  font-size: 1rem;
-                  line-height: 1.5rem;
-                  margin-bottom: 2rem;
-                  font-size: 0.625rem;
-                  line-height: 1rem;
-                  font-weight: 300;
-                  margin-top: 20px;
-                "
-              >
-                &copy; 2021 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
-                the United States and foreign countries, and may or may not be registered in your country. All
-                trademarks, service marks, and trade names referenced in this material are the property of their
-                respective owners. &nbsp;<a
-                  href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md"
-                  target="_blank"
-                  >Privacy Notice</a
-                >
-              </p>
+            <td style="border-collapse: collapse; padding: 0">
+                <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
+                  Note: please do not reply to this email, as we are unable to respond from this email address.
+                </p>
+                <hr/>
+                <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
+                    <strong>Fiserv</strong> &nbsp;|&nbsp; 255 Fiserv Drive, Brookfield, WI 53045
+                </p>
+                <p class="footer" style="margin: 1rem 0 2rem; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
+                    &copy; 2024 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
+                    the United States and foreign countries, and may or may not be registered in your country. All
+                    trademarks, service marks, and trade names referenced in this material are the property of their
+                    respective owners. &nbsp;<a class="anchor-link" href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md" target="_blank" >Privacy Notice</a>
+                </p>
             </td>
           </tr>
         </tfoot>
