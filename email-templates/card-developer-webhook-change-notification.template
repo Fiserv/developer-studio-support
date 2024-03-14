@@ -45,9 +45,6 @@
             .content {
                 padding: 1rem;
             }
-            .email-container {
-                width: 100%;
-            }
         }
         @media (prefers-color-scheme: dark) {
             body {
@@ -65,13 +62,13 @@
 </head>
 <body style="margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale">
 <main class="content" style="margin-top: 2rem; padding: 2rem; display: flex; justify-content: center">
-    <table role="presentation" class="email-container" style="border-spacing: 0; max-width: 600px; width: 600px">
+    <table role="presentation" align="center" style="border-spacing: 0; max-width: 600px; width: 600px">
         <thead>
         <tr>
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
                 <img
                         class="logo"
-                        src="https://dev-developerstudio.fiserv.com/assets/img/devstudio-logo.png"
+                        src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
                         alt="Fiserv"
                         height="40"
                         width="80"
@@ -93,41 +90,33 @@
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>Company name: </strong>{{.CompanyName}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>Workspace name: </strong>{{.WorkspaceName}}
                 </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse; display: {{.NotificationEmailsChangeDisplayStyle}}">
-                <strong>Notification emails changed:</strong>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem; display: {{.NotificationEmailsRemovedDisplayStyle}}">
-                  <strong>Removed: </strong>{{.RemovedNotificationEmails}}
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>Notification emails changed:</strong>
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem; display: {{.NotificationEmailsAddedDisplayStyle}}">
-                  <strong>Added: </strong>{{.AddedNotificationEmails}}
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <ul>
+                    <li><strong>Removed: </strong>{{.RemovedNotificationEmails}}</li>
+                    <li><strong>Added: </strong>{{.AddedNotificationEmails}}</li>
+                  </ul>
                 </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse; display: {{.WebhookConditionChangeDisplayStyle}}">
-                <strong>Webhook condition changed to:</strong>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>Webhook condition changed to:</strong><br>
                   {{.ChangedWebhookCondition}}
                 </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse; display: {{.WebhookEventsChangeDisplayStyle}}">
-                <strong>Webhook events changed:</strong>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem; display: {{.WebhookEventsDeactivatedDisplayStyle}}">
-                  <strong>Deactived: </strong>{{.DeactivatedWebhookEvents}}
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>Webhook events changed:</strong>
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem; display: {{.WebhookEventsActivatedDisplayStyle}}">
-                  <strong>Activated: </strong>{{.ActivatedWebhookEvents}}
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  <ul>
+                    <li><strong>Deactived: </strong>{{.DeactivatedWebhookEvents}}</li>
+                    <li><strong>Activated: </strong>{{.ActivatedWebhookEvents}}</li>
+                  </ul>
                 </p>
             </td>
         </tr>
