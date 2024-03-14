@@ -87,7 +87,7 @@
                     Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
-                  {{.UserName}} requested a documentation in Developer Studio. Please see details below:
+                  {{.UserName}} requested Developer Studio documentation. Please see details below:
                 </p>
             </td>
         </tr>
@@ -104,7 +104,7 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
-                We will review your qualification together with {{.OrganizationName}},
+                We will review your request together with {{.OrganizationName}},
                 <br/>and get back to you soon.<br />
                 </p>
             </td>
