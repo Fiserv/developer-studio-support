@@ -48,8 +48,11 @@
       }
       @media (prefers-color-scheme: dark) {
         body {
-          background: #151515;
+          background: #333333;
           color: #ffffff;
+        }
+        a {
+          color: #00ddff;
         }
       }
       @media (prefers-color-scheme: light) {
