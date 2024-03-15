@@ -35,6 +35,10 @@
       .anchor-link:hover {
         text-decoration: underline;
       }
+      a {
+        color: #2e8bc9;
+        text-decoration: none;
+      }
     </style>
     <style type="text/css">
       @media screen and (max-device-width: 640px), screen and (max-width: 640px) {
