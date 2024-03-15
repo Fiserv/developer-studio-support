@@ -94,17 +94,11 @@
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                If you are a prospect merchant, please click
-                <a href="{{.UiUrl}}/coming-soon" class="anchor-link">here</a>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
+                    Prospect merchant, please click <a href="{{.UiUrl}}/coming-soon" class="anchor-link">here</a>
                 </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                If you are an existing merchant, please click
-                <a href="{{.UiUrl}}/coming-soon" class="anchor-link">here</a>
+                    Existing merchant, please click <a href="{{.UiUrl}}/coming-soon" class="anchor-link">here</a>
                 </p>
             </td>
         </tr>
