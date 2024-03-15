@@ -86,13 +86,9 @@
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                     Hi there,
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
                     <i>{{.TenantName}}</i> has recently made changes to the following file:
                 </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                     <strong>Document Name:</strong> {{.DocumentName}}
                 </p>
@@ -100,16 +96,11 @@
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                To view your files on Developer Studio, please click 
-                <a href="{{.DocumentUrl}}" class="anchor-link">here</a>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
+                  To view your files in Developer Studio, please click <a href="{{.DocumentUrl}}" class="anchor-link">here</a>
                 </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                Please note that you may need to be signed in to Developer Studio to access the file.
+                  Please note that you may need to be signed in to Developer Studio to access the file.
                 </p>
             </td>
         </tr>
