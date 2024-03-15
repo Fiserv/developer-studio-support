@@ -52,7 +52,7 @@
                 color: #ffffff;
             }
             a {
-                color: #6699CC;
+                color: #00ddff;
             }
         }
         @media (prefers-color-scheme: light) {
