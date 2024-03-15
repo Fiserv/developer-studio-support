@@ -37,7 +37,6 @@
             text-decoration: none;
         }
         .anchor-link:hover {
-            color: #2d6bcf;
             text-decoration: underline;
         }
     </style>
