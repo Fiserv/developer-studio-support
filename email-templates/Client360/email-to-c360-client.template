@@ -33,7 +33,7 @@
             'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         }
         a {
-            color: #237CB8;
+            color: #2d6bcf;
             text-decoration: none;
         }
         .anchor-link:hover {
@@ -96,10 +96,10 @@
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                     <strong>Reason of issue:</strong> {{.Reason}}
                 </p>
-                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5re">
+                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                     <strong>Product Name:</strong> {{.ProductName}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5re">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                     <strong>Category:</strong> {{.Category}} 
                 </p>        
                  <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
