@@ -32,6 +32,10 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
             'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         }
+        a {
+            color: #2d6bcf;
+            text-decoration: none;
+        }
         .anchor-link:hover {
             text-decoration: underline;
         }
@@ -46,6 +50,9 @@
             body {
                 background: #333333;
                 color: #ffffff;
+            }
+            a {
+                color: #00ddff;
             }
         }
         @media (prefers-color-scheme: light) {
