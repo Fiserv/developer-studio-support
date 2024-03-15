@@ -100,7 +100,7 @@
                     Thank you for your interest in Developer Studio! You just joined the most powerful self-service platform
                     that provides all the materials for a successful and rapid commerce integration.
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
                     We have created a temporary password you will use to create your Developer Studio account:
                 </p>
             </td>
@@ -126,7 +126,7 @@
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
                     Click on the button below to complete your account creation with the temporary password:
                 </p>
             </td>
@@ -168,7 +168,7 @@
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 2rem 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
                     Thank you for choosing Developer Studio from Fiserv.
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
