@@ -102,7 +102,7 @@
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                   You can click the link below to go to the workspace.<br>
-                  <a href="{{.WorkspaceWebhooksUrl}}" class="anchor-link">{{.WorkspaceWebhooksUrl}}</a>
+                  <a href="{{.WorkspaceSummaryUrl}}" class="anchor-link">{{.WorkspaceSummaryUrl}}</a>
                 </p>
             </td>
         </tr>
