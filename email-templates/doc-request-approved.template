@@ -62,7 +62,7 @@
 </head>
 <body style="margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; background: #ffffff;color: #333;">
 <main class="content" style="margin-top: 2rem; padding: 2rem; display: flex; justify-content: center;">
-    <table role="presentation" align="center" style="border-spacing: 0; max-width: 600px; width: 600px; width: 100%; max-width: 600px;">
+    <table role="presentation" align="center" style="border-spacing: 0; max-width: 600px; width: 600px;">
         <thead>
         <tr>
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem;">
@@ -101,13 +101,13 @@
                     You can click the link below to to view the status.
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem;">
-                   {{.DocumentUrl}}
+                   <a href="{{.DocumentUr}}" style="color:#2d6bcf; text-decoration: underline;"></a>
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
                     Or click this link to go to see the document.
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem;">
-                    {{.RedirectUrl}}
+                    <a href="{{.RedirectUrl}}" style="color:#2d6bcf; text-decoration: underline;"></a>
                 </p>
             </td>
         </tr>
@@ -123,7 +123,7 @@
             <td style="border-collapse: collaps;">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem;">
                 Visit our
-                <a href="{{.SupportPageUrl}}" style="color:#2d6bcf; text-decoration: none; ">support page</a> for more information on preventing and reporting fraud. 
+                <a href="{{.SupportPageUrl}}" style="color:#2d6bcf; text-decoration: underline; ">support page</a> for more information on preventing and reporting fraud. 
                 </p>
             </td>
         </tr>     
@@ -152,7 +152,7 @@
                     &copy; 2024 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
                     the United States and foreign countries, and may or may not be registered in your country. All
                     trademarks, service marks, and trade names referenced in this material are the property of their
-                    respective owners. &nbsp;<a style="color: #2d6bcf; text-decoration: none;" href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md" target="_blank" >Privacy Notice</a>
+                    respective owners. &nbsp;<a style="color: #2d6bcf; text-decoration: underline;" href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md" target="_blank" >Privacy Notice</a>
                 </p>
             </td>
           </tr>
