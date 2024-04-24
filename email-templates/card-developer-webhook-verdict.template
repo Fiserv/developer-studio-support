@@ -18,7 +18,7 @@
   ~ work or the delivery of this work.
   -->
 
-<!--SUBJECT Developer Studio from Fiserv - Card Developer App Approval Request --> 
+<!--SUBJECT Developer Studio from Fiserv - Card Developer Webhook Request --> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Studio | Card Developer App Approval Request</title>
+    <title>Developer Studio | Card Developer Webhook Request</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
@@ -45,9 +45,6 @@
             .content {
                 padding: 1rem;
             }
-            .email-container {
-                width: 100%;
-            }
         }
         @media (prefers-color-scheme: dark) {
             body {
@@ -65,13 +62,13 @@
 </head>
 <body style="margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale">
 <main class="content" style="margin-top: 2rem; padding: 2rem; display: flex; justify-content: center">
-    <table role="presentation" class="email-container" style="border-spacing: 0; max-width: 600px; width: 600px">
+    <table role="presentation" align="center" style="border-spacing: 0; max-width: 600px; width: 600px">
         <thead>
         <tr>
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
                 <img
                         class="logo"
-                        src="https://dev-developerstudio.fiserv.com/assets/img/devstudio-logo.png"
+                        src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
                         alt="Fiserv"
                         height="40"
                         width="80"
@@ -87,108 +84,90 @@
                     Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    {{.UserFirstName}} {{.UserLastName}} created an API key waiting for approval.
+                    Your webhook request has been reviewed. Please see the details below:
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>Client type: </strong>{{.ClientType}}
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>Webhook status: </strong>{{.WebhookStatus}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>Company ID / Client ID: </strong>{{.CompanyID}}
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>Client ID: </strong>{{.ClientId}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>Client LOGO: </strong>{{.ClientLOGO}}
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>Client logo: </strong>{{.ClientLogo}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                   <strong>Company name: </strong>{{.CompanyName}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>Company admin email: </strong>{{.CompanyAdminEmail}}
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>Webhook URL: </strong>{{.WebhookUrl}}
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>HealthCheck URL: </strong>{{.HealthCheckUrl}}
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>Webhook condition: </strong>{{.WebhookCondition}}
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>PCI compliance: </strong>{{.PCICompliance}}
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>SSN format: </strong>{{.SSNFormat}}
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>Notification emails: </strong>{{.NotificationEmails}}
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>Active webhook events: </strong>{{.ActiveEvents}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>App type: </strong>{{.AppType}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>App name:</strong>{{.AppName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>Products list:</strong>{{.ProductsList}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>API key: </strong>{{.APIkey}}
+                  <strong>Inactive webhook events: </strong>{{.InactiveEvents}}
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                Thank you again for choosing Developer Studio from Fiserv.
+                  You can click the link below to go to the workspace.<br>
+                  <a href="{{.WorkspaceWebhooksUrl}}" class="anchor-link">{{.WorkspaceWebhooksUrl}}</a>
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                    Please note that you may need to be signed in to Developer Studio to access the workspace.
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                    Thank you for choosing Developer Studio from Fiserv.
+                </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                     Kind Regards,<br />Developer Studio Team<br />
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Note: Please do not reply to this email, as we are unable to respond from this email address.
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse">
-                <hr style="border: 1px solid #e6e6e6" />
             </td>
         </tr>
         </tbody>
         <tfoot>
-        <tr>
-            <td style="border-collapse: collapse; padding: 2rem 1rem 0">
-                <p
-                        class="footer"
-                        style="
-                  margin: 0;
-                  padding: 0;
-                  font-size: 1rem;
-                  line-height: 1.5rem;
-                  margin-bottom: 2rem;
-                  font-size: 0.625rem;
-                  line-height: 1rem;
-                  font-weight: 300;
-                "
-                >
+          <tr>
+             <td style="border-collapse: collapse; padding: 0">
+                <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
+                  Note: please do not reply to this email, as we are unable to respond from this email address.
+                </p>
+                <hr/>
+                <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
                     <strong>Fiserv</strong> &nbsp;|&nbsp; 255 Fiserv Drive, Brookfield, WI 53045
                 </p>
-                <p
-                        class="footer"
-                        style="
-                  margin: 0;
-                  padding: 0;
-                  font-size: 1rem;
-                  line-height: 1.5rem;
-                  margin-bottom: 2rem;
-                  font-size: 0.625rem;
-                  line-height: 1rem;
-                  font-weight: 300;
-                  margin-top: 20px;
-                "
-                >
-                    &copy; 2021 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
+                <p class="footer" style="margin: 1rem 0 2rem; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
+                    &copy; 2024 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
                     the United States and foreign countries, and may or may not be registered in your country. All
                     trademarks, service marks, and trade names referenced in this material are the property of their
-                    respective owners. &nbsp;<a
-                        class="anchor-link"
-                        href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md"
-                        target="_blank"
-                >Privacy Notice</a
-                >
+                    respective owners. &nbsp;<a class="anchor-link" href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md" target="_blank" >Privacy Notice</a>
                 </p>
             </td>
-        </tr>
+          </tr>
         </tfoot>
     </table>
 </main>
