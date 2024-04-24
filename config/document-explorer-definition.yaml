@@ -58,6 +58,8 @@
         link: /docs/docs-firstdata-migration.md
       - title: Payeezy Documentation
         link: /docs/payeezy-migration.md
+      - title: Card Developer Documentation
+        link: /docs/card-developer-migration.md  
   - title: Release notes
     open: true
     sections:

@@ -32,6 +32,10 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
             'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         }
+        a {
+            color: #2d6bcf;
+            text-decoration: none;
+        }
         .anchor-link:hover {
             text-decoration: underline;
         }
@@ -41,14 +45,14 @@
             .content {
                 padding: 1rem;
             }
-            .email-container {
-                width: 100%;
-            }
         }
         @media (prefers-color-scheme: dark) {
             body {
                 background: #333333;
                 color: #ffffff;
+            }
+            a {
+                color: #00ddff;
             }
         }
         @media (prefers-color-scheme: light) {
@@ -61,16 +65,16 @@
 </head>
 <body style="margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale">
 <main class="content" style="margin-top: 2rem; padding: 2rem; display: flex; justify-content: center">
-    <table role="presentation" class="email-container" style="border-spacing: 0; max-width: 600px; width: 600px">
+    <table role="presentation" align="center" style="border-spacing: 0; max-width: 600px; width: 600px">
         <thead>
         <tr>
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
-                <img
+                 <img
                         class="logo"
-                        src="https://dev-developerstudio.fiserv.com/assets/img/devstudio-logo.png"
+                        src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
                         alt="Fiserv"
-                        height="60"
-                        width="90"
+                        height="40"
+                        width="80"
                         style="height: 4rem; width: auto"
                 />
             </td>
@@ -83,43 +87,42 @@
                      Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                    <b>{{.UserName}}</b> has requested access to a document,
-                    <p> please see the details below:</p>
+                    <b>{{.UserName}}</b> has requested access to a document,<br/>please see the details below:
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-               <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+               <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                     <strong>Request Email:</strong> {{.EmailName}}
                 </p>
-                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                     <strong>Organization Name:</strong> Developer Studio
                 </p>
               
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
                 <strong>User Access Group:</strong> {{.UserAccessGroup}} 
                 </p>        
 
-                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
-                <strong>Product Name:</strong> {{.OrganizationName}} 
+                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                <strong>Product Name:</strong> {{.ProductName}} 
                 </p>  
 
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                     <strong>Document Name:</strong> {{.DocumentName}}
                 </p>          
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; ">
-                Please click the button bellow to approve or deny the request.
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
+                    Please click the button bellow to approve or deny the request.
                 </p>
             </td>
-        </tr>        
+        </tr>
         <tr>
             <td align="center" style="border-collapse: collapse">
-                <div class="btn-wrapper" style="margin: 1rem 0 2rem">
+                <div class="btn-wrapper" style="margin: 0.5rem 0 0">
                 <!--[if mso]>
                   <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{.builtinUiUrl}}" style="height:40px;v-text-anchor:middle;width:200px;" stroke="f" fillcolor="#ff6600">
                     <w:anchorlock/>
@@ -141,9 +144,8 @@
                       font-size: 1rem;
                       line-height: 1.5;
                       border-radius: 0.25rem;
-                      margin: 0;
+                      margin: 0 1rem 2rem 0;
                       text-decoration: none;
-                      margin-bottom: 2rem;
                     "
                     >Approve the request</a>
                   <a
@@ -164,7 +166,6 @@
                       margin: 0;
                       text-decoration: none;
                       margin-bottom: 2rem;
-                      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
                     "
                     >Deny the request</a>
                 
@@ -178,62 +179,32 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Kind Regards,<br />Developer Studio Team<br />
+                  Thank you for choosing Developer Studio from Fiserv.
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Note: Please do not reply to this email, as we are unable to respond from this email address.
+                    Kind Regards,<br />Developer Studio Team
                 </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse">
-                <hr style="border: 1px solid #e6e6e6" />
             </td>
         </tr>
         </tbody>
         <tfoot>
-        <tr>
-            <td style="border-collapse: collapse; padding: 0 1rem">
-                <p
-                        class="footer"
-                        style="
-                  margin: 0;
-                  padding: 0;
-                  font-size: 1rem;
-                  line-height: 1.5rem;
-                  margin-bottom: 2rem;
-                  font-size: 0.625rem;
-                  line-height: 1rem;
-                  font-weight: 300;
-                "
-                >
+          <tr>
+             <td style="border-collapse: collapse; padding: 0">
+                <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
+                  Note: please do not reply to this email, as we are unable to respond from this email address.
+                </p>
+                <hr/>
+                <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
                     <strong>Fiserv</strong> &nbsp;|&nbsp; 255 Fiserv Drive, Brookfield, WI 53045
                 </p>
-                <p
-                        class="footer"
-                        style="
-                  margin: 0;
-                  padding: 0;
-                  font-size: 1rem;
-                  line-height: 1.5rem;
-                  margin-bottom: 2rem;
-                  font-size: 0.625rem;
-                  line-height: 1rem;
-                  font-weight: 300;
-                  margin-top: 20px;
-                "
-                >
-                    &copy; 2021 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
+                <p class="footer" style="margin: 1rem 0 2rem; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
+                    &copy; 2024 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
                     the United States and foreign countries, and may or may not be registered in your country. All
                     trademarks, service marks, and trade names referenced in this material are the property of their
-                    respective owners. &nbsp;<a
-                        href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md"
-                        target="_blank"
-                >Privacy Notice</a
-                >
+                    respective owners. &nbsp;<a class="anchor-link" href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md" target="_blank" >Privacy Notice</a>
                 </p>
             </td>
-        </tr>
+          </tr>
         </tfoot>
     </table>
 </main>
