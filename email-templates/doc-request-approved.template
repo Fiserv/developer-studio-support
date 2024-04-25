@@ -64,14 +64,14 @@
     <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #ffffff;">
         <tr>
             <td style="text-align: right; padding: 2rem;">
-                <img src="https://developer.fiserv.com/assets/img/devstudio-logo.png" alt="Fiserv"  width="300" />
+                <img src="https://developer.fiserv.com/assets/img/devstudio-logo.png" alt="Fiserv" height="4rem" width="auto" />
             </td>
         </tr>
         <tr>
             <td style="padding: 0 2rem;">
                 <table border="0" cellspacing="0" cellpadding="0" style="margin: auto; max-width: 600px; width: 100%;">
                     <tr>
-                        <td style="font-size: 1rem; line-height: 1.5rem; padding: 0rem 2rem 2rem; background-color: #ffffff;">
+                        <td style="font-size: 1rem; line-height: 1.5rem; padding: 2rem; background-color: #ffffff;">
                             <p>Hi there,</p>
                             <p>Congratulations! Your request for the following document has been approved.</p>
                             <p><strong>Product Name:</strong> {{.ProductName}}</p>
