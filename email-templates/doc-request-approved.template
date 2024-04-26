@@ -74,132 +74,134 @@
       color: #333;
     "
   >
-  <center style="width: 100%; table-layout: fixed;">
-    <div style="max-width: 600px; margin: auto;">
-      <table
-        role="presentation"
-        width="600"
-        style="
-          max-width: 600px;
-          width: 100%;
-          margin-left: auto;
-          margin-right: auto;
-          border-collapse: collapse;
-          background-color: #ffffff;
-        "
-        border="0"
-        cellspacing="0"
-        cellpadding="0"
-      >
-        <tr>
-          <td style="text-align: right; padding: 2rem">
-            <img
-              src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
-              alt="Fiserv"
-              width="376"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td style="padding: 0 2rem">
-            <table
-              border="0"
-              cellspacing="0"
-              cellpadding="0"
-              style="margin: auto; max-width: 600px; width: 100%"
-            >
-              <tr>
-                <td
-                  style="
-                    font-size: 1rem;
-                    line-height: 1.5rem;
-                    padding: 2rem;
-                    background-color: #ffffff;
-                  "
-                >
-                  <p>Hi there,</p>
-                  <p>
-                    Congratulations! Your request for the following document has
-                    been approved.
-                  </p>
-                  <p><strong>Product Name:</strong> {{.ProductName}}</p>
-                  <p><strong>Document Name:</strong> {{.DocumentName}}</p>
-                  <p>You can click the link below to view the status.</p>
-                  <p>
-                    <a
-                      href="{{.DocumentUrl}}"
-                      style="color: #2d6bcf; text-decoration: underline"
-                      >View Status</a
-                    >
-                  </p>
-                  <p>Or click this link to go to see the document.</p>
-                  <p>
-                    <a
-                      href="{{.RedirectUrl}}"
-                      style="color: #2d6bcf; text-decoration: underline"
-                      >View Document</a
-                    >
-                  </p>
-                  <p>
-                    <strong>If you didn't make this change</strong>, please
-                    contact customer support to ensure your account is secure.
-                  </p>
-                  <p>
-                    Visit our
-                    <a
-                      href="{{.SupportPageUrl}}"
-                      style="color: #2d6bcf; text-decoration: underline"
-                      >support page</a
-                    >
-                    for more information on preventing and reporting fraud.
-                  </p>
-                  <p>Thank you for choosing Developer Studio from Fiserv.</p>
-                  <p>Kind Regards,<br />Developer Studio Team</p>
-                  <p
+    <center style="width: 100%; table-layout: fixed">
+      <div style="max-width: 600px; margin: auto">
+        <table
+          role="presentation"
+          width="600"
+          style="
+            max-width: 600px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+          "
+          border="0"
+          cellspacing="0"
+          cellpadding="0"
+        >
+          <tr>
+            <td style="text-align: right; padding: 2rem">
+              <img
+                src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
+                alt="Fiserv"
+                width="376"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 0 2rem">
+              <table
+                border="0"
+                cellspacing="0"
+                cellpadding="0"
+                style="margin: auto; max-width: 600px; width: 100%"
+              >
+                <tr>
+                  <td
                     style="
-                      font-size: 0.625rem;
-                      line-height: 1rem;
-                      font-weight: 300;
-                      color: #666;
+                      font-size: 1rem;
+                      line-height: 1.5rem;
+                      padding-left: 20px;
+                      padding-right: 20px;
+                      padding-top: 10px;
+                      background-color: #ffffff;
                     "
                   >
-                    Note: please do not reply to this email, as we are unable to
-                    respond from this email address.
-                  </p>
-                  <hr
-                    style="
-                      border: none;
-                      height: 1px;
-                      background: #ccc;
-                      margin: 20px 0;
-                    "
-                  />
-                  <p
-                    style="
-                      font-size: 0.625rem;
-                      line-height: 1rem;
-                      font-weight: 300;
-                      color: #666;
-                    "
-                  >
-                    <strong>Fiserv</strong> | 255 Fiserv Drive, Brookfield, WI
-                    53045<br />
-                    &copy; 2024 Fiserv, Inc. or its affiliates. All trademarks,
-                    service marks, and trade names referenced in this material
-                    are the property of their respective owners.
-                    <a
-                      href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md"
-                      target="_blank"
-                      style="color: #2d6bcf; text-decoration: underline"
-                      >Privacy Notice</a
+                    <p>Hi there,</p>
+                    <p>
+                      Congratulations! Your request for the following document
+                      has been approved.
+                    </p>
+                    <p><strong>Product Name:</strong> {{.ProductName}}</p>
+                    <p><strong>Document Name:</strong> {{.DocumentName}}</p>
+                    <p>You can click the link below to view the status.</p>
+                    <p>
+                      <a
+                        href="{{.DocumentUrl}}"
+                        style="color: #2d6bcf; text-decoration: underline"
+                        >View Status</a
+                      >
+                    </p>
+                    <p>Or click this link to go to see the document.</p>
+                    <p>
+                      <a
+                        href="{{.RedirectUrl}}"
+                        style="color: #2d6bcf; text-decoration: underline"
+                        >View Document</a
+                      >
+                    </p>
+                    <p>
+                      <strong>If you didn't make this change</strong>, please
+                      contact customer support to ensure your account is secure.
+                    </p>
+                    <p>
+                      Visit our
+                      <a
+                        href="{{.SupportPageUrl}}"
+                        style="color: #2d6bcf; text-decoration: underline"
+                        >support page</a
+                      >
+                      for more information on preventing and reporting fraud.
+                    </p>
+                    <p>Thank you for choosing Developer Studio from Fiserv.</p>
+                    <p>Kind Regards,<br />Developer Studio Team</p>
+                    <p
+                      style="
+                        font-size: 0.625rem;
+                        line-height: 1rem;
+                        font-weight: 300;
+                        color: #666;
+                      "
                     >
-                  </p>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-      </table>
+                      Note: please do not reply to this email, as we are unable
+                      to respond from this email address.
+                    </p>
+                    <hr
+                      style="
+                        border: none;
+                        height: 1px;
+                        background: #ccc;
+                        margin: 20px 0;
+                      "
+                    />
+                    <p
+                      style="
+                        font-size: 0.625rem;
+                        line-height: 1rem;
+                        font-weight: 300;
+                        color: #666;
+                      "
+                    >
+                      <strong>Fiserv</strong> | 255 Fiserv Drive, Brookfield, WI
+                      53045<br />
+                      &copy; 2024 Fiserv, Inc. or its affiliates. All
+                      trademarks, service marks, and trade names referenced in
+                      this material are the property of their respective owners.
+                      <a
+                        href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md"
+                        target="_blank"
+                        style="color: #2d6bcf; text-decoration: underline"
+                        >Privacy Notice</a
+                      >
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
       </div>
     </center>
   </body>
