@@ -74,15 +74,8 @@
       color: #333;
     "
   >
-    <main
-      class="content"
-      style="
-        margin-top: 2rem;
-        padding: 2rem;
-        display: flex;
-        justify-content: center;
-      "
-    >
+  <center style="width: 100%; table-layout: fixed;">
+    <div style="max-width: 600px; margin: auto;">
       <table
         role="presentation"
         width="600"
@@ -207,6 +200,7 @@
           </td>
         </tr>
       </table>
-    </main>
+      </div>
+    </center>
   </body>
 </html>
