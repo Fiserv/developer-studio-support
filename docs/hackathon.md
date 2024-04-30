@@ -3,9 +3,12 @@
 Thank you for particpating in the Fiserv AI hackathon.
 
 # Rules of the road
+
+## Responsible AI
 First, as responsible users of AI, it's important that you become familiar with and adhere to our [Responsible AI Guidelines](https://urldefense.com/v3/__https:/fiserv.us.newsweaver.com/1wfrx4ekai/7z6gzfx36rb1g5t5hojie9/external?email=true&a=6&p=21640588&t=8935246__;!!P9vvK-4S!gwj_FyHAbETgna37U817yfW04fzLUrNuvIwPXyLwdKupEedtucam_pMHxBpKo_CGAUTtF_SjC4NcI7MArGZdYMMyNeAg2w7Dhpw$) and [Global Generative AI Compliance Policy](https://urldefense.com/v3/__https:/fiserv.us.newsweaver.com/1wfrx4ekai/qm64v4jwa5j1g5t5hojie9/external?email=true&a=6&p=21640588&t=8935246__;!!P9vvK-4S!gwj_FyHAbETgna37U817yfW04fzLUrNuvIwPXyLwdKupEedtucam_pMHxBpKo_CGAUTtF_SjC4NcI7MArGZdYMMyNeAgnaerjYM$).
 
-Do not use any sensitive Fiserv Data in your project.
+## Data usage
+`Do not use any sensitive Fiserv Data in your project.`
 
 # Ready, set, code!
 
@@ -13,10 +16,13 @@ To get started you'll create an API key & download some libaries.
 
 Make sure you've got Python setup on your laptop first.
 
-1. Create an account on Developer Studio.
-2. Create an AI Center workspace [here](/workspaces) and then add a key.
-3. Download both the Python package and the chatbot starter kit [here](?path=/docs/resources.md).
-4. Unzip and follow the instructions in the chatbot demo by replacing the API key & secret and running it.
+1. Create an account on Developer Studio with you Fiserv email address.
+2. Login and head to your [Workspaces](/workspaces).
+3. Create an AI Center workspace and then add a key.
+4. Download both the Python package and the chatbot starter kit [here](https://stage-developer.fiserv.com/product/AICenter/docs/?path=docs/resources.md&branch=stage).
+5. Setup your Python environment
+6. Unzip and follow the instructions in the chatbot demo by replacing the API key & secret and running it.
+7. You can familiarize yourself with the [Fiserv Resources > Developer Studio - AI Center](https://stage-developer.fiserv.com/product/AICenter?branch=stage)
 
 # Get help
 
