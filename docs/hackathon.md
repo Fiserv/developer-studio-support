@@ -11,16 +11,15 @@ First, as responsible users of AI, it's important that you become familiar with 
 `Do not use any sensitive Fiserv Data in your project.`
 
 # Ready, set, code!
+Below are steps to help you get going with our Python libraries.  Notes, you don't need to use these and you're free to create your project in any programming language.
 
 To get started you'll create an API key & download some libaries.
-
 Make sure you've got Python setup on your laptop first.
 
 1. Create an account on Developer Studio with you Fiserv email address.
 2. Login and head to your [Workspaces](/workspaces).
-3. Create an AI Center workspace and then add a key.
+3. Create an AI Center workspace and then add a key from the Credentials tab.
 4. Download both the Python package and the chatbot starter kit [here](https://stage-developer.fiserv.com/product/AICenter/docs/?path=docs/resources.md&branch=stage).
-5. Setup your Python environment
 6. Unzip and follow the instructions in the chatbot demo by replacing the API key & secret and running it.
 7. You can familiarize yourself with the [Fiserv Resources > Developer Studio - AI Center](https://stage-developer.fiserv.com/product/AICenter?branch=stage)
 
