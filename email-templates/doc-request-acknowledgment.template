@@ -42,7 +42,7 @@
     </style>
 <!--[if mso]>
 <style type="text/css">
-    p.msofix { 
+    p { 
         mso-line-height-rule: exactly; 
         line-height: 1.5rem !important;
     }
@@ -87,7 +87,7 @@
         </thead>
         <tbody>
         <tr>
-            <td style="border-collapse: collapse">
+            <td style="border-collapse: collapse; padding-bottom: 2rem;">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                     Hi {{.UserName}},
                 </p>

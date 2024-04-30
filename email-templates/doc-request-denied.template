@@ -43,7 +43,7 @@
     </style>
 <!--[if mso]>
 <style type="text/css">
-    p.msofix { 
+    p{ 
         mso-line-height-rule: exactly; 
         line-height: 1.5rem !important;
     }
@@ -106,7 +106,7 @@
                     <strong>Product Name:</strong> {{.ProductName}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
-                    You might discover answers to your inquiries on our <a href="https://developer.fiserv.com/support">Support Page</a>.
+                    You might discover answers to your inquiries on our <a href="https://developer.fiserv.com/support" style="color:#2d6bcf; text-decoration: underline;">Support Page</a>.
                 </p>
             </td>
         </tr>

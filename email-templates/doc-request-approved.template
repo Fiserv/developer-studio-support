@@ -42,7 +42,7 @@
     </style>
 <!--[if mso]>
 <style type="text/css">
-    p.msofix { 
+    p { 
         mso-line-height-rule: exactly; 
         line-height: 1.5rem !important;
     }
