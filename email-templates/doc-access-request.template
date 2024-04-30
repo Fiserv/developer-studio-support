@@ -42,7 +42,7 @@
     </style>
 <!--[if mso]>
 <style type="text/css">
-    p.msofix { 
+    p{ 
         mso-line-height-rule: exactly; 
         line-height: 1.5rem !important;
     }
@@ -91,32 +91,32 @@
         <tbody>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; padding:0 0 20px 0">
                      Hi there,
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; padding:0 0 20px 0">
                     <b>{{.UserName}}</b> has requested access to a document,<br/>please see the details below:
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-               <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+               <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; padding:0 0 10px 0">
                     <strong>Request Email:</strong> {{.EmailName}}
                 </p>
-                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; padding:0 0 10px 0">
                     <strong>Organization Name:</strong> Developer Studio
                 </p>
               
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; padding:0 0 10px 0">
                 <strong>User Access Group:</strong> {{.UserAccessGroup}} 
                 </p>        
 
-                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; padding:0 0 10px 0">
                 <strong>Product Name:</strong> {{.ProductName}} 
                 </p>  
 
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; padding:0 0 10px 0">
                     <strong>Document Name:</strong> {{.DocumentName}}
                 </p>          
             </td>
@@ -186,10 +186,10 @@
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; padding:0 0 10px 0 ">
                   Thank you for choosing Developer Studio from Fiserv.
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;  padding:0 0 10px 0">
                     Kind Regards,<br />Developer Studio Team
                 </p>
             </td>
