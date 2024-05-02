@@ -296,12 +296,12 @@
             <td align="left" style="border-collapse: collapse">
               <div class="btn-wrapper" style="margin: 0.5rem 0 0">
                 <a
-                href="{{.DeniedRequestURL}}"
+                href="{{.ApprovedRequestURL}}"
                 style="
                   display: inline-block;
-                  background-color: #ffffff;
+                  background-color: #ff6600;
                   border: 1px solid #ccc;
-                  color: #060606;
+                  color: #ffffff;
                   font-weight: bold;
                   text-align: center;
                   vertical-align: middle;
@@ -314,7 +314,7 @@
                   text-decoration: none;
                   margin-bottom: 32px;
                 "
-                >Deny the request</a
+              >Approve the request</a
               >
                 <a
                   href="{{.DeniedRequestURL}}"
