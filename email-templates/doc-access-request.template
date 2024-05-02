@@ -1,3 +1,4 @@
+
 <!--
   ~ Copyright (c) 2021 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv,
   ~ Inc., registered or used in the United States and foreign countries, and
@@ -294,52 +295,6 @@
           <tr>
             <td align="left" style="border-collapse: collapse">
               <div class="btn-wrapper" style="margin: 0.5rem 0 0">
-                <!--[if mso]>
-                  <v:roundrect
-                    xmlns:v="urn:schemas-microsoft-com:vml"
-                    xmlns:w="urn:schemas-microsoft-com:office:word"
-                    href="{{.ApprovedRequestURL}}"
-                    style="height: 40px; v-text-anchor: middle; width: 200px"
-                    arcsize="10%"
-                    stroke="f"
-                    fillcolor="#ff6600"
-                  >
-                    <w:anchorlock />
-                    <center
-                      style="
-                        color: #ffffff;
-                        font-family: sans-serif;
-                        font-size: 16px;
-                        font-weight: bold;
-                      "
-                    >
-                      Approve the request
-                    </center>
-                  </v:roundrect>
-                  <v:roundrect
-                    xmlns:v="urn:schemas-microsoft-com:vml"
-                    xmlns:w="urn:schemas-microsoft-com:office:word"
-                    href="{{.DeniedRequestURL}}"
-                    style="height: 40px; v-text-anchor: middle; width: 200px"
-                    arcsize="10%"
-                    stroke="f"
-                    fillcolor="#ffffff"
-                    strokecolor="#ccc"
-                  >
-                    <w:anchorlock />
-                    <center
-                      style="
-                        color: #060606;
-                        font-family: sans-serif;
-                        font-size: 16px;
-                        font-weight: bold;
-                      "
-                    >
-                      Deny the request
-                    </center>
-                  </v:roundrect>
-                <![endif]-->
-                <!--[if !mso]> <!-->
                 <a
                   href="{{.ApprovedRequestURL}}"
                   style="
@@ -350,16 +305,16 @@
                     font-weight: bold;
                     text-align: center;
                     vertical-align: middle;
-                    padding: 6px 12px;
+                    user-select: none;
+                    padding: 6px 12px 6px 12px;
                     font-size: 16px;
                     line-height: 1.5;
-                    border-radius: 4px;
-                    margin-right: 1rem;
+                    border-radius: 4px 4px 4px 4px;
+                    margin: 0 16px 32px 0;
                     text-decoration: none;
                   "
+                  >Approve the request</a
                 >
-                  Approve the request
-                </a>
                 <a
                   href="{{.DeniedRequestURL}}"
                   style="
@@ -370,16 +325,22 @@
                     font-weight: bold;
                     text-align: center;
                     vertical-align: middle;
-                    padding: 6px 12px;
+                    user-select: none;
+                    padding: 6px 12px 6px 12px;
                     font-size: 16px;
                     line-height: 1.5;
-                    border-radius: 4px;
+                    border-radius: 4px 4px 4px 4px;
+                    margin: 0;
                     text-decoration: none;
+                    margin-bottom: 32px;
                   "
+                  >Deny the request</a
                 >
-                  Deny the request
-                </a>
-                <!--><![endif]-->
+
+                <!--[if mso]>
+                    </center>
+                  </v:rect>
+                <![endif]-->
               </div>
             </td>
           </tr>
@@ -492,3 +453,4 @@
     </div>
   </body>
 </html>
+
