@@ -212,7 +212,7 @@
                 "
               >
                 We will review your request together with {{.OrganizationName}},
-                <br />and get back to you soon.<br />
+                and get back to you soon.
               </p>
             </td>
           </tr>
