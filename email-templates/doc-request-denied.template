@@ -1,4 +1,3 @@
-
 <!--
   ~ Copyright (c) 2021 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv,
   ~ Inc., registered or used in the United States and foreign countries, and
@@ -23,124 +22,311 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Developer Studio | Document Request Access</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-            'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-        }
-        .anchor-link {
-            color: #2d6bcf;
-        }
-        .anchor-link:hover {
-            color: #2d6bcf;
-            text-decoration: underline;
-        }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+          "Helvetica Neue", sans-serif;
+      }
+      .anchor-link {
+        color: #2d6bcf;
+      }
+      .anchor-link:hover {
+        color: #2d6bcf;
+        text-decoration: underline;
+      }
     </style>
-<!--[if mso]>
-<style type="text/css">
-    p.msofix { 
-        mso-line-height-rule: exactly; 
-        line-height: 1.5rem !important;
-    }
-</style>
-<![endif]-->
+    <!--[if mso]>
+      <style type="text/css">
+        p {
+          mso-line-height-rule: exactly;
+          line-height: 1.5rem !important;
+        }
+      </style>
+    <![endif]-->
     <style type="text/css">
-        @media screen and (max-device-width: 640px), screen and (max-width: 640px) {
-            .content {
-                padding: 1rem;
-            }
+      @media screen and (max-device-width: 640px),
+        screen and (max-width: 640px) {
+        .content {
+          padding: 1rem;
         }
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: #333333;
-                color: #ffffff;
-            }
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: #333333;
+          color: #ffffff;
         }
-        @media (prefers-color-scheme: light) {
-            body {
-                background: #ffffff;
-                color: #333333;
-            }
+      }
+      @media (prefers-color-scheme: light) {
+        body {
+          background: #ffffff;
+          color: #333333;
         }
+      }
     </style>
-</head>
-<body style="margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; background: #ffffff;color: #333;">
-<div class="content" style="margin-top: 2rem; padding: 2rem; display: flex; justify-content: center">
-    <table role="presentation" align="center" style="border-spacing: 0; max-width: 600px; width: 600px">
+  </head>
+  <body
+    style="
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+      background: #ffffff;
+      color: #333;
+    "
+  >
+    <div
+      class="content"
+      style="
+        margin-top: 2rem;
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+      "
+    >
+      <table
+        role="presentation"
+        align="center"
+        style="border-spacing: 0; max-width: 600px; width: 600px"
+      >
         <thead>
-        <tr>
-            <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
-                <img
-                        class="logo"
-                        src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
-                        alt="Fiserv"
-                        height="40"
-                        width="80"
-                        style="height: 4rem; width: auto"
-                />
+          <tr>
+            <td
+              align="right"
+              style="border-collapse: collapse; padding-bottom: 2rem"
+            >
+              <img
+                class="logo"
+                src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
+                alt="Fiserv"
+                width="376"
+              />
             </td>
-        </tr>
+          </tr>
         </thead>
         <tbody>
-        <tr>
+          <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Hi there,
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                    Unfortunately, your request for the following document has been denied.
-                </p> 
+                <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                  padding: 0 0 20px 0;
+                "
+              >
+                Hi there,
+              </p>
             </td>
-        </tr>
-        <tr>
+          </tr>
+
+          <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 10px">
+              &nbsp;
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                Unfortunately, your request for the following document has been
+                denied.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 10px">
+              &nbsp;
+            </td>
+          </tr>
+
+          <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 0.5rem">
-                    <strong>Document Name:</strong> {{.DocumentName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    <strong>Product Name:</strong> {{.ProductName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
-                    You might discover answers to your inquiries on our <a href="https://developer.fiserv.com/support">Support Page</a>.
-                </p>
+              <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <strong>Document Name:</strong> {{.DocumentName}}
+              </p>
             </td>
-        </tr>
-        <tr>
+          </tr>
+
+          <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 5px">
+              &nbsp;
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                  margin-bottom: 2rem;
+                "
+              >
+                <strong>Product Name:</strong> {{.ProductName}}
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 5px">
+              &nbsp;
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                  margin-bottom: 2rem;
+                "
+              >
+                You might discover answers to your inquiries on our
+                <a
+                  href="https://developer.fiserv.com/support"
+                  style="color: #2d6bcf; text-decoration: underline"
+                  >Support Page</a
+                >.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 10px">
+              &nbsp;
+            </td>
+          </tr>
+
+          <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
-                    Thank you for choosing Developer Studio from Fiserv.
-                </p> 
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Kind Regards,<br />Developer Studio Team
-                </p>
+              <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                  margin-bottom: 2rem;
+                "
+              >
+                Thank you for choosing Developer Studio from Fiserv.
+              </p>
             </td>
-        </tr>
+          </tr>
+
+          <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 10px">
+              &nbsp;
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                  margin-bottom: 2rem;
+                "
+              >
+                Kind Regards,<br />Developer Studio Team
+              </p>
+            </td>
+          </tr>
         </tbody>
         <tfoot>
           <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 10px">
+              &nbsp;
+            </td>
+          </tr>
+          <tr>
             <td style="border-collapse: collapse; padding: 0">
-                <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
-                  Note: please do not reply to this email, as we are unable to respond from this email address.
-                </p>
-                <hr/>
-                <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
-                    <strong>Fiserv</strong> &nbsp;|&nbsp; 255 Fiserv Drive, Brookfield, WI 53045
-                </p>
-                <p class="footer" style="margin: 1rem 0 2rem; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
-                    &copy; 2024 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv, Inc., registered or used in
-                    the United States and foreign countries, and may or may not be registered in your country. All
-                    trademarks, service marks, and trade names referenced in this material are the property of their
-                    respective owners. &nbsp;<a class="anchor-link" href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md" target="_blank" >Privacy Notice</a>
-                </p>
+              <p
+                class="footer"
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 10px;
+                  line-height: 1rem;
+                  font-weight: 300;
+                "
+              >
+                Note: please do not reply to this email, as we are unable to
+                respond from this email address.
+              </p>
+              <hr />
+              <p
+                class="footer"
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 10px;
+                  line-height: 1rem;
+                  font-weight: 300;
+                "
+              >
+                <strong>Fiserv</strong> &nbsp;|&nbsp; 255 Fiserv Drive,
+                Brookfield, WI 53045
+              </p>
+              <p
+                class="footer"
+                style="
+                  margin: 1rem 0 2rem;
+                  padding: 0;
+                  font-size: 10px;
+                  line-height: 1rem;
+                  font-weight: 300;
+                "
+              >
+                &copy; 2024 Fiserv, Inc. or its affiliates. Fiserv is a
+                trademark of Fiserv, Inc., registered or used in the United
+                States and foreign countries, and may or may not be registered
+                in your country. All trademarks, service marks, and trade names
+                referenced in this material are the property of their respective
+                owners. &nbsp;<a
+                  class="anchor-link"
+                  href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md"
+                  target="_blank"
+                  >Privacy Notice</a
+                >
+              </p>
             </td>
           </tr>
         </tfoot>
-    </table>
-  </div>
-</body>
+      </table>
+    </div>
+  </body>
 </html>
