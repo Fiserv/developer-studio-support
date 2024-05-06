@@ -1,10 +1,10 @@
 # Terms of Use
 
-**Update on: May 3, 2024**
+**Update on: May 6, 2024**
 
 Thank you for your interest in the Fiserv Developer Studio. Fiserv Solutions, LLC and/or our Affiliates will provide the Developer Studio, including the Developer Build Space, to you subject to these terms of use. These terms, together with the Documentation and any applicable polices and guidelines, constitute a legal agreement between you and Fiserv for your use of the Developer Studio (Terms). By registering for a Developer Account, you agree to be bound by these Terms. If you register for a Developer Account on behalf of a legal entity, you represent and warrant that you have the authority to bind that entity to these Terms and all references to “you” in these Terms will then refer to that entity. The Developer Studio is not offered to any person under the age of 13. If you are over the age of 13 but under the age of 18, you must either: (1) be an emancipated minor, or (2) have obtained the legal consent of your parent or legal guardian to use this Developer Studio and agree to these Terms.
 
-1. Defined Terms
+**1. Defined Terms**
 
 Capitalized terms used in these Terms have the meanings stated below or where defined in the context in which they are used.
 
@@ -26,7 +26,7 @@ Capitalized terms used in these Terms have the meanings stated below or where de
 
 1.9  Developer Sandbox means a limited simulation environment which enables you to view and execute Fiserv APIs in isolation (i.e., not in a Test Environment).
 
-1.10  Developer Studio means the website located at [https://developer.fiserv.com](www.developer.fiserv.com)
+1.10  Developer Studio means the website located at [www.developer.fiserv.com](https://developer.fiserv.com)
 
 1.11	Discloser means the party that discloses Confidential Information.
 
@@ -48,7 +48,7 @@ Capitalized terms used in these Terms have the meanings stated below or where de
 
 1.20  Login Credentials means the username and password you create as part of your registering a Developer Account to use the Developer Studio.
 
-1.21  Open Source Software means software that is subject to a license identified as an open source license by the Open Source Initiative [www.opensource.org](www.opensource.org) or any substantially similar license.
+1.21  Open Source Software means software that is subject to a license identified as an open source license by the Open Source Initiative [www.opensource.org](https://opensource.org) or any substantially similar license.
 
 1.22  Personal Data means any information that can be used to identify an individual person or any other information defined as “personal information,” “personally identifiable information,” “personal data,” or a similar term under Applicable Law.
 
@@ -64,7 +64,7 @@ Capitalized terms used in these Terms have the meanings stated below or where de
 
 1.28  You (whether capitalized or not) means the developer whose details are set out in the Developer Account and includes the employer of the developer and/or any other entity the developer represents.
 
-## Developer Account
+**2. Developer Account**
 
 2.1  To access and use the Developer Studio, including any Fiserv APIs or a Developer Build Space, you must first register for a Developer Account and establish your Login Credentials.
 
@@ -74,7 +74,7 @@ Capitalized terms used in these Terms have the meanings stated below or where de
 
 2.4  Fiserv may reject your registration for a Developer Account or suspend or terminate your Developer Account at any time, in our sole discretion and may deny your reapplication for a Developer Account in the future. You may terminate your Developer Account at any time upon written notice to us. Upon any suspension or termination of your Developer Account (1) all rights granted to you under these Terms will immediately cease, and (2) you must immediately cease accessing and/or using your Developer Account, including the Developer Build Space, and any derivative works thereof.
 
-## Licenses and Restrictions
+**3. Licenses and Restrictions**
 
 3.1  Subject to the limitations in Section 3.3, we grant to you a nonexclusive, non-sublicensable, nontransferable, revocable, limited license during the term of these Terms to (1) access and use the Developer Studio only within the Territory, (2) access, use, and copy the Fiserv APIs and Documentation to develop and test your Integrations or Apps in a Test Environment, (3) use a Test Environment and Test Data according to the applicable Documentation, and (4) use the Documentation solely for your own internal use. You must attribute Fiserv as the source of the Fiserv APIs or Documentation and include on any copies or use of Fiserv APIs or Documentation, all copyright or other Fiserv source identifiers that appear on the original. For clarity, you will use the Developer Studio only as expressly permitted by and in compliance with these Terms, and not in any other manner.
 
@@ -108,29 +108,29 @@ Capitalized terms used in these Terms have the meanings stated below or where de
 
 (13)  access any portion of the Developer Studio, if you are (A) located in a Prohibited Country; or (B) are listed on any U.S. Government list of prohibited or restricted parties.
 
-3.4	You agree that the Integration may only be used for Clients and not for any other persons or entities.
+3.4 	You agree that the Integration may only be used for Clients and not for any other persons or entities.
 
-3.5	You acknowledge and agree that these Terms apply with equal force in the Developer Build Space(s) and in each production environment in which you deploy your App.
+3.5	 You acknowledge and agree that these Terms apply with equal force in the Developer Build Space(s) and in each production environment in which you deploy your App.
 
 3.6  You irrevocably assign, without reservation, to Fiserv all right, title, and interest in and to all ideas, comments, suggestions, and any other feedback you provide related to the Fiserv APIs, the Fiserv Platform, and/or the Developer Studio (or any portion thereof) (Feedback), including without limitation all Intellectual Property Rights contained in such Feedback.
 
-4. Test Data
+**4. Test Data**
 
 You are responsible for your use, retention, and handling of all Test Data, and any data generated or derived from Test Data. We have no obligation to maintain Test Data on our servers and may delete any Test Data from our systems at any time without notice. You may only submit or upload Test Data in or through your Developer Account for testing purposes(i.e., real account numbers, names, addresses, and other Personal Data may not be used). If you submit, upload, or use Personal Data in or through your Developer Account for testing purposes, you acknowledge and agree that we have no responsibility or liability for such Personal Data, including any unauthorized access to or use of such Personal Data. Load testing your Developer Account or in the Developer Build Space or the Fiserv Platform (or any portion thereof) is prohibited. We have no obligation to monitor or validate any information submitted or uploaded by you on or through your Developer Account.
 
-5. Updates
+**5. Updates**
 
 We have no obligation to provide any updates, upgrades, enhancements, modifications, or new releases or versions (collectively, Updates) of or to the Developer Studio, nor do we have any obligation to provide support for or maintenance to the Developer Studio. Further, we may, in our sole discretion, release Updates to the Fiserv APIs and/or Documentation and require you to obtain and use such Updates, which may result in you needing to make updates to your Integration(s), your software, your Apps or supporting services.
 
-6. Licenses to Fiserv
+**6. Licenses to Fiserv**
 
 You grant to us a non-exclusive, non-transferable license during the term of these Terms to (1) use and review the code in the Integrations and Apps for testing and quality assurance purposes and to ensure the Integrations and Apps comply with these Terms, and (2) use your name, trademarks, and/or other source identifiers to publicize your use of the Fiserv APIs and Documentation, and your Integrations and Apps with your prior approval, which shall not be unreasonably withheld or unduly delayed. For clarity, we have no obligation to publicize your use of any Fiserv API or the Documentation, or any of your Integration(s) or Apps.
 
-7. Open Source Software
+**7. Open Source Software**
 
-The Fiserv APIs may contain [Open Source Software](OSS) that is subject to terms that, as a condition of use, copying, modification or redistribution, require such software and its derivative works to be disclosed or distributed in source code form, to be licensed for the purpose of making derivative works, to receive copyright attribution along with any derivative works, or to be redistributed free of charge.  To the extent the license for any such OSS requires terms that are inconsistent with these Terms, then the license rights in the applicable OSS license shall take precedence over the rights granted in these Terms, but solely OSS. You may not use any OSS in the development of your App(s) or Integrations in such a way that would cause any portions of the Developer Studio, the Documentation, or the Fiserv APIs to be subject to any additional OSS licensing terms or obligations. You further acknowledge that your use of any OSS and any applicable OSS license is solely between you and the licensor of the OSS and that you shall comply with the applicable OSS license.
+The Fiserv APIs may contain [Open Source Software (OSS)](https://opensource.org/) that is subject to terms that, as a condition of use, copying, modification or redistribution, require such software and its derivative works to be disclosed or distributed in source code form, to be licensed for the purpose of making derivative works, to receive copyright attribution along with any derivative works, or to be redistributed free of charge.  To the extent the license for any such OSS requires terms that are inconsistent with these Terms, then the license rights in the applicable OSS license shall take precedence over the rights granted in these Terms, but solely OSS. You may not use any OSS in the development of your App(s) or Integrations in such a way that would cause any portions of the Developer Studio, the Documentation, or the Fiserv APIs to be subject to any additional OSS licensing terms or obligations. You further acknowledge that your use of any OSS and any applicable OSS license is solely between you and the licensor of the OSS and that you shall comply with the applicable OSS license.
 
-8. App and Integration Requirements and Rules
+**8. App and Integration Requirements and Rules**
 
 We may publish additional requirements for Integrations or Apps from time to time, with which you must comply.  At a minimum, any Integration or App you develop must comply with the following:
 
@@ -146,9 +146,11 @@ We may publish additional requirements for Integrations or Apps from time to tim
 
 8.6  Apps and Integrations must not contain any malware, malicious or harmful code, program, or other internal component (e.g., computer viruses, trojan horses, “backdoors”) which could damage, destroy, or adversely affect other software, firmware, hardware, data, systems, services, or networks.
 
-8.7	You are responsible for testing your App(s) and Integration(s) in success and in negative and/or failure scenarios. We are not responsible for any failures by your App(s) or Integration(s) in production and are not obligated to provide support for such failures. When your App(s) and Integration(s) are in production, our responsibility is limited to Fiserv API connection-related errors. We are not responsible for any functionality or data-related errors or issues in your App(s) or Integration(s). 
+8.7	 You are responsible for testing your App(s) and Integration(s) in success and in negative and/or failure scenarios. We are not responsible for any failures by your App(s) or Integration(s) in production and are not obligated to provide support for such failures. When your App(s) and Integration(s) are in production, our responsibility is limited to Fiserv API connection-related errors. We are not responsible for any functionality or data-related errors or issues in your App(s) or Integration(s). 
 
-9. Integration. As part of your building and using the Integrations, you will need to connect to or interface with the Fiserv Platform. You must use the Integration only to transmit data to, and/or receive data from, the Fiserv Platform.
+**9. Integration**
+
+As part of your building and using the Integrations, you will need to connect to or interface with the Fiserv Platform. You must use the Integration only to transmit data to, and/or receive data from, the Fiserv Platform.
 
 9.1  As part of your Integration, you must (1) maintain reasonable security controls, (2) include appropriate firewalls, (3) include intrusion detection processes, (4) perform periodic audits to ensure you are in compliance with this Section 9, (5) identify and authenticate users, (6) include logical access controls, (7) perform periodic virus scans, and (8) provide physical and environmental security.
 
@@ -164,7 +166,9 @@ We may publish additional requirements for Integrations or Apps from time to tim
 
 9.7  You must implement and maintain effective distributed denial of service countermeasures in accordance with reasonable industry standards. You will perform no less than quarterly vulnerability scans and annual penetration tests on your infrastructure and on any network that transmits data through the Integration or your App(s) and entitlement reviews of your access controls, as they apply to the Integration or your App(s). Upon our request, you will provide us with a summary of the results of these scans, tests, and reviews.  You must remediate any findings from these scans, tests, and reviews as soon as reasonably possible based on the severity of the vulnerability and the level of remediation effort required. You also must audit the security of your computing environment and systems used to provide the Integration or your App(s) no less frequently than on an annual basis and according to industry security standards. You must remediate any material deficiencies or errors that could negatively impact the Integration or your App(s) identified in an audit.
 
-10. Rules. You are solely responsible for your Integrations and Apps and the content and consequences of the materials and data you provide in and through your Integrations and Apps, including their legality, reliability, appropriateness, and trademark and copyright ownership. Your Integrations and Apps must not upload, post, transmit or distribute any materials (including text, links, communications, software, images, sounds, data, or other information) that may:
+**10. Rules**
+
+You are solely responsible for your Integrations and Apps and the content and consequences of the materials and data you provide in and through your Integrations and Apps, including their legality, reliability, appropriateness, and trademark and copyright ownership. Your Integrations and Apps must not upload, post, transmit or distribute any materials (including text, links, communications, software, images, sounds, data, or other information) that may:
 
 10.1  contain any confidential information of you or the entity you represent, or any confidential information of any other person or entity, including proprietary information, trade secrets, Personal Data, and/or cardholder information, except to the extent required for the functionality of your Integration(s) and/or App(s) and, in all cases, subject to Applicable Law;
 
@@ -178,11 +182,11 @@ We may publish additional requirements for Integrations or Apps from time to tim
 
 10.6  otherwise violate these Terms.
 
-11. Security
+**11. Security**
 
 You are solely responsible for the security of data residing on server(s) or other systems owned or operated by you, or any third party acting on your behalf (e.g., a web hosting company, processor, or other service provider). You acknowledge and agree that our role is limited to that of a service provider; we will not be liable for any improperly processed or unauthorized transactions or illegal or fraudulent access to your Developer Account or resulting from use of your Apps or Integrations.
 
-12. Intellectual Property Rights
+**12. Intellectual Property Rights**
 
 12.1  We own all right, title and interest in and to the Fiserv Intellectual Property. No title to or ownership of any Fiserv Intellectual Property is granted or otherwise transferred to you or any other entity or person under these Terms.  
 
@@ -190,11 +194,15 @@ You are solely responsible for the security of data residing on server(s) or oth
 
 12.3  Except as set forth in this Section 12.3, nothing in these Terms grants you any rights to use any Fiserv Marks. We grant to you a nonexclusive, non-sublicensable, nontransferable, revocable, limited license during the term of these Terms to use the Fiserv Marks solely in connection with and for purposes of developing and testing your Integrations or Apps in accordance these Terms. All uses of any Fiserv Marks shall inure to our benefit. You shall not, and shall not authorize or assist any third party to (1) use the Fiserv Marks except as expressly authorized by this Section 12.3, (2) take any actions inconsistent with our ownership of the Fiserv Marks and any associated registrations (including by using, registering or attempting to register any Fiserv Marks or trademarks or domain names that are confusingly similar to any of the Fiserv Marks), or attack the validity of the Fiserv Marks or Fiserv’s ownership thereof, or (3) use or create a combination mark consisting of one or more of Fiserv Marks.
 
-13. Infringement Claims. You, on behalf of yourself and your Affiliates, must not assert, authorize, assist, or encourage any third party to assert, against Fiserv or any of our Affiliates, any patent or copyright infringement claim with respect to the Developer Studio or any portion, functionality, or other characteristics of the Developer Build Space, the Fiserv APIs, Documentation or the Fiserv Platform. Nothing in this Section 13 will prohibit you from asserting an infringement claim based on your own Intellectual Property Rights against Fiserv or any of our Affiliates.
+**13. Infringement Claims**
 
-14.	Your Costs and Expenses. You are solely responsible for all costs and expenses incurred by you in your use of the Developer Account, your use of the Developer Studio, including the Developer Build Space, the Fiserv APIs and the Documentation, and your development and testing of Integrations or Apps. We will not reimburse you for any costs or expenses under any circumstances.
+You, on behalf of yourself and your Affiliates, must not assert, authorize, assist, or encourage any third party to assert, against Fiserv or any of our Affiliates, any patent or copyright infringement claim with respect to the Developer Studio or any portion, functionality, or other characteristics of the Developer Build Space, the Fiserv APIs, Documentation or the Fiserv Platform. Nothing in this Section 13 will prohibit you from asserting an infringement claim based on your own Intellectual Property Rights against Fiserv or any of our Affiliates.
 
-15. Confidential Information
+**14.	Your Costs and Expenses**
+
+You are solely responsible for all costs and expenses incurred by you in your use of the Developer Account, your use of the Developer Studio, including the Developer Build Space, the Fiserv APIs and the Documentation, and your development and testing of Integrations or Apps. We will not reimburse you for any costs or expenses under any circumstances.
+
+**15. Confidential Information**
 
 15.1  Recipient must protect Discloser’s Confidential Information from any unauthorized use or disclosure as Recipient would protect its own confidential information, which shall be by no means less than a reasonable degree of care and as required by Applicable Law. Recipient will use the Confidential Information only to exercise its express rights and perform your obligations under these Terms (Permitted Purpose). Recipient will only disclose Confidential Information to those of its employees and independent contractors (and other persons or entities with the prior written consent of disclosers) who have a direct “need to know” for the Permitted Purpose and who are subject to written obligations of confidentiality which are no less restrictive than those contained in these Terms. Recipient shall be responsible for any breach of this Section 15 by any such individuals or entities.
 
@@ -212,25 +220,25 @@ You are solely responsible for the security of data residing on server(s) or oth
 
 15.8	We may use your Confidential Information to perform, improve and enhance the Developer Studio and our services for our clients, to analyze your use of the Developer Studio, and for data analytics purposes.
 
-16. Representations and Warranties
+**16. Representations and Warranties**
 
 You represent and warrant that (1) all information you have provided and will provide to us, including all information in your Developer Account, is accurate and complete and you will provide timely updates to us of any changes in or updates to such information, (2) you are of the legal age in the jurisdiction in which you reside to form a binding contract with us, (3) your performance under these Terms, your Integrations and Apps, and your use of the Developer Studio will comply with, and not violate, any Applicable Law,  Card Association Rules, or any other agreement to which you are bound, (4) your Integrations and Apps, and any intellectual property you use to perform Integrations and create Apps, do not and will not infringe the Intellectual Property Rights of any third party, and (5) you are not (A) located in a Prohibited Country, or (B) listed on any U.S. Government list of prohibited or restricted parties.
 
-17. Third Party Websites
+**17. Third Party Websites**
   
 If you use any links on the Developer Studio to websites not maintained by Fiserv, you will leave the Developer Studio. The linked sites are not under Fiserv's control, and Fiserv is not responsible for the contents of any linked site or any link contained on a linked site. Fiserv provides these links to you only as a convenience and the inclusion of any link does not imply recommendation, approval or endorsement by Fiserv of the site.
 
-18. Indemnification
+**18. Indemnification**
 
 You will indemnify, hold harmless and defend Fiserv, our Affiliates, and our respective officers, directors, employees, and agents (collectively, Indemnitees) from and against all claims, liabilities, damages, settlements, losses, fines, and expenses (including attorneys' fees and other litigation expenses) relating to any allegation made by a third party or proceeding commenced by a third party arising from (1) your use of the Developer Studio, including the Fiserv APIs, Documentation, Fiserv Platform, or Developer Build Space, (2) the Integration or Apps, (3) your breach of any representation, warranty, or obligation contained in these Terms, (4) any negligence, fraud, dishonesty or willful misconduct by you, your Affiliates, or any third party acting on your behalf, (5) any infringement of any Intellectual Property Rights by any of your Integrations or Apps by any other materials provided by you or on your behalf, or (6) your alleged or actual violation of any Applicable Law. We reserve the right, at your expense, to assume the exclusive defense and control of any claim covered by this Section 18. You may not settle any claim that purports to bind us without our prior written consent.
 
-19. Limitation of Liability Disclaimers
+**19. Limitation of Liability Disclaimers**
 
 19.1  To the full extent permitted under Applicable Law, Fiserv, our Affiliates, or our respective suppliers, officers, directors, employees, agents and representatives (collectively, Fiserv Parties and each a Fiserv Party) will not be liable for any indirect, incidental, special, consequential, punitive, or exemplary damages, including damages for lost profits, lost revenues, business interruption, lost information, or other pecuniary loss, regardless of whether these damages were foreseeable or any Fiserv Party was advised they were possible. Fiserv Parties’ total cumulative liability to you or any third party, whether arising in tort (including negligence), contract or otherwise, arising out of or relating to these Terms, the Developer Studio, any Fiserv API, the Fiserv Platform, or any Documentation will not exceed a total of one thousand dollars ($1,000)
 
 19.2  We provide the Fiserv Platform, Developer Studio (including the Developer Build Space, Fiserv APIs and Documentation), and all information and other materials contained therein or made available on an “as is”, “as available”, and “with all faults” basis. Your use of any of the foregoing is at your own risk. To the fullest extent permitted by Applicable Law, we make no warranties that the Fiserv Platform, Developer Studio (including the Developer Build Space, Fiserv APIs and Documentation), or any information or other materials contained therein or made available to you will be available, accessible, uninterrupted, timely, secure, accurate,  complete, or error-free. Your access to the Developer Studio may be subject to outages, interruptions, attacks by third parties and/or delay occurrences. We disclaim all representations, warranties, and conditions, whether express or implied, including warranties or conditions of merchantability, fitness for a particular purpose, non-infringement or title. Without limiting the foregoing and for clarity, Fiserv, our Affiliates, and our respective licensors, will not be liable for, and expressly disclaim any and all liabilities and/or warranties with respect to, any Open Source Software or other third party components of the Fiserv APIs or Documentation
 
-20. Miscellaneous
+**20. Miscellaneous**
 
 20.1  These Terms are the entire agreement between you and us and supersede all prior or contemporaneous understandings, promises, or agreements whether written or oral about the Terms’ subject matter. No trade use or other regular practice or method of dealing between you and us or others, will be used to modify, interpret, supplement, or alter in any manner these Terms.
 
@@ -274,15 +282,15 @@ You will indemnify, hold harmless and defend Fiserv, our Affiliates, and our res
 
 20.20  You agree to execute these Terms in the form of an electronic record utilizing electronic signatures, as such terms are defined in the Electronic Signatures in Global and National Commerce Act (15 U.S.C. § 7001 et seq.). Your electronic signature shall each have the same effect as an original signature.
 
-21. Additional Terms Applicable Only to Banking Hub
+**21. Additional Terms Applicable Only to Banking Hub**
 
 21.1  Developer Studio Connection Plan. Developer Studio Connection Plan means a purchase plan, paid on a monthly basis which includes, among other things, access to the Fiserv APIs, the Developer Build Space, developer support, transaction volume limits, and related options.
 
 (3)  Fiserv Client means a client of Fiserv or our Affiliates that has purchased a Fiserv Platform and that accesses the AppMarket to browse, locate, purchase, and/or install Apps.
 
-21.2 Developer Studio Connection Plan Packages, Developer Studio Connection Plans may be available in different tiers. We reserve the right to refuse to sell a Developer Studio Connection Plan to you in our sole discretion. If you fail to make timely payments to us for the Developer Studio Connection Plan you choose, we may suspend your access to your Developer Account, the Developer Build Space, and any other support services. We may adjust the fees for Developer Studio Connection Plans upon no less than 60 days’ prior notice to you.
+21.2  Developer Studio Connection Plan Packages, Developer Studio Connection Plans may be available in different tiers. We reserve the right to refuse to sell a Developer Studio Connection Plan to you in our sole discretion. If you fail to make timely payments to us for the Developer Studio Connection Plan you choose, we may suspend your access to your Developer Account, the Developer Build Space, and any other support services. We may adjust the fees for Developer Studio Connection Plans upon no less than 60 days’ prior notice to you.
 
-21.3 Payment Terms
+21.3  Payment Terms
 
 (1)  You agree to pay us (A) fees for the Developer Studio Connection Plan you purchase, as well as for any add-on, additional, or optional services you purchase, and (B) Taxes as defined, as defined below. Our fees, rates and charges may be increased annually effective each January 1.
 
@@ -292,7 +300,7 @@ You will indemnify, hold harmless and defend Fiserv, our Affiliates, and our res
 
 (4)	You are responsible for the applicable fees for the Developer Studio Connection Plan you choose for the first year, even if you elect to cancel your Developer Studio Connection Plan prior to the end of the first year. Thereafter, fees are due on a month-to-month basis, and you can cancel at any time with at least 30 days’ notice to us. Fees for additional options are due on a monthly basis and may be cancelled at any time with at least 30 days’ notice to us.  
 
-22.	Additional Terms: Applicable Only if One or More Fintech Partners Integrate Through You.
+**22.	Additional Terms: Applicable Only if One or More Fintech Partners Integrate Through You.**
 
 22.1	Definitions. 
 
