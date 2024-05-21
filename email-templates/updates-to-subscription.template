@@ -115,52 +115,52 @@
               >
                 Hi there,
               </p>
-              </td>
-              </tr>
+            </td>
+          </tr>
 
-              <tr>
-                <td style="height: 10px; font-size: 1px; line-height: 10px">
-                    &nbsp;
-                  </td>
-              </tr>
+          <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 10px">
+              &nbsp;
+            </td>
+          </tr>
 
-              <tr>
-                <td>
-                    <p
-                    style="
-                      margin: 0;
-                      padding: 0;
-                      font-size: 1rem;
-                      line-height: 1.5rem;
-                    "
-                  >
-                  {{.TenantName}} has recently made changes on the following page 
-                  </p>
-                </td>
-              </tr>
-              
-              <tr>
-                <td style="height: 10px; font-size: 1px; line-height: 10px">
-                  &nbsp;
-                </td>
-              </tr>
-<tr>
-    <td>
-        <p
-        style="
-          margin: 0;
-          padding: 0;
-          font-size: 1rem;
-          line-height: 1.5rem;
-          margin-bottom: 2rem;
-        "
-      >
-        <strong>{{.DocumentName}}</strong> 
-      </p>
-    </td>
-</tr>
-              
-           
+          <tr>
+            <td>
+              <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                "
+              >
+                {{.TenantName}} has recently made changes on the following page
+              </p>
+            </td>
+          </tr>
+
+          <!-- <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 10px">
+              &nbsp;
+            </td>
+          </tr> -->
+
+          <tr>
+            <td>
+              <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                  margin-bottom: 2rem;
+                "
+              >
+                <strong>{{.DocumentName}}</strong>
+              </p>
+            </td>
+          </tr>
+
           <tr>
             <td style="border-collapse: collapse">
               <p
@@ -172,9 +172,20 @@
                   padding: 0 0 10px 0;
                 "
               >
-              It may relate to the file you have been downloaded, to review the updates on this page, please click
-                <a href="{{.DocumentUrl}}"  style="color: #2d6bcf; text-decoration: underline">here</a>
+                It may relate to the file you have been downloaded, to review
+                the updates on this page, please click
+                <a
+                  href="{{.DocumentUrl}}"
+                  style="color: #2d6bcf; text-decoration: underline"
+                  >here</a
+                >
               </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 10px">
+              &nbsp;
             </td>
           </tr>
 
@@ -184,40 +195,38 @@
                 style="
                   margin: 0;
                   padding: 0;
-                  font-size: 1rem;
+                  font-size: 16px;
                   line-height: 1.5rem;
                   margin-bottom: 2rem;
                 "
               >
                 Thank you for choosing Developer Studio from Fiserv.
               </p>
-              </td>
-              </tr>
+            </td>
+          </tr>
 
-              <tr>
-                <td>
-                    <p
-                    style="
-                      margin: 0;
-                      padding: 0;
-                      font-size: 1rem;
-                      line-height: 1.5rem;
-                      margin-bottom: 2rem;
-                    "
-                  >
-                    Kind Regards,<br />Developer Studio Team<br />
-                  </p>
-                </td>
-              </tr>
-            
-
+          <tr>
+            <td>
+              <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                  margin-bottom: 2rem;
+                "
+              >
+                Kind Regards,<br />Developer Studio Team<br />
+              </p>
+            </td>
+          </tr>
         </tbody>
         <tfoot>
-            <tr>
-                <td style="height: 10px; font-size: 1px; line-height: 10px">
-                  &nbsp;
-                </td>
-              </tr>
+          <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 10px">
+              &nbsp;
+            </td>
+          </tr>
 
           <tr>
             <td style="border-collapse: collapse; padding: 0">
