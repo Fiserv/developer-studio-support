@@ -169,7 +169,7 @@
                   padding: 0;
                   font-size: 16px;
                   line-height: 1.5rem;
-                  padding: 0 0 10px 0;
+                  margin-bottom: 2rem;
                 "
               >
                 It may relate to the file you have been downloaded, to review
