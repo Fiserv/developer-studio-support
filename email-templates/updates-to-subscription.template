@@ -107,7 +107,6 @@
               <p
                 style="
                   margin: 0;
-                  padding: 0;
                   font-size: 16px;
                   line-height: 1.5rem;
                   padding: 0 0 20px 0;
@@ -139,12 +138,6 @@
             </td>
           </tr>
 
-          <!-- <tr>
-            <td style="height: 10px; font-size: 1px; line-height: 10px">
-              &nbsp;
-            </td>
-          </tr> -->
-
           <tr>
             <td>
               <p
@@ -158,6 +151,12 @@
               >
                 <strong>{{.DocumentName}}</strong>
               </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="height: 10px; font-size: 1px; line-height: 10px">
+              &nbsp;
             </td>
           </tr>
 
