@@ -171,12 +171,11 @@
                   margin-bottom: 2rem;
                 "
               >
-                It may relate to the file you have been downloaded, to review
-                the updates on this page, please click
+              It may be related to the file you downloaded. To review the updates on this page, please click
                 <a
                   href="{{.DocumentUrl}}"
                   style="color: #2d6bcf; text-decoration: underline"
-                  >here</a
+                  >here.</a
                 >
               </p>
             </td>
