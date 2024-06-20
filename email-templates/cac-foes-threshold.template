@@ -84,8 +84,8 @@
                     Hi Team,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    The Fiserv Operational Excellence score for your {{.cloudProvider}} {{.subscriptionOrAccount}} under {{.apmId}} is below the threshold value. 
-                    Please visit this <a class="anchor-link" href="{{.devStudioFoesUrl}}" target="_blank">link</a> for a detailed view.
+                    The Fiserv Operational Excellence score for your {{.cloudProvider}} {{.subscriptionOrAccount}} under {{.apmId}} is below the threshold 
+                    value of {{.foesThreshold}}. Please visit this <a class="anchor-link" href="{{.devStudioFoesUrl}}" target="_blank">link</a> for a detailed view.
                 </p>
             </td>
         </tr>
