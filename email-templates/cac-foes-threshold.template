@@ -18,7 +18,7 @@
   ~ work or the delivery of this work.
   -->
 
-<!--SUBJECT Developer Studio from Fiserv - Card Developer App Approval Request --> 
+<!--SUBJECT Developer Studio from Fiserv - Fiserv Operational Excellence Score below the threshold value --> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +81,7 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Hi Team,
+                    Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                     The Fiserv Operational Excellence score for your {{.cloudProvider}} {{.subscriptionOrAccount}} under {{.apmId}} is below the threshold 
@@ -110,11 +110,15 @@
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0rem">
-                    Kind Regards,<br>Developer Studio Team<br>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                    For any queries related to this email, please reach out to us through the teams channel, <a class="anchor-link" href="{{.devStudioTeamsUrl}}" target="_blank">link</a>
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 0.825rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Teams: <a class="anchor-link" href="{{.devStudioTeamsUrl}}" target="_blank">link</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                    Kind Regards,<br>Developer Studio Team<br>
                 </p>
             </td>
         </tr>
