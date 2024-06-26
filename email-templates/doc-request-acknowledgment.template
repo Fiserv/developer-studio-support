@@ -224,12 +224,31 @@
 
           <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
-                  You can click the link below to to view the status.               
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
-                 {{.requestStatusUrl}}
-                </p>
+              <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                "
+              >
+                You can click the link below to view the status.
+              </p>
+              <p
+                style="
+                  margin: 0;
+                  padding: 0;
+                  font-size: 16px;
+                  line-height: 1.5rem;
+                  padding: 0 0 20px 0;
+                "
+              >
+                <a
+                  href="{{.requestStatusUrl}}"
+                  style="color: #2d6bcf; text-decoration: underline"
+                  >View Status</a
+                >
+              </p>
             </td>
           </tr>
           <tr>
