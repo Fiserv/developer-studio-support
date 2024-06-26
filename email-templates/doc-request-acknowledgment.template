@@ -211,8 +211,7 @@
                   padding: 0 0 20px 0;
                 "
               >
-                We will review your request together with {{.OrganizationName}},
-                and get back to you soon.
+              <strong>{{.OrganizationName}}</strong> team will review your request and get back to you soon.
               </p>
             </td>
           </tr>
@@ -233,7 +232,7 @@
                   line-height: 1.5rem;
                 "
               >
-                You can click the link below to to view the status.
+                You can click the link below to view the status.
               </p>
               <p
                 style="
