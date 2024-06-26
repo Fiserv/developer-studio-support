@@ -300,7 +300,7 @@ You will indemnify, hold harmless and defend Fiserv, our Affiliates, and our res
 
 (4)	You are responsible for the applicable fees for the Developer Studio Connection Plan you choose for the first year, even if you elect to cancel your Developer Studio Connection Plan prior to the end of the first year. Thereafter, fees are due on a month-to-month basis, and you can cancel at any time with at least 30 days’ notice to us. Fees for additional options are due on a monthly basis and may be cancelled at any time with at least 30 days’ notice to us.  
 
-**22.	Additional Terms: Applicable Only if One or More Fintech Partners Integrate Through You.**
+**22.	Additional Terms: Applicable Only if One or More Fintech Partners Integrate Through You**
 
 22.1	Definitions. 
 
