@@ -15,9 +15,9 @@ Pairing creates a trust between the authentication method you want to use and yo
 
 To get started, you'll need to download the app to your mobile device, and pair (connect) your device with your account. After you've paired your device, each time you sign on to your account, you will receive a push notification to your mobile device asking you to authenticate.
 
-### Diferent Environments (DEV, QA, STAGE, PROD)
+### Different Environments (DEV, QA, STAGE, PROD)
 
-DevStudio has a number of environments with each own unique purpose and its own resources. PingID has correspinding to DevStudio environments. In order to sign in with PingID for a particular environment, a user must pair (connect) a device with user account for that particular environment. Similarely a user would create an account for each environment separately.
+DevStudio has a number of environments with each own unique purpose and its own resources. PingID has corresponding to DevStudio environments. In order to sign in with PingID for a particular environment, you must pair (connect) a device with your account for that particular environment. Similarly, you would need to create an account for each environment separately.
 
 ### Device pairing links by Environment
 
