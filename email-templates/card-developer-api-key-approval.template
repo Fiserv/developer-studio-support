@@ -84,7 +84,7 @@
                     Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    <strong>{{.CompanyName}} </strong> created an API key waiting for approval.
+                    <strong>{{.CompanyName}} </strong> has created an API key waiting for approval.
                 </p>
             </td>
         </tr>
