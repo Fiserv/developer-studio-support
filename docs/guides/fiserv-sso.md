@@ -1,6 +1,6 @@
-# Fiserv Single Sign On (SSO)
+# Fiserv Single Sign On (SSO) powered by Ping Identity
 
-DevStudio application works with Ping to authenticate Fiserv internal users.
+DevStudio application works with Ping Identity to authenticate Fiserv internal users.
 
 ## Pairing your device with PingID
 
@@ -13,7 +13,7 @@ Pairing creates a trust between the authentication method you want to use and yo
 
 ### Using PingID mobile app authentication
 
-To get started, you'll need to download the app to your mobile device, and pair (connect) your device with your account. After you've paired your device, each time you sign on to your account, you will receive a push notification to your mobile device asking you to authenticate.
+To get started, you'll need to **download** PingID app to your mobile device, and pair (connect) your device with your account. After you've paired your device, each time you sign on to your account, you will receive a push notification to your mobile device asking you to authenticate.
 
 ### Different Environments (DEV, QA, STAGE, PROD)
 
