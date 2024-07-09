@@ -118,10 +118,10 @@
                   <strong>API key name: </strong>{{.APIKeyName}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>{{.CredentialsType}} features changed: </strong>
+                  <div style="margin-bottom: 0"><strong>{{.CredentialsType}} features changed: </strong></div>
                   <ul>
-                    <li style="display: {{.RemovedFeaturesStyle}} > Removed: {{.RemovedFeatures}}</li>
-                    <li style="display: {{.AddedFeaturesStyle}} > Added: {{.AddedFeatures}}</li>
+                    <li style="display:{{.RemovedFeaturesStyle}}"> Removed: {{.RemovedFeatures}}</li>
+                    <li style="display:{{.AddedFeaturesStyle}}"> Added: {{.AddedFeatures}}</li>
                   </ul>
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
