@@ -18,7 +18,7 @@
   ~ work or the delivery of this work.
   -->
 
-<!--SUBJECT Developer Studio from Fiserv - Card Developer Webhook Change Notification --> 
+<!--SUBJECT Developer Studio from Fiserv - Changes Requested to Credentials in Workspace --> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Studio | Card Developer Webhook Change Notification</title>
+    <title>Developer Studio | Changes Requested to Credentials in Workspace</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
@@ -81,48 +81,75 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Hi there,
+                  Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    {{.Name}} changed a webhook on Developer Studio. Please review the details below:
+                  You have requested changes to a(n) {{.CredentialsType}} on Developer Studio. Please review the details below:
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Company name: </strong>{{.CompanyName}}
+                  <strong>Product name: </strong>{{.ProductName}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Workspace name: </strong>{{.WorkspaceName}}
+                  <strong>Workspace: </strong>{{.WorkspaceName}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem">
-                  <strong>Notification emails changed:</strong>
-                </p>
-                <ul style="margin: 0 0 0.5rem">
-                  <li><strong>Removed: </strong>{{.RemovedNotificationEmails}}</li>
-                  <li><strong>Added: </strong>{{.AddedNotificationEmails}}</li>
-                </ul>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Webhook condition changed to:</strong><br>
-                  {{.ChangedWebhookCondition}}
+                  <strong>{{.CredentialsType}} name: </strong>{{.CredentialName}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
-                  <strong>Webhook events changed:</strong>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                  <strong>{{.CredentialsType}} type: </strong>{{.CredentialType}}
                 </p>
-                <ul style="margin: 0 0 2rem">
-                  <li><strong>Deactived: </strong>{{.DeactivatedWebhookEvents}}</li>
-                  <li><strong>Activated: </strong>{{.ActivatedWebhookEvents}}</li>
-                </ul>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  <div style="margin-bottom: 0"><strong>{{.CredentialsType}} features changed: </strong></div>
+                  <ul>
+                    <li style="display:{{.RemovedFeaturesStyle}}; margin-bottom: 0.5rem"> Removed: {{.RemovedFeatures}}</li>
+                    <li style="display:{{.AddedFeaturesStyle}}"> Added: {{.AddedFeatures}}</li>
+                  </ul>
+                </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                Thank you for choosing Developer Studio from Fiserv.
+                To view your credentials on Developer Studio, please click 
+                <a href="{{.WorkspaceCredentialsUrl}}" class="anchor-link">here</a>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                Please note that you may need to be signed in to Developer Studio to access the workspace.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                <strong>If you didn't make this change</strong>, please contact customer support to ensure your account is secure. 
+                </p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                Visit our
+                <a href="{{.SupportPageUrl}}" class="anchor-link">support page</a> for more information on preventing and reporting fraud. 
+                </p>
+            </td>
+        </tr>
+        
+        <tr>
+            <td style="border-collapse: collapse">
+               <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                  Thank you for choosing Developer Studio from Fiserv.
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Kind Regards,<br />Developer Studio Team
+                    Kind Regards,<br />Developer Studio Team<br />
                 </p>
             </td>
         </tr>
