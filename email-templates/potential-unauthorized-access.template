@@ -90,10 +90,10 @@
                   Our system has detected a login attempt from another device. While this may indicate a potential compromise of your account, we understand that you may have initiated the login from a different device. If this is the case, please disregard this message.
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
-                  <strong>IP Address:</strong> {{.IPAddress}}
+                  <strong>IP Address: </strong>{{.IPAddress}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>User Agent:</strong> {{.UserAgent}}
+                  <strong>User Agent: </strong>{{.UserAgent}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                   However, if you did not initiate this login attempt, we strongly advise you to <a class="anchor-link" href="{{.UIUrl}}/emailRedirect/forgotUpdatePassword" target="_blank">change your password</a> and contact our <a class="anchor-link" href="{{.UIUrl}}/support" target="_blank">support</a> team.
