@@ -101,21 +101,22 @@
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                   <div style="margin-bottom: 0"><strong>Capabilities of each role: </strong></div>
-                  <div style="margin-bottom: 0"><strong>Owner: </strong></div>
+                  <div style="margin-bottom: 0"><strong>An Owner is allowed to: </strong></div>
                   <ul>
-                    <li style="margin-bottom: 0">Holds all permissions and capabilities of an administrator, plus the ability to</li>
+                    <li style="margin-bottom: 0">perform any action an administrator can</li>
                     <li style="dmargin-bottom: 0">delete workspaces</li>
                     <li style="dmargin-bottom: 0">transfer ownership to another workspace member</li>
                   </ul>
-                  <div style="margin-bottom: 0"><strong>Administrator: </strong></div>
+                  <div style="margin-bottom: 0"><strong>Administrators are allowed to: </strong></div>
                   <ul>
-                    <li style="margin-bottom: 0">Create/edit/delete any type of credentials</li>
-                    <li style="dmargin-bottom: 0">Invite users to workspace</li>
-                    <li style="dmargin-bottom: 0">Promote/demote/remove users</li>
+                    <li style="margin-bottom: 0">create/edit/delete any type of credentials</li>
+                    <li style="dmargin-bottom: 0">invite users to the current workspace</li>
+                    <li style="dmargin-bottom: 0">Promote/demote members to Administrator or Developer roles</li>
+                    <li style="dmargin-bottom: 0">remove a member from the current workspace</li>
                   </ul>
-                  <div style="margin-bottom: 0"><strong>Developer: </strong></div>
+                  <div style="margin-bottom: 0"><strong>Developers are allowed to: </strong></div>
                   <ul>
-                    <li style="dmargin-bottom: 0">View credentials only</li>
+                    <li style="dmargin-bottom: 0">view credentials</li>
                   </ul>
                 </p>
             </td>
