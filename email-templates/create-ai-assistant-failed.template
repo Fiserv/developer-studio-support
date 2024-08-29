@@ -96,6 +96,9 @@
                   <strong>Description: </strong>{{.AssistantDesc}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
+                  <strong>AI Assistant ID: </strong>{{.AssistantID}}
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
                   <strong>Status: </strong>{{.Status}}
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
