@@ -84,7 +84,7 @@
                   Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  {{Name}} has requested changes to a(n) {{CredentialsType}} on Developer Studio. Please review the details below:
+                  {{Name}} has {{ActionMessage}} on Developer Studio. Please review the details below:
                 </p>
             </td>
         </tr>
