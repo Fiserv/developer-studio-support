@@ -18,7 +18,7 @@
   ~ work or the delivery of this work.
   -->
 
-<!--SUBJECT Developer Studio from Fiserv - Card Developer App Approval Request --> 
+<!--SUBJECT Developer Studio from Fiserv - Issue Created Successfully --> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,17 +26,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Studio | Card Developer App Approval Request</title>
+    <title>Developer Studio | Issue Created Successfully</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
             'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         }
-        .anchor-link {
+        a {
             color: #2d6bcf;
+            text-decoration: none;
         }
         .anchor-link:hover {
-            color: #2d6bcf;
             text-decoration: underline;
         }
     </style>
@@ -50,6 +50,9 @@
             body {
                 background: #333333;
                 color: #ffffff;
+            }
+            a {
+                color: #00ddff;
             }
         }
         @media (prefers-color-scheme: light) {
@@ -81,73 +84,49 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Hi there,
+                    Hi there, 
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    <strong>{{.CompanyName}} </strong> has created an API key waiting for approval.
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                   Your issue has been successfully created and is under review. We will get back to you via email as soon as possible with further updates.
                 </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                   Please check the details below:
+                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Client type: </strong>{{.ClientType}}
+                    <strong>Reason:</strong> {{Reason}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Client ID: </strong>{{.ClientId}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Client logo: </strong>{{.ClientLogo}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Company name: </strong>{{.CompanyName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Company admin email: </strong>{{.CompanyAdminEmails}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Company admin first name: </strong>{{.CompanyAdminFirstName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Company admin last name: </strong>{{.CompanyAdminLastName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>API key type: </strong>{{.APIKeyType}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>API key name: </strong>{{.APIKeyName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Features: </strong>{{.Features}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Client ID of key: </strong>{{.APIkeyClientId}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Client logo of key: </strong>{{.APIkeyLogo}}
-                </p>
+                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                    <strong>Product:</strong> {{ProductName}}
+                </p>      
+                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
+                    <strong>Description:</strong> 
+                </p>  
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>API key: </strong>{{.APIkey}}
-                </p>
+                    {{Description}}
+                </p>          
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
+                    Thank you for choosing Developer Studio from Fiserv.
+                </p> 
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  Thank you for choosing Developer Studio from Fiserv.
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Kind Regards,<br>Developer Studio Team
+                    Kind Regards,<br />Developer Studio Team
                 </p>
             </td>
         </tr>
         </tbody>
         <tfoot>
-        <tr>
+          <tr>
             <td style="border-collapse: collapse; padding: 0">
                 <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
-                  Note: please do not reply to this email, as we are unable to respond from this email address.
-                </p>
+                    Note: please do not reply to this email, as we are unable to respond from this email address.
+                  </p>
                 <hr/>
                 <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
                     <strong>Fiserv</strong> &nbsp;|&nbsp; 255 Fiserv Drive, Brookfield, WI 53045
@@ -159,7 +138,7 @@
                     respective owners. &nbsp;<a class="anchor-link" href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md" target="_blank" >Privacy Notice</a>
                 </p>
             </td>
-        </tr>
+          </tr>
         </tfoot>
     </table>
 </main>
