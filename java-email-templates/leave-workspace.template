@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2023 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv,
+  ~ Copyright (c) 2024 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv,
   ~ Inc., registered or used in the United States and foreign countries, and
   ~ may or may not be registered in your country. All trademarks, service
   ~ marks, and trade names referenced in this material are the property
@@ -18,7 +18,7 @@
   ~ work or the delivery of this work.
   -->
 
-<!--SUBJECT Developer Studio from Fiserv - Changes Requested to Credentials in Workspace --> 
+<!--SUBJECT Developer Studio from Fiserv - You Have Left a Workspace --> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Studio | Changes Requested to Credentials in Workspace</title>
+    <title>Developer Studio | You Have Left a Workspace</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
@@ -81,55 +81,17 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  Hi there,
+                    Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  {{.Name}} has {{.ActionMessage}} on Developer Studio. Please review the details below:
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Product name: </strong>{{.ProductName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Workspace: </strong>{{.WorkspaceName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>{{.CredentialsType}} name: </strong>{{.CredentialName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>{{.CredentialsType}} type: </strong>{{.CredentialType}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <div style="margin-bottom: 0"><strong>{{.CredentialsType}} features changed: </strong></div>
-                  <ul>
-                    <li style="display:{{.RemovedFeaturesStyle}}; margin-bottom: 0.5rem"> Removed: {{.RemovedFeatures}}</li>
-                    <li style="display:{{.AddedFeaturesStyle}}"> Added: {{.AddedFeatures}}</li>
-                  </ul>
+                    You have left this workspace: {{WorkspaceName}}
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                To view your credentials on Developer Studio, please click 
-                <a href="{{.WorkspaceCredentialsUrl}}" class="anchor-link">here</a>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                Please note that you may need to be signed in to Developer Studio to access the workspace.
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                <strong>If you didn't make this change</strong>, please contact customer support to ensure your account is secure. 
+                <strong>If you believe this change was made in error, please reach out to an admin of this workspace to be added again.
                 </p>
             </td>
         </tr>
@@ -138,7 +100,7 @@
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
                 Visit our
-                <a href="{{.SupportPageUrl}}" class="anchor-link">support page</a> for more information on preventing and reporting fraud. 
+                <a href="{{SupportPageUrl}}" class="anchor-link">support page</a> for more information on preventing and reporting fraud. 
                 </p>
             </td>
         </tr>

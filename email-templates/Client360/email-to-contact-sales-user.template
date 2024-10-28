@@ -18,7 +18,7 @@
   ~ work or the delivery of this work.
   -->
 
-<!--SUBJECT Developer Studio from Fiserv - Changes Requested to Credentials in Workspace --> 
+<!--SUBJECT Developer Studio from Fiserv -Sales Contact Request --> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,17 +26,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Studio | Changes Requested to Credentials in Workspace</title>
+    <title>Developer Studio | Issue Created Successfully</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
             'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         }
-        .anchor-link {
+        a {
             color: #2d6bcf;
+            text-decoration: none;
         }
         .anchor-link:hover {
-            color: #2d6bcf;
             text-decoration: underline;
         }
     </style>
@@ -50,6 +50,9 @@
             body {
                 background: #333333;
                 color: #ffffff;
+            }
+            a {
+                color: #00ddff;
             }
         }
         @media (prefers-color-scheme: light) {
@@ -81,75 +84,39 @@
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  Hi there,
+                    Hi there, 
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  {{.Name}} has {{.ActionMessage}} on Developer Studio. Please review the details below:
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                    Thank you for reaching out to us! Your sales contact request has been successfully received. Our team will review your inquiry and get back to you via email as soon as possible with further updates.
                 </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 1rem">
+                   Information provided:
+                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Product name: </strong>{{.ProductName}}
+                    <strong>Reason:</strong> {{.Reason}}
                 </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Workspace: </strong>{{.WorkspaceName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>{{.CredentialsType}} name: </strong>{{.CredentialName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>{{.CredentialsType}} type: </strong>{{.CredentialType}}
-                </p>
+                   <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
+                    <strong>Product:</strong> {{.ProductName}}
+                </p>      
+                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
+                    <strong>Description:</strong> 
+                </p>  
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <div style="margin-bottom: 0"><strong>{{.CredentialsType}} features changed: </strong></div>
-                  <ul>
-                    <li style="display:{{.RemovedFeaturesStyle}}; margin-bottom: 0.5rem"> Removed: {{.RemovedFeatures}}</li>
-                    <li style="display:{{.AddedFeaturesStyle}}"> Added: {{.AddedFeatures}}</li>
-                  </ul>
-                </p>
+                    {{.Description}}
+                </p>          
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;margin-bottom: 2rem">
+                    We appreciate your interest in Developer Studio from Fiserv, and look forward to assisting you.
+                </p> 
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                To view your credentials on Developer Studio, please click 
-                <a href="{{.WorkspaceCredentialsUrl}}" class="anchor-link">here</a>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                Please note that you may need to be signed in to Developer Studio to access the workspace.
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                <strong>If you didn't make this change</strong>, please contact customer support to ensure your account is secure. 
-                </p>
-            </td>
-        </tr>
-
-        <tr>
-            <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                Visit our
-                <a href="{{.SupportPageUrl}}" class="anchor-link">support page</a> for more information on preventing and reporting fraud. 
-                </p>
-            </td>
-        </tr>
-        
-        <tr>
-            <td style="border-collapse: collapse">
-               <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  Thank you for choosing Developer Studio from Fiserv.
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Kind Regards,<br />Developer Studio Team<br />
+                    Kind Regards,<br />Developer Studio Team
                 </p>
             </td>
         </tr>
@@ -158,8 +125,8 @@
           <tr>
             <td style="border-collapse: collapse; padding: 0">
                 <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
-                  Note: please do not reply to this email, as we are unable to respond from this email address.
-                </p>
+                    Note: please do not reply to this email, as we are unable to respond from this email address.
+                  </p>
                 <hr/>
                 <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
                     <strong>Fiserv</strong> &nbsp;|&nbsp; 255 Fiserv Drive, Brookfield, WI 53045
