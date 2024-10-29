@@ -21,7 +21,10 @@ DevStudio has a number of environments with each own unique purpose and its own 
 
 ### Device pairing links by Environment
 
-- Device pairing link for [STAGE Environment](https://desktop.pingone.com/fiservcat)
+- [DEV Environment](https://desktop.pingone.com/fiservdev)
+- [QA Environment](https://desktop.pingone.com/fiservqa)
+- [STAGE Environment](https://desktop.pingone.com/fiservcat)
+- [PROD Environment](https://desktop.pingone.com/fiservintprod)
 
 ### Device pairing flow
 
