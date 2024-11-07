@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2023 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv,
+  ~ Copyright (c) 2021 Fiserv, Inc. or its affiliates. Fiserv is a trademark of Fiserv,
   ~ Inc., registered or used in the United States and foreign countries, and
   ~ may or may not be registered in your country. All trademarks, service
   ~ marks, and trade names referenced in this material are the property
@@ -18,7 +18,7 @@
   ~ work or the delivery of this work.
   -->
 
-<!--SUBJECT Developer Studio from Fiserv - Card Developer App Approval Request --> 
+<!--SUBJECT Developer Studio from Fiserv - Request Access Code-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,17 +26,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Developer Studio | Card Developer App Approval Request</title>
+    <title>Developer Studio | Request Access Code</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
             'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         }
-        .anchor-link {
+        a {
             color: #2d6bcf;
+            text-decoration: none;
         }
         .anchor-link:hover {
-            color: #2d6bcf;
             text-decoration: underline;
         }
     </style>
@@ -50,6 +50,9 @@
             body {
                 background: #333333;
                 color: #ffffff;
+            }
+            a {
+                color: #00ddff;
             }
         }
         @media (prefers-color-scheme: light) {
@@ -66,7 +69,7 @@
         <thead>
         <tr>
             <td align="right" style="border-collapse: collapse; padding-bottom: 2rem">
-                <img
+               <img
                         class="logo"
                         src="https://developer.fiserv.com/assets/img/devstudio-logo.png"
                         alt="Fiserv"
@@ -84,66 +87,60 @@
                     Hi there,
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    <strong>{{.CompanyName}} </strong> has created an API key waiting for approval.
+                    <i>{{FirstName}} {{LastName}}</i> has requested an access code for <i>{{Env}}</i> merchants.
+                    Please follow the steps below for generating the access code.
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Client type: </strong>{{.ClientType}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Client ID: </strong>{{.ClientId}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Client logo: </strong>{{.ClientLogo}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Company name: </strong>{{.CompanyName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Company admin email: </strong>{{.CompanyAdminEmails}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Company admin first name: </strong>{{.CompanyAdminFirstName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Company admin last name: </strong>{{.CompanyAdminLastName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>API key type: </strong>{{.APIKeyType}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>API key name: </strong>{{.APIKeyName}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Features: </strong>{{.Features}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Client ID of key: </strong>{{.APIkeyClientId}}
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 0.5rem">
-                  <strong>Client logo of key: </strong>{{.APIkeyLogo}}
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem;">
+                    Prospect merchant, please click <a href="{{UiUrl}}/coming-soon" class="anchor-link">here</a>
                 </p>
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  <strong>API key: </strong>{{.APIkey}}
+                    Existing merchant, please click <a href="{{UiUrl}}/coming-soon" class="anchor-link">here</a>
                 </p>
             </td>
         </tr>
         <tr>
             <td style="border-collapse: collapse">
                 <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                  Thank you for choosing Developer Studio from Fiserv.
-                </p>
-                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
-                    Kind Regards,<br>Developer Studio Team
+                Once you have created an access code, you can share it with <i>{{FirstName}} {{LastName}}</i> on the email address below.
                 </p>
             </td>
-        </tr>
+          </tr>
+          <tr>
+            <td align="center" style="border-collapse: collapse">
+                <blockquote
+                        style="
+                  font-size: 1.5rem;
+                  font-weight: bold;
+                  background-color: #f5f5f5;
+                  color: #000;
+                  border-radius: 0.25rem;
+                  padding: 1rem;
+                  margin: 0;
+                  width: fit-content;
+                  margin-bottom: 2rem;
+                "
+                >
+                    {{Email}}
+                </blockquote>
+            </td>
+          </tr>
+          <tr>
+            <td style="border-collapse: collapse">
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                    Thank you for choosing Developer Studio from Fiserv.
+                </p>
+                <p style="margin: 0; padding: 0; font-size: 1rem; line-height: 1.5rem; margin-bottom: 2rem">
+                    Kind Regards,<br />Developer Studio Team
+                </p>
+            </td>
+          </tr>
         </tbody>
         <tfoot>
-        <tr>
+          <tr>
             <td style="border-collapse: collapse; padding: 0">
                 <p class="footer" style="margin: 0; padding: 0; font-size: 0.625rem; line-height: 1rem; font-weight: 300;">
                   Note: please do not reply to this email, as we are unable to respond from this email address.
@@ -159,7 +156,7 @@
                     respective owners. &nbsp;<a class="anchor-link" href="https://developer.fiserv.com/support/docs/?path=docs/privacy-notice.md" target="_blank" >Privacy Notice</a>
                 </p>
             </td>
-        </tr>
+          </tr>
         </tfoot>
     </table>
 </main>
