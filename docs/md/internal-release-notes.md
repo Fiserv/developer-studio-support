@@ -1,5 +1,25 @@
 # Internal Release Notes
 
+### November 7, 2024
+
+#### What's new
+- Event Service released to PROD (Used for CAC + codegen)
+- Promote Unified Merchant Master (Internal)
+- CH UI Bug fixes
+
+#### Enhancements
+- FOES UI changes, and Wiz Score going out
+- Fintech and Fiserv Resources are removed from Account - Edit filter preferences screen
+- CAC multiple Module IaC
+- CAC Application TFE supports dynamic inputs
+
+#### Fixed
+- SSO redirects before authentication, avoid blank pages if authentication is unsuccessful
+- SSO unable to create Ping if internal user does not exist
+- Test API Explorer FXSolutions fix
+- Card size changes for Browse by Capability section
+<br>
+
 ### October 24, 2024
 
 #### Enhancements

@@ -1,6 +1,6 @@
-# First Vision
+# Developer Studio
 
-This repo contains the content for tenants of First Vision.
+This repo contains all docs for Developer Studio, and Support.
 
 
 ## Directory structure
