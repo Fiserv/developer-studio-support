@@ -104,16 +104,15 @@
                   <ul>
                     <li style="margin-bottom: 0">Perform any action an administrator can</li>
                     <li style="dmargin-bottom: 0">Delete workspaces</li>
-                    <li style="dmargin-bottom: 0">Transfer ownership to another workspace member</li>
                   </ul>
                   <div style="margin-bottom: 0"><strong>Administrators are allowed to: </strong></div>
                   <ul>
                     <li style="margin-bottom: 0">Create/edit/delete any type of credentials</li>
                     <li style="dmargin-bottom: 0">Invite users to the current workspace</li>
-                    <li style="dmargin-bottom: 0">Promote/demote members to Administrator or Developer roles</li>
+                    <li style="dmargin-bottom: 0">Promote/demote members to Administrator or Viewer roles</li>
                     <li style="dmargin-bottom: 0">Remove a member from the current workspace</li>
                   </ul>
-                  <div style="margin-bottom: 0"><strong>Developers are allowed to: </strong></div>
+                  <div style="margin-bottom: 0"><strong>Viewers are allowed to: </strong></div>
                   <ul>
                     <li style="dmargin-bottom: 0">View credentials</li>
                   </ul>
