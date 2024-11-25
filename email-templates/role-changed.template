@@ -112,7 +112,7 @@
                     <li style="dmargin-bottom: 0">Promote/demote members to Administrator or viewer roles</li>
                     <li style="dmargin-bottom: 0">Remove a member from the current workspace</li>
                   </ul>
-                  <div style="margin-bottom: 0"><strong>Viewer are allowed to: </strong></div>
+                  <div style="margin-bottom: 0"><strong>Viewers are allowed to: </strong></div>
                   <ul>
                     <li style="dmargin-bottom: 0">View credentials</li>
                   </ul>
